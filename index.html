@@ -1,7 +1,2933 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>iX:Mas - 聖誕倒數日曆</title>
+
+  <!---link rel="stylesheet" type="text/css" href="bulma/css/bulma.css"--->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!---link href="css/style.css" rel="stylesheet" media="screen" /---->
+  <!---script src="js/modernizr.custom.js"></script---->
+
+  <meta property="og:url" content="https://www.ixpanel.com/activity/2017/dec/iXmas.jsp">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="iX:Mas 一起倒數聖誕抽 iPhone X - iX:Panel 問卷網站">
+  <meta property="og:image" content="https://www.ixpanel.com/activity/2017/dec/img/fbBanner.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:description" content="聖誕老人準備了一支 iPhone X 要送給你，天天開彩蛋倒數開獎">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="favi/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favi/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favi/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favi/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favi/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favi/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favi/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favi/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favi/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="favi/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favi/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favi/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favi/favicon-16x16.png">
+  <link rel="manifest" href="favi/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="favi/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+
+</head>
+<style>
+
+body {
+  background: #d02c2c;
+  background-image:
+  radial-gradient(#f7c652 .2vw, transparent 0),
+  radial-gradient(#f7c652 .2vw, transparent 0);
+  background-size: 80px 80px;
+  background-position: 0 0, 40px 40px;
+}
+
+/* hover cross fade*/
+.cf img {
+  -webkit-transition: opacity 0s ease-in-out;
+  -moz-transition: opacity 0s ease-in-out;
+  -o-transition: opacity 0s ease-in-out;
+  transition: opacity 0s ease-in-out;
+}
+.cf img.top:hover {
+  opacity:0;
+}
+/* hover cross fade*/
+
+.ylw {
+  background-color: #f7c652;
+  color: black;
+  border-top: 0.24vw solid black;
+  border-left: 0.24vw solid black;
+  border-right: 0.24vw solid black;
+  padding: 1rem;
+}
+
+.ylwMobileBelt {
+  background-color: #f7c652;
+  color: black;
+  border-top: 0.24vw solid black;
+  border-left: 0.24vw solid black;
+  border-right: 0.24vw solid black;
+  padding: 0.5rem;
+}
+
+
+.ylwMenu {
+  background-color: #f7c652;
+  color: black;
+  border: 0.24vw solid black;
+  padding: 2rem;
+}
+
+.columns.is-gapless {
+  margin-top: -10px;
+  margin-bottom: -25px;
+}
+
+.noGap {
+  margin-top: -10px;
+}
+
+.wht {
+  background-color: white;
+  border: 0.24vw solid black;
+  padding: 1.5rem;
+}
+
+.paddown {
+  padding-top: 3%;
+}
+
+.padBoth {
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.padMenu {
+  padding-top: 17%;
+  padding-bottom: 17%;
+}
+
+.paddownS {
+  padding-top: 1%;
+}
+
+.padTitle {
+  padding-top: 6%;
+}
+
+.paddownL {
+  padding-top: 10%;
+}
+
+.padBtn {
+  padding-top: 11vw;
+}
+
+.footer {
+  background-color: transparent;
+  color: black;
+}
+
+.button {
+  border-radius: 30px;
+  padding-left: 1.8em;
+  padding-right: 1.8em;
+  height: 3em;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.button.is-small {
+  border-radius: 30px;
+  font-size: 0.6rem;
+}
+
+.pullDown {
+  color: #847d80;
+  margin-top: 55%;
+  margin-left: 21%;
+  margin-right: 20.5%;
+  pointer-events:none;
+}
+
+p.big {
+  line-height: 150%;
+}
+
+.button.is-link {
+  background-color: #3273dc;
+  color: white;
+  border: 2px solid black;
+}
+
+.button.is-link:hover, .button.is-link.is-hovered {
+  background-color: #276cda;
+  color: white;
+  border: 2px solid black;
+}
+
+.button.is-link:focus, .button.is-link.is-focused {
+  color: white;
+  border: 2px solid black;
+}
+
+.button.is-link:focus:not(:active), .button.is-link.is-focused:not(:active) {
+  -webkit-box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25);
+          box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25);
+}
+
+.button.is-link:active, .button.is-link.is-active {
+  background-color: #2366d1;
+  color: white;
+  border: 2px solid black;
+}
+
+.button.is-warning {
+  background-color: #f7c652;
+  color: black;
+  border: 2px solid black;
+}
+
+.button.is-warning:hover, .button.is-warning.is-hovered {
+  background-color: #efb834;
+  color: black;
+  border: 2px solid black;
+
+}
+
+.button.is-warning:focus, .button.is-warning.is-focused {
+  color: black;
+  border: 2px solid black;
+
+}
+
+.button.is-warning:focus:not(:active), .button.is-warning.is-focused:not(:active) {
+  -webkit-box-shadow: 0 0 0 0.125em rgba(255, 221, 87, 0.25);
+          box-shadow: 0 0 0 0.125em rgba(255, 221, 87, 0.25);
+}
+
+.button.is-warning:active, .button.is-warning.is-active {
+  background-color: #efb834;
+  color: black;
+  border: 2px solid black;
+}
+
+.modal-content,
+.modal-card {
+  margin: 0 auto;
+  max-height: calc(100vh - 160px);
+  overflow: auto;
+  position: relative;
+  width: 90%;
+}
+
+@media screen and (min-width: 769px), print {
+  .modal-content,
+  .modal-card {
+    margin: 0 auto;
+    overflow: auto;
+    max-height: calc(100vh - 100px);
+    max-width: 50%
+  }
+}
+
+.modal-background {
+  background-color: rgba(10, 10, 10, 0.4);
+}
+
+.modal-card-body {
+  border-left:  2px solid black;
+  border-right:  2px solid black;
+}
+
+.modal-card-title {
+  color: #363636;
+  font-size: 1rem;
+}
+
+
+.modal-card-head {
+  border-bottom: 0px;
+  border-top: 2px solid black;
+  border-left:  2px solid black;
+  border-right:  2px solid black;
+  background-color: white;
+  padding: 10px;
+}
+
+.modal-card-foot {
+  background-color: white;
+  -webkit-justify-content: center;
+          justify-content: center;
+  border-top: 0px;
+  border-bottom: 2px solid black;
+  border-left:  2px solid black;
+  border-right:  2px solid black;
+  padding: 20px;
+}
+
+.fa {
+  color: black;
+}
+
+.diviDer {
+  text-align: center;
+}
+
+.diviDer span {
+  display: inline-block;
+  position: relative;
+}
+
+.diviDer span::before,
+.diviDer span::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  border-top: 1px solid black;
+  top: 7px;
+  width: 15vw;
+}
+
+.diviDer span::before {
+  right: 100%;
+  margin-right: 2vw;
+}
+
+.diviDer span::after {
+  left: 100%;
+  margin-left: 2vw;
+}
+
+canvas {
+  border:2px solid black;
+  background-color: #fff;
+}
+
+</style>
 <body>
-<h1>Hello World</h1>
-<p>is this real?</p>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!--- Facbook JavaScript SDK --->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v2.5";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+<!--- title and menu --->
+<div class="columns is-centered is-hidden-touch paddown">
+  <div class="column is-9 paddown">
+    <div class="columns is-centered">
+      <div class="column is-2 padBtn">
+        <p class="subtitle is-5 has-text-centered">
+          <a class="button is-warning" href="#" data-toggle="modal" data-target="#eventRegulation">抽獎辦法</a>
+        </p>
+      </div>
+      <div class="column is-2 padBtn">
+        <p class="subtitle is-5 has-text-centered">
+          <a class="button is-warning" href="#" data-toggle="modal" data-target="#aboutUS">關於我們</a>
+        </p>
+      </div>
+      <div class="column is-6">
+        <figure class="image">
+          <img src="img/xmasTitle.png">
+        </figure>
+      </div>
+      <div class="column is-2 padBtn">
+        <p class="subtitle is-5 has-text-centered">
+          <a class="button is-warning" href="https://www.facebook.com/iXPanel.tw/" target="_blank">iX:FB</a>
+        </p>
+      </div>
+      <div class="column is-2 padBtn">
+        <p class="subtitle is-4 has-text-centered">
+          <a class="button is-warning" data-toggle="modal" data-target="#iXPanelRegistration">登入/註冊</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--- title and menu / MOBILE view --->
+<div class="paddown">
+</div>
+<div class="columns is-centered is-mobile is-hidden-desktop">
+  <div class="column is-7">
+    <figure class="image">
+      <img src="img/xmasTitle.png">
+    </figure>
+  </div>
+</div>
+<div class="columns is-centered is-mobile is-hidden-desktop is-gapless">
+    <div class="column is-3 ylwMenu has-text-centered">
+      <a class="" href="#" data-toggle="modal" data-target="#eventRegulation">
+        <p class="title is-7 has-text-black padMenu">
+          抽獎辦法
+        </p>
+      </a>
+    </div>
+    <div class="column is-3 ylwMenu has-text-centered">
+      <a class="" href="#" data-toggle="modal" data-target="#aboutUS">
+        <p class="title is-7 has-text-black padMenu">
+          關於我們
+        </p>
+      </a>
+    </div>
+    <div class="column is-3 ylwMenu has-text-centered">
+      <a class="" href="https://www.facebook.com/iXPanel.tw/" target="_blank">
+        <p class="title is-7 has-text-black padMenu">
+          iX:FB
+        </p>
+      </a>
+    </div>
+    <div class="column is-3 ylwMenu has-text-centered">
+      <a class="" data-toggle="modal" data-target="#iXPanelRegistration">
+        <p class="title is-7 has-text-black padMenu">
+          登入/註冊
+        </p>
+      </a>
+    </div>
+</div>
+
+<!--- BELT desktop--->
+<div class="columns is-centered is-mobile is-multiline is-hidden-touch">
+  <div class="column is-10 ylw has-text-centered">
+    <p class="title is-5 has-text-black is-hidden-touch">
+      只要 1、2、3，許願好簡單
+    </p>
+  </div>
+  <div class="column is-10 wht">
+    <div class="columns is-centered is-multiline">
+      <div class="column is-12">
+        <div class="columns is-centered">
+          <div class="column is-3-desktop">
+            <p class="title is-1 has-text-centered has-text-black">
+              1
+            </p>
+            <p class="subtitle is-7 paddownS has-text-black">
+              開彩蛋，我們為你天天準備了不同驚喜，一起倒數 12/25 聖誕老人開獎 <3
+            </p>
+          </div>
+          <div class="column is-narrow">
+          </div>
+          <div class="column is-3-desktop has-text-black">
+            <p class="title is-1 has-text-centered has-text-black">
+              2
+            </p>
+            <p class="subtitle is-7 paddownS has-text-black">
+              變會員，擁有 iX:Panel 會員資格，在此活動頁面按右上方登入/註冊，就有機會抽中 iPhone X。
+            </p>
+          </div>
+          <div class="column is-narrow">
+          </div>
+          <div class="column is-3-desktop has-text-black">
+            <p class="title is-1 has-text-centered has-text-black">
+              3
+            </p>
+            <p class="subtitle is-7 paddownS has-text-black">
+              玩任務，完成不定期小任務，可以光速前進，讓你離 iPhone X 越來越近！
+            </p>
+          </div>
+          <div class="paddown">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--- BELT mobile --->
+<div class="columns is-centered is-mobile paddown is-multiline is-hidden-desktop">
+  <div class="column is-10 ylwMobileBelt has-text-centered noGap">
+    <p class="title is-7 has-text-black is-hidden-desktop">
+      只要 1、2、3，許願好簡單
+    </p>
+  </div>
+  <div class="column is-10 wht">
+    <div class="columns is-centered is-multiline">
+      <div class="column is-12">
+        <div class="columns is-centered">
+          <div class="column is-3-desktop is-12-mobile has-text-black">
+            <p class="title is-7">
+              STEP 1 開彩蛋
+            </p>
+            <p class="subtitle is-7 paddownS">
+              我們為你天天準備了不同驚喜，一起倒數 12/25 聖誕老人開獎 <3
+            </p>
+          </div>
+          <div class="column is-3-desktop is-12-mobile has-text-black">
+            <p class="title is-7">
+              STEP 2 變會員
+            </p>
+            <p class="subtitle is-7 paddownS">
+              擁有 iX:Panel 會員資格，在此活動頁面按右上方登入/註冊，就有機會抽中 iPhone X。
+            </p>
+          </div>
+          <div class="column is-3-desktop is-12-mobile has-text-black">
+            <p class="title is-7">
+              STEP 3 玩任務
+            </p>
+            <p class="subtitle is-7 paddownS">
+              完成不定期小任務，可以光速前進，讓你離 iPhone X 越來越近！
+            </p>
+          </div>
+          <div class="paddown">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--- Grids Starts --->
+<div class="columns is-centered is-mobile is-multiline paddownS">
+  <div class="column is-10 wht">
+    <div class="columns is-multiline is-mobile">
+  <!--- line 1 ---->
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1201">
+              <div class="cf">
+                <img class="bottom" src="img/xmasNum_01.png" alt="">
+                <img class="top" src="img/xmasCol_01.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered has-text-centered">
+          <figure class="image is-square timeit">
+            <a data-toggle="modal" data-target="#Advent1202">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_02.png" alt="">
+                <img class="top" src="img/xmasNum_02.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1203">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_03.png" alt="">
+                <img class="top" src="img/xmasNum_03.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1204">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_04.png" alt="">
+                <img class="top" src="img/xmasNum_04.png" alt="">
+              </div>
+              <div class="">
+            </a>
+          </figure>
+        </div>
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1205">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_05.png" alt="">
+                <img class="top" src="img/xmasNum_05.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+  <!--- line 2 ---->
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1206">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_06.png" alt="">
+                <img class="top" src="img/xmasNum_06.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1207">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_07.png" alt="">
+                <img class="top" src="img/xmasNum_07.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1208">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_08.png" alt="">
+                <img class="top" src="img/xmasNum_08.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1209">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_09.png" alt="">
+                <img class="top" src="img/xmasNum_09.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1210">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_10.png" alt="">
+                <img class="top" src="img/xmasNum_10.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+  <!--- line 3--->
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1211">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_11.png" alt="">
+                <img class="top" src="img/xmasNum_11.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1212" onclick="startGame()">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_12.png" alt="">
+                <img class="top" src="img/xmasNum_12.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1213">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_13.png" alt="">
+                <img class="top" src="img/xmasNum_13.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1214">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_14.png" alt="">
+                <img class="top" src="img/xmasNum_14.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1215">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_15.png" alt="">
+                <img class="top" src="img/xmasNum_15.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+  <!--- line 4--->
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1216">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_16.png" alt="">
+                <img class="top" src="img/xmasNum_16.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1217">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_17.png" alt="">
+                <img class="top" src="img/xmasNum_17.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1218">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_18.png" alt="">
+                <img class="top" src="img/xmasNum_18.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1219">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_19.png" alt="">
+                <img class="top" src="img/xmasNum_19.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1220">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_20.png" alt="">
+                <img class="top" src="img/xmasNum_20.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+  <!--- line 5 ---->
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1221">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_21.png" alt="">
+                <img class="top" src="img/xmasNum_21.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1222">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_22.png" alt="">
+                <img class="top" src="img/xmasNum_22.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1223">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_23.png" alt="">
+                <img class="top" src="img/xmasNum_23.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1224">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_24.png" alt="">
+                <img class="top" src="img/xmasNum_24.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+        <div class="column is-one-fifth-desktop is-3-tablet is-4-mobile has-text-centered is-pulled-left">
+          <figure class="image is-square">
+            <a data-toggle="modal" data-target="#Advent1225">
+              <div class="cf">
+                <img class="bottom" src="img/xmasCol_25.png" alt="">
+                <img class="top" src="img/xmasNum_25.png" alt="">
+              </div>
+            </a>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!---Menu Modals Below---->
+<div class="modal" id="eventRegulation" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title"></p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-3">
+            抽獎辦法
+          </p>
+          <p class="subtitle is-7 paddownS">
+            敬請詳閱抽獎辦法，創市際保留取消、變更或解釋活動內容之權利。
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+        </div>
+        <div class="column is-10 padTitle">
+          <div class="title is-6">
+            一、活動期間
+          </div>
+          <div class="subtitle is-7 paddown">
+            2017/12/1（五）- 2017/12/24（日），以本活動主辦單位系統判別時間為準。凡新加入或原 iX:Panel 問卷網站會員（需收驗證信確認身份），於活動期間內在此活動頁面登入玩任務活動，即可獲得抽獎資格。
+          </div>
+        </div>
+        <div class="column is-10">
+          <div class="title is-6">
+            二、獎項
+          </div>
+          <div class="subtitle is-7 paddown">
+            <strong>iPhone X 64GB</strong> 乙支
+            <p>
+              不得選色、不得轉換、轉讓或折換現金。若獎品因寄送過程中發生不可歸責於主辦單位之事由致毀損、遺失等，主辦單位恕不負責。
+            </p>
+          </div>
+        </div>
+        <div class="column is-8">
+          <figure class="image">
+            <img src="img/iPhoneX.png" alt="GrandPrize">
+          </figure>
+        </div>
+        <div class="column is-10">
+          <div class="title is-6">
+            三、兌獎說明
+          </div>
+          <div class="subtitle is-7 paddown">
+            <ol>
+              <li>中獎名單將於 2017/12/25 抽出並同時公布於此活動頁面，並同時以電子郵件方式通知得獎者，得獎者必須依照 iX:Panel 網站辦法，並按照領獎信函之辦法，於一週內填寫身份資料，並回傳身份證，始完成領獎程序。</li>
+              <li>若經審核身份未符，主辦單位有權取消其參加或中獎資格，恕不另行通知。</li>
+              <li>機會中獎金額價值超過 NT$20,000 的中華民國國籍人士，依法需預繳交機會中獎稅金 10%，非持有中國民國國籍之人士，依法需繳交機會中獎稅金 20%，主辦單位將寄發機會中獎稅額繳付說明於中獎人，待中獎人付清稅金後方可寄送獎品。</li>
+              <li>主辦單位收到中獎者之領獎信函並審核相關兌獎憑證無誤後，獎品將於 2018/01/31 前寄出。</li>
+            </ol>
+          </div>
+        </div>
+        <div class="column is-10">
+          <div class="title is-6">
+            四、注意事項
+          </div>
+          <div class="subtitle is-7 paddown">
+            <ol>
+              <li>本活動僅限居住於台灣、金門、澎湖、馬祖地區之居民參加，獎品寄送地區僅限於台灣、金門、澎湖、馬祖地區。</li>
+              <li>中獎者如因資料填寫不完整、不清楚或寄送過程中發生不可歸責於主辦方之原因，導致中獎憑證遺失或無法辨識，將視同放棄獲獎資格，主辦單位不負任何法律責任，參加者亦不得因此異議。</li>
+              <li>本活動如有任何因電腦、網路、電話、技術或不可歸責於主辦單位之事由，而使系統服務終止、中斷、誤送活動訊息或中獎通知，或使參加人所寄出或登錄之資料有遲延、遺失、錯誤、無法辨識或毀損之情況，主辦單位不負任何法律責任，參加者亦不得因此異議。</li>
+              <li>參加者於送出資料參加本活動時，視為同意並接受本活動所有內容及細則之規範（含其更新修正內容），主辦方有權檢視本活動參與者之參與行為及中獎情形是否涉嫌不法或有違常理之異常狀況，例：人為操作蓄意偽造、短時間異常多筆參與行為、透過任何電腦程式參與活動、詐欺或以任何其他不正當的方式意圖以進行不實或虛偽活動參與行為、或登錄資料不實或不正確或盜用任何第三人之資料，或有違反活動規範之行為。</li>
+              <li>活動參與者因上述情形所獲得之活動資格及獎品，主辦方及活動小組保有變更、終止其參加活動資格、取消中獎資格或暫停活動的權利，並對於任何破壞本活動之行為保留法律追訴權，並就因此產生之損害，得向參加者請求賠償。</li>
+              <li>中獎者若非中華民國國境內設籍之國人（即依法於課稅年度內，在中華民國境內居住未達183天之本國人含大陸人士及外國人），不論中獎者所得獎項之價值，需預先扣繳 20% 機會中獎稅金。財政部臺北國稅局實施「憑單無紙化」，自 2015 年起所得稅各式憑單符合一定情形者，憑單填發單位如期向國稅局辦理憑單申報後，原則上免寄發憑單給納稅義務人。中獎者需於 2019 年 5 月底前完成申報，中獎者若不願意配合，則視為自動棄權，不具得獎資格。此外中獎價值累計超過 NT$1,001 而未滿 20 歲之中獎者，視同父母或監護人中獎，由父母或監護人代為領獎，並請附上中獎者及其代領人關係證明影本。</li>
+              <li>本活動如有未盡事宜，創市際市場研究顧問股份有限公司擁有保留、修改、暫停及解釋活動內容之權利，修改訊息將於活動網站、iX:Panel Facebook 粉絲頁、iX:Panel 問卷網站上公布，不另行通知。</li>
+            </ol>
+          </div>
+        </div>
+        <div class="column is-12 has-text-centered">
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+<div class="modal" id="aboutUS" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title"></p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-8">
+          <figure class="image">
+            <a href="https://www.ixpanel.com/index.jsp" target="_blank"><img src="img/iXPanel_Logo.svg" alt="宇宙最有聊的問卷網站" style="height:35px"></a>
+          </figure>
+          <p class="subtitle is-6 has-text-centered paddown">
+            全宇宙最有聊的問卷網站
+          </p>
+        </div>
+        <div class="column is-10">
+          <div class="title is-6">
+            關於 iX:Panel
+          </div>
+          <div class="subtitle is-7 paddown">
+            <a href="https://www.ixpanel.com/index.jsp" target="_blank">iX:Panel 問卷社群網站</a> （原 CyberPanel）係由創市際市場研究顧問股份有限公司 InsightXplorer Ltd. 所建置的大型台灣消費者情報平台，自 2003 年建立至今已逾 30 萬人規模。讓人們經由各式問卷調查，訪談活動及快速任務，將台灣消費者意見回饋給全球知名企業廠商，其第三單位公正性已成為全球最具指標性台灣消費者意見社群！無論你是上班族、學生、主婦或各行各業人士，我們都歡迎你的加入來提供更多元的聲音！
+          </div>
+        </div>
+        <div class="column is-10">
+          <div class="title is-6">
+            關於創市際
+          </div>
+          <div class="subtitle is-7 paddown">
+            成立於 2003 年，獨家建置 ARO 網路收視率服務及品牌， <a href="http://www.ixresearch.com/" target="_blank">創市際市場研究顧問股份有限公司 InsightXplorer Ltd. </a>為台灣唯一數位量測之第三公正單位，擁有 IX Survey 網路調查系統及 iX:Panel（原 CyberPanel）消費者社群，成為台灣專業網路調查先趨。2006 年執行台灣網路基礎追蹤調查至今，長期關注台灣上網行為趨勢變化。2011 年因應全球化的風潮，獨家代理全球性品牌 comScore 網路量測服務及產品，導入國際觀點的數位測量服務。客戶群涵蓋全球知名品牌，網站媒體及代理商，如 Oath (Yahoo) 、Google、Facebook、蘋果日報、城邦出版、電通安吉斯集團、群邑等。2012 更成立創媒體 BeamMedia 以視覺詮釋數據，讓數據更貼近消費大眾，多元發展隨時為行銷市場提供最新的研究視角！
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+<div class="modal" id="iXPanelRegistration" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title"></p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-8">
+          <figure class="image">
+            <a href="https://www.ixpanel.com/index.jsp" target="_blank"><img src="img/iXPanel_Logo.svg" alt="宇宙最有聊的問卷網站" style="height:35px"></a>
+          </figure>
+          <p class="subtitle is-6 has-text-centered paddown">
+            全宇宙最有聊的問卷網站
+          </p>
+        </div>
+        <div class="column is-12">
+          <div class="field">
+            <div class="control has-text-centered">
+              <a href="#" class="button is-warning">
+                Facebook 註冊
+              </a>
+              <div class="diviDer paddown">
+                <span>
+                  <p class="has-text-centered has-text-black subtitle is-7">
+                    或
+                  </p>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-7-desktop is-9-touch">
+          <div class="field">
+            <div class="control">
+              <input class="input is-dark" type="email" placeholder="帳號：請輸入 e-mail 格式">
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <input class="input is-dark" type="password" placeholder="密碼：英數 6-12 字">
+            </div>
+          </div>
+        </div>
+        <div class="column is-12 padBoth">
+          <p class="subtitle is-7 has-text-centered">
+            按下註冊表示您已同意 iX:Panel 的 <a href="https://www.ixpanel.com/privacy.jsp" target="_blank">服務條款及資料使用政策</a>。
+          </p>
+        </div>
+        <div class="column is-12">
+          <div class="field has-text-centered">
+            <input class="button is-warning" type="submit" name="" value="註冊">
+          </div>
+          <p class="subtitle is-7 has-text-centered">
+            已經是會員了？<a href="#iXPanelLogin" data-toggle="modal" data-dismiss="modal">立即登入</a>
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+<div class="modal" id="#iXPanelLogin" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title"></p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-8">
+          <figure class="image">
+            <img src="img/iXPanel_Logo.svg" alt="宇宙最有聊的問卷網站" style="height:38px">
+          </figure>
+          <p class="subtitle is-6 has-text-centered paddown">
+            全宇宙最有聊的問卷網站
+          </p>
+        </div>
+        <div class="column is-12">
+          <div class="field">
+            <div class="control has-text-centered">
+              <a href="#" class="button is-warning">
+                Facebook 登入
+              </a>
+              <div class="diviDer paddown">
+                <span>
+                  <p class="has-text-centered has-text-black subtitle is-7">
+                    或
+                  </p>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-10">
+          <div class="field">
+            <div class="control">
+              <input class="input is-dark" type="email" placeholder="帳號：請輸入 e-mail 格式">
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <input class="input is-dark" type="password" placeholder="密碼：英數 6-12 字">
+            </div>
+          </div>
+        </div>
+        <div class="column is-12">
+          <div class="field has-text-centered">
+            <input class="button is-warning" type="submit" name="" value="登入">
+          </div>
+        </div>
+        <div class="column is-12">
+          <p class="subtitle is-7 has-text-centered">
+            還不是會員嗎？<a href="#iXPanelRegistration" data-toggle="modal" data-dismiss="modal">現在加入</a>！
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+<!--XmasCalendarAccountFbSignupMail-->
+<div class="modal" id="FbSignupMail" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title"></p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-8">
+          <figure class="image">
+            <img src="img/iXPanel_Logo.svg" alt="宇宙最有聊的問卷網站" style="height:38px">
+          </figure>
+          <p class="subtitle is-6 has-text-centered paddown">
+            全宇宙最有聊的問卷網站
+          </p>
+        </div>
+        <div class="column is-10">
+          <div class="field">
+            <div class="control">
+              <p class="title is-4 has-text-centered paddown">｡:.ﾟヽ(＊´∀`)ﾉﾟ.:｡</p>
+              <p class="subtitle is-6 has-text-centered paddown">
+                 嗨！歡迎加入～<br>請再輸入 Email，來完成 FB 註冊喲！
+              </p>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <input class="input is-dark" type="email" placeholder="帳號：請輸入 e-mail 格式">
+            </div>
+          </div>
+        </div>
+        <div class="column is-12">
+          <div class="field has-text-centered">
+            <input class="button is-warning" type="submit" name="" value="註冊">
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+
+<!--XmasCalendarAccountExistMsg-->
+<div class="modal" id="AccountExist" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title"></p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-8">
+          <figure class="image">
+            <img src="img/iXPanel_Logo.svg" alt="宇宙最有聊的問卷網站" style="height:38px">
+          </figure>
+          <p class="subtitle is-6 has-text-centered paddown">
+            全宇宙最有聊的問卷網站
+          </p>
+        </div>
+        <div class="column is-10">
+          <div class="field paddown">
+           <div class="control">
+             <p class="title is-4 has-text-centered">(σ ° ▽°)σ..:*☆</p>
+             <p class="subtitle is-6 has-text-centered paddown">
+               啊！這個帳號已經是會員了～<br>是不是忘記收驗證信了？
+             </p>
+           </div>
+         </div>
+         <div class="column is-12">
+          <div class="field has-text-centered">
+            <p class="subtitle is-7">
+              其實是想登入但填錯了嗎？
+            </p>
+            <a href="#iXPanelLogin" class="button is-warning" data-toggle="modal" data-dismiss="modal">立即登入</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+
+<!--XmasCalendarSignupSuccessMsg-->
+<div class="modal" id="SignupSuccess" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title"></p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-8">
+          <figure class="image">
+            <img src="img/iXPanel_Logo.svg" alt="宇宙最有聊的問卷網站" style="height:38px">
+          </figure>
+          <p class="subtitle is-6 has-text-centered paddown">
+            全宇宙最有聊的問卷網站
+          </p>
+        </div>
+        <div class="column is-10">
+          <div class="field paddown">
+            <div class="control">
+                <p class="subtitle is-6 has-text-centered paddown">
+                    歡迎加入<br>快去你的信箱收 iX:Panel 驗證信！
+                </p>
+            </div>
+          </div>
+          <div class="field paddown">
+            <p class="title is-4 has-text-centered">─=≡Σ((( つ•̀ω•́)つ</p>
+          </div>
+         </div>
+         <div class="column is-12">
+          <div class="field has-text-centered">
+            <p class="subtitle is-7">
+              欸，然後再回來喔！等你 <3
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+
+<!--XmasCalendarSignupSyncMsg-->
+<div class="modal" id="MemberSyncFB" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title"></p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-8">
+          <figure class="image">
+            <img src="img/iXPanel_Logo.svg" alt="宇宙最有聊的問卷網站" style="height:38px">
+          </figure>
+          <p class="subtitle is-6 has-text-centered paddown">
+            全宇宙最有聊的問卷網站
+          </p>
+        </div>
+        <div class="column is-10">
+          <div class="field paddown">
+           <div class="control">
+            <p class="title is-4 has-text-centered">─=≡Σ((( つ•̀ω•́)つ</p>
+            <p class="subtitle is-6 has-text-centered paddown">
+              啊！你已經是會員囉～<br>想用 FB 帳號登入，可回本站點選 Facebook 登入作帳號連結
+            </p>
+          </div>
+         </div>
+         <div class="column is-12">
+          <div class="field has-text-centered paddown">
+            <a class="button is-warning" href="https://www.ixpanel.com">GO</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+<!--XmasCalendarLoginSuccessMsg-->
+<div class="modal" id="LoginSuccess" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title"></p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-8">
+          <figure class="image">
+            <img src="img/iXPanel_Logo.svg" alt="宇宙最有聊的問卷網站" style="height:38px">
+          </figure>
+          <p class="subtitle is-6 has-text-centered paddown">
+            全宇宙最有聊的問卷網站
+          </p>
+        </div>
+        <div class="column is-10">
+          <div class="field paddown">
+             <div class="control">
+                 <p class="title is-4 has-text-centered">٩(｡・ω・｡)﻿و</p>
+                 <p class="subtitle is-6 has-text-centered paddown">
+                   歡迎加入 iPhone X 的抽獎行列<br>記得每天回來跟我們開彩蛋喲！
+                 </p>
+             </div>
+         </div>
+         <div class="column is-12">
+          <div class="field has-text-centered paddown">
+            <a class="button is-warning" href="#">我開</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+
+<!---Content Modals Below---->
+<div class="modal" id="Advent1201" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 01</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1225" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:Trivia
+          </p>
+          <p class="subtitle is-7">
+            你知道可以寫信給聖誕老人嗎？
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1202" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-8">
+          <figure class="image">
+            <img src="img/content-write2santa.png" alt="">
+          </figure>
+        </div>
+        <div class="column is-9">
+          <p class="title is-5 has-text-centered">
+            向聖誕老人許一支 iPhone X
+          </p>
+          <p class="subtitle is-7 paddown">
+            拿起紙跟筆寫封信，<strong>12/11 之前</strong>寄到下面的地址，就會收到聖誕老人的回信喲！（記得要留下自己的地址）
+          </p>
+        </div>
+        <div class="column is-8-touch is-5-desktop is-pulled-right">
+          <div class="subtitle is-6">
+            <strong>SANTA CLAUS</strong><br>
+            NORTH POLE H0H 0H0 <br>
+            CANADA <br>
+          </div>
+        </div>
+      </div>
+      <div class="column is-12 has-text-centered">
+        <p class="subtitle is-7">
+          引用來源：<a href="https://www.canadapost.ca/cpo/mc/personal/campaigns/holiday/default.jsf#santa" target="_blank">Canada Post</a>
+        </p>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+<div class="modal" id="Advent1202" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 02</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1201" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:Info
+          </p>
+          <p class="subtitle is-7">
+            聖誕冷數據：覺得聖誕樹佈置完之後要什麼時候收？
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1203" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-8">
+          <figure class="image">
+            <img src="img/content-xmasTree.png" alt="">
+          </figure>
+        </div>
+        <div class="column is-9">
+          <p class="title is-5 has-text-centered">
+            聖誕節後的 10.4 天
+          </p>
+          <p class="subtitle is-7 paddown">
+            你知道台灣人的聖誕樹一擺都擺多久嗎？根據調查，大家平均在看完煙火、倒數跨完年之後，隔四天半就把它收起來了，遇到這種事 hen 有效率！
+          </p>
+        </div>
+        <div class="column is-12 has-text-centered paddown">
+          <p class="subtitle is-7">
+            Base: 聖誕節會布置聖誕樹的受訪者 2278 人<br>
+            創市際市場研究顧問，聖誕節小調查 Nov. 2017
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+<div class="modal" id="Advent1203" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 03</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1202" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:DIY
+          </p>
+          <p class="subtitle is-7">
+            想要禮物？先把襪子準備好！
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1204" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-9">
+          <figure class="image">
+            <img src="img/xmasOrigami_Boots_00.png" alt="">
+          </figure>
+        </div>
+        <div class="column is-10">
+          <div class="title is-5 has-text-centered">
+            摺紙誠心感動天
+          </div>
+          <div class="columns is-multiline">
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Boots_01.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                準備一張色紙
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Boots_02.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                從邊緣向內摺約一公分左右
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Boots_03.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                這裡將會是靴口的白邊
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Boots_04.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                另外一側也向內折，對齊剛剛一公分的摺份，不要重疊
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Boots_05.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Boots_06.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Boots_07.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                準備一張色紙
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Boots_08.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Boots_09.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Boots_10.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                你需要一張紅色的單面色紙
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Boots_11.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Boots_12.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Boots_13.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                準備一張色紙
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Boots_14.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Boots_15.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Boots_16.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                你需要一張紅色的單面色紙
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Boots_17.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Boots_18.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Boots_19.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Boots_20.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                你需要一張紅色的單面色紙
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Boots_21.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Boots_22.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+<div class="modal" id="Advent1204" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 04</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1203" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:Gift
+          </p>
+          <p class="subtitle is-7">
+            去去憂鬱走，Blue Monday 送你 100CP！
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1205" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-8">
+          <figure class="image">
+            <img class="is-small" src="img/content-giftS.png" alt="">
+          </figure>
+        </div>
+        <div class="column is-9">
+          <p class="title is-5 has-text-centered">
+            等 iPhone X 也要集 CP
+          </p>
+          <p class="subtitle is-7 paddown">
+            在 iX:Panel 問卷網站填問卷累積 CP，<strong>集滿 5000CP 就可以換 500 現金</strong>，今天簽到就送你 100CP，立馬登入領取吧！（每人限領一次）
+          </p>
+          <div class="has-text-centered">
+            <a class="button is-warning"href="#">GO</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+
+<div class="modal" id="Advent1205" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 05</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+
+      <div class="columns is-multiline is-centered is-mobile">
+          <div class="column is-1 has-text-centered paddown">
+              <a href="#Advent1204" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+          </div>
+          <div class="column is-10 has-text-centered">
+            <p class="title is-4">
+              iX:Game
+            </p>
+            <p class="subtitle is-7">
+              超實用！為選擇困難的你特別企劃<3
+            </p>
+          </div>
+          <div class="column is-1 has-text-centered paddown">
+            <a href="#Advent1206" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+          </div>
+          <div class="column is-12 has-text-centered">
+            <p class="title is-1" id="giftSelector">
+
+            </p>
+          </div>
+          <div class="column is-10 has-text-centered">
+            <p class="title is-5">
+              交換禮物選擇機
+            </p>
+            <p class="subtitle is-7 paddown">
+              在心裡默念送禮對象的名字三次，按下按鈕
+            </p>
+            <a class="button is-warning" onclick="myFunction()">請幫我選</a>
+          </div>
+        </div>
+      </section>
+      <footer class="modal-card-foot">
+      </footer>
+      <script>
+      function myFunction() {
+         var gifts = ["毛衣","機票","毛帽","圍巾","垃圾桶","隨身杯","乳液","鋼筆","世界地圖","襪子","手機殼","托特包","紅酒","急救藥箱","口琴","拼圖","檯燈","藍芽喇叭","三明治機","觸控手套","電影票","鑄鐵鍋","睡袋","護手霜","不鏽鋼吸管","桌遊","維他命","吹風機","皮夾","行動電源","啤酒一手","威士忌","手錶","隨身咖啡機","電鍋","滑板","多肉植物","懶人手機架","名片夾","著色本","隨身卡拉OK","圍裙","安全帽","雨衣","牛排","拖鞋","麵包","太陽眼鏡","體重計","懶人毯"];
+         document.getElementById('giftSelector').innerHTML = gifts[getRndInteger(0,50)];}
+      function getRndInteger(min, max) {
+              return Math.floor(Math.random() * (max - min)) + min;}
+      </script>
+      </div>
+</div>
+
+
+<div class="modal" id="Advent1206" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 06</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1205" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:Mission
+          </p>
+          <p class="subtitle is-7">
+            完成任務提高抽獎機率一倍，離 iPhone X 再近一點！
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1207" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-8">
+          <div class="fb-post" data-href="{https://www.facebook.com/iXPanel.tw/posts/1975442799138962}"></div>
+          <figure class="image is-hidden-touch is-hidden-desktop">
+            <img src="img/content-FB.png" alt="">
+          </figure>
+        </div>
+        <div class="column is-9">
+          <div class="title is-5 has-text-centered">
+            臉書集氣任務
+          </div>
+          <div class="subtitle is-7 paddown">
+            在上面貼文裡，tag 一位朋友並留言「<em>iX:Panel 聖誕老人送 iPhone X，@_________ 幫我集氣換手機！</em>」
+          </div>
+          <div class="has-text-centered">
+            <a class="button is-link"href="#">我揪</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot"></footer>
+  </div>
+</div>
+
+<div class="modal" id="Advent1207" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 07</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1206" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:Gift
+          </p>
+          <p class="subtitle is-7">
+            送你「iX:Panel抽抽樂」抽獎券
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1208" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-8">
+          <figure class="image">
+            <img class="is-small" src="img/content-raffle.png" alt="">
+          </figure>
+        </div>
+        <div class="column is-9">
+          <div class="title is-5 has-text-centered">
+            抽 iPhone 也抽 CP
+          </div>
+          <div class="subtitle is-7 paddown">
+            在 iX:Panel 問卷網站填問卷累積 CP，集滿 5000CP 就可以換 500 現金，今天簽到就送你送你「iX:Panel抽抽樂」抽獎券一張，網站月月開獎最高可抽 2500CP，立馬登入領取吧！每人每天限領一次，在本活動頁登入後，按下面 GO 按鈕領取～
+          </div>
+          <div class="has-text-centered">
+            <a class="button is-warning"href="#">GO</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+<div class="modal" id="Advent1208" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 08</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1207" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:Info
+          </p>
+          <p class="subtitle is-7">
+            聖誕冷數據：有 62.5% 的台灣人表示 <strong>不相信</strong> 有聖誕老人
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1209" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-8">
+          <figure class="image">
+            <img src="img/content-santa.png" alt="">
+          </figure>
+        </div>
+        <div class="column is-9">
+          <p class="title is-5 has-text-centered">
+            11 歲 1 個月又 9 天
+          </p>
+          <p class="subtitle is-7 paddown">
+            11y1m9d，這不是哪個寶寶的成長日記，是台灣人平均開始不再相信有聖誕老人的年紀。我們訪問了 2278 位網友，逾六成表示他們「早就」不信這套。不過相反的，也有 37.5% 的純真網友表示他們相信有聖誕老人，根據調查，我反正信了，你呢？
+          </p>
+        </div>
+        <div class="column is-12 has-text-centered paddown">
+          <p class="subtitle is-7">
+            Base: 全體受訪者 2278 人、不相信有聖誕老人的受訪者 1410 人<br>
+            創市際市場研究顧問，聖誕節小調查 Nov. 2017
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+<div class="modal" id="Advent1209" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 09</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1208" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:Trivia
+          </p>
+          <p class="subtitle is-7">
+            你知道加泰隆尼亞的聖誕便便木頭嗎？
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1210" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-8">
+          <figure class="image">
+            <img src="img/content-tio.png" alt="">
+          </figure>
+        </div>
+        <div class="column is-9">
+          <div class="title is-5 has-text-centered">
+            聖誕冷知識 Tío de Nadal
+          </div>
+          <p class="subtitle is-7 paddown">
+            加泰隆尼亞人會在家裡擺一塊木頭叫 Tío de Nadal（直譯為：聖誕的叔叔）還幫他蓋上毯子，在聖誕節當天，他們會一邊唱著這首歌，一邊用棍子打這塊木頭，叫他「拉」出禮物來：
+          </p>
+          <p class="title is-7 has-text-centered padTitle">
+            Caga tió, <br>
+            tió 快便便 <br>
+            caga torró, <br>
+            拉些 torró（像牛軋糖的傳統點心）來!! <br>
+            avellanes i mató, <br>
+            拉些榛果和 mató（一種羊奶和牛奶混合的傳統起司）<br>
+            si no cagues bé <br>
+            你不好好大便的話 <br>
+            et daré un cop de bastó. <br>
+            我就拿棍子揍你 <br>
+            caga tió! <br>
+            tió 大便吧！ <br>
+          </p>
+        </div>
+        <div class="column is-12 has-text-centered">
+          <p class="subtitle is-7">
+            引用來源：<a href="https://en.wikipedia.org/wiki/Tió_de_Nadal" target="_blank">Tió de Nadal - Wikipedia</a>
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+<div class="modal" id="Advent1210" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 10</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1209" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:Survey
+          </p>
+          <p class="subtitle is-7">
+            嘿，今年跨年有什麼計劃嗎？快跟我們說～
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1211" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-8">
+          <figure class="image">
+            <img src="img/content-Survey.png" alt="">
+          </figure>
+        </div>
+        <div class="column is-9">
+          <p class="title is-5 has-text-centered">
+            問卷暖身運動
+          </p>
+          <p class="subtitle is-7 paddown">
+            每一天你都會作出大大小小的決定，而我們想知道你怎麼想，和 iX:Panel 分享你的想法，每一次都能得到 CP 點數或是「iX:Panel抽抽樂」抽獎券，現在就試試看？登入後點擊下面的「GO」按鈕，就能看到你能夠填寫的問卷喲！
+          </p>
+        </div>
+        <div class="column is-12 has-text-centered paddown">
+          <div class="has-text-centered">
+            <a class="button is-warning"href="https://www.ixpanel.com/index.jsp">GO</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+<div class="modal" id="Advent1211" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 11</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1210" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:Info
+          </p>
+          <p class="subtitle is-7">
+            聖誕冷數據：台灣人認為聖誕大餐應該是多少錢？
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1212" data-toggle="modal" data-dismiss="modal" onclick="startGame()"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-8">
+          <figure class="image">
+            <a href="#" target="_blank">
+              <img src="img/content-xmasMeal.png" alt="">
+            </a>
+          </figure>
+        </div>
+        <div class="column is-9">
+          <p class="title is-5 has-text-centered">
+            1,121 元
+          </p>
+          <p class="subtitle is-7 paddown">
+            台灣人的聖誕大餐平均為一千一百二十一塊錢：可以買十二個排骨便當、搭高鐵可以從南港到嘉義、可以為即將到來的 iPhone X 買到一個漂亮的手機殼，但是與伴侶、家人一同渡過的美好時光，無價。
+          </p>
+        </div>
+        <div class="column is-12 has-text-centered paddown">
+          <p class="subtitle is-7">
+            Base: 認為聖誕節一定要吃大餐的受訪者 891 人<br>
+            創市際市場研究顧問，聖誕節小調查 Nov. 2017
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+<div class="modal" id="Advent1212" tabindex="-1" aria-hidden="true" >
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 12</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1211" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:Game
+          </p>
+          <p class="subtitle is-7">
+            飛天聖誕禮物
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1213" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-12 has-text-centered" id="startGame">
+        </div>
+        <div class="column is-12 has-text-centered">
+          <button class="button is-warning" onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)" ontouchstart="accelerate(-0.2)" ontouchend="accelerate(0.05)">飛吧</button>
+          <p class="subtitle is-7 paddownS">
+            點擊按鈕讓禮物飛起來，小心不要撞牆...
+          </p>
+        </div>
+        <div class="column is-12 has-text-centered">
+          <p class="subtitle is-7">原始作者：<a href="https://www.w3schools.com/graphics/" target="_blank">W3C School</a></p>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+
+<div class="modal" id="Advent1213" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 13</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1212" data-toggle="modal" data-dismiss="modal" onclick="startGame()"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:Mission
+          </p>
+          <p class="subtitle is-7">
+            完成臉書任務，完成任務提高抽獎機率一倍
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1214" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-12">
+          <figure class="image">
+            <img src="img/content-FB.png" alt="">
+          </figure>
+        </div>
+        <div class="column is-10">
+          <div class="title is-6 has-text-centered">
+            請在上面貼文 Tag 你的三位好友
+          </div>
+          <div class="subtitle is-7 has-text-centered paddown">
+            說說祝福的話 <br>
+            講講內心的旁白 <br>
+            然後第三行 <br>
+          </div>
+        </div>
+        <div class="column is-12 has-text-centered">
+          <p class="subtitle is-7">//////</p>
+        </div>
+      </div>
+
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+<div class="modal" id="Advent1214" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 14</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1213" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:Gift
+          </p>
+          <p class="subtitle is-7">
+            送你「iX:Panel抽抽樂」抽獎券
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1208" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-8">
+          <figure class="image">
+            <img class="is-small" src="img/content-raffle.png" alt="">
+          </figure>
+        </div>
+        <div class="column is-9">
+          <div class="title is-5 has-text-centered">
+            抽 iPhone 也抽 CP
+          </div>
+          <div class="subtitle is-7 paddown">
+            在 iX:Panel 問卷網站填問卷累積 CP，集滿 5000CP 就可以換 500 現金，今天簽到就送你送你「iX:Panel抽抽樂」抽獎券一張，網站月月開獎最高可抽 2500CP，立馬登入領取吧！每人限領一次，在本活動頁登入後，按下面 GO 按鈕領取～
+          </div>
+          <div class="has-text-centered">
+            <a class="button is-warning"href="#">GO</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+<div class="modal" id="Advent1215" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 15</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1214" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:Info
+          </p>
+          <p class="subtitle is-7">
+            聖誕冷數據：交換禮物是要換幾次？
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1216" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-10">
+          <figure class="image">
+            <img src="img/content-xmasTree.png" alt="">
+          </figure>
+        </div>
+        <div class="column is-10">
+          <div class="title is-6 has-text-centered">
+            平均會玩 1.55 次交換禮物
+          </div>
+          <div class="subtitle is-7 has-text-centered paddown">
+            認為玩交換禮物應該訂在 383 元<br>
+          </div>
+        </div>
+        <div class="column is-12 has-text-centered">
+          <div class="column is-12 has-text-centered paddown">
+            <p class="subtitle is-7">
+              Base: 認為聖誕節一定要交換禮物的受訪者 531 人<br>
+              創市際市場研究顧問，聖誕節小調查 Nov. 2017
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+<div class="modal" id="Advent1216" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 16</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1215" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:DIY
+          </p>
+          <p class="subtitle is-7">
+            空虛寂寞覺得冷來杯熱紅酒
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1217" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-10">
+          <figure class="image">
+            <a href="#" target="_blank">
+              <img src="https://blog-001.west.edge.storage-yahoo.jp/res/blog-d3-c5/bettymam0304/folder/1481549/38/55933438/img_0?1481178299" alt="">
+            </a>
+          </figure>
+        </div>
+        <div class="column is-10">
+          <div class="title is-6 has-text-centered">
+            紅酒一瓶
+          </div>
+          <div class="subtitle is-7 has-text-centered paddown">
+            想要喝一箱也沒有人會反對你 <br>
+            來作個深呼吸輕鬆好玩活潑不要有壓力 <br>
+          </div>
+        </div>
+        <div class="column is-12 has-text-centered">
+          <p class="help">引用來源：<a href="https://blogs.yahoo.co.jp/bettymam0304/55933438.html">折り紙サンタさんを作ろう～♪</a></p>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+
+<div class="modal" id="Advent1217" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 17</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1216" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:Trivia
+          </p>
+          <p class="subtitle is-7">
+            紅衣紅帽大鬍子的胖胖聖誕老人哪來的？
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1218" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-10">
+          <figure class="image">
+            <img src="https://thisisnotadvertising.files.wordpress.com/2012/12/coca-cola-art_christmas_santa12.jpg?w=590&h=399" alt="">
+          </figure>
+        </div>
+        <div class="column is-10">
+          <div class="title is-6 has-text-centered">
+            居然是可口可樂
+          </div>
+          <div class="subtitle is-7 paddown">
+            1931 年，可口可樂找上當年已是業界好手的插畫師 Haddon Sundblom 繪製他們新一季的廣告，Sundblom 參考了一首關於聖誕節的詩 "A Visit from St. Nicholas" 把聖誕老人塑造成一位友善、溫暖而深具人性的角色，結果廣告一推出之後深受大眾喜愛，影響力之大，甚至定型了現代人心目中聖誕老人的模樣。
+          </div>
+          <p class="help">引用來源：<a href="https://thisisnotadvertising.wordpress.com/2012/12/14/haddon-sundblom-for-coca-cola-the-man-who-painted-christmas/">Haddon Sundblom for Coca-Cola – The Man Who Painted Christmas</a></p>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+<div class="modal" id="Advent1218" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 18</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1217" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:Gift
+          </p>
+          <p class="subtitle is-7">
+            送你「iX:Panel抽抽樂」抽獎券
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1208" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-8">
+          <figure class="image">
+            <img class="is-small" src="img/content-raffle.png" alt="">
+          </figure>
+        </div>
+        <div class="column is-9">
+          <div class="title is-5 has-text-centered">
+            抽 iPhone 也抽 CP
+          </div>
+          <div class="subtitle is-7 paddown">
+            在 iX:Panel 問卷網站填問卷累積 CP，集滿 5000CP 就可以換 500 現金，今天簽到就送你送你「iX:Panel抽抽樂」抽獎券一張，網站月月開獎最高可抽 2500CP，立馬登入領取吧！每人每天限領一次，在本活動頁登入後，按下面 GO 按鈕領取～
+          </div>
+          <div class="has-text-centered">
+            <a class="button is-warning"href="#">GO</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+<div class="modal" id="Advent1219" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 19</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1218" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:Game
+          </p>
+          <p class="subtitle is-7">
+            小遊戲趴兔，點擊圖片之後開始！
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1220" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-12">
+          <figure class="image">
+            <a href="http://play-dot-to.com" target="_blank">
+              <img src="img/content-dotGame.png" alt="">
+            </a>
+          </figure>
+        </div>
+        <div class="column is-10">
+          <div class="title is-6 has-text-centered">
+            麋鹿薑餅人聖誕老人
+          </div>
+          <div class="subtitle is-7 has-text-centered paddown">
+            第一行如果還滿長的話後面就不用接 <br>
+            第二行在這裡 <br>
+            然後第三行 <br>
+          </div>
+        </div>
+        <div class="column is-12 has-text-centered paddown">
+          <p class="subtitle is-7">原始作者：Nathan Gordon、Pascal Van De Haar</p>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+
+<div class="modal" id="Advent1220" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 20</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1219" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:Mission
+          </p>
+          <p class="subtitle is-7">
+            完成臉書任務，完成任務提高抽獎機率一倍
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1221" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-7">
+          <figure class="image">
+            <img src="img/content-FB.png" alt="">
+          </figure>
+        </div>
+        <div class="column is-10">
+          <div class="title is-5 has-text-centered">
+            好康鬥相報
+          </div>
+          <div class="subtitle is-7 paddown">
+            這麼酷的活動，當然要報給好朋友知道，點擊下面按鈕分享，貼到你的臉書牆上、設定公開，再提高抽獎機率一倍，我的老天鵝啊，你離 iPhone X 又更近了！
+          </div>
+          <div class="">
+            <a class="button is-link"href="https://www.facebook.com/sharer/sharer.php?u=https://www.ixpanel.com/activity/2017/dec/iXmas.jsp">點我分享</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot"></footer>
+  </div>
+</div>
+
+<div class="modal" id="Advent1221" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 21</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1220" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:DIY
+          </p>
+          <p class="subtitle is-7">
+            自己的老人自己作(?)召喚你的聖誕老人！
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1222" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-9">
+          <figure class="image">
+            <img src="img/xmasOrigami_Santa_00.png" alt="">
+          </figure>
+        </div>
+        <div class="column is-10">
+          <div class="title is-5 has-text-centered">
+            放桌上向聖誕老人發射念力
+          </div>
+          <div class="columns is-multiline">
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Santa_01.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                準備一張色紙
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Santa_02.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                上下左右與對角，摺出條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Santa_03.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                這裡將會是靴口的白邊
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Santa_04.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                另外一側
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Santa_05.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Santa_06.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Santa_07.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                準備一張色紙
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Santa_08.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Santa_09.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Santa_10.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                你需要一張紅色的單面色紙
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Santa_11.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Santa_12.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Santa_13.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                準備一張色紙
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Santa_14.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Santa_15.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Santa_16.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                你需要一張紅色的單面色紙
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Santa_17.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Santa_18.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Santa_19.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Santa_20.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                你需要一張紅色的單面色紙
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Santa_21.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+            <div class="column is-4-desktop is-12-touch">
+              <figure class="image">
+                <img src="img/xmasOrigami_Santa_22.png" alt="">
+              </figure>
+              <p class="subtitle is-7 has-text-centered paddownS">
+                對折然後對折然後出現八條線
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+<div class="modal" id="Advent1222" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 22</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1221" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:Info
+          </p>
+          <p class="subtitle is-7">
+            聖誕冷數據：台灣人的聖誕節怎麼過？
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1223" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-10">
+          <figure class="image">
+            <img src="img/content-santa.png" alt="">
+          </figure>
+        </div>
+        <div class="column is-10">
+          <div class="title is-6 has-text-centered">
+            59％ 表示自己會跟家人一起過
+          </div>
+          <div class="subtitle is-7 has-text-centered paddown">
+            所以沒有另一半的單身朋友們別傷心<br>
+            你真的只有你自己... XDDDD<br>
+          </div>
+        </div>
+        <div class="column is-12 has-text-centered paddown">
+          <p class="subtitle is-7">
+            Base: 全體受訪者 2278 人<br>
+            創市際市場研究顧問，聖誕節小調查 Nov. 2017
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+<div class="modal" id="Advent1223" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 23</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1222" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:Questionnarie
+          </p>
+          <p class="subtitle is-7">
+            跨年旅遊小調查
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1224" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-10">
+          <figure class="image">
+            <a href="http://play-dot-to.com" target="_blank">
+              <img src="img/content-dotGame.png" alt="">
+            </a>
+          </figure>
+        </div>
+        <div class="column is-10">
+          <div class="title is-6 has-text-centered">
+            本日主題這裡擺些字
+          </div>
+          <div class="subtitle is-7 has-text-centered paddown">
+            第一行如果還滿長的話後面就不用接 <br>
+            第二行在這裡 <br>
+            然後第三行 <br>
+          </div>
+        </div>
+        <div class="column is-12 has-text-centered">
+          <p class="subtitle is-7">原始作者：<a href="https://en.wikipedia.org/wiki/Tió_de_Nadal">Nathan Gordon</a>、<a href="http://www.behance.net/PascalSetSail">Pascal Van De Haar</a></p>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+<div class="modal" id="Advent1224" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 24</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1223" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:Gift
+          </p>
+          <p class="subtitle is-7">
+            5000CP 換 500 現金，今天直接送你 500CP
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1225" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-6">
+          <figure class="image">
+            <img class="is-small" src="img/content-giftL.png" alt="">
+          </figure>
+        </div>
+        <div class="column is-12 has-text-centered">
+          <div class="subtitle is-7 paddownS">
+            每人每天限領一次，立刻登入 iX:Panel 領取
+          </div>
+          <div class="">
+            <a class="button is-warning"href="#">GO</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+<div class="modal" id="Advent1225" tabindex="-1" aria-hidden="true">
+  <div class="modal-background" data-dismiss="modal"></div>
+  <div class="modal-card modal-wide" style="margin-top:4%">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Dec. 25</p>
+      <button class="delete is-pulled-right" data-dismiss="modal" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="columns is-multiline is-centered is-mobile">
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1224" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-left fa-2x"></i></a>
+        </div>
+        <div class="column is-10 has-text-centered">
+          <p class="title is-4">
+            iX:Winner
+          </p>
+          <p class="subtitle is-7">
+            呵、呵、呵，聖誕老人把 iPhone X 送給了誰呢？
+          </p>
+        </div>
+        <div class="column is-1 has-text-centered paddown">
+          <a href="#Advent1201" data-toggle="modal" data-dismiss="modal"><i class="fa fa-angle-right fa-2x"></i></a>
+        </div>
+        <div class="column is-6">
+          <figure class="image">
+            <img class="is-small" src="img/iPhoneX.png" alt="">
+          </figure>
+        </div>
+        <div class="column is-9 has-text-centered">
+          <div class="subtitle is-7 paddownS">
+            若你不是那個人也沒關係，快到 iX:Panel 填問卷積點數，5000CP 換現金 500 元多積多換、有填有保庇。
+          </div>
+          <div class="">
+            <a class="button is-warning"href="#">GO</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+    </footer>
+  </div>
+</div>
+
+
+
+
+<!--- Footer --->
+<div class="footer">
+    <div class="content has-text-centered is-small">
+      <p>
+        Copyright © 2017 創市際市場研究顧問公司 InsightXplorer
+      </p>
+    </div>
+</div>
+
+
+<!--- Floppy Santa from W3C --->
+<script>
+
+var myGamePiece;
+var myObstacles = [];
+var myScore;
+
+function startGame() {
+    myGamePiece = new component(30, 30, "#d02c2c", 10, 0);
+    myGamePiece.gravity = 0.05;
+    myScore = new component("15px", "Consolas", "black", 100, 20, "text");
+    myGameArea.start();
+}
+
+var myGameArea = {
+    canvas : document.createElement("canvas"),
+    start : function() {
+        this.canvas.width = 300;
+        this.canvas.height = 270;
+        this.context = this.canvas.getContext("2d");
+        //document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        document.getElementById('startGame').appendChild(this.canvas);
+        this.frameNo = 0;
+        this.interval = setInterval(updateGameArea, 20);
+        },
+    clear : function() {
+        this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+}
+
+//function reset(){
+//    myGamePiece = undefined;
+//    myObstacles = [];
+//    myScore = "";
+//}
+
+function component(width, height, color, x, y, type) {
+    this.type = type;
+    if (type == "image") {
+      this.image = new Image();
+      this.image.src = color;
+    }
+    this.score = 0;
+    this.width = width;
+    this.height = height;
+    this.speedX = 0;
+    this.speedY = 0;
+    this.x = x;
+    this.y = y;
+    this.gravity = 0;
+    this.gravitySpeed = 0;
+    this.update = function() {
+    ctx = myGameArea.context;
+    if (this.type == "text") {
+        ctx.font = this.width + " " + this.height;
+        ctx.fillStyle = color;
+        ctx.fillText(this.text, this.x, this.y);
+    } else {
+        ctx.fillStyle = color;
+        ctx.fillRect(this.x, this.y, this.width, this.height);
+    }
+    }
+    this.newPos = function() {
+        this.gravitySpeed += this.gravity;
+        this.x += this.speedX;
+        this.y += this.speedY + this.gravitySpeed;
+        this.hitBottom();
+    }
+    this.hitBottom = function() {
+        var rockbottom = myGameArea.canvas.height - this.height;
+        if (this.y > rockbottom) {
+            this.y = rockbottom;
+            this.gravitySpeed = 0;
+        }
+    }
+    this.crashWith = function(otherobj) {
+        var myleft = this.x;
+        var myright = this.x + (this.width);
+        var mytop = this.y;
+        var mybottom = this.y + (this.height);
+        var otherleft = otherobj.x;
+        var otherright = otherobj.x + (otherobj.width);
+        var othertop = otherobj.y;
+        var otherbottom = otherobj.y + (otherobj.height);
+        var crash = true;
+        if ((mybottom < othertop) || (mytop > otherbottom) || (myright < otherleft) || (myleft > otherright)) {
+            crash = false;
+        }
+        return crash;
+    }
+}
+
+function updateGameArea() {
+    var x, height, gap, minHeight, maxHeight, minGap, maxGap;
+    for (i = 0; i < myObstacles.length; i += 1) {
+        if (myGamePiece.crashWith(myObstacles[i])) {
+            return;
+        }
+    }
+    myGameArea.clear();
+    myGameArea.frameNo += 1;
+    if (myGameArea.frameNo == 1 || everyinterval(150)) {
+        x = myGameArea.canvas.width;
+        minHeight = 20;
+        maxHeight = 200;
+        height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
+        minGap = 50;
+        maxGap = 200;
+        gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
+        myObstacles.push(new component(30, height, "green", x, 0));
+        myObstacles.push(new component(30, x - height - gap, "green", x, height + gap));
+    }
+    for (i = 0; i < myObstacles.length; i += 1) {
+        myObstacles[i].x += -1;
+        myObstacles[i].update();
+    }
+    myScore.text="飛行距離: " + myGameArea.frameNo + "km";
+    myScore.update();
+    myGamePiece.newPos();
+    myGamePiece.update();
+}
+
+function everyinterval(n) {
+    if ((myGameArea.frameNo / n) % 1 == 0) {return true;}
+    return false;
+}
+
+function accelerate(n) {
+    myGamePiece.gravity = n;
+}
+
+//function playAgain() {
+//     reset();
+//     startGame();
+//}
+</script>
+
 </body>
 </html>
