@@ -319,6 +319,16 @@ canvas {
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <!--- Facbook JavaScript SDK --->
+    <!--- comment --->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.11&appId=672998922793785';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <!--- embed --->
   <div id="fb-root"></div>
   <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -497,7 +507,6 @@ canvas {
   </div>
 </div>
 
-
 <!--- Grids Starts --->
 <div class="columns is-centered is-mobile is-multiline paddownS">
   <div class="column is-10 wht">
@@ -659,6 +668,8 @@ canvas {
     </div>
   </div>
 </div>
+
+<!--- Modal Content Starts --->
 <div class="modal" id="Advent1211" tabindex="-1" aria-hidden="true">
   <div class="modal-background" data-dismiss="modal"></div>
   <div class="modal-card modal-wide" style="margin-top:4%">
