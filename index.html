@@ -1,13 +1,274 @@
 <!doctype HTML>
 <html>
-<script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
-<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
-  <body style='margin : 0px; overflow: hidden;'>
-    <a-scene embedded arjs>
-  	<a-marker preset="hiro">
-            <a-box position='0 0.5 0' material='color: black;'></a-box>
-  	</a-marker>
-  	<a-entity camera></a-entity>
-    </a-scene>
-  </body>
+<head>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<script>
+  (function(d) {
+    var config = {
+      kitId: 'tfk2lym',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+<style>
+
+body {
+  background: #d02c2c;
+  background-image:
+  radial-gradient(#f7c652 .2vw, transparent 0),
+  radial-gradient(#f7c652 .2vw, transparent 0);
+  background-size: 80px 80px;
+  background-position: 0 0, 40px 40px;
+}
+
+.tk-source-han-sans-traditional{
+  font-family:"source-han-sans-traditional",sans-serif;
+}
+
+
+/* hover cross fade*/
+.cf img {
+  -webkit-transition: opacity 0s ease-in-out;
+  -moz-transition: opacity 0s ease-in-out;
+  -o-transition: opacity 0s ease-in-out;
+  transition: opacity 0s ease-in-out;
+}
+.cf img.top:hover {
+  opacity:0;
+}
+/* hover cross fade*/
+
+.paddown {
+  padding-top: 3%;
+}
+
+.padBoth {
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.padMenu {
+  padding-top: 17%;
+  padding-bottom: 17%;
+}
+
+.paddownS {
+  padding-top: 1%;
+}
+
+.padTitle {
+  padding-top: 6%;
+}
+
+.paddownL {
+  padding-top: 10%;
+}
+
+.padBtn {
+  padding-top: 11vw;
+}
+
+.footer {
+  background-color: transparent;
+  color: black;
+}
+
+.button {
+  border-radius: 30px;
+  padding-left: 1.8em;
+  padding-right: 1.8em;
+  height: 3em;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.button.is-small {
+  border-radius: 30px;
+  font-size: 0.6rem;
+}
+
+.pullDown {
+  color: #847d80;
+  margin-top: 55%;
+  margin-left: 21%;
+  margin-right: 20.5%;
+  pointer-events:none;
+}
+
+p.big {
+  line-height: 150%;
+}
+
+.button.is-link {
+  background-color: #3273dc;
+  color: white;
+  border: 2px solid black;
+}
+
+.button.is-link:hover, .button.is-link.is-hovered {
+  background-color: #276cda;
+  color: white;
+  border: 2px solid black;
+}
+
+.button.is-link:focus, .button.is-link.is-focused {
+  color: white;
+  border: 2px solid black;
+}
+
+.button.is-link:focus:not(:active), .button.is-link.is-focused:not(:active) {
+  -webkit-box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25);
+          box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25);
+}
+
+.button.is-link:active, .button.is-link.is-active {
+  background-color: #2366d1;
+  color: white;
+  border: 2px solid black;
+}
+
+.button.is-warning {
+  background-color: #f7c652;
+  color: black;
+  border: 2px solid black;
+}
+
+.button.is-warning:hover, .button.is-warning.is-hovered {
+  background-color: #efb834;
+  color: black;
+  border: 2px solid black;
+
+}
+
+.button.is-warning:focus, .button.is-warning.is-focused {
+  color: black;
+  border: 2px solid black;
+
+}
+
+.button.is-warning:focus:not(:active), .button.is-warning.is-focused:not(:active) {
+  -webkit-box-shadow: 0 0 0 0.125em rgba(255, 221, 87, 0.25);
+          box-shadow: 0 0 0 0.125em rgba(255, 221, 87, 0.25);
+}
+
+.button.is-warning:active, .button.is-warning.is-active {
+  background-color: #efb834;
+  color: black;
+  border: 2px solid black;
+}
+
+.modal-content,
+.modal-card {
+  margin: 0 auto;
+  max-height: calc(100vh - 160px);
+  overflow: auto;
+  position: relative;
+  width: 90%;
+}
+
+@media screen and (min-width: 769px), print {
+  .modal-content,
+  .modal-card {
+    margin: 0 auto;
+    overflow: auto;
+    max-height: calc(100vh - 100px);
+    max-width: 50%
+  }
+}
+
+.modal-background {
+  background-color: rgba(10, 10, 10, 0.4);
+}
+
+.modal-card-body {
+  border-left:  2px solid black;
+  border-right:  2px solid black;
+}
+
+.modal-card-title {
+  color: #363636;
+  font-size: 1rem;
+}
+
+
+.modal-card-head {
+  border-bottom: 0px;
+  border-top: 2px solid black;
+  border-left:  2px solid black;
+  border-right:  2px solid black;
+  background-color: white;
+  padding: 10px;
+}
+
+.modal-card-foot {
+  background-color: white;
+  -webkit-justify-content: center;
+          justify-content: center;
+  border-top: 0px;
+  border-bottom: 2px solid black;
+  border-left:  2px solid black;
+  border-right:  2px solid black;
+  padding: 20px;
+}
+
+.fa {
+  color: black;
+}
+
+.diviDer {
+  text-align: center;
+}
+
+.diviDer span {
+  display: inline-block;
+  position: relative;
+}
+
+.diviDer span::before,
+.diviDer span::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  border-top: 1px solid black;
+  top: 7px;
+  width: 15vw;
+}
+
+.diviDer span::before {
+  right: 100%;
+  margin-right: 2vw;
+}
+
+.diviDer span::after {
+  left: 100%;
+  margin-left: 2vw;
+}
+
+
+</style>
+
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<div class="columns is-centered is-mobile is-multiline">
+  <div class="column is-8 has-text-centered">
+    <a class="button is-link" href="#">FacebookSth</a>
+  </div>
+</div>
+
+  <!--- Footer --->
+  <div class="footer">
+      <div class="content has-text-centered is-small">
+        <p>
+          Copyright © 2018 創市際市場研究顧問公司 InsightXplorer
+        </p>
+      </div>
+  </div>
+
+</body>
 </html>
