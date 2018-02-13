@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="intelligentLife.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="carousel/carousel.min.js"></script>
 
@@ -62,147 +63,8 @@
 </script>
 
 </head>
+
 <style>
-/* carousel extension */
-  @import url("carousel/bulma-carousel.css");
-
-body, p, ol {
-  /*background: #FFF;*/
-  font-family:"source-han-sans-traditional", "Microsoft JhengHei", sans-serif;
-}
-
-/* hover cross fade*/
-.cf img {
-  -webkit-transition: opacity 0s ease-in-out;
-  -moz-transition: opacity 0s ease-in-out;
-  -o-transition: opacity 0s ease-in-out;
-  transition: opacity 0s ease-in-out;
-}
-.cf img.top:hover {
-  opacity:0;
-}
-
-/* padding Park */
-.padL {
-  padding-top: 10%;
-}
-.padM {
-  padding-top: 5%;
-}
-.padS {
-  padding-top: 2.5%;
-}
-.padBoth {
-  padding-top: 5%;
-  padding-bottom: 5%;
-}
-.padBothS {
-  padding-top: 3%;
-  padding-bottom: 1%;
-}
-.textPad {
-  padding: 18%;
-}
-
-/* customized styles */
-.footer {
-  background-color: transparent;
-  color: black;
-}
-.button {
-  border-radius: 80px;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  height: 5em;
-  font-weight: bold;
-}
-.fa {
-  color: #08a39f;
-}
-.stayBottom {
-  position: fixed;
-  right: 4vh;
-  z-index: 30;
-  bottom: 2vh;
-}
-.strokLeft {
-  border-left: 2px solid #ffc636;
-}
-.strokeBoth {
-  border-left: 2px solid #ffc636;
-  border-right: 2px solid #ffc636;
-}
-/* this site only*/
-.lanDING {
-  background-color: #08a39f;
-  background-image: url("img/titleBG.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-.GiFTs {
-  background-color: #ffc636;
-}
-.aboutUS {
-  background-color: #08a39f;
-}
-.RuLEs {
-  background-color: #10665a;
-}
-.grnTitle {
-  color: #10665a;
-}
-.orgTtitle {
-  color: #f97919;
-}
-.whtBG {
-  background-color: white;
-}
-.svg-icon {
-  display: inline-flex;
-  align-self: center;
-  position: relative;
-  height: 1em;
-  width: 1em;
-}
-.svg-icon svg {
-  height:1em;
-  width:1em;
-}
-.svg-icon.svg-baseline svg {
-  bottom: -0.19em;
-  position: absolute;
-}
-.goUP {
-  margin-top: -4px;
-}
-.goUPmore {
-  margin-top: -12px;
-}
-.ylwO {
-  background-image: url("img/yellowO.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-/*hard coded alt from originals*/
-.navbar {
-  background-color: rgba(0, 0, 0, 0);
-}
-.notification {
-  background-color: #6bc8c5;
-  border-radius: 15px;
-}
-a {
-  color: #10665a;
-  text-decoration: underline;
-}
-a:hover {
-  color: #f97919;
-}
-.sectionS {
-  padding: 2rem 2rem 1.3rem 2rem;
-}
 
 </style>
 
@@ -473,44 +335,50 @@ a:hover {
 
 
 
- <!-- sponsors -->
- <section class="section GiFTs">
-   <div class="columns is-centered is-mobile is-multiline">
-     <div class="column is-three-fifths-tablet is-10-mobile">
-       <p class="title is-6 orgTtitle">合作&贊助廠商</p>
-     </div>
-     <div class="column is-three-fifths is-12-mobile padS">
-       <div class="columns is-centered is-mobile is-multiline">
-         <div class="column is-3-tablet is-4-mobile">
-           <figure class="image">
-             <img src="https://pin.nxt.tw/img/sigmu.png" alt="">
-           </figure>
-         </div>
-         <div class="column is-1 is-hidden-mobile">
-
-         </div>
-         <div class="column is-3-tablet is-4-mobile">
-           <figure class="image padL">
-             <img src="https://www.thevideoink.com/wp-content/uploads/2018/01/oath-logo.png" alt="">
-           </figure>
-         </div>
-         <div class="column is-1 is-hidden-mobile">
-         </div>
-         <div class="column is-2-tablet is-hidden-mobile">
-           <figure class="image">
-             <img src="http://www.carrefour.com.tw/sites/default/files/public/Logo-123_0.png" alt="" style="height:80%; width:80%;">
-           </figure>
-         </div>
-         <div class="column is-4-mobile is-hidden-tablet goUPmore">
-           <figure class="image">
-             <img src="http://www.carrefour.com.tw/sites/default/files/public/Logo-123_0.png" alt="" style="height:70%; width:70%;">
-           </figure>
-         </div>
-
-       </div>
-     </div>
-   </div>
- </section>
+<!-- sponsors -->
+<section class="section GiFTs">
+  <div class="columns is-centered is-mobile is-multiline">
+    <div class="column is-three-fifths-tablet is-10-mobile">
+      <p class="title is-6 orgTtitle">合作&贊助廠商</p>
+    </div>
+    <div class="columns is-centered is-mobile is-multiline padS">
+      <div class="column is-8-tablet is-9-mobile padS box">
+        <div class="columns is-centered is-mobile is-multiline padS">
+          <div class="column is-12 is-hidden-desktop">
+          </div>
+          <div class="column is-3-tablet is-4-mobile">
+            <figure class="image">
+              <img src="https://pin.nxt.tw/img/sigmu.png" alt="" style="margin-left:0.5rem">
+            </figure>
+          </div>
+          <div class="column is-1 is-hidden-mobile">
+          </div>
+          <div class="column is-3-tablet is-4-mobile">
+            <figure class="image padL">
+              <img src="https://www.thevideoink.com/wp-content/uploads/2018/01/oath-logo.png" alt="">
+            </figure>
+          </div>
+          <div class="column is-1 is-hidden-mobile">
+          </div>
+          <div class="column is-2-tablet is-hidden-mobile">
+            <figure class="image">
+              <img src="http://www.carrefour.com.tw/sites/default/files/public/Logo-123_0.png" alt="" style="height:80%; width:80%;">
+            </figure>
+          </div>
+          <div class="column is-4-mobile is-hidden-tablet goUPmore">
+            <figure class="image">
+              <img src="http://www.carrefour.com.tw/sites/default/files/public/Logo-123_0.png" alt="" style="height:70%; width:70%;margin-left:0.5rem" >
+            </figure>
+          </div>
+        </div>
+        <div class="column is-12 is-hidden-mobile">
+        </div>
+      </div>
+      <div class="column is-12 is-hidden-mobile">
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <!-- about us -->
