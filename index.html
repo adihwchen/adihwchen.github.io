@@ -1,23 +1,21 @@
-<!doctype HTML>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
+
+  <title>厭世單位</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="intelligentLife.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="carousel/carousel.min.js"></script>
 
-  <title>iX:Panel 微智慧生活</title>
-
-  <meta property="og:url" content="https://www.ixpanel.com/activity/2018/mar/smartlife.jsp">
+  <meta property="og:url" content="https://www.ixpanel.com/activity/2017/dec/iXmas.jsp">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="微智慧生活 - 測生活小聰明抽好禮">
-  <meta property="og:image" content="https://c1.staticflickr.com/5/4759/40128906272_c1138cff7c_o.png">
+  <meta property="og:title" content="iX:Mas 一起倒數聖誕抽 iPhone X - iX:Panel 問卷網站">
+  <meta property="og:image" content="https://www.ixpanel.com/activity/2017/dec/img/fbBanner.png">
   <meta property="og:image:type" content="image/png">
-  <meta property="og:description" content="你的日常生活到底有多智慧，快來測測你是哪種小聰明？">
+  <meta property="og:description" content="聖誕老人準備了一支 iPhone X 要送給你，天天開彩蛋倒數開獎">
 
   <link rel="apple-touch-icon" sizes="57x57" href="favi/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="favi/apple-icon-60x60.png">
@@ -38,453 +36,545 @@
   <meta name="theme-color" content="#ffffff">
 
 
-  <!-- scrolling -->
-<script>
-  $(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-      // Store hash
-      var hash = this.hash;
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-});
-</script>
-
 </head>
-
 <style>
+
+body, p, ol {
+  font-family:"source-han-sans-traditional", "Microsoft JhengHei", sans-serif;
+}
+
+
+.stayBottom {
+  position: fixed;
+  left: 2vw;
+  z-index: 80;
+  bottom: 3vh;
+}
+
+/* padding Park */
+.padL {
+  padding-top: 10%;
+}
+.padM {
+  padding-top: 5%;
+}
+.padS {
+  padding-top: 2.5%;
+}
+.padXS {
+  padding-top: 0.5%;
+}
+.padBoth {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+.padBothS {
+  padding-top: 3%;
+  padding-bottom: 1%;
+}
+.textPad {
+  padding-top: 30%;
+}
+
+/* margin trailer */
+.goUP {
+  margin-top: -4px;
+}
+.goUPmore {
+  margin-top: -12px;
+}
+.goUPfurther {
+  margin-top: -18px;
+}
+
+/* this site only*/
+.sideBar {
+  height: 100vh;
+  width: 25vw;
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  padding: 2%;
+}
+
+.picFrame {
+  border: 1px solid black;
+}
+
+.moreSpace {
+  line-height: 160%;
+}
+
+/* icon and SVG setups */
+.fa {
+  color: black;
+}
+
+
+/*hard coded alt from originals*/
+.footer {
+  background-color: rgba(0,0,0,0);
+}
+/* modal */
+.modal {
+  /*align-items: center;*/
+  display: none;
+  justify-content: center;
+  overflow: hidden;
+  position: fixed;
+  z-index: 40;
+  width: 100%;
+}
+
+.modalBG {
+  background-color: rgba(255, 255, 255, 1);
+  width:74.5%;
+  height: 100%;
+  margin-left:25.5%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -ms-overflow-x: hidden;
+}
+
+/* navigation burger*/
+.navbar {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.navbar-menu {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.navbar-item,
+.navbar-link {
+  color: white;
+}
+
+a.navbar-item:hover, a.navbar-item.is-active,
+.navbar-link:hover,
+.navbar-link.is-active {
+  background-color: rgba(255, 255, 255, 1);
+  color: black;
+}
+
+.navbar-tabs {
+  -webkit-overflow-scrolling: touch;
+  max-width: 100vw;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+
+.navbar-burger {
+  cursor: pointer;
+  display: block;
+  height: 5rem;
+  position: relative;
+  width: 5rem;
+  margin-left: auto;
+}
+
+.navbar-burger span {
+  background-color: currentColor;
+  display: block;
+  height: 3px;
+  left: calc(50% - 8px);
+  position: absolute;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  transition-duration: 86ms;
+  transition-property: background-color, opacity, -webkit-transform;
+  transition-property: background-color, opacity, transform;
+  transition-property: background-color, opacity, transform, -webkit-transform;
+  transition-timing-function: ease-out;
+  width: 20px;
+}
+
+/* navigation burger*/
 
 </style>
 
 <body>
-<!-- adobe typekit-->
-  <script>
-    (function(d) {
-      var config = {
-        kitId: 'tfk2lym',
-        scriptTimeout: 3000,
-        async: true
-      },
-      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-    })(document);
-  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<!-- back to TOP-->
-<div class="stayBottom has-text-centered">
-  <span class="icon is-large has-text-black">
-    <a href="#top" style="text-decoration:none">
-      <i class="fa fa-2x fa-arrow-up has-text-white" aria-hidden="true"></i>
-      <p class="title is-7 has-text-white" >TOP</p>
-    </a>
-  </span>
+<!-- adobe typekit -->
+<script>
+  (function(d) {
+    var config = {
+      kitId: 'tfk2lym',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+<!-- adobe typekit -->
+
+<!-- facebook embed -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0&appId=672998922793785&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- facebook embed -->
+
+
+<!-- content starts -->
+
+<div class="container is-fluid padS">
+  <div class="columns is-centered is-mobile">
+    <div class="column is-2">
+      <div class="sideBar container">
+        <!--stay top btns-->
+          <div class="columns is-mobile is-multiline stayBottom">
+            <div class="column is-10">
+              <p class="subtitle is-6">misanthropy</br>[mɪˋzænθrəpɪ]</p>
+              <p class="subtitle is-7">n.</br>不願與人來往；厭世</p>
+            </div>
+            <div class="column is-12 padL">
+
+            </div>
+            <div class="column is-11 is-pulled-left is-hidden-mobile">
+              <a data-toggle="modal" data-target="#about" href="#" class="button is-small is-black">關於</a>
+              <a data-toggle="modal" data-target="#help" href="#" class="button is-small is-black">救命</a>
+              <a data-toggle="modal" data-target="#facebook" href="#" class="button is-small is-black">臉書</a>
+            </div>
+            <nav class="navbar is-transparent is-hidden-tablet" role="navigation" aria-label="main navigation">
+              <div class="navbar-burger burger" data-target="navMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="navbar-menu is-transparent" id="navMenu">
+                <a data-toggle="modal" data-target="#about" href="#" href="#" class="navbar-item has-text-centered">關於</a>
+                <a data-toggle="modal" data-target="#help" href="#" class="navbar-item has-text-centered">救命</a>
+                <a data-toggle="modal" data-target="#facebook" href="#" class="navbar-item has-text-centered">臉書</a>
+              </div>
+
+            </nav>
+          </div>
+        <!--end of stay top btns -->
+        <div class="">
+          <p class="subtitle is-1 has-text-weight-light">厭</br>世</br>單</br>位</p>
+        </div>
+      </div>
+    </div>
+    <div class="column is-1-desktop is-7-mobile">
+    </div>
+    <div class="column is-9">
+      <div class="columns is-mobile is-multiline">
+        <div class="column is-4-desktop is-6-tablet is-10-mobile">
+          <a data-toggle="modal" data-target="#dayBlue">
+            <figure class="image">
+              <p class="is-overlay has-text-centered">Grid 1</p>
+              <img class="picFrame" src="img/placeHolder_1.png" alt="">
+            </figure>
+          </a>
+        </div>
+        <div class="column is-4-desktop is-6-tablet is-10-mobile">
+          <a data-toggle="modal" data-target="#angryCounts">
+            <figure class="image">
+              <p class="is-overlay has-text-centered">Grid 2</p>
+              <img class="picFrame" src="img/placeHolder_2.png" alt="">
+            </figure>
+          </a>
+        </div>
+        <div class="column is-4-desktop is-6-tablet is-10-mobile">
+          <a data-toggle="modal" data-target="#overTime">
+            <figure class="image">
+              <p class="is-overlay has-text-centered">Grid 3</p>
+              <img class="picFrame" src="img/placeHolder_3.png" alt="">
+            </figure>
+          </a>
+        </div>
+        <div class="column is-4-desktop is-6-tablet is-10-mobile">
+          <a data-toggle="modal" data-target="#gotRaised">
+            <figure class="image">
+              <p class="is-overlay has-text-centered">Grid 4</p>
+              <img class="picFrame" src="img/placeHolder_1.png" alt="">
+            </figure>
+          </a>
+        </div>
+        <div class="column is-4-desktop is-6-tablet is-10-mobile">
+          <a data-toggle="modal" data-target="#longMeeting">
+            <figure class="image">
+              <p class="is-overlay has-text-centered">Grid 5</p>
+              <img class="picFrame" src="img/placeHolder_2.png" alt="">
+            </figure>
+          </a>
+        </div>
+        <div class="column is-4-desktop is-6-tablet is-10-mobile">
+          <a data-toggle="modal" data-target="#lowWage">
+            <figure class="image">
+              <p class="is-overlay has-text-centered">Grid 6</p>
+              <img class="picFrame" src="img/placeHolder_3.png" alt="">
+            </figure>
+          </a>
+        </div>
+        <div class="column is-4-desktop is-6-tablet is-10-mobile">
+          <a data-toggle="modal" data-target="#lifeWinners">
+            <figure class="image">
+              <p class="is-overlay has-text-centered">Grid 7</p>
+              <img class="picFrame" src="img/placeHolder_1.png" alt="">
+            </figure>
+          </a>
+        </div>
+        <div class="column is-4-desktop is-6-tablet is-10-mobile">
+          <a data-toggle="modal" data-target="#tooBusy">
+            <figure class="image">
+              <p class="is-overlay has-text-centered">Grid 8</p>
+              <img class="picFrame" src="img/placeHolder_2.png" alt="">
+            </figure>
+          </a>
+        </div>
+        <div class="column is-4-desktop is-6-tablet is-10-mobile">
+          <a data-toggle="modal" data-target="#ageGap">
+            <figure class="image">
+              <p class="is-overlay has-text-centered">Grid 9</p>
+              <img class="picFrame" src="img/placeHolder_3.png" alt="">
+            </figure>
+          </a>
+        </div>
+        <div class="column is-4-desktop is-6-tablet is-10-mobile">
+          <a data-toggle="modal" data-target="#farAway">
+            <figure class="image">
+              <p class="is-overlay has-text-centered">Grid 10</p>
+              <img class="picFrame" src="img/placeHolder_1.png" alt="">
+            </figure>
+          </a>
+        </div>
+        <div class="column is-4-desktop is-6-tablet is-10-mobile">
+          <a data-toggle="modal" data-target="#bottleNeck">
+            <figure class="image">
+              <p class="is-overlay has-text-centered">Grid 11</p>
+              <img class="picFrame" src="img/placeHolder_2.png" alt="">
+            </figure>
+          </a>
+        </div>
+        <div class="column is-4-desktop is-6-tablet is-10-mobile">
+          <a data-toggle="modal" data-target="#nobodyWants">
+            <figure class="image">
+              <p class="is-overlay has-text-centered">Grid 12</p>
+              <img class="picFrame" src="img/placeHolder_3.png" alt="">
+            </figure>
+          </a>
+        </div>
+        <div class="column is-4-desktop is-6-tablet is-10-mobile">
+          <a data-toggle="modal" data-target="#noFriend">
+            <figure class="image">
+              <p class="is-overlay has-text-centered">Grid 10</p>
+              <img class="picFrame" src="img/placeHolder_1.png" alt="">
+            </figure>
+          </a>
+        </div>
+        <div class="column is-4-desktop is-6-tablet is-10-mobile">
+          <a data-toggle="modal" data-target="#socialAddicted">
+            <figure class="image">
+              <p class="is-overlay has-text-centered">Grid 11</p>
+              <img class="picFrame" src="img/placeHolder_2.png" alt="">
+            </figure>
+          </a>
+        </div>
+        <div class="column is-4-desktop is-6-tablet is-10-mobile">
+          <a data-toggle="modal" data-target="#nobodyCalled">
+            <figure class="image">
+              <p class="is-overlay has-text-centered">Grid 12</p>
+              <img class="picFrame" src="img/placeHolder_3.png" alt="">
+            </figure>
+          </a>
+        </div>
+        <div class="column is-4-desktop is-6-tablet is-10-mobile">
+          <a data-toggle="modal" data-target="#noInternet">
+            <figure class="image">
+              <p class="is-overlay has-text-centered">Grid 10</p>
+              <img class="picFrame" src="img/placeHolder_1.png" alt="">
+            </figure>
+          </a>
+        </div>
+        <div class="column is-4-desktop is-6-tablet is-10-mobile">
+          <a data-toggle="modal" data-target="#tooMuchRain">
+            <figure class="image">
+              <p class="is-overlay has-text-centered">Grid 11</p>
+              <img class="picFrame" src="img/placeHolder_2.png" alt="">
+            </figure>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- top MENU-->
-<a id="top"></a>
-<section class="sectionS">
-  <div class="container is-fluid">
-    <div class="columns is-mobile is-centered">
-      <div class="column is-one-fifth"></div>
-      <div class="column is-one-fifth has-text-centered is-paddingless">
-        <p class="subtitle is-size-7-mobile is-size-6-tablet">
-          <a href="#gifts">聰明好禮</a>
-        </p>
+<!--- menu Modals ---->
+<div class="modal" id="about" tabindex="-1" aria-hidden="true">
+  <div class="modalBG">
+    <div class="columns is-mobile padS">
+      <div class="column is-1 goUP is-hidden-mobile">
+        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
       </div>
-      <div class="column is-one-fifth has-text-centered is-paddingless">
-        <p class="subtitle is-size-7-mobile is-size-6-tablet">
-          <a href="#aboutus">關於我們</a>
-        </p>
+      <div class="column is-1 goUP is-hidden-tablet">
+        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
       </div>
-      <div class="column is-one-fifth has-text-centered is-paddingless">
-        <p class="subtitle is-size-7-mobile is-size-6-tablet">
-          <a href="#rules">活動細則</a>
-        </p>
-      </div>
-      <div class="column is-one-fifth has-text-right is-paddingless goUP is-hidden-touch">
-        <a href="https://www.facebook.com/iXPanel.tw/" target="_blank">
-        <div class="title is-3 svg-icon">
-          <svg x="0px" y="0px"  viewBox="0 0 53.3 48.7" enable-background="new 0 0 53.3 48.7" xml:space="preserve">
-          <g>
-          	<g>
-          		<polygon fill="#08A39F" points="45.2,42.9 45.2,41.4 9.6,41.4 9.6,7.3 43.7,7.3 43.7,42.9 45.2,42.9 45.2,41.4 45.2,42.9
-          			46.7,42.9 46.7,4.3 6.6,4.3 6.6,44.4 46.7,44.4 46.7,42.9 		"/>
-          	</g>
-          	<g>
-          		<path fill="#08A39F" d="M31.7,18.2c-0.6-0.1-1.5-0.2-2-0.2c-1.5,0-1.6,0.6-1.6,1.7v1.8h3.7l-0.3,3.8h-3.3v11.4h-4.6V25.2h-2.4
-          			v-3.8h2.4v-2.3c0-3.2,1.5-5,5.3-5c1.3,0,2.3,0.2,3.5,0.4L31.7,18.2z"/>
-          	</g>
-          </g>
-          </svg>
-        </div>
-        </a>
-      </div>
-      <div class="column is-one-fifth has-text-right is-paddingless goUP is-hidden-desktop">
-        <a href="https://www.facebook.com/iXPanel.tw/" target="_blank">
-        <div class="title is-4 svg-icon">
-          <svg x="0px" y="0px"  viewBox="0 0 53.3 48.7" enable-background="new 0 0 53.3 48.7" xml:space="preserve">
-          <g>
-            <g>
-              <polygon fill="#08A39F" points="45.2,42.9 45.2,41.4 9.6,41.4 9.6,7.3 43.7,7.3 43.7,42.9 45.2,42.9 45.2,41.4 45.2,42.9
-                46.7,42.9 46.7,4.3 6.6,4.3 6.6,44.4 46.7,44.4 46.7,42.9 		"/>
-            </g>
-            <g>
-              <path fill="#08A39F" d="M31.7,18.2c-0.6-0.1-1.5-0.2-2-0.2c-1.5,0-1.6,0.6-1.6,1.7v1.8h3.7l-0.3,3.8h-3.3v11.4h-4.6V25.2h-2.4
-                v-3.8h2.4v-2.3c0-3.2,1.5-5,5.3-5c1.3,0,2.3,0.2,3.5,0.4L31.7,18.2z"/>
-            </g>
-          </g>
-          </svg>
-        </div>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- LogoType and eventTitle-->
-<section class="sectionS lanDING">
-  <div class="columns is-centered is-mobile">
-    <div class="column is-5-desktop is-12-touch has-text-centered">
-      <figure class="image">
-          <img src="img/title.svg" alt="">
-      </figure>
-    </div>
-  </div>
-  <div class="columns is-centered is-mobile is-multiline padS">
-    <div class="column is-4-tablet is-11-mobile notification">
-      <div class="columns is-centered is-mobile is-multiline">
-        <div class="column is-10 has-text-centered padL">
-          <div class="title is-size-4-desktop is-size-5-touch svg-icon svg-baseline">
-            <svg viewBox="0 0 30.53 30.53"><defs><style>.cls-1,.cls-2{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:3px;}.cls-2{stroke-linecap:round;}</style></defs><title>180207</title><circle class="cls-1" cx="15.26" cy="15.26" r="12.84"/><line class="cls-2" x1="15.26" y1="8.36" x2="15.26" y2="16.82"/><line class="cls-2" x1="15.26" y1="21.95" x2="15.26" y2="22.36"/></svg>
-          </div>
-          <span class="title is-size-5-desktop is-size-6-touch has-text-white has-text-weight-normal">測你的生活小聰明抽好禮</span>
-        </div>
-        <div class="column is-9-desktop is-11-touch goUP">
-          <p class="subtitle is-6 has-text-white goUP" style="line-height:1.6;">
-            汽車內建 AI、家電有了腦袋、冰箱幫你買菜，隨便喊幾聲就為你辦妥大小事，智慧當紅科技發燒，電影裡看過的未來科技正在全速實現，你的日常生活到底有多智慧，快來測測你是哪種小聰明？
-          </p>
-        </div>
+      <div class="column is-6-desktop is-7-touch">
+        <p class="title is-size-2-desktop is-size-4-touch">
+          關於
+        </p>
+        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light">
+          這是再努力也沒有回報的時代
+        </p>
       </div>
-      <div class="padS"></div>
+    </div>
+    <div class="columns is-mobile is-multiline">
+      <div class="column is-10 padL is-offset-1">
+        <p class="title is-6 has-text-weight-normal moreSpace">
+          然後呢？沒有然後了。
+        </p>
+        <p class="title is-6 has-text-weight-light moreSpace">
+          大家總嚷嚷著厭世，厭世二字儼然成為現代人最重要也最琅琅上口的發語詞，也不是真的不想活，而是出自於什麼都嘗試了，理解就算再努力也無從改變現況的無可奈何。口說無憑，那些討厭的事要發生到什麼程度才會被叫厭世呢？秉持著負負得正的能量守恆定律，創市際為大家整理出 15 則厭世單位，期待大家厭著哭著就笑了，眼淚掛著也沒關係，再繼續與生活戰鬥吧！
+        </p>
+      </div>
     </div>
   </div>
-  <div class="columns is-centered is-mobile">
-    <div class="column is-4-touch is-1-desktop has-text-centered padBoth">
-      <a href="https://zh.research.net/r/QY8LTCQ" target="_blank">
+</div>
+
+<div class="modal" id="help" tabindex="-1" aria-hidden="true">
+  <div class="modalBG">
+    <div class="columns is-mobile padS">
+      <div class="column is-1 goUP is-hidden-mobile">
+        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
+      </div>
+      <div class="column is-1 goUP is-hidden-tablet">
+        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
+      </div>
+
+      <div class="column is-6-desktop is-7-touch">
+        <p class="title is-size-2-desktop is-size-4-touch">
+          1995
+        </p>
+        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light">
+          生命線協談專線
+        </p>
+      </div>
+    </div>
+    <div class="columns is-mobile is-multiline">
+      <div class="column is-10 padL is-offset-1">
+        <p class="title is-size-6-desktop is-size-7-touch has-text-weight-light">
+          24小時全年無休
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="facebook" tabindex="-1" aria-hidden="true">
+  <div class="modalBG">
+    <div class="columns is-mobile padS">
+      <div class="column is-1 goUP is-hidden-mobile">
+        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
+      </div>
+      <div class="column is-1 goUP is-hidden-tablet">
+        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
+      </div>
+
+      <div class="column is-6-desktop is-7-touch">
+        <p class="title is-size-2-desktop is-size-4-touch">
+          臉書
+        </p>
+        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light">
+          宇宙最有聊的問卷社群網站
+        </p>
+      </div>
+    </div>
+    <div class="columns is-mobile is-multiline">
+      <div class="column is-10 padL is-offset-1">
+        <div class="fb-page" data-href="https://www.facebook.com/iXPanel.tw" data-tabs="timeline" data-width="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/iXPanel.tw" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/iXPanel.tw">IXPanel 問卷網站</a></blockquote></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--- Content Modals ---->
+<div class="modal" id="dayBlue" tabindex="-1" aria-hidden="true">
+  <div class="modalBG">
+    <div class="columns is-mobile padS">
+      <div class="column is-1 goUP is-hidden-mobile">
+        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
+      </div>
+      <div class="column is-1 goUP is-hidden-tablet">
+        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
+      </div>
+
+      <div class="column is-6-desktop is-7-touch">
+        <p class="title is-size-2-desktop is-size-4-touch">
+          星期一
+        </p>
+        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light">
+          最容易令人感到厭世
+        </p>
+      </div>
+    </div>
+    <div class="columns is-mobile is-multiline">
+      <div class="column is-7-desktop is-10-touch is-offset-1">
         <figure class="image">
-          <img src="img/go.svg" alt="立即填">
+          <img src="img/placeHolder_1.png" alt="">
         </figure>
-      </a>
-    </div>
-  </div>
-  <div class="padS">
-
-  </div>
-</section>
-
-
- <!-- instruction and GIFTS -->
- <a id="gifts"></a>
- <section class="section GiFTs is-paddingless">
-   <div class="columns is-centered is-mobile is-multiline padBoth">
-     <div class="column is-three-fifths-tablet is-10-mobile">
-       <p class="subtitle is-1 has-text-white">聰明好禮</p>
-       <p class="subtitle is-6 has-text-white" style="line-height:1.6;">活動期間自2018年3月1日至4月30日為止，期間內完成調查並成功加入 iX:Panel 會員者，即可擁有六項好禮抽獎資格！</p>
-     </div>
-   </div>
-   <!-- Gifts on desktop-->
-   <section class="section is-hidden-touch padBoth whtBG">
-     <div class="columns is-centered is-mobile is-multiline is-gapless">
-       <div class="column is-2">
-         <div class="columns is-centered is-mobile is-multiline">
-           <div class="column is-12 has-text-centered">
-               <p class="title is-6 orgTtitle"></br>現金</p>
-               <p class="subtitle is-7 padS grnTitle">$10000</p>
-           </div>
-           <div class="column is-10">
-             <figure class="image">
-               <img src="img/giftCash.svg" alt="">
-             </figure>
-           </div>
-           <div class="column is-6 has-text-centered ylwO">
-             <p class="title is-6 textPad has-text-white">
-               3名
-             </p>
-           </div>
-         </div>
-       </div>
-       <div class="column is-2 strokLeft">
-         <div class="columns is-centered is-mobile is-multiline">
-           <div class="column is-12 has-text-centered">
-             <p class="title is-6 orgTtitle">中保無限家</br>冷氣清潔服務</p>
-             <p class="subtitle is-7 padS grnTitle">市價$10080</p>
-           </div>
-           <div class="column is-10">
-             <figure class="image">
-               <img src="img/giftAirCondition.svg" alt="">
-             </figure>
-           </div>
-           <div class="column is-6 has-text-centered ylwO">
-             <p class="title is-6 textPad has-text-white">
-               4名
-             </p>
-           </div>
-         </div>
-       </div>
-       <div class="column is-2 strokLeft">
-         <div class="columns is-centered is-mobile is-multiline">
-           <div class="column is-12 has-text-centered">
-             <p class="title is-6 orgTtitle">中保無限家</br>水管清潔服務</p>
-             <p class="subtitle is-7 padS grnTitle">市價$4800</p>
-           </div>
-
-           <div class="column is-10">
-             <figure class="image">
-               <img src="img/giftPlumper.svg" alt="">
-             </figure>
-           </div>
-           <div class="column is-6 has-text-centered ylwO">
-             <p class="title is-6 textPad has-text-white">
-               6名
-             </p>
-           </div>
-         </div>
-       </div>
-       <div class="column is-2 strokLeft">
-         <div class="columns is-centered is-mobile is-multiline">
-           <div class="column is-12 has-text-centered">
-             <p class="title is-6 orgTtitle">棧直火廚房晚間雙人套餐</br>US/CH三板斧丁牛排</p>
-             <p class="subtitle is-7 padS grnTitle">市價$3520</p>
-           </div>
-           <div class="column is-10">
-             <figure class="image">
-               <img src="img/giftSteak.svg" alt="">
-             </figure>
-           </div>
-           <div class="column is-6 has-text-centered ylwO">
-             <p class="title is-6 textPad has-text-white">
-               8名
-             </p>
-           </div>
-         </div>
-       </div>
-       <div class="column is-2 strokeBoth">
-         <div class="columns is-centered is-mobile is-multiline">
-           <div class="column is-12 has-text-centered">
-             <p class="title is-6 orgTtitle"></br>中保生活館抵用券</p>
-             <p class="subtitle is-7 padS grnTitle">市價$1000</p>
-           </div>
-           <div class="column is-10">
-             <figure class="image">
-               <img src="img/giftVoucherCB.svg" alt="">
-             </figure>
-           </div>
-           <div class="column is-6 has-text-centered ylwO">
-             <p class="title is-6 textPad has-text-white">
-               20名
-             </p>
-           </div>
-         </div>
-       </div>
-       <div class="column is-2">
-         <div class="columns is-centered is-mobile is-multiline">
-           <div class="column is-12 has-text-centered">
-             <p class="title is-6 orgTtitle"></br>LinePoint 15點</p>
-             <p class="subtitle is-7 padS grnTitle">市價$15</p>
-           </div>
-           <div class="column is-10">
-             <figure class="image">
-               <img src="img/giftLINE.svg" alt="">
-             </figure>
-           </div>
-           <div class="column is-6 has-text-centered ylwO">
-             <p class="title is-6 textPad has-text-white">
-               500名
-             </p>
-           </div>
-         </div>
-       </div>
-
-     </div>
-   </section>
-
-   <!-- Gifts on mobile-->
-
-   <div class="whtBG">
-     <div class='carousel carousel-animated carousel-animate-slide is-hidden-desktop'>
-       <div class='carousel-container'>
-         <div class='carousel-item has-background is-active'>
-           <img class="is-background" src="img/carousel_giftCash.svg" alt="" />
-         </div>
-         <div class='carousel-item has-background'>
-           <img class="is-background" src="img/carousel_giftAirCondition.svg" alt="" />
-         </div>
-         <div class='carousel-item has-background'>
-           <img class="is-background" src="img/carousel_giftPlumper.svg" alt="" />
-         </div>
-         <div class='carousel-item has-background'>
-           <img class="is-background" src="img/carousel_giftSteak.svg" alt="" />
-         </div>
-         <div class='carousel-item has-background'>
-           <img class="is-background" src="img/carousel_giftVoucherCB.svg" alt="" />
-         </div>
-         <div class='carousel-item has-background'>
-           <img class="is-background" src="img/carousel_giftLINE.svg" alt="" />
-         </div>
-       </div>
-       <div class="carousel-navigation is-overlay">
-         <div class="carousel-nav-left">
-           <i class="fa fa-chevron-left" aria-hidden="true"></i>
-         </div>
-         <div class="carousel-nav-right">
-           <i class="fa fa-chevron-right" aria-hidden="true"></i>
-         </div>
-       </div>
-     </div>
-   </div>
- </section>
-
-
-
-<!-- sponsors -->
-<section class="section GiFTs">
-  <div class="columns is-centered is-mobile is-multiline">
-    <div class="column is-three-fifths-tablet is-10-mobile">
-      <p class="title is-6 orgTtitle">合作&贊助廠商</p>
-    </div>
-    <div class="columns is-centered is-mobile is-multiline padS">
-      <div class="column is-12 is-hidden-desktop">
       </div>
-      <div class="column is-8-tablet is-9-mobile padS box">
-        <div class="columns is-centered is-mobile is-multiline padS">
-          <div class="column is-3-tablet is-4-mobile">
-            <figure class="image padL">
-              <img class="padM" src="img/sponsor_sigmuLogo.svg" alt="" style="margin-left:0.5rem">
-            </figure>
-          </div>
-          <div class="column is-1 is-hidden-mobile">
-          </div>
-          <div class="column is-3-tablet is-4-mobile">
-            <figure class="image padL">
-              <img src="img/sponsor_carrefourLogo.svg" alt="" style="">
-            </figure>
-          </div>
-          <div class="column is-1 is-hidden-mobile">
-          </div>
-          <div class="column is-3-tablet is-4-mobile">
-            <figure class="image padL">
-              <img class="padL" src="img/sponsor_yahooLogo.svg" alt="" >
-            </figure>
-          </div>
-        </div>
-        <div class="column is-12 is-hidden-mobile">
-        </div>
+      <div class="column is-10 padL is-offset-1">
+        <p class="title is-6 has-text-weight-normal">
+          覺得禮拜幾最容易感到厭世？
+        </p>
       </div>
-      <div class="column is-12 is-hidden-mobile">
+      <div class="column is-10 is-offset-1">
+        <iframe width="100%" height="300" src="https://live.amcharts.com/kwYTg/embed/" frameborder="0"></iframe>
       </div>
     </div>
   </div>
-</section>
+</div>
 
 
-<!-- about us -->
-<a id="aboutus"></a>
-  <section class="section aboutUS">
-    <div class="columns is-centered is-mobile is-multiline">
-      <div class="column is-three-fifths-tablet is-10-mobile">
-        <p class="subtitle is-1 has-text-white">關於我們</p>
-      </div>
-    </div>
-    <section class="sectionS">
-      <div class="columns is-centered is-multiline">
-        <div class="column is-12">
-          <!-- about us desktop-->
-          <div class="columns is-centered">
-            <div class="column is-2 is-hidden-mobile"></div>
-            <div class="column is-4 notification">
-              <div class="columns is-mobile is-multiline padM">
-                <div class="column is-6 is-offset-1">
-                  <figure class="image">
-                    <a href="#" target="_blank">
-                      <img src="img/IX.svg" alt="創市際市場研究顧問">
-                    </a>
-                  </figure>
-                </div>
-                <div class="column is-10 is-offset-1 padBoth">
-                  <p class="subtitle is-6 has-text-white" style="line-height:1.6;">
-                    成立於 2003 年，獨家建置 ARO 網路收視率服務及品牌，<a href="http://www.ixresearch.com" target="_blank">創市際市場研究顧問股份有限公司 InsightXplorer Ltd.</a> 為台灣唯一數位量測之第三公正單位，擁有 IX Survey 網路調查系統及 iX:Panel（原 CyberPanel）消費者社群，成為台灣專業網路調查先驅。2006 年執行台灣網路基礎追蹤調查至今，長期關注台灣上網行為趨勢變化。2011 年因應全球化的風潮，獨家代理全球性品牌 comScore 網路量測服務及產品，導入國際觀點的數位測量服務。客戶群涵蓋全球知名品牌，網站媒體及代理商，如 Oath (Yahoo) 、Google、Facebook、蘋果日報、城邦出版、電通安吉斯集團、群邑等。2012 更成立創媒體 BeamMedia 以視覺詮釋數據，讓數據更貼近消費大眾，多元發展隨時為行銷市場提供最新的研究視角！
-                  </p>
-                </div>
-              </div>
-              <div class="padS is-hidden-touch"></div>
-              <div class="padM is-hidden-desktop"></div>
-            </div>
-            <div class="column"></div>
-            <div class="column is-4 notification">
-              <div class="columns is-mobile is-multiline">
-                <div class="column is-6 is-offset-1">
-                  <figure class="image padM">
-                    <a href="#" target="_blank">
-                      <img src="img/IXPANEL.svg" alt="iX:Panel問卷網站">
-                    </a>
-                  </figure>
-                </div>
-                <div class="column is-10 is-offset-1 padBoth">
-                  <p class="subtitle is-6 has-text-white" style="line-height:1.6;">
-                    <a href="https://www.ixpanel.com/index.jsp" target="_blank">iX:Panel 問卷社群網站</a>（原 CyberPanel）係由創市際市場研究顧問股份有限公司 InsightXplorer Ltd. 所建置的大型台灣消費者情報平台，自 2003 年建立至今已逾 30 萬人規模。讓人們經由各式問卷調查，訪談活動及快速任務，將台灣消費者意見回饋給全球知名企業廠商，其第三單位公正性已成為全球最具指標性台灣消費者意見社群！無論你是上班族、學生、主婦或各行各業人士，我們都歡迎你的加入來提供更多元的聲音！
-                  </p>
-                </div>
-              </div>
-              <div class="padS is-hidden-touch"></div>
-              <div class="padM is-hidden-desktop"></div>
+<!--- Footer --->
+<div class="footer">
+  <div class="content has-text-centered is-small">
+    <p>
+      Copyright © 2018 創市際市場研究顧問股份有限公司 InsightXplorer Ltd.
+    </p>
+  </div>
+</div>
 
-            </div>
-            <div class="column is-2 is-hidden-mobile"></div>
-          </div>
-          <!-- about us desktop-->
-        </div>
-      </div>
-    </section>
-  </section>
+<!--- js for burger menu icon in mobile view---->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
 
-  <!-- warnings -->
-  <a id="rules"></a>
-  <section class="section RuLEs">
-    <div class="columns is-centered is-mobile is-multiline">
-      <div class="column is-three-fifths-tablet is-10-mobile">
-        <p class="subtitle is-1 has-text-white">活動細則與獎項說明</p>
-        <ol class="subtitle is-7 padS has-text-white" style="line-height:1.6;">
-          <li>「中保無限家-冷氣清潔服務」免費清洗三台冷氣，一台以 3,360 元計，超過 3 台需自費。</li>
-          <li>「中保潔菌家-水管清潔服務」，每券可體驗兩套衛浴設備之水管清潔，透天厝則需補 1600 元差額。</li>
-          <li>本活動僅限居住於台灣、金門、澎湖、馬祖地區之居民參加，獎品寄送地區僅限於台灣、金門、澎湖、馬祖地區。</li>
-          <li>中獎者如因資料填寫不完整、不清楚或寄送過程中發生不可歸責於主辦方之原因，導致中獎憑證遺失或無法辨識，將視同放棄獲獎資格，主辦單位不負任何法律責任，參加者亦不得因此異議。</li>
-          <li>本活動如有任何因電腦、網路、電話、技術或不可歸責於主辦單位之事由，而使系統服務終止、中斷、誤送活動訊息或中獎通知，或使參加人所寄出或登錄之資料有遲延、遺失、錯誤、無法辨識或毀損之情況，主辦單位不負任何法律責任，參加者亦不得因此異議。</li>
-          <li>參加者於送出資料參加本活動時，視為同意並接受本活動所有內容及細則之規範（含其更新修正內容），主辦方有權檢視本活動參與者之參與行為及中獎情形是否涉嫌不法或有違常理之異常狀況，例：人為操作蓄意偽造、短時間異常多筆參與行為、透過任何電腦程式參與活動、詐欺或以任何其他不正當的方式意圖以進行不實或虛偽活動參與行為、或登錄資料不實或不正確或盜用任何第三人之資料，或有違反活動規範之行為。</li>
-          <li>活動參與者因上述情形所獲得之活動資格及獎品，主辦方及活動小組保有變更、終止其參加活動資格、取消中獎資格或暫停活動的權利，並對於任何破壞本活動之行為保留法律追訴權，並就因此產生之損害，得向參加者請求賠償。</li>
-          <li>中獎者若非中華民國國境內設籍之國人（即依法於課稅年度內，在中華民國境內居住未達183天之本國人含大陸人士及外國人），不論中獎者所得獎項之價值，需預先扣繳 20% 機會中獎稅金。財政部臺北國稅局實施「憑單無紙化」，自 2015 年起所得稅各式憑單符合一定情形者，憑單填發單位如期向國稅局辦理憑單申報後，原則上免寄發憑單給納稅義務人。中獎者需於 2019 年 5 月底前完成申報，中獎者若不願意配合，則視為自動棄權，不具得獎資格。此外中獎價值累計超過 NT$1,001 而未滿 20 歲之中獎者，視同父母或監護人中獎，由父母或監護人代為領獎，並請附上中獎者及其代領人關係證明影本。</li>
-          <li>本活動如有未盡事宜，創市際市場研究顧問股份有限公司擁有保留、修改、暫停及解釋活動內容之權利，修改訊息將於本活動網站、iX:Panel Facebook 粉絲頁、iX:Panel 問卷網站上公布，不另行通知。</li>
-        </ol>
-      </div>
-    </div>
-  </section>
+  // Get all "navbar-burger" elements
+  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-    <!--- Footer --->
-<section class="sectionS">
-  <p class="subtitle is-7 has-text-weight-light grnTitle has-text-centered goUPmore">
-      Copyright © 2018 創市際市場研究顧問公司 InsightXplorer
-  </p>
-</section>
+  // Check if there are any navbar burgers
+  if ($navbarBurgers.length > 0) {
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach(function ($el) {
+      $el.addEventListener('click', function () {
+
+        // Get the target from the "data-target" attribute
+        var target = $el.dataset.target;
+        var $target = document.getElementById(target);
+
+        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+        $el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+  }
+
+});
+</script>
 
 </body>
 </html>
