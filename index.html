@@ -78,6 +78,12 @@ body, p, ol {
 .textPad {
   padding-top: 30%;
 }
+.padLeft {
+  padding-left: 1%;
+}
+.padALL {
+  padding: 1.5rem;
+}
 
 /* margin trailer */
 .goUP {
@@ -102,11 +108,15 @@ body, p, ol {
 }
 
 .picFrame {
-  border: 1px solid black;
+  border: 2px solid black;
 }
 
 .moreSpace {
   line-height: 160%;
+}
+
+.darkGrey {
+  background-color: #181818;
 }
 
 /* icon and SVG setups */
@@ -116,6 +126,10 @@ body, p, ol {
 
 
 /*hard coded alt from originals*/
+.column {
+  padding: 1.5rem;
+}
+
 .footer {
   background-color: rgba(0,0,0,0);
 }
@@ -164,8 +178,8 @@ body, p, ol {
 a.navbar-item:hover, a.navbar-item.is-active,
 .navbar-link:hover,
 .navbar-link.is-active {
-  background-color: rgba(255, 255, 255, 1);
-  color: black;
+  background-color: rgba(0, 0, 0, 1);
+  color: white;
 }
 
 .navbar-tabs {
@@ -236,22 +250,22 @@ a.navbar-item:hover, a.navbar-item.is-active,
 
 <!-- content starts -->
 
-<div class="container is-fluid padS">
-  <div class="columns is-centered is-mobile">
-    <div class="column is-3-tablet is-5-mobile">
-      <div class="sideBar container">
+<!--div class="container is-fluid"-->
+  <div class="columns is-centered is-mobile is-gapless">
+    <div class="column is-3-tablet is-4-mobile">
+      <div class="sideBar container darkGrey">
         <!--stay top btns-->
           <div class="columns is-mobile is-multiline stayBottom">
             <div class="column is-8">
-              <p class="subtitle is-7">misanthropy</br>[mɪˋzænθrəpɪ]</p>
-              <p class="subtitle is-7">n.</br>不願與人來往；厭世</p>
+              <p class="subtitle is-7 has-text-white">misanthropy</br>[mɪˋzænθrəpɪ]</p>
+              <p class="subtitle is-7 has-text-white">n.</br>不願與人來往；厭世</p>
             </div>
-            <div class="column is-8 padM">
+            <div class="column is-8 padM is-hidden-mobile">
             </div>
             <div class="column is-8 is-hidden-mobile">
-              <a data-toggle="modal" data-target="#about" href="#" class="button is-small is-black">關於</a>
-              <a data-toggle="modal" data-target="#help" href="#" class="button is-small is-black">救命</a>
-              <a data-toggle="modal" data-target="#facebook" href="#" class="button is-small is-black">臉書</a>
+              <a data-toggle="modal" data-target="#about" href="#" class="button is-small is-outined">關於</a>
+              <a data-toggle="modal" data-target="#help" href="#" class="button is-small is-outined">救命</a>
+              <a data-toggle="modal" data-target="#facebook" href="#" class="button is-small is-outined">臉書</a>
             </div>
             <nav class="navbar is-transparent is-hidden-tablet" role="navigation" aria-label="main navigation">
               <div class="navbar-burger burger" data-target="navMenu">
@@ -268,12 +282,12 @@ a.navbar-item:hover, a.navbar-item.is-active,
           </div>
         <!--end of stay top btns -->
         <div class="">
-          <p class="subtitle is-1 has-text-weight-light">厭</br>世</br>單</br>位</p>
+          <p class="subtitle is-1 has-text-weight-light has-text-white">厭</br>世</br>單</br>位</p>
         </div>
       </div>
     </div>
     <div class="column is-9-tablet is-three-fifth-mobile">
-      <div class="columns is-mobile is-multiline">
+      <div class="columns is-mobile is-multiline is-centered padALL">
         <div class="column is-4-desktop is-6-tablet is-11-mobile">
           <a data-toggle="modal" data-target="#dayBlue">
             <figure class="image">
@@ -410,6 +424,8 @@ a.navbar-item:hover, a.navbar-item.is-active,
             </figure>
           </a>
         </div>
+        <div class="column is-4-desktop is-6-tablet is-11-mobile">
+        </div>
       </div>
     </div>
   </div>
@@ -479,7 +495,7 @@ a.navbar-item:hover, a.navbar-item.is-active,
 
 <div class="modal" id="facebook" tabindex="-1" aria-hidden="true">
   <div class="modalBG">
-    <div class="columns is-mobile">
+    <div class="columns is-mobile padS">
       <div class="column is-1 goUP is-hidden-mobile">
         <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
       </div>
@@ -792,17 +808,6 @@ a.navbar-item:hover, a.navbar-item.is-active,
         <iframe width="100%" height="395" src="https://live.amcharts.com/ZDUwN/embed/" frameborder="0"></iframe>
       </div>
     </div>
-  </div>
-</div>
-
-
-
-<!--- Footer --->
-<div class="footer">
-  <div class="content has-text-centered is-small">
-    <p>
-      Copyright © 2018 創市際市場研究顧問股份有限公司 InsightXplorer Ltd.
-    </p>
   </div>
 </div>
 
