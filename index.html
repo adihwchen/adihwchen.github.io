@@ -176,7 +176,22 @@ body, p, ol {
 }
 
 body.modal-open {
-    overflow: hidden;
+  // block scroll for mobile;
+  // causes underlying page to jump to top;
+  // prevents scrolling on all screens
+  overflow: hidden;
+  position:fixed;
+}
+body.viewport-lg {
+    // block scroll for desktop;
+    // will not jump to top;
+    // will not prevent scroll on mobile
+    position: absolute;
+}
+body {
+  // STOP MOVING AROUND!
+  overflow-x: hidden;
+  overflow-y: scroll !important;
 }
 
 /* full Screen navigation */
