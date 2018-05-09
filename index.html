@@ -126,6 +126,18 @@ body, p, ol {
   border: 2px solid black;
 }
 
+.hoverBlur {
+  -webkit-filter: blur(8px);
+  filter: blur(8px);
+  -webkit-transition: .1s ease-in-out;
+  transition: .1s ease-in-out;
+}
+
+.hoverBlur:hover {
+  -webkit-filter: blur(0);
+  filter: blur(0);
+}
+
 .moreSpace {
   line-height: 160%;
 }
@@ -133,6 +145,7 @@ body, p, ol {
 .darkGrey {
   background-color: #181818;
 }
+
 
 /* icon and SVG setups */
 .fa {
@@ -324,137 +337,120 @@ body {
     <div class="columns is-mobile is-multiline is-centered padALL">
       <div class="column is-4-desktop is-6-tablet is-11-mobile columnGAP">
         <a data-toggle="modal" data-target="#dayBlue" data-direction='right'>
-          <figure class="image">
-            <p class="is-overlay has-text-centered">Grid 1</p>
-            <img class="picFrame" src="img/dayblue.png" alt="">
+          <figure class="image picFrame">
+            <img class="hoverBlur" src="img/dayblue.png" alt="">
           </figure>
         </a>
       </div>
       <div class="column is-4-desktop is-6-tablet is-11-mobile columnGAP">
         <a data-toggle="modal" data-target="#angryCounts">
-          <figure class="image">
-            <p class="is-overlay has-text-centered">Grid 2</p>
-            <img class="picFrame" src="img/angrycounts.png" alt="">
+          <figure class="image picFrame">
+            <img class="hoverBlur" src="img/angrycounts.png" alt="">
           </figure>
         </a>
       </div>
       <div class="column is-4-desktop is-6-tablet is-11-mobile columnGAP">
         <a data-toggle="modal" data-target="#overTime">
-          <figure class="image">
-            <p class="is-overlay has-text-centered">Grid 3</p>
-            <img class="picFrame" src="img/overtime.png" alt="">
+          <figure class="image picFrame">
+            <img class="hoverBlur" src="img/overtime.png" alt="">
           </figure>
         </a>
       </div>
       <div class="column is-4-desktop is-6-tablet is-11-mobile columnGAP">
         <a data-toggle="modal" data-target="#gotRaised">
-          <figure class="image">
-            <p class="is-overlay has-text-centered">Grid 4</p>
-            <img class="picFrame" src="img/agegap.png" alt="">
+          <figure class="image picFrame">
+            <img class="hoverBlur" src="img/agegap.png" alt="">
           </figure>
         </a>
       </div>
       <div class="column is-4-desktop is-6-tablet is-11-mobile columnGAP">
         <a data-toggle="modal" data-target="#longMeeting">
-          <figure class="image">
-            <p class="is-overlay has-text-centered">Grid 5</p>
-            <img class="picFrame" src="img/longmeeting.png" alt="">
+          <figure class="image picFrame">
+            <img class="hoverBlur" src="img/longmeeting.png" alt="">
           </figure>
         </a>
       </div>
       <div class="column is-4-desktop is-6-tablet is-11-mobile columnGAP">
         <a data-toggle="modal" data-target="#lowWage">
-          <figure class="image">
-            <p class="is-overlay has-text-centered">Grid 6</p>
-            <img class="picFrame" src="img/lowwage.png" alt="">
+          <figure class="image picFrame">
+            <img class="hoverBlur" src="img/lowwage.png" alt="">
           </figure>
         </a>
       </div>
       <div class="column is-4-desktop is-6-tablet is-11-mobile columnGAP">
         <a data-toggle="modal" data-target="#lifeWinners">
-          <figure class="image">
-            <p class="is-overlay has-text-centered">Grid 7</p>
-            <img class="picFrame" src="img/overtime.png" alt="">
+          <figure class="image picFrame">
+            <img class="hoverBlur" src="img/overtime.png" alt="">
           </figure>
         </a>
       </div>
       <div class="column is-4-desktop is-6-tablet is-11-mobile columnGAP">
         <a data-toggle="modal" data-target="#tooBusy">
-          <figure class="image">
-            <p class="is-overlay has-text-centered">Grid 8</p>
-            <img class="picFrame" src="img/toobusy.png" alt="">
+          <figure class="image picFrame">
+            <img class="hoverBlur" src="img/toobusy.png" alt="">
           </figure>
         </a>
       </div>
       <div class="column is-4-desktop is-6-tablet is-11-mobile columnGAP">
         <a data-toggle="modal" data-target="#ageGap">
-          <figure class="image">
-            <p class="is-overlay has-text-centered">Grid 9</p>
-            <img class="picFrame" src="img/agegap.png" alt="">
+          <figure class="image picFrame">
+            <img class="hoverBlur" src="img/agegap.png" alt="">
           </figure>
         </a>
       </div>
       <div class="column is-4-desktop is-6-tablet is-11-mobile columnGAP">
         <a data-toggle="modal" data-target="#farAway">
-          <figure class="image">
-            <p class="is-overlay has-text-centered">Grid 10</p>
-            <img class="picFrame" src="img/faraway.png" alt="">
+          <figure class="image picFrame">
+            <img class="hoverBlur" src="img/faraway.png" alt="">
           </figure>
         </a>
       </div>
       <div class="column is-4-desktop is-6-tablet is-11-mobile columnGAP">
         <a data-toggle="modal" data-target="#bottleNeck">
-          <figure class="image">
-            <p class="is-overlay has-text-centered">Grid 11</p>
-            <img class="picFrame" src="img/bottleneck.png" alt="">
+          <figure class="image picFrame">
+            <img class="hoverBlur" src="img/bottleneck.png" alt="">
           </figure>
         </a>
       </div>
       <div class="column is-4-desktop is-6-tablet is-11-mobile columnGAP">
         <a data-toggle="modal" data-target="#nobodyWants">
-          <figure class="image">
-            <p class="is-overlay has-text-centered">Grid 12</p>
-            <img class="picFrame" src="img/nobodywants.png" alt="">
+          <figure class="image picFrame">
+            <img class="hoverBlur" src="img/nobodywants.png" alt="">
           </figure>
         </a>
       </div>
       <div class="column is-4-desktop is-6-tablet is-11-mobile columnGAP">
         <a data-toggle="modal" data-target="#noFriend">
-          <figure class="image">
-            <p class="is-overlay has-text-centered">Grid 13</p>
-            <img class="picFrame" src="img/nofriend.png" alt="">
+          <figure class="image picFrame">
+            <img class="hoverBlur" src="img/nofriend.png" alt="">
           </figure>
         </a>
       </div>
       <div class="column is-4-desktop is-6-tablet is-11-mobile columnGAP">
         <a data-toggle="modal" data-target="#socialAddicted">
-          <figure class="image">
-            <p class="is-overlay has-text-centered">Grid 14</p>
-            <img class="picFrame" src="img/toobusy.png" alt="">
+          <figure class="image picFrame">
+            <img class="hoverBlur" src="img/toobusy.png" alt="">
           </figure>
         </a>
       </div>
       <div class="column is-4-desktop is-6-tablet is-11-mobile columnGAP">
         <a data-toggle="modal" data-target="#nobodyCalled">
-          <figure class="image">
-            <p class="is-overlay has-text-centered">Grid 15</p>
-            <img class="picFrame" src="img/dayblue.png" alt="">
+          <figure class="image picFrame">
+          <img class="hoverBlur" src="img/dayblue.png" alt="">
           </figure>
         </a>
       </div>
       <div class="column is-4-desktop is-6-tablet is-11-mobile columnGAP">
         <a data-toggle="modal" data-target="#noInternet">
-          <figure class="image">
-            <p class="is-overlay has-text-centered">Grid 16</p>
-            <img class="picFrame" src="img/angrycounts.png" alt="">
+          <figure class="image picFrame">
+            <img class="hoverBlur" src="img/angrycounts.png" alt="">
           </figure>
         </a>
       </div>
       <div class="column is-4-desktop is-6-tablet is-11-mobile columnGAP">
         <a data-toggle="modal" data-target="#tooMuchRain">
-          <figure class="image">
-            <p class="is-overlay has-text-centered">Grid 17</p>
-            <img class="picFrame" src="img/toomuchrain.png" alt="">
+          <figure class="image picFrame">
+            <img class="hoverBlur" src="img/toomuchrain.png" alt="">
           </figure>
         </a>
       </div>
