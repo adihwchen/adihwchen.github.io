@@ -159,7 +159,7 @@ body, p, ol {
 }
 
 .modalBG {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: white;
   width:75%;
   height: 100%;
   margin-left:25%;
@@ -173,7 +173,10 @@ body, p, ol {
     width:68%;
     margin-left:32%;
   }
+}
 
+body.modal-open {
+    overflow: hidden;
 }
 
 /* full Screen navigation */
@@ -272,9 +275,9 @@ body, p, ol {
               <div id="myNav" class="overlay">
                 <a href="javascript:void(0)" class="closebtn has-text-weight-light" onclick="closeNav()">&times;</a>
                 <div class="overlay-content">
-                  <a data-toggle="modal" data-target="#about" onclick="closeNav()" class="has-text-weight-light">關於</a>
-                  <a data-toggle="modal" data-target="#help" onclick="closeNav()" class="has-text-weight-light">救命</a>
-                  <a onclick="closeNav()" class="has-text-weight-light" href="https://www.facebook.com/iXPanel.tw/" target="_blank">臉書</a>
+                  <a data-toggle="modal" data-target="#about" onclick="closeNav()" data-dismiss="modal" aria-label="close" class="has-text-weight-light">關於</a>
+                  <a data-toggle="modal" onclick="closeNav()" data-dismiss="modal" aria-label="close" class="has-text-weight-light">臉書</a>
+                  <a data-toggle="modal" data-target="#help" onclick="closeNav()"  data-dismiss="modal" aria-label="close" class="has-text-weight-light">救命</a>
                 </div>
               </div>
               <span style="font-size:30px;cursor:pointer;color:white;margin-left:0.5rem;" onclick="openNav()">&#9776;</span>
@@ -303,7 +306,7 @@ body, p, ol {
   <div class="column is-9-tablet is-three-fifth-mobile">
     <div class="columns is-mobile is-multiline is-centered padALL">
       <div class="column is-4-desktop is-6-tablet is-11-mobile columnGAP">
-        <a data-toggle="modal" data-target="#dayBlue">
+        <a data-toggle="modal" data-target="#dayBlue" data-direction='right'>
           <figure class="image">
             <p class="is-overlay has-text-centered">Grid 1</p>
             <img class="picFrame" src="img/dayblue.png" alt="">
@@ -445,9 +448,9 @@ body, p, ol {
 </div>
 
 <!--- menu Modals ---->
-<div class="modal" id="about" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="about" tabindex="-1" aria-hidden="true">
   <div class="modalBG padLeft">
-    <div class="columns is-mobile padS">
+    <div class="columns is-mobile padMS">
       <div class="column is-1 goUP is-hidden-mobile">
         <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
       </div>
@@ -470,24 +473,27 @@ body, p, ol {
           然後呢？沒有然後了。
         </p>
         <p class="title is-6 has-text-weight-light moreSpace">
-          大家總嚷嚷著厭世，厭世二字儼然成為現代人最重要也最琅琅上口的發語詞，也不是真的不想活，而是出自於什麼都嘗試了，理解就算再努力也無從改變現況的無可奈何。口說無憑，那些討厭的事要發生到什麼程度才會被叫厭世呢？秉持著負負得正的能量守恆定律，創市際為大家整理出 15 則厭世單位，期待大家厭著哭著就笑了，眼淚掛著也沒關係，再繼續與生活戰鬥吧！
+          大家總嚷嚷著厭世，厭世二字儼然成為現代人最重要也最琅琅上口的發語詞與出口。也不是真的不想活，而是出自於什麼都嘗試了，理解就算再努力也無從改變現況的無可奈何。
         </p>
+        <p class="title is-6 has-text-weight-light moreSpace">
+          口說無憑，那些討厭的事要發生到什麼程度才會被叫厭世呢？秉持著負負得正的能量守恆定律，創市際為大家整理出 15 則厭世單位，期待大家厭著哭著就笑了，眼淚掛著也沒關係，再繼續與生活戰鬥吧！
+        </p>
+
       </div>
     </div>
   </div>
 </div>
 
-<div class="modal" id="help" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="help" tabindex="-1" aria-hidden="true">
   <div class="modalBG padLeft">
-    <div class="columns is-mobile padS">
+    <div class="columns is-mobile padMS">
       <div class="column is-1 goUP is-hidden-mobile">
         <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
       </div>
       <div class="column is-1 goUP is-hidden-tablet">
         <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
       </div>
-
-      <div class="column is-6-desktop is-7-touch">
+      <div class="column is-6-desktop is-7-touch has-text-black">
         <p class="title is-size-2-desktop is-size-4-touch">
           1995
         </p>
@@ -506,16 +512,15 @@ body, p, ol {
   </div>
 </div>
 
-<div class="modal" id="facebook" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="facebook" tabindex="-1" aria-hidden="true">
   <div class="modalBG padLeft">
-    <div class="columns is-mobile padS">
+    <div class="columns is-mobile padMS">
       <div class="column is-1 goUP is-hidden-mobile">
         <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
       </div>
       <div class="column is-1 goUP is-hidden-tablet">
         <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
       </div>
-
       <div class="column is-6-desktop is-7-touch">
         <p class="title is-size-2-desktop is-size-4-touch">
           臉書
@@ -533,9 +538,7 @@ body, p, ol {
   </div>
 </div>
 
-
-<!--- Content Modals ---->
-<div class="modal" id="dayBlue" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="dayBlue" tabindex="-1" aria-hidden="true">
   <div class="modalBG padLeft">
     <div class="columns is-mobile padMS">
       <div class="column is-1 goUP is-hidden-mobile">
@@ -544,7 +547,7 @@ body, p, ol {
       <div class="column is-1 goUP is-hidden-tablet">
         <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
       </div>
-      <div class="column is-6-desktop is-7-touch">
+      <div class="column is-6-desktop is-7-touch has-text-black">
         <p class="title is-size-2-desktop is-size-4-touch">
           星期一
         </p>
@@ -560,18 +563,26 @@ body, p, ol {
         </figure>
       </div>
       <div class="column is-10 padL is-offset-1">
-        <p class="title is-6 has-text-weight-normal">
-          覺得禮拜幾最容易感到厭世？
+        <p class="title is-6 has-text-weight-normal has-text-black">
+          「覺得禮拜幾最容易感到厭世？」
         </p>
       </div>
-      <div class="column is-10 is-offset-1">
-        <a id="#dayBlueChart"></a>
+      <div class="column is-10 is-offset-1 padS">
         <iframe width="100%" height="395" src="https://live.amcharts.com/ZDUwN/embed/" frameborder="0"></iframe>
+        <div class="padM">
+          <p class="subtitle is-7 has-text-black has-text-weight-normal">
+            全體受訪者 3,104 人
+          </p>
+          <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
+            創市際市場研究顧問 May 2018
+          </p>
+        </div>
+
       </div>
     </div>
   </div>
 </div>
-<div class="modal" id="angryCounts" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="angryCounts" tabindex="-1" aria-hidden="true">
   <div class="modalBG padLeft">
     <div class="columns is-mobile padMS">
       <div class="column is-1 goUP is-hidden-mobile">
@@ -603,11 +614,17 @@ body, p, ol {
       </div>
       <div class="column is-10 is-offset-1">
         <iframe width="100%" height="395" src="https://live.amcharts.com/ZDUwN/embed/" frameborder="0"></iframe>
+        <p class="subtitle is-7 has-text-black has-text-weight-normal">
+          全體受訪者 3,104 人
+        </p>
+        <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
+          創市際市場研究顧問 May 2018
+        </p>
       </div>
     </div>
   </div>
 </div>
-<div class="modal" id="overTime" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="overTime" tabindex="-1" aria-hidden="true">
   <div class="modalBG padLeft">
     <div class="columns is-mobile padMS">
       <div class="column is-1 goUP is-hidden-mobile">
@@ -639,11 +656,17 @@ body, p, ol {
       </div>
       <div class="column is-10 is-offset-1">
         <iframe width="100%" height="395" src="https://live.amcharts.com/ZDUwN/embed/" frameborder="0"></iframe>
+        <p class="subtitle is-7 has-text-black has-text-weight-normal">
+          全體受訪者 3,104 人
+        </p>
+        <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
+          創市際市場研究顧問 May 2018
+        </p>
       </div>
     </div>
   </div>
 </div>
-<div class="modal" id="gotRaised" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="gotRaised" tabindex="-1" aria-hidden="true">
   <div class="modalBG padLeft">
     <div class="columns is-mobile padMS">
       <div class="column is-1 goUP is-hidden-mobile">
@@ -675,11 +698,17 @@ body, p, ol {
       </div>
       <div class="column is-10 is-offset-1">
         <iframe width="100%" height="395" src="https://live.amcharts.com/ZDUwN/embed/" frameborder="0"></iframe>
+        <p class="subtitle is-7 has-text-black has-text-weight-normal">
+          全體受訪者 3,104 人
+        </p>
+        <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
+          創市際市場研究顧問 May 2018
+        </p>
       </div>
     </div>
   </div>
 </div>
-<div class="modal" id="longMeeting" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="longMeeting" tabindex="-1" aria-hidden="true">
   <div class="modalBG padLeft">
     <div class="columns is-mobile padMS">
       <div class="column is-1 goUP is-hidden-mobile">
@@ -711,11 +740,17 @@ body, p, ol {
       </div>
       <div class="column is-10 is-offset-1">
         <iframe width="100%" height="395" src="https://live.amcharts.com/ZDUwN/embed/" frameborder="0"></iframe>
+        <p class="subtitle is-7 has-text-black has-text-weight-normal">
+          全體受訪者 3,104 人
+        </p>
+        <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
+          創市際市場研究顧問 May 2018
+        </p>
       </div>
     </div>
   </div>
 </div>
-<div class="modal" id="lowWage" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="lowWage" tabindex="-1" aria-hidden="true">
   <div class="modalBG padLeft">
     <div class="columns is-mobile padMS">
       <div class="column is-1 goUP is-hidden-mobile">
@@ -747,11 +782,17 @@ body, p, ol {
       </div>
       <div class="column is-10 is-offset-1">
         <iframe width="100%" height="395" src="https://live.amcharts.com/ZDUwN/embed/" frameborder="0"></iframe>
+        <p class="subtitle is-7 has-text-black has-text-weight-normal">
+          全體受訪者 3,104 人
+        </p>
+        <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
+          創市際市場研究顧問 May 2018
+        </p>
       </div>
     </div>
   </div>
 </div>
-<div class="modal" id="lifeWinners" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="lifeWinners" tabindex="-1" aria-hidden="true">
   <div class="modalBG padLeft">
     <div class="columns is-mobile padMS">
       <div class="column is-1 goUP is-hidden-mobile">
@@ -783,11 +824,17 @@ body, p, ol {
       </div>
       <div class="column is-10 is-offset-1">
         <iframe width="100%" height="395" src="https://live.amcharts.com/ZDUwN/embed/" frameborder="0"></iframe>
+        <p class="subtitle is-7 has-text-black has-text-weight-normal">
+          全體受訪者 3,104 人
+        </p>
+        <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
+          創市際市場研究顧問 May 2018
+        </p>
       </div>
     </div>
   </div>
 </div>
-<div class="modal" id="tooBusy" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="tooBusy" tabindex="-1" aria-hidden="true">
   <div class="modalBG padLeft">
     <div class="columns is-mobile padMS">
       <div class="column is-1 goUP is-hidden-mobile">
@@ -819,41 +866,16 @@ body, p, ol {
       </div>
       <div class="column is-10 is-offset-1">
         <iframe width="100%" height="395" src="https://live.amcharts.com/ZDUwN/embed/" frameborder="0"></iframe>
+        <p class="subtitle is-7 has-text-black has-text-weight-normal">
+          全體受訪者 3,104 人
+        </p>
+        <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
+          創市際市場研究顧問 May 2018
+        </p>
       </div>
     </div>
   </div>
 </div>
-
-<!--- js for burger menu icon in mobile view---->
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-
-  // Get all "navbar-burger" elements
-  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-  // Check if there are any navbar burgers
-  if ($navbarBurgers.length > 0) {
-
-    // Add a click event on each of them
-    $navbarBurgers.forEach(function ($el) {
-      $el.addEventListener('click', function () {
-
-        // Get the target from the "data-target" attribute
-        var target = $el.dataset.target;
-        var $target = document.getElementById(target);
-
-        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-        $el.classList.toggle('is-active');
-        $target.classList.toggle('is-active');
-
-      });
-    });
-  }
-
-});
-</script>
-
-
 
 </body>
 </html>
