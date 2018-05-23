@@ -237,7 +237,7 @@ a {
 
 @media screen and (max-width: 768px), print {
   .modalBG {
-    width:66%;
+    width:68%;
     margin-left:33%;
   }
 }
