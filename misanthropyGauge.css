@@ -111,9 +111,9 @@ body, p, ol {
 }
 
 @media screen and (max-width: 768px), print {
-  .hoverLarge {
-    -webkit-transition-property: none;
-    transition-property: none;
+  .hoverLarge:hover {
+    -webkit-transform: scale(0.825);
+    transform: scale(0.825);
   }
 }
 
