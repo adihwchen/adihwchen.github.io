@@ -231,9 +231,9 @@ a {
   -ms-overflow-x: hidden;
 }
 
-@media screen and (max-width: 769px), print {
+@media screen and (max-width: 768px), print {
   .modalBG {
-    width:67%;
+    width:66%;
     margin-left:33%;
   }
 }
