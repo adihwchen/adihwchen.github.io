@@ -3,9 +3,13 @@
 body, p, ol {
   font-family:"source-han-sans-traditional", "Microsoft JhengHei", sans-serif;
 }
-body {
-  background-color: #181818;
+
+@media screen and (max-width: 769px), print {
+  body {
+    background-color: #181818;
+  }
 }
+
 
 /* padding Park */
 .padL {
