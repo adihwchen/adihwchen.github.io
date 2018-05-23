@@ -194,7 +194,10 @@ a {
 }
 
 .lockOverflowX {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
+  -ms-overflow-x: hidden;
 }
 /*** this site only ***/
 
