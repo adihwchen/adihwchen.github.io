@@ -193,8 +193,8 @@ a {
   }
 }
 
-.lockOverflowY {
-  overflow-y: hidden;
+.lockOverflowX {
+  overflow-x: hidden;
 }
 /*** this site only ***/
 
