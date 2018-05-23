@@ -75,7 +75,7 @@ body, p, ol {
   margin-top: -18px;
 }
 
-/* this site only*/
+/*** this site only ***/
 .stayBottom {
   position: fixed;
   left: 2vw;
@@ -193,6 +193,10 @@ a {
   }
 }
 
+.lockOverflowY {
+  overflow-y: hidden;
+}
+/*** this site only ***/
 
 
 /*hard coded alt from originals*/
