@@ -3,6 +3,9 @@
 body, p, ol {
   font-family:"source-han-sans-traditional", "Microsoft JhengHei", sans-serif;
 }
+body {
+  background-color: #181818;
+}
 
 /* padding Park */
 .padL {
@@ -194,10 +197,7 @@ a {
 }
 
 .lockOverflowX {
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
-  -ms-overflow-x: hidden;
 }
 /*** this site only ***/
 
@@ -213,9 +213,6 @@ a {
   }
 }
 
-.footer {
-  background-color: rgba(0,0,0,0);
-}
 /* modal */
 .modal {
   /*align-items: center;*/
@@ -240,7 +237,7 @@ a {
 
 @media screen and (max-width: 768px), print {
   .modalBG {
-    width:68%;
+    width:67%;
     margin-left:33%;
   }
 }
