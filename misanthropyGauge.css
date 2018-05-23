@@ -110,6 +110,14 @@ body, p, ol {
   transform: scale(1.125);
 }
 
+@media screen and (max-width: 768px), print {
+  .hoverLarge {
+    -webkit-transition-property: none;
+    transition-property: none;
+  }
+}
+
+
 .moreSpace {
   line-height: 160%;
 }
