@@ -1,1220 +1,275 @@
-<!DOCTYPE html>
+<!doctype HTML>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1, user-scalable=no">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="misanthropyGauge.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-  <title>厭世詞選</title>
-
-  <meta property="og:url" content="http://misanthropy-gauge.beamedia.co">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="厭世詞選">
-  <meta property="og:image" content="https://c1.staticflickr.com/1/975/28400040198_65732cc263_o.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:description" content="生活的各種日常負能量警報">
-
-  <link rel="apple-touch-icon" sizes="57x57" href="favi/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="favi/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="favi/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="favi/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="favi/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="favi/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="favi/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="favi/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="favi/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="favi/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favi/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="favi/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favi/favicon-16x16.png">
-  <link rel="manifest" href="favi/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="favi/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
 
 </head>
+<style>
+
+body {
+  background: #a3d15a;
+}
+body, p, ol {
+  font-family:"source-han-sans-traditional", "Microsoft JhengHei", sans-serif;
+}
+
+/* padding Park */
+.padL {
+  padding-top: 8vw;
+}
+.padM {
+  padding-top: 5%;
+}
+.padMS {
+  padding-top: 1.8rem;
+}
+@media screen and (max-width: 769px), print {
+  .padMS {
+    padding-top: 0.8rem;
+  }
+}
+.padS {
+  padding-top: 2.5%;
+}
+.padXS {
+  padding-top: 0.5%;
+}
+.padBoth {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+.padBothS {
+  padding-top: 3%;
+  padding-bottom: 1%;
+}
+.textPad {
+  padding-top: 30%;
+}
+.padLeft {
+  padding-left: 2%;
+}
+.padLeftTitle {
+  padding-left: 2.6em;
+}
+
+/* margin trailer */
+.goUP {
+  margin-top: -4px;
+}
+.goUPmore {
+  margin-top: -12px;
+}
+.goUPfurther {
+  margin-top: -18px;
+}
+
+
+.fa {
+  color: black;
+}
+
+
+.picFrame {
+  /*border: 2px solid #1f7200;*/
+  border-radius: 10px;
+  background-color: white;
+  height: 6em;
+  padding-top: 2.2em;
+}
+
+/*.greenBG {
+  background: #a3d15a;
+  color: white;
+}*/
+
+</style>
 
 <body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<!-- adobe typekit -->
-<script>
-  (function(d) {
-    var config = {
-      kitId: 'tfk2lym',
-      scriptTimeout: 3000,
-      async: true
-    },
-    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-  })(document);
-</script>
-<!-- adobe typekit -->
-
-<!-- facebook embed -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.0&appId=672998922793785&autoLogAppEvents=1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<!-- facebook embed -->
-
-<!--triggers-->
-<div class="columns is-centered is-mobile">
-  <!-- sidebar -->
-  <div class="column is-3-tablet is-4-mobile darkGrey">
-    <div class="sideBar container ">
-      <!--stay top btns-->
-        <div class="columns is-mobile is-multiline stayBottom">
-          <div class="column is-9-mobile is-12-tablet">
-            <p class="subtitle is-7 has-text-white">【 厭世 】 ㄧㄢˋ ㄕˋ</p>
-            <p class="subtitle is-7 has-text-white goUP padLeft">n.</br>消極悲觀，對人生不抱希望。</p>
-            <nav class="">
-              <!-- fullscreen burger -->
-              <div id="myNav" class="overlay">
-                <a href="javascript:void(0)" class="closebtn has-text-weight-light" onclick="closeNav()">&times;</a>
-                <div class="overlay-content">
-                  <a data-toggle="modal" data-target="#about" onclick="closeNav()" data-dismiss="modal" aria-label="close" class="has-text-weight-light">關於</a>
-                  <a data-toggle="modal" data-target="#help" onclick="closeNav()"  data-dismiss="modal" aria-label="close" class="has-text-weight-light">救命</a>
-                  <a class="has-text-weight-light fb-xfbml-parse-ignore" href="https://www.facebook.com/sharer/sharer.php?u=http://daily-life-units.beamedia.co%2F&amp;src=sdkpreparse" target="_blank" >分享</a>
-                </div>
-              </div>
-              <span style="font-size:30px;cursor:pointer;color:white;margin-left:0.5rem;" onclick="openNav()">&#9776;</span>
-              <script>
-              function openNav() {
-                  document.getElementById("myNav").style.width = "100%";
-              }
-              function closeNav() {
-                  document.getElementById("myNav").style.width = "0%";
-              }
-              </script>
-              <!-- fullscreen burger -->
-            </nav>
-
-          </div>
-          <div class="column is-8 padM is-hidden-mobile">
+  <script>
+    $(function () {
+        $(".picFrame").click(function () {
+          $(this).css('background-color', '#fee55c');
+          /*$(this).css('color', 'white');*/
+          $(this).css('font-weight', 'bold');
+        });
+    });
+  </script>
+  <div class="columns is-centered is-mobile">
+  <div class="column is-4 has-text-centered padBoth">
+    <p class="title is-2 has-text-white">Bingo</p>
+  </div>
+</div>
+<div class="container">
+  <div class="columns is-centered is-mobile is-multiline">
+    <div class="column is-8-tablet is-11-mobile has-text-centered">
+      <div class="columns is-centered is-mobile">
+        <div class="column">
+          <div class="picFrame">
+            用手機填
           </div>
         </div>
+        <div class="column ">
+          <div class="picFrame">
+            hello
+          </div>
+        </div>
+        <div class="column">
+          <div class="picFrame">
+            hello
+          </div>
+        </div>
+        <div class="column">
+          <div class="picFrame">
+            hello
+          </div>
+        </div>
+        <div class="column">
+          <div class="picFrame">
+            參加過線上論壇
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-8-tablet is-11-mobile has-text-centered">
+      <div class="columns is-centered is-mobile">
+        <div class="column">
+          <div class="picFrame">
+            hello
+          </div>
+        </div>
+        <div class="column ">
+          <div class="picFrame">
+            hello
+          </div>
+        </div>
+        <div class="column">
+          <div class="picFrame">
+            每天都來
+          </div>
+        </div>
+        <div class="column">
+          <div class="picFrame">
+            抽獎有中
+          </div>
+        </div>
+        <div class="column">
+          <div class="picFrame">
+            hello
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-8-tablet is-11-mobile has-text-centered">
+      <div class="columns is-centered is-mobile">
+        <div class="column">
+          <div class="picFrame">
+            玩過PK
+          </div>
+        </div>
+        <div class="column ">
+          <div class="picFrame">
+            填過進階資料
+          </div>
+        </div>
+        <div class="column">
+          <div class="picFrame">
+            成功推薦好友
+          </div>
+        </div>
+        <div class="column">
+          <div class="picFrame">
+            兌換過點數
+          </div>
+        </div>
+        <div class="column">
+          <div class="picFrame">
+            參加線上活動
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-8-tablet is-11-mobile has-text-centered">
+      <div class="columns is-centered is-mobile">
+        <div class="column">
+          <div class="picFrame">
+            hello
+          </div>
+        </div>
+        <div class="column ">
+          <div class="picFrame">
+            有按粉絲頁讚
+          </div>
+        </div>
+        <div class="column">
+          <div class="picFrame">
+            hello
+          </div>
+        </div>
+        <div class="column">
+          <div class="picFrame">
+            粉絲頁快問快答
+          </div>
+        </div>
+        <div class="column">
+          <div class="picFrame">
+            hello
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column is-8-tablet is-11-mobile has-text-centered">
+      <div class="columns is-centered is-mobile">
+        <div class="column">
+          <div class="picFrame">
+            hello
+          </div>
+        </div>
+        <div class="column ">
+          <div class="picFrame">
+            hello
+          </div>
+        </div>
+        <div class="column">
+          <div class="picFrame">
+            hello
+          </div>
+        </div>
+        <div class="column">
+          <div class="picFrame">
+            hello
+          </div>
+        </div>
+        <div class="column">
+          <div class="picFrame">
+            hello
+          </div>
+        </div>
+      </div>
+    </div>
 
-      <!--end of stay top btns -->
-      <div class="">
-        <p class="subtitle is-1 has-text-weight-exlight has-text-white">厭</br>世</br>詞</br>選</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- content grid -->
-  <div class="column is-9-tablet is-three-fifth-mobile">
-    <div class="columns is-mobile is-multiline is-centered padALL">
-      <div class="column is-4-desktop is-6-tablet is-12-mobile columnGAP has-background-white">
-        <a data-toggle="modal" data-target="#dayBlue" data-direction='right'>
-          <figure class="image picFrame">
-            <img class="hoverLarge" src="img/dayblue.png" alt="">
-          </figure>
-        </a>
-      </div>
-      <div class="column is-4-desktop is-6-tablet is-12-mobile columnGAP has-background-white">
-        <a data-toggle="modal" data-target="#bottleNeck">
-          <figure class="image picFrame">
-            <img class="hoverLarge" src="img/bottleneck.png" alt="">
-          </figure>
-        </a>
-      </div>
-      <div class="column is-4-desktop is-6-tablet is-12-mobile columnGAP has-background-white">
-        <a data-toggle="modal" data-target="#tooBusy">
-          <figure class="image picFrame">
-            <img class="hoverLarge" src="img/toobusy.png" alt="">
-          </figure>
-        </a>
-      </div>
-      <div class="column is-4-desktop is-6-tablet is-12-mobile columnGAP has-background-white">
-        <a data-toggle="modal" data-target="#tooMuchRain">
-          <figure class="image picFrame">
-            <img class="hoverLarge" src="img/toomuchrain.png" alt="">
-          </figure>
-        </a>
-      </div>
-      <div class="column is-4-desktop is-6-tablet is-12-mobile columnGAP has-background-white">
-        <a data-toggle="modal" data-target="#noFriend">
-          <figure class="image picFrame">
-            <img class="hoverLarge" src="img/nofriend.png" alt="">
-          </figure>
-        </a>
-      </div>
-      <div class="column is-4-desktop is-6-tablet is-12-mobile columnGAP has-background-white">
-        <a data-toggle="modal" data-target="#noInternet">
-          <figure class="image picFrame">
-            <img class="hoverLarge" src="img/nointernet.png" alt="">
-          </figure>
-        </a>
-      </div>
-      <div class="column is-4-desktop is-6-tablet is-12-mobile columnGAP has-background-white">
-        <a data-toggle="modal" data-target="#nobodyWants">
-          <figure class="image picFrame">
-            <img class="hoverLarge" src="img/nobodywants.png" alt="">
-          </figure>
-        </a>
-      </div>
-      <div class="column is-4-desktop is-6-tablet is-12-mobile columnGAP has-background-white">
-        <a data-toggle="modal" data-target="#overTime">
-          <figure class="image picFrame">
-            <img class="hoverLarge" src="img/overtime.png" alt="">
-          </figure>
-        </a>
-      </div>
-      <div class="column is-4-desktop is-6-tablet is-12-mobile columnGAP has-background-white">
-        <a data-toggle="modal" data-target="#lifeWinners">
-          <figure class="image picFrame">
-            <img class="hoverLarge" src="img/lifewinners.png" alt="">
-          </figure>
-        </a>
-      </div>
-      <div class="column is-4-desktop is-6-tablet is-12-mobile columnGAP has-background-white">
-        <a data-toggle="modal" data-target="#longMeeting">
-          <figure class="image picFrame">
-            <img class="hoverLarge" src="img/longmeeting.png" alt="">
-          </figure>
-        </a>
-      </div>
-      <div class="column is-4-desktop is-6-tablet is-12-mobile columnGAP has-background-white">
-        <a data-toggle="modal" data-target="#gotRaised">
-          <figure class="image picFrame">
-            <img class="hoverLarge" src="img/gotraised.png" alt="">
-          </figure>
-        </a>
-      </div>
-      <div class="column is-4-desktop is-6-tablet is-12-mobile columnGAP has-background-white">
-        <a data-toggle="modal" data-target="#lowWage">
-          <figure class="image picFrame">
-            <img class="hoverLarge" src="img/lowwage.png" alt="">
-          </figure>
-        </a>
-      </div>
-      <div class="column is-4-desktop is-6-tablet is-12-mobile columnGAP has-background-white">
-        <a data-toggle="modal" data-target="#farAway">
-          <figure class="image picFrame">
-            <img class="hoverLarge" src="img/faraway.png" alt="">
-          </figure>
-        </a>
-      </div>
-      <div class="column is-4-desktop is-6-tablet is-12-mobile columnGAP has-background-white">
-        <a data-toggle="modal" data-target="#angryCounts">
-          <figure class="image picFrame">
-            <img class="hoverLarge" src="img/angrycounts.png" alt="">
-          </figure>
-        </a>
-      </div>
-      <div class="column is-4-desktop is-6-tablet is-12-mobile columnGAP has-background-white">
-        <a data-toggle="modal" data-target="#noLikes">
-          <figure class="image picFrame">
-            <img class="hoverLarge" src="img/nolikes.png" alt="">
-          </figure>
-        </a>
-      </div>
-      <div class="column is-4-desktop is-6-tablet is-12-mobile columnGAP has-background-white">
-        <a data-toggle="modal" data-target="#ageGap">
-          <figure class="image picFrame">
-            <img class="hoverLarge" src="img/agegap.png" alt="">
-          </figure>
-        </a>
-      </div>
-      <div class="column is-4-desktop is-6-tablet is-12-mobile columnGAP has-background-white">
-        <a data-toggle="modal" data-target="#nobodyCalled">
-          <figure class="image picFrame">
-          <img class="hoverLarge" src="img/nobodycalled.png" alt="">
-          </figure>
-        </a>
-      </div>
-      <div class="column is-4-desktop is-6-tablet is-12-mobile columnGAP has-background-white">
-        <figure class="image picFrameLOGO">
-          <a href="http://www.ixpanel.com/" target="_blank">
-            <img class="hoverLarge" src="img/ixlogo.png" alt="">
-          </a>
-        </figure>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--- menu Modals ---->
-<div class="modal fade" id="about" tabindex="-1" aria-hidden="true">
-  <div class="modalBG padLeft">
-    <div class="columns is-mobile padMS">
-      <div class="column is-1 goUP is-hidden-mobile">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
-      </div>
-      <div class="column is-1 goUP is-hidden-tablet">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
-      </div>
-      <div class="column is-10 has-text-black">
-        <p class="title is-size-2-desktop is-size-4-touch has-text-weight-normal" style="letter-spacing:1px;">
-          關於
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light">
-          這是再努力也沒有回報的時代
-        </p>
-      </div>
-    </div>
-    <div class="columns is-mobile is-multiline">
-      <div class="column is-10 is-offset-1 padL">
-        <p class="title is-6 has-text-weight-normal moreSpace">
-          然後呢？沒有然後了。
-        </p>
-        <p class="title is-6 has-text-weight-light moreSpace">
-          大家總嚷嚷著厭世，厭世二字儼然成為現代人最重要也最琅琅上口的發語詞與出口。也不是真的不想活，而是出自於什麼都嘗試了，理解就算再努力也無從改變現況的無可奈何。
-        </p>
-        <p class="title is-6 has-text-weight-light moreSpace">
-          口說無憑，那些討厭的事要發生到什麼程度才會被叫厭世呢？秉持著負負得正的能量守恆定律，<a href="http://www.ixresearch.com/" target="_blank" style="text-decoration:underline">創市際市場研究顧問 InsightXplorer </a>訪問了<a href="https://www.ixpanel.com/index.jsp" target="_blank" style="text-decoration:underline"> iX:Panel 問卷社群網站</a>的 3,368 網友，為大家整理出台灣網友的 18 則厭世單位，看完快點洗洗睡咧，明天還要上班上課（呵欠）。
-        </p>
-      </div>
-      <div class="column is-10 is-offset-1 padL">
-        <p class="title is-6 has-text-weight-normal moreSpace">
-          厭世用語調查
-        </p>
-        <p class="title is-6 has-text-weight-light moreSpace">
-          數據來源 Data Source / <a href="http://www.ixresearch.com/" target="_blank" style="text-decoration:underline">創市際市場研究顧問 InsightXplorer</a>
-        </p>
-        <p class="title is-6 has-text-weight-light goUPfurther moreSpace">
-          調查平台 Survey Platform / <a href="http://www.ixpanel.com/" target="_blank" style="text-decoration:underline">iX:Panel 全宇宙最有聊的問卷社群網站</a>
-        </p>
-        <p class="title is-6 has-text-weight-light goUPfurther moreSpace">
-          研究員 Researcher / 陳薇竹 Ashley Chen
-        </p>
-        <p class="title is-6 has-text-weight-light goUPfurther moreSpace">
-          研究對象 / 創市際 iX:Panel 大型樣本群，針對台灣網友進行隨機抽樣，在 95% 的信心水準下，抽樣誤差約正負 1.69%
-        </p>
-        <p class="title is-6 has-text-weight-light goUPfurther moreSpace">
-          研究方法 / 線上調查（IX Survey 線上研究整合系統）
-        </p>
-        <p class="title is-6 has-text-weight-light goUPfurther moreSpace">
-          研究期間 / 2018/05/03-07
-        </p>
-        <p class="title is-6 has-text-weight-light goUPfurther moreSpace">
-          有效樣本數 / N=3,368
-        </p>
-        <p class="title is-6 has-text-weight-light goUPfurther moreSpace">
-          製作 Production / <a href="https://www.facebook.com/beammedia" target="_blank">創媒體 BeamMedia</a>
-        </p>
-        <p class="title is-6 has-text-weight-light goUPfurther moreSpace">
-          內容企劃 Content Planning / 陳欣緯 Hsin-Wei ‘ADI’ Chen, 李曼寧 May Lee
-        </p>
-        <p class="title is-6 has-text-weight-light goUPfurther moreSpace">
-          圖像設計、版面設計與插畫 Graphic Design, Layout Design and Illustration / 李曼寧 May Lee
-        </p>
-        <p class="title is-6 has-text-weight-light goUPfurther moreSpace">
-          前端 Frontend / 陳欣緯 Hsin-Wei ‘ADI’ Chen
-        </p>
-        <p class="title is-6 has-text-weight-light goUPfurther moreSpace">
-          技術支援 Technical Support / 黃展基 Kiko Wong
-        </p>
-      </div>
-    </div>
-    <div class="section">
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="help" tabindex="-1" aria-hidden="true">
-  <div class="modalBG padLeft">
-    <div class="columns is-mobile padMS">
-      <div class="column is-1 goUP is-hidden-mobile">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
-      </div>
-      <div class="column is-1 goUP is-hidden-tablet">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
-      </div>
-      <div class="column is-6-desktop is-7-touch has-text-black">
-        <p class="title is-size-2-desktop is-size-4-touch has-text-weight-normal" style="letter-spacing:1px;">
-          1995
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light">
-          生命線協談專線
-        </p>
-      </div>
-    </div>
-    <div class="columns is-mobile is-multiline">
-      <div class="column is-10 padL is-offset-1">
-        <p class="title is-size-6-desktop is-size-7-touch has-text-weight-light">
-          24小時全年無休
-        </p>
-      </div>
-    </div>
   </div>
 </div>
 
-<!--- content Modals ---->
-<div class="modal fade" id="dayBlue" tabindex="-1" aria-hidden="true">
-  <div class="modalBG padLeft">
-    <div class="columns is-mobile padMS">
-      <div class="column is-1 goUP is-hidden-mobile">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
-      </div>
-      <div class="column is-1 goUP is-hidden-tablet">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
-      </div>
-      <div class="column is-10 has-text-black">
-        <p class="title is-size-2-desktop is-size-4-touch has-text-weight-normal" style="letter-spacing:1px;">
-          【 厭世星期幾 】
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          ㄇㄤ ㄉㄟ ㄅㄨˇ ㄌㄨˋ
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          說個鬼故事：今天星期一
-        </p>
-      </div>
-    </div>
-    <div class="columns is-mobile is-multiline">
-      <div class="column is-10 is-offset-1">
-        <figure class="image">
-          <img src="img/dayblue.png" alt="">
-        </figure>
-      </div>
-      <div class="column is-10 padL is-offset-1">
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          覺得星期幾最容易感到厭世？
-        </p>
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          星期一
-        </p>
-      </div>
-      <div class="column is-11 is-offset-1 padS">
-        <iframe width="100%" height="395" src="https://live.amcharts.com/ZDUwN/embed/" frameborder="0"></iframe>
-        <div class="padM">
-          <p class="subtitle is-7 has-text-black has-text-weight-normal">
-            全體受訪者 3,368 人
-          </p>
-          <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
-            創市際市場研究顧問 May 2018
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-    </div>
-  </div>
 </div>
-<div class="modal fade" id="bottleNeck" tabindex="-1" aria-hidden="true">
-  <div class="modalBG padLeft">
-    <div class="columns is-mobile padMS">
-      <div class="column is-1 goUP is-hidden-mobile">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
-      </div>
-      <div class="column is-1 goUP is-hidden-tablet">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
-      </div>
-      <div class="column is-10 has-text-black">
-        <p class="title is-size-2-desktop is-size-4-touch has-text-weight-normal" style="letter-spacing:1px;">
-          【 瓶頸 】
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          ㄓㄨㄤˋ ㄑㄧㄤˊ ㄑㄧˊ
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          失敗為成功之母但我居然連失敗都卡關
-        </p>
-      </div>
-    </div>
-    <div class="columns is-mobile is-multiline">
-      <div class="column is-10 is-offset-1">
-        <figure class="image">
-          <img src="img/bottleneck.png" alt="">
-        </figure>
-      </div>
-      <div class="column is-10 padL is-offset-1">
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          覺得事情卡住多久沒進展叫「瓶頸」？
-        </p>
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          6天11小時又31分
-        </p>
-      </div>
-      <div class="column is-11 is-offset-1 padS">
-        <iframe width="100%" height="640" src="https://live.amcharts.com/M5ZmM/embed/" frameborder="0"></iframe>
-        <div class="padM">
-          <p class="subtitle is-7 has-text-black has-text-weight-normal">
-            全體受訪者 3,368 人
-          </p>
-          <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
-            創市際市場研究顧問 May 2018
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-    </div>
+<div class="columns is-centered padBoth">
+  <div class="column is-8 has-text-centered">
+    <a class="button is-link is-rounded" href="#">FacebookSth</a>
   </div>
-</div>
-<div class="modal fade" id="tooBusy" tabindex="-1" aria-hidden="true">
-  <div class="modalBG padLeft">
-    <div class="columns is-mobile padMS">
-      <div class="column is-1 goUP is-hidden-mobile">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
-      </div>
-      <div class="column is-1 goUP is-hidden-tablet">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
-      </div>
-      <div class="column is-10 has-text-black">
-        <p class="title is-size-2-desktop is-size-4-touch has-text-weight-normal" style="letter-spacing:1px;">
-          【 很忙 】
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          ㄇㄟˊ ㄎㄨㄥˋ
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          休息60秒就減少一分鐘壽命
-        </p>
-      </div>
-    </div>
-    <div class="columns is-mobile is-multiline">
-      <div class="column is-10 is-offset-1">
-        <figure class="image">
-          <img src="img/toobusy.png" alt="">
-        </figure>
-      </div>
-      <div class="column is-10 padL is-offset-1">
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          覺得多久沒休息叫「很忙」？
-        </p>
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          2小時40分又23秒
-        </p>
-      </div>
-      <div class="column is-11 is-offset-1 padS">
-        <iframe width="100%" height="675" src="https://live.amcharts.com/gyOWU/embed/" frameborder="0"></iframe>
-        <div class="padM">
-          <p class="subtitle is-7 has-text-black has-text-weight-normal">
-            全體受訪者 3,368 人
-          </p>
-          <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
-            創市際市場研究顧問 May 2018
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="tooMuchRain" tabindex="-1" aria-hidden="true">
-  <div class="modalBG padLeft">
-    <div class="columns is-mobile padMS">
-      <div class="column is-1 goUP is-hidden-mobile">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
-      </div>
-      <div class="column is-1 goUP is-hidden-tablet">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
-      </div>
-      <div class="column is-10 has-text-black">
-        <p class="title is-size-2-desktop is-size-4-touch has-text-weight-normal" style="letter-spacing:1px;">
-          【 連續下雨 】
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          ㄕㄥ ㄍㄨ ㄈㄚ ㄇㄟˊ
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          原來是水上樂園啊還以為是機場呢
-        </p>
-      </div>
-    </div>
-    <div class="columns is-mobile is-multiline">
-      <div class="column is-10 is-offset-1">
-        <figure class="image">
-          <img src="img/toomuchrain.png" alt="">
-        </figure>
-      </div>
-      <div class="column is-10 padL is-offset-1">
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          連續下雨多久會覺得厭世？
-        </p>
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          4天23小時16分又48秒
-        </p>
-      </div>
-      <div class="column is-11 is-offset-1 padS">
-        <iframe width="100%" height="780" src="https://live.amcharts.com/TVkOG/embed/" frameborder="0"></iframe>
-        <div class="padM">
-          <p class="subtitle is-7 has-text-black has-text-weight-normal">
-            全體受訪者 3,368 人
-          </p>
-          <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
-            創市際市場研究顧問 May 2018
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="noFriend" tabindex="-1" aria-hidden="true">
-  <div class="modalBG padLeft">
-    <div class="columns is-mobile padMS">
-      <div class="column is-1 goUP is-hidden-mobile">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
-      </div>
-      <div class="column is-1 goUP is-hidden-tablet">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
-      </div>
-      <div class="column is-10 has-text-black">
-        <p class="title is-size-2-desktop is-size-4-touch has-text-weight-normal" style="letter-spacing:1px;">
-          【 沒朋友 】
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          ㄅㄧㄢ ㄩㄢˊ ㄖㄣˊ
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          在路上遇到認識的人他們都直接穿過我
-        </p>
-      </div>
-    </div>
-    <div class="columns is-mobile is-multiline">
-      <div class="column is-10 is-offset-1">
-        <figure class="image">
-          <img src="img/nofriend.png" alt="">
-        </figure>
-      </div>
-      <div class="column is-10 padL is-offset-1">
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          覺得好朋友少於幾個叫「沒朋友」？
-        </p>
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          5個
-        </p>
-      </div>
-      <div class="column is-11 is-offset-1 padS">
-        <iframe width="100%" height="780" src="https://live.amcharts.com/MwNjd/embed/" frameborder="0"></iframe>
-        <div class="padM">
-          <p class="subtitle is-7 has-text-black has-text-weight-normal">
-            全體受訪者 3,368 人
-          </p>
-          <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
-            創市際市場研究顧問 May 2018
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="noInternet" tabindex="-1" aria-hidden="true">
-  <div class="modalBG padLeft">
-    <div class="columns is-mobile padMS">
-      <div class="column is-1 goUP is-hidden-mobile">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
-      </div>
-      <div class="column is-1 goUP is-hidden-tablet">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
-      </div>
-      <div class="column is-10 has-text-black">
-        <p class="title is-size-2-desktop is-size-4-touch has-text-weight-normal" style="letter-spacing:1px;">
-          【 網路斷線 】
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          ㄙㄢ ㄘˋ ㄩㄢˊ ㄕˋ ㄐㄧㄝˋ
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          突然眼前一黑人生失去方向
-        </p>
 
-      </div>
-    </div>
-    <div class="columns is-mobile is-multiline">
-      <div class="column is-10 is-offset-1">
-        <figure class="image">
-          <img src="img/nointernet.png" alt="">
-        </figure>
-      </div>
-      <div class="column is-10 padL is-offset-1">
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          覺得網路斷線多久會覺得厭世？
-        </p>
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          1天4小時又48分
-        </p>
-      </div>
-      <div class="column is-11 is-offset-1 padS">
-        <iframe width="100%" height="780" src="https://live.amcharts.com/ZGI3M/embed/" frameborder="0"></iframe>
-        <div class="padM">
-          <p class="subtitle is-7 has-text-black has-text-weight-normal">
-            全體受訪者 3,368 人
-          </p>
-          <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
-            創市際市場研究顧問 May 2018
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-    </div>
-  </div>
 </div>
-<div class="modal fade" id="nobodyWants" tabindex="-1" aria-hidden="true">
-  <div class="modalBG padLeft">
-    <div class="columns is-mobile padMS">
-      <div class="column is-1 goUP is-hidden-mobile">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
-      </div>
-      <div class="column is-1 goUP is-hidden-tablet">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
-      </div>
-      <div class="column is-10 has-text-black">
-        <p class="title is-size-2-desktop is-size-4-touch has-text-weight-normal" style="letter-spacing:1px;">
-          【 沒人要 】
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          ㄓˋ ㄒㄧㄠ
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          人家是天菜曬恩愛我只能是廚餘
+
+
+  <!--- Footer --->
+  <div class="footer greenBG">
+      <div class="content has-text-centered is-small">
+        <p>
+          Copyright © 2018 創市際市場研究顧問公司 InsightXplorer
         </p>
       </div>
-    </div>
-    <div class="columns is-mobile is-multiline">
-      <div class="column is-10 is-offset-1">
-        <figure class="image">
-          <img src="img/nobodywants.png" alt="">
-        </figure>
-      </div>
-      <div class="column is-10 padL is-offset-1">
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          覺得幾歲之後還單身叫「沒人要」？
-        </p>
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          39歲7個月又24天
-        </p>
-      </div>
-      <div class="column is-11 is-offset-1 padS">
-        <iframe width="100%" height="780" src="https://live.amcharts.com/jZhMj/embed/" frameborder="0"></iframe>
-        <div class="padM">
-          <p class="subtitle is-7 has-text-black has-text-weight-normal">
-            全體受訪者 3,368 人
-          </p>
-          <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
-            創市際市場研究顧問 May 2018
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-    </div>
   </div>
-</div>
-<div class="modal fade" id="overTime" tabindex="-1" aria-hidden="true">
-  <div class="modalBG padLeft">
-    <div class="columns is-mobile padMS">
-      <div class="column is-1 goUP is-hidden-mobile">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
-      </div>
-      <div class="column is-1 goUP is-hidden-tablet">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
-      </div>
-      <div class="column is-10 has-text-black">
-        <p class="title is-size-2-desktop is-size-4-touch has-text-weight-normal" style="letter-spacing:1px;">
-          【 上週總工時 】
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          ㄅㄠˋ ㄍㄢ ㄓˇ ㄕㄨˋ
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          回家也是耍廢不如加班吹公司冷氣
-        </p>
-      </div>
-    </div>
-    <div class="columns is-mobile is-multiline">
-      <div class="column is-10 is-offset-1">
-        <figure class="image">
-          <img src="img/overtime.png" alt="">
-        </figure>
-      </div>
-      <div class="column is-10 padL is-offset-1">
-        <p class="title is-6 has-text-weight-normal has-text-black">
-           上禮拜總共工作幾小時？
-        </p>
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          45小時23分又24秒
-        </p>
-      </div>
-      <div class="column is-11 is-offset-1 padS">
-        <iframe width="100%" height="465" src="https://live.amcharts.com/NTk2Z/embed/" frameborder="0"></iframe>
-        <div class="padM">
-          <p class="subtitle is-7 has-text-black has-text-weight-normal">
-            有全職工作的受訪者 2,264 人
-          </p>
-          <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
-            創市際市場研究顧問 May 2018
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="lifeWinners" tabindex="-1" aria-hidden="true">
-  <div class="modalBG padLeft">
-    <div class="columns is-mobile padMS">
-      <div class="column is-1 goUP is-hidden-mobile">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
-      </div>
-      <div class="column is-1 goUP is-hidden-tablet">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
-      </div>
-      <div class="column is-10 has-text-black">
-        <p class="title is-size-2-desktop is-size-4-touch has-text-weight-normal" style="letter-spacing:1px;">
-          【 人生勝利組 】
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          ㄅㄞˊ ㄕㄡˇ ㄑㄧˇ ㄐㄧㄚ
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          原來是個擅長投胎的朋友呢
-        </p>
-      </div>
-    </div>
-    <div class="columns is-mobile is-multiline">
-      <div class="column is-10 is-offset-1">
-        <figure class="image">
-          <img src="img/lifewinners.png" alt="">
-        </figure>
-      </div>
-      <div class="column is-10 padL is-offset-1">
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          覺得年薪多少叫「人生勝利組」？
-        </p>
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          3,197,447元
-        </p>
-      </div>
-      <div class="column is-11 is-offset-1 padS">
-        <iframe width="100%" height="500" src="https://live.amcharts.com/hjNDJ/embed/" frameborder="0"></iframe>
-        <div class="padM">
-          <p class="subtitle is-7 has-text-black has-text-weight-normal">
-            全體受訪者 3,368 人
-          </p>
-          <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
-            創市際市場研究顧問 May 2018
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="longMeeting" tabindex="-1" aria-hidden="true">
-  <div class="modalBG padLeft">
-    <div class="columns is-mobile padMS">
-      <div class="column is-1 goUP is-hidden-mobile">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
-      </div>
-      <div class="column is-1 goUP is-hidden-tablet">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
-      </div>
-      <div class="column is-10 has-text-black">
-        <p class="title is-size-2-desktop is-size-4-touch has-text-weight-normal" style="letter-spacing:1px;">
-          【 冗長的會議 】
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          ㄈㄤˋ ㄎㄨㄥ ㄕˊ ㄐㄧㄢ
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          咦，中午吃了什麼？
-        </p>
-      </div>
-    </div>
-    <div class="columns is-mobile is-multiline">
-      <div class="column is-10 is-offset-1">
-        <figure class="image">
-          <img src="img/longmeeting.png" alt="">
-        </figure>
-      </div>
-      <div class="column is-10 padL is-offset-1">
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          覺得開會開多久叫「冗長的會議」？
-        </p>
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          2小時3分鐘又5秒
-        </p>
-      </div>
-      <div class="column is-11 is-offset-1 padS">
-        <iframe width="100%" height="570" src="https://live.amcharts.com/c3OTM/embed/" frameborder="0"></iframe>
-        <div class="padM">
-          <p class="subtitle is-7 has-text-black has-text-weight-normal">
-            有全職工作的受訪者 2,264 人
-          </p>
-          <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
-            創市際市場研究顧問 May 2018
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="gotRaised" tabindex="-1" aria-hidden="true">
-  <div class="modalBG padLeft">
-    <div class="columns is-mobile padMS">
-      <div class="column is-1 goUP is-hidden-mobile">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
-      </div>
-      <div class="column is-1 goUP is-hidden-tablet">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
-      </div>
-      <div class="column is-10 has-text-black">
-        <p class="title is-size-2-desktop is-size-4-touch has-text-weight-normal" style="letter-spacing:1px;">
-          【 上次加薪 】
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          ㄉㄨ ㄕˋ ㄔㄨㄢˊ ㄕㄨㄛ
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          老闆鼓勵大家努力上進可是薪資條卻毫無動靜
-        </p>
-      </div>
-    </div>
-    <div class="columns is-mobile is-multiline">
-      <div class="column is-10 is-offset-1">
-        <figure class="image">
-          <img src="img/gotraised.png" alt="">
-        </figure>
-      </div>
-      <div class="column is-10 padL is-offset-1">
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          上一次加薪是多久之前？
-        </p>
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          1年2個月又10天
-        </p>
-      </div>
-      <div class="column is-11 is-offset-1 padS">
-        <iframe width="100%" height="850" src="https://live.amcharts.com/JiMGU/embed/" frameborder="0"></iframe>
-        <div class="padM">
-          <p class="subtitle is-7 has-text-black has-text-weight-normal">
-            有全職工作的受訪者 2,264 人
-          </p>
-          <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
-            創市際市場研究顧問 May 2018
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="lowWage" tabindex="-1" aria-hidden="true">
-  <div class="modalBG padLeft">
-    <div class="columns is-mobile padMS">
-      <div class="column is-1 goUP is-hidden-mobile">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
-      </div>
-      <div class="column is-1 goUP is-hidden-tablet">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
-      </div>
-      <div class="column is-10 has-text-black">
-        <p class="title is-size-2-desktop is-size-4-touch has-text-weight-normal" style="letter-spacing:1px;">
-          【 低薪 】
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          ㄗㄨㄛˋ ㄍㄨㄥ ㄉㄜˊ
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          吃土有比賽的話大家都冠軍相
-        </p>
-      </div>
-    </div>
-    <div class="columns is-mobile is-multiline">
-      <div class="column is-10 is-offset-1">
-        <figure class="image">
-          <img src="img/lowwage.png" alt="">
-        </figure>
-      </div>
-      <div class="column is-10 padL is-offset-1">
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          覺得月薪多少叫「低薪」？
-        </p>
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          28,798元
-        </p>
-      </div>
-      <div class="column is-11 is-offset-1 padS">
-        <iframe width="100%" height="500" src="https://live.amcharts.com/mNDUx/embed/" frameborder="0"></iframe>
-        <div class="padM">
-          <p class="subtitle is-7 has-text-black has-text-weight-normal">
-            全體受訪者 3,368 人
-          </p>
-          <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
-            創市際市場研究顧問 May 2018
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="farAway" tabindex="-1" aria-hidden="true">
-  <div class="modalBG padLeft">
-    <div class="columns is-mobile padMS">
-      <div class="column is-1 goUP is-hidden-mobile">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
-      </div>
-      <div class="column is-1 goUP is-hidden-tablet">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
-      </div>
-      <div class="column is-10 has-text-black">
-        <p class="title is-size-2-desktop is-size-4-touch has-text-weight-normal" style="letter-spacing:1px;">
-          【 住太遠 】
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          ㄉㄢˋ ㄎㄜˊ ㄑㄩ
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          距離不是問題，_______才是
-        </p>
-      </div>
-    </div>
-    <div class="columns is-mobile is-multiline">
-      <div class="column is-10 is-offset-1">
-        <figure class="image">
-          <img src="img/faraway.png" alt="">
-        </figure>
-      </div>
-      <div class="column is-10 padL is-offset-1">
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          覺得單程通勤花多久時間叫「住太遠」？
-        </p>
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          51分又43秒
-        </p>
-      </div>
-      <div class="column is-11 is-offset-1 padS">
-        <iframe width="100%" height="710" src="https://live.amcharts.com/I5M2Y/embed/" frameborder="0"></iframe>
-        <div class="padM">
-          <p class="subtitle is-7 has-text-black has-text-weight-normal">
-            全體受訪者 3,368 人
-          </p>
-          <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
-            創市際市場研究顧問 May 2018
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="angryCounts" tabindex="-1" aria-hidden="true">
-  <div class="modalBG padLeft">
-    <div class="columns is-mobile padMS">
-      <div class="column is-1 goUP is-hidden-mobile">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
-      </div>
-      <div class="column is-1 goUP is-hidden-tablet">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
-      </div>
-      <div class="column is-10 has-text-black">
-        <p class="title is-size-2-desktop is-size-4-touch has-text-weight-normal" style="letter-spacing:1px;">
-          【 上次生氣 】
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          ㄓㄥˋ ㄔㄤˊ ㄋㄥˊ ㄌㄧㄤˋ ㄕˋ ㄈㄤˋ
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          爭不了氣只好生一下氣
-        </p>
-      </div>
-    </div>
-    <div class="columns is-mobile is-multiline">
-      <div class="column is-10 is-offset-1">
-        <figure class="image">
-          <img src="img/angrycounts.png" alt="">
-        </figure>
-      </div>
-      <div class="column is-10 padL is-offset-1">
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          上一次生氣是多久之前？
-        </p>
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          25天又18小時之前
-        </p>
-      </div>
-      <div class="column is-11 is-offset-1 padS">
-        <iframe width="100%" height="675" src="https://live.amcharts.com/jllMz/embed/" frameborder="0"></iframe>
-        <div class="padM">
-          <p class="subtitle is-7 has-text-black has-text-weight-normal">
-            全體受訪者 3,368 人
-          </p>
-          <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
-            創市際市場研究顧問 May 2018
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="noLikes" tabindex="-1" aria-hidden="true">
-  <div class="modalBG padLeft">
-    <div class="columns is-mobile padMS">
-      <div class="column is-1 goUP is-hidden-mobile">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
-      </div>
-      <div class="column is-1 goUP is-hidden-tablet">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
-      </div>
-      <div class="column is-10 has-text-black">
-        <p class="title is-size-2-desktop is-size-4-touch has-text-weight-normal" style="letter-spacing:1px;">
-          【 發文沒有讚 】
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          ㄇㄟˊ ㄖㄣˊ ㄑㄧˋ
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          媽媽不知道我在發廢文，所以讚的只有我自己
-        </p>
-      </div>
-    </div>
-    <div class="columns is-mobile is-multiline">
-      <div class="column is-10 is-offset-1">
-        <figure class="image">
-          <img src="img/nolikes.png" alt="">
-        </figure>
-      </div>
-      <div class="column is-10 padL is-offset-1">
-        <p class="title is-6 has-text-weight-normal has-text-black">
-           最近一次發文有幾個讚（如Facebook、IG等社群軟體）？
-        </p>
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          26 個
-        </p>
-      </div>
-      <div class="column is-11 is-offset-1 padS">
-        <iframe width="100%" height="815" src="https://live.amcharts.com/lZTlk/embed/" frameborder="0"></iframe>
-        <div class="padM">
-          <p class="subtitle is-7 has-text-black has-text-weight-normal">
-            全體受訪者 3,368 人
-          </p>
-          <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
-            創市際市場研究顧問 May 2018
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="ageGap" tabindex="-1" aria-hidden="true">
-  <div class="modalBG padLeft">
-    <div class="columns is-mobile padMS">
-      <div class="column is-1 goUP is-hidden-mobile">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
-      </div>
-      <div class="column is-1 goUP is-hidden-tablet">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
-      </div>
-      <div class="column is-10 has-text-black">
-        <p class="title is-size-2-desktop is-size-4-touch has-text-weight-normal" style="letter-spacing:1px;">
-          【 年輕 】
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          ㄐㄧㄠ ㄩㄢˊ ㄉㄢˋ ㄅㄞˊ
-        </p>
-        <p class="title is-size-2-desktop is-size-4-touch has-text-weight-normal" style="letter-spacing:1px;">
-          【 老了 】
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          ㄧㄣˊ ㄒㄧㄥˋ ㄐㄧㄚ ㄍㄞˋ
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          不談年齡了，你聽過小叮噹嗎？
-        </p>
-      </div>
-    </div>
-    <div class="columns is-mobile is-multiline">
-      <div class="column is-10 is-offset-1">
-        <figure class="image">
-          <img src="img/agegap.png" alt="">
-        </figure>
-      </div>
-      <div class="column is-10 padL is-offset-1">
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          覺得幾歲之前叫「年輕」？ 29歲5個月又8天
-        </p>
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          幾歲之後叫「老了」？ 45歲3個月又28天
-        </p>
-      </div>
-      <div class="column is-11 is-offset-1 padS">
-        <iframe width="100%" height="1410" src="https://live.amcharts.com/U3NGY/embed/" frameborder="0"></iframe>
-        <div class="padM">
-          <p class="subtitle is-7 has-text-black has-text-weight-normal">
-            全體受訪者 3,368 人
-          </p>
-          <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
-            創市際市場研究顧問 May 2018
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="nobodyCalled" tabindex="-1" aria-hidden="true">
-  <div class="modalBG padLeft">
-    <div class="columns is-mobile padMS">
-      <div class="column is-1 goUP is-hidden-mobile">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-3x"></i></a>
-      </div>
-      <div class="column is-1 goUP is-hidden-tablet">
-        <a href="#" class="" data-dismiss="modal" aria-label="close"><i class="fa fa-angle-left fa-2x"></i></a>
-      </div>
-      <div class="column is-10 has-text-black">
-        <p class="title is-size-2-desktop is-size-4-touch has-text-weight-normal" style="letter-spacing:1px;">
-          【 沒人打來 】
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          ㄐㄩㄝˊ ㄉㄜ˙ ㄌㄥˇ
-        </p>
-        <p class="subtitle is-size-6-desktop is-size-7-touch has-text-weight-light padLeftTitle">
-          既然打錯了乾脆交個朋友吧
-        </p>
-      </div>
-    </div>
-    <div class="columns is-mobile is-multiline">
-      <div class="column is-10 is-offset-1">
-        <figure class="image">
-          <img src="img/nobodycalled.png" alt="">
-        </figure>
-      </div>
-      <div class="column is-10 padL is-offset-1">
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          最近一次手機有朋友或親人來電是什麼時候？
-        </p>
-        <p class="title is-6 has-text-weight-normal has-text-black">
-          9天20小時38分24秒
-        </p>
-      </div>
-      <div class="column is-11 is-offset-1 padS">
-        <iframe width="100%" height="675" src="https://live.amcharts.com/U4MzF/embed/" frameborder="0"></iframe>
-        <div class="padM">
-          <p class="subtitle is-7 has-text-black has-text-weight-normal">
-            全體受訪者 3,368 人
-          </p>
-          <p class="subtitle is-7 has-text-black has-text-weight-light goUPfurther">
-            創市際市場研究顧問 May 2018
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="section">
-    </div>
-  </div>
-</div>
 
 </body>
 </html>
