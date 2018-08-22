@@ -69,13 +69,22 @@ body, p, ol {
   color: black;
 }
 
-
 .picFrame {
   /*border: 2px solid #1f7200;*/
   border-radius: 10px;
   background-color: white;
   height: 6em;
   padding-top: 2.2em;
+  font-weight: normal;
+}
+
+.hBingo {
+  background-color: yellow;
+}
+
+.checked {
+  background-color: #fee55c;
+  font-weight: bold;
 }
 
 /*.greenBG {
@@ -90,21 +99,38 @@ body, p, ol {
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script>
     $(function () {
-        $(".picFrame").click(function () {
-          $(this).css('background-color', '#fee55c');
-          /*$(this).css('color', 'white');*/
-          $(this).css('font-weight', 'bold');
-        });
+      $(".picFrame").click(
+        function () {
+          $(this).toggleClass("checked");
+      });
+
+      /* sets to defult but cannot play
+      var divClone = $(".container").clone();
+      $("#playAgain").click(
+        function () {
+          $(".container").replaceWith(divClone);
+        }
+      )
+      sets to defult but cannot play */
+
+      $("#playAgain").click(
+        function () {
+          $("#bingoChart")[0].reset();
+        }
+      )
     });
   </script>
-  <div class="columns is-centered is-mobile">
+<div class="columns is-centered is-mobile is-multiline">
   <div class="column is-4 has-text-centered padBoth">
-    <p class="title is-2 has-text-white">Bingo</p>
+    <p class="title is-2 has-text-white">iX:Bingo</p>
+  </div>
+  <div class="column is-12 has-text-centered">
+    <p class="subtitle is-6 has-text white" id="numOFbingo"></p>
   </div>
 </div>
-<div class="container">
+<div class="container" id="bingoChart">
   <div class="columns is-centered is-mobile is-multiline">
-    <div class="column is-8-tablet is-11-mobile has-text-centered">
+    <div class="column is-9-tablet is-11-mobile has-text-centered">
       <div class="columns is-centered is-mobile">
         <div class="column">
           <div class="picFrame">
@@ -133,7 +159,7 @@ body, p, ol {
         </div>
       </div>
     </div>
-    <div class="column is-8-tablet is-11-mobile has-text-centered">
+    <div class="column is-9-tablet is-11-mobile has-text-centered">
       <div class="columns is-centered is-mobile">
         <div class="column">
           <div class="picFrame">
@@ -162,7 +188,7 @@ body, p, ol {
         </div>
       </div>
     </div>
-    <div class="column is-8-tablet is-11-mobile has-text-centered">
+    <div class="column is-9-tablet is-11-mobile has-text-centered">
       <div class="columns is-centered is-mobile">
         <div class="column">
           <div class="picFrame">
@@ -191,11 +217,11 @@ body, p, ol {
         </div>
       </div>
     </div>
-    <div class="column is-8-tablet is-11-mobile has-text-centered">
+    <div class="column is-9-tablet is-11-mobile has-text-centered">
       <div class="columns is-centered is-mobile">
         <div class="column">
           <div class="picFrame">
-            答過開放題
+            hello
           </div>
         </div>
         <div class="column ">
@@ -205,7 +231,7 @@ body, p, ol {
         </div>
         <div class="column">
           <div class="picFrame">
-            抽獎中過
+            hello
           </div>
         </div>
         <div class="column">
@@ -220,11 +246,11 @@ body, p, ol {
         </div>
       </div>
     </div>
-    <div class="column is-8-tablet is-11-mobile has-text-centered">
+    <div class="column is-9-tablet is-11-mobile has-text-centered">
       <div class="columns is-centered is-mobile">
         <div class="column">
           <div class="picFrame">
-            填過問卷
+            hello
           </div>
         </div>
         <div class="column ">
@@ -234,7 +260,7 @@ body, p, ol {
         </div>
         <div class="column">
           <div class="picFrame">
-            參加過焦點座談
+            hello
           </div>
         </div>
         <div class="column">
@@ -252,11 +278,17 @@ body, p, ol {
   </div>
 </div>
 
-
-<div class="columns is-centered padL">
-
+<div class="columns is-centered padM">
+  <div class="column is-3 has-text-centered">
+    <div class="button is-success is-rounded" id="playAgain">
+      再玩一次
+    </div>
+  </div>
 </div>
 
+<div class="padL">
+
+</div>
 
   <!--- Footer --->
   <div class="footer is-small">
