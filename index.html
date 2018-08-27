@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <script src="js/html2canvas.js"></script>
-  <script src="js/canvg.js"></script>
+  <!--script src="js/canvg.js"></script-->
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -140,7 +140,9 @@ body, p, ol {
         dpi: 192,
         onrendered: function(canvas) {
             $("#blank").attr('href', canvas.toDataURL("image/png"));
-            $("#blank").attr('download', caption + ' 的 iXPanel 鐵粉賓果' + '.png');
+            //$("#blank").attr('download', caption + ' 的 iXPanel 鐵粉賓果' + '.png');
+
+            $("#blank").attr('href', window.open(caption + ' 的 iXPanel 鐵粉賓果' + '.png',"_blank"));
             $("#blank")[0].click();
         }
       });
@@ -337,6 +339,15 @@ body, p, ol {
       </a>
       <a href="" id="blank"></a>
     </div>
+    <div class="column is-1 has-text-centered">
+      <a href="SIGNUP.html">
+        <div class="button is-link is-rounded" id="capture">
+          註冊
+        </div>
+      </a>
+      <a href="" id="blank"></a>
+    </div>
+
   </div>
   <div class="padM">
 
