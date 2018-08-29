@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <title>小孩標語，大人決定？</title>
+    <meta property="og:title" content="小孩標語，大人決定？" />
+    <meta property="og:description" content="小孩真的想要的，並不是你硬塞給他一個標語給他。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yurenju.github.io/youknownothing/" />
+    <meta property="og:image" content="https://yurenju.github.io/youknownothing/original.jpg" />
+    <meta property="fb:app_id" content="390592127957211" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link href="main.css" rel="stylesheet" title="Default Style">
+  </head>
+  <body>
+    <div class="header">
+      <h1>小孩，不是你的工具。</h1>
+    </div>
+    <div class="container">
+      <div style="text-align: center;">
+        <canvas id="canvas"></canvas>
+      </div>
+      <form>
+        <textarea placeholder="小孩說話，大人決定？" id="thought" class="form-control" rows="3"></textarea>
+      </form>
+      <div class="buttons">
+        <a href="#" class="btn btn-default" role="button" id="download">下載</a>
+        <a href="#" class="btn btn-primary" role="button" id="share">分享到 Facebook</a>
+      </div>
+
+      <div class="modal fade shared-link-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-md" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              你的貼圖已經發佈到 Facebook，<a href="" target="_blank" id="shared-link">按這裡去看看</a>！
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer">
+      插畫：<a href="https://www.facebook.com/HsiehTungLin/" target="_blank">謝東霖 Hsieh Tung Lin</a> |
+      Github: <a href="https://github.com/yurenju/youknownothing" target="_blank">yurenju/youknownothing</a>
+    </div>
+    <div id="fb-root"></div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="canvas-toBlob.js"></script>
+    <script src="FileSaver.min.js"></script>
+    <script src="hidpi-canvas.min.js"></script>
+    <script src="base64-binary.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
