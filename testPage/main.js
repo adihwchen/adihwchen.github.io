@@ -159,11 +159,11 @@ downloadButton.addEventListener('click', function(evt) {
 thought.addEventListener('input', evt => updateText(evt.target.value));
 window.addEventListener('resize', evt => update());
 
-window.fbAsyncInit = function() {
+window.fbAsyncInit = function () {
   FB.init({
-    appId      : '390592127957211',
-    xfbml      : true,
-    version    : 'v2.8'
+      appId: '304443016357876',
+      xfbml      : true,
+      version    : 'v2.10'
   });
   FB.AppEvents.logPageView();
   setupFb();
