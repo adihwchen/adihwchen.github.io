@@ -2,10 +2,10 @@
 <html lang="zh">
   <head>
     <title>caption+img>post2FB test</title>
-    <meta property="og:title" content="小孩標語，大人決定？" />
-    <meta property="og:description" content="小孩真的想要的，並不是你硬塞給他一個標語給他。" />
+    <meta property="og:title" content="測試測試" />
+    <meta property="og:description" content="測試敘述敘述測試敘述測試敘述敘述測試敘述測試敘述敘述測試敘述測試敘述敘述測試敘述" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yurenju.github.io/youknownothing/" />
+    <meta property="og:url" content="http://adihwchen.github.io/" />
     <meta property="og:image" content="https://yurenju.github.io/youknownothing/original.jpg" />
     <meta property="fb:app_id" content="304443016357876" />
     <meta charset="UTF-8">
@@ -16,43 +16,46 @@
     <link href="main.css" rel="stylesheet" title="Default Style">
   </head>
   <body>
-    <div class="header">
-      <h1>base64圖片轉blob分享臉書測試</h1>
+    <div class="page-header">
+      <h1>Mobile Web Share Dialog</h1>
     </div>
-    <div class="container">
-      <div style="text-align: center;">
-        <canvas id="canvas"></canvas>
-      </div>
-      <form>
-        <textarea placeholder="小孩說話，大人決定？" id="thought" class="form-control" rows="3"></textarea>
-      </form>
-      <div class="buttons">
-        <a href="#" class="btn btn-default" role="button" id="download">下載</a>
-        <a href="#" class="btn btn-primary" role="button" id="share">分享到 Facebook</a>
-      </div>
 
-      <div class="modal fade shared-link-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-        <div class="modal-dialog modal-md" role="document">
-          <div class="modal-content">
-            <div class="modal-body">
-              你的貼圖已經發佈到 Facebook，<a href="" target="_blank" id="shared-link">按這裡去看看</a>！
-            </div>
-          </div>
-        </div>
-      </div>
+    <p>Run this code on a mobile device or emulator. Tap the button below to trigger a Share Dialog</p>
 
-    </div>
-    <div class="footer">
-      插畫：<a href="https://www.facebook.com/HsiehTungLin/" target="_blank">謝東霖 Hsieh Tung Lin</a> |
-      Github: <a href="https://github.com/yurenju/youknownothing" target="_blank">yurenju/youknownothing</a>
-    </div>
-    <div id="fb-root"></div>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="canvas-toBlob.js"></script>
-    <script src="FileSaver.min.js"></script>
-    <script src="hidpi-canvas.min.js"></script>
-    <script src="base64-binary.js"></script>
-    <script src="main.js"></script>
+    <div id="shareBtn" class="btn btn-success clearfix">Share</div>
+
+    <p style="margin-top: 50px">
+      <hr />
+      <a class="btn btn-small"  href="#">Share Dialog Documentation</a>
+    </p>
+    <script>
+
+    document.getElementById('shareBtn').onclick = function() {
+      FB.ui({
+        method: 'share',
+        mobile_iframe: true,
+        href: 'https://www.ixpanel.com/index.jsp',
+      }, function(response){});
+    }
+
+
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId            : '672998922793785',
+        autoLogAppEvents : true,
+        xfbml            : true,
+        version          : 'v3.1'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+    </script>
+
   </body>
 </html>
