@@ -104,7 +104,7 @@ function applyInformation() {
   ctx.fillText(msg, (width - textwidth) / 2, 25);
 
   ctx.font = '12px PingFangTC-Regular, sans-serif';
-  msg = 'https://bit.ly/kidnottool';
+  msg = 'http://adihwchen.github.io';
   textwidth = ctx.measureText(msg).width;
   ctx.fillText(msg, (width - textwidth) / 2, offsetTop + height + offsetBottom - 4);
 }

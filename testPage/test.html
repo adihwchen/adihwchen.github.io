@@ -38,14 +38,15 @@
       }, function(response){});
     }
 
-
     window.fbAsyncInit = function() {
       FB.init({
-        appId            : '672998922793785',
+        appId            : '304443016357876',
         autoLogAppEvents : true,
         xfbml            : true,
         version          : 'v3.1'
       });
+      FB.AppEvents.logPageView();
+      setupFb();
     };
 
     (function(d, s, id){
@@ -56,6 +57,7 @@
        fjs.parentNode.insertBefore(js, fjs);
      }(document, 'script', 'facebook-jssdk'));
     </script>
+
 
   </body>
 </html>
