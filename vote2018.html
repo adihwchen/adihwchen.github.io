@@ -90,7 +90,7 @@
 }
 .rectangle{
   height:10.5em;
-  background:rgba(0, 0, 0, 0.5);
+  background:rgba(0, 0, 0, 1);
 }
 .bgBlack {
   background-color: black;
@@ -105,9 +105,12 @@
 .wrapperL {
   padding-top: 5em;
 }
-.titlePos {
-  position: relative;
-  top: 1em;
+.headerBG {
+  background-image: url(img/headerBG.svg);
+  background-repeat: repeat-x;
+  max-width: 100%;
+  height: auto;
+  background-position: center bottom;
 
 }
 .polka {
@@ -116,6 +119,11 @@
     radial-gradient(black 10%, transparent 0);
   background-size: 1em 1em;
   background-position: 0 0, 0.5em 0.5em;
+}
+
+.drop-shadow {
+  -webkit-filter: drop-shadow(0px 8px 7px rgba(0, 0, 0, 0.18));
+  filter: drop-shadow(0px 8px 7px rgba(0, 0, 0, 0.18))
 }
 
 .navBar-fixed-top {
@@ -240,17 +248,15 @@
 
 <!-- logoType -->
 <div class="wrapper" id="goTop">
-  <div class="container-fluid" >
+  <div class="headerBG">
     <div class="row justify-content-center">
-      <div class="col-10 col-sm-9 col-md-7 my-1 my-md-5">
+      <div class="col-10 col-sm-7 col-md-6 col-lg-4 mt-3 mt-sm-5 mb-md-5">
         <a href="#mustKnow">
-          <img src="img/vote2018_logoType.png" class="img-fluid card-img-overlay hoverLarge" alt="2018地方公職人員選舉暨全國性公民投票">
+          <img class="img-fluid hoverLarge" src="img/vote2018_logoType.png"  alt="2018地方公職人員選舉暨全國性公民投票">
         </a>
       </div>
     </div>
   </div>
-  <img class="align-self-end px-0 pt-5 pt-sm-5 pt-md-2 mt-5 mt-sm-5 mt-md-0" src="img/headerBG.svg"  alt="">
-
 </div>
 
 
@@ -259,7 +265,7 @@
     <div class="wrapperL bgBlack px-0 mx-0" id="mustKnow" >
 
       <div class="row justify-content-center">
-        <div class="col-6 d-none d-lg-block position-relative mx-0 px-0" style="height:16em;">
+        <div class="col-5 d-none d-lg-block position-relative mx-0 px-0" style="height:15em;">
           <img class="img-fluid position-absolute" src="img/mustKnowTitle.png" alt="進場須知" style="bottom:-40px;">
         </div>
         <div class="col-8 d-none d-sm-block d-lg-none position-relative mx-0 px-0" style="height:12em;">
@@ -273,17 +279,17 @@
     </div>
     <div class="polka pb-5 pt-5">
       <div class="row justify-content-center py-5" id="DOsDONTs">
-        <div class="col-6 col-sm-4 hoverLarge" href="#DOs" data-toggle="collapse"  aria-expanded="false" aria-controls="DOs">
-          <img class="img-fluid" src="img/mustKnow_DOs.png" alt="必備">
+        <div class="col-6 col-sm-3 hoverLarge" href="#DOs" data-toggle="collapse"  aria-expanded="false" aria-controls="DOs">
+          <img class="img-fluid drop-shadow" src="img/mustKnow_DOs.png" alt="必備">
         </div>
-        <div class="col-6 col-sm-4 hoverLarge" href="#DONTs" data-toggle="collapse" aria-expanded="false" aria-controls="DONTs">
-          <img class="img-fluid" src="img/mustKnow_DONTs.png" alt="母湯">
+        <div class="col-6 col-sm-3 hoverLarge" href="#DONTs" data-toggle="collapse" aria-expanded="false" aria-controls="DONTs">
+          <img class="img-fluid drop-shadow" src="img/mustKnow_DONTs.png" alt="母湯">
         </div>
         <div class="col-11 collapse pt-5" id="DOs" data-parent="#DOsDONTs">
           <div class="row justify-content-around">
             <div class="col-sm-3">
               <h1 class="text-center">身份證</h1>
-              <img class="img-fluid hoverLarge" src="img/mustKnow_DOs_id.png" alt="一定要帶身份證，沒帶不能投票">
+              <img class="img-fluid" src="img/mustKnow_DOs_id.png" alt="一定要帶身份證，沒帶不能投票">
               <p>一定要帶！確認與核對投票人身份，沒有身份證就不能進入投票所。</p>
             </div>
             <div class="col-sm-3 mt-xs-5">
@@ -384,12 +390,12 @@
 
   <div class="container-fluid no-gutters">
     <div class="row justify-content-center pt-5 no-gutters">
-      <a class="col-5 col-md-3 mr-3 mr-sm-5 hoverLarge linkColor" href="https://councils.g0v.tw/" target="_blank">
-        <img class="img-fluid" src="img/elections_g0v.png" alt="零時政府投票指南">
+      <a class="col-5 col-md-2 mr-3 mr-sm-5 hoverLarge linkColor shadow" href="https://councils.g0v.tw/" target="_blank">
+        <img class="img-fluid " src="img/elections_g0v.png" alt="零時政府投票指南">
         <h5 class="text-center pt-4">投票指南</h5>
         <p class="text-center font-weight-light"><small>零時政府</small></p>
       </a>
-      <a class="col-5 col-md-3 hoverLarge linkColor" href="https://2018.cec.gov.tw/Elected.html" target="_blank">
+      <a class="col-5 col-md-2 hoverLarge linkColor shadow" href="https://2018.cec.gov.tw/Elected.html" target="_blank">
         <img class="img-fluid" src="img/elections_bulletin.png" alt="零時政府投票指南">
         <h5 class="text-center pt-4">選舉公報</h5>
         <p class="text-center font-weight-light"><small>中選會</small></p>
