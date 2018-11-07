@@ -1,4 +1,4 @@
-<!doctype HTML>
+DC_Councilors_headingThree<!doctype HTML>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -64,7 +64,26 @@
 </head>
 
 <style>
-/* extra styles */
+/* all site settings*/
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  }
+
+* {
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+}
+
+/* individual styles */
 .border-thick {
   border: 5px solid black;
 }
@@ -88,14 +107,25 @@
   text-decoration: none;
   cursor: pointer;
 }
+.linkColorTextDeco {
+  color:white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.linkColorTextDeco:hover {
+  color:#d3d3d3;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .rectangle{
-  height:10.5em;
-  background:rgba(0, 0, 0, 1);
+  height:15em;
+  background:black;
 }
 .bgBlack {
   background-color: black;
 }
-
+/* Lineup of Rappers */
 .wrapper {
   padding-top: 3em;
 }
@@ -105,8 +135,17 @@
 .wrapperL {
   padding-top: 5em;
 }
-.headerBG {
-  background-image: url(img/headerBG.svg);
+.wrapperXL{
+  padding-top: 6em;
+  padding-bottom: 3em;
+}
+.wrapperCarousel{
+  padding-top: 5em;
+  padding-bottom: 8em;
+}
+
+.halftoneBanner {
+  background-image: url(img/halftoneBanner.svg);
   background-repeat: repeat-x;
   max-width: 100%;
   height: auto;
@@ -115,10 +154,10 @@
 }
 .polka {
   background-image:
-    radial-gradient(grey 10%, transparent 0),
+    radial-gradient(black 10%, transparent 0),
     radial-gradient(black 10%, transparent 0);
-  background-size: 1em 1em;
-  background-position: 0 0, 0.5em 0.5em;
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
 }
 
 .drop-shadow {
@@ -133,6 +172,8 @@
   left: 0;
   z-index: 1042;
 }
+
+
 
 /* Full Screen Menu */
 .overlay {
@@ -154,11 +195,9 @@
   text-align: center;
 }
 
-
-
-.nav-button{position:relative; z-index:1043; border:solid 1px; border-color: rgba(255, 0, 0, 0); height:42px; display:block; width:50px; padding:12px; }
+.nav-button{position:relative; z-index:1043; border:solid 1px; border-color: rgba(0, 0, 0, 0); height:42px; display:block; width:50px; padding:12px; }
 .nav-button #nav-icon3{width:24px;height:22px;display:inline-block;position:relative;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);-webkit-transition:.5s ease-in-out;-moz-transition:.5s ease-in-out;-o-transition:.5s ease-in-out;transition:.5s ease-in-out;cursor:pointer;}
-.nav-button #nav-icon3 span{display:block;position:absolute;height:3px;width:100%;background:#FFFFFF;border-radius:9px;opacity:1;left:0;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);-webkit-transition:.25s ease-in-out;-moz-transition:.25s ease-in-out;-o-transition:.25s ease-in-out;transition:.25s ease-in-out}
+.nav-button #nav-icon3 span{display:block;position:absolute;height:3px;width:100%;background:#FFFFFF;opacity:1;left:0;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);-webkit-transition:.25s ease-in-out;-moz-transition:.25s ease-in-out;-o-transition:.25s ease-in-out;transition:.25s ease-in-out}
 .nav-button #nav-icon3 span:nth-child(1){top:0}
 .nav-button #nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3){top:7px}
 .nav-button #nav-icon3 span:nth-child(4){top:14px}
@@ -179,8 +218,6 @@
 .hoverLarge:hover {
   -webkit-transform: scale(1.05);
   transform: scale(1.05);
-  /*background-color: #eff0f2;*/
-
 }
 
 @media screen and (max-width: 768px), print {
@@ -189,7 +226,6 @@
     transform: scale(0.98);
   }
 }
-
 
 </style>
 
@@ -210,7 +246,7 @@
 <!-- nav MENU bar -->
 <header>
   <div class="navbar navbar-dark bgBlack navBar-fixed-top">
-    <a href="#goTop" class="navbar-brand">攻城之戰選舉情報站</a>
+    <a href="#goTop" class="navbar-brand">攻城之戰投票情報站</a>
     <a class="nav-button mr-0" data-toggle="modal" data-target="#myNav" onclick="openNav()"><span id="nav-icon3"><span></span><span></span><span></span><span></span></span></a>
 
   </div> <!--navbar end-->
@@ -227,11 +263,11 @@
     <!-- fullscreen burger -->
     <div id="myNav" class="overlay">
       <div class="overlay-content">
-        <a class="linkColorWHT h2 d-block py-2" href="#mustKnow" data-target="#mustKnow" onclick="closeNav()" data-dismiss="modal" aria-label="close">進場須知</a>
-        <a class="linkColorWHT h2 d-block py-2" href="#electionGen" data-target="#help" onclick="closeNav()"  data-dismiss="modal" aria-label="close">選舉資訊</a>
-        <a class="linkColorWHT h2 d-block py-2" href="#referendumGen" data-target="#help" onclick="closeNav()"  data-dismiss="modal" aria-label="close">公投整理</a>
-        <a class="linkColorWHT h2 d-block py-2" href="#pollWatchers" data-target="#help" onclick="closeNav()"  data-dismiss="modal" aria-label="close">放大絕</a>
-        <a class="linkColorWHT h2 d-block py-2 fb-xfbml-parse-ignore" href="https://www.facebook.com/sharer/sharer.php?u=http://daily-life-units.beamedia.co%2F&amp;src=sdkpreparse" target="_blank" >發到臉書</a>
+        <a class="linkColorWHT h5 d-block py-3" href="#mustKnow" data-target="#mustKnow" onclick="closeNav()" data-dismiss="modal" aria-label="close">進場須知</a>
+        <a class="linkColorWHT h5 d-block py-3" href="#electionGen" data-target="#help" onclick="closeNav()"  data-dismiss="modal" aria-label="close">選舉資訊</a>
+        <a class="linkColorWHT h5 d-block py-3" href="#referendumGen" data-target="#help" onclick="closeNav()"  data-dismiss="modal" aria-label="close">公投整理</a>
+        <a class="linkColorWHT h5 d-block py-3" href="#pollWatchers" data-target="#help" onclick="closeNav()"  data-dismiss="modal" aria-label="close">放大絕</a>
+        <a class="linkColorWHT h5 d-block py-3 fb-xfbml-parse-ignore" href="https://www.facebook.com/sharer/sharer.php?u=http://daily-life-units.beamedia.co%2F&amp;src=sdkpreparse" target="_blank" >發到臉書</a>
       </div>
     </div>
     <script>
@@ -247,17 +283,44 @@
 <!-- end of nav MENU bar -->
 
 <!-- logoType -->
-<div class="wrapper" id="goTop">
-  <div class="headerBG">
-    <div class="row justify-content-center">
-      <div class="col-10 col-sm-7 col-md-6 col-lg-4 mt-3 mt-sm-5 mb-md-5">
-        <a href="#mustKnow">
-          <img class="img-fluid hoverLarge" src="img/vote2018_logoType.png"  alt="2018地方公職人員選舉暨全國性公民投票">
-        </a>
+<div class="wrapperXL halftoneBanner" id="goTop">
+  <div class="row justify-content-center">
+    <div class="col-10 col-sm-7 col-md-6 col-lg-4 mt-3 mt-sm-5 mb-md-5">
+      <a href="#"  data-toggle="modal" data-target="#aboutUS" title="什麼是保證金？">
+        <img class="img-fluid hoverLarge" src="img/vote2018_logoType.png" alt="2018地方公職人員選舉暨全國性公民投票">
+      </a>
+    </div>
+  </div>
+</div>
+<!-- About modal -->
+
+<!-- end of About modal -->
+<div class="modal fade" id="aboutUS" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg my-5" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">關於這個網站</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- table wrapper -->
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-12 py-3">
+              <h6 class="font-weight-light">
+                大家都說今年是公投元年，各式議題百花齊放，年滿18歲的公民有機會能對切身議題直接作主。在過去幾個月裡，你拼命連署、你努力倡議，但是各位，投票才是決定性的一刻呀！為了降低投票這件事情的難度，幫你把這些資訊直接送到眼前，希望把大家需要理解的時間降到最小，進而提高參與的意願：分享、回家、投票。
+              </h6>
+            </div>
+          </div>
+        </div>
+        <!-- end of table wrapper -->
       </div>
     </div>
   </div>
 </div>
+<!-- end of logoType -->
 
 
 <!-- General Info -->
@@ -269,7 +332,7 @@
           <img class="img-fluid position-absolute" src="img/mustKnowTitle.png" alt="進場須知" style="bottom:-40px;">
         </div>
         <div class="col-8 d-none d-sm-block d-lg-none position-relative mx-0 px-0" style="height:12em;">
-          <img class="img-fluid position-absolute" src="img/mustKnowTitle_M.png" alt="進場須知" style="bottom:-50px;">
+          <img class="img-fluid position-absolute" src="img/mustKnowTitle.png" alt="進場須知" style="bottom:-50px;">
         </div>
         <div class="col-11 d-sm-none position-relative mx-0 px-0" style="height:20vw;">
           <img class="img-fluid position-absolute" src="img/mustKnowTitle_M.png" alt="進場須知" style="bottom:-28px;">
@@ -278,76 +341,88 @@
 
     </div>
     <div class="polka pb-5 pt-5">
-      <div class="row justify-content-center py-5" id="DOsDONTs">
+      <!-- DOs and DONTs -->
+      <div class="row justify-content-center py-5 mt-5 no-gutters" id="DOsDONTs">
         <div class="col-6 col-sm-4 col-lg-3 hoverLarge" href="#DOs" data-toggle="collapse"  aria-expanded="false" aria-controls="DOs">
           <img class="img-fluid drop-shadow" src="img/mustKnow_DOs.png" alt="必備">
         </div>
         <div class="col-6 col-sm-4 col-lg-3 hoverLarge" href="#DONTs" data-toggle="collapse" aria-expanded="false" aria-controls="DONTs">
           <img class="img-fluid drop-shadow" src="img/mustKnow_DONTs.png" alt="母湯">
         </div>
-        <div class="col-11 collapse pt-5" id="DOs" data-parent="#DOsDONTs">
-          <div class="row justify-content-around">
-            <div class="col-sm-3">
-              <h1 class="text-center">身份證</h1>
-              <img class="img-fluid" src="img/mustKnow_DOs_id.png" alt="一定要帶身份證，沒帶不能投票">
-              <p>一定要帶！確認與核對投票人身份，沒有身份證就不能進入投票所。</p>
-            </div>
-            <div class="col-sm-3 mt-xs-5">
-              <h1 class="text-center">投票通知單</h1>
-              <img class="img-fluid" src="img/mustKnow_DOs_notification.png" alt="投票通知單有帶有加分">
-              <p>有帶加分！標示投票所號碼與位置，也有協助選務人員快速查找名冊的編號。</p>
-            </div>
-            <div class="col-sm-3 mt-xs-5">
-              <h1 class="text-center">印章</h1>
-              <img class="img-fluid" src="img/mustKnow_DOs_stamp.png" alt="私章有帶有保險">
-              <p>有帶保險！領完票之後需蓋章確認領票，沒有印章可用手印簽名代替。BUT，蓋完手印如果不小心把指紋留在選票上「一秒變廢票」。</p>
+        <!-- DOs -->
+        <div class="row justify-content-center bg-white shadow mx-0 mt-0 pt-4 pb-5">
+          <div class="col-11 collapse pt-5" id="DOs" data-parent="#DOsDONTs">
+            <div class="row justify-content-around">
+              <div class="col-sm-3">
+                <img class="img-fluid w-90" src="img/mustKnow_DOs_id.png" alt="一定要帶身份證，沒帶不能投票" title="一定要帶身份證，沒帶不能投票">
+                <p class="h5 text-center">身份證</p>
+                <p>一定要帶！確認與核對投票人身份，沒有身份證就不能進入投票所。</p>
+              </div>
+              <div class="col-sm-3 mt-xs-5">
+                <img class="img-fluid w-90" src="img/mustKnow_DOs_notification.png" alt="投票通知單有帶有加分" title="投票通知單有帶有加分">
+                <p class="h5 text-center">投票通知單</p>
+                <p>有帶加分！標示投票所號碼與位置，也有協助選務人員快速查找名冊的編號。</p>
+              </div>
+              <div class="col-sm-3 mt-xs-5">
+                <img class="img-fluid w-90" src="img/mustKnow_DOs_stamp.png" alt="私章有帶有保險" title="私章有帶有保險">
+                <p class="h5 text-center">印章</p>
+                <p>有帶保險！領完票之後需蓋章確認領票，沒有印章可用手印簽名代替。BUT，蓋完手印如果不小心把指紋留在選票上「一秒變廢票」。</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-11 collapse pt-5" id="DONTs" data-parent="#DOsDONTs">
-          <div class="row justify-content-around">
-            <div class="col-sm-6 mb-5">
-              <h1 class="text-center">禁止帶</h1>
-              <div class="row justify-content-around">
-                <div class="col-sm-4">
-                  <img class="img-fluid" src="img/mustKnow_DONTs_photo.png" alt="禁帶照相錄影通訊功能等物品（含手機）">
-                  <p>有照相錄影通訊功能等物品（含手機）</p>
-                </div>
-                <div class="col-sm-4">
-                  <img class="img-fluid" src="img/mustKnow_DONTs_promo.png" alt="跟候選人或公投議題相關之物">
-                  <p>跟候選人或公投議題相關之物品</p>
-                </div>
+        <!-- end of DOs -->
+        <!-- DONTs -->
+        <div class="row justify-content-center bg-white shadow mx-0 mt-0 pt-4 pb-5">
+          <div class="col-11 collapse pt-5" id="DONTs" data-parent="#DOsDONTs">
+            <div class="row justify-content-around">
+              <div class="col">
+                <img class="img-fluid" src="img/mustKnow_DONTs_photo.png" alt="禁止攜帶照相錄影通訊功能等物品（含手機）" title="禁止攜帶照相錄影通訊功能等物品（含手機）">
+                <p class="text-center">
+                  有照相錄影通訊功能等物品<br>（含手機）
+                </p>
               </div>
-            </div>
-            <div class="col-sm-6">
-              <h1 class="text-center">變廢票</h1>
-              <div class="row justify-content-around">
-                <div class="col-7 col-sm-4 text-center">
-                  <img class="img-fluid" src="img/mustKnow_DONTs_stampBallot.png" alt="選票上不能蓋私章">
+              <div class="col">
+                <img class="img-fluid" src="img/mustKnow_DONTs_promo.png" alt="禁止攜帶與候選人或公投議題相關之物品" title="禁止攜帶與候選人或公投議題相關之物品">
+                <p>
+                  與候選人或公投議題相關之物品
+                </p>
+              </div>
+              <div class="col">
+                <img class="img-fluid" src="img/mustKnow_DONTs_stampBallot.png" alt="選票上不能蓋私章" title="選票上不能蓋私章">
+                <p class="text-center">
                   選票上不能蓋私章
-                </div>
-                <div class="col-7 col-sm-4 text-center">
-                  <img class="img-fluid" src="img/mustKnow_DONTs_fingerPrint.png" alt="選票上不能有手印">
+                </p>
+
+              </div>
+              <div class="col">
+                <img class="img-fluid" src="img/mustKnow_DONTs_fingerPrint.png" alt="選票上不能有手印" title="選票上不能有手印">
+                <p class="text-center">
                   選票上不能有手印
-                </div>
-                <div class="col-7 col-sm-4 text-center">
-                  <img class="img-fluid" src="img/mustKnow_DONTs_drawOn.png" alt="選票上不能塗改">
+                </p>
+              </div>
+              <div class="col">
+                <img class="img-fluid" src="img/mustKnow_DONTs_drawOn.png" alt="選票上不能塗改" title="選票上不能塗改">
+                <p class="text-center">
                   選票上不能塗改
-                </div>
+                </p>
               </div>
             </div>
           </div>
         </div>
+        <!-- end of DONTs -->
       </div>
-      <div class="container-fluid py-5">
+      <!-- end of DOs and DONTs -->
+
+      <div class="container-fluid py-5 mb-5">
         <div class="row justify-content-around" id="basicInfo">
-          <a class="col-7 col-md-3 border-thick bgBlack mb-3 hoverLarge linkColorWHT shadow" href="https://www.ris.gov.tw/app/portal" target="_blank">
+          <a class="col-7 col-md-3 border-thick bgBlack mb-1 hoverLarge linkColorWHT shadow" href="https://www.ris.gov.tw/app/portal" target="_blank">
             <h6 class="text-center pt-2">投票所查詢</h6>
           </a>
-          <div class="col-7 col-md-3 border-thick bgBlack mb-3 hoverLarge linkColorWHT shadow" href="#voteFlowMap" data-toggle="collapse" aria-expanded="false" aria-controls="voteFlowMap">
+          <div class="col-7 col-md-3 border-thick bgBlack mb-1 hoverLarge linkColorWHT shadow" href="#voteFlowMap" data-toggle="collapse" aria-expanded="false" aria-controls="voteFlowMap">
             <h6 class="text-center pt-2">投票流程圖</h6>
           </div>
-          <div class="col-7 col-md-3 border-thick bgBlack mb-3 hoverLarge linkColorWHT shadow" href="#ballotDemo" data-toggle="collapse" aria-expanded="false" aria-controls="ballotDemo">
+          <div class="col-7 col-md-3 border-thick bgBlack mb-1 hoverLarge linkColorWHT shadow" href="#ballotDemo" data-toggle="collapse" aria-expanded="false" aria-controls="ballotDemo">
             <h6 class="text-center pt-2">有效/無效票</h6>
           </div>
           <div class="mx-auto collapse" id="voteFlowMap" data-parent="#basicInfo">
@@ -359,55 +434,40 @@
           </div>
         </div>
       </div>
-
     </div>
-
   </div>
-
-
 
 <!-- Section Elections -->
-
-
-  <div class="wrapper bgBlack" id="electionGen">
-
-    <div class="row justify-content-center">
-      <div class="col-5 d-none d-lg-block position-relative mx-0 px-0" style="height:16em;">
-        <img class="img-fluid position-absolute" src="img/electionsTitle.png" alt="九合一選舉" style="bottom:-35px;">
-      </div>
-      <div class="col-8 d-none d-sm-block d-lg-none position-relative mx-0 px-0" style="height:12em;">
-        <img class="img-fluid position-absolute" src="img/electionsTitle_M.png" alt="九合一選舉" style="bottom:-50px;">
-      </div>
-      <div class="col-11 d-sm-none position-relative mx-0 px-0" style="height:30vw;">
-        <img class="img-fluid position-absolute" src="img/electionsTitle_M.png" alt="九合一選舉" style="bottom:-28px;">
-      </div>
+<div class="wrapper bgBlack" id="electionGen">
+  <div class="row justify-content-center">
+    <div class="col-5 d-none d-lg-block position-relative mx-0 px-0" style="height:16em;">
+      <img class="img-fluid position-absolute" src="img/electionsTitle.png" alt="九合一選舉" style="bottom:-35px;">
     </div>
-
-  </div>
-  <div class="col-12 mt-5">
-    <h6 class="text-center pb-4"><a href="#" data-toggle="modal" data-target="#ElectionDeposit" class="linkColor">什麼是保證金？</a></h6>
-  </div>
-
-  <div class="container-fluid no-gutters">
-    <div class="row justify-content-center pt-5 no-gutters">
-      <a class="col-5 col-md-2 mr-3 mr-sm-5 hoverLarge linkColor shadow" href="https://councils.g0v.tw/" target="_blank">
-        <img class="img-fluid " src="img/elections_g0v.png" alt="零時政府投票指南">
-        <h5 class="text-center pt-4">投票指南</h5>
-        <p class="text-center font-weight-light"><small>零時政府</small></p>
-      </a>
-      <a class="col-5 col-md-2 hoverLarge linkColor shadow" href="https://2018.cec.gov.tw/Elected.html" target="_blank">
-        <img class="img-fluid" src="img/elections_bulletin.png" alt="零時政府投票指南">
-        <h5 class="text-center pt-4">選舉公報</h5>
-        <p class="text-center font-weight-light"><small>中選會</small></p>
-      </a>
+    <div class="col-8 d-none d-sm-block d-lg-none position-relative mx-0 px-0" style="height:12em;">
+      <img class="img-fluid position-absolute" src="img/electionsTitle.png" alt="九合一選舉" style="bottom:-50px;">
+    </div>
+    <div class="col-11 d-sm-none position-relative mx-0 px-0" style="height:30vw;">
+      <img class="img-fluid position-absolute" src="img/electionsTitle_M.png" alt="九合一選舉" style="bottom:-28px;">
     </div>
   </div>
+</div>
+<div class="row justify-content-center wrapperXL mt-5">
+  <a class="col-5 col-md-2 mr-3 mr-sm-5 hoverLarge linkColor shadow" href="https://councils.g0v.tw/" target="_blank">
+    <img class="img-fluid " src="img/elections_g0v.png" alt="零時政府投票指南">
+    <h5 class="text-center pt-4">投票指南</h5>
+    <p class="text-center font-weight-light small">零時政府</p>
+  </a>
+  <a class="col-5 col-md-2 hoverLarge linkColor shadow" href="https://2018.cec.gov.tw/Elected.html" target="_blank">
+    <img class="img-fluid" src="img/elections_bulletin.png" alt="零時政府投票指南">
+    <h5 class="text-center pt-4">選舉公報</h5>
+    <p class="text-center font-weight-light small">中選會</p>
+  </a>
+</div>
 
 <!-- 9 Elections Carousel -->
-<div class="wrapperL mb-5 pb-5" id="allElections">
-  <div class="container-fluid" >
+<div class="wrapperCarousel halftoneBanner" id="allElections">
     <div class="row justify-content-center">
-      <div class="col-sm-9 col-xs-12">
+      <div class="col-sm-9 col-12 pb-sm-5">
         <div id="carouselExampleIndicators" class="carousel slide" data-interval="false">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -422,66 +482,66 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active rectangle" alt="0直轄市長">
-              <div class="carousel-caption d-block">
+              <div class="carousel-caption d-block mb-4">
                 <h4>直轄市長</h4>
-                <p class="font-weight-light">保證金200萬</p>
-                <a href="#" class="linkColorWHT">read more</a>
+                <p class="font-weight-light linkColorTextDeco mb-5" data-toggle="modal" data-target="#ElectionDeposit" title="什麼是保證金？">保證金200萬</p>
+                <a href="#" class="btn btn-light btn-sm" data-toggle="modal" data-target="#DC_Mayors" title="看更多六都市長參考資料">參考資料</a>
               </div>
             </div>
             <div class="carousel-item rectangle" alt="1直轄市議員">
-              <div class="carousel-caption d-block">
+              <div class="carousel-caption d-block mb-4">
                 <h4>直轄市議員</h4>
-                <p class="font-weight-light">保證金20萬</p>
-                <a href="#" class="linkColorWHT" data-toggle="modal" data-target="#GuiltyCouncilors">read more</a>
+                <p class="font-weight-light linkColorTextDeco mb-5" data-toggle="modal" data-target="#ElectionDeposit" title="什麼是保證金？">保證金20萬</p>
+                <a href="#" class="btn btn-light btn-sm" data-toggle="modal" data-target="#DC_Councilors" title="看更多六都市議員參考資料">參考資料</a>
               </div>
             </div>
             <div class="carousel-item rectangle" alt="2縣市長">
-              <div class="carousel-caption d-block">
+              <div class="carousel-caption d-block mb-4">
                 <h4>縣市長</h4>
-                <p class="font-weight-light">保證金200萬</p>
-                <a href="#" class="linkColorWHT">read more</a>
+                <p class="font-weight-light linkColorTextDeco mb-5" data-toggle="modal" data-target="#ElectionDeposit" title="什麼是保證金？">保證金200萬</p>
+                <a href="#" class="btn btn-light btn-sm" data-toggle="modal" data-target="#Mayors" title="看更多縣市長參考資料">參考資料</a>
               </div>
             </div>
             <div class="carousel-item rectangle" alt="3縣市議員">
-              <div class="carousel-caption d-block">
+              <div class="carousel-caption d-block mb-4">
                 <h4>縣市議員</h4>
-                <p class="font-weight-light">保證金12萬</p>
-                <a href="#" class="linkColorWHT" data-toggle="modal" data-target="#GuiltyCouncilors">read more</a>
+                <p class="font-weight-light linkColorTextDeco mb-5" data-toggle="modal" data-target="#ElectionDeposit" title="什麼是保證金？">保證金12萬</p>
+                <a href="#" class="btn btn-light btn-sm" data-toggle="modal" data-target="#Councilors" title="看更多縣市議員參考資料">參考資料</a>
               </div>
             </div>
             <div class="carousel-item rectangle" alt="4鄉鎮市長">
-              <div class="carousel-caption d-block">
+              <div class="carousel-caption d-block mb-4">
                 <h4>鄉鎮市長</h4>
-                <p class="font-weight-light">保證金12萬</p>
-                <a href="#" class="linkColorWHT">read more</a>
+                <p class="font-weight-light linkColorTextDeco mb-5" data-toggle="modal" data-target="#ElectionDeposit" title="什麼是保證金？">保證金12萬</p>
+                <a href="#" class="btn btn-light btn-sm" data-toggle="modal" data-target="#TownMayors" title="看更多鄉鎮市長參考資料">參考資料</a>
               </div>
             </div>
             <div class="carousel-item rectangle" alt="5鄉鎮市民代表">
-              <div class="carousel-caption d-block">
+              <div class="carousel-caption d-block mb-4">
                 <h4>鄉鎮市民代表</h4>
-                <p class="font-weight-light">保證金5萬</p>
-                <a href="#" class="linkColorWHT">read more</a>
+                <p class="font-weight-light linkColorTextDeco mb-5" data-toggle="modal" data-target="#ElectionDeposit" title="什麼是保證金？">保證金5萬</p>
+                <a href="#" class="btn btn-light btn-sm" data-toggle="modal" data-target="#TownCouncilMembers" title="看更多鄉鎮市民代表參考資料">參考資料</a>
               </div>
             </div>
             <div class="carousel-item rectangle" alt="6村里長">
-              <div class="carousel-caption d-block">
+              <div class="carousel-caption d-block mb-4">
                 <h4>村里長</h4>
-                <p class="font-weight-light">保證金5萬</p>
-                <a href="#" class="linkColorWHT">read more</a>
+                <p class="font-weight-light linkColorTextDeco mb-5" data-toggle="modal" data-target="#ElectionDeposit" title="什麼是保證金？">保證金5萬</p>
+                <a href="#" class="btn btn-light btn-sm" data-toggle="modal" data-target="#VillageRepresentative" title="看更多村里長參考資料">參考資料</a>
               </div>
             </div>
             <div class="carousel-item rectangle" alt="7直轄市原住民區長">
-              <div class="carousel-caption d-block">
+              <div class="carousel-caption d-block mb-4">
                 <h4>直轄市原住民區長</h4>
-                <p class="font-weight-light">保證金12萬</p>
-                <a href="#" class="linkColorWHT">read more</a>
+                <p class="font-weight-light linkColorTextDeco mb-5" data-toggle="modal" data-target="#ElectionDeposit" title="什麼是保證金？">保證金12萬</p>
+                <a href="#" class="btn btn-light btn-sm" data-toggle="modal" data-target="#DC_Indigenous" title="看更多直轄市原住民區長參考資料">參考資料</a>
               </div>
             </div>
             <div class="carousel-item rectangle" alt="8直轄市原住民區民代表">
-              <div class="carousel-caption d-block">
+              <div class="carousel-caption d-block mb-4">
                 <h4>直轄市原住民區民代表</h4>
-                <p class="font-weight-light">保證金5萬</p>
-                <a href="#" class="linkColorWHT">read more</a>
+                <p class="font-weight-light linkColorTextDeco mb-5" data-toggle="modal" data-target="#ElectionDeposit" title="什麼是保證金？">保證金5萬</p>
+                <a href="#" class="btn btn-light btn-sm" data-toggle="modal" data-target="#DC_IndigenousCouncilMembers" title="看更多直轄市原住民區民代表參考資料">參考資料</a>
               </div>
             </div>
           </div>
@@ -496,9 +556,7 @@
         </div>
       </div>
     </div>
-  </div>
 </div>
-
 <!-- end of 9 Elections Carousel -->
 
 
@@ -520,7 +578,6 @@
               <h6 class="font-weight-light">
                 選舉保證金是候選人登記參選時必須交付之保證金，表示對於成為候選人一事認真、嚴肅以待（避免有人來亂），若選舉結果得票數未達門檻，則保證金將被沒收，反之，若得票數超過一定門檻，除了能取回保證金，還能獲得一票30元的選舉經費補助款。
               </h6>
-
             </div>
             <div class="col-12">
               <!-- deposit table -->
@@ -535,84 +592,79 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row" ><small>直轄市長</small></th>
-                      <td class="align-middle"><small>200萬元</small></td>
-                      <td class="align-middle"><small>得票數超過選舉人數的1/10</small></td>
-                      <td class="align-middle"><small>得票數超過當選人票數的1/3</small></td>
+                      <th class="small" scope="row">直轄市長</th>
+                      <td class="small">200萬元</td>
+                      <td class="small">得票數超過選舉人數的1/10</td>
+                      <td class="small">得票數超過當選人票數的1/3</td>
                     </tr>
                     <tr>
-                      <th scope="row"><small>直轄市議員</small></th>
-                      <td class="align-middle"><small>20萬元</small></td>
-                      <td class="align-middle"><small>選區<mark>總選舉人數</mark>除<mark>應選議員人數</mark>後的1/10</small></td>
-                      <td class="align-middle"><small>得票數超過最低當選人票數的1/2</small></td>
+                      <th class="small" scope="row">直轄市議員</th>
+                      <td class="small">20萬元</td>
+                      <td class="small">選區總選舉人數除應選議員人數後的1/10</td>
+                      <td class="small">得票數超過最低當選人票數的1/2</td>
                     </tr>
                     <tr>
-                      <th scope="row"><small>縣市長</small></th>
-                      <td class="align-middle"><small>20萬元</small></td>
-                      <td class="align-middle"><small>得票數超過選舉人數的1/10</small></td>
-                      <td class="align-middle"><small>得票數超過當選人票數的1/3</small></td>
+                      <th class="small" scope="row">縣市長</th>
+                      <td class="small">20萬元</td>
+                      <td class="small">得票數超過選舉人數的1/10</td>
+                      <td class="small">得票數超過當選人票數的1/3</td>
                     </tr>
                     <tr>
-                      <th scope="row"><small>縣市議員</small></th>
-                      <td class="align-middle"><small>12萬元</small></td>
-                      <td class="align-middle"><small>選區<mark>總選舉人數</mark>除<mark>應選議員人數</mark>後的1/10</small></td>
-                      <td class="align-middle"><small>得票數超過最低當選人票數的1/2</small></td>
+                      <th class="small" scope="row">縣市議員</th>
+                      <td class="small">12萬元</td>
+                      <td class="small">選區總選舉人數除應選議員人數後的1/10</td>
+                      <td class="small">得票數超過最低當選人票數的1/2</td>
                     </tr>
                     <tr>
-                      <th scope="row"><small>鄉鎮市長</small></th>
-                      <td class="align-middle"><small>12萬元</small></td>
-                      <td class="align-middle"><small>得票數超過選舉人數的1/10</small></td>
-                      <td class="align-middle"><small>得票數超過當選人票數的1/3</small></td>
+                      <th class="small" scope="row">鄉鎮市長</th>
+                      <td class="small">12萬元</td>
+                      <td class="small">得票數超過選舉人數的1/10</td>
+                      <td class="small">得票數超過當選人票數的1/3</td>
                     </tr>
                     <tr>
-                      <th scope="row"><small>鄉鎮市民代表</small></th>
-                      <td class="align-middle"><small>5萬元</small></td>
-                      <td class="align-middle"><small>得票數超過選舉人數的1/10</small></td>
-                      <td class="align-middle"><small>得票數超過當選人票數的1/3</small></td>
+                      <th class="small" scope="row">鄉鎮市民代表</th>
+                      <td class="small">5萬元</td>
+                      <td class="small">得票數超過選舉人數的1/10</td>
+                      <td class="small">得票數超過當選人票數的1/3</td>
                     </tr>
                     <tr>
-                      <th scope="row"><small>村里長</small></th>
-                      <td class="align-middle"><small>5萬元</small></td>
-                      <td class="align-middle"><small>得票數超過選舉人數的1/10</small></td>
-                      <td class="align-middle"><small>得票數超過當選人票數的1/3</small></td>
+                      <th class="small" scope="row">村里長</th>
+                      <td class="small">5萬元</td>
+                      <td class="small">得票數超過選舉人數的1/10</td>
+                      <td class="small">得票數超過當選人票數的1/3</td>
                     </tr>
                     <tr>
-                      <th scope="row"><small>直轄市原住民區長</small></th>
-                      <td class="align-middle"><small>12萬元</small></td>
-                      <td class="align-middle"><small>得票數超過選舉人數的1/10</small></td>
-                      <td class="align-middle"><small>得票數超過當選人票數的1/3</small></td>
+                      <th class="small" scope="row">直轄市原住民區長</th>
+                      <td class="small">12萬元</td>
+                      <td class="small">得票數超過選舉人數的1/10</td>
+                      <td class="small">得票數超過當選人票數的1/3</td>
                     </tr>
                     <tr>
-                      <th scope="row"><small>直轄市原住民區民代表</small></th>
-                      <td class="align-middle"><small>5萬元</small></td>
-                      <td class="align-middle"><small>得票數超過選舉人數的1/10</small></td>
-                      <td class="align-middle"><small>得票數超過當選人票數的1/3</small></td>
+                      <th class="small" scope="row">直轄市原住民區民代表</th>
+                      <td class="small">5萬元</td>
+                      <td class="small">得票數超過選舉人數的1/10</td>
+                      <td class="small">得票數超過當選人票數的1/3</td>
                     </tr>
                   </tbody>
                 </table>
               <!-- end of table -->
             </div>
             <div class="col-12 py-3">
-              <h6 class="small">
-                資料來源：
-              </h6>
+              <a class="small h6 linkColor" href="https://udn.com/news/story/10958/3373949" target="_blank">
+                資料來源：聯合新聞網
+              </a>
             </div>
           </div>
         </div>
         <!-- end of table wrapper -->
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
-
 <!-- end of Election Deposit Table -->
 
 <!-- DC municipalities Councilors Ref Links in Modal -->
-<div class="modal fade" id="GuiltyCouncilors" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="DC_Councilors" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-lg my-5" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -625,48 +677,58 @@
         <!-- table wrapper -->
           <div class="justify-content-cneter" id="accordion">
             <div class="card">
-              <div class="card-header" id="headingOne">
+              <div class="card-header" id="DC_Councilors_headingOne">
                 <h5 class="mb-0">
                   <button class="btn btn-link linkColor" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    市議員在幹嘛？
+                    議員在幹嘛？
                   </button>
                 </h5>
               </div>
-
-              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+              <div id="collapseOne" class="collapse" aria-labelledby="DC_Councilors_headingOne" data-parent="#accordion">
                 <div class="card-body">
-                  <p>光是六都就有近四百位市議員，每年審查地方政府上千億元的預算，市議員是最基層的民意代表，也是地方政府第一線的監督者。你真的知道市議員在作什麼嗎？考考你！</p>
-                  <a href="https://opencouncil-taiwan.github.io/opencouncil/" class="btn btn btn-dark" role="button" target="_blank">前往小測驗</a>
+                  <div class="row no-gutters">
+                    <div class="col mr-3 border-right border-secondary">
+                      <p>很多人都認為「市議員就是地方的立委」，但是你知道市議員到底都在做什麼嗎？考考你！</p>
+                      <p class="small">資料來源：曾柏瑜競選團隊</p>
+                      <a href="https://opencouncil-taiwan.github.io/opencouncil/" class="btn btn btn-dark" role="button" target="_blank">讓我測</a>
+                    </div>
+                    <div class="col">
+                      <p>全台22個議會，一年有超過1兆的預算是靠議員在把關，你不知道的議員秘密，這裡都有寫！</p>
+                      <p class="small"><資料來源：關鍵評論網</p>
+                      <a href="https://election.thenewslens.com/2018/html/index.html" class="btn btn btn-dark" role="button" target="_blank">我要看</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="card">
-              <div class="card-header" id="headingTwo">
+              <div class="card-header" id="DC_Councilors_headingTwo">
                 <h5 class="mb-0">
                   <button class="btn btn-link collapsed linkColor" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                     議員候選人性別友善立場
                   </button>
                 </h5>
               </div>
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+              <div id="collapseTwo" class="collapse" aria-labelledby="DC_Councilors_headingTwo" data-parent="#accordion">
                 <div class="card-body">
-                  <p>由<a href="http://pridewatch.tw/beta/" target="_blank">同志人權立場觀測站</a>依候選人過去的發言、行程，與「候選人性別友善問卷」結果整理出的議員候選人立場。</p>
+                  依候選人過去的發言、行程，以及由婚姻平權大平台代表八十五個公民團體向候選人提出的「2018候選人性別友善問卷」，整理出議員候選人立場。</p>
+                  <p class="small">資料來源：同志人權立場觀測站</p>
                   <a href="http://pridewatch.tw/beta/2018_councillor_candidates" class="btn btn btn-dark" role="button" target="_blank">我要看</a>
                 </div>
               </div>
             </div>
             <div class="card">
-              <div class="card-header" id="headingFour">
+              <div class="card-header" id="DC_Councilors_headingThree">
                 <h5 class="mb-0">
                   <button class="btn btn-link collapsed linkColor" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                     六都議員候選人涉案名單
                   </button>
                 </h5>
               </div>
-              <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+              <div id="collapseFour" class="collapse" aria-labelledby="DC_Councilors_headingThree" data-parent="#accordion">
                 <div class="card-body">
-                  <p class="text-right mb-0"><small>資料整理：時代力量</small></p>
-                  <p class="text-right"><small>資料來源：司法院法學資料檢索系統</small></p>
+                  <p class="mb-0 small">資料整理：時代力量</p>
+                  <p class="small">資料來源：司法院法學資料檢索系統</p>
                   <!-- table normal view -->
                   <div class="d-none d-sm-block">
                     <table class="table table-hover">
@@ -681,217 +743,217 @@
                       <tbody>
                         <tr>
                           <th scope="row">新北</th>
-                          <td><small>林口、五股、泰山、新莊</small></td>
+                          <td class="small">林口、五股、泰山、新莊</td>
                           <td>何淑峯</td>
                           <td>貪污（詐領補助款）/二審判刑6年</td>
                         </tr>
                         <tr>
                           <th scope="row">新北</th>
-                          <td><small>蘆洲、三重</small></td>
+                          <td class="small">蘆洲、三重</td>
                           <td>蔡明堂</td>
                           <td>樁腳買票/一審判刑1年</td>
                         </tr>
                         <tr>
                           <th scope="row">新北</th>
-                          <td><small>板橋</small></td>
+                          <td class="small">板橋</td>
                           <td>黃俊哲</td>
                           <td>樁腳買票/判決有罪定讞</td>
                         </tr>
                         <tr>
                           <th scope="row">新北</th>
-                          <td><small>板橋</small></td>
+                          <td class="small">板橋</td>
                           <td>周勝考</td>
                           <td>貪污/法院審理中</td>
                         </tr>
                         <tr>
                           <th scope="row">新北</th>
-                          <td><small>中和</small></td>
+                          <td class="small">中和</td>
                           <td>金瑞龍</td>
                           <td>貪污（詐領活動費）/更二審判刑6個月</td>
                         </tr>
                         <tr>
                           <th scope="row">新北</th>
-                          <td><small>中和</small></td>
+                          <td class="small">中和</td>
                           <td>陳錦錠</td>
                           <td>樁腳買票/判決有罪定讞</td>
                         </tr>
                         <tr>
                           <th scope="row">新北</th>
-                          <td><small>樹林、鶯歌、土城、三峽</small></td>
+                          <td class="small">樹林、鶯歌、土城、三峽</td>
                           <td>高敏慧</td>
                           <td>貪污（詐領補助款）/二審判刑6年</td>
                         </tr>
                         <tr>
                           <th scope="row">新北</th>
-                          <td><small>山地原住民</small></td>
+                          <td class="small">山地原住民</td>
                           <td>寶杜·巴燕</td>
                           <td>樁腳買票/一審判決有罪</td>
                         </tr>
                         <tr>
                           <th scope="row">桃園</th>
-                          <td><small>桃園</small></td>
+                          <td class="small">桃園</td>
                           <td>李曉鐘</td>
                           <td>議長賄選/判決1年定讞</td>
                         </tr>
                         <tr>
                           <th scope="row" >桃園</th>
-                          <td><small>桃園</small></td>
+                          <td class="small">桃園</td>
                           <td>黃景熙</td>
                           <td>當選無效/定讞</td>
                         </tr>
                         <tr>
                           <th scope="row">桃園</th>
-                          <td><small>桃園</small></td>
+                          <td class="small">桃園</td>
                           <td>林政賢</td>
                           <td>當選無效/定讞</td>
                         </tr>
                         <tr>
                           <th scope="row">桃園</th>
-                          <td><small>桃園</small></td>
+                          <td class="small">桃園</td>
                           <td>蘇家明</td>
                           <td>違法兼任私人企業董事/遭監察院彈劾</td>
                         </tr>
                         <tr>
                           <th scope="row">桃園</th>
-                          <td><small>龜山</small></td>
+                          <td class="small">龜山</td>
                           <td>林正峰</td>
                           <td>議長賄選/二審判刑1年</td>
                         </tr>
                         <tr>
                           <th scope="row">桃園</th>
-                          <td><small>蘆竹</small></td>
+                          <td class="small">蘆竹</td>
                           <td>張桂綿</td>
                           <td>樁腳買票/一審判刑1年6個月</td>
                         </tr>
                         <tr>
                           <th scope="row" >桃園</th>
-                          <td><small>平鎮</small></td>
+                          <td class="small">平鎮</td>
                           <td>劉邦鉉</td>
                           <td>樁腳買票/一審判刑6個月</td>
                         </tr>
                         <tr>
                           <th scope="row">桃園</th>
-                          <td><small>平鎮</small></td>
+                          <td class="small">平鎮</td>
                           <td>陳萬得</td>
                           <td>恐嚇建商/一審判刑10個月</td>
                         </tr>
                         <tr>
                           <th scope="row" >桃園</th>
-                          <td><small>龍潭</small></td>
+                          <td class="small">龍潭</td>
                           <td>張肇良</td>
                           <td>貪污/法院審理中</td>
                         </tr>
                         <tr>
                           <th scope="row">台中</th>
-                          <td><small>龍井、大肚、烏日</small></td>
+                          <td class="small">龍井、大肚、烏日</td>
                           <td>林汝州</td>
                           <td>樁腳買票/一審判決1年10個月</td>
                         </tr>
                         <tr>
                           <th scope="row" >台中</th>
-                          <td><small>南屯</small></td>
+                          <td class="small">南屯</td>
                           <td>何文海</td>
                           <td>樁腳買票/二審判刑3個月</td>
                         </tr>
                         <tr>
                           <th scope="row">台中</th>
-                          <td><small>平地原住民</small></td>
+                          <td class="small">平地原住民</td>
                           <td>黃仁</td>
                           <td>違反選罷法/判刑1年</td>
                         </tr>
                         <tr>
                           <th scope="row" >台南</th>
-                          <td><small>西港、佳里、七股、<br>學甲、北門、將軍</small></td>
+                          <td class="small">西港、佳里、七股、<br>學甲、北門、將軍</td>
                           <td>方一峰</td>
                           <td>樁腳買票/一審判決6個月、當選無效/定讞</td>
                         </tr>
                         <tr>
                           <th scope="row" >台南</th>
-                          <td><small>下營、六甲、麻豆、<br>官田、大內</small></td>
+                          <td class="small">下營、六甲、麻豆、<br>官田、大內</td>
                           <td>吳通龍</td>
                           <td>貪污/法院審理中</td>
                         </tr>
                         <tr>
                           <th scope="row" >台南</th>
-                          <td><small>善化、安定、新市、<br>新化、山上</small></td>
+                          <td class="small">善化、安定、新市、<br>新化、山上</td>
                           <td>李偉智</td>
                           <td><a class="linkColor" href="https://www.storm.mg/article/327181" target="_blank">賄選/法院審理中</a></td>
                         </tr>
                         <tr>
                           <th scope="row" >台南</th>
-                          <td><small>善化、安定、新市、<br>新化、山上</small></td>
+                          <td class="small">善化、安定、新市、<br>新化、山上</td>
                           <td>李文俊</td>
                           <td><a class="linkColor" href="https://video.udn.com/news/262625" target="_blank">賄選(農會賄選)/判刑7個月</a></td>
                         </tr>
                         <tr>
                           <th scope="row" >台南</th>
-                          <td><small>安南</small></td>
+                          <td class="small">安南</td>
                           <td>郭清華</td>
                           <td><a class="linkColor" href="https://tw.appledaily.com/new/realtime/20170927/1212259/" target="_blank">過失傷害、傷害/一審判刑4個月</a></td>
                         </tr>
                         <tr>
                           <th scope="row" >台南</th>
-                          <td><small>北區、中西區</small></td>
+                          <td class="small">北區、中西區</td>
                           <td>謝龍介</td>
                           <td><a class="linkColor" href="http://news.ltn.com.tw/news/local/paper/49425" target="_blank">妨害投票罪(幽靈人口)/助理二審判刑4個月</a></td>
                         </tr>
                         <tr>
                           <th scope="row" >高雄</th>
-                          <td><small>桃源、那瑪夏、甲仙、<br>六龜、杉林、內門、<br>旗山、美濃、茂林</small></td>
+                          <td class="small">桃源、那瑪夏、甲仙、<br>六龜、杉林、內門、<br>旗山、美濃、茂林</td>
                           <td>鍾盛有</td>
                           <td><a class="linkColor" href="http://news.ltn.com.tw/news/politics/breakingnews/857316" target="_blank">樁腳買票/一審判決1年8個月、四個月</a></td>
                         </tr>
                         <tr>
                           <th scope="row" >高雄</th>
-                          <td><small>茄萣、湖內、路竹、<br>阿蓮、田寮</small></td>
+                          <td class="small">茄萣、湖內、路竹、<br>阿蓮、田寮</td>
                           <td>陳明澤</td>
                           <td><a class="linkColor" href="http://news.ltn.com.tw/news/society/paper/1090670" target="_blank">開賭場/簡易判決判刑4個月</a></td>
                         </tr>
                         <tr>
                           <th scope="row" >高雄</th>
-                          <td><small>大社、仁武、鳥松、<br>大樹</small></td>
+                          <td class="small">大社、仁武、鳥松、<br>大樹</td>
                           <td>許慧玉</td>
                           <td>妨害投票罪(幽靈人口)/胞妹一審判刑5個月</td>
                         </tr>
                         <tr>
                           <th scope="row" >高雄</th>
-                          <td><small>大社、仁武、鳥松、<br>大樹</small></td>
+                          <td class="small">大社、仁武、鳥松、<br>大樹</td>
                           <td>林芳如</td>
                           <td><a class="linkColor" href="http://news.ltn.com.tw/news/politics/breakingnews/607123" target="_blank">議長選舉亮票/判刑3個月</a></td>
                         </tr>
                         <tr>
                           <th scope="row" >高雄</th>
-                          <td><small>大社、仁武、鳥松、<br>大樹</small></td>
+                          <td class="small">大社、仁武、鳥松、<br>大樹</td>
                           <td>張勝富</td>
                           <td><a class="linkColor" href="https://www.chinatimes.com/newspapers/20130324000493-260107" target="_blank">當選無效（走路工）/定讞</a></td>
                         </tr>
                         <tr>
                           <th scope="row" >高雄</th>
-                          <td><small>三民</small></td>
+                          <td class="small">三民</td>
                           <td>洪平朗</td>
                           <td><a class="linkColor" href="https://tw.appledaily.com/headline/daily/20140524/35850162/" target="_blank">酒駕關說</a></td>
                         </tr>
                         <tr>
                           <th scope="row" >高雄</th>
-                          <td><small>鳳山</small></td>
+                          <td class="small">鳳山</td>
                           <td>張漢忠</td>
                           <td><a class="linkColor" href="http://news.ltn.com.tw/news/society/paper/572418" target="_blank">酒駕關說</a></td>
                         </tr>
                         <tr>
                           <th scope="row" >高雄</th>
-                          <td><small>前鎮、小港</small></td>
+                          <td class="small">前鎮、小港</td>
                           <td>陳麗娜</td>
                           <td><a class="linkColor" href="https://tw.appledaily.com/headline/daily/20130108/34755753/" target="_blank">議長選舉亮票/一審判刑5個月</a></td>
                         </tr>
                         <tr>
                           <th scope="row" >高雄</th>
-                          <td><small>前鎮、小港</small></td>
+                          <td class="small">前鎮、小港</td>
                           <td>朱挺玗</td>
                           <td><a class="linkColor" href="http://news.ltn.com.tw/news/politics/paper/204198" target="_blank">當選無效/定讞</a></td>
                         </tr>
                         <tr>
                           <th scope="row" >高雄</th>
-                          <td><small>前鎮、小港</small></td>
+                          <td class="small">前鎮、小港</td>
                           <td>陳致中</td>
                           <td>
                             <a class="linkColor" href="http://news.ltn.com.tw/news/focus/paper/517337" target="_blank">偽證罪/判刑3個月定讞</a><br>
@@ -900,19 +962,19 @@
                         </tr>
                         <tr>
                           <th scope="row" >高雄</th>
-                          <td><small>平地原住民</small></td>
+                          <td class="small">平地原住民</td>
                           <td>俄鄧·殷艾</td>
                           <td><a class="linkColor" href="https://www.chinatimes.com/realtimenews/20180807002890-260402" target="_blank">貪污/一審判刑3年8個月</a></td>
                         </tr>
                         <tr>
                           <th scope="row" >高雄</th>
-                          <td><small>那瑪夏、甲仙、杉林<br>內門、旗山、茄萣、<br>湖內、路竹、永山、<br>彌陀、梓官、楠梓、<br>左營、三民<br>之山地原住民</small></td>
+                          <td class="small">那瑪夏、甲仙、杉林<br>內門、旗山、茄萣、<br>湖內、路竹、永山、<br>彌陀、梓官、楠梓、<br>左營、三民<br>之山地原住民</td>
                           <td>柯路加</td>
                           <td><a class="linkColor" href="https://www.chinatimes.com/realtimenews/20180807002890-260402" target="_blank">貪污/一審判刑3年8個月</a></td>
                         </tr>
                         <tr>
                           <th scope="row" >高雄</th>
-                          <td><small>茂林、大社、大樹、<br>仁武、鳥松、鳳山、<br>大寮、旗津、苓雅、<br>前鎮、小港、林園<br>之山地原住民</small></td>
+                          <td class="small">茂林、大社、大樹、<br>仁武、鳥松、鳳山、<br>大寮、旗津、苓雅、<br>前鎮、小港、林園<br>之山地原住民</td>
                           <td>唐惠美</td>
                           <td><a class="linkColor" href="https://www.chinatimes.com/realtimenews/20180807002890-260402" target="_blank">貪污/一審判刑3年8個月</a></td>
                         </tr>
@@ -934,109 +996,109 @@
                         </thead>
                       <tbody>
                         <tr>
-                          <th scope="row"><small>新北</th>
-                          <td><small>何淑峯</td>
-                          <td><small>貪污（詐領補助款）/二審判刑6年</td>
+                          <th class="small" scope="row">新北</th>
+                          <td class="small">何淑峯</td>
+                          <td class="small">貪污（詐領補助款）/二審判刑6年</td>
                         </tr>
                         <tr>
-                          <th scope="row"><small>新北</th>
-                          <td><small>蔡明堂</td>
-                          <td><small>樁腳買票/一審判刑1年</td>
+                          <th class="small" scope="row">新北</th>
+                          <td class="small">蔡明堂</td>
+                          <td class="small">樁腳買票/一審判刑1年</td>
                         </tr>
                         <tr>
-                          <th scope="row"><small>新北</th>
-                          <td><small>黃俊哲</td>
-                          <td><small>樁腳買票/判決有罪定讞</td>
+                          <th class="small" scope="row">新北</th>
+                          <td class="small">黃俊哲</td>
+                          <td class="small">樁腳買票/判決有罪定讞</td>
                         </tr>
                         <tr>
-                          <th scope="row"><small>新北</th>
-                          <td><small>周勝考</td>
-                          <td><small>貪污/法院審理中</td>
+                          <th class="small" scope="row">新北</th>
+                          <td class="small">周勝考</td>
+                          <td class="small">貪污/法院審理中</td>
                         </tr>
                         <tr>
-                          <th scope="row"><small>新北</th>
-                          <td><small>金瑞龍</td>
-                          <td><small>貪污（詐領活動費）/更二審判刑6個月</td>
+                          <th class="small" scope="row">新北</th>
+                          <td class="small">金瑞龍</td>
+                          <td class="small">貪污（詐領活動費）/更二審判刑6個月</td>
                         </tr>
                         <tr>
-                          <th scope="row"><small>新北</th>
-                          <td><small>陳錦錠</td>
-                          <td><small>樁腳買票/判決有罪定讞</td>
+                          <th class="small" scope="row">新北</th>
+                          <td class="small">陳錦錠</td>
+                          <td class="small">樁腳買票/判決有罪定讞</td>
                         </tr>
                         <tr>
-                          <th scope="row"><small>新北</th>
-                          <td><small>高敏慧</td>
-                          <td><small>貪污（詐領補助款）/二審判刑6年</td>
+                          <th class="small" scope="row">新北</th>
+                          <td class="small">高敏慧</td>
+                          <td class="small">貪污（詐領補助款）/二審判刑6年</td>
                         </tr>
                         <tr>
-                          <th scope="row"><small>新北</th>
-                          <td><small>寶杜·巴燕</td>
-                          <td><small>樁腳買票/一審判決有罪</td>
+                          <th class="small" scope="row">新北</th>
+                          <td class="small">寶杜·巴燕</td>
+                          <td class="small">樁腳買票/一審判決有罪</td>
                         </tr>
                         <tr>
-                          <th scope="row"><small>桃園</th>
-                          <td><small>李曉鐘</td>
-                          <td><small>議長賄選/判決1年定讞</td>
+                          <th class="small" scope="row">桃園</th>
+                          <td class="small">李曉鐘</td>
+                          <td class="small">議長賄選/判決1年定讞</td>
                         </tr>
                         <tr>
-                          <th scope="row"><small>桃園</th>
-                          <td><small>黃景熙</td>
-                          <td><small>當選無效/定讞</td>
+                          <th class="small" scope="row">桃園</th>
+                          <td class="small">黃景熙</td>
+                          <td class="small">當選無效/定讞</td>
                         </tr>
                         <tr>
-                          <th scope="row"><small>桃園</th>
-                          <td><small>林政賢</td>
-                          <td><small>當選無效/定讞</td>
+                          <th class="small" scope="row">桃園</th>
+                          <td class="small">林政賢</td>
+                          <td class="small">當選無效/定讞</td>
                         </tr>
                         <tr>
-                          <th scope="row"><small>桃園</th>
-                          <td><small>蘇家明</td>
-                          <td><small>違法兼任私人企業董事/遭監察院彈劾</td>
+                          <th class="small" scope="row">桃園</th>
+                          <td class="small">蘇家明</td>
+                          <td class="small">違法兼任私人企業董事/遭監察院彈劾</td>
                         </tr>
                         <tr>
-                          <th scope="row"><small>桃園</th>
-                          <td><small>林正峰</td>
-                          <td><small>議長賄選/二審判刑1年</td>
+                          <th class="small" scope="row">桃園</th>
+                          <td class="small">林正峰</td>
+                          <td class="small">議長賄選/二審判刑1年</td>
                         </tr>
                         <tr>
-                          <th scope="row"><small>桃園</th>
-                          <td><small>張桂綿</td>
-                          <td><small>樁腳買票/一審判刑1年6個月</td>
+                          <th class="small" scope="row">桃園</th>
+                          <td class="small">張桂綿</td>
+                          <td class="small">樁腳買票/一審判刑1年6個月</td>
                         </tr>
                         <tr>
-                          <th scope="row"><small>桃園</th>
-                          <td><small>劉邦鉉</td>
-                          <td><small>樁腳買票/一審判刑6個月</td>
+                          <th class="small" scope="row">桃園</th>
+                          <td class="small">劉邦鉉</td>
+                          <td class="small">樁腳買票/一審判刑6個月</td>
                         </tr>
                         <tr>
-                          <th scope="row"><small>桃園</th>
-                          <td><small>陳萬得</td>
-                          <td><small>恐嚇建商/一審判刑10個月</td>
+                          <th class="small" scope="row">桃園</th>
+                          <td class="small">陳萬得</td>
+                          <td class="small">恐嚇建商/一審判刑10個月</td>
                         </tr>
                         <tr>
-                          <th scope="row"><small>桃園</th>
-                          <td><small>張肇良</td>
-                          <td><small>貪污/法院審理中</td>
+                          <th class="small" scope="row">桃園</th>
+                          <td class="small">張肇良</td>
+                          <td class="small">貪污/法院審理中</td>
                         </tr>
                         <tr>
-                          <th scope="row"><small>台中</th>
-                          <td><small>林汝州</td>
-                          <td><small>樁腳買票/一審判決1年10個月</td>
+                          <th class="small" scope="row">台中</th>
+                          <td class="small">林汝州</td>
+                          <td class="small">樁腳買票/一審判決1年10個月</td>
                         </tr>
                         <tr>
-                          <th scope="row"><small>台中</th>
-                          <td><small>何文海</td>
-                          <td><small>樁腳買票/二審判刑3個月</td>
+                          <th class="small" scope="row">台中</th>
+                          <td class="small">何文海</td>
+                          <td class="small">樁腳買票/二審判刑3個月</td>
                         </tr>
                         <tr>
-                          <th scope="row"><small>台中</th>
-                          <td><small>黃仁</td>
-                          <td><small>違反選罷法/判刑1年</td>
+                          <th class="small" scope="row">台中</th>
+                          <td class="small">黃仁</td>
+                          <td class="small">違反選罷法/判刑1年</td>
                         </tr>
                         <tr>
-                          <th scope="row"><small>台南</th>
-                          <td><small>方一峰</td>
-                          <td><small>樁腳買票/一審判決6個月、當選無效/定讞</td>
+                          <th class="small" scope="row">台南</th>
+                          <td class="small">方一峰</td>
+                          <td class="small">樁腳買票/一審判決6個月、當選無效/定讞</td>
                         </tr>
                       </tbody>
                     </table>
@@ -1048,9 +1110,6 @@
           </div>
         <!-- end of table wrapper -->
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
     </div>
   </div>
 </div>
@@ -1061,43 +1120,37 @@
 <!-- Section Referendums -->
 
 <!-- General Info of Referendum-->
-
-
-
-
-
-<div class="wrapper bgBlack mt-5" id="referendumGen">
+<div class="wrapper bgBlack" id="referendumGen">
   <div class="row justify-content-center">
     <div class="col-5 d-none d-lg-block position-relative mx-0 px-0" style="height:16em;">
       <img class="img-fluid position-absolute" src="img/referendumsTitle.png" alt="十項公民投票" style="bottom:-35px;">
     </div>
     <div class="col-8 d-none d-sm-block d-lg-none position-relative mx-0 px-0" style="height:12em;">
-      <img class="img-fluid position-absolute" src="img/referendumsTitle_M.png" alt="十項公民投票" style="bottom:-50px;">
+      <img class="img-fluid position-absolute" src="img/referendumsTitle.png" alt="十項公民投票" style="bottom:-50px;">
     </div>
     <div class="col-11 d-sm-none position-relative mx-0 px-0" style="height:30vw;">
       <img class="img-fluid position-absolute" src="img/referendumsTitle_M.png" alt="十項公民投票" style="bottom:-28px;">
     </div>
   </div>
-
 </div>
 
 <div class="row justify-content-center py-5 my-sm-5">
-  <a class="col-4 col-md-3 col-lg-2 mr-md-4 hoverLarge linkColor" href="https://www.cna.com.tw/news/ahel/201810220055.aspx" target="_blank">
+  <a class="col-5 col-sm-3 col-lg-2 mr-4 hoverLarge linkColor shadow" href="https://www.cna.com.tw/news/ahel/201810220055.aspx" target="_blank">
     <img class="img-fluid" src="img/referendums_dayOff.png" alt="公投日如同選舉日是法定假日，勞工出勤須支雙倍薪">
     <h5 class="text-center pt-4">公投放假</h5>
-    <p class="text-center font-weight-light"><small>勞動部</small></p>
+    <p class="text-center font-weight-light small">勞動部</p>
   </a>
-  <a class="col-4 col-md-3 col-lg-2 mr-md-4 hoverLarge linkColor" href="https://medium.com/explained-解釋新聞/懶人包-2018公投元年完全生存指南-c540e61d2a13" target="_blank">
+  <a class="col-5 col-sm-3 col-lg-2 mr-md-4 hoverLarge linkColor shadow" href="https://medium.com/explained-解釋新聞/懶人包-2018公投元年完全生存指南-c540e61d2a13" target="_blank">
     <img class="img-fluid" src="img/referendums_explained.png" alt="公投懶人包">
-
     <h5 class="text-center pt-4">公投翻譯蒟蒻</h5>
-    <p class="text-center font-weight-light"><small>Explained 解釋新聞</small></p>
+    <p class="text-center font-weight-light small">Explained 解釋新聞</p>
   </a>
-  <a class="col-4 col-md-3 col-lg-2 hoverLarge linkColor" href="https://www.cec.gov.tw/central/cms/speechtable107/28668" target="_blank">
+  <a class="col-5 col-sm-3 col-lg-2 hoverLarge linkColor shadow" href="https://www.cec.gov.tw/central/cms/speechtable107/28668" target="_blank">
     <img class="img-fluid" src="img/referendums_TV.png" alt="公投議題電視辯論會">
     <h5 class="text-center pt-4">電視辯論會</h5>
-    <p class="text-center font-weight-light"><small>中選會</small></p>
+    <p class="text-center font-weight-light small">中選會</p>
   </a>
+
 </div>
 <!-- end of General Info of Referendum -->
 
@@ -1105,10 +1158,10 @@
 <div class="wrapperL">
   <div class="container-fluid">
     <div class="row justify-content-center">
-      <div class="col-5 col-sm-4 border-thick border-dark mr-3 mr-sm-4">
+      <div class="col-5 col-sm-4 border-thick  mr-3 mr-sm-4">
         <h5>#46 hello</h5>
       </div>
-      <div class="col-5 col-sm-4 border-thick border-dark">
+      <div class="col-5 col-sm-4 border-thick ">
         <h5>#47 Can you hear me?</h5>
       </div>
 
@@ -1117,11 +1170,11 @@
 </div>
 
 
-<div class="wrapper" id="allReferendums">
+<div class="wrapperCarousel halftoneBanner" id="allReferendums">
   <div class="container-fluid">
     <!-- Referendums row 1-->
     <div class="row justify-content-center py-2">
-      <div class="col-5 col-sm-4 border-thick border-dark mr-3 mr-sm-4">
+      <div class="col-5 col-sm-4 border-thick  mr-3 mr-sm-4">
         <div class="row justify-content-center">
           <div class="col-xs-12 col-sm-7">
             <h5 class="text-left my-4 font-weight-bold">#07 反空污</h5>
@@ -1132,7 +1185,7 @@
           </div>
         </div>
       </div>
-      <div class="col-5 col-md-4 border-thick border-dark">
+      <div class="col-5 col-md-4 border-thick ">
         <div class="row justify-content-center">
           <div class="col-xs-12 col-sm-7">
             <h5 class="text-left my-4 font-weight-bold">#08 反深澳電廠</h5>
@@ -1147,7 +1200,7 @@
     <!-- end of Referendums row 1-->
     <!-- Referendums row 2-->
     <div class="row justify-content-center py-2">
-      <div class="col-5 col-sm-4 border-thick border-dark mr-3 mr-sm-4">
+      <div class="col-5 col-sm-4 border-thick  mr-3 mr-sm-4">
         <div class="row justify-content-center">
           <div class="col-xs-12 col-sm-7">
             <h5 class="text-left my-4 font-weight-bold">#09 反核食</h5>
@@ -1158,7 +1211,7 @@
           </div>
         </div>
       </div>
-      <div class="col-5 col-md-4 border-thick border-dark">
+      <div class="col-5 col-md-4 border-thick ">
         <div class="row justify-content-center">
           <div class="col-xs-12 col-sm-7">
             <h5 class="text-left my-4 font-weight-bold">#10 婚姻限男女</h5>
@@ -1173,7 +1226,7 @@
     <!-- end of Referendums row 2-->
     <!-- Referendums row 3-->
     <div class="row justify-content-center py-2">
-      <div class="col-5 col-sm-4 border-thick border-dark mr-3 mr-sm-4">
+      <div class="col-5 col-sm-4 border-thick  mr-3 mr-sm-4">
         <div class="row justify-content-center">
           <div class="col-xs-12 col-sm-7">
             <h5 class="text-left my-4 font-weight-bold">#11 反同志教育</h5>
@@ -1184,7 +1237,7 @@
           </div>
         </div>
       </div>
-      <div class="col-5 col-md-4 border-thick border-dark">
+      <div class="col-5 col-md-4 border-thick ">
         <div class="row justify-content-center">
           <div class="col-xs-12 col-sm-7">
             <h5 class="text-left my-4 font-weight-bold">#12 同婚立專法</h5>
@@ -1199,7 +1252,7 @@
     <!-- end of Referendums row 3-->
     <!-- Referendums row 4-->
     <div class="row justify-content-center py-2">
-      <div class="col-5 col-sm-4 border-thick border-dark mr-3 mr-sm-4">
+      <div class="col-5 col-sm-4 border-thick  mr-3 mr-sm-4">
         <div class="row justify-content-center">
           <div class="col-xs-12 col-sm-7">
             <h5 class="text-left my-4 font-weight-bold">#13 東奧正名</h5>
@@ -1210,7 +1263,7 @@
           </div>
         </div>
       </div>
-      <div class="col-5 col-md-4 border-thick border-dark">
+      <div class="col-5 col-md-4 border-thick ">
         <div class="row justify-content-center">
           <div class="col-xs-12 col-sm-7">
             <h5 class="text-left my-4 font-weight-bold">#14 同婚修民法</h5>
@@ -1225,11 +1278,11 @@
     <!-- end of Referendums row 4-->
     <!-- Referendums row 5-->
     <div class="row justify-content-center py-1">
-      <div class="col-5 col-sm-4 border-thick border-dark mr-3 mr-sm-4">
+      <div class="col-5 col-sm-4 border-thick  mr-3 mr-sm-4">
         <div class="row justify-content-center">
           <div class="col-xs-12 col-sm-10 my-3">
-            <h4 class="text-center mb-0 font-weight-bold">#15</h4>
-            <h5 class="text-center">友善同志教育</h5>
+            <h4 class="text-center mb-0 font-weight-bold"></h4>
+            <h5 class="text-center">#15 友善同志教育</h5>
           </div>
           <div class="col-10 text-center mb-2">
             <a class="btn btn-dark btn-sm my-xs-3" href="https://web.cec.gov.tw/upload/file/2018-05-08/4af50deb-084a-4bad-9365-0d404897cd06/adc7a0d0eb7224a770cb76054df2fa6b.pdf" target="_blank">理由書</a>
@@ -1237,11 +1290,11 @@
           </div>
         </div>
       </div>
-      <div class="col-5 col-md-4 border-thick border-dark">
+      <div class="col-5 col-md-4 border-thick ">
         <div class="row justify-content-center">
           <div class="col-xs-12 col-sm-10 my-3">
-            <h4 class="text-center mb-0 font-weight-bold">#16</h4>
-            <h5 class="text-center">以核養綠</h5>
+            <h4 class="text-center mb-0 font-weight-bold"></h4>
+            <h5 class="text-center">#16 以核養綠</h5>
           </div>
           <div class="col-10 text-center mb-2">
             <a class="btn btn-dark btn-sm my-xs-3" href="https://web.cec.gov.tw/upload/file/2018-05-09/9dd2722a-4933-402e-b1af-875d7d4001e6/4073d41dfc03248c582eaf9f9720b9fd.pdf" target="_blank">理由書</a>
@@ -1260,41 +1313,45 @@
 
 
 <!-- Poll Watchers -->
-<div class="wrapperL bgBlack mt-5" id="pollWatchers">
-  <div class="container-fluid py-5">
-    <div class="row justify-content-center my-2">
-      <h1 class="font-weight-bold text-white text-center">放大絕</h1>
+
+
+<div class="wrapper bgBlack" id="pollWatchers">
+  <div class="row justify-content-center">
+    <div class="col-5 d-none d-lg-block position-relative mx-0 px-0" style="height:16em;">
+      <img class="img-fluid position-absolute" src="img/pollWatchersTitle.png" alt="公民放大絕" style="bottom:-35px;">
     </div>
-    <div class="row justify-content-center">
-      <div class="col-11 col-md-7 ">
-        <p class="text-white mb-0">民主得來不易，而選舉必須公平公正才能讓所有人都信服，為了讓更多台灣人瞭解選務的運作、親眼見證選舉結果的產生，完全由公民透過網路集結組成的「監票者聯盟」在 2014 年 6 月誕生，自己的票自己監，你也可以！</p>
-      </div>
-      <div class="col-sm-10 col-md-6 align-self-center">
-        <a href="https://www.observers.tw/?LOC=REG" target="_blank" title="點擊圖片報名志工">
-          <img class="img-fluid hoverLarge" src="img/pollWatchers.png" alt="加入監票者聯盟成為公民監票員">
-        </a>
-      </div>
+    <div class="col-8 d-none d-sm-block d-lg-none position-relative mx-0 px-0" style="height:12em;">
+      <img class="img-fluid position-absolute" src="img/pollWatchersTitle.png" alt="公民放大絕" style="bottom:-50px;">
     </div>
-    <!--- Footer --->
-    <div class="container-fluid mt-3">
-      <p class="float-left text-white">
-        <small>Copyright © 2018 創媒體 BeamMedia</small>
-      </p>
-      <p class="float-right">
-        <a class="linkColorWHT" href="https://www.facebook.com/beammedia/" target="_blank">
-          <i class="fab fa-lg fa-facebook-square"></i>
-        </a>
-        <!--a href="https://www.instagram.com/beammedia/" target="_blank">
-          <i class="fab fa-lg fa-instagram pr-1"></i>
-        </a-->
-      </p>
+    <div class="col-11 d-sm-none position-relative mx-0 px-0" style="height:30vw;">
+      <img class="img-fluid position-absolute" src="img/pollWatchersTitle_M.png" alt="公民放大絕" style="bottom:-28px;">
     </div>
-    <!--- end of Footer --->
   </div>
 </div>
 
+<div class="row justify-content-center wrapperXL">
+  <div class="col-10 col-sm-7 col-md-6">
+    <p class="mb-0">民主得來不易，而選舉必須公平公正才能讓所有人都信服，為了讓更多台灣人瞭解選務的運作、親眼見證選舉結果的產生，完全由公民透過網路集結組成的「監票者聯盟」在 2014 年 6 月誕生，自己的票自己監，你也可以！</p>
+  </div>
+</div>
+<div class="row justify-content-center pb-5">
+  <div class="col-10 col-sm-7 col-md-6 col-lg-4">
+    <a href="https://www.observers.tw/?LOC=REG" target="_blank" title="點擊圖片報名志工">
+      <img class="img-fluid hoverLarge" src="img/pollWatchers.png" alt="加入監票者聯盟成為公民監票員">
+    </a>
+  </div>
+</div>
+
+
 <!-- end of Poll Watchers -->
 
+<!--- Footer --->
+<div class="wrapperL py-5">
+  <p class="text-center small">
+    Copyright © 2018 創媒體 BeamMedia
+  </p>
+</div>
+<!--- end of Footer --->
 
 
 
