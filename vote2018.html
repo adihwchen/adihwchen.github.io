@@ -6,6 +6,7 @@ DC_Councilors_headingThree<!doctype HTML>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+  <link rel="stylesheet" href="iconFont.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
@@ -15,7 +16,7 @@ DC_Councilors_headingThree<!doctype HTML>
   <meta property="og:url" content="https://vote2018.beamedia.co">
   <meta property="og:type" content="website">
   <meta property="og:title" content="1124攻城之戰">
-  <meta property="og:image" content="https://c1.staticflickr.com/5/4759/40128906272_7367a9585b_o.png">
+  <meta property="og:image" content="https://c2.staticflickr.com/2/1919/30837554257_f4e1b9dcf0_o.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:description" content="九合一選舉暨十項公投，回家參戰！">
 
@@ -146,6 +147,18 @@ html {
 .lineHeight {
   line-height: 1.6;
 }
+
+/* icon font */
+.btnWrapper {
+  padding-top: .05em;
+}
+.btnIcons {
+  font-size: 1.5rem;
+  top: .20em;
+  position: relative;
+}
+
+
 
 /* Lineup of Rappers */
 .wrapper {
@@ -286,15 +299,13 @@ html {
 <div class="wrapperXL halftoneBanner" id="goTop">
   <div class="row justify-content-center">
     <div class="col-10 col-sm-7 col-md-6 col-lg-4 mt-3 mt-sm-5 mb-md-5">
-      <a href="#"  data-toggle="modal" data-target="#aboutUS" title="什麼是保證金？">
+      <a href="#"  data-toggle="modal" data-target="#aboutUS" title="關於這個網站">
         <img class="img-fluid hoverLarge" src="img/vote2018_logoType.png" alt="2018地方公職人員選舉暨全國性公民投票">
       </a>
     </div>
   </div>
 </div>
 <!-- About modal -->
-
-<!-- end of About modal -->
 <div class="modal fade" id="aboutUS" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-lg my-5" role="document">
     <div class="modal-content">
@@ -305,143 +316,181 @@ html {
         </button>
       </div>
       <div class="modal-body">
-        <!-- table wrapper -->
         <div class="container-fluid">
           <div class="row justify-content-center">
             <div class="col-12 py-3">
-              <h6 class="font-weight-light lineHeight">
+              <p class="h6 font-weight-light lineHeight">
                 在過去幾個月裡，大家拼命連署、努力倡議，表態或不表態，都是為了「投票」這決定性的一刻！這是 BeamMedia 第三次製作選舉情報統整網站，為了號召所有 18 歲以上的公民、降低投票相關資訊的取得難度，我們精心篩選出一份不能不看的內容。無論你心中的定見為何、選擇是什麼，參戰吧！和我們一樣，在自己的位置、用自己能做到的方式來參與這場攻城之戰！
-              </h6>
+              </p>
             </div>
           </div>
         </div>
-        <!-- end of table wrapper -->
       </div>
     </div>
   </div>
 </div>
+<!-- end of About modal -->
+
 <!-- end of logoType -->
 
 
+
 <!-- General Info -->
-  <div class="container-fluid px-0 mx-0">
-    <div class="wrapperL bgBlack px-0 mx-0" id="mustKnow" >
-
-      <div class="row justify-content-center">
-        <div class="col-5 d-none d-lg-block position-relative mx-0 px-0" style="height:15em;">
-          <img class="img-fluid position-absolute" src="img/mustKnowTitle.png" alt="進場須知" style="bottom:-40px;">
-        </div>
-        <div class="col-8 d-none d-sm-block d-lg-none position-relative mx-0 px-0" style="height:12em;">
-          <img class="img-fluid position-absolute" src="img/mustKnowTitle.png" alt="進場須知" style="bottom:-50px;">
-        </div>
-        <div class="col-11 d-sm-none position-relative mx-0 px-0" style="height:20vw;">
-          <img class="img-fluid position-absolute" src="img/mustKnowTitle_M.png" alt="進場須知" style="bottom:-28px;">
-        </div>
+<div class="container-fluid px-0 mx-0">
+  <div class="wrapperL bgBlack px-0 mx-0" id="mustKnow" >
+    <div class="row justify-content-center">
+      <div class="col-5 d-none d-lg-block position-relative mx-0 px-0" style="height:15em;">
+        <img class="img-fluid position-absolute" src="img/mustKnowTitle.png" alt="進場須知" style="bottom:-40px;">
       </div>
-
+      <div class="col-8 d-none d-sm-block d-lg-none position-relative mx-0 px-0" style="height:12em;">
+        <img class="img-fluid position-absolute" src="img/mustKnowTitle.png" alt="進場須知" style="bottom:-50px;">
+      </div>
+      <div class="col-11 d-sm-none position-relative mx-0 px-0" style="height:20vw;">
+        <img class="img-fluid position-absolute" src="img/mustKnowTitle_M.png" alt="進場須知" style="bottom:-28px;">
+      </div>
     </div>
-    <div class="polka pb-5 pt-5">
-      <!-- DOs and DONTs -->
-      <div class="row justify-content-center py-5 mt-5 no-gutters" id="DOsDONTs">
-        <div class="col-6 col-sm-4 col-lg-3 hoverLarge" href="#DOs" data-toggle="collapse"  aria-expanded="false" aria-controls="DOs">
-          <img class="img-fluid drop-shadow" src="img/mustKnow_DOs.png" alt="必備">
-        </div>
-        <div class="col-6 col-sm-4 col-lg-3 hoverLarge" href="#DONTs" data-toggle="collapse" aria-expanded="false" aria-controls="DONTs">
-          <img class="img-fluid drop-shadow" src="img/mustKnow_DONTs.png" alt="母湯">
-        </div>
-        <!-- DOs -->
-        <div class="row justify-content-center bg-white shadow mx-0 mt-0 pt-4 pb-5">
-          <div class="col-11 collapse pt-5" id="DOs" data-parent="#DOsDONTs">
-            <div class="row justify-content-around">
-              <div class="col-sm-3">
-                <img class="img-fluid w-90" src="img/mustKnow_DOs_id.png" alt="一定要帶身份證，沒帶不能投票" title="一定要帶身份證，沒帶不能投票">
-                <p class="h5 text-center">身份證</p>
-                <p>一定要帶！確認與核對投票人身份，沒有身份證就不能進入投票所。</p>
-              </div>
-              <div class="col-sm-3 mt-xs-5">
-                <img class="img-fluid w-90" src="img/mustKnow_DOs_notification.png" alt="投票通知單有帶有加分" title="投票通知單有帶有加分">
-                <p class="h5 text-center">投票通知單</p>
-                <p>有帶加分！標示投票所號碼與位置，也有協助選務人員快速查找名冊的編號。</p>
-              </div>
-              <div class="col-sm-3 mt-xs-5">
-                <img class="img-fluid w-90" src="img/mustKnow_DOs_stamp.png" alt="私章有帶有保險" title="私章有帶有保險">
-                <p class="h5 text-center">印章</p>
-                <p>有帶保險！領完票之後需蓋章確認領票，沒有印章可用手印簽名代替。BUT，蓋完手印如果不小心把指紋留在選票上「一秒變廢票」。</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- end of DOs -->
-        <!-- DONTs -->
-        <div class="row justify-content-center bg-white shadow mx-0 mt-0 pt-4 pb-5">
-          <div class="col-11 collapse pt-5" id="DONTs" data-parent="#DOsDONTs">
-            <div class="row justify-content-around">
-              <div class="col">
-                <img class="img-fluid" src="img/mustKnow_DONTs_photo.png" alt="禁止攜帶照相錄影通訊功能等物品（含手機）" title="禁止攜帶照相錄影通訊功能等物品（含手機）">
-                <p class="text-center">
-                  有照相錄影通訊功能等物品<br>（含手機）
-                </p>
-              </div>
-              <div class="col">
-                <img class="img-fluid" src="img/mustKnow_DONTs_promo.png" alt="禁止攜帶與候選人或公投議題相關之物品" title="禁止攜帶與候選人或公投議題相關之物品">
-                <p>
-                  與候選人或公投議題相關之物品
-                </p>
-              </div>
-              <div class="col">
-                <img class="img-fluid" src="img/mustKnow_DONTs_stampBallot.png" alt="選票上不能蓋私章" title="選票上不能蓋私章">
-                <p class="text-center">
-                  選票上不能蓋私章
-                </p>
 
-              </div>
-              <div class="col">
-                <img class="img-fluid" src="img/mustKnow_DONTs_fingerPrint.png" alt="選票上不能有手印" title="選票上不能有手印">
-                <p class="text-center">
-                  選票上不能有手印
-                </p>
-              </div>
-              <div class="col">
-                <img class="img-fluid" src="img/mustKnow_DONTs_drawOn.png" alt="選票上不能塗改" title="選票上不能塗改">
-                <p class="text-center">
-                  選票上不能塗改
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- end of DONTs -->
+  </div>
+  <div class="polka pb-5 pt-5">
+    <!-- DOs and DONTs -->
+    <div class="row justify-content-center py-5 mt-5 no-gutters" id="DOsDONTs">
+      <div class="col-6 col-sm-4 col-lg-3 hoverLarge" href="#DOs" data-toggle="collapse"  aria-expanded="false" aria-controls="DOs">
+        <img class="img-fluid drop-shadow" src="img/mustKnow_DOs.png" alt="必備">
       </div>
-      <!-- end of DOs and DONTs -->
-
-      <div class="container-fluid py-5 mb-5">
-        <div class="row justify-content-center">
-          <div class="col-8">
-            <div class="row justify-content-around" id="basicInfo">
-              <a class="col-10 col-md-3 border-thick bgBlack mb-1 hoverLarge linkColorWHT shadow" href="https://www.ris.gov.tw/app/portal" target="_blank">
-                <h6 class="text-center pt-2">投票所查詢</h6>
-              </a>
-              <div class="col-10 col-md-3 border-thick bgBlack mb-1 hoverLarge linkColorWHT shadow" href="#voteFlowMap" data-toggle="collapse" aria-expanded="false" aria-controls="voteFlowMap">
-                <h6 class="text-center pt-2">投票流程圖</h6>
-              </div>
-              <div class="col-10 col-md-3 border-thick bgBlack mb-1 hoverLarge linkColorWHT shadow" href="#ballotDemo" data-toggle="collapse" aria-expanded="false" aria-controls="ballotDemo">
-                <h6 class="text-center pt-2">有效/無效票</h6>
-              </div>
-              <div class="mx-auto collapse" id="voteFlowMap" data-parent="#basicInfo">
-                <p class="text-center">先領選舉票、投票，再領公投票、投票，完成！</p>
-                <img src="https://s.yimg.com/ny/api/res/1.2/DFktsCe00qwt2DZs.0i8RA--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/http://media.zenfs.com/en/homerun/feed_manager_auto_publish_494/79c3146f26455e30f5e7b4ab5fce36fb" class="img-fluid" alt="2018地方公職人員選舉暨全國性公民投票">
-              </div>
-              <div class="mx-auto collapse" id="ballotDemo" data-parent="#basicInfo">
-                <img src="https://attach.setn.com/newsimages/2015/08/31/328475-PH.jpg" class="img-fluid" alt="2018地方公職人員選舉暨全國性公民投票">
-              </div>
+      <div class="col-6 col-sm-4 col-lg-3 hoverLarge" href="#DONTs" data-toggle="collapse" aria-expanded="false" aria-controls="DONTs">
+        <img class="img-fluid drop-shadow" src="img/mustKnow_DONTs.png" alt="母湯">
+      </div>
+      <!-- DOs -->
+      <div class="row justify-content-center bg-white shadow mx-0 mt-0 pt-4 pb-5">
+        <div class="col-11 collapse pt-5" id="DOs" data-parent="#DOsDONTs">
+          <div class="row justify-content-around">
+            <div class="col-sm-3">
+              <img class="img-fluid w-90" src="img/mustKnow_DOs_id.png" alt="一定要帶身份證，沒帶不能投票" title="一定要帶身份證，沒帶不能投票">
+              <p class="h5 text-center">身份證</p>
+              <p>一定要帶！確認與核對投票人身份，沒有身份證就不能進入投票所。</p>
             </div>
-
+            <div class="col-sm-3 mt-xs-5">
+              <img class="img-fluid w-90" src="img/mustKnow_DOs_notification.png" alt="投票通知單有帶有加分" title="投票通知單有帶有加分">
+              <p class="h5 text-center">投票通知單</p>
+              <p>有帶加分！標示投票所號碼與位置，也有協助選務人員快速查找名冊的編號。</p>
+            </div>
+            <div class="col-sm-3 mt-xs-5">
+              <img class="img-fluid w-90" src="img/mustKnow_DOs_stamp.png" alt="私章有帶有保險" title="私章有帶有保險">
+              <p class="h5 text-center">印章</p>
+              <p>有帶保險！領完票之後需蓋章確認領票，沒有印章可用手印簽名代替。BUT，蓋完手印如果不小心把指紋留在選票上「一秒變廢票」。</p>
+            </div>
           </div>
+        </div>
+      </div>
+      <!-- end of DOs -->
+      <!-- DONTs -->
+      <div class="row justify-content-center bg-white shadow mx-0 mt-0 pt-4 pb-5">
+        <div class="col-11 collapse pt-5" id="DONTs" data-parent="#DOsDONTs">
+          <div class="row justify-content-around">
+            <div class="col">
+              <img class="img-fluid" src="img/mustKnow_DONTs_photo.png" alt="禁止攜帶照相錄影通訊功能等物品（含手機）" title="禁止攜帶照相錄影通訊功能等物品（含手機）">
+              <p class="text-center">
+                有照相錄影通訊功能等物品<br>（含手機）
+              </p>
+            </div>
+            <div class="col">
+              <img class="img-fluid" src="img/mustKnow_DONTs_promo.png" alt="禁止攜帶與候選人或公投議題相關之物品" title="禁止攜帶與候選人或公投議題相關之物品">
+              <p>
+                與候選人或公投議題相關之物品
+              </p>
+            </div>
+            <div class="col">
+              <img class="img-fluid" src="img/mustKnow_DONTs_stampBallot.png" alt="選票上不能蓋私章" title="選票上不能蓋私章">
+              <p class="text-center">
+                選票上不能蓋私章
+              </p>
 
+            </div>
+            <div class="col">
+              <img class="img-fluid" src="img/mustKnow_DONTs_fingerPrint.png" alt="選票上不能有手印" title="選票上不能有手印">
+              <p class="text-center">
+                選票上不能有手印
+              </p>
+            </div>
+            <div class="col">
+              <img class="img-fluid" src="img/mustKnow_DONTs_drawOn.png" alt="選票上不能塗改" title="選票上不能塗改">
+              <p class="text-center">
+                選票上不能塗改
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of DONTs -->
+    </div>
+    <!-- end of DOs and DONTs -->
+
+    <div class="container-fluid py-5 mb-5">
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <div class="row justify-content-around" id="basicInfo">
+            <a class="col-10 col-md-3 border-thick bgBlack mb-1 hoverLarge linkColorWHT shadow" href="https://www.ris.gov.tw/info-electionVoterQualifiedQuery/app/aw0702VQQ/main" target="_blank">
+              <h6 class="text-center btnWrapper">
+                <i class="icon_checkPollBooth btnIcons"></i>
+                投票所查詢
+              </h6>
+            </a>
+            <div class="col-10 col-md-3 border-thick bgBlack mb-1 hoverLarge linkColorWHT shadow" data-toggle="modal" data-target="#voteFlowMap">
+              <h6 class="text-center btnWrapper">
+                <i class="icon_pollFlow btnIcons"></i>
+                投票流程圖
+              </h6>
+            </div>
+            <div class="col-10 col-md-3 border-thick bgBlack mb-1 hoverLarge linkColorWHT shadow" href="#ballotDemo" data-toggle="collapse" aria-expanded="false" aria-controls="ballotDemo">
+              <h6 class="text-center btnWrapper">
+                <i class="icon_validBallot btnIcons"></i>
+                有效/無效票
+              </h6>
+            </div>
+            <div class="mx-auto collapse" id="ballotDemo" data-parent="#basicInfo">
+              <img src="https://attach.setn.com/newsimages/2015/08/31/328475-PH.jpg" class="img-fluid" alt="2018地方公職人員選舉暨全國性公民投票">
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<!-- voteFlowMap modal -->
+<div class="modal fade" id="voteFlowMap" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg my-5" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">投票流程圖</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-12 py-3">
+              <p class="h6 font-weight-light lineHeight">
+                此次大選為二階段投票流程：先領選舉票、投票，再領公投票、投票。特別注意手機要放外面不能帶進投票所，每人只能進入投票所一次，出場後就不得再進入，領取的選票或公投票都不能攜出場外，以免觸法！
+              </p>
+            </div>
+            <div class="col-12 py-3">
+              <img class="img-fluid d-none d-md-block" src="img/voteFlowMap.png" alt="投票流程圖">
+              <img class="img-fluid d-md-none" src="img/voteFlowMap_M.png" alt="投票流程圖">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of voteFlowMap modal -->
+
+<!-- end of General Info -->
+
+
 
 <!-- Section Elections -->
 <div class="wrapper bgBlack" id="electionGen">
