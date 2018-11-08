@@ -117,7 +117,25 @@ html {
   text-decoration: underline;
   cursor: pointer;
 }
+.halftoneBanner {
+  background-image: url(img/halftoneBanner.svg);
+  background-repeat: repeat-x;
+  max-width: 100%;
+  height: auto;
+  background-position: center bottom;
 
+}
+.polka {
+  background-image:
+    radial-gradient(black 10%, transparent 0),
+    radial-gradient(black 10%, transparent 0);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+}
+.drop-shadow {
+  -webkit-filter: drop-shadow(0px 8px 7px rgba(0, 0, 0, 0.18));
+  filter: drop-shadow(0px 8px 7px rgba(0, 0, 0, 0.18))
+}
 .rectangle{
   height:15em;
   background:black;
@@ -125,6 +143,10 @@ html {
 .bgBlack {
   background-color: black;
 }
+.lineHeight {
+  line-height: 1.6;
+}
+
 /* Lineup of Rappers */
 .wrapper {
   padding-top: 3em;
@@ -144,27 +166,8 @@ html {
   padding-bottom: 8em;
 }
 
-.halftoneBanner {
-  background-image: url(img/halftoneBanner.svg);
-  background-repeat: repeat-x;
-  max-width: 100%;
-  height: auto;
-  background-position: center bottom;
 
-}
-.polka {
-  background-image:
-    radial-gradient(black 10%, transparent 0),
-    radial-gradient(black 10%, transparent 0);
-  background-size: 60px 60px;
-  background-position: 0 0, 30px 30px;
-}
-
-.drop-shadow {
-  -webkit-filter: drop-shadow(0px 8px 7px rgba(0, 0, 0, 0.18));
-  filter: drop-shadow(0px 8px 7px rgba(0, 0, 0, 0.18))
-}
-
+/* Full Screen Menu */
 .navBar-fixed-top {
   position: fixed;
   top: 0;
@@ -173,9 +176,6 @@ html {
   z-index: 1042;
 }
 
-
-
-/* Full Screen Menu */
 .overlay {
   height: 100%;
   width: 0;
@@ -299,7 +299,7 @@ html {
   <div class="modal-dialog modal-lg my-5" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">關於這個網站</h5>
+        <h5 class="modal-title">關於本站</h5>
         <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -309,8 +309,8 @@ html {
         <div class="container-fluid">
           <div class="row justify-content-center">
             <div class="col-12 py-3">
-              <h6 class="font-weight-light">
-                大家都說今年是公投元年，各式議題百花齊放，年滿18歲的公民有機會能對切身議題直接作主。在過去幾個月裡，你拼命連署、你努力倡議，但是各位，投票才是決定性的一刻呀！為了降低投票這件事情的難度，幫你把這些資訊直接送到眼前，希望把大家需要理解的時間降到最小，進而提高參與的意願：分享、回家、投票。
+              <h6 class="font-weight-light lineHeight">
+                在過去幾個月裡，大家拼命連署、努力倡議，表態或不表態，都是為了「投票」這決定性的一刻！這是 BeamMedia 第三次製作選舉情報統整網站，為了號召所有 18 歲以上的公民、降低投票相關資訊的取得難度，我們精心篩選出一份不能不看的內容。無論你心中的定見為何、選擇是什麼，參戰吧！和我們一樣，在自己的位置、用自己能做到的方式來參與這場攻城之戰！
               </h6>
             </div>
           </div>
@@ -415,23 +415,29 @@ html {
       <!-- end of DOs and DONTs -->
 
       <div class="container-fluid py-5 mb-5">
-        <div class="row justify-content-around" id="basicInfo">
-          <a class="col-7 col-md-3 border-thick bgBlack mb-1 hoverLarge linkColorWHT shadow" href="https://www.ris.gov.tw/app/portal" target="_blank">
-            <h6 class="text-center pt-2">投票所查詢</h6>
-          </a>
-          <div class="col-7 col-md-3 border-thick bgBlack mb-1 hoverLarge linkColorWHT shadow" href="#voteFlowMap" data-toggle="collapse" aria-expanded="false" aria-controls="voteFlowMap">
-            <h6 class="text-center pt-2">投票流程圖</h6>
+        <div class="row justify-content-center">
+          <div class="col-8">
+            <div class="row justify-content-around" id="basicInfo">
+              <a class="col-10 col-md-3 border-thick bgBlack mb-1 hoverLarge linkColorWHT shadow" href="https://www.ris.gov.tw/app/portal" target="_blank">
+                <h6 class="text-center pt-2">投票所查詢</h6>
+              </a>
+              <div class="col-10 col-md-3 border-thick bgBlack mb-1 hoverLarge linkColorWHT shadow" href="#voteFlowMap" data-toggle="collapse" aria-expanded="false" aria-controls="voteFlowMap">
+                <h6 class="text-center pt-2">投票流程圖</h6>
+              </div>
+              <div class="col-10 col-md-3 border-thick bgBlack mb-1 hoverLarge linkColorWHT shadow" href="#ballotDemo" data-toggle="collapse" aria-expanded="false" aria-controls="ballotDemo">
+                <h6 class="text-center pt-2">有效/無效票</h6>
+              </div>
+              <div class="mx-auto collapse" id="voteFlowMap" data-parent="#basicInfo">
+                <p class="text-center">先領選舉票、投票，再領公投票、投票，完成！</p>
+                <img src="https://s.yimg.com/ny/api/res/1.2/DFktsCe00qwt2DZs.0i8RA--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/http://media.zenfs.com/en/homerun/feed_manager_auto_publish_494/79c3146f26455e30f5e7b4ab5fce36fb" class="img-fluid" alt="2018地方公職人員選舉暨全國性公民投票">
+              </div>
+              <div class="mx-auto collapse" id="ballotDemo" data-parent="#basicInfo">
+                <img src="https://attach.setn.com/newsimages/2015/08/31/328475-PH.jpg" class="img-fluid" alt="2018地方公職人員選舉暨全國性公民投票">
+              </div>
+            </div>
+
           </div>
-          <div class="col-7 col-md-3 border-thick bgBlack mb-1 hoverLarge linkColorWHT shadow" href="#ballotDemo" data-toggle="collapse" aria-expanded="false" aria-controls="ballotDemo">
-            <h6 class="text-center pt-2">有效/無效票</h6>
-          </div>
-          <div class="mx-auto collapse" id="voteFlowMap" data-parent="#basicInfo">
-            <p class="text-center">先領選舉票、投票，再領公投票、投票，完成！</p>
-            <img src="https://s.yimg.com/ny/api/res/1.2/DFktsCe00qwt2DZs.0i8RA--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/http://media.zenfs.com/en/homerun/feed_manager_auto_publish_494/79c3146f26455e30f5e7b4ab5fce36fb" class="img-fluid" alt="2018地方公職人員選舉暨全國性公民投票">
-          </div>
-          <div class="mx-auto collapse" id="ballotDemo" data-parent="#basicInfo">
-            <img src="https://attach.setn.com/newsimages/2015/08/31/328475-PH.jpg" class="img-fluid" alt="2018地方公職人員選舉暨全國性公民投票">
-          </div>
+
         </div>
       </div>
     </div>
@@ -575,7 +581,7 @@ html {
         <div class="container-fluid">
           <div class="row justify-content-center">
             <div class="col-12 py-3">
-              <h6 class="font-weight-light">
+              <h6 class="font-weight-light lineHeight">
                 選舉保證金是候選人登記參選時必須交付之保證金，表示對於成為候選人一事認真、嚴肅以待（避免有人來亂），若選舉結果得票數未達門檻，則保證金將被沒收，反之，若得票數超過一定門檻，除了能取回保證金，還能獲得一票30元的選舉經費補助款。
               </h6>
             </div>
@@ -687,12 +693,12 @@ html {
               <div id="collapseOne" class="collapse" aria-labelledby="DC_Councilors_headingOne" data-parent="#accordion">
                 <div class="card-body">
                   <div class="row no-gutters">
-                    <div class="col mr-3 border-right border-secondary">
+                    <div class="col mr-3 border-right border-secondary lineHeight">
                       <p>很多人都認為「市議員就是地方的立委」，但是你知道市議員到底都在做什麼嗎？考考你！</p>
                       <p class="small">資料來源：曾柏瑜競選團隊</p>
                       <a href="https://opencouncil-taiwan.github.io/opencouncil/" class="btn btn btn-dark" role="button" target="_blank">讓我測</a>
                     </div>
-                    <div class="col">
+                    <div class="col lineHeight">
                       <p>全台22個議會，一年有超過1兆的預算是靠議員在把關，你不知道的議員秘密，這裡都有寫！</p>
                       <p class="small"><資料來源：關鍵評論網</p>
                       <a href="https://election.thenewslens.com/2018/html/index.html" class="btn btn btn-dark" role="button" target="_blank">我要看</a>
@@ -710,7 +716,7 @@ html {
                 </h5>
               </div>
               <div id="collapseTwo" class="collapse" aria-labelledby="DC_Councilors_headingTwo" data-parent="#accordion">
-                <div class="card-body">
+                <div class="card-body lineHeight">
                   依候選人過去的發言、行程，以及由婚姻平權大平台代表八十五個公民團體向候選人提出的「2018候選人性別友善問卷」，整理出議員候選人立場。</p>
                   <p class="small">資料來源：同志人權立場觀測站</p>
                   <a href="http://pridewatch.tw/beta/2018_councillor_candidates" class="btn btn btn-dark" role="button" target="_blank">我要看</a>
@@ -1174,7 +1180,7 @@ html {
   <div class="container-fluid">
     <!-- Referendums row 1-->
     <div class="row justify-content-center py-2">
-      <div class="col-5 col-sm-4 border-thick  mr-3 mr-sm-4">
+      <div class="col-5 col-sm-4 border-thick bg-white mr-3 mr-sm-4">
         <div class="row justify-content-center">
           <div class="col-xs-12 col-sm-7">
             <h5 class="text-left my-4 font-weight-bold">#07 反空污</h5>
@@ -1185,7 +1191,7 @@ html {
           </div>
         </div>
       </div>
-      <div class="col-5 col-md-4 border-thick ">
+      <div class="col-5 col-md-4 border-thick bg-white">
         <div class="row justify-content-center">
           <div class="col-xs-12 col-sm-7">
             <h5 class="text-left my-4 font-weight-bold">#08 反深澳電廠</h5>
@@ -1200,7 +1206,7 @@ html {
     <!-- end of Referendums row 1-->
     <!-- Referendums row 2-->
     <div class="row justify-content-center py-2">
-      <div class="col-5 col-sm-4 border-thick  mr-3 mr-sm-4">
+      <div class="col-5 col-sm-4 border-thick bg-white mr-3 mr-sm-4">
         <div class="row justify-content-center">
           <div class="col-xs-12 col-sm-7">
             <h5 class="text-left my-4 font-weight-bold">#09 反核食</h5>
@@ -1211,7 +1217,7 @@ html {
           </div>
         </div>
       </div>
-      <div class="col-5 col-md-4 border-thick ">
+      <div class="col-5 col-md-4 border-thick bg-white">
         <div class="row justify-content-center">
           <div class="col-xs-12 col-sm-7">
             <h5 class="text-left my-4 font-weight-bold">#10 婚姻限男女</h5>
@@ -1226,7 +1232,7 @@ html {
     <!-- end of Referendums row 2-->
     <!-- Referendums row 3-->
     <div class="row justify-content-center py-2">
-      <div class="col-5 col-sm-4 border-thick  mr-3 mr-sm-4">
+      <div class="col-5 col-sm-4 border-thick bg-white mr-3 mr-sm-4">
         <div class="row justify-content-center">
           <div class="col-xs-12 col-sm-7">
             <h5 class="text-left my-4 font-weight-bold">#11 反同志教育</h5>
@@ -1237,7 +1243,7 @@ html {
           </div>
         </div>
       </div>
-      <div class="col-5 col-md-4 border-thick ">
+      <div class="col-5 col-md-4 border-thick bg-white">
         <div class="row justify-content-center">
           <div class="col-xs-12 col-sm-7">
             <h5 class="text-left my-4 font-weight-bold">#12 同婚立專法</h5>
@@ -1252,7 +1258,7 @@ html {
     <!-- end of Referendums row 3-->
     <!-- Referendums row 4-->
     <div class="row justify-content-center py-2">
-      <div class="col-5 col-sm-4 border-thick  mr-3 mr-sm-4">
+      <div class="col-5 col-sm-4 border-thick bg-white mr-3 mr-sm-4">
         <div class="row justify-content-center">
           <div class="col-xs-12 col-sm-7">
             <h5 class="text-left my-4 font-weight-bold">#13 東奧正名</h5>
@@ -1263,7 +1269,7 @@ html {
           </div>
         </div>
       </div>
-      <div class="col-5 col-md-4 border-thick ">
+      <div class="col-5 col-md-4 border-thick bg-white">
         <div class="row justify-content-center">
           <div class="col-xs-12 col-sm-7">
             <h5 class="text-left my-4 font-weight-bold">#14 同婚修民法</h5>
@@ -1278,7 +1284,7 @@ html {
     <!-- end of Referendums row 4-->
     <!-- Referendums row 5-->
     <div class="row justify-content-center py-1">
-      <div class="col-5 col-sm-4 border-thick  mr-3 mr-sm-4">
+      <div class="col-5 col-sm-4 border-thick bg-white mr-3 mr-sm-4">
         <div class="row justify-content-center">
           <div class="col-xs-12 col-sm-10 my-3">
             <h4 class="text-center mb-0 font-weight-bold"></h4>
@@ -1290,7 +1296,7 @@ html {
           </div>
         </div>
       </div>
-      <div class="col-5 col-md-4 border-thick ">
+      <div class="col-5 col-md-4 border-thick bg-white">
         <div class="row justify-content-center">
           <div class="col-xs-12 col-sm-10 my-3">
             <h4 class="text-center mb-0 font-weight-bold"></h4>
