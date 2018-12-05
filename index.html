@@ -1,108 +1,28 @@
 <!doctype HTML>
-<html>
+<html lang="zh-Hant-TW">
 <head>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <script src="js/html2canvas.js"></script>
-
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-  <title>iX:Panel鐵粉賓果</title>
+  <title>Mess-Go-Round</title>
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="iX:Panel鐵粉賓果">
-  <meta property="og:description" content="你是不是鐵粉就看這次了">
+  <meta property="og:title" content="w/ Things">
+  <meta property="og:description" content="">
 
 
 </head>
 <style>
 
-body {
-  background: #a3d15a;
-}
 body, p, ol {
   font-family:"source-han-sans-traditional", "Microsoft JhengHei", sans-serif;
 }
 
-/* padding Park */
-.padL {
-  padding-top: 8vw;
-}
-.padM {
-  padding-top: 5%;
-}
-.padMS {
-  padding-top: 1.8rem;
-}
-@media screen and (max-width: 769px), print {
-  .padMS {
-    padding-top: 0.8rem;
-  }
-}
-.padS {
-  padding-top: 2.5%;
-}
-.padXS {
-  padding-top: 0.5%;
-}
-.padBoth {
-  padding-top: 5%;
-  padding-bottom: 5%;
-}
-.padBothS {
-  padding-top: 3%;
-  padding-bottom: 1%;
-}
-.textPad {
-  padding-top: 30%;
-}
-.padLeft {
-  padding-left: 2%;
-}
-.padLeftTitle {
-  padding-left: 2.6em;
-}
-
-/* margin trailer */
-.goUP {
-  margin-top: -4px;
-}
-.goUPmore {
-  margin-top: -12px;
-}
-.goUPfurther {
-  margin-top: -18px;
-}
-
-
-.fa {
-  color: black;
-}
-
-.picFrame {
-  /*border: 2px solid #1f7200;*/
-  border-radius: 10px;
-  background-color: white;
-  height: 6em;
-  padding-top: 2.2em;
-  font-weight: normal;
-}
-
-.hBingo {
-  background-color: yellow;
-}
-
-.checked {
-  background-color: #fee55c;
-  font-weight: bold;
-}
-
-/*.greenBG {
-  background: #a3d15a;
-  color: white;
-}*/
 
 </style>
 
@@ -119,251 +39,66 @@ body, p, ol {
       })(document);
     </script>
 
-  <script>
-    $(function () {
-      $(".picFrame").click(
-        function () {
-          $(this).toggleClass("checked");
-        });
-      $("#reset").click(
-      	function (){
-         $(".picFrame").removeClass("checked");
-        });
-    });
-  </script>
-  <script>
-    function enterName() {
-      var caption = $('#caption-input').val();
-      $("#caption-text").html(caption + ' 的鐵粉賓果');
-      $("#caption-input").hide();
-      $("#tempTitle").hide();
-      $("#enterName").hide();
-    }
-    function takeThat(){
-      var caption = $('#caption-input').val();
-      html2canvas(document.body,{
-        dpi: 192,
-        onrendered: function(canvas) {
-            $("#blank").attr('href', canvas.toDataURL("image/png"));
-            $("#blank").attr('download', caption + ' 的 iXPanel 鐵粉賓果' + '.png');
-            //$("#blank").attr('href', window.open(caption + ' 的 iXPanel 鐵粉賓果' + '.png',"_blank"));
-            $("#blank")[0].click();
-        }
-      });
-    }
 
-  </script>
-
-  <div class="container" id="chart">
-
-    <!-- semi header-->
-    <div class="columns is-centered is-mobile is-multiline padM">
-
-      <div class="column is-3 has-text-centered">
-        <figure class="image">
-          <img src="img/IXPANEL.png" alt="iX:Panel問卷網站">
-        </figure>
-      </div>
-      <div class="column is-10 has-text-centered" id="tempTitle">
-        <p class="title is-4 has-text-white">鐵粉賓果</p>
-      </div>
-    </div>
-    <div class="columns is-centered is-mobile is-multiline">
-      <div class="column is-6 has-text-centered" id="panel">
-        <div class="field">
-          <input type="text" name="caption-input" id="caption-input" value="" class="input is-success" placeholder="請問你的 iX:Panel 鐵粉代號是什麼？">
-        </div>
-        <div class="field">
-          <button class="button is-rounded is-white is-outlined" type="button" name="button" id="enterName" onclick="enterName();">好，就決定叫這個了</button>
-        </div>
-        <div class="field">
-          <a href="vote2018.html" class="button is-rounded is-white is-outlined" type="button">去選舉網站</a>
-        </div>
-        <div id="caption">
-          <p class="title is-4 has-text-white" id="caption-text"></p>
-        </div>
-      </div>
-
-      <!--bingo grid starts-->
-      <div class="column is-9-tablet is-11-mobile has-text-centered padS">
-        <!--bingo grid 1-->
-
-        <div class="columns is-centered is-mobile">
-          <div class="column">
-            <div class="picFrame" id="1">
-              填過200cp以上的長問卷
-            </div>
-          </div>
-          <div class="column">
-            <div class="picFrame" id="2">
-              寄信到客服信箱
-            </div>
-          </div>
-          <div class="column">
-            <div class="picFrame" id="3">
-              私訊小編
-            </div>
-          </div>
-          <div class="column">
-            <div class="picFrame" id="4">
-              驗證過手機
-            </div>
-          </div>
-          <div class="column">
-            <div class="picFrame" id="5">
-              小編發文秒讚
-            </div>
-          </div>
-        </div>
-        <!--bingo grid 2-->
-        <div class="columns is-centered is-mobile">
-          <div class="column">
-            <div class="picFrame" id="1">
-              知道會員網站改版
-            </div>
-          </div>
-          <div class="column">
-            <div class="picFrame" id="2">
-              中過抽抽樂
-            </div>
-          </div>
-          <div class="column">
-            <div class="picFrame" id="3">
-              參與粉絲頁投票活動
-            </div>
-          </div>
-          <div class="column">
-            <div class="picFrame" id="4">
-              分享粉絲頁貼文
-            </div>
-          </div>
-          <div class="column">
-            <div class="picFrame" id="5">
-              追蹤/讚粉絲頁
-            </div>
-          </div>
-        </div>
-        <!--bingo grid 3-->
-        <div class="columns is-centered is-mobile">
-          <div class="column">
-            <div class="picFrame" id="1">
-              玩過PK
-            </div>
-          </div>
-          <div class="column">
-            <div class="picFrame" id="2">
-              填過進階資料
-            </div>
-          </div>
-          <div class="column">
-            <div class="picFrame" id="3">
-              成功推薦好友
-            </div>
-          </div>
-          <div class="column">
-            <div class="picFrame" id="4">
-              成功推薦好友
-            </div>
-          </div>
-          <div class="column">
-            <div class="picFrame" id="5">
-              兌換過現金
-            </div>
-          </div>
-        </div>
-        <!--bingo grid 4-->
-        <div class="columns is-centered is-mobile">
-          <div class="column">
-            <div class="picFrame" id="1">
-              參加線上活動
-            </div>
-          </div>
-          <div class="column">
-            <div class="picFrame" id="2">
-              每天都來
-            </div>
-          </div>
-          <div class="column">
-            <div class="picFrame" id="3">
-              兌換過禮券
-            </div>
-          </div>
-          <div class="column">
-            <div class="picFrame" id="4">
-              粉絲頁快問快答
-            </div>
-          </div>
-          <div class="column">
-            <div class="picFrame" id="5">
-              參加線上論壇
-            </div>
-          </div>
-        </div>
-        <!--bingo grid 5-->
-        <div class="columns is-centered is-mobile">
-          <div class="column">
-            <div class="picFrame" id="1">
-              帳號不是email
-            </div>
-          </div>
-          <div class="column">
-            <div class="picFrame" id="2">
-              用臉書登入
-            </div>
-          </div>
-          <div class="column">
-            <div class="picFrame" id="3">
-              在網站留言聯繫客服
-            </div>
-          </div>
-          <div class="column">
-            <div class="picFrame" id="4">
-              兌換過點數
-            </div>
-          </div>
-          <div class="column">
-            <div class="picFrame" id="5">
-              用過忘記密碼功能
-            </div>
-          </div>
-        </div>
-        <div class="columns is-centered is-mobile padBoth">
-          <div class="field is-grouped" id="buttButtons" data-html2canvas-ignore="ture">
-            <div class="buttons is-centered">
-              <a class="button is-success is-rounded" id="reset">
-                重新選
-              </a>
-              <a href="javaScript:takeThat();" class="button is-warning is-rounded" id="capture">
-                完成
-              </a>
-              <a href="" id="blank"></a>
-              <a href="https://www.ixpanel.com/index.jsp" target="_blank" class="button is-light is-rounded">
-                回本站
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="columns is-centered is-mobile padBothS" data-html2canvas-ignore="ture">
-          <div class="field">
-            <a href="testPage/test.html" class="button is-light is-rounded is-outlined is-small">
-              測試用測試用測試用測試用測試用
-            </a>
-          </div>
-
-        </div>
-      </div>
+<div class="container">
+  <div class="row justify-content-center my-5">
+    <div class="col-11 bg-dark">
+      <p class="display-1 text-center my-5 text-white">Oh, Well.</p>
     </div>
   </div>
 
-  <div class="padL">
+  <div class="row justify-content-center my-5">
+    <p class="display-4">out</p>
+  </div>
+  <div class="row justify-content-center my-2">
+    <p class="h4 font-weight-light">curated content</p>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-8 col-md-4 my-3">
+      <a href="http://daily-life-units.beamedia.co" class="btn btn-block btn-outline-dark" target="_blank">Daily Life Units</a>
+    </div>
+    <div class="col-8 col-md-4 my-3">
+      <a href="http://misanthropy-gauge.beamedia.co" class="btn btn-block btn-outline-dark" target="_blank">Misanthropy Gauge</a>
+    </div>
+    <div class="col-8 col-md-4 my-3">
+      <a href="http://www.beamedia.co/vote/2018/" class="btn btn-block btn-outline-dark" target="_blank">Election Info Site</a>
+    </div>
+  </div>
+  <div class="row justify-content-center my-2 pt-5">
+    <p class="h4 font-weight-light">panel recruiment</p>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-8 col-md-4 my-3">
+      <a href="https://www.ixpanel.com/activity/2017/oct/your-adventure-attribute.jsp" class="btn btn-block btn-outline-dark" target="_blank">Your Adventure Attributes</a>
+    </div>
+    <div class="col-8 col-md-4 my-3">
+      <a href="https://www.ixpanel.com/activity/2017/dec/iXmas.jsp" class="btn btn-block btn-outline-dark" target="_blank">i:Xmas Advent Calendar</a>
+    </div>
+    <div class="col-8 col-md-4 my-3">
+      <a href="https://www.ixpanel.com/activity/2018/march/intelligentLife.jsp" class="btn btn-block btn-outline-dark" target="_blank">Intelligent Life</a>
+    </div>
 
   </div>
+  <div class="row justify-content-center my-5 pt-5">
+    <p class="display-4">in</p>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-8 col-md-4 my-3">
+      <a href="bingo.html" class="btn btn-block btn-outline-dark" target="_blank">Bingo Game</a>
+    </div>
+    <div class="col-8 col-md-4 my-3">
+      <a href="internet.html" class="btn btn-block btn-outline-dark" target="_blank">Internet Report</a>
+    </div>
+  </div>
+</div>
+
 
   <!--- Footer --->
-  <div class="footer is-small">
-      <div class="content has-text-centered is-small">
-        <p>
-          Copyright © 2018 創市際市場研究顧問公司 InsightXplorer
+  <div class="footer my-5 pt-5">
+      <div class="text-center">
+        <p class="small font-weight-light">
+          Copyright © Adi 2018
         </p>
       </div>
   </div>
