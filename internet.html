@@ -989,84 +989,236 @@ iframe {
         </button>
       </div>
       <div class="modal-body">
-        <div class="container-fluid">
-          <div class="row justify-content-center">
-            <div class="col-12 py-3">
-              <p class="lineHeight">
-                色成是太要外所國家現：我工有接中不看候改外操好身到……盡子慢神電陽能觀，開包主麼爭種檢致些以；們他果因作的母金，陸新語那在痛影土。
-              </p>
+        <div class="row justify-content-center">
+          <div class="col-12 py-3">
+            <p class="lineHeight">
+              色成是太要外所國家現：我工有接中不看候改外操好身到……盡子慢神電陽能觀，開包主麼爭種檢致些以；們他果因作的母金，陸新語那在痛影土。
+            </p>
 
-            </div>
-            <div class="col-12">
-              <canvas id="bar-chart"></canvas>
-              <script type="text/javascript">
-              // Bar chart
-                var valuedata = [2478, 5267, 734, 784, 433];
-                var valuelabel = ["Africa", "Asia", "Europe", "Latin America", "North America"];
-
-
-                var myBarChart = new Chart(document.getElementById("bar-chart"), {
-                type: 'bar',
-                data: {
-                  labels: valuelabel,
-                  datasets: [{
-                    label: "Population (millions)",
-                    backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-                    data: valuedata,
-
-                  }]
-                },
-                options: {
-                  legend: {
-                    display: false
-                  },
-                  title: {
-                    display: true,
-                    text: 'Predicted world population (millions) in 2050'
-                  },
-                  scales: {
-                    xAxes: [{
-                      gridLines: {
-                        display: false
-                      }
-                    }],
-                    yAxes: [{
-                      gridLines: {
-                        display: false,
-                        drawBorder: false
-                      },
-                      ticks: {
-                        display: false
-                      }
-                    }]
-                  },
-                  plugins: {
-                    datalabels: {
-                      align: 'center',
-                      color: 'white',
-                      display: function(context) {
-                        console.log("Algo: " + context);
-                        return context.dataset.data[context.dataIndex] > 15;
-                      },
-                      font: {
-                        weight: 'bold',
-                      },
-                      formatter: function(value, context) {
-                        return Math.round(value / 100) + '%';
-                      }
-                    }
-                  }
-                }
-                });
-                myBarChart.update();
-              </script>
-            </div>
-            <div class="col-12 py-3">
-              <h6 class="">
-              </h6>
-            </div>
           </div>
+
         </div>
+          <div class="justify-content-center my-3" id="onlineGame_accordion">
+              <div class="card">
+                <div class="card-header" id="onlineGame_headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link linkColor" data-toggle="collapse" data-target="#onlineGame_collapseOne" aria-expanded="true" aria-controls="onlineGame_collapseOne">
+                      使用情形
+                    </button>
+                  </h5>
+                </div>
+                <div id="onlineGame_collapseOne" class="collapse" aria-labelledby="onlineGame_headingOne" data-parent="#onlineGame_accordion">
+                  <div class="card-body">
+                    <div class="row no-gutters">
+                      <div class="col lineHeight">
+                        <p>在底我應就科優打：樓意線？是一美做灣回座然在如開望人的常趣品提在發。公地我方，雖面的出於及完就常西出少美其教內力起是說面看環……部光數心落率什首時物較不上，對了把臺分生魚前，住活操轉中漸果的背利時備準始保工內石業！個自重，遠他情、無無界平有步早隊面活上況選銀語乎麼這！</p>
+                        <p class="small">資料來源：沃草 Watchout</p>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <canvas id="bar-chart"></canvas>
+                      <script type="text/javascript">
+                      // Bar chart
+                        var valuedata = [2478, 5267, 734, 784, 433];
+                        var valuelabel = ["Africa", "Asia", "Europe", "Latin America", "North America"];
+
+
+                        var myBarChart = new Chart(document.getElementById("bar-chart"), {
+                        type: 'bar',
+                        data: {
+                          labels: valuelabel,
+                          datasets: [{
+                            label: "Population (millions)",
+                            backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+                            data: valuedata,
+
+                          }]
+                        },
+                        options: {
+                          legend: {
+                            display: false
+                          },
+                          title: {
+                            display: true,
+                            text: 'Predicted world population (millions) in 2050'
+                          },
+                          scales: {
+                            xAxes: [{
+                              gridLines: {
+                                display: false
+                              }
+                            }],
+                            yAxes: [{
+                              gridLines: {
+                                display: false,
+                                drawBorder: false
+                              },
+                              ticks: {
+                                display: false
+                              }
+                            }]
+                          },
+                          plugins: {
+                            datalabels: {
+                              align: 'center',
+                              color: 'white',
+                              display: function(context) {
+                                console.log("Algo: " + context);
+                                return context.dataset.data[context.dataIndex] > 15;
+                              },
+                              font: {
+                                weight: 'bold',
+                              },
+                              formatter: function(value, context) {
+                                return Math.round(value / 100) + '%';
+                              }
+                            }
+                          }
+                        }
+                        });
+                        myBarChart.update();
+                      </script>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="onlineGame_headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed linkColor" data-toggle="collapse" data-target="#onlineGame_collapseTwo" aria-expanded="false" aria-controls="onlineGame_collapseTwo">
+                      品牌解析
+                    </button>
+                  </h5>
+                </div>
+                <div id="onlineGame_collapseTwo" class="collapse" aria-labelledby="onlineGame_headingTwo" data-parent="#onlineGame_accordion">
+                  <div class="card-body lineHeight">
+                    針對臺灣的高房價與弱勢居住問題，於2010年起，多個民間團體組成「<a class="linkTextDecoDark" href="http://socialhousingtw.blogspot.com/" target="_blank">社會住宅推動聯盟</a>」，積極倡議政府興辦社會住宅。適逢地方大選，特以六都（直轄市）為訴求，提擬「 <a class="linkTextDecoDark" href="https://spark.adobe.com/page/ekvaZerKHObo2/" target="_blank">民間版住宅政策白皮書</a>」，並且請六都市長候選人對議題表達明確立場與態度。</p>
+                    <p class="small">資料來源：社會住宅推動聯盟、房市改革行動聯盟、OURs都市改革組織、崔媽媽基金會</p>
+                    <a href="https://spark.adobe.com/page/Odcy0uwtwFL2q/" class="btn btn btn-black" role="button" target="_blank">我要看</a>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="onlineGame_headingThree">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed linkColor" data-toggle="collapse" data-target="#onlineGame_collapseThree" aria-expanded="false" aria-controls="onlineGame_collapseThree">
+                      優勢挑戰
+                    </button>
+                  </h5>
+                </div>
+                <div id="onlineGame_collapseThree" class="collapse" aria-labelledby="onlineGame_headingThree" data-parent="#onlineGame_accordion">
+                  <div class="card-body lineHeight">
+                    依候選人過去的發言、行程，以及由婚姻平權大平台代表八十五個公民團體向候選人提出的「2018候選人性別友善問卷」，整理出縣市長候選人立場。</p>
+                    <p class="small">資料來源：同志人權立場觀測站</p>
+                    <a href="http://pridewatch.tw/beta/2018_mayor_election" class="btn btn btn-black" role="button" target="_blank">我要看</a>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="onlineGame_headingFour">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed linkColor" data-toggle="collapse" data-target="#onlineGame_collapseFour" aria-expanded="false" aria-controls="onlineGame_collapseFour">
+                      更多議題
+                    </button>
+                  </h5>
+                </div>
+                <div id="onlineGame_collapseFour" class="collapse" aria-labelledby="onlineGame_headingFour" data-parent="#onlineGame_accordion">
+                  <div class="card-body">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                              <th scope="col">六都</th>
+                              <th scope="col" style="min-width: 8vw;">來源</th>
+                              <th scope="col">發表會/辯論會</th>
+                            </tr>
+                        </thead>
+                      <tbody>
+                        <tr>
+                          <td class="align-middle" scope="row" rowspan="3">台北</th>
+                          <td class="small align-middle">公共電視</td>
+                          <td class="align-middle">
+                            <a class="linkTextDecoDark" href="https://www.youtube.com/watch?v=-NZBHXLPusA" target="_blank">
+                              2018台北市長選舉電視辯論
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="small align-middle">台北市選舉委員會</td>
+                          <td class="align-middle">
+                            <a class="linkTextDecoDark" href="https://www.youtube.com/watch?v=Zgo871tvFPM" target="_blank">
+                               台北市第7屆市長選舉公辦電視政見發表會 - 第1場次
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="small align-middle">台北市選舉委員會</td>
+                          <td class="align-middle">
+                            <a class="linkTextDecoDark disabled" href="https://youtu.be/BNRZ9cCQiDI?t=263" target="_blank">
+                               台北市第7屆市長選舉公辦電視政見發表會 - 第2場次
+                            </a>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td class="align-middle" scope="row" rowspan="1">新北</th>
+                          <td class="small align-middle">台視</td>
+                          <td class="align-middle">
+                            <a class="linkTextDecoDark" href="https://youtu.be/XUxL5G6WKvQ?t=219" target="_blank">
+                              新北市第3屆市長選舉公辦電視政見發表會
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle" scope="row" rowspan="1">桃園</th>
+                          <td class="small align-middle">華視</td>
+                          <td class="align-middle">
+                            <a class="linkTextDecoDark" href="https://youtu.be/FJSOK87_t9A?t=65" target="_blank">
+                              桃園市第2屆市長選舉公辦電視政見發表會
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle" scope="row" rowspan="1">台中</th>
+                          <td class="small align-middle">三立</td>
+                          <td class="align-middle">
+                            <a class="linkTextDecoDark" href="https://youtu.be/rerbJEUYbFc?t=91" target="_blank">
+                              台中市第3屆市長選舉公辦電視政見辯論會
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle" scope="row" rowspan="2">台南</th>
+                          <td class="small align-middle">雙子星‧三冠王 有線電視</td>
+                          <td class="align-middle">
+                            <a class="linkTextDecoDark" href="https://youtu.be/lFtSlyxR88o?t=412" target="_blank">
+                              台南市第3屆市長選舉公辦電視政見發表會 - 第1場次
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="small align-middle">雙子星‧三冠王 有線電視</td>
+                          <td class="align-middle">
+                            <a class="linkTextDecoDark disabled" href="https://www.youtube.com/watch?v=GPYZ1VKeMFk" target="_blank">
+                              台南市第3屆市長選舉公辦電視政見發表會 - 第2場次
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle" scope="row" rowspan="1">高雄</th>
+                          <td class="small align-middle">台視</td>
+                          <td class="align-middle">
+                            <a class="linkTextDecoDark" href="https://youtu.be/SL0Sz7mhDn8?t=155" target="_blank">
+                              高雄市第3屆市長選舉公辦電視政見發表會（辨論方式）
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+          </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
