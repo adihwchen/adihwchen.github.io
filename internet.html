@@ -250,6 +250,63 @@ iframe {
   }
 }
 
+/* SIDEBAR NAVIGATION */
+.sidebar {
+  position:absolute;
+  right:0;
+}
+.dot {
+  display:inline-block;
+  width:10px;
+  height:10px;
+  background-color:rgba(0,0,0,.3);
+  border-radius:10px;
+  z-index:1080;
+  content:'';
+  color:transparent;
+  font-size:14px;
+  line-height:10px;
+  vertical-align:middle;
+  margin:5px 0 5px 0;
+  font-weight:300;
+}
+.dot:hover {
+  background-color:rgba(0,0,0,.8);
+  color:rgba(0,0,0,.8);
+}
+.dot span {
+  margin:0px 0px 20px 15px;
+  position:relative;
+  top:0px;
+  left:-80px;
+}
+.navDots {
+  width:100px;
+  height:200px;
+  /*background-color:rgb(240,240,240);
+  border:solid 1px rgb(220,220,220);*/
+  padding:0 0px;
+  position:fixed;
+  top:50%;
+  right:20px;
+  transform: translate(0, -50%);
+  z-index: 10000;
+  text-align:right;
+}
+.navDots ul li a {
+  text-decoration:none;
+}
+.navDots ul {
+  list-style-type:none;
+  margin:0;
+  padding:0;
+}
+.name-active {
+  color:rgba(0,0,0,.8);
+  background-color:#FFD95F;
+  text-align:right;
+}
+
 </style>
 
 <body data-spy="scroll" data-target="#navScrollSpy">
@@ -278,6 +335,83 @@ iframe {
     </div>
   </div>
 </div>
+
+<div class="sidebar">
+  <div class="navDots">
+    <ul>
+      <li><a href="#overall" class="dot name-active"><span>home</span></a></li>
+      <li><a href="#DNIP" class="dot"><span>about</span></a></li>
+      <li><a href="#spotlights" class="dot"><span>services</span></a></li>
+      <li><a href="#application" class="dot"><span>blog</span></a></li>
+      <li><a href="#comparison" class="dot"><span>contact</span></a></li>
+    </ul>
+  </div>
+</div>
+
+<script type="text/javascript">
+/*!
+* jquery.scrollto.js 0.0.1 - https://github.com/yckart/jquery.scrollto.js
+* Scroll smooth to any element in your DOM.
+*
+* Copyright (c) 2012 Yannick Albert (http://yckart.com)
+* Licensed under the MIT license (https://www.opensource.org/licenses/mit-license.php).
+* 2013/02/17
+**/
+$(document).ready(function(){
+  $.scrollTo = $.fn.scrollTo = function(x, y, options){
+      if (!(this instanceof $)) return $.fn.scrollTo.apply($('html, body'), arguments);
+      options = $.extend({}, {
+          gap: {
+              x: 0,
+              y: 0
+          },
+          animation: {
+              easing: 'swing',
+              duration: 600,
+              complete: $.noop,
+              step: $.noop
+          }
+      }, options);
+      return this.each(function(){
+          var elem = $(this);
+          elem.stop().animate({
+              scrollLeft: !isNaN(Number(x)) ? x : $(y).offset().left + options.gap.x,
+              scrollTop: !isNaN(Number(y)) ? y : $(y).offset().top + options.gap.y
+          }, options.animation);
+      });
+  };
+  var aChildren = $(".navDots li").children();
+  var aArray = [];
+  for (var i=0; i < aChildren.length; i++) {
+      var aChild = aChildren[i];
+      var ahref = $(aChild).attr('href');
+      aArray.push(ahref);
+  }
+  $(window).scroll(function(){
+      var windowPos = $(window).scrollTop();
+      var windowHeight = $(window).height();
+      var docHeight = $(document).height();
+      for (var i=0; i < aArray.length; i++) {
+          var theID = aArray[i];
+          var divPos = $(theID).offset().top;
+          var divHeight = $(theID).height();
+          if (windowPos >= divPos && windowPos < (divPos + divHeight)) {
+              $("a[href='" + theID + "']").addClass("name-active");
+          } else {
+              $("a[href='" + theID + "']").removeClass("name-active");
+          }
+      }
+      if(windowPos + windowHeight == docHeight) {
+          if (!$(".navDots li:last-child a").hasClass("name-active")) {
+              var navActiveCurrent = $(".name-active").attr("href");
+              $("a[href='" + navActiveCurrent + "']").removeClass("name-active");
+              $(".navDots li:last-child a").addClass("name-active");
+          }
+      }
+  });
+});
+
+</script>
 <!-- end of logoType -->
 
 <header class="sticky-top">
@@ -793,7 +927,7 @@ iframe {
       <script type='text/javascript'>
        google.charts.load('current', {
          'packages': ['geochart'],
-         'mapsApiKey': 'AIzaSyCHxvvy4uoZJ4RG-TMEj9t1nFKECZqiCAo'
+         'mapsApiKey': 'AIzaSyB4g807Rd3Eez-0Y_qg4TZBoXoVZ6EsYBQ'
        });
        google.charts.setOnLoadCallback(drawMarkersMap);
 
