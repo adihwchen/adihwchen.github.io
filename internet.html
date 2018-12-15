@@ -129,10 +129,17 @@ iframe {
   }
 }
 
-
-.bgBlack {
-  background-color: black;
+.bgOpen {
+  background-color: #3366CC;
+  /*background-image: url(img/coverBG2.png);*/
 }
+
+.bgOpenBtn {
+  background-color: #FFF;
+  color: black;
+  border: solid 1px black;
+}
+
 .lineHeight {
   line-height: 1.6;
 }
@@ -241,71 +248,8 @@ iframe {
     padding-top: 3em;
     padding-bottom: 4em;
   }
-  .halftoneBanner {
-    background-image: url(img/halftoneBanner_M.svg);
-    background-repeat: repeat-x;
-    max-width: 100%;
-    height: auto;
-    background-position: center bottom;
-  }
 }
 
-/* SIDEBAR NAVIGATION */
-.sidebar {
-  position:absolute;
-  right:0;
-}
-.dot {
-  display:inline-block;
-  width:10px;
-  height:10px;
-  background-color:rgba(0,0,0,.3);
-  border-radius:10px;
-  z-index:1080;
-  content:'';
-  color:transparent;
-  font-size:14px;
-  line-height:10px;
-  vertical-align:middle;
-  margin:5px 0 5px 0;
-  font-weight:300;
-}
-.dot:hover {
-  background-color:rgba(0,0,0,.8);
-  color:rgba(0,0,0,.8);
-}
-.dot span {
-  margin:0px 0px 20px 15px;
-  position:relative;
-  top:0px;
-  left:-80px;
-}
-.navDots {
-  width:100px;
-  height:200px;
-  /*background-color:rgb(240,240,240);
-  border:solid 1px rgb(220,220,220);*/
-  padding:0 0px;
-  position:fixed;
-  top:50%;
-  right:20px;
-  transform: translate(0, -50%);
-  z-index: 10000;
-  text-align:right;
-}
-.navDots ul li a {
-  text-decoration:none;
-}
-.navDots ul {
-  list-style-type:none;
-  margin:0;
-  padding:0;
-}
-.name-active {
-  color:rgba(0,0,0,.8);
-  background-color:#FFD95F;
-  text-align:right;
-}
 
 </style>
 
@@ -323,98 +267,60 @@ iframe {
   })(document);
 </script>
 
-<!-- nav MENU bar -->
 
 <!-- logoType -->
 <div class="" id="goTop">
-  <div class="row justify-content-center mx-0 wrapperXL">
-    <div class="col-10 col-sm-8 col-md-7 col-lg-5 mt-0 mt-sm-5 mb-md-5">
+  <div class="row justify-content-center mx-0 wrapperXL bgOpen">
+    <div class="col-12 my-2">
       <a href="#"  data-toggle="modal" data-target="#aboutUS" title="關於這個網站">
-        <img class="img-fluid hoverLarge" src="https://d20zg24t5a1ogz.cloudfront.net/wp-content/uploads/2018/10/photo-50-1200x800.jpg" alt="">
+        <img class="img-fluid" src="img/coverBG2.png" alt="">
       </a>
     </div>
   </div>
 </div>
+<!-- end of logoType -->
 
-<div class="sidebar d-none d-lg-block">
-  <div class="navDots">
-    <ul>
-      <li><a href="#overall" class="dot name-active"><span>home</span></a></li>
-      <li><a href="#DNIP" class="dot"><span>about</span></a></li>
-      <li><a href="#spotlights" class="dot"><span>services</span></a></li>
-      <li><a href="#application" class="dot"><span>blog</span></a></li>
-      <li><a href="#comparison" class="dot"><span>contact</span></a></li>
-    </ul>
+<!-- opening selections -->
+<div class="container-fluid">
+  <div class="row lineHeight">
+    <div class="col-4 text-center bgOpenBtn" href="#overall">
+      <p class="display-4">
+        整體網路<br>使用現況
+      </p>
+    </div>
+    <div class="col-4 text-center bgOpenBtn" href="#DNIP">
+      <p class="display-4">
+        網路基礎<br>建設概要
+      </p>
+    </div>
+    <div class="col-4 text-center bgOpenBtn" href="#spotlights">
+      <p class="display-4">
+        前瞻亮點<br>趨勢分析
+      </p>
+    </div>
+    <div class="col-4 text-center bgOpenBtn" href="#appliedTech">
+      <p class="display-4">
+        網路服務<br>應用概況
+      </p>
+    </div>
+    <div class="col-4 text-center bgOpenBtn" href="#comparison">
+      <p class="display-4">
+        國際情勢<br>討論比較
+      </p>
+    </div>
+    <div class="col-4 text-center bgOpenBtn" data-toggle="modal" data-target="#downloadSignIn">
+      <p class="display-4">
+        下載<br>完整報告
+      </p>
+    </div>
   </div>
 </div>
 
-<script type="text/javascript">
-/*!
-* jquery.scrollto.js 0.0.1 - https://github.com/yckart/jquery.scrollto.js
-* Scroll smooth to any element in your DOM.
-*
-* Copyright (c) 2012 Yannick Albert (http://yckart.com)
-* Licensed under the MIT license (https://www.opensource.org/licenses/mit-license.php).
-* 2013/02/17
-**/
-$(document).ready(function(){
-  $.scrollTo = $.fn.scrollTo = function(x, y, options){
-      if (!(this instanceof $)) return $.fn.scrollTo.apply($('html, body'), arguments);
-      options = $.extend({}, {
-          gap: {
-              x: 0,
-              y: 0
-          },
-          animation: {
-              easing: 'swing',
-              duration: 600,
-              complete: $.noop,
-              step: $.noop
-          }
-      }, options);
-      return this.each(function(){
-          var elem = $(this);
-          elem.stop().animate({
-              scrollLeft: !isNaN(Number(x)) ? x : $(y).offset().left + options.gap.x,
-              scrollTop: !isNaN(Number(y)) ? y : $(y).offset().top + options.gap.y
-          }, options.animation);
-      });
-  };
-  var aChildren = $(".navDots li").children();
-  var aArray = [];
-  for (var i=0; i < aChildren.length; i++) {
-      var aChild = aChildren[i];
-      var ahref = $(aChild).attr('href');
-      aArray.push(ahref);
-  }
-  $(window).scroll(function(){
-      var windowPos = $(window).scrollTop();
-      var windowHeight = $(window).height();
-      var docHeight = $(document).height();
-      for (var i=0; i < aArray.length; i++) {
-          var theID = aArray[i];
-          var divPos = $(theID).offset().top;
-          var divHeight = $(theID).height();
-          if (windowPos >= divPos && windowPos < (divPos + divHeight)) {
-              $("a[href='" + theID + "']").addClass("name-active");
-          } else {
-              $("a[href='" + theID + "']").removeClass("name-active");
-          }
-      }
-      if(windowPos + windowHeight == docHeight) {
-          if (!$(".navDots li:last-child a").hasClass("name-active")) {
-              var navActiveCurrent = $(".name-active").attr("href");
-              $("a[href='" + navActiveCurrent + "']").removeClass("name-active");
-              $(".navDots li:last-child a").addClass("name-active");
-          }
-      }
-  });
-});
+<!-- end of opening selections -->
 
-</script>
-<!-- end of logoType -->
 
-<header class="sticky-top">
+<!-- nav MENU bar -->
+<header class="fixed-top">
   <nav id="navScrollSpy" class="navbar navbar-expand-lg navbar-light bg-light">
     <a href="#goTop" class="navbar-brand"><img src="img/twnicLogo.png" alt="" style="height:40px;"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBurger" aria-controls="navBurger" aria-expanded="false" aria-label="Toggle navigation">
@@ -432,21 +338,71 @@ $(document).ready(function(){
             <a class="nav-link btn btn-warning text-white" href="#spotlights">前瞻亮點趨勢分析</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn btn-danger text-white" href="#application">網路服務應用概況</a>
+            <a class="nav-link btn btn-danger text-white" href="#appliedTech">網路服務應用概況</a>
           </li>
           <li class="nav-item">
             <a class="nav-link btn btn-success text-white" href="#comparison">國際情勢討論比較</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-black text-white" role="button" type="button" data-toggle="modal" data-target="#downloadSignIn">下載完整報告</a>
+          </li>
+
         </ul>
       </div>
   </nav>
 </header>
 <!-- end of nav MENU bar -->
 
+<!-- Download modal -->
+<div class="modal fade" id="downloadSignIn" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">下載完整報告</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row justify-content-center">
+          <div class="col-md-9 py-md-3 lineHeight">
+            <p>
+              台灣網路資訊中心自2002年起每年固定進行台灣寬頻網路使用調查，觀察台灣地區網路發展及使用狀況，為提供及滿足具有特定調查數據需求之單位或個人使用；因此，本中心將十年
+              來所累積之調查資料，建置「台灣寬頻網路統計查詢系統」以有效累積並統合歷年來本中心所執行之「台灣寬頻網路調查」之統計數據，以系統化之查詢服務，提供有特定查詢需求
+              之社會大眾及研究單位使用。
+            </p>
+          </div>
+          <div class="col-md-6 py-md-3 lineHeight text-center">
+            <form>
+              <div class="form-group">
+                <label for="EmailInput"></label>
+                <input type="email" class="form-control" id="EmailInput" aria-describedby="emailHelp" placeholder="請輸入Email">
+                <small id="emailHelp" class="form-text text-muted">登入帳號為 Email</small>
+              </div>
+              <div class="form-group">
+                <label for="EmailInput"></label>
+                <input type="password" class="form-control" id="PasswordInput" placeholder="請輸入密碼">
+                <small id="passwordHelp" class="form-text text-muted">忘記密碼</small>
+              </div>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="check">
+                <label class="form-check-label" for="check">Take me out</label>
+              </div>
+              <button type="submit" class="btn btn-primary">註冊</button>
+              <button type="submit" class="btn btn-success">登入</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of Download modal -->
+
 
 <div class="container">
   <div class="text-center my-5">
-    <a class="btn btn-warning" type="button" data-toggle="modal" data-target="#researchMethodology">調查方法概述</a>
+    <button class="btn btn-dark" type="button" data-toggle="modal" data-target="#researchMethodology">調查方法概述</button>
   </div>
 </div>
 
@@ -547,145 +503,129 @@ $(document).ready(function(){
 <!-- section 1-->
 <div class="container">
   <div  id="overall">
-    <p class="wrapper sticky-notTop h2 bg-white pb-3" data-toggle="tab">整體網路使用現況</p>
+    <p class="wrapper sticky-notTop h2 bg-white" data-toggle="tab">整體網路使用現況</p>
     <p class="wrapper h3">個人上網率</p>
-    <div class="text-center wrapper">
-      <p class="h4 font-weight-light my-0">全台上網率</p>
-      <p class="display-1 my-0">82.1%</p>
-      <p class="h4 font-weight-light my-0">1,738萬人</p>
+    <div class="">
+      <p class="h4">整體概況</p>
+      <p class="h5">上網率 82.1, 1738萬人</p>
+      <p class="h5">平均每日上網：4.3 小時</p>
+      <p class="h5">最常連網方式：行動電信網路 65.9%、ADSL 24％</p>
+      <p class="h5">最常使用裝置：手機 96.8%、桌機/筆電 66.4%</p>
+      <p class="h5">主要上網地點：家中 94.1%、工作場所/公司 38.8%</p>
     </div>
-    <div class="row justify-content-center text-center wrapper">
-      <div class="col-12 my-5">
-        <p class="h2">最常連網方式</p>
-      </div>
-      <div class="col-3">
-        <p class="h4 font-weight-light my-0">行動電信網路</p>
-        <p class="display-3 my-0">65.9%</p>
-      </div>
-      <div class="col-3">
-        <p class="h4 font-weight-light my-0">ADSL</p>
-        <p class="display-3 my-0">24%</p>
-      </div>
+    <div class="">
+      <p class="h4">上網方式</p>
+      <p class="h5">無線上網率 81.2%，1718萬人</p>
+      <p class="h5">行動上網率 77.3%，1637萬人，平均每月花費2093元</p>
+      <p class="h5">無線區域上網率 37.0%，784萬人</p>
     </div>
-    <div class="row justify-content-center text-center wrapper">
-      <div class="col-12 my-5">
-        <p class="h2">上網方式</p>
-      </div>
-      <div class="col-md-3 my-3">
-        <p class="h4 font-weight-light my-0">無線上網率</p>
-        <p class="display-3 my-0">81.2%</p>
-        <p class="h4 font-weight-light my-0">1,718萬人</p>
-      </div>
-      <div class="col-md-3 my-3 mx-md-5">
-        <p class="h4 font-weight-light my-0">行動上網率</p>
-        <p class="display-3 my-0">77.3%</p>
-        <p class="h4 font-weight-light my-0">1,637萬人</p>
-        <p class="h6 font-weight-light my-2">平均每月花費2,093元</p>
-      </div>
-      <div class="col-md-3 my-3">
-        <p class="h4 font-weight-light my-0">無線區域上網率</p>
-        <p class="display-3 my-0">37.0%</p>
-        <p class="h4 font-weight-light my-0">784萬人</p>
-      </div>
-    </div>
-    <div class="row justify-content-center text-center wrapper">
-      <div class="col-12 my-5">
-        <p class="h2">網民輪廓</p>
+    <div class="row justify-content-center wrapper">
+      <div class="col-12">
+        <p class="h4">網民輪廓</p>
       </div>
       <div class="col-12">
         <canvas id="chart_perProfile"></canvas>
         <script type="text/javascript">
-        var ctx = document.getElementById('chart_perProfile').getContext('2d');
-        var chart = new Chart(ctx, {
-          // The type of chart we want to create
-          type: 'line',
+          var ctx = document.getElementById('chart_perProfile').getContext('2d');
+          var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
 
-          // The data for our dataset
-          data: {
-              labels: ["總數", "", "男性", "女性", "", "12-19歲", "20-29歲", "30-39歲", "40-49歲", "50-59歲", "60歲以上", "", "北部", "中部", "南部", "東部", "金馬"],
-              datasets: [{
-                  label: "上網",
-                  borderColor: '#fc8625',
-                  pointBackgroundColor:'#fc8625',
-                  data: [82.1, , 83.5, 80.7, , 96.0, 98.9, 98.3, 96.3, 84.9, 41.6, , 86.1, 82.2, 75.8, 76.1, 78.1],
-                  fill:false,
-                  spanGaps: false,
-              }, {
-                  label: "無線上網",
-                  borderColor: '#35ad59',
-                  pointBackgroundColor:'#35ad59',
-                  data: [81.2, , 82.0, 80.4, , 94.3, 98.9, 98.3, 95.0, 83.9, 40.0, , 85.0, 81.4, 74.9, 76.1, 77.5],
-                  fill: false,
-                  spanGaps: false,
+            // The data for our dataset
+            data: {
+                labels: ["總數", "", "男性", "女性", "", "12-19歲", "20-29歲", "30-39歲", "40-49歲", "50-59歲", "60歲以上", "", "北部", "中部", "南部", "東部", "金馬"],
+                datasets: [{
+                    label: "上網",
+                    borderColor: 'rgba(51, 102, 204, 1)',
+                    backgroundColor: 'rgba(51, 102, 204, 0)',
+                    pointBackgroundColor:'rgba(51, 102, 204, 1)',
+                    pointBorderWidth: 3,
+                    data: [82.1, , 83.5, 80.7, , 96.0, 98.9, 98.3, 96.3, 84.9, 41.6, , 86.1, 82.2, 75.8, 76.1, 78.1],
+                    fill:false,
+                    spanGaps: false,
+                    hidden:true,
+                }, {
+                    label: "無線上網",
+                    borderColor: 'rgba(125, 204, 74, 1)',
+                    backgroundColor: 'rgba(125, 204, 74, 0)',
+                    pointBackgroundColor:'rgba(125, 204, 74, 1)',
+                    pointBorderWidth: 3,
+                    data: [81.2, , 82.0, 80.4, , 94.3, 98.9, 98.3, 95.0, 83.9, 40.0, , 85.0, 81.4, 74.9, 76.1, 77.5],
+                    fill: false,
+                    spanGaps: false,
 
-              },{
-                  label: "行動上網",
-                  borderColor: '#2a5aa8',
-                  pointBackgroundColor:'#2a5aa8',
-                  data: [77.3, , 78.6, 76.1, , 83.4, 96.9, 96.5, 93.4, 78.7, 35.7, , 81.5, 77.1, 71.0, 73.7, 65.1],
-                  fill:false,
-                  spanGaps: false,
+                },{
+                    label: "行動上網",
+                    borderColor: 'rgba(255, 192, 0, 1)',
+                    backgroundColor: 'rgba(255, 192, 0, 0)',
+                    pointBackgroundColor:'rgba(255, 192, 0, 1)',
+                    pointBorderWidth: 3,
+                    data: [77.3, , 78.6, 76.1, , 83.4, 96.9, 96.5, 93.4, 78.7, 35.7, , 81.5, 77.1, 71.0, 73.7, 65.1],
+                    fill:false,
+                    spanGaps: false,
 
-              },{
-                  label: "無線區域",
-                  borderColor: '#ffce56',
-                  pointBackgroundColor:'#ffce56',
-                  data: [37.0, , 37.6, 36.5, , 53.2, 54.1, 48.0, 41.4, 31.7, 12.6, , 41.5, 34.9, 31.9, 30.5, 43.3],
-                  fill:false,
-                  spanGaps: false,
-              },]
-          },
-          options: {
-            tooltips: {
-              callbacks: {
-                label: function(tooltipItem, data) {
-                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+                },{
+                    label: "無線區域",
+                    borderColor: 'rgba(239, 84, 37, 1)',
+                    backgroundColor: 'rgba(239, 84, 37, 0)',
+                    pointBackgroundColor:'rgba(239, 84, 37, 1)',
+                    pointBorderWidth: 3,
+                    data: [37.0, , 37.6, 36.5, , 53.2, 54.1, 48.0, 41.4, 31.7, 12.6, , 41.5, 34.9, 31.9, 30.5, 43.3],
+                    fill:false,
+                    spanGaps: false,
+                },]
+            },
+            options: {
+              animation: {
+                duration: 0
+              },
+              tooltips: {
+                mode:'index',
+                callbacks: {
+                  label: function(tooltipItem, data) {
+                    var label = data.datasets[tooltipItem.datasetIndex].label || '';
 
-                  if (label) {
-                      label += ': ';
+                    if (label) {
+                        label += ': ';
+                    }
+                    label += Math.round(tooltipItem.yLabel * 100) / 100;
+                    return label + '%';
                   }
-                  label += Math.round(tooltipItem.yLabel * 100) / 100;
-                  return label + '%';
                 }
-              }
-            },
-            legend: {
-              labels: {
-                usePointStyle: true,
-              }
-            },
-            scales: {
-              xAxes: [{
-                gridLines: {
-                  display: false
+              },
+              legend: {
+                labels: {
+                  usePointStyle: true,
                 }
-              }],
-              yAxes: [{
-                gridLines: {
-                  display: false,
-                  drawBorder: false
-                },
-                ticks: {
-                  display: false,
-                  /*beginAtZero: true*/
+              },
+              scales: {
+                xAxes: [{
+                  gridLines: {
+                    display: false
+                  }
+                }],
+                yAxes: [{
+                  gridLines: {
+                    display: false,
+                    drawBorder: false
+                  },
+                  ticks: {
+                    display: false,
+                  }
+                }]
+              },
+              elements: {
+                line: {
+                  tension: 0,
                 }
-              }]
-            },
-            elements: {
-              line: {
-                tension: 0,
-              }
-            },
-            plugins: {
-              datalabels: {
-                align:'bottom',
-                formatter: function(value, context) {
-                  return Math.abs(value) + '%';
+              },
+              plugins: {
+                datalabels: {
+                  display:false,
                 }
               }
             }
-          }
-        });
+          });
         </script>
       </div>
     </div>
@@ -698,120 +638,119 @@ $(document).ready(function(){
         用列花不好能體接熱方持的們我新工企人事規過我無……著道境至進質一沒媽消說簡時一們王是車心慢變現任過運環出樣民商！委小我中這會老難！收多增，計找元，下們他臺星白知，也愛叫題地裡行為靜也發口時下約叫，你音提內快已然火，些小的，住成說本我東友死中給自二器是？其我況子班怕舉。
       </p>
     </div>
-    <p class="wrapper h3">個人曾經上網比例與人數</p>
+
+    <p class="wrapper h4">個人曾經上網比例與人數</p>
     <div class="row justify-content-center my-5">
       <div class="col-12">
         <canvas id="chart_perConnected"></canvas>
         <script>
-        var ctx = document.getElementById('chart_perConnected').getContext('2d');
-        var mixedChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-            datasets: [ {
-                  label: '曾上網率',
-                  data: [71.0, 72.6, 75.7, 77.3, 79.2, 77.7, 83.7, 89.4, 83.4, 82.1],
-                  // Changes this dataset to become a line
-                  type: 'line',
-                  yAxisID: 'y-axis-2',
-                  fill: false,
-                  borderColor: '#2957A4',
-                  pointBackgroundColor: '#96989A',
-                  pointBorderColor: '#96989A',
-                  pointBorderWidth: 1,
-                  datalabels: {
-                    align: 'top',
-                    formatter: function(value, context) {
-                      return Math.round(value) + '%';
+          var ctx = document.getElementById('chart_perConnected').getContext('2d');
+          var mixedChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+              datasets: [ {
+                    label: '曾上網率',
+                    data: [71.0, 72.6, 75.7, 77.3, 79.2, 77.7, 83.7, 89.4, 83.4, 82.1],
+                    // Changes this dataset to become a line
+                    type: 'line',
+                    yAxisID: 'y-axis-2',
+                    fill: false,
+                    borderColor: '#3366CC',
+                    backgroundColor: 'rgba(51, 102, 204, 0)',
+                    pointBackgroundColor: '#3366CC',
+                    pointBorderColor: '#3366CC',
+                    pointBorderWidth: 2,
+                    datalabels: {
+                      align: 'top',
+                      formatter: function(value, context) {
+                        return Math.round(value) + '%';
+                      }
                     }
-                  }
-                },
-                {
-                  label: '曾上網人數',
-                  data: [1419, 1467, 1539, 1594, 1645, 1623, 1757, 1881, 1760, 1738],
-                  yAxisID: 'y-axis-1',
-                  backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                  borderColor: 'rgba(54, 162, 235, 1)',
-                  borderWidth: 1,
-                  datalabels: {
-                    /*align: 'center',*/
-                    formatter: function(value, context) {
-                      return Math.round(value) + '萬人';
+                  },
+                  {
+                    label: '曾上網人數',
+                    data: [1419, 1467, 1539, 1594, 1645, 1623, 1757, 1881, 1760, 1738],
+                    yAxisID: 'y-axis-1',
+                    backgroundColor: '#7DCC4A',
+                    borderColor:'#7DCC4A',
+                    hoverBackgroundColor: '#8bd15f',
+                    borderWidth: 1,
+                    datalabels: {
+                      /*align: 'center',*/
+                      formatter: function(value, context) {
+                        return Math.round(value) + '萬人';
+                      }
                     }
-                  }
-                },
-              ],
-            labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018',]
-          },
-          options: {
-            tooltips: {
-              mode:'index',
+                  },
+                ],
+              labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018',]
             },
-            responsive: true,
-            scales: {
-              xAxes: [{
-                gridLines: {
-                  display: false
+            options: {
+              animation: {
+                duration: 0
+              },
+              legend: {
+                labels: {
+                  usePointStyle: true,
                 }
-              }],
-              yAxes: [
-                {
-                  display: false,
+              },
+              tooltips: {
+                mode:'index',
+              },
+              responsive: true,
+              scales: {
+                xAxes: [{
+                  gridLines: {
+                    display: false
+                  }
+                }],
+                yAxes: [
+                  {
+                    display: false,
+                    type: 'linear',
+                    position: 'left',
+                    id: 'y-axis-1',
+                    ticks: {
+                      beginAtZero: true,
+                    },
+                    gridLines: {
+                      display: false,
+                      drawOnChartArea: false,
+                  },
+                }, {
                   type: 'linear',
-                  position: 'left',
-                  id: 'y-axis-1',
+                  display: false,
+                  position: 'right',
+                  id: 'y-axis-2',
                   ticks: {
                     beginAtZero: true,
+                    stepValue: 10,
+                    max: 100,
                   },
-
-                  /*ticks: {
-                    callback: function (value, index, values){
-                      return value + '萬人';
-                    }
-                  },*/
-                  /*scaleLabel: {
-                    display:true,
-                    labelString: '萬人',
-                  },*/
+                  scaleLabel: {
+                    display:false,
+                    labelString: '%',
+                  },
                   gridLines: {
                     display: false,
                     drawOnChartArea: false,
-                },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                  stepValue: 10,
-                  max: 100,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
-            },
-           elements: {
-             line: {
-               tension: 0,
-             }
-           },
-          plugins: {
+                  },
+                }],
+              },
+             elements: {
+               line: {
+                 tension: 0,
+               }
+             },
+            plugins: {
 
+             }
            }
-         }
-          });
+            });
         </script>
       </div>
     </div>
-
-    <p class="wrapper h3" data-toggle="tab">個人上網率</p>
-    <p class="wrapper h4">近半年使用行動/無線區域網路上網</p>
+    <p class="h4">近半年使用行動/無線區域網路上網</p>
     <div class="wrapper">
       <p>
         反天上達，公中眼路什上開院的期，人出各，原切無！天性施散公修升能具應一證是了職機面當對、一時給遊層出是早居影三業，數麗許性用國大去少因關是有黃爸是能入……麼問年來，最幾更製一下界國的：不獨角：除念工加改微工總突學實件中城史的狀法為有們教。
@@ -831,210 +770,226 @@ $(document).ready(function(){
       <div class="col-12 tab-pane active" id="mobileNet">
         <canvas id="chart_perConnectedMobileNet"></canvas>
         <script>
-        var ctx = document.getElementById('chart_perConnectedMobileNet').getContext('2d');
-        var mixedChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-            datasets: [
-              {
-                  label: '曾上網率',
-                  data: [7.8, 10.9, 13.1, 25.9, 51.1, 47.3, 60.1, 67.3, 69.3, 76.9],
-                  // Changes this dataset to become a line
-                  type: 'line',
-                  yAxisID: 'y-axis-2',
-                  fill: false,
-                  borderColor: '#2957A4',
-                  pointBackgroundColor: '#96989A',
-                  pointBorderColor: '#96989A',
-                  pointBorderWidth: 1,
-                  datalabels: {
-                    align: 'top',
-                    formatter: function(value, context) {
-                      return Math.abs(value) + '%';
-                    }
-                  }
-                },
+          var ctx = document.getElementById('chart_perConnectedMobileNet').getContext('2d');
+          var mixedChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+              datasets: [
                 {
-                  label: '上網人數',
-                  data: [155, 220, 266, 535, 855, 988, 1261, 1416, 1462, 1627],
-                  yAxisID: 'y-axis-1',
-                  backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                  borderColor: 'rgba(54, 162, 235, 1)',
-                  borderWidth: 1,
-                  datalabels: {
-                    /*align: 'center',*/
-                    formatter: function(value, context) {
-                      return Math.round(value) + '萬人';
+                    label: '曾上網率',
+                    data: [7.8, 10.9, 13.1, 25.9, 51.1, 47.3, 60.1, 67.3, 69.3, 76.9],
+                    // Changes this dataset to become a line
+                    type: 'line',
+                    yAxisID: 'y-axis-2',
+                    fill: false,
+                    borderColor: '#3366CC',
+                    backgroundColor: 'rgba(51, 102, 204, 0)',
+                    pointBackgroundColor: '#3366CC',
+                    pointBorderColor: '#3366CC',
+                    pointBorderWidth: 2,
+                    datalabels: {
+                      align: 'top',
+                      formatter: function(value, context) {
+                        return Math.abs(value) + '%';
+                      }
                     }
-                  }
-                },
-              ],
-            labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018',]
-          },
-          options: {
-            tooltips: {
-              mode:'index',
+                  },
+                  {
+                    label: '上網人數',
+                    data: [155, 220, 266, 535, 855, 988, 1261, 1416, 1462, 1627],
+                    yAxisID: 'y-axis-1',
+                    backgroundColor: '#7DCC4A',
+                    hoverBackgroundColor: '#8bd15f',
+                    borderColor:'#7DCC4A',
+                    borderWidth: 1,
+                    datalabels: {
+                      formatter: function(value, context) {
+                        return Math.round(value) + '萬人';
+                      }
+                    }
+                  },
+                ],
+              labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018',]
             },
-            responsive: true,
-            scales: {
-              xAxes: [{
-                gridLines: {
-                  display: false
+            options: {
+              animation: {
+                duration: 0
+              },
+              legend: {
+                labels: {
+                  usePointStyle: true,
                 }
-              }],
-              yAxes: [
-                {
-                  display: false,
+              },
+              tooltips: {
+                mode:'index',
+              },
+              responsive: true,
+              scales: {
+                xAxes: [{
+                  gridLines: {
+                    display: false
+                  }
+                }],
+                yAxes: [
+                  {
+                    display: false,
+                    type: 'linear',
+                    position: 'left',
+                    id: 'y-axis-1',
+                    ticks: {
+                      beginAtZero: true,
+                    },
+                    /*ticks: {
+                      callback: function (value, index, values){
+                        return value + '萬人';
+                      }
+                    },*/
+                    /*scaleLabel: {
+                      display:true,
+                      labelString: '萬人',
+                    },*/
+                    gridLines: {
+                      display: false,
+                      drawOnChartArea: false,
+                  },
+                }, {
                   type: 'linear',
-                  position: 'left',
-                  id: 'y-axis-1',
+                  display: false,
+                  position: 'right',
+                  id: 'y-axis-2',
                   ticks: {
                     beginAtZero: true,
+                    stepValue: 10,
+                    max: 100,
                   },
-
-                  /*ticks: {
-                    callback: function (value, index, values){
-                      return value + '萬人';
-                    }
-                  },*/
-                  /*scaleLabel: {
-                    display:true,
-                    labelString: '萬人',
-                  },*/
+                  scaleLabel: {
+                    display:false,
+                    labelString: '%',
+                  },
                   gridLines: {
                     display: false,
                     drawOnChartArea: false,
-                },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                  stepValue: 10,
-                  max: 100,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
-            },
-           elements: {
-             line: {
-               tension: 0,
-             }
-           },
-          plugins: {
+                  },
+                }],
+              },
+             elements: {
+               line: {
+                 tension: 0,
+               }
+             },
+            plugins: {
 
+             }
            }
-         }
-          });
+            });
         </script>
       </div>
       <div class="col-12 tab-pane fade in" id="wirelessLAN">
         <canvas id="chart_perConnectedWirelessLAN"></canvas>
         <script>
-        var ctx = document.getElementById('chart_perConnectedWirelessLAN').getContext('2d');
-        var mixedChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-            datasets: [
-              {
-                  label: '曾上網率',
-                  data: [20.9, 22.7, 24.0, 35.7, 38.4, 40.3, 46.3, 49.0, 51.6, 36.9],
-                  // Changes this dataset to become a line
-                  type: 'line',
-                  yAxisID: 'y-axis-2',
-                  fill: false,
-                  borderColor: '#2957A4',
-                  pointBackgroundColor: '#96989A',
-                  pointBorderColor: '#96989A',
-                  pointBorderWidth: 1,
-                  datalabels: {
-                    align: 'top',
-                    formatter: function(value, context) {
-                      return Math.abs(value) + '%';
-                    }
-                  }
-                },
+          var ctx = document.getElementById('chart_perConnectedWirelessLAN').getContext('2d');
+          var mixedChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+              datasets: [
                 {
-                  label: '上網人數',
-                  data: [418, 460, 487, 736, 797, 841, 972, 1031, 1089, 781],
-                  yAxisID: 'y-axis-1',
-                  backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                  borderColor:'rgba(75, 192, 192, 1)',
-                  borderWidth: 1,
-                  datalabels: {
-                    /*align: 'center',*/
-                    formatter: function(value, context) {
-                      return Math.round(value) + '萬人';
+                    label: '曾上網率',
+                    data: [20.9, 22.7, 24.0, 35.7, 38.4, 40.3, 46.3, 49.0, 51.6, 36.9],
+                    // Changes this dataset to become a line
+                    type: 'line',
+                    yAxisID: 'y-axis-2',
+                    fill: false,
+                    borderColor: '#3366CC',
+                    backgroundColor: 'rgba(51, 102, 204, 0)',
+                    pointBackgroundColor: '#3366CC',
+                    pointBorderColor: '#3366CC',
+                    pointBorderWidth: 1,
+                    datalabels: {
+                      align: 'top',
+                      formatter: function(value, context) {
+                        return Math.abs(value) + '%';
+                      }
+                    }
+                  },
+                  {
+                    label: '上網人數',
+                    data: [418, 460, 487, 736, 797, 841, 972, 1031, 1089, 781],
+                    yAxisID: 'y-axis-1',
+                    backgroundColor: '#7DCC4A',
+                    borderColor:'#7DCC4A',
+                    borderWidth: 1,
+                    datalabels: {
+                      formatter: function(value, context) {
+                        return Math.round(value) + '萬人';
+                      }
                     }
                   }
-                }
-              ],
-            labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018',]
-          },
-          options: {
-            tooltips: {
-              mode:'index',
+                ],
+              labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018',]
             },
-            responsive: true,
-            scales: {
-              xAxes: [{
-                gridLines: {
-                  display: false
+            options: {
+              animation: {
+                duration: 0
+              },
+              legend: {
+                labels: {
+                  usePointStyle: true,
                 }
-              }],
-              yAxes: [
-                {
-                  display: false,
+              },
+              tooltips: {
+                mode:'index',
+              },
+              responsive: true,
+              scales: {
+                xAxes: [{
+                  gridLines: {
+                    display: false
+                  }
+                }],
+                yAxes: [
+                  {
+                    display: false,
+                    type: 'linear',
+                    position: 'left',
+                    id: 'y-axis-1',
+                    ticks: {
+                      beginAtZero: true,
+                    },
+
+                    gridLines: {
+                      display: false,
+                      drawOnChartArea: false,
+                  },
+                }, {
                   type: 'linear',
-                  position: 'left',
-                  id: 'y-axis-1',
+                  display: false,
+                  position: 'right',
+                  id: 'y-axis-2',
                   ticks: {
                     beginAtZero: true,
+                    stepValue: 10,
+                    max: 100,
                   },
-
+                  scaleLabel: {
+                    display:false,
+                    labelString: '%',
+                  },
                   gridLines: {
                     display: false,
                     drawOnChartArea: false,
-                },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                  stepValue: 10,
-                  max: 100,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
-            },
-           elements: {
-             line: {
-               tension: 0,
-             }
-           },
-          plugins: {
+                  },
+                }],
+              },
+             elements: {
+               line: {
+                 tension: 0,
+               }
+             },
+            plugins: {
 
+             }
            }
-         }
-          });
+            });
         </script>
       </div>
 
@@ -1048,115 +1003,116 @@ $(document).ready(function(){
 
     <div class="row justify-content-center my-5">
       <div class="col-12">
-        <p class="wrapper h4">家戶上網率</p>
+        <p class="wrapper h3">家戶上網率</p>
+        <div class="">
+          <p class="h4">整體概況</p>
+          <p class="h5">上網率 80.9%, 705萬戶</p>
+          <p class="h5">99.9% 使用寬頻上網</p>
+          <p class="h5">平均每月花費 855 元</p>
+          <p class="h5">平均滿意度 3.5分</p>
+        </div>
+
       </div>
       <canvas id="chart_householdInternet"></canvas>
       <script>
-      var ctx = document.getElementById('chart_householdInternet').getContext('2d');
-      var mixedChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-          datasets: [
-            {
-              label: '家戶上網率',
-              data: [75.5, 76.8, 79.8, 81.0, 84.8, 84.5, 89.2, 87.9, 82.3, 80.9],
-              // Changes this dataset to become a line
-              type: 'line',
-              yAxisID: 'y-axis-2',
-              fill: false,
-              borderColor: '#2957A4',
-              pointBackgroundColor: 'rgba(255, 180, 82, 1)',
-              pointBorderColor: '#e88a3e',
-              pointBorderWidth: 1,
-              datalabels: {
-                align: 'top',
-                color: 'black',
-                formatter: function(value, context) {
-                  return Math.abs(value) + '%';
+        var ctx = document.getElementById('chart_householdInternet').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            datasets: [
+              {
+                label: '家戶上網率',
+                data: [75.5, 76.8, 79.8, 81.0, 84.8, 84.5, 89.2, 87.9, 82.3, 80.9],
+                // Changes this dataset to become a line
+                type: 'line',
+                yAxisID: 'y-axis-2',
+                fill: false,
+                borderColor: '#3366CC',
+                backgroundColor: 'rgba(51, 102, 204, 0)',
+                pointBackgroundColor: '#3366CC',
+                pointBorderColor: '#3366CC',
+                pointBorderWidth: 2,
+                datalabels: {
+                  align: 'top',
+                  formatter: function(value, context) {
+                    return Math.abs(value) + '%';
+                  }
                 }
-              }
-            },
-            {
+              },
+              {
                 label: '上網戶數',
                 data: [564, 585, 620, 653, 694, 702, 750, 745, 706, 705],
                 yAxisID: 'y-axis-1',
-                backgroundColor: 'rgba(44, 87, 163, 0.7)',
-                borderColor: 'rgba(25, 57, 112,1)',
+                backgroundColor: '#7DCC4A',
+                borderColor: '#7DCC4A',
                 borderWidth: 1,
                 datalabels: {
-                  /*align: 'center',*/
-                  color: 'white',
                   formatter: function(value, context) {
                     return Math.round(value) + '萬戶';
                   }
                 }
-              }, ],
-          labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018',]
-        },
-        options: {
-          tooltips: {
-            mode:'index',
+                }, ],
+            labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018',]
           },
-          responsive: true,
-          scales: {
-            xAxes: [{
-              gridLines: {
-                display: false
+          options: {
+            animation: {
+              duration: 0
+            },
+            legend: {
+              labels: {
+                usePointStyle: true,
               }
-            }],
-            yAxes: [
-              {
-                display: false,
+            },
+            tooltips: {
+              mode:'index',
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  type: 'linear',
+                  position: 'left',
+                  id: 'y-axis-1',
+                  ticks: {
+                    beginAtZero: true,
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                },
+              }, {
                 type: 'linear',
-                position: 'left',
-                id: 'y-axis-1',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
                 ticks: {
                   beginAtZero: true,
+                  stepValue: 10,
+                  max: 100,
                 },
-
-                /*ticks: {
-                  callback: function (value, index, values){
-                    return value + '萬人';
-                  }
-                },*/
-                /*scaleLabel: {
-                  display:true,
-                  labelString: '萬人',
-                },*/
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
                 gridLines: {
                   display: false,
                   drawOnChartArea: false,
-              },
-            }, {
-              type: 'linear',
-              display: false,
-              position: 'right',
-              id: 'y-axis-2',
-              ticks: {
-                beginAtZero: true,
-                stepValue: 10,
-                max: 100,
-              },
-              scaleLabel: {
-                display:false,
-                labelString: '%',
-              },
-              gridLines: {
-                display: false,
-                drawOnChartArea: false,
-              },
-            }],
-          },
-         elements: {
-           line: {
-             tension: 0,
-           }
-         },
-        plugins: {
-
+                },
+              }],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
          }
-       }
-        });
+          });
       </script>
       </div>
     </div>
@@ -1165,82 +1121,102 @@ $(document).ready(function(){
 <!-- end of section 1 -->
 
 
-<!-- section 2 -->
+<!-- section 2 DNIP -->
 <div class="container" id="DNIP">
-  <h2 class="wrapper sticky-notTop bg-white pb-3" data-toggle="tab">網路基礎建設概要</h2>
+  <p class="wrapper sticky-notTop h2 bg-white pb-3" data-toggle="tab">網路基礎邏輯層面</p>
   <div class="text-center wrapper">
     <p class="h4 font-weight-light my-0">一個數字</p>
     <p class="display-1 my-0">123,558</p>
     <p class="h4 font-weight-light my-2">總覺得好像要有個什麼</p>
-
   </div>
 
-  <p class="wrapper h3">網域名稱註冊分析</p>
-  <div class="row justify-content-center wrapper">
-    <div class="col-8">
-      <img class="img-fluid" src="https://d20zg24t5a1ogz.cloudfront.net/wp-content/uploads/2018/10/photo-64-1200x800.jpg" alt="">
-    </div>
-  </div>
-
-  <div class="wrapper">
-    <p>
-      是以自學。公期夠的打明裡發美這的。不不已由風說是聽回孩了遊是士發那想國只花一把新動、所社學可紅時我。
-    </p>
-    <p>
-      當生太不天正百下方絕思大案麼位見會最電程心以自裡麼：面紅取；人麼下，從著下原覺政。安做記院年的成，地長演息去大們雨的價實裡方商位時，令場去不道要劇光軍生覺風成庭爭小們可聽。
-    </p>
-  </div>
-
+<!-- IP DN ASN-->
   <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <p class="wrapper h3">網域名稱註冊分析</p>
+    </div>
+    <div class="col-12">
+      <p>
+        是以自學。公期夠的打明裡發美這的。不不已由風說是聽回孩了遊是士發那想國只花一把新動、所社學可紅時我。
+      </p>
+      <p>
+        當生太不天正百下方絕思大案麼位見會最電程心以自裡麼：面紅取；人麼下，從著下原覺政。安做記院年的成，地長演息去大們雨的價實裡方商位時，令場去不道要劇光軍生覺風成庭爭小們可聽。
+      </p>
+    </div>
+
     <div class="col-12">
       <p class="wrapper h4">網域名稱註冊數量</p>
     </div>
-    <canvas id="chart_ipSubmitGrowth2"></canvas>
+    <canvas id="chart_ipSubmitGrowth"></canvas>
     <script>
-    var ctx = document.getElementById('chart_ipSubmitGrowth2').getContext('2d');
+      var ctx = document.getElementById('chart_ipSubmitGrowth').getContext('2d');
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
           labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018'],
           datasets: [
             {
-              /*type: 'line',*/
+              type: 'line',
               label: '總成長率',
               stack:'Stack 1',
               yAxisID: 'y-axis-2',
               fill: false,
-              borderColor: '#2957A4',
-              pointBackgroundColor: 'rgba(255, 180, 82, 1)',
-              pointBorderColor: '#e88a3e',
-              pointBorderWidth: 1,
+              borderColor: '#3366CC',
+              backgroundColor: 'rgba(51, 102, 204, 0)',
+              pointBackgroundColor: '#3366CC',
+              pointBorderColor: '#3366CC',
+              pointBorderWidth: 3,
+              pointStyle: 'circle',
               lineTension:0,
+              hidden: true,
               datalabels: {
-                align: 'top',
-                color: 'black',
-                formatter: function(value, context) {
+                display: false,
+                /*formatter: function(value, context) {
                   return Math.abs(value) + '%';
-                }
+                }*/
               },
               data: [9.3, 13.2, 1.8, 21.9, 24.6, 10.3, 2.8, 8.3, 0, 554.3],
             },
             {
               label: '「.tw」',
-              backgroundColor: '#D6E9C6',
+              backgroundColor: '#7DCC4A',
+              borderColor: '#7DCC4A',
+              borderWidth: 1,
               stack:'Stack 0',
               data: [283, 298, 305, 308, 315, 321, 395, 466, 474, 4555],
               yAxisID: 'y-axis-1',
+              datalabels: {
+                formatter: function(value, context) {
+                  return Math.abs(value) + '萬個';
+                }
+              },
             },
             {
               label: '「.tw／.台灣」IDN',
-              backgroundColor: '#FAEBCC',
+              backgroundColor: '#FFC000',
+              borderColor: '#FFC000',
+              borderWidth: 1,
               stack:'Stack 0',
               data: [161, 131, 155, 161, 205, 207, 317, 463, 377, 284, 269, 261, 254],
               yAxisID: 'y-axis-1',
+              datalabels: {
+                formatter: function(value, context) {
+                  return Math.abs(value) + '萬個';
+                }
+              },
             },
           ]
         },
         options: {
-          tooltips:{
+          animation: {
+            duration: 0
+          },
+          legend: {
+            labels: {
+              usePointStyle: true,
+            }
+          },
+          tooltips: {
             mode:'index',
           },
           scales: {
@@ -1250,7 +1226,6 @@ $(document).ready(function(){
                 display: false,
                 drawOnChartArea: false,
               },
-
              }],
              yAxes: [
                {
@@ -1289,7 +1264,7 @@ $(document).ready(function(){
         },
       });
     </script>
-    </div>
+  </div>
 
 
   <div class="row justify-content-center my-5">
@@ -1304,77 +1279,1119 @@ $(document).ready(function(){
             datasets: [{
               data:[94.72, 5.28],
               backgroundColor: [
-                '#2957A4',
-                '#9F774E',
+                'rgba(51, 102, 204, 1)',
+                'rgba(125, 204, 74, 1)',
               ],
             }],
             labels: ['「.tw」', '「.tw／台灣」IDN'],
           },
           options: {
+            legend: {
+              label: {
+                usePointStyle: true,
+              }
+            },
+            animation: {
+              duration: 0
+            },
             plugins: {
               datalabels: {
-                align: 'center',
+                color: 'white',
                 formatter: function(value, context) {
                   return Math.abs(value) + '%';
                 }
               }
             },
-
           }
         });
       </script>
     </div>
   </div>
 
+
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <p class="wrapper h4">IPv4／ASN數量統計</p>
+    </div>
+    <div class="col-12 my-5">
+      <ul class="nav nav-tabs nav-justified">
+        <li class="nav-item linkColor">
+          <div class="nav-link active" href="#numberOfIPv4" data-toggle="tab">台灣 IPv4 數量</div>
+        </li>
+        <li class="nav-item linkColor">
+          <div class="nav-link" href="#numberOfASN" data-toggle="tab">台灣 ASN 核發數量</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row justify-content-center tab-content my-5">
+    <div class="col-12 tab-pane active" id="numberOfIPv4">
+      <canvas id="chart_numberOfIPv4"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_numberOfIPv4').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['','2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', ''],
+            datasets: [
+                {
+                  label: '台灣IPv4數量',
+                  data: [,155, 220, 266, 535, 855, 988, 1261, 1416, 1462, 1627,],
+                  backgroundColor: '#3366CC',
+                  borderColor: '#3366CC',
+                  fill: false,
+                  borderWidth: 2,
+                  datalabels: {
+                    display: 'auto',
+                    align:'top',
+                    formatter: function(value, context) {
+                      return Math.round(value) + '萬個';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '萬個';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  ticks: {
+                    beginAtZero: true,
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+                ticks: {
+                  beginAtZero: true,
+                },
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+          plugins: {
+
+           }
+         }
+          });
+      </script>
+    </div>
+    <div class="col-12 tab-pane fade in" id="numberOfASN">
+      <canvas id="chart_numberOfASN"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_numberOfASN').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['','2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', ''],
+            datasets: [
+                {
+                  label: '台灣 ASN 核發數量',
+                  data: [,202, 205, 208, 309, 313, 338, 340, 345, 351, 354,],
+                  backgroundColor: '#3366CC',
+                  borderColor: '#3366CC',
+                  fill: false,
+                  borderWidth: 2,
+                  datalabels: {
+                    display: 'auto',
+                    align: 'top',
+                    formatter: function(value, context) {
+                      return Math.round(value) + '個';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '個';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  ticks: {
+                    beginAtZero: true,
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+                ticks: {
+                  beginAtZero: true,
+                },
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+          plugins: {
+
+           }
+         }
+          });
+      </script>
+    </div>
+
+  </div>
+
+
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <p class="wrapper h4">IPv6／ISP 數量統計</p>
+    </div>
+    <div class="col-12 my-5">
+      <ul class="nav nav-tabs nav-justified">
+        <li class="nav-item linkColor">
+          <div class="nav-link active" href="#numberOfIPv6" data-toggle="tab">台灣 IPv6 數量</div>
+        </li>
+        <li class="nav-item linkColor">
+          <div class="nav-link" href="#userScaleOfIPv6" data-toggle="tab">台灣 IPv6 使用者比例</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row justify-content-center tab-content my-5">
+    <div class="col-12 tab-pane active" id="numberOfIPv6">
+      <canvas id="chart_numberOfIPv6"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_numberOfIPv6').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['','2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', ''],
+            datasets: [
+                {
+                  label: '台灣IPv6數量',
+                  fill: false,
+                  data: [,2311, 2322, 2328, 2336,2345, 2355, 2359, 2359, 2365, 2463,],
+                  backgroundColor: '#3366CC',
+                  borderColor: '#3366CC',
+                  fill: false,
+                  borderWidth: 2,
+                  datalabels: {
+                    display: 'auto',
+                    align: 'top',
+                    formatter: function(value, context) {
+                      return Math.round(value) + '個';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '個';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  ticks: {
+                    /*beginAtZero: true,*/
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+                ticks: {
+                  beginAtZero: true,
+                  stepValue: 10,
+                  max: 100,
+                },
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+          plugins: {
+
+           }
+         }
+          });
+      </script>
+    </div>
+    <div class="col-12 tab-pane fade in" id="userScaleOfIPv6">
+      <!-- User Scale Of IPv6 table -->
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th class="align-middle" style=" min-width: 10vw;">類型</th>
+              <th class="align-middle">業者</th>
+              <th class="align-middle">佔比</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="small align-middle" rowspan="5" scope="row">行動網路</th>
+              <td class="small align-middle">中華電信 CHT Mobile </td>
+              <td class="small align-middle">70.08%</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">遠傳電信 FETNet</td>
+              <td class="small align-middle">35.15%</td>
+
+            </tr>
+            <tr>
+              <td class="small align-middle">台灣大哥大 Taiwan Mobile</td>
+              <td class="small align-middle">22.53%</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">亞太電信 AMBIT</td>
+              <td class="small align-middle">2.43%</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">台灣之星 VIBO</td>
+              <td class="small align-middle">0.08%</td>
+
+            </tr>
+            <tr>
+              <th class="small align-middle" rowspan="4" scope="row">固網電信</th>
+              <td class="small align-middle">中華電信 CHT Fixed Network </td>
+              <td class="small align-middle">17.51%</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">台灣固網 TFN</td>
+              <td class="small align-middle">0.46%</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">新世紀資通 Seednet</td>
+              <td class="small align-middle">0.3%</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">亞太電信 APOL</td>
+              <td class="small align-middle">0.11%</td>
+            </tr>
+          </tbody>
+        </table>
+      <!-- end of Scale Of IPv6 table -->
+    </div>
+  </div>
+
+  <!-- end of IP DN ASN-->
   </div>
 </div>
 <!-- end of section 2 -->
 
-<!-- section 3 -->
+<!-- section 3 Spotlights -->
 <div class="container" id="spotlights">
   <p class="wrapper sticky-notTop bg-white pb-3 h2">前瞻亮點趨勢分析</p>
+  <div class="wrapper">
+    <p class="h3">一</p>
+    <p class="h4">
+      從網路使用行為探討族群輪廓差異
+    </p>
+  </div>
+  <div class="wrapper">
+    <p>
+      反天上達，公中眼路什上開院的期，人出各，原切無！天性施散公修升能具應一證是了職機面當對、一時給遊層出是早居影三業，數麗許性用國大去少因關是有黃爸是能入……麼問年來，最幾更製一下界國的：不獨角：除念工加改微工總突學實件中城史的狀法為有們教。
+    </p>
+  </div>
+  <p class="wrapper h5">族群網購力</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_shopOnlineByGroups"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_shopOnlineByGroups').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: [,'整體', , 'Z 世代男', 'Z 世代女', , '千禧世代男', '千禧世代女', , 'X 世代男', 'X 世代女', , '樂齡族男', '樂齡族女', ,],
+            datasets: [ {
+                  label: '網購率',
+                  data: [, 64.2, , 55.4, 71.7, , 74.7, 89.7, , 62.5, 73.5, , 31.2, 34.6, , ],
+                  // Changes this dataset to become a line
+                  type: 'line',
+                  yAxisID: 'y-axis-2',
+                  fill: false,
+                  borderColor: '#3366CC',
+                  backgroundColor: 'rgba(51, 102, 204, 0)',
+                  pointBackgroundColor: '#3366CC',
+                  pointBorderColor: '#3366CC',
+                  pointBorderWidth: 2,
+                  datalabels: {
+                    align: 'top',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+                {
+                  label: '月平均網購金額',
+                  data: [, 2418, , 2015, 1518, , 3038, 2782, , 2324, 2177, , 2152, 2285, , ],
+                  yAxisID: 'y-axis-1',
+                  backgroundColor: '#7DCC4A',
+                  borderColor:'#7DCC4A',
+                  hoverBackgroundColor: '#8bd15f',
+                  borderWidth: 1,
+                  datalabels: {
+                    display: 'auto',
+                    align: 'bottom',
+                    formatter: function(value, context) {
+                      return Math.round(value) + '元';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            legend: {
+              labels: {
+                usePointStyle: true,
+              }
+            },
+            tooltips: {
+              mode:'index',
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  type: 'linear',
+                  position: 'left',
+                  id: 'y-axis-1',
+                  ticks: {
+                    beginAtZero: true,
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+                ticks: {
+                  beginAtZero: true,
+                  stepValue: 10,
+                  max: 100,
+                },
+                scaleLabel: {
+                  display:false,
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+          plugins: {
+
+           }
+         }
+          });
+      </script>
+    </div>
+  </div>
+  <p class="wrapper h5">網購行為性別差異</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <!-- Shopping Online by Gender table -->
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th class="align-middle"></th>
+              <th class="align-middle text-center" colspan="2">男性</th>
+              <th class="align-middle text-center" colspan="2">女性</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="small align-middle" rowspan="3" scope="row">網購使用裝置</th>
+              <td class="small align-middle">桌機／筆電</td>
+              <td class="small align-middle">84.6%</td>
+              <td class="small align-middle">桌機／筆電</td>
+              <td class="small align-middle">78.4%</td>
+
+            </tr>
+            <tr>
+              <td class="small align-middle">智慧型手機</td>
+              <td class="small align-middle">55.4%</td>
+              <td class="small align-middle">智慧型手機</td>
+              <td class="small align-middle">63.4%</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">平板電腦</td>
+              <td class="small align-middle">13.3%</td>
+              <td class="small align-middle">平板電腦</td>
+              <td class="small align-middle">15.9%</td>
+            </tr>
+            <tr>
+              <th class="small align-middle" rowspan="5" scope="row">網購原因</th>
+              <td class="small align-middle">方便搜尋商品資訊</td>
+              <td class="small align-middle">79.4%</td>
+              <td class="small align-middle">方便搜尋商品資訊</td>
+              <td class="small align-middle">77.3%</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">省時／交通成本</td>
+              <td class="small align-middle">67.0%</td>
+              <td class="small align-middle">容易比價</td>
+              <td class="small align-middle">69.6%</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">種類很多</td>
+              <td class="small align-middle">65.1%</td>
+              <td class="small align-middle">隨時想買都可以</td>
+              <td class="small align-middle">61.5%</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">價格便宜</td>
+              <td class="small align-middle">62.6%</td>
+              <td class="small align-middle">價格便宜</td>
+              <td class="small align-middle">57.2%</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- end of Shopping Online by Gender table -->
+
+    </div>
+  </div>
+  <p class="wrapper h5">樂齡族網路使用特色</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_silverUserBehavior" height="300"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_silverUserBehavior').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'radar',
+          data: {
+            labels: ['即時通訊','影音／直播或聽音樂','網路新聞或資訊','社群論壇／部落格','電子郵件、搜尋引擎','買賣／瀏覽購物','理財／付款','網路遊戲','電子書','線上交友',],
+            datasets: [
+                {
+                  label: '樂齡族',
+                  data: [ 92.6, 77.9, 72.5, 59.4, 53.2, 46.9, 24.7, 19.3, 12.2, 5.0],
+                  fill: false,
+                  borderColor:'#7DCC4A',
+                  backgroundColor: 'rgba(125, 204, 74, 0)',
+                  hoverBackgroundColor: '#8bd15f',
+                  pointBackgroundColor: '#7DCC4A',
+                  pointBorderColor: '#7DCC4A',
+                  pointBorderWidth: 2,
+                  datalabels: {
+                    display: false,
+                    }
+                },
+                {
+                  label: '非樂齡族',
+                  data: [ 97.8, 92.3, 80.6, 89.7, 82.0, 80.3, 48.4, 47.4, 17.7, 11.2, ],
+                  fill: false,
+                  borderColor: '#3366CC',
+                  backgroundColor: 'rgba(51, 102, 204, 0)',
+                  pointBackgroundColor: '#3366CC',
+                  pointBorderColor: '#3366CC',
+                  pointBorderWidth: 2,
+                  datalabels: {
+                    display: false,
+                    }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            legend: {
+              labels: {
+                usePointStyle: true,
+              }
+            },
+            responsive: true,
+            scales: {
+              display: false,
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+          });
+      </script>
+    </div>
+  </div>
+
+
+  <div class="wrapper">
+    <p class="h3">二</p>
+    <p class="h4">
+      智慧家庭發展的硬體和服務整合應用
+    </p>
+  </div>
+  <div class="wrapper">
+    <p>
+      反天上達，公中眼路什上開院的期，人出各，原切無！天性施散公修升能具應一證是了職機面當對、一時給遊層出是早居影三業，數麗許性用國大去少因關是有黃爸是能入……麼問年來，最幾更製一下界國的：不獨角：除念工加改微工總突學實件中城史的狀法為有們教。
+    </p>
+  </div>
+
+  <p class="wrapper h5">智慧家庭產品使用率</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_usageOfSmartHomeProducts"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_usageOfSmartHomeProducts').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'horizontalBar',
+          data: {
+            labels: ['智慧家居設備','智慧音箱','智慧家庭防盜防災','智慧家庭照顧','陪伴機器人',],
+            datasets: [
+                {
+                  label: '智慧家庭產品使用率',
+                  data: [9.0, 5.6, 5.5, 5.4, 1.4,],
+                  backgroundColor: '#7DCC4A',
+                  borderColor: '#7DCC4A',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    /*display: 'auto',*/
+                    offset: 35,
+                    align:'end',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.xLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                display: false,
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true,
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              },],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+  </div>
+
   <div class="row justify-content-center wrapper">
-    <div class="col-8">
-      <img class="img-fluid" src="https://d20zg24t5a1ogz.cloudfront.net/wp-content/uploads/2018/10/photo-39-1200x800.jpg" alt="">
+  </div>
+  <div class="wrapper">
+    <p class="h3">三</p>
+    <p class="h4">
+      網路社群與經濟轉變下的電子商務趨勢
+    </p>
+  </div>
+  <div class="wrapper">
+    <p>
+      反天上達，公中眼路什上開院的期，人出各，原切無！天性施散公修升能具應一證是了職機面當對、一時給遊層出是早居影三業，數麗許性用國大去少因關是有黃爸是能入……麼問年來，最幾更製一下界國的：不獨角：除念工加改微工總突學實件中城史的狀法為有們教。
+    </p>
+  </div>
+
+  <p class="wrapper h5">行動支付使用率</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_mobilePaymentUsageRate"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_mobilePaymentUsageRate').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['', '2017', '2018', ''],
+            datasets: [
+                {
+                  label: '行動支付使用率',
+                  fill: false,
+                  data: [,14.0, 16.3,],
+                  backgroundColor: '#3366CC',
+                  borderColor: '#3366CC',
+                  fill: false,
+                  borderWidth: 3,
+                  datalabels: {
+                    display: 'auto',
+                    align: 'top',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  ticks: {
+                    beginAtZero: true,
+                  },
+                  gridLines: {
+                    display: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+                ticks: {
+                  beginAtZero: true,
+                  stepValue: 10,
+                  max: 100,
+                },
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+          plugins: {
+
+           }
+         }
+          });
+      </script>
+    </div>
+  </div>
+  <p class="wrapper h5">行動支付品牌市佔變化</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_mobilePaymentBrands"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_mobilePaymentBrands').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['LinePay', 'ApplePay', '街口支付', 'GooglePay', 'SamsungPay', '支付寶',],
+            datasets: [
+                {
+                  label: '2017',
+                  fill: false,
+                  data: [13.4, 34.5, 4.7, 6.8, , 12.5],
+                  backgroundColor: '#7DCC4A',
+                  borderColor: '#7DCC4A',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    color: 'white',
+                    display: 'auto',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+                {
+                  label: '2018',
+                  fill: false,
+                  data: [45.1, 38.9, 24.2, 5.4, 4.5, 3.5],
+                  backgroundColor: '#3366CC',
+                  borderColor: '#3366CC',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    color: 'white',
+                    display: 'auto',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  ticks: {
+                    beginAtZero: true,
+                  },
+                  gridLines: {
+                    display: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+                ticks: {
+                  beginAtZero: true,
+                  stepValue: 10,
+                  max: 100,
+                },
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+          plugins: {
+
+           }
+         }
+          });
+      </script>
     </div>
   </div>
   <div class="wrapper">
-    <p class="h3 my-3">LINE、Facebook 獨佔市場</p>
     <p>
-      完同為處天而反權，真血小作場全國！
-    </p>
-    <p>
-      萬另物！部題科力能有起絕再麼！四入再報一我一會新年、一地家也起麼跟種可車也學食成藝面對禮克呢無外？此哥了我養本地；音來話不你用當是！安創民後費？都著頭；為一放的濟人來們約壓點麗出你，政奇的任黃早見調下的們！不度手合，記場具自又風否業包人起的大用親，一數太國不第比把微以如文夫者不品山著不了政！度反種站的麼險點分必花。全天活小，復用小大一靈專打上是。教必品識破流氣子下是急心不土車其：刻然時直而否去該係為在去藝直查去計司勢風？結愛是與和老合得其顧基童只。
+      反天上達，公中眼路什上開院的期，人出各，原切無！天性施散公修升能具應一證是了職機面當對、一時給遊層出是早居影三業，數麗許性用國大去少因關是有黃爸是能入……麼問年來，最幾更製一下界國的：不獨角：除念工加改微工總突學實件中城史的狀法為有們教。
     </p>
   </div>
-  <div class="wrapper">
-    <p class="h3 my-3">手機購物與行動支付</p>
-    <p>
-      軍小先朋間發然說？投文定的視回日到朋少？我節票南紀龍，此體把一的物積道中看業了現步達。化問機小分臺媽。話不外素年了點裡不後果舉投已兒天趣一輪一德：舞效定知。院作布車溫？才五量酒速？無根檢。間一職來？車五的，所得大國？牛這間人義故問細生，不然那要說，童醫覺驗？書議萬的種影呢！正在術經人來質？望成說教得；臺單天保的不，得心八團全童燈感現國條的地要球眼他我書有房條心，實單國考銀就。出極入不下斯明情為，們來風各包長味候自食球一標……覺為父懷美、上從獎素方，部用以人不西，視爸命國二。生稱手找專線司大取者她；完媽行樂影影們大。
-    </p>
+  <p class="wrapper h5">商品接觸點</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <img class="img-fluid" src="https://d20zg24t5a1ogz.cloudfront.net/wp-content/uploads/2018/10/photo-39-1200x800.jpg" alt="">
+    </div>
   </div>
-  <div class="wrapper">
-    <p class="h3 my-3">影音內容</p>
-    <p>
-      廠護華樹一將全生不達入得盡情細，改變資的！新死由又，了門到身施裡光水度最候場靈。
-    </p>
-    <p>
-      長品一發，香海的當我社全兒兒道的！大交不、受情大的……體遠一言聯是並開他能超情、沒了大事不長……不電工體狀友的動過作故念乎把故連個。定產照；戲如原下經而我了古眼產考任神。
-    </p>
-    <p>
-      直道是兒面母新名人張常個我師，白有生初。件只回我會得。今家己住。苦總所曾不共室如國、一覺師喜公……驗新師服。書以理去，是當書早道基當能間取善！案了靈團利我目發工病了觀長明一府命全沒中展問比。是相外見春德直，樂客男其腦作深裡常……約因方力可黨，又爭準、在總路樣想位個全表說向提議此意速主度法把進發得是業會地我成字生營，一生飛時。
-    </p>
+  <p class="wrapper h5">電商購物與直播平台</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_ecShoppingAndLiveStreaming"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_ecShoppingAndLiveStreaming').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Facebook', 'Instagram', 'Line',],
+            datasets: [
+                {
+                  label: '常用購物平台',
+                  fill: false,
+                  data: [6.1, 2.6, 20.1],
+                  backgroundColor: '#7DCC4A',
+                  borderColor: '#7DCC4A',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    color: 'white',
+                    display: 'auto',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+                {
+                  label: '收看商品直播平台',
+                  fill: false,
+                  data: [77.1, 8.1, ,],
+                  backgroundColor: '#3366CC',
+                  borderColor: '#3366CC',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    color: 'white',
+                    display: 'auto',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  ticks: {
+                    beginAtZero: true,
+                  },
+                  gridLines: {
+                    display: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+                ticks: {
+                  beginAtZero: true,
+                  stepValue: 10,
+                  max: 100,
+                },
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+          plugins: {
+
+           }
+         }
+          });
+      </script>
+    </div>
   </div>
+
+
 </div>
 <!-- end of section 3 -->
 
 
-<!-- section 4 -->
-  <div class="container" id="application">
+<!-- section 4 Applied Internet Techs-->
+  <div class="container" id="appliedTech">
     <p class="wrapper sticky-notTop h2 bg-white pb-3">網路服務應用概況</p>
     <div class="row my-5" title="社群應用">
       <div class="col-12 bg-light text-center pb-2 pt-3">
-        <p class="h3">社群</p>
+        <p class="h3">網路服務社會應用</p>
       </div>
       <div class="col-md-4 my-3">
         <div class="card linkColor" href="#" data-toggle="modal" data-target="#onlineGame">
@@ -1421,7 +2438,7 @@ $(document).ready(function(){
     </div>
     <div class="row my-5" title="經濟應用">
       <div class="col-12 bg-light text-center pb-2 pt-3">
-        <p class="h3">經濟</p>
+        <p class="h3">網路服務經濟應用</p>
       </div>
       <div class="col-md-4 my-3">
         <div class="card linkColor" href="#" data-toggle="modal" data-target="#onlineGame">
@@ -1451,7 +2468,7 @@ $(document).ready(function(){
     </div>
     <div class="row" title="創新應用">
       <div class="col-12 bg-light text-center pb-2 pt-3">
-        <p class="h3">創新</p>
+        <p class="h3">創新網路概念</p>
       </div>
       <div class="col-md-4 my-3">
         <div class="card linkColor" href="#" data-toggle="modal" data-target="#onlineGame">
@@ -1480,7 +2497,8 @@ $(document).ready(function(){
     </div>
   </div>
 <!-- end of section 4 -->
-<!-- Application Modals -->
+
+<!-- appliedTech Modal -->
 <div class="modal fade" id="onlineGame" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
@@ -1537,6 +2555,9 @@ $(document).ready(function(){
                           }]
                         },
                         options: {
+                          animation: {
+                            duration: 0
+                          },
                           legend: {
                             display: false
                           },
@@ -1562,8 +2583,6 @@ $(document).ready(function(){
                           },
                           plugins: {
                             datalabels: {
-                              align: 'center',
-                              color: 'white',
                               display: function(context) {
                                 console.log("Algo: " + context);
                                 return context.dataset.data[context.dataIndex] > 15;
@@ -1728,16 +2747,2216 @@ $(document).ready(function(){
     </div>
   </div>
 </div>
-<!-- Application Modals -->
+<!-- appliedTech Modal -->
 
+<div class="wrapperM">
+
+</div>
+<!-- Content Media Modal -->
 <div class="container">
-  <div class="row justify-content-center">
+  <p class="display-4">內容</p>
+  <p>
+    有文會車去。過務色比乎奇下個，服圖的？研情一出一人的有道技地過教不實小、於車大話！金的入？
+  </p>
+  <p class="wrapper h5">使用者輪廓</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_contentMediaUserProfile"></canvas>
+      <script type="text/javascript">
+        var ctx = document.getElementById('chart_contentMediaUserProfile').getContext('2d');
+        var chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'line',
+
+          // The data for our dataset
+          data: {
+              labels: ["","總數", "", "男性", "女性", "", "12-19歲", "20-29歲", "30-39歲", "40-49歲", "50-59歲", "60歲以上",""],
+              datasets: [{
+                  label: "聽音樂",
+                  borderColor: 'rgba(51, 102, 204, 1)',
+                  backgroundColor: 'rgba(51, 102, 204, 0)',
+                  pointBackgroundColor:'rgba(51, 102, 204, 1)',
+                  pointBorderWidth: 3,
+                  data: [,72.3, , 70.6, 73.9, , 92.8, 87.2, 77.0, 64.2, 58.7, 57.1,,],
+                  fill:false,
+                  spanGaps: false,
+
+              }, {
+                  label: "看節目戲劇",
+                  borderColor: 'rgba(125, 204, 74, 1)',
+                  backgroundColor: 'rgba(125, 204, 74, 0)',
+                  pointBackgroundColor:'rgba(125, 204, 74, 1)',
+                  pointBorderWidth: 3,
+                  data: [,71.9, , 70.8, 73.0, , 91.6, 85.2, 78.7, 69.6, 59.7, 44.8,,],
+                  fill: false,
+                  spanGaps: false,
+
+              },{
+                  label: "看直播",
+                  borderColor: 'rgba(255, 192, 0, 1)',
+                  backgroundColor: 'rgba(255, 192, 0, 0)',
+                  pointBackgroundColor:'rgba(255, 192, 0, 1)',
+                  pointBorderWidth: 3,
+                  data: [,48.8, , 53.9, 43.7, , 55.5, 57.5, 52.0, 44.8, 45.6, 35.7,,],
+                  fill:false,
+                  spanGaps: false,
+
+              },{
+                  label: "看電影",
+                  borderColor: 'rgba(239, 84, 37, 1)',
+                  backgroundColor: 'rgba(239, 84, 37, 0)',
+                  pointBackgroundColor:'rgba(239, 84, 37, 1)',
+                  pointBorderWidth: 3,
+                  data: [,46.0, , 49.9, 42.1, , 58.7, 61.2, 51.8, 42.6, 36.3, 22.3,,],
+                  fill:false,
+                  spanGaps: false,
+              },]
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            tooltips: {
+              mode:'index',
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            legend: {
+              labels: {
+                usePointStyle: true,
+              }
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [{
+                gridLines: {
+                  display: false,
+                  drawBorder: false
+                },
+                ticks: {
+                  display: false,
+                }
+              }]
+            },
+            elements: {
+              line: {
+                tension: 0,
+              }
+            },
+            plugins: {
+              datalabels: {
+                display:false,
+              }
+            }
+          }
+        });
+      </script>
+    </div>
+  </div>
+
+  <p class="wrapper h5">內容媒體使用情形</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_contentMediaUsage"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_contentMediaUsage').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['聽音樂', '看戲劇節目', '看直播','看電影'],
+            datasets: [
+                {
+                  label: '使用率',
+                  fill: false,
+                  data: [72.3, 71.9, 48.8, 46.0],
+                  backgroundColor: '#7DCC4A',
+                  borderColor: '#7DCC4A',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    color: 'white',
+                    display: 'auto',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+                {
+                  label: '付費率',
+                  fill: false,
+                  data: [12.4, 6.8,2.3, 12.2],
+                  backgroundColor: '#3366CC',
+                  borderColor: '#3366CC',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    color: 'white',
+                    display: 'auto',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  ticks: {
+                    beginAtZero: true,
+                  },
+                  gridLines: {
+                    display: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+                ticks: {
+                  beginAtZero: true,
+                  stepValue: 10,
+                  max: 100,
+                },
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+          plugins: {
+
+           }
+         }
+          });
+      </script>
+    </div>
+  </div>
+
+  <p class="wrapper h5">台灣網友使用率最高的影音平台</p>
+  <div class="row justify-content-center my-5">
     <div class="col-12">
       <iframe src="https://plotdb.io/v/chart/19717" width="100%" height="600px" frameborder="0"></iframe>
     </div>
-
   </div>
 </div>
+<div class="container">
+  <p class="wrapper h5">平均每次收視時間</p>
+  <div class="row justify-content-center my-5 text-center">
+    <div class="col-3">
+      <p>
+        桌機／筆電
+      </p>
+    </div>
+    <div class="col-3">
+      <p>
+        手機
+      </p>
+    </div>
+    <div class="col-3">
+      <p>
+        平板電腦
+      </p>
+    </div>
+    <div class="col-3">
+      <p>
+        電視
+      </p>
+    </div>
+  </div>
+  <div class="row justify-content-center my-5 text-center">
+    <div class="col-3">
+      <img class="img-fluid" src="img/noun_Laptop_990835.svg" alt="">
+    </div>
+    <div class="col-3">
+      <img class="img-fluid" src="img/noun_Smartphone_992584.svg" alt="">
+    </div>
+    <div class="col-3">
+      <img class="img-fluid" src="img/noun_Tablet_992579.svg" alt="">
+    </div>
+    <div class="col-3">
+      <img class="img-fluid" src="img/noun_Television_990853.svg" alt="">
+    </div>
+  </div>
+  <div class="row justify-content-center my-5 text-center">
+    <div class="col-3">
+      <p>
+        111.2 分鐘
+      </p>
+    </div>
+    <div class="col-3">
+      <p>
+        86.1 分鐘
+      </p>
+    </div>
+    <div class="col-3">
+      <p>
+        84.9 分鐘
+      </p>
+    </div>
+    <div class="col-3">
+      <p>
+        114.4 分鐘
+      </p>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <p class="wrapper h5">偏好收視類型</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_contentMediaPreferredGenre"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_contentMediaPreferredGenre').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'horizontalBar',
+          data: {
+            labels: ['戲劇／連續劇','綜藝節目','音樂MV','新聞／財經','卡通動漫','網友自拍影片','運動或賽事','遊戲相關'],
+            datasets: [
+                {
+                  label: '偏好收視',
+                  data: [59.5, 21.7, 13.7, 11.2, 9.1, 7.9, 7.7, 6.3],
+                  backgroundColor: '#7DCC4A',
+                  borderColor: '#7DCC4A',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    align:'end',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.xLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                display: false,
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true,
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              },],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+  </div>
+</div>
+<!-- end of Content Media Modal -->
+<div class="wrapperM">
+</div>
+
+<!-- Social and Messenging Modal -->
+<div class="container">
+  <p class="display-4">社群與通訊</p>
+  <p>
+    圖連是腦奇……非出國北不那要。我高數突。到在於成總以，片得二還眼我女未研月和中不來品興。
+  </p>
+  <p class="wrapper h5">使用者輪廓</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_socialPlatformUserProfile"></canvas>
+      <script type="text/javascript">
+        var ctx = document.getElementById('chart_socialPlatformUserProfile').getContext('2d');
+        var chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'line',
+
+          // The data for our dataset
+          data: {
+              labels: ["","總數", "", "男性", "女性", "", "12-19歲", "20-29歲", "30-39歲", "40-49歲", "50-59歲", "60歲以上",""],
+              datasets: [{
+                  label: "有使用即時通訊軟體",
+                  borderColor: 'rgba(51, 102, 204, 1)',
+                  backgroundColor: 'rgba(51, 102, 204, 0)',
+                  pointBackgroundColor:'rgba(51, 102, 204, 1)',
+                  pointBorderWidth: 3,
+                  data: [,96.8, , 95.7, 97.9, , 94.0, 100, 100, 96.2, 95.5, 92.0,],
+                  fill:false,
+                  spanGaps: false,
+
+              }, {
+                  label: "有使用網路社群",
+                  borderColor: 'rgba(125, 204, 74, 1)',
+                  backgroundColor: 'rgba(125, 204, 74, 0)',
+                  pointBackgroundColor:'rgba(125, 204, 74, 1)',
+                  pointBorderWidth: 3,
+                  data: [,80.6, , 80.1, 81.1, , 94.3, 93.7, 91.3, 79.9, 69.2, 48.4,],
+                  fill: false,
+                  spanGaps: false,
+
+              },]
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            responsive: true,
+            tooltips: {
+              mode:'index',
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            legend: {
+              labels: {
+                usePointStyle: true,
+              }
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                },
+              }],
+              yAxes: [{
+                gridLines: {
+                  display: false,
+                  drawBorder: false
+                },
+                ticks: {
+                  beginAtZero:true,
+                  display: false,
+                }
+              }]
+            },
+            elements: {
+              line: {
+                tension: 0,
+              }
+            },
+            plugins: {
+              datalabels: {
+                display:false,
+              }
+            }
+          }
+        });
+      </script>
+    </div>
+  </div>
+  <p class="h4">社群</p>
+  <p class="h5">社群使用率 80.6</p>
+  <p class="wrapper h5">社群平台使用率</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_socialPlatformUsageRate"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_socialPlatformUsageRate').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Facebook','Instagram','Twitter','微博','Google+','LinkedIn'],
+            datasets: [
+                {
+                  label: '使用率',
+                  data: [98.5, 38.8, 5.1, 4.0, 2.8, 0.9],
+                  backgroundColor: '#7DCC4A',
+                  borderColor: '#7DCC4A',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    align:'end',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [{
+                display: false,
+                ticks: {
+                  beginAtZero: true,
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              },],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+  </div>
+  <p class="wrapper h5">社群平台使用行為</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_socialPlatformUsageBehavior"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_socialPlatformUsageBehavior').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'horizontalBar',
+          data: {
+            labels: ['觀看他人貼文／照片／影片','按讚','文字分享自己近況／心情','社交交流／與他人互動','打卡','分享自己拍攝的照片／影片','轉貼分享他人貼文／照片／影片','追蹤粉絲團','追蹤喜愛的藝人／名人動態','看直播','玩遊戲','購物','開直播'],
+            datasets: [
+                {
+                  label: '使用行為',
+                  data: [72.2, 48.0, 39.2, 30.1, 29.2, 25.3, 25.1, 24.2, 24.0, 14.8, 12.9, 9.6, 4.2],
+                  backgroundColor: '#7DCC4A',
+                  borderColor: '#7DCC4A',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    align:'end',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.xLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                display: false,
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true,
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              },],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+  </div>
+  <p class="h4">通訊</p>
+  <p class="h5">通訊使用率 96.8%</p>
+  <p class="wrapper h5">通訊軟體使用率</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_messegeAppUsageRate"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_messegeAppUsageRate').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Line','Facebook Messenger','WeChat','Skype','WhatsApp'],
+            datasets: [
+                {
+                  label: '使用率',
+                  data: [99.2, 26.8, 21.4, 7.2, 4.7],
+                  backgroundColor: '#7DCC4A',
+                  borderColor: '#7DCC4A',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    align:'end',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [{
+                display: false,
+                ticks: {
+                  beginAtZero: true,
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              },],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+  </div>
+  <p class="wrapper h5">通訊軟體使用行為</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_messegeAppUsageBehavior"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_messegeAppUsageBehavior').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'horizontalBar',
+          data: {
+            labels: ['收發文字訊息','收發貼圖','語音通話','收發照片／影片','視訊通話','語音訊息','傳送好友資料','傳送位置'],
+            datasets: [
+                {
+                  label: '使用行為',
+                  data: [95.8, 78.8, 51.6, 49.7, 28.4, 19.0, 17.9, 10.3],
+                  backgroundColor: '#7DCC4A',
+                  borderColor: '#7DCC4A',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    offset: 55,
+                    align:'end',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.xLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                display: false,
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true,
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              },],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+  </div>
+</div>
+<!-- end of Social and Messenging Modal -->
+<div class="wrapperM">
+</div>
+
+<!-- Smart Gadgets Modal -->
+<div class="container">
+  <p class="display-4">智慧</p>
+  <p>
+    投經天住十安的人：灣其處天個就火功強力星眾……的力外媽史！德但會天主的是男意位麼呢麼：信再理，四說。
+  </p>
+  <p class="h4">智慧裝置</p>
+  <p class="h5">智慧穿戴裝置使用率 35.7%</p>
+  <p class="h5">未來有興趣使用 37.8%</p>
+
+  <p class="wrapper h5">穿戴裝置品牌使用率</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_wearableGadgetsUsageRate"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_wearableGadgetsUsageRate').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'horizontalBar',
+          data: {
+            labels: ['小米','Apple','Samsung','Sony','ASUS','華為', 'Garmin', 'LG', 'Acer', '樂心'],
+            datasets: [
+                {
+                  label: '使用率',
+                  data: [49.3, 29.4, 20.9, 12.3, 7.3, 5.9, 5.6, 4.2, 4.0, 3.2],
+                  backgroundColor: '#7DCC4A',
+                  borderColor: '#7DCC4A',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.xLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                ticks: {
+                  beginAtZero: true,
+                },
+
+                display: false,
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [{
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              },],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+  </div>
+
+  <p class="h4">智慧家庭</p>
+  <p class="h5">智慧家庭使用率 30.9%</p>
+  <p class="h5">未來有興趣使用 53.0%</p>
+  <p class="h5">想使用項目：防災防盜、智慧家居（門鎖等）、家庭照護</p>
+  <p class="wrapper h5">智慧家庭品牌使用率</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_smartHomeUsageRate"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_smartHomeUsageRate').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'horizontalBar',
+          data: {
+            labels: ['小米智慧家庭','凱擘大寬頻數位家庭','中華電信智慧家庭','中保無限＋','Google Home','遠傳全能行動管家', '飛利浦Hue', 'Apple HomeKit', '全國電子智能小管家', 'ASUS SmartHome'],
+            datasets: [
+                {
+                  label: '使用率',
+                  data: [35.1, 27.6, 25.1, 16.0, 15.8, 13.6, 10.8, 8.4, 8.2, 8.1],
+                  backgroundColor: '#7DCC4A',
+                  borderColor: '#7DCC4A',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    align: 'center',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.xLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                ticks: {
+                  beginAtZero: true,
+                },
+                display: false,
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [{
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              },],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+  </div>
+
+  <p class="wrapper h5">智慧家庭使用原因</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_smartHomeUsageMotive"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_smartHomeUsageMotive').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'horizontalBar',
+          data: {
+            labels: ['生活更方便','讓居家環境更安全','是未來趨勢','系統容易操作','家中有長輩，想隨時知道狀況','想嘗試新事物','安裝簡單／不須重新裝潢','家中有小孩，想隨時知道狀況'],
+            datasets: [
+                {
+                  label: '使用原因',
+                  data: [43.5, 42.4, 37.2, 34.6, 27.7, 27.3, 26.4, 17.7],
+                  backgroundColor: '#7DCC4A',
+                  borderColor: '#7DCC4A',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.xLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                ticks: {
+                  beginAtZero: true,
+                },
+                display: false,
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [{
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              },],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+  </div>
+</div>
+<!-- end of Smart Gadgets Modal -->
+
+<div class="wrapperM">
+</div>
+
+<!-- Education Modal -->
+<div class="container">
+  <p class="display-4">教育</p>
+  <p>
+    趣越野可美首事，早海國：好布不展月，包單也活斯東，直條科學復算大裡：轉近不的助點的座相定然不雄門戰法發陸內火有來場。
+  </p>
+  <p class="h5">教育應用使用率 14.0%</p>
+  <p class="h5">使用類別：語言44.8%、考試用教材18.1%、烹飪14.9%</p>
+
+  <p class="wrapper h5">使用者輪廓</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_educativeUserProfile"></canvas>
+      <script type="text/javascript">
+        var ctx = document.getElementById('chart_educativeUserProfile').getContext('2d');
+        var chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'bar',
+
+          // The data for our dataset
+          data: {
+              labels: ["", "男性", "女性", "", "12-19歲", "20-29歲", "30-39歲", "40-49歲", "50-59歲", "60歲以上",""],
+              datasets: [{
+                  label: "使用率",
+                  borderColor: '#7DCC4A',
+                  backgroundColor: '#7DCC4A',
+                  data: [, 12.9, 15.0, , 21.8, 12.9, 13.1, 12.5, 15.0, 10.9,,],
+              }, ]
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            tooltips: {
+              mode:'index',
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            legend: {
+              labels: {
+                usePointStyle: true,
+              }
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [{
+                gridLines: {
+                  display: false,
+                  drawBorder: false
+                },
+                ticks: {
+                  beginAtZero:true,
+                  display: false,
+                }
+              }]
+            },
+            elements: {
+              line: {
+                tension: 0,
+              }
+            },
+            plugins: {
+              datalabels: {
+                display: true,
+                align: 'center',
+                formatter: function(value, context) {
+                  return Math.abs(value) + '%';
+                }
+              }
+            }
+          }
+        });
+      </script>
+    </div>
+  </div>
+</div>
+<!-- end of Education Modal -->
+
+<div class="wrapperM">
+</div>
+
+<!-- Online Game Modal -->
+<div class="container">
+  <p class="display-4">線上遊戲</p>
+  <p>
+    趣越野可美首事，早海國：好布不展月，包單也活斯東，直條科學復算大裡：轉近不的助點的座相定然不雄門戰法發陸內火有來場。
+  </p>
+  <p class="h5">線上遊戲使用率 41.6%</p>
+  <p class="h5">平均每週遊玩 11 小時</p>
+  <div class="wrapper">
+    <p class="wrapper h5">使用的裝置</p>
+    <div class="row justify-content-center my-5 text-center">
+      <div class="col-3">
+        <p>
+          智慧型手機
+        </p>
+      </div>
+      <div class="col-3">
+        <p>
+          桌機／筆電
+        </p>
+      </div>
+      <div class="col-3">
+        <p>
+          平板電腦
+        </p>
+      </div>
+      <div class="col-3">
+        <p>
+          電視遊樂器
+        </p>
+      </div>
+    </div>
+    <div class="row justify-content-center my-5 text-center">
+      <div class="col-3">
+        <img class="img-fluid" src="img/noun_Smartphone_992584.svg" alt="">
+      </div>
+      <div class="col-3">
+        <img class="img-fluid" src="img/noun_Laptop_990835.svg" alt="">
+      </div>
+      <div class="col-3">
+        <img class="img-fluid" src="img/noun_Tablet_992579.svg" alt="">
+      </div>
+      <div class="col-3">
+        <img class="img-fluid" src="img/noun_joystick_1540269.svg" alt="">
+      </div>
+    </div>
+    <div class="row justify-content-center my-5 text-center">
+      <div class="col-3">
+        <p>
+          89.8%
+        </p>
+      </div>
+      <div class="col-3">
+        <p>
+          33.8%
+        </p>
+      </div>
+      <div class="col-3">
+        <p>
+          12.1%
+        </p>
+      </div>
+      <div class="col-3">
+        <p>
+          2.2%
+        </p>
+      </div>
+    </div>
+  </div>
+  <p class="wrapper h5">使用者輪廓</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_onlineGameUserProfile"></canvas>
+      <script type="text/javascript">
+        var ctx = document.getElementById('chart_onlineGameUserProfile').getContext('2d');
+        var chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'bar',
+
+          // The data for our dataset
+          data: {
+              labels: ["", "男性", "女性", "", "12-19歲", "20-29歲", "30-39歲", "40-49歲", "50-59歲", "60歲以上",""],
+              datasets: [{
+                  label: "線上遊戲使用率",
+                  borderColor: '#7DCC4A',
+                  backgroundColor: '#7DCC4A',
+                  data: [, 47.4, 35.7, , 70.3, 55.5, 44.1, 38.6, 27.7, 16.3,,],
+              }, ]
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            tooltips: {
+              mode:'index',
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            legend: {
+              labels: {
+                usePointStyle: true,
+              }
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [{
+                gridLines: {
+                  display: false,
+                  drawBorder: false
+                },
+                ticks: {
+                  beginAtZero:true,
+                  display: false,
+                }
+              }]
+            },
+            elements: {
+              line: {
+                tension: 0,
+              }
+            },
+            plugins: {
+              datalabels: {
+                display: true,
+                align: 'center',
+                formatter: function(value, context) {
+                  return Math.abs(value) + '%';
+                }
+              }
+            }
+          }
+        });
+      </script>
+    </div>
+  </div>
+</div>
+<!-- end of Online Game Modal -->
+
+
+<div class="wrapperM">
+</div>
+
+<!-- E-commerce Modal -->
+<div class="container">
+  <p class="display-4">電子商務</p>
+  <p>
+    趣越野可美首事，早海國：好布不展月，包單也活斯東，直條科學復算大裡：轉近不的助點的座相定然不雄門戰法發陸內火有來場。
+  </p>
+  <p class="h5">電子商務使用率 64.2%</p>
+  <p class="h5">平均每月花費 2418 元</p>
+  <div class="wrapper">
+    <p class="wrapper h5">較常購買產品</p>
+    <div class="row justify-content-center my-5 text-center">
+      <div class="col-3">
+        <p>
+          服裝、配件
+        </p>
+      </div>
+      <div class="col-3">
+        <p>
+          廚具、衛浴、清潔
+        </p>
+      </div>
+      <div class="col-3">
+        <p>
+          食品、飲料、餐券
+        </p>
+      </div>
+    </div>
+    <div class="row justify-content-center my-5 text-center">
+      <div class="col-3">
+        <img class="img-fluid" src="img/noun_Smartphone_992584.svg" alt="">
+      </div>
+      <div class="col-3">
+        <img class="img-fluid" src="img/noun_Laptop_990835.svg" alt="">
+      </div>
+      <div class="col-3">
+        <img class="img-fluid" src="img/noun_Tablet_992579.svg" alt="">
+      </div>
+    </div>
+    <div class="row justify-content-center my-5 text-center">
+      <div class="col-3">
+        <p>
+          445.7%
+        </p>
+      </div>
+      <div class="col-3">
+        <p>
+          25.7%
+        </p>
+      </div>
+      <div class="col-3">
+        <p>
+          21.5%
+        </p>
+      </div>
+    </div>
+  </div>
+  <p class="wrapper h5">使用者輪廓</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_EcUserProfile"></canvas>
+      <script type="text/javascript">
+        var ctx = document.getElementById('chart_EcUserProfile').getContext('2d');
+        var chart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: ["男性", "女性", "", "12-19歲", "20-29歲", "30-39歲", "40-49歲", "50-59歲", "60歲以上"],
+              datasets: [
+                {
+                  label: "平均花費",
+                  type: 'line',
+                  fill: false,
+                  yAxisID: 'y-axis-2',
+                  borderColor: '#FC9127',
+                  backgroundColor: 'rgba(252, 145, 39, 0)',
+                  pointBackgroundColor: '#FC9127',
+                  pointBorderColor: '#FC9127',
+                  pointBorderWidth: 2,
+                  data: [2545, 2311, , 1339, 2606, 2848, 2243, 2304, 2188],
+                  datalabels: {
+                    align: 'top',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '元';
+                    }
+                  }
+                },
+                {
+                  label: "買東西",
+                  borderColor: '#7DCC4A',
+                  backgroundColor: '#7DCC4A',
+                  data: [58.4, 69.5, , 55.0, 51.5, 80.7, 71.4, 48.1, 27.3],
+                  datalabels: {
+                    display:'auto',
+                    color: 'white',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+              },{
+                  label: "賣東西",
+                  borderColor: '#3366CC',
+                  backgroundColor: '#3366CC',
+                  data: [14.7, 14.2, , 8.4, 25.0, 25.8, 12.2, 5.6, 1.2],
+                  datalabels: {
+                    display:'auto',
+                    color: 'white',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+              },]
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            tooltips: {
+              mode:'index',
+              /*callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }*/
+            },
+            legend: {
+              labels: {
+                usePointStyle: true,
+              }
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  type: 'linear',
+                  position: 'left',
+                  id: 'y-axis-1',
+                  ticks: {
+                    beginAtZero: true,
+                    stepValue: 10,
+                    max: 100,
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+            elements: {
+              line: {
+                tension: 0,
+              }
+            },
+          }
+        });
+      </script>
+    </div>
+  </div>
+
+  <div class="row justify-content-center tab-content my-5">
+    <div class="col-12 my-5">
+      <ul class="nav nav-tabs nav-justified">
+        <li class="nav-item linkColor">
+          <div class="nav-link active" href="#ecModels" data-toggle="tab">依經營模式</div>
+        </li>
+        <li class="nav-item linkColor">
+          <div class="nav-link" href="#ecTypes" data-toggle="tab">依業者類型</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-12 tab-pane active" id="ecModels">
+      <!-- EC Models of Taiwan table -->
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th class="align-middle" style=" min-width: 5vw;">經營模式</th>
+              <th class="align-middle">定義</th>
+              <th class="align-middle">代表商家</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="small align-middle" scope="row">B2B</th>
+              <td class="small align-middle">企業與企業之間交易</td>
+              <td class="small align-middle">台灣無</td>
+            </tr>
+            <tr>
+              <th class="small align-middle" scope="row">C2C</th>
+              <td class="small align-middle">消費者與消費者之間交易</td>
+              <td class="small align-middle">Yahoo!拍賣、露天拍賣、蝦皮購物、Pchome商店街個人賣場</td>
+            </tr>
+            <tr>
+              <th class="small align-middle" scope="row">B2C</th>
+              <td class="small align-middle">企業提供給消費者商品或服務的模式</td>
+              <td class="small align-middle">Yahoo!購物中心、momo購物、Pchome購物/24H</td>
+            </tr>
+            <tr>
+              <th class="small align-middle" scope="row">B2B</th>
+              <td class="small align-middle">網路平台招商，提供給供應商平台販售商品或服務</td>
+              <td class="small align-middle">Yahoo!超級商城、momo摩天商城、Pchome商店街開店賣場、蝦皮商城</td>
+            </tr>
+            <tr>
+              <th class="small align-middle" scope="row">O2O</th>
+              <td class="small align-middle">利用線上行銷引導客戶至線下</td>
+              <td class="small align-middle">17 Life、Gomaji</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- end of EC Models of Taiwan table -->
+    </div>
+    <div class="col-12 tab-pane fade in" id="ecTypes">
+      <!-- EC Types of Taiwan table -->
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th class="align-middle" style=" min-width: 5vw;">業者類型</th>
+              <th class="align-middle">代表商家</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="small align-middle" scope="row">台灣原生電商</th>
+              <td class="small align-middle">網路家庭、商店街、東森、夠麻吉、富邦媒體、博客來、Lativ、Pinkoi</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">外商網購平台</td>
+              <td class="small align-middle">Yahoo!拍賣、Yahoo!購物中心、Yahoo!超級商城、樂天（台日合資）、旋轉拍賣（新加坡）、蝦皮購物（新加坡）</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">金融、媒體業者投資平台</td>
+              <td class="small align-middle">momo購物、udn買東西、Treemall、Orenda</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">實體零售業者經營平台</td>
+              <td class="small align-middle">ibon mart、燦坤快3、EcLife良興購物網、家樂福線上購物網</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">電信業者投資平台</td>
+              <td class="small align-middle">Myfone購物、friDay購物</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- end of EC Types of Taiwan table -->
+    </div>
+  </div>
+
+</div>
+<!-- end of E-commerce Modal -->
+
+<div class="wrapperM">
+</div>
+
+<!-- Financial Tech Modal -->
+<div class="container">
+  <p class="display-4">金融科技</p>
+  <p class="h1 font-weight-light">網路銀行</p>
+  <p>
+    趣越野可美首事，早海國：好布不展月，包單也活斯東，直條科學復算大裡：轉近不的助點的座相定然不雄門戰法發陸內火有來場。
+  </p>
+  <p class="h5">網路銀行使用率 35.6%</p>
+  <p class="h5">平均每月花費 2418 元</p>
+  <p class="wrapper h5">使用者輪廓</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_onlineBankingUserProfile"></canvas>
+      <script type="text/javascript">
+        var ctx = document.getElementById('chart_onlineBankingUserProfile').getContext('2d');
+        var chart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: ["男性", "女性", "", "12-19歲", "20-29歲", "30-39歲", "40-49歲", "50-59歲", "60歲以上"],
+              datasets: [
+                {
+                  label: "網銀使用率",
+                  borderColor: '#7DCC4A',
+                  backgroundColor: '#7DCC4A',
+                  data: [33.1, 38.1, , 2.6, 49.0, 52.7, 42.9, 25.4, 18.3],
+                  datalabels: {
+                    display:'auto',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+              },]
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            tooltips: {
+              mode:'index',
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            legend: {
+              labels: {
+                usePointStyle: true,
+              }
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  type: 'linear',
+                  position: 'left',
+                  id: 'y-axis-1',
+                  ticks: {
+                    beginAtZero: true,
+                    stepValue: 10,
+                    max: 100,
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+            elements: {
+              line: {
+                tension: 0,
+              }
+            },
+          }
+        });
+      </script>
+    </div>
+  </div>
+  <div class="row justify-content-center tab-content my-5">
+    <div class="col-12 my-5">
+      <p class="wrapper h5">網路銀行品牌市占</p>
+      <ul class="nav nav-tabs nav-justified">
+        <li class="nav-item linkColor">
+          <div class="nav-link active" href="#onlineBankingWebsites" data-toggle="tab">網頁版</div>
+        </li>
+        <li class="nav-item linkColor">
+          <div class="nav-link" href="#onlineBankingApp" data-toggle="tab">App版</div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-12 tab-pane active" id="onlineBankingWebsites">
+      <!-- Online Banking Websites table -->
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th class="align-middle text-center" colspan="2">網頁版使用排名</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="small align-middle" scope="row">1</th>
+              <td class="small align-middle">中國信託商業銀行</td>
+            </tr>
+            <tr>
+              <th class="small align-middle" scope="row">2</th>
+              <td class="small align-middle">國泰世華銀行</td>
+            </tr>
+            <tr>
+              <th class="small align-middle" scope="row">3</th>
+              <td class="small align-middle">玉山商業銀行</td>
+            </tr>
+            <tr>
+              <th class="small align-middle" scope="row">4</th>
+              <td class="small align-middle">郵局</td>
+            </tr>
+            <tr>
+              <th class="small align-middle" scope="row">5</th>
+              <td class="small align-middle">台新國際商業銀行</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- end of Online Banking Websites table -->
+    </div>
+    <div class="col-12 tab-pane fade in" id="onlineBankingApp">
+      <!-- Online Banking App table -->
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th class="align-middle text-center" colspan="2">App版使用排名</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="small align-middle" scope="row">1</th>
+            <td class="small align-middle">中信行動達人</td>
+          </tr>
+          <tr>
+            <th class="small align-middle" scope="row">2</th>
+            <td class="small align-middle">國泰世華行動銀行</td>
+          </tr>
+          <tr>
+            <th class="small align-middle" scope="row">3</th>
+            <td class="small align-middle">玉山行動銀行</td>
+          </tr>
+          <tr>
+            <th class="small align-middle" scope="row">4</th>
+            <td class="small align-middle">台新國際商業銀行</td>
+          </tr>
+          <tr>
+            <th class="small align-middle" scope="row">5</th>
+            <td class="small align-middle">e動郵局</td>
+          </tr>
+        </tbody>
+      </table>
+        <!-- end of Online Banking App table -->
+    </div>
+  </div>
+  <p class="wrapper h5">網路銀行使用原因</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_onlineBankingUsageMotive"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_onlineBankingUsageMotive').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'horizontalBar',
+          data: {
+            labels: ['方便快速','介面操作簡單','即時掌握投資理財訊息','臨櫃等待時間過久','大家都在用','有額外優惠','銀行分行據點少'],
+            datasets: [
+                {
+                  label: '使用原因',
+                  data: [73.1, 44.0, 33.8, 19.5, 19.2, 14.7, 11.3],
+                  backgroundColor: '#7DCC4A',
+                  borderColor: '#7DCC4A',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.xLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                ticks: {
+                  beginAtZero: true,
+                },
+                display: false,
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [{
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              },],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+  </div>
+  <div class="wrapper">
+    <p class="wrapper h5">網路銀行常用服務</p>
+    <div class="row justify-content-center my-5 text-center">
+      <div class="col-3">
+        <p>
+          轉帳
+        </p>
+      </div>
+      <div class="col-3">
+        <p>
+          帳戶查詢
+        </p>
+      </div>
+      <div class="col-3">
+        <p>
+          繳費
+        </p>
+      </div>
+    </div>
+    <div class="row justify-content-center my-5 text-center">
+      <div class="col-3">
+        <img class="img-fluid" src="img/noun_Money_operations_1555262.svg" alt="">
+      </div>
+      <div class="col-3">
+        <img class="img-fluid" src="img/noun_business_analytics_1555226.svg" alt="">
+      </div>
+      <div class="col-3">
+        <img class="img-fluid" src="img/noun_credit_card_purchase_1555305.svg" alt="">
+      </div>
+    </div>
+    <div class="row justify-content-center my-5 text-center">
+      <div class="col-3">
+        <p>
+          73.4%
+        </p>
+      </div>
+      <div class="col-3">
+        <p>
+          48.9%
+        </p>
+      </div>
+      <div class="col-3">
+        <p>
+          18.0%
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <p class="h1 font-weight-light">行動支付</p>
+  <p>
+    趣越野可美首事，早海國：好布不展月，包單也活斯東，直條科學復算大裡：轉近不的助點的座相定然不雄門戰法發陸內火有來場。
+  </p>
+  <p class="h5">行動支付使用率 16.3%</p>
+  <p class="h5">平均每月行動支付 2993 元</p>
+  <p class="h5">平均使用 1.47 個支付App</p>
+  <p class="h5">行動支付在所有消費當中，佔比平均為 36.7%</p>
+  <p class="wrapper h5">使用者輪廓</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_mobilePaymentUserProfile"></canvas>
+      <script type="text/javascript">
+        var ctx = document.getElementById('chart_mobilePaymentUserProfile').getContext('2d');
+        var chart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: ["男性", "女性", "", "12-19歲", "20-29歲", "30-39歲", "40-49歲", "50-59歲", "60歲以上"],
+              datasets: [
+                {
+                  label: "行動支付使用率",
+                  borderColor: '#7DCC4A',
+                  backgroundColor: '#7DCC4A',
+                  data: [17.0, 15.6, , 6.2, 23.4, 28.1, 18.6, 7.9, 3.0],
+                  datalabels: {
+                    display:'auto',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+              },]
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            tooltips: {
+              mode:'index',
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            legend: {
+              labels: {
+                usePointStyle: true,
+              }
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  type: 'linear',
+                  position: 'left',
+                  id: 'y-axis-1',
+                  ticks: {
+                    beginAtZero: true,
+                    stepValue: 10,
+                    max: 100,
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+            elements: {
+              line: {
+                tension: 0,
+              }
+            },
+          }
+        });
+      </script>
+    </div>
+  </div>
+  <p class="wrapper h5">使用行動支付困擾</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_mobilePaymentUsageTroubles"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_mobilePaymentUsageTroubles').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'horizontalBar',
+          data: {
+            labels: ['習慣消費的通路無法使用','店員對於行動支付結帳不熟悉','不支援自己常用的卡片，無法綁定','認證、辨識支付困難','沒有困擾'],
+            datasets: [
+                {
+                  label: '困擾率',
+                  data: [43.4, 37.1, 29.0, 23.4, 22.4],
+                  backgroundColor: '#7DCC4A',
+                  borderColor: '#7DCC4A',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.xLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                ticks: {
+                  beginAtZero: true,
+                },
+                display: false,
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [{
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              },],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+  </div>
+
+</div>
+<!-- end of Financial Tech Modal -->
+
+<div class="wrapperM">
+</div>
+
+<!-- Sharing Economy Modal -->
+<div class="container">
+  <p class="display-4">共享經濟</p>
+  <p>
+    趣越野可美首事，早海國：好布不展月，包單也活斯東，直條科學復算大裡：轉近不的助點的座相定然不雄門戰法發陸內火有來場。
+  </p>
+  <p class="h5">聽過共享經濟 85.8%</p>
+  <p class="wrapper h5">知曉度與使用率</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_sharingEconomyAwareness"></canvas>
+      <script type="text/javascript">
+      var ctx = $("#chart_sharingEconomyAwareness");
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ["January;2015", "February;2015", "March;2015", "January;2016", "February;2016", "March;2016"],
+          datasets: [{
+            label: '# of Votes',
+            xAxisID:'xAxis1',
+            data: [12, 19, 3, 5, 2, 3]
+          }]
+        },
+        options:{
+          scales:{
+            xAxes:[
+              {
+                id:'xAxis1',
+                type:"category",
+                ticks:{
+                  callback:function(label){
+                    var month = label.split(";")[0];
+                    var year = label.split(";")[1];
+                    return month;
+                  }
+                }
+              },
+              {
+                id:'xAxis2',
+                type:"category",
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false, // only want the grid lines for one axis to show up
+                },
+                ticks:{
+                  callback:function(label){
+                    var month = label.split(";")[0];
+                    var year = label.split(";")[1];
+                    if(month === "February"){
+                      return year;
+                    }else{
+                      return "";
+                    }
+                  }
+                }
+              }],
+            yAxes:[{
+              gridLines: {
+                display: false,
+                drawOnChartArea: false,
+              },
+
+              ticks:{
+                beginAtZero:true
+              }
+            }]
+          }
+        }
+      });
+      </script>
+    </div>
+  </div>
+
+  <div class="row justify-content-center tab-content my-5">
+    <div class="col-12 my-5">
+      <ul class="nav nav-tabs nav-justified">
+        <li class="nav-item linkColor">
+          <div class="nav-link active" href="#ecModels" data-toggle="tab">依經營模式</div>
+        </li>
+        <li class="nav-item linkColor">
+          <div class="nav-link" href="#ecTypes" data-toggle="tab">依業者類型</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-12 tab-pane active" id="ecModels">
+      <!-- EC Models of Taiwan table -->
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th class="align-middle" style=" min-width: 5vw;">經營模式</th>
+              <th class="align-middle">定義</th>
+              <th class="align-middle">代表商家</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="small align-middle" scope="row">B2B</th>
+              <td class="small align-middle">企業與企業之間交易</td>
+              <td class="small align-middle">台灣無</td>
+            </tr>
+            <tr>
+              <th class="small align-middle" scope="row">C2C</th>
+              <td class="small align-middle">消費者與消費者之間交易</td>
+              <td class="small align-middle">Yahoo!拍賣、露天拍賣、蝦皮購物、Pchome商店街個人賣場</td>
+            </tr>
+            <tr>
+              <th class="small align-middle" scope="row">B2C</th>
+              <td class="small align-middle">企業提供給消費者商品或服務的模式</td>
+              <td class="small align-middle">Yahoo!購物中心、momo購物、Pchome購物/24H</td>
+            </tr>
+            <tr>
+              <th class="small align-middle" scope="row">B2B</th>
+              <td class="small align-middle">網路平台招商，提供給供應商平台販售商品或服務</td>
+              <td class="small align-middle">Yahoo!超級商城、momo摩天商城、Pchome商店街開店賣場、蝦皮商城</td>
+            </tr>
+            <tr>
+              <th class="small align-middle" scope="row">O2O</th>
+              <td class="small align-middle">利用線上行銷引導客戶至線下</td>
+              <td class="small align-middle">17 Life、Gomaji</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- end of EC Models of Taiwan table -->
+    </div>
+    <div class="col-12 tab-pane fade in" id="ecTypes">
+      <!-- EC Types of Taiwan table -->
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th class="align-middle" style=" min-width: 5vw;">業者類型</th>
+              <th class="align-middle">代表商家</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="small align-middle" scope="row">台灣原生電商</th>
+              <td class="small align-middle">網路家庭、商店街、東森、夠麻吉、富邦媒體、博客來、Lativ、Pinkoi</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">外商網購平台</td>
+              <td class="small align-middle">Yahoo!拍賣、Yahoo!購物中心、Yahoo!超級商城、樂天（台日合資）、旋轉拍賣（新加坡）、蝦皮購物（新加坡）</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">金融、媒體業者投資平台</td>
+              <td class="small align-middle">momo購物、udn買東西、Treemall、Orenda</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">實體零售業者經營平台</td>
+              <td class="small align-middle">ibon mart、燦坤快3、EcLife良興購物網、家樂福線上購物網</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">電信業者投資平台</td>
+              <td class="small align-middle">Myfone購物、friDay購物</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- end of EC Types of Taiwan table -->
+    </div>
+  </div>
+
+</div>
+<!-- end of Sharing Economy Modal -->
 
 
 
