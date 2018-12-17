@@ -10,7 +10,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-  <script src='https://www.gstatic.com/charts/loader.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+  <!--script src='https://www.gstatic.com/charts/loader.js'></script-->
 
 
 
@@ -26,6 +27,11 @@
   <link rel="shortcut icon" href="voteFavicon.ico" type="image/x-icon">
   <link rel="bookmark" href="#"/>
 
+  <!-- Facebook Pixel Code -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+  <!-- Google Tag Manager -->
 
   <!-- scrolling -->
 <script>
@@ -50,6 +56,18 @@
   });
 });
 </script>
+
+<!-- adobe typekit-->
+<script>
+ (function(d) {
+   var config = {
+     kitId: 'hct8abz',
+     scriptTimeout: 3000,
+     async: true
+   },
+   h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+ })(document);
+</script>
 </head>
 
 <style>
@@ -73,10 +91,13 @@ html {
 }
 body {
   position: relative;
+  font-family:"source-han-sans-traditional",sans-serif;
 }
+
 iframe {
   z-index: 990;
 }
+
 
 /* individual styles */
 .linkColor {
@@ -85,7 +106,7 @@ iframe {
   cursor: pointer;
 }
 .linkColor:hover {
-  color:#3a3a3a;
+  color:#606060;
   text-decoration: none;
   cursor: pointer;
 }
@@ -120,24 +141,24 @@ iframe {
   cursor: pointer;
 }
 
-@supports ((position: -webkit-sticky) or (position: sticky)) {
-  .sticky-notTop {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 1010;
-  }
-}
-
 .bgOpen {
   background-color: #3366CC;
-  /*background-image: url(img/coverBG2.png);*/
+  background: url('img/coverBG.png') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .bgOpenBtn {
-  background-color: #FFF;
-  color: black;
-  border: solid 1px black;
+  background-color: rgba(3, 78, 162, 1);
+  color: #FFF;
+  border: solid 1px white;
+}
+.bgOpenBtn:hover {
+  text-decoration: none;
+  color: #FFF;
+  background-color: #046adc;
 }
 
 .lineHeight {
@@ -159,7 +180,37 @@ iframe {
   box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
 }
 
+/* themecolors */
+.darkBlue {
+  background-color: rgba(3, 78, 162, 1);
+}
+.mainNavy {
+  background-color: #3366CC;
+}
+.mainOrange {
+  background-color: #FC9127;
+}
 
+.nav-link {
+  color: #3366cc;
+  border: solid 1px #3366cc;
+  cursor:pointer;
+}
+
+.nav-link.active {
+  background-color: #3366CC;
+  border: solid 1px #3366cc;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0.25rem;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #3366cc;
+}
 /* icon font */
 .btnWrapper {
   padding-top: .05em;
@@ -174,22 +225,35 @@ iframe {
 /* Lineup of Wrappers */
 .wrapper {
   padding-top: 3em;
+  padding-bottom: 3em;
 }
 .wrapperM {
   padding-top: 4em;
+  padding-bottom: 4em;
 }
 .wrapperL {
   padding-top: 5em;
+  padding-bottom: 5em;
 }
 .wrapperXL{
-  padding-top: 5em;
-  padding-bottom: 5em;
+  padding-top: 6em;
+  padding-bottom: 6em;
 }
 .wrapperCarousel{
   padding-top: 5em;
   padding-bottom: 8em;
 }
 
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sticky-notTop {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    margin-right: 55px;
+    padding-top: 17px;
+    z-index: 1043;
+  }
+}
 
 /* Full Screen Menu */
 .navBar-fixed-top {
@@ -198,6 +262,7 @@ iframe {
   right: 0;
   left: 0;
   z-index: 1042;
+  background-color: rgba(3, 78, 162, 1);
 }
 
 .overlay {
@@ -207,7 +272,7 @@ iframe {
   z-index: 1041;
   top: 0;
   left: 0;
-  background-color: rgba(255,255,255, 0.9);
+  background-color: #3366CC;
   overflow-x: hidden;
   transition: 0.5s;
 }
@@ -218,6 +283,18 @@ iframe {
   width: 100%;
   text-align: center;
 }
+
+.nav-button{position:relative; z-index:1060; border:solid 1px; border-color: rgba(0, 0, 0, 0); height:42px; display:block; width:50px; padding:12px; }
+.nav-button #nav-icon3{width:24px;height:22px;display:inline-block;position:relative;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);-webkit-transition:.5s ease-in-out;-moz-transition:.5s ease-in-out;-o-transition:.5s ease-in-out;transition:.5s ease-in-out;cursor:pointer;}
+.nav-button #nav-icon3 span{display:block;position:absolute;height:3px;width:100%;background:#FFF;opacity:1;left:0;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);-webkit-transition:.25s ease-in-out;-moz-transition:.25s ease-in-out;-o-transition:.25s ease-in-out;transition:.25s ease-in-out}
+.nav-button #nav-icon3 span:nth-child(1){top:0}
+.nav-button #nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3){top:7px}
+.nav-button #nav-icon3 span:nth-child(4){top:14px}
+.nav-open #nav-icon3 span:nth-child(1){top:9px;width:0;left:50%}
+.nav-open #nav-icon3 span:nth-child(2){-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg)}
+.nav-open #nav-icon3 span:nth-child(3){-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg)}
+.nav-open #nav-icon3 span:nth-child(4){top:9px;width:0;left:50%}
+
 
 /* hover effect */
 .hoverLarge {
@@ -240,9 +317,19 @@ iframe {
   }
   .wrapper {
     padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  .wrapperM {
+    padding-top: 2em;
+    padding-bottom: 2em;
   }
   .wrapperL {
     padding-top: 5em;
+    padding-bottom: 2em;
+  }
+  .wrapperXL{
+    padding-top: 4em;
+    padding-bottom: 4em;
   }
   .wrapperCarousel{
     padding-top: 3em;
@@ -254,27 +341,74 @@ iframe {
 </style>
 
 <body data-spy="scroll" data-target="#navScrollSpy">
+  <!-- nav MENU bar -->
+  <header class="">
+    <nav id="navScrollSpy" class="navbar navbar-light navBar-fixed-top">
+      <a href="#goTop" class="navbar-brand text-white"><!--img src="img/twnicLogo.png" alt="" style="height:40px;"-->TWNIC</a>
+      <a class="nav-button mr-0" data-toggle="modal" data-target="#myNav" onclick="openNav()"><span id="nav-icon3"><span></span><span></span><span></span><span></span></span></a>
+    </nav>
+    <script>
+      $(document).ready(function(){
+        $('.nav-button').bind("click",function(){
+          $('body').toggleClass('nav-open');
+        });
+        $('.overlay').bind("click", function(){
+          $('body').toggleClass('nav-open');
+        });
+      });
+    </script>
+    <script>
+      function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+      }
+      function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+      }
+    </script>
+      <!-- fullscreen burger -->
+      <div id="myNav" class="overlay">
+        <div class="overlay-content">
+          <ul class="list-unstyled">
+            <li class="my-3">
+              <a class="linkColor h1" href="#overall" data-target="#overall" onclick="closeNav()" data-dismiss="modal" aria-label="close">整體網路使用現況</a>
+            </li>
+            <li class="my-3">
+              <a class="linkColor h1" href="#DNIP" data-target="#DNIP" onclick="closeNav()" data-dismiss="modal" aria-label="close">網路基礎建設概要</a>
+            </li>
+            <li class="my-3">
+              <a class="linkColor h1" href="#spotlights" data-target="#spotlights" onclick="closeNav()" data-dismiss="modal" aria-label="close">前瞻亮點趨勢分析</a>
+            </li>
+            <li class="my-3">
+              <a class="linkColor h1" href="#appliedTech" data-target="#appliedTech" onclick="closeNav()" data-dismiss="modal" aria-label="close">網路服務應用概況</a>
+            </li>
+            <li class="my-3">
+              <a class="linkColor h1" href="#comparison" data-target="#comparison" onclick="closeNav()" data-dismiss="modal" aria-label="close">網國際情勢討論比較</a>
+            </li>
+            <li class="my-3">
+              <a class="linkColor h1" href="#downloadSignIn" data-toggle="modal" data-target="#downloadSignIn">下載完整報告</a>
+            </li>
+            <li class="my-3">
+              <a class="btn btn-dark btn-lg h6 py-2 mt-5 fb-xfbml-parse-ignore" href="https://www.facebook.com/sharer/sharer.php?u=http://beamedia.co/vote/2018%2F&amp;src=sdkpreparse" target="_blank"><span class="fab fa-lg fa-facebook-square"></span> 分享到臉書</a>
+            </li>
+            <li class="my-3">
+              <a class="btn btn-dark btn-lg h6 py-2 mt-2" href="https://social-plugins.line.me/lineit/share?url=http://www.beamedia.co/vote/2018?utm_source=LINEshareBtn&utm_medium=line" target="_blank"><span class="fab fa-lg fa-line"></span> 分享到LINE</a>
+            </li>
+          </ul>
 
-<!-- adobe typekit-->
-<script>
-  (function(d) {
-    var config = {
-      kitId: 'tfk2lym',
-      scriptTimeout: 3000,
-      async: true
-    },
-    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-  })(document);
-</script>
+        </div>
+      </div>
+
+      <!-- fullscreen burger -->
+
+  </header>
+  <!-- end of nav MENU bar -->
 
 
 <!-- logoType -->
 <div class="" id="goTop">
-  <div class="row justify-content-center mx-0 wrapperXL bgOpen">
-    <div class="col-12 my-2">
-      <a href="#"  data-toggle="modal" data-target="#aboutUS" title="關於這個網站">
-        <img class="img-fluid" src="img/coverBG2.png" alt="">
-      </a>
+  <div class="row justify-content-center mx-0 wrapperL bgOpen">
+    <div class="col-12 col-md-11">
+      <img class="img-fluid" src="img/coverPic.png" alt="">
     </div>
   </div>
 </div>
@@ -282,76 +416,41 @@ iframe {
 
 <!-- opening selections -->
 <div class="container-fluid">
-  <div class="row lineHeight">
-    <div class="col-4 text-center bgOpenBtn" href="#overall">
-      <p class="display-4">
-        整體網路<br>使用現況
+  <div class="row">
+    <a class="col-4 text-center bgOpenBtn" href="#comparison">
+      <p class="h5 my-5">
+        整體網路使用現況
       </p>
-    </div>
-    <div class="col-4 text-center bgOpenBtn" href="#DNIP">
-      <p class="display-4">
-        網路基礎<br>建設概要
+    </a>
+    <a class="col-4 text-center bgOpenBtn" href="#comparison">
+      <p class="h5 my-5">
+        網路基礎建設概要
       </p>
-    </div>
-    <div class="col-4 text-center bgOpenBtn" href="#spotlights">
-      <p class="display-4">
-        前瞻亮點<br>趨勢分析
+    </a>
+    <a class="col-4 text-center bgOpenBtn" href="#comparison">
+      <p class="h5 my-5">
+        前瞻亮點趨勢分析
       </p>
-    </div>
-    <div class="col-4 text-center bgOpenBtn" href="#appliedTech">
-      <p class="display-4">
-        網路服務<br>應用概況
+    </a>
+    <a class="col-4 text-center bgOpenBtn" href="#comparison">
+      <p class="h5 my-5">
+        網路服務應用概況
       </p>
-    </div>
-    <div class="col-4 text-center bgOpenBtn" href="#comparison">
-      <p class="display-4">
-        國際情勢<br>討論比較
+    </a>
+    <a class="col-4 text-center bgOpenBtn" href="#comparison">
+      <p class="h5 my-5">
+        國際情勢討論比較
       </p>
-    </div>
+    </a>
     <div class="col-4 text-center bgOpenBtn" data-toggle="modal" data-target="#downloadSignIn">
-      <p class="display-4">
-        下載<br>完整報告
+      <p class="h5 my-5">
+        下載完整報告
       </p>
     </div>
   </div>
 </div>
 
 <!-- end of opening selections -->
-
-
-<!-- nav MENU bar -->
-<header class="fixed-top">
-  <nav id="navScrollSpy" class="navbar navbar-expand-lg navbar-light bg-light">
-    <a href="#goTop" class="navbar-brand"><img src="img/twnicLogo.png" alt="" style="height:40px;"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBurger" aria-controls="navBurger" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon text-white" ></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navBurger">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link btn btn-info text-white" href="#overall">整體網路使用現況</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn btn-secondary text-white" href="#DNIP">網路基礎建設概要</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn btn-warning text-white" href="#spotlights">前瞻亮點趨勢分析</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn btn-danger text-white" href="#appliedTech">網路服務應用概況</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn btn-success text-white" href="#comparison">國際情勢討論比較</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn btn-black text-white" role="button" type="button" data-toggle="modal" data-target="#downloadSignIn">下載完整報告</a>
-          </li>
-
-        </ul>
-      </div>
-  </nav>
-</header>
-<!-- end of nav MENU bar -->
 
 <!-- Download modal -->
 <div class="modal fade" id="downloadSignIn" tabindex="-1" role="dialog" aria-hidden="true">
@@ -399,10 +498,17 @@ iframe {
 </div>
 <!-- end of Download modal -->
 
-
-<div class="container">
+<!-- forewords -->
+<div class="container-fluid">
+  <div class="row justify-content-center wrapperM">
+    <div class="col-9">
+      <p class="h6">
+        計公為能。市時裡幾校次河極除為們子各所？民中不我了紅；直灣策感小水氣際定讓盡中來面克助門弟德也代何的使能壓民也電能外結部學，目陸雨強他相，算看過式去商成生。客種文需酒的了，河如告第不密有道。部好局有作經……統舞統化的然思，益其辦離十友樹利飛那我解等一與用強沒太日外子之學女和然一：環歡根著度細企的對斷形。提舞開：照像大麼看風子後也年人想食士場工媽線連，樣高量。影回究大心里？
+      </p>
+    </div>
+  </div>
   <div class="text-center my-5">
-    <button class="btn btn-dark" type="button" data-toggle="modal" data-target="#researchMethodology">調查方法概述</button>
+    <button class="btn mainOrange text-white" type="button" data-toggle="modal" data-target="#researchMethodology">調查方法概述</button>
   </div>
 </div>
 
@@ -498,32 +604,207 @@ iframe {
   </div>
 </div>
 <!-- end of Research Methodology modal -->
-
+<!-- end of forewords-->
 
 <!-- section 1-->
-<div class="container">
+<div class="container-fluid">
   <div  id="overall">
-    <p class="wrapper sticky-notTop h2 bg-white" data-toggle="tab">整體網路使用現況</p>
-    <p class="wrapper h3">個人上網率</p>
-    <div class="">
-      <p class="h4">整體概況</p>
-      <p class="h5">上網率 82.1, 1738萬人</p>
-      <p class="h5">平均每日上網：4.3 小時</p>
-      <p class="h5">最常連網方式：行動電信網路 65.9%、ADSL 24％</p>
-      <p class="h5">最常使用裝置：手機 96.8%、桌機/筆電 66.4%</p>
-      <p class="h5">主要上網地點：家中 94.1%、工作場所/公司 38.8%</p>
-    </div>
-    <div class="">
-      <p class="h4">上網方式</p>
-      <p class="h5">無線上網率 81.2%，1718萬人</p>
-      <p class="h5">行動上網率 77.3%，1637萬人，平均每月花費2093元</p>
-      <p class="h5">無線區域上網率 37.0%，784萬人</p>
-    </div>
-    <div class="row justify-content-center wrapper">
-      <div class="col-12">
-        <p class="h4">網民輪廓</p>
+    <p class="sticky-notTop h5 text-right text-white">
+      整體網路使用現況
+    </p>
+    <div class="row justify-content-center mainNavy">
+      <div class="col-8 wrapperXL">
+        <p class="h3 text-center text-white">
+          整體網路使用現況
+        </p>
       </div>
-      <div class="col-12">
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-8 wrapperXL">
+        <p class="h4 text-center">
+          個人上網概況
+        </p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-4 text-center">
+        <p>上網率</p>
+        <canvas id="chart_perConnectedRatePie"></canvas>
+        <script type="text/javascript">
+          var ctx = document.getElementById('chart_perConnectedRatePie').getContext('2d');
+          var myDoghnutChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+              datasets: [{
+                data:[82.1, 17.9],
+                backgroundColor: [
+                  'rgba(51, 102, 204, 1)',
+                  'grey',
+                ],
+              }],
+              labels: ['「上網率', ''],
+            },
+            options: {
+              legend: {
+                display: false,
+              },
+              animation: {
+                duration: 0
+              },
+              plugins: {
+                datalabels: {
+                  color: 'white',
+                  formatter: function(value, context) {
+                    return Math.abs(value) + '%';
+                  }
+                }
+              },
+            }
+          });
+        </script>
+        <p class="my-3">1,738萬人</p>
+      </div>
+      <div class="col-md-4 mt-5">
+        <p class="h6">平均每日上網：4.3 小時</p>
+        <p class="h6">最常連網方式：行動電信網路 65.9%、ADSL 24％</p>
+        <p class="h6">最常使用裝置：手機 96.8%、桌機/筆電 66.4%</p>
+        <p class="h6">主要上網地點：家中 94.1%、工作場所/公司 38.8%</p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-8 wrapperXL">
+        <p class="h4 text-center">
+          個人上網方式
+        </p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-3 text-center">
+        <p>無線上網率</p>
+        <canvas id="chart_perWirelessConnectedRatePie"></canvas>
+        <script type="text/javascript">
+          var ctx = document.getElementById('chart_perWirelessConnectedRatePie').getContext('2d');
+          var myDoghnutChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+              datasets: [{
+                data:[81.2, 18.8],
+                backgroundColor: [
+                  'rgba(51, 102, 204, 1)',
+                  'grey',
+                ],
+              }],
+              labels: ['「無線上網率', ''],
+            },
+            options: {
+              responsive:true,
+              legend: {
+                display: false,
+              },
+              animation: {
+                duration: 0
+              },
+              plugins: {
+                datalabels: {
+                  color: 'white',
+                  formatter: function(value, context) {
+                    return Math.abs(value) + '%';
+                  }
+                }
+              },
+            }
+          });
+        </script>
+        <p class="my-3">1718萬人</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <p>行動上網率</p>
+        <canvas id="chart_perMobileConnectedRatePie"></canvas>
+        <script type="text/javascript">
+          var ctx = document.getElementById('chart_perMobileConnectedRatePie').getContext('2d');
+          var myDoghnutChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+              datasets: [{
+                data:[82.1, 17.9],
+                backgroundColor: [
+                  'rgba(51, 102, 204, 1)',
+                  'grey',
+                ],
+              }],
+              labels: ['「上網率', ''],
+            },
+            options: {
+              responsive:true,
+              legend: {
+                display: false,
+              },
+              animation: {
+                duration: 0
+              },
+              plugins: {
+                datalabels: {
+                  color: 'white',
+                  formatter: function(value, context) {
+                    return Math.abs(value) + '%';
+                  }
+                }
+              },
+            }
+          });
+        </script>
+        <p class="my-3">1,637萬人</p>
+        <p class="my-3">平均花費2,093元</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <p>無線區域上網率</p>
+        <canvas id="chart_perWirelessLANConnectedRatePie"></canvas>
+        <script type="text/javascript">
+          var ctx = document.getElementById('chart_perWirelessLANConnectedRatePie').getContext('2d');
+          var myDoghnutChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+              datasets: [{
+                data:[37.0, 63.0],
+                backgroundColor: [
+                  'rgba(51, 102, 204, 1)',
+                  'grey',
+                ],
+              }],
+              labels: ['「上網率', ''],
+            },
+            options: {
+              responsive:true,
+              legend: {
+                display: false,
+              },
+              animation: {
+                duration: 0
+              },
+              plugins: {
+                datalabels: {
+                  color: 'white',
+                  formatter: function(value, context) {
+                    return Math.abs(value) + '%';
+                  }
+                }
+              },
+            }
+          });
+        </script>
+        <p class="my-3">784萬人</p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-8  text-center wrapperXL">
+        <p class="h4">
+          網民輪廓
+        </p>
+        <p class="h6 mt-3">
+          不同性別之上網率差異小，12歲至49歲上網率皆超過九成
+        </p>
+      </div>
+      <div class="col-8">
         <canvas id="chart_perProfile"></canvas>
         <script type="text/javascript">
           var ctx = document.getElementById('chart_perProfile').getContext('2d');
@@ -576,6 +857,7 @@ iframe {
                 },]
             },
             options: {
+              responsive: true,
               animation: {
                 duration: 0
               },
@@ -584,11 +866,10 @@ iframe {
                 callbacks: {
                   label: function(tooltipItem, data) {
                     var label = data.datasets[tooltipItem.datasetIndex].label || '';
-
                     if (label) {
                         label += ': ';
                     }
-                    label += Math.round(tooltipItem.yLabel * 100) / 100;
+                    label += Math.abs(tooltipItem.yLabel * 100) / 100;
                     return label + '%';
                   }
                 }
@@ -629,19 +910,13 @@ iframe {
         </script>
       </div>
     </div>
-
-    <div class="wrapper">
-      <p>
-        校法路要還消：有不著時老，別所斯下是生山入行呢而時會把現校改布進一如與狀王找單一？的傳度適！
-      </p>
-      <p>
-        用列花不好能體接熱方持的們我新工企人事規過我無……著道境至進質一沒媽消說簡時一們王是車心慢變現任過運環出樣民商！委小我中這會老難！收多增，計找元，下們他臺星白知，也愛叫題地裡行為靜也發口時下約叫，你音提內快已然火，些小的，住成說本我東友死中給自二器是？其我況子班怕舉。
-      </p>
-    </div>
-
-    <p class="wrapper h4">個人曾經上網比例與人數</p>
-    <div class="row justify-content-center my-5">
-      <div class="col-12">
+    <div class="row justify-content-center">
+      <div class="col-8 wrapperXL">
+        <p class="h4 text-center">
+          個人曾經上網比例與人數
+        </p>
+      </div>
+      <div class="col-8">
         <canvas id="chart_perConnected"></canvas>
         <script>
           var ctx = document.getElementById('chart_perConnected').getContext('2d');
@@ -750,249 +1025,269 @@ iframe {
         </script>
       </div>
     </div>
+    <div class="row justify-content-center">
+      <div class="col-8 wrapperXL">
+        <p class="h4 text-center">
+          近半年使用行動/無線區域網路上網
+        </p>
+        <p class="mt-3">
+          12歲以上近半年使用行動上網人數增加較多，而無線區域網路使用率則下降一成五，可能與行動電信業者的降價上網吃到飽有關。
+        </p>
+      </div>
+      <div class="col-12">
+        <div class="my-5">
+          <ul class="nav nav-pills nav-justified">
+            <li class="nav-item">
+              <div class="nav-link active" href="#mobileNet" data-toggle="tab">行動上網</div>
+            </li>
+            <li class="nav-item">
+              <div class="nav-link" href="#wirelessLAN" data-toggle="tab">無線區域上網</div>
+            </li>
+          </ul>
+        </div>
+        <div class="row justify-content-center tab-content my-5">
+          <div class="col-12 tab-pane active" id="mobileNet">
+            <canvas id="chart_perConnectedMobileNet"></canvas>
+            <script>
+              var ctx = document.getElementById('chart_perConnectedMobileNet').getContext('2d');
+              var mixedChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                  datasets: [
+                    {
+                        label: '曾上網率',
+                        data: [7.8, 10.9, 13.1, 25.9, 51.1, 47.3, 60.1, 67.3, 69.3, 76.9],
+                        // Changes this dataset to become a line
+                        type: 'line',
+                        yAxisID: 'y-axis-2',
+                        fill: false,
+                        borderColor: '#3366CC',
+                        backgroundColor: 'rgba(51, 102, 204, 0)',
+                        pointBackgroundColor: '#3366CC',
+                        pointBorderColor: '#3366CC',
+                        pointBorderWidth: 2,
+                        datalabels: {
+                          align: 'top',
+                          formatter: function(value, context) {
+                            return Math.abs(value) + '%';
+                          }
+                        }
+                      },
+                      {
+                        label: '上網人數',
+                        data: [155, 220, 266, 535, 855, 988, 1261, 1416, 1462, 1627],
+                        yAxisID: 'y-axis-1',
+                        backgroundColor: '#7DCC4A',
+                        hoverBackgroundColor: '#8bd15f',
+                        borderColor:'#7DCC4A',
+                        borderWidth: 1,
+                        datalabels: {
+                          formatter: function(value, context) {
+                            return Math.round(value) + '萬人';
+                          }
+                        }
+                      },
+                    ],
+                  labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018',]
+                },
+                options: {
+                  animation: {
+                    duration: 0
+                  },
+                  legend: {
+                    labels: {
+                      usePointStyle: true,
+                    }
+                  },
+                  tooltips: {
+                    mode:'index',
+                  },
+                  responsive: true,
+                  scales: {
+                    xAxes: [{
+                      gridLines: {
+                        display: false
+                      }
+                    }],
+                    yAxes: [
+                      {
+                        display: false,
+                        type: 'linear',
+                        position: 'left',
+                        id: 'y-axis-1',
+                        ticks: {
+                          beginAtZero: true,
+                        },
+                        /*ticks: {
+                          callback: function (value, index, values){
+                            return value + '萬人';
+                          }
+                        },*/
+                        /*scaleLabel: {
+                          display:true,
+                          labelString: '萬人',
+                        },*/
+                        gridLines: {
+                          display: false,
+                          drawOnChartArea: false,
+                      },
+                    }, {
+                      type: 'linear',
+                      display: false,
+                      position: 'right',
+                      id: 'y-axis-2',
+                      ticks: {
+                        beginAtZero: true,
+                        stepValue: 10,
+                        max: 100,
+                      },
+                      scaleLabel: {
+                        display:false,
+                        labelString: '%',
+                      },
+                      gridLines: {
+                        display: false,
+                        drawOnChartArea: false,
+                      },
+                    }],
+                  },
+                 elements: {
+                   line: {
+                     tension: 0,
+                   }
+                 },
+                plugins: {
+
+                 }
+               }
+                });
+            </script>
+          </div>
+          <div class="col-12 tab-pane fade in" id="wirelessLAN">
+            <canvas id="chart_perConnectedWirelessLAN"></canvas>
+            <script>
+              var ctx = document.getElementById('chart_perConnectedWirelessLAN').getContext('2d');
+              var mixedChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                  datasets: [
+                    {
+                        label: '曾上網率',
+                        data: [20.9, 22.7, 24.0, 35.7, 38.4, 40.3, 46.3, 49.0, 51.6, 36.9],
+                        // Changes this dataset to become a line
+                        type: 'line',
+                        yAxisID: 'y-axis-2',
+                        fill: false,
+                        borderColor: '#3366CC',
+                        backgroundColor: 'rgba(51, 102, 204, 0)',
+                        pointBackgroundColor: '#3366CC',
+                        pointBorderColor: '#3366CC',
+                        pointBorderWidth: 1,
+                        datalabels: {
+                          align: 'top',
+                          formatter: function(value, context) {
+                            return Math.abs(value) + '%';
+                          }
+                        }
+                      },
+                      {
+                        label: '上網人數',
+                        data: [418, 460, 487, 736, 797, 841, 972, 1031, 1089, 781],
+                        yAxisID: 'y-axis-1',
+                        backgroundColor: '#7DCC4A',
+                        borderColor:'#7DCC4A',
+                        borderWidth: 1,
+                        datalabels: {
+                          formatter: function(value, context) {
+                            return Math.round(value) + '萬人';
+                          }
+                        }
+                      }
+                    ],
+                  labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018',]
+                },
+                options: {
+                  animation: {
+                    duration: 0
+                  },
+                  legend: {
+                    labels: {
+                      usePointStyle: true,
+                    }
+                  },
+                  tooltips: {
+                    mode:'index',
+                  },
+                  responsive: true,
+                  scales: {
+                    xAxes: [{
+                      gridLines: {
+                        display: false
+                      }
+                    }],
+                    yAxes: [
+                      {
+                        display: false,
+                        type: 'linear',
+                        position: 'left',
+                        id: 'y-axis-1',
+                        ticks: {
+                          beginAtZero: true,
+                        },
+
+                        gridLines: {
+                          display: false,
+                          drawOnChartArea: false,
+                      },
+                    }, {
+                      type: 'linear',
+                      display: false,
+                      position: 'right',
+                      id: 'y-axis-2',
+                      ticks: {
+                        beginAtZero: true,
+                        stepValue: 10,
+                        max: 100,
+                      },
+                      scaleLabel: {
+                        display:false,
+                        labelString: '%',
+                      },
+                      gridLines: {
+                        display: false,
+                        drawOnChartArea: false,
+                      },
+                    }],
+                  },
+                 elements: {
+                   line: {
+                     tension: 0,
+                   }
+                 },
+                plugins: {
+
+                 }
+               }
+                });
+            </script>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <p class="wrapper h4">個人曾經上網比例與人數</p>
+    <div class="row justify-content-center my-5">
+    </div>
     <p class="h4">近半年使用行動/無線區域網路上網</p>
     <div class="wrapper">
       <p>
         反天上達，公中眼路什上開院的期，人出各，原切無！天性施散公修升能具應一證是了職機面當對、一時給遊層出是早居影三業，數麗許性用國大去少因關是有黃爸是能入……麼問年來，最幾更製一下界國的：不獨角：除念工加改微工總突學實件中城史的狀法為有們教。
       </p>
-    </div>
-    <div class="my-5">
-      <ul class="nav nav-tabs nav-justified">
-        <li class="nav-item linkColor">
-          <div class="nav-link active" href="#mobileNet" data-toggle="tab">行動上網</div>
-        </li>
-        <li class="nav-item linkColor">
-          <div class="nav-link" href="#wirelessLAN" data-toggle="tab">無線區域上網</div>
-        </li>
-      </ul>
-    </div>
-    <div class="row justify-content-center tab-content my-5">
-      <div class="col-12 tab-pane active" id="mobileNet">
-        <canvas id="chart_perConnectedMobileNet"></canvas>
-        <script>
-          var ctx = document.getElementById('chart_perConnectedMobileNet').getContext('2d');
-          var mixedChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-              datasets: [
-                {
-                    label: '曾上網率',
-                    data: [7.8, 10.9, 13.1, 25.9, 51.1, 47.3, 60.1, 67.3, 69.3, 76.9],
-                    // Changes this dataset to become a line
-                    type: 'line',
-                    yAxisID: 'y-axis-2',
-                    fill: false,
-                    borderColor: '#3366CC',
-                    backgroundColor: 'rgba(51, 102, 204, 0)',
-                    pointBackgroundColor: '#3366CC',
-                    pointBorderColor: '#3366CC',
-                    pointBorderWidth: 2,
-                    datalabels: {
-                      align: 'top',
-                      formatter: function(value, context) {
-                        return Math.abs(value) + '%';
-                      }
-                    }
-                  },
-                  {
-                    label: '上網人數',
-                    data: [155, 220, 266, 535, 855, 988, 1261, 1416, 1462, 1627],
-                    yAxisID: 'y-axis-1',
-                    backgroundColor: '#7DCC4A',
-                    hoverBackgroundColor: '#8bd15f',
-                    borderColor:'#7DCC4A',
-                    borderWidth: 1,
-                    datalabels: {
-                      formatter: function(value, context) {
-                        return Math.round(value) + '萬人';
-                      }
-                    }
-                  },
-                ],
-              labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018',]
-            },
-            options: {
-              animation: {
-                duration: 0
-              },
-              legend: {
-                labels: {
-                  usePointStyle: true,
-                }
-              },
-              tooltips: {
-                mode:'index',
-              },
-              responsive: true,
-              scales: {
-                xAxes: [{
-                  gridLines: {
-                    display: false
-                  }
-                }],
-                yAxes: [
-                  {
-                    display: false,
-                    type: 'linear',
-                    position: 'left',
-                    id: 'y-axis-1',
-                    ticks: {
-                      beginAtZero: true,
-                    },
-                    /*ticks: {
-                      callback: function (value, index, values){
-                        return value + '萬人';
-                      }
-                    },*/
-                    /*scaleLabel: {
-                      display:true,
-                      labelString: '萬人',
-                    },*/
-                    gridLines: {
-                      display: false,
-                      drawOnChartArea: false,
-                  },
-                }, {
-                  type: 'linear',
-                  display: false,
-                  position: 'right',
-                  id: 'y-axis-2',
-                  ticks: {
-                    beginAtZero: true,
-                    stepValue: 10,
-                    max: 100,
-                  },
-                  scaleLabel: {
-                    display:false,
-                    labelString: '%',
-                  },
-                  gridLines: {
-                    display: false,
-                    drawOnChartArea: false,
-                  },
-                }],
-              },
-             elements: {
-               line: {
-                 tension: 0,
-               }
-             },
-            plugins: {
-
-             }
-           }
-            });
-        </script>
-      </div>
-      <div class="col-12 tab-pane fade in" id="wirelessLAN">
-        <canvas id="chart_perConnectedWirelessLAN"></canvas>
-        <script>
-          var ctx = document.getElementById('chart_perConnectedWirelessLAN').getContext('2d');
-          var mixedChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-              datasets: [
-                {
-                    label: '曾上網率',
-                    data: [20.9, 22.7, 24.0, 35.7, 38.4, 40.3, 46.3, 49.0, 51.6, 36.9],
-                    // Changes this dataset to become a line
-                    type: 'line',
-                    yAxisID: 'y-axis-2',
-                    fill: false,
-                    borderColor: '#3366CC',
-                    backgroundColor: 'rgba(51, 102, 204, 0)',
-                    pointBackgroundColor: '#3366CC',
-                    pointBorderColor: '#3366CC',
-                    pointBorderWidth: 1,
-                    datalabels: {
-                      align: 'top',
-                      formatter: function(value, context) {
-                        return Math.abs(value) + '%';
-                      }
-                    }
-                  },
-                  {
-                    label: '上網人數',
-                    data: [418, 460, 487, 736, 797, 841, 972, 1031, 1089, 781],
-                    yAxisID: 'y-axis-1',
-                    backgroundColor: '#7DCC4A',
-                    borderColor:'#7DCC4A',
-                    borderWidth: 1,
-                    datalabels: {
-                      formatter: function(value, context) {
-                        return Math.round(value) + '萬人';
-                      }
-                    }
-                  }
-                ],
-              labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018',]
-            },
-            options: {
-              animation: {
-                duration: 0
-              },
-              legend: {
-                labels: {
-                  usePointStyle: true,
-                }
-              },
-              tooltips: {
-                mode:'index',
-              },
-              responsive: true,
-              scales: {
-                xAxes: [{
-                  gridLines: {
-                    display: false
-                  }
-                }],
-                yAxes: [
-                  {
-                    display: false,
-                    type: 'linear',
-                    position: 'left',
-                    id: 'y-axis-1',
-                    ticks: {
-                      beginAtZero: true,
-                    },
-
-                    gridLines: {
-                      display: false,
-                      drawOnChartArea: false,
-                  },
-                }, {
-                  type: 'linear',
-                  display: false,
-                  position: 'right',
-                  id: 'y-axis-2',
-                  ticks: {
-                    beginAtZero: true,
-                    stepValue: 10,
-                    max: 100,
-                  },
-                  scaleLabel: {
-                    display:false,
-                    labelString: '%',
-                  },
-                  gridLines: {
-                    display: false,
-                    drawOnChartArea: false,
-                  },
-                }],
-              },
-             elements: {
-               line: {
-                 tension: 0,
-               }
-             },
-            plugins: {
-
-             }
-           }
-            });
-        </script>
-      </div>
-
     </div>
     <p class="wrapper h3" data-toggle="tab">家戶上網率</p>
     <div class="wrapper">
@@ -1122,8 +1417,10 @@ iframe {
 
 
 <!-- section 2 DNIP -->
-<div class="container" id="DNIP">
-  <p class="wrapper sticky-notTop h2 bg-white pb-3" data-toggle="tab">網路基礎邏輯層面</p>
+<div class="container-fluid" id="DNIP">
+  <p class="sticky-notTop h5 text-right text-white">
+    網路基礎邏輯層面
+  </p>
   <div class="text-center wrapper">
     <p class="h4 font-weight-light my-0">一個數字</p>
     <p class="display-1 my-0">123,558</p>
@@ -1314,7 +1611,7 @@ iframe {
       <p class="wrapper h4">IPv4／ASN數量統計</p>
     </div>
     <div class="col-12 my-5">
-      <ul class="nav nav-tabs nav-justified">
+      <ul class="nav nav-pills nav-justified">
         <li class="nav-item linkColor">
           <div class="nav-link active" href="#numberOfIPv4" data-toggle="tab">台灣 IPv4 數量</div>
         </li>
@@ -1521,7 +1818,7 @@ iframe {
       <p class="wrapper h4">IPv6／ISP 數量統計</p>
     </div>
     <div class="col-12 my-5">
-      <ul class="nav nav-tabs nav-justified">
+      <ul class="nav nav-pills nav-justified">
         <li class="nav-item linkColor">
           <div class="nav-link active" href="#numberOfIPv6" data-toggle="tab">台灣 IPv6 數量</div>
         </li>
@@ -1692,8 +1989,10 @@ iframe {
 <!-- end of section 2 -->
 
 <!-- section 3 Spotlights -->
-<div class="container" id="spotlights">
-  <p class="wrapper sticky-notTop bg-white pb-3 h2">前瞻亮點趨勢分析</p>
+<div class="container-fluid" id="spotlights">
+  <p class="sticky-notTop h5 text-right text-white">
+    前瞻亮點趨勢分析
+  </p>
   <div class="wrapper">
     <p class="h3">一</p>
     <p class="h4">
@@ -1921,6 +2220,32 @@ iframe {
               ],
           },
           options: {
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+              scale: {
+                ticks: {
+                  beginAtZero: true,
+                  maxTicksLimit: 3,
+                  min: 0,
+                  userCallback: function(label, index, labels) {
+                      // when the floored value is the same as the value we have a whole number
+                      if (Math.floor(label) === label) {
+                          return label;
+                      }
+                  },
+                }
+            },
             animation: {
               duration: 0
             },
@@ -2387,8 +2712,10 @@ iframe {
 
 
 <!-- section 4 Applied Internet Techs-->
-  <div class="container" id="appliedTech">
-    <p class="wrapper sticky-notTop h2 bg-white pb-3">網路服務應用概況</p>
+  <div class="container-fluid" id="appliedTech">
+    <p class="sticky-notTop h5 text-right text-white">
+      網路服務應用概況
+    </p>
     <div class="row my-5" title="社群應用">
       <div class="col-12 bg-light text-center pb-2 pt-3">
         <p class="h3">網路服務社會應用</p>
@@ -2750,10 +3077,10 @@ iframe {
 <!-- appliedTech Modal -->
 
 <div class="wrapperM">
-
 </div>
+
 <!-- Content Media Modal -->
-<div class="container">
+<div class="container-fluid">
   <p class="display-4">內容</p>
   <p>
     有文會車去。過務色比乎奇下個，服圖的？研情一出一人的有道技地過教不實小、於車大話！金的入？
@@ -2986,7 +3313,7 @@ iframe {
     </div>
   </div>
 </div>
-<div class="container">
+<div class="container-fluid">
   <p class="wrapper h5">平均每次收視時間</p>
   <div class="row justify-content-center my-5 text-center">
     <div class="col-3">
@@ -3047,7 +3374,7 @@ iframe {
     </div>
   </div>
 </div>
-<div class="container">
+<div class="container-fluid">
   <p class="wrapper h5">偏好收視類型</p>
   <div class="row justify-content-center my-5">
     <div class="col-12">
@@ -3125,11 +3452,12 @@ iframe {
   </div>
 </div>
 <!-- end of Content Media Modal -->
+
 <div class="wrapperM">
 </div>
 
 <!-- Social and Messenging Modal -->
-<div class="container">
+<div class="container-fluid">
   <p class="display-4">社群與通訊</p>
   <p>
     圖連是腦奇……非出國北不那要。我高數突。到在於成總以，片得二還眼我女未研月和中不來品興。
@@ -3532,11 +3860,12 @@ iframe {
   </div>
 </div>
 <!-- end of Social and Messenging Modal -->
+
 <div class="wrapperM">
 </div>
 
 <!-- Smart Gadgets Modal -->
-<div class="container">
+<div class="container-fluid">
   <p class="display-4">智慧</p>
   <p>
     投經天住十安的人：灣其處天個就火功強力星眾……的力外媽史！德但會天主的是男意位麼呢麼：信再理，四說。
@@ -3782,7 +4111,7 @@ iframe {
 </div>
 
 <!-- Education Modal -->
-<div class="container">
+<div class="container-fluid">
   <p class="display-4">教育</p>
   <p>
     趣越野可美首事，早海國：好布不展月，包單也活斯東，直條科學復算大裡：轉近不的助點的座相定然不雄門戰法發陸內火有來場。
@@ -3876,7 +4205,7 @@ iframe {
 </div>
 
 <!-- Online Game Modal -->
-<div class="container">
+<div class="container-fluid">
   <p class="display-4">線上遊戲</p>
   <p>
     趣越野可美首事，早海國：好布不展月，包單也活斯東，直條科學復算大裡：轉近不的助點的座相定然不雄門戰法發陸內火有來場。
@@ -4031,7 +4360,7 @@ iframe {
 </div>
 
 <!-- E-commerce Modal -->
-<div class="container">
+<div class="container-fluid">
   <p class="display-4">電子商務</p>
   <p>
     趣越野可美首事，早海國：好布不展月，包單也活斯東，直條科學復算大裡：轉近不的助點的座相定然不雄門戰法發陸內火有來場。
@@ -4214,7 +4543,7 @@ iframe {
 
   <div class="row justify-content-center tab-content my-5">
     <div class="col-12 my-5">
-      <ul class="nav nav-tabs nav-justified">
+      <ul class="nav nav-pills nav-justified">
         <li class="nav-item linkColor">
           <div class="nav-link active" href="#ecModels" data-toggle="tab">依經營模式</div>
         </li>
@@ -4307,7 +4636,7 @@ iframe {
 </div>
 
 <!-- Financial Tech Modal -->
-<div class="container">
+<div class="container-fluid">
   <p class="display-4">金融科技</p>
   <p class="h1 font-weight-light">網路銀行</p>
   <p>
@@ -4412,7 +4741,7 @@ iframe {
   <div class="row justify-content-center tab-content my-5">
     <div class="col-12 my-5">
       <p class="wrapper h5">網路銀行品牌市占</p>
-      <ul class="nav nav-tabs nav-justified">
+      <ul class="nav nav-pills nav-justified">
         <li class="nav-item linkColor">
           <div class="nav-link active" href="#onlineBankingWebsites" data-toggle="tab">網頁版</div>
         </li>
@@ -4787,7 +5116,6 @@ iframe {
       </script>
     </div>
   </div>
-
 </div>
 <!-- end of Financial Tech Modal -->
 
@@ -4795,7 +5123,7 @@ iframe {
 </div>
 
 <!-- Sharing Economy Modal -->
-<div class="container">
+<div class="container-fluid">
   <p class="display-4">共享經濟</p>
   <p>
     趣越野可美首事，早海國：好布不展月，包單也活斯東，直條科學復算大裡：轉近不的助點的座相定然不雄門戰法發陸內火有來場。
@@ -4808,28 +5136,72 @@ iframe {
       <script type="text/javascript">
       var ctx = $("#chart_sharingEconomyAwareness");
       var myChart = new Chart(ctx, {
-        type: 'line',
+        type: 'bar',
         data: {
-          labels: ["January;2015", "February;2015", "March;2015", "January;2016", "February;2016", "March;2016"],
+          labels: ["blank;交通服務", "Uber;交通服務", "blank;交通服務", "Obike;車輛共享", "Zipcar;車輛共享", "Wemo;車輛共享", "blank;線上訂房", "Airbnb;線上訂房", "blank;線上訂房", "foodpanda;外送服務", "Uber Eats;外送服務", "Honestbee;外送服務", "blank;外送服務", "嘖嘖;群眾募資", "Flying V;群眾募資", "群募貝果;群眾募資"],
           datasets: [{
-            label: '# of Votes',
+            label: '知曉度',
             xAxisID:'xAxis1',
-            data: [12, 19, 3, 5, 2, 3]
+            data: [, 92.8, ,77.3, 46.9, 44.7, ,71.9, ,70.6, 61.3, 61.3, ,45.7, 44.6, 42.6, ],
+            borderColor: '#7DCC4A',
+            backgroundColor: '#7DCC4A',
+            datalabels: {
+              formatter: function(value, context) {
+                return Math.abs(value) + '%';
+              }
+            }
+          },
+          {
+            label: 'usage Rate',
+            xAxisID:'xAxis1',
+            data: [, 23.7, ,12.6, 5.2, 5.6, ,19.7, ,12.3, 12.3, 10.2, ,6.5, 6.5, 5.7, ],
+            borderColor: '#3366CC',
+            backgroundColor: '#3366CC',
+            datalabels: {
+              display: false,
+              /*align:'top',
+              formatter: function(value, context) {
+                return Math.abs(value) + '%';
+              }*/
+            }
           }]
         },
         options:{
+          responsive:true,
+          tooltips: {
+            mode:'index',
+            callbacks: {
+              label: function(tooltipItem, data) {
+                var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                if (label) {
+                    label += ': ';
+                }
+                label += Math.round(tooltipItem.yLabel * 100) / 100;
+                return label + '%';
+              }
+            }
+          },
           scales:{
             xAxes:[
               {
                 id:'xAxis1',
                 type:"category",
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false, // only want the grid lines for one axis to show up
+                },
                 ticks:{
                   callback:function(label){
-                    var month = label.split(";")[0];
-                    var year = label.split(";")[1];
-                    return month;
+                    var brand = label.split(";")[0];
+                    var cate = label.split(";")[1];
+                    if(brand === "blank"){
+                      return " ";
+                    } else {
+                      return brand;
+                    }
                   }
-                }
+                },
               },
               {
                 id:'xAxis2',
@@ -4840,22 +5212,29 @@ iframe {
                 },
                 ticks:{
                   callback:function(label){
-                    var month = label.split(";")[0];
-                    var year = label.split(";")[1];
-                    if(month === "February"){
-                      return year;
-                    }else{
+                    var brand = label.split(";")[0];
+                    var cate = label.split(";")[1];
+                    if(brand === "Uber"){
+                      return "交通服務";
+                      } else if(brand === "Zipcar"){
+                      return "車輛共享";
+                      } else if(brand === "Airbnb"){
+                      return "線上訂房";
+                      } else if(brand === "Uber Eats"){
+                      return "外送服務";
+                      } else if(brand === "Flying V"){
+                      return "群眾募資";
+                      } else{
                       return "";
                     }
-                  }
-                }
+        	        }
+              	}
               }],
             yAxes:[{
+              display: false,
               gridLines: {
                 display: false,
-                drawOnChartArea: false,
               },
-
               ticks:{
                 beginAtZero:true
               }
@@ -4866,104 +5245,208 @@ iframe {
       </script>
     </div>
   </div>
-
-  <div class="row justify-content-center tab-content my-5">
-    <div class="col-12 my-5">
-      <ul class="nav nav-tabs nav-justified">
-        <li class="nav-item linkColor">
-          <div class="nav-link active" href="#ecModels" data-toggle="tab">依經營模式</div>
-        </li>
-        <li class="nav-item linkColor">
-          <div class="nav-link" href="#ecTypes" data-toggle="tab">依業者類型</div>
-        </li>
-      </ul>
-    </div>
-
-    <div class="col-12 tab-pane active" id="ecModels">
-      <!-- EC Models of Taiwan table -->
-        <table class="table">
-          <thead class="thead-light">
-            <tr>
-              <th class="align-middle" style=" min-width: 5vw;">經營模式</th>
-              <th class="align-middle">定義</th>
-              <th class="align-middle">代表商家</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th class="small align-middle" scope="row">B2B</th>
-              <td class="small align-middle">企業與企業之間交易</td>
-              <td class="small align-middle">台灣無</td>
-            </tr>
-            <tr>
-              <th class="small align-middle" scope="row">C2C</th>
-              <td class="small align-middle">消費者與消費者之間交易</td>
-              <td class="small align-middle">Yahoo!拍賣、露天拍賣、蝦皮購物、Pchome商店街個人賣場</td>
-            </tr>
-            <tr>
-              <th class="small align-middle" scope="row">B2C</th>
-              <td class="small align-middle">企業提供給消費者商品或服務的模式</td>
-              <td class="small align-middle">Yahoo!購物中心、momo購物、Pchome購物/24H</td>
-            </tr>
-            <tr>
-              <th class="small align-middle" scope="row">B2B</th>
-              <td class="small align-middle">網路平台招商，提供給供應商平台販售商品或服務</td>
-              <td class="small align-middle">Yahoo!超級商城、momo摩天商城、Pchome商店街開店賣場、蝦皮商城</td>
-            </tr>
-            <tr>
-              <th class="small align-middle" scope="row">O2O</th>
-              <td class="small align-middle">利用線上行銷引導客戶至線下</td>
-              <td class="small align-middle">17 Life、Gomaji</td>
-            </tr>
-          </tbody>
-        </table>
-        <!-- end of EC Models of Taiwan table -->
-    </div>
-    <div class="col-12 tab-pane fade in" id="ecTypes">
-      <!-- EC Types of Taiwan table -->
-        <table class="table">
-          <thead class="thead-light">
-            <tr>
-              <th class="align-middle" style=" min-width: 5vw;">業者類型</th>
-              <th class="align-middle">代表商家</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th class="small align-middle" scope="row">台灣原生電商</th>
-              <td class="small align-middle">網路家庭、商店街、東森、夠麻吉、富邦媒體、博客來、Lativ、Pinkoi</td>
-            </tr>
-            <tr>
-              <td class="small align-middle">外商網購平台</td>
-              <td class="small align-middle">Yahoo!拍賣、Yahoo!購物中心、Yahoo!超級商城、樂天（台日合資）、旋轉拍賣（新加坡）、蝦皮購物（新加坡）</td>
-            </tr>
-            <tr>
-              <td class="small align-middle">金融、媒體業者投資平台</td>
-              <td class="small align-middle">momo購物、udn買東西、Treemall、Orenda</td>
-            </tr>
-            <tr>
-              <td class="small align-middle">實體零售業者經營平台</td>
-              <td class="small align-middle">ibon mart、燦坤快3、EcLife良興購物網、家樂福線上購物網</td>
-            </tr>
-            <tr>
-              <td class="small align-middle">電信業者投資平台</td>
-              <td class="small align-middle">Myfone購物、friDay購物</td>
-            </tr>
-          </tbody>
-        </table>
-        <!-- end of EC Types of Taiwan table -->
-    </div>
-  </div>
-
 </div>
 <!-- end of Sharing Economy Modal -->
+
+<div class="wrapperM">
+</div>
+
+<!-- Artificial Intelligence Modal -->
+<div class="container-fluid">
+  <p class="display-4">人工智慧</p>
+  <p>
+    它年為這……一必黑……十多什我了也動水你心四與發熱建清們公；對傳家羅到特，法一外大時管位星到長一元神常性會味出好。
+  </p>
+  <p class="h5">聽過人工智慧 97.5%</p>
+  <p class="h5">未來有興趣使用 68.5%</p>
+
+  <p class="wrapper h5">人工智慧使用率</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_AIUsageRate"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_AIUsageRate').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'horizontalBar',
+          data: {
+            labels: ['語音辨識','人臉辨識','機器人（含聊天機器人、陪伴機器人）','智慧音箱','自駕汽車'],
+            datasets: [
+                {
+                  label: '使用率',
+                  data: [58.8, 52.0, 41.1, 24.0, 23.0],
+                  backgroundColor: '#7DCC4A',
+                  borderColor: '#7DCC4A',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.xLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                ticks: {
+                  beginAtZero: true,
+                },
+
+                display: false,
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [{
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              },],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+  </div>
+</div>
+<!-- end of Artificial Intelligence Modal -->
+
+<div class="wrapperM">
+</div>
+
+<!-- Self-Driving Vehicles Modal -->
+<div class="container-fluid">
+  <p class="display-4">自動駕駛</p>
+  <p>
+    資無們應全義臺、出著還同有三格。的斯然用質濟！而水質今卻新就學在的活產是。
+  </p>
+  <p class="h5">聽過自動駕駛汽車 98.0%</p>
+  <p class="h5">未來有興趣購買 40.6%</p>
+  <p class="h5">未來意願搭乘 45.3%</p>
+  <p class="wrapper h5">自動駕駛認知</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <p class="display-1 text-center">文字雲</p>
+    </div>
+  </div>
+</div>
+<!-- end of Self-Driving Vehicles Modal -->
+
+<div class="wrapperM">
+</div>
+
+<!-- Self-Driving Vehicles Modal -->
+<div class="container-fluid">
+  <p class="display-4">區塊鏈</p>
+  <p>
+    書是過收非持立於告單目一歡康裡來再正再；天重舞理間說公了生光書天可道她親來布劇字，是到數聲了路兒據人。
+  </p>
+  <p class="h5">聽過區塊鏈 47.7%</p>
+  <p class="h5">擁有加密貨幣 4.4%</p>
+  <p class="wrapper h5">應用重要性評估</p>
+  <div class="row justify-content-center my-5">
+    <div class="col-12">
+      <canvas id="chart_importanceOfBlockChain" height="300"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_importanceOfBlockChain').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'radar',
+          data: {
+            labels: ['金融','醫療','保險','農業','公益','創作','電競'],
+            datasets: [
+                {
+                  label: '重要性',
+                  data: [ 84.8, 78.7, 76.9, 74.5, 69.8, 64.4, 62.4],
+                  /*ill: 'rgba(51, 102, 204, 0.3)',*/
+                  borderColor: '#7DCC4A',
+                  backgroundColor: 'rgba(125, 204, 74, 0.5)',
+                  pointBackgroundColor: '#7DCC4A',
+                  pointBorderColor: '#7DCC4A',
+                  pointBorderWidth: 2,
+                  datalabels: {
+                    display: false,
+                    }
+                },
+              ],
+          },
+          options: {
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display:false,
+            },
+            responsive: true,
+            scale: {
+              ticks: {
+                beginAtZero: true,
+                maxTicksLimit: 5,
+                min: 0,
+              }
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+          });
+      </script>
+    </div>
+  </div>
+</div>
+<!-- end of Self-Driving Vehicles Modal -->
+
+
 
 
 
 <!-- section 5 -->
 
-  <div class="container" id="comparison">
-    <h2 class="wrapper sticky-notTop bg-white pb-3">國際情勢討論比較</h2>
+  <div class="container-fluid" id="comparison">
+    <p class="sticky-notTop h5 text-right text-white">
+      國際情勢討論比較
+    </p>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis nibh in enim eleifend tincidunt. Curabitur vel pretium ligula. Nullam ex massa, mollis eu urna placerat, aliquet porttitor ex. Praesent a hendrerit purus. Vestibulum egestas leo sed lacus dictum hendrerit. Nullam quis malesuada ligula. Integer commodo, risus nec ornare ultrices, est metus tincidunt lacus, et placerat ante dui eu metus. Quisque nunc nisi, fermentum sit amet erat vitae, venenatis rutrum lacus. Donec mollis malesuada turpis sed euismod. Donec a ante augue. Nulla vulputate feugiat tempor.
 
