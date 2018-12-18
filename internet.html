@@ -383,7 +383,7 @@ iframe {
             <a class="linkColorWHT h5 d-block" href="#appliedTech" data-target="#appliedTech" onclick="closeNav()" data-dismiss="modal" aria-label="close">網路服務應用概況</a>
           </li>
           <li class="my-3">
-            <a class="linkColorWHT h5 d-blocklinkColorWHT h5 d-block" href="#comparison" data-target="#comparison" onclick="closeNav()" data-dismiss="modal" aria-label="close">網國際情勢討論比較</a>
+            <a class="linkColorWHT h5 d-blocklinkColorWHT h5 d-block" href="#comparison" data-target="#comparison" onclick="closeNav()" data-dismiss="modal" aria-label="close">國際情勢討論比較</a>
           </li>
           <li class="my-3">
             <a class="linkColorWHT h5 d-block" href="#downloadSignIn" data-toggle="modal" data-target="#downloadSignIn">下載完整報告</a>
@@ -3278,6 +3278,7 @@ iframe {
 <!-- end of chapter 3-->
 
 <!-- chapter 4 -->
+<!-- grid of chpt-4 modal triggers -->
 <div id="appliedTech">
   <img class="img-fluid wrapper"src="img/chapters/chpt_4.png" alt="">
   <div class="container-fluid">
@@ -3293,7 +3294,7 @@ iframe {
       <div class="col-md-10">
         <div class="row">
           <div class="col">
-            <div class="card linkColor">
+            <div class="card linkColor" href="#" data-toggle="modal" data-target="#contentMedia_modal">
               <div class="card-body">
                 <p class="h5 text-center">
                   內容媒體
@@ -3302,7 +3303,7 @@ iframe {
             </div>
           </div>
           <div class="col">
-            <div class="card linkColor">
+            <div class="card linkColor" href="#" data-toggle="modal" data-target="#socialMedia_modal">
               <div class="card-body">
                 <p class="h5 text-center">
                   社群媒體
@@ -3311,7 +3312,7 @@ iframe {
             </div>
           </div>
           <div class="col">
-            <div class="card linkColor">
+            <div class="card linkColor" href="#" data-toggle="modal" data-target="#smartGadgets_modal">
               <div class="card-body">
                 <p class="h5 text-center">
                   智慧裝置
@@ -3320,7 +3321,16 @@ iframe {
             </div>
           </div>
           <div class="col">
-            <div class="card linkColor">
+            <div class="card linkColor" href="#" data-toggle="modal" data-target="#education_modal">
+              <div class="card-body">
+                <p class="h5 text-center">
+                  教育應用
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card linkColor" href="#" data-toggle="modal" data-target="#onlineGame_modal">
               <div class="card-body">
                 <p class="h5 text-center">
                   線上遊戲
@@ -3340,7 +3350,7 @@ iframe {
       <div class="col-md-10">
         <div class="row">
           <div class="col">
-            <div class="card linkColor">
+            <div class="card linkColor" href="#" data-toggle="modal" data-target="#eCommerce_modal">
               <div class="card-body">
                 <p class="h5 text-center">
                   電子商務
@@ -3349,7 +3359,7 @@ iframe {
             </div>
           </div>
           <div class="col">
-            <div class="card linkColor">
+            <div class="card linkColor" href="#" data-toggle="modal" data-target="#finTech_modal">
               <div class="card-body">
                 <p class="h5 text-center">
                   金融科技
@@ -3358,7 +3368,7 @@ iframe {
             </div>
           </div>
           <div class="col">
-            <div class="card linkColor">
+            <div class="card linkColor" href="#" data-toggle="modal" data-target="#sharingEconomy_modal">
               <div class="card-body">
                 <p class="h5 text-center">
                   共享經濟
@@ -3378,7 +3388,7 @@ iframe {
       <div class="col-md-10">
         <div class="row">
           <div class="col">
-            <div class="card linkColor">
+            <div class="card linkColor" href="#" data-toggle="modal" data-target="#artificialIntelligence_modal">
               <div class="card-body">
                 <p class="h5 text-center">
                   人工智慧
@@ -3387,7 +3397,7 @@ iframe {
             </div>
           </div>
           <div class="col">
-            <div class="card linkColor">
+            <div class="card linkColor" href="#" data-toggle="modal" data-target="#selfDrivingVehicles_modal">
               <div class="card-body">
                 <p class="h5 text-center">
                   自動駕駛
@@ -3396,7 +3406,7 @@ iframe {
             </div>
           </div>
           <div class="col">
-            <div class="card linkColor">
+            <div class="card linkColor" href="#" data-toggle="modal" data-target="#blockChain_modal">
               <div class="card-body">
                 <p class="h5 text-center">
                   區塊鏈
@@ -3409,6 +3419,266 @@ iframe {
     </div>
   </div>
 </div>
+<!-- end of modal triggers -->
+
+<!-- chpt-4 Modals -->
+
+<!-- Content Media Modal -->
+<div class="modal fade" id="contentMedia_modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">內容媒體</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- end of Content Media Modal -->
+
+<!-- Social Media Modal -->
+<div class="modal fade" id="socialMedia_modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">社群媒體</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- end of Social Media Modal -->
+
+<!-- Smart Gadgets Modal -->
+<div class="modal fade" id="smartGadgets_modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">智慧裝置</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- end of Smart Gadgets Modal -->
+
+<!-- Education Modal -->
+<div class="modal fade" id="education_modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">教育應用</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- end of Education Modal -->
+
+<!-- Online Game Modal -->
+<div class="modal fade" id="onlineGame_modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">線上遊戲</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- end of Online Game Modal -->
+
+<!-- E-Commerce Modal -->
+<div class="modal fade" id="eCommerce_modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">電子商務</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- end of E-Commerce Modal -->
+
+<!-- Financial Tech Modal -->
+<div class="modal fade" id="finTech_modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">金融科技</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- end of Financial Tech Modal -->
+
+<!-- Sharing Economy Modal -->
+<div class="modal fade" id="sharingEconomy_modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">共享經濟</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- end of Sharing Economy Modal -->
+
+<!-- Artificial Intelligence Modal -->
+<div class="modal fade" id="artificialIntelligence_modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">人工智慧</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- end of Artificial Intelligence Modal -->
+
+<!-- Self Driving Vehicles Modal -->
+<div class="modal fade" id="selfDrivingVehicles_modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">自動駕駛</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- end of Self Driving Vehicles Modal -->
+
+<!-- Block Chain Modal -->
+<div class="modal fade" id="blockChain_modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">自動駕駛</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- end of Block Chain Modal -->
+
+
+<!-- end of chpt-4 Modals -->
+
 <!-- end of chapter 4 -->
 
 <!-- chapter 5 -->
@@ -3520,7 +3790,6 @@ iframe {
             </tbody>
           </table>
           <!-- end of basic info of TW table -->
-
       </div>
     </div>
 
