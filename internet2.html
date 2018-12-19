@@ -435,7 +435,7 @@ body {
         台灣網路資訊中心長期以來致力於台灣網際網路發展與應用管理與觀察，每年定期進行｢台灣寬頻網路使用調查」與｢台灣無線網路使用調查」，描繪台灣整體網路使用圖像與使用者輪廓，並了解各項網路趨勢發展，以提供國內外產學各界參考。
       </p>
       <p class="h6 lineHeight">
-        為了提升調查視角、增加參考度並擴大調查應用層面，結合質量化研究方法，從了解台灣網路基礎推展至應用層面，輔佐邏輯層面的網域名稱和IP/ASN註冊情形等客觀環境分析，最終以文獻分析法蒐集比較各國家和各次級文獻內容來描繪台灣網路整體圖像，並以中英文html網頁格式（含pdf下載）發布調查結果，以期使國內外相關產業或個人可直接取用調查報告。
+        結合質量化研究方法，從了解台灣網路基礎推展至應用層面，輔佐邏輯層面的網域名稱和IP/ASN註冊情形等客觀環境分析，最終以文獻分析法蒐集比較各國家和各次級文獻內容來描繪台灣網路整體圖像，並以中英文html網頁格式（含pdf下載）發布調查結果，以期使國內外相關產業或個人可直接取用調查報告。
       </p>
     </div>
   </div>
@@ -1318,7 +1318,7 @@ body {
         <p class="mt-3 text-center">
           今年「.tw/.台灣」註冊數量大幅成長，成長率為554.3%，類型佔比中以「泛用型英文.tw」最多。
         </p>
-        <canvas id="chart_ipSubmitGrowth" style="height:60vh; width:100vw"></canvas>
+        <canvas id="chart_ipSubmitGrowth" style="height:80vh; width:100vw"></canvas>
         <script>
           var ctx = document.getElementById('chart_ipSubmitGrowth').getContext('2d');
           var myChart = new Chart(ctx, {
@@ -1341,10 +1341,11 @@ body {
                   lineTension:0,
                   hidden: true,
                   datalabels: {
-                    display: false,
-                    /*formatter: function(value, context) {
+                    display: 'auto',
+                    align:'top',
+                    formatter: function(value, context) {
                       return Math.abs(value) + '%';
-                    }*/
+                    }
                   },
                   data: [9.3, 13.2, 1.8, 21.9, 24.6, 10.3, 2.8, 8.3, 0, 554.3],
                 },
@@ -1357,6 +1358,7 @@ body {
                   data: [283, 298, 305, 308, 315, 321, 395, 466, 474, 4555],
                   yAxisID: 'y-axis-1',
                   datalabels: {
+                    display: 'auto',
                     formatter: function(value, context) {
                       return Math.abs(value) + '萬個';
                     }
@@ -1371,6 +1373,7 @@ body {
                   data: [161, 205, 207, 317, 463, 377, 284, 269, 261, 254],
                   yAxisID: 'y-axis-1',
                   datalabels: {
+                    display: 'auto',
                     formatter: function(value, context) {
                       return Math.abs(value) + '萬個';
                     }
@@ -1419,9 +1422,9 @@ body {
                      position: 'right',
                      id: 'y-axis-2',
                      ticks: {
-                       beginAtZero: true,
-                       stepValue: 5,
-                       max: 555,
+                       /*beginAtZero: true,*/
+                       stepValue: 50,
+                       max: 650,
                      },
                      scaleLabel: {
                        display:false,
@@ -2772,7 +2775,7 @@ body {
         <p class="h4 text-center">
           智慧家庭產品使用率
         </p>
-        <canvas id="chart_usageOfSmartHomeProducts" style="height:60vh; width:100vw"></canvas>
+        <canvas id="chart_usageOfSmartHomeProducts" style="height:80vh; width:100vw"></canvas>
         <script>
           var ctx = document.getElementById('chart_usageOfSmartHomeProducts').getContext('2d');
           var mixedChart = new Chart(ctx, {
@@ -2919,7 +2922,7 @@ body {
         <p class="h4 text-center">
           行動支付品牌市佔變化
         </p>
-        <canvas id="chart_mobilePaymentBrands" style="height:60vh; width:100vw"></canvas>
+        <canvas id="chart_mobilePaymentBrands" style="height:80vh; width:100vw"></canvas>
         <script>
           var ctx = document.getElementById('chart_mobilePaymentBrands').getContext('2d');
           var mixedChart = new Chart(ctx, {
@@ -2987,14 +2990,17 @@ body {
                 }],
                 yAxes: [
                   {
+                    id: 'y-axis-1',
                     display: false,
                     ticks: {
                       beginAtZero: true,
+                      stepValue: 10,
+                      max: 60,
                     },
                     gridLines: {
                       display: false,
                   },
-                }, {
+                },{
                   type: 'linear',
                   display: false,
                   position: 'right',
@@ -3002,7 +3008,7 @@ body {
                   ticks: {
                     beginAtZero: true,
                     stepValue: 10,
-                    max: 100,
+                    max: 60,
                   },
                   scaleLabel: {
                     display:false,
@@ -3032,7 +3038,7 @@ body {
         <p class="h4 text-center">
           電商購物與直播平台
         </p>
-        <canvas id="chart_ecShoppingAndLiveStreaming" style="height:60vh; width:100vw"></canvas>
+        <canvas id="chart_ecShoppingAndLiveStreaming" style="height:80vh; width:100vw"></canvas>
         <script>
           var ctx = document.getElementById('chart_ecShoppingAndLiveStreaming').getContext('2d');
           var mixedChart = new Chart(ctx, {
@@ -3100,9 +3106,12 @@ body {
                 }],
                 yAxes: [
                   {
+                    id: 'y-axis-1',
                     display: false,
                     ticks: {
                       beginAtZero: true,
+                      stepValue: 10,
+                      max: 100,
                     },
                     gridLines: {
                       display: false,
@@ -6240,9 +6249,6 @@ body {
         <p class="h3 text-center">
           全球上網率比較
         </p>
-        <p class="h5 text-center">
-          亞洲
-        </p>
         <canvas id="chart_globalConnectedRate" style="height:80vh; width:100vw"></canvas>
         <script>
           var ctx = document.getElementById('chart_globalConnectedRate').getContext('2d');
@@ -6252,7 +6258,7 @@ body {
               labels: ['台灣', '日本', '南韓', '新加坡', '泰國', '馬來西亞', '越南', '菲律賓', '中國', '印尼', '印度', '美國', '英國', '澳洲'],
               datasets: [
                   {
-                    label: '各國上網率',
+                    label: '上網率',
                     data: [87.9,93.3,	92.6,	83.6,	82.4,	78.3,	66.3,	62.9,	54.6,	53.7,	34.1,	95.6,	94.7,	87.8],
                     backgroundColor: '#7DCC4A',
                     borderColor: '#7DCC4A',
@@ -6288,18 +6294,17 @@ body {
               responsive: true,
               scales: {
                 xAxes: [{
+                  ticks: {
+                    beginAtZero: true,
+                  },
                   display: false,
                   gridLines: {
                     display: false
                   }
                 }],
                 yAxes: [{
-                  ticks: {
-                    beginAtZero: true,
-                  },
                   gridLines: {
                     display: false,
-                    drawOnChartArea: false,
                   },
                 },],
               },
@@ -6313,6 +6318,280 @@ body {
         </script>
       </div>
     </div>
+    <div class="row justify-content-center">
+      <div class="col-md-8 wrapper">
+        <p class="h4 text-center">
+          全球網路使用狀況
+        </p>
+        <p class="mt-3 text-center">
+          根據 Comscore MMX 截至10月份數據
+        </p>
+        <!-- Comscore MMX table -->
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th class="" style=" min-width: 7vw;"></th>
+              <th class="small" style=" max-width: 7vw;">Total UV<br>(000)</th>
+              <th class="small">Total Views<br>(MM)</th>
+              <th class="small d-none d-md-block">Total Visits<br>(000)</th>
+              <th class="small ">Average Views<br>per Visit</th>
+              <th class="small d-none d-md-block">Average Views<br>per Visitor</th>
+              <th class="small">Total Minutes<br>(MM)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="small align-middle">台灣</td>
+              <td class="small align-middle">16,532</td>
+              <td class="small align-middle">35,102</td>
+              <td class="small align-middle d-none d-md-block">2,170,146</td>
+              <td class="small align-middle">16.2</td>
+              <td class="small align-middle d-none d-md-block">2,123</td>
+              <td class="small align-middle">36,369</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">中國</td>
+              <td class="small align-middle">871,522</td>
+              <td class="small align-middle">918,857</td>
+              <td class="small align-middle d-none d-md-block">27,840,677</td>
+              <td class="small align-middle">33.0</td>
+              <td class="small align-middle d-none d-md-block">1,054</td>
+              <td class="small align-middle">3,208,950</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">印度</td>
+              <td class="small align-middle">273,288</td>
+              <td class="small align-middle">224,147</td>
+              <td class="small align-middle d-none d-md-block">27,154,589</td>
+              <td class="small align-middle">8.3</td>
+              <td class="small align-middle d-none d-md-block">820</td>
+              <td class="small align-middle">889,666</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">印尼</td>
+              <td class="small align-middle">89,085</td>
+              <td class="small align-middle">47,455</td>
+              <td class="small align-middle d-none d-md-block">2,891,046</td>
+              <td class="small align-middle">16.4</td>
+              <td class="small align-middle d-none d-md-block">533</td>
+              <td class="small align-middle">344,471</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">日本</td>
+              <td class="small align-middle">81,714</td>
+              <td class="small align-middle">129,595</td>
+              <td class="small align-middle d-none d-md-block">3,655,945</td>
+              <td class="small align-middle">35.4</td>
+              <td class="small align-middle d-none d-md-block">1,586</td>
+              <td class="small align-middle">115,862</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">越南</td>
+              <td class="small align-middle">45,680</td>
+              <td class="small align-middle">39,179</td>
+              <td class="small align-middle d-none d-md-block">2,278,515</td>
+              <td class="small align-middle">17.2</td>
+              <td class="small align-middle d-none d-md-block">858</td>
+              <td class="small align-middle">47,551</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">馬來西亞</td>
+              <td class="small align-middle">19,940</td>
+              <td class="small align-middle">23,185</td>
+              <td class="small align-middle d-none d-md-block">1,268,714</td>
+              <td class="small align-middle">18.3</td>
+              <td class="small align-middle d-none d-md-block">1,163</td>
+              <td class="small align-middle">90,630</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">新加坡</td>
+              <td class="small align-middle">4,926</td>
+              <td class="small align-middle">5,888</td>
+              <td class="small align-middle d-none d-md-block">421,768</td>
+              <td class="small align-middle">14.0</td>
+              <td class="small align-middle d-none d-md-block">1,195</td>
+              <td class="small align-middle">8,213</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">美國</td>
+              <td class="small align-middle">256,264</td>
+              <td class="small align-middle">716,661</td>
+              <td class="small align-middle d-none d-md-block">49,156,381</td>
+              <td class="small align-middle">14.6</td>
+              <td class="small align-middle d-none d-md-block">2,797</td>
+              <td class="small align-middle">1,751,664</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">英國</td>
+              <td class="small align-middle">48,988</td>
+              <td class="small align-middle">130,835</td>
+              <td class="small align-middle d-none d-md-block">7,357,075</td>
+              <td class="small align-middle">17.8</td>
+              <td class="small align-middle d-none d-md-block">2,671</td>
+              <td class="small align-middle">266,450</td>
+            </tr>
+            <tr>
+              <td class="small align-middle">澳洲</td>
+              <td class="small align-middle">20,614</td>
+              <td class="small align-middle">24,814</td>
+              <td class="small align-middle d-none d-md-block">1,585,315</td>
+              <td class="small align-middle">15.7</td>
+              <td class="small align-middle d-none d-md-block">1,204</td>
+              <td class="small align-middle">39,268</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- end of Comscore MMX table -->
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-8 wrapperXL">
+        <p class="h3 text-center">
+          全球上網使用裝置比較
+        </p>
+        <canvas id="chart_globalConnectedGadgets" style="height:350vh; width:100vw"></canvas>
+        <script>
+          var ctx = document.getElementById('chart_globalConnectedGadgets').getContext('2d');
+          var mixedChart = new Chart(ctx, {
+            type: 'horizontalBar',
+            data: {
+              labels: ['台灣', '日本', '南韓', '新加坡', '泰國', '馬來西亞', '越南', '菲律賓', '中國', '印尼', '印度', '美國', '英國', '澳洲'],
+              datasets: [
+                  {
+                    label: '手機',
+                    data: [92, 98,	98,	97,	97,	96,	95,	91,	91,	89,	88,	90,	92,	96],
+                    backgroundColor: '#7DCC4A',
+                    borderColor: '#7DCC4A',
+                    fill: false,
+                    borderWidth: 1,
+                    datalabels: {
+                      color: 'white',
+                      formatter: function(value, context) {
+                        return Math.abs(value) + '%';
+                      }
+                    },
+                    xAxisID: 'x-axis-2',
+                  },
+                  {
+                    label: '桌機／筆電',
+                    data: [67,	71,	25,	53,	43,	41,	71,	22,	80,	38,	15,	77,	74,	84],
+                    backgroundColor: '#3366CC',
+                    borderColor: '#3366CC',
+                    fill: false,
+                    borderWidth: 1,
+                    datalabels: {
+                      color: 'white',
+                      formatter: function(value, context) {
+                        return Math.abs(value) + '%';
+                      }
+                    },
+                    xAxisID: 'x-axis-2',
+
+                  },
+                  {
+                    label: '平板',
+                    data: [29,	19,	12,	20,	13,	18,	42,	8,	30,	29,	5,	46,	53,	56],
+                    backgroundColor: '#FC9127',
+                    borderColor: '#FC9127',
+                    fill: false,
+                    borderWidth: 1,
+                    datalabels: {
+                      color: 'white',
+                      formatter: function(value, context) {
+                        return Math.abs(value) + '%';
+                      }
+                    },
+                    xAxisID: 'x-axis-2',
+                  },
+                  {
+                    label: '平均持有裝置數',
+                    data: [2.5,	2.8, 1.3,	2.2, 1.6,	2.1, 3.0, 1.1, 2.5,	1.8, 0.8,	3.2, 3.1,	3.4],
+                    backgroundColor: '#67C9F4',
+                    borderColor: '#67C9F4',
+                    datalabels: {
+                      align: 'end',
+                      offset:15,
+                      formatter: function(value, context) {
+                        return Math.abs(value) + '個';
+                      }
+                    },
+                    xAxisID: 'x-axis-1',
+                  },
+                ],
+            },
+            options: {
+              animation: {
+                duration: 0
+              },
+              tooltips: {
+                /*callbacks: {
+                  label: function(tooltipItem, data) {
+                    var label = data.datasets[tooltipItem.datasetIndex].label || '';
+                    if (label) {
+                        label += ': ';
+                    }
+                    label += Math.abs(tooltipItem.xLabel * 100) / 100;
+                    return label + '%';
+                  }
+                }*/
+              },
+              responsive: true,
+              scales: {
+                xAxes: [
+                  {
+                    display: false,
+                    type: 'linear',
+                    id: 'x-axis-1',
+                    ticks: {
+                      beginAtZero: true,
+                      stepValue: 10,
+                      max: 20,
+                    },
+                    scaleLabel: {
+                      display:false,
+                      labelString: '個',
+                    },
+                    gridLines: {
+                      display: false,
+                      drawOnChartArea: false,
+                    },
+                  },
+                  {
+                    type: 'linear',
+                    display: false,
+                    id: 'x-axis-2',
+                    ticks: {
+                      beginAtZero: true,
+                      stepValue: 10,
+                      max: 100,
+                    },
+                    scaleLabel: {
+                      display:false,
+                      labelString: '%',
+                    },
+                    gridLines: {
+                      display: false,
+                      drawOnChartArea: false,
+                    },
+                }],
+                yAxes: [{
+                  gridLines: {
+                    display: false,
+                  },
+                },],
+              },
+             elements: {
+               line: {
+                 tension: 0,
+               }
+             },
+           }
+          });
+        </script>
+      </div>
+    </div>
+  </div>
+
 
   </div>
 </div>
