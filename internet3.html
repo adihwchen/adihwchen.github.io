@@ -349,7 +349,7 @@ hr {
               </li>
               <li class="list-inline-item mt-4 mb-0">
                 <div class="small linkColor" href="#downloadSignIn" data-toggle="modal" data-target="#downloadSignIn">
-                  下載完整報告
+                  下載 PDF
                 </div>
               </li>
               <li class="list-inline-item mt-4 mb-0">
@@ -366,7 +366,7 @@ hr {
             <ul class="list-inline text-center mt-2 mb-1">
               <li class="list-inline-item">
                 <div class="small linkColor" href="#downloadSignIn" data-toggle="modal" data-target="#downloadSignIn">
-                  下載完整報告
+                  下載 PDF
                 </div>
               </li>
               <li class="list-inline-item">
@@ -381,6 +381,16 @@ hr {
           </li>
           <li class="mt-1 mr-3">
             <ul class="navbar-nav nav-pills">
+              <li class="nav-item dropdown mx-4">
+                <a class="nav-link dropdown-toggle text-center" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                  前瞻亮點趨勢分析
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item text-center" href="#spotlight1">族群輪廓差異</a>
+                  <a class="dropdown-item text-center" href="#spotlight2">智慧家庭發展</a>
+                  <a class="dropdown-item text-center" href="#spotlight3">電子商務趨勢</a>
+                </div>
+              </li>
               <li class="nav-item dropdown mx-4">
                 <a class="nav-link dropdown-toggle text-center" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                   整體網路使用現況
@@ -399,16 +409,7 @@ hr {
                   <a class="dropdown-item text-center" href="#ipv4ipv6AndASN">IPv4/IPv6/ASN統計</a>
                 </div>
               </li>
-              <li class="nav-item dropdown mx-4">
-                <a class="nav-link dropdown-toggle text-center" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                  前瞻亮點趨勢分析
-                </a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item text-center" href="#spotlight1">族群輪廓差異</a>
-                  <a class="dropdown-item text-center" href="#spotlight2">智慧家庭發展</a>
-                  <a class="dropdown-item text-center" href="#spotlight3">電子商務趨勢</a>
-                </div>
-              </li>
+
               <li class="nav-item dropdown mx-4">
                 <a class="nav-link dropdown-toggle text-center" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                   網路服務應用概況
@@ -421,7 +422,7 @@ hr {
               </li>
               <li class="nav-item dropdown mx-4">
                 <a class="nav-link dropdown-toggle text-center" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                  國際情勢介紹比較
+                  國際現況介紹比較
                 </a>
                 <div class="dropdown-menu">
                   <a class="dropdown-item text-center" href="#internetCompetitiveTW">台灣網路競爭力</a>
@@ -596,7 +597,775 @@ hr {
 <!-- end of Research Methodology modal -->
 <!-- end of forewords-->
 
-<!-- chapter 1-->
+
+<!-- chapter 1 -->
+<div id="spotlights" class=""></div>
+<hr>
+<div class="container-fluid wrapperChapters">
+  <div class="row justify-content-center text-center d-lg-none ylwBG">
+    <p class="h2 text-dark my-3">
+      前瞻亮點趨勢分析
+    </p>
+  </div>
+  <div class="row justify-content-center text-center d-none d-lg-block">
+    <div class="col-12">
+      <img class="img-fluid" src="img/chapters/181218_3-78.png" alt="">
+    </div>
+  </div>
+  <!-- spotlight 1 -->
+  <div id="spotlight1"></div>
+  <div class="row justify-content-center wrapperM">
+    <div class="col-md-8 wrapperXL">
+      <p class="h2 text-center">
+        1.
+      </p>
+      <p class="h3 text-center">
+        從網路使用行為探討族群輪廓差異
+      </p>
+      <p class="mt-3">
+        女性網購多、男性消費高；各族群中，以樂齡男女網購表現差異小；男女性網購使用裝置排序相同，男性用桌機／筆電比率更高、女性則是行動裝置多。
+      </p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center wrapperM">
+    <div class="col-md-8 text-center wrapperXL">
+      <p class="h4 text-center">
+        族群網購力
+      </p>
+    </div>
+    <div class="col-md-8">
+      <canvas id="chart_shopOnlineByGroups" style="height:80vh; width:100vw"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_shopOnlineByGroups').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['整體', , 'Z 世代男', 'Z 世代女', , '千禧世代男', '千禧世代女', , 'X 世代男', 'X 世代女', , '樂齡族男', '樂齡族女'],
+            datasets: [ {
+                  label: '網購率',
+                  data: [64.2, , 55.4, 71.7, , 74.7, 89.7, , 62.5, 73.5, , 31.2, 34.6,],
+                  // Changes this dataset to become a line
+                  type: 'line',
+                  yAxisID: 'y-axis-2',
+                  fill: false,
+                  borderColor: '#3366CC',
+                  backgroundColor: 'rgba(51, 102, 204, 0)',
+                  pointBackgroundColor: '#3366CC',
+                  pointBorderColor: '#3366CC',
+                  pointBorderWidth: 2,
+                  datalabels: {
+                    align: 'top',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+                {
+                  label: '月平均網購金額',
+                  data: [2418, , 2015, 1518, , 3038, 2782, , 2324, 2177, , 2152, 2285,],
+                  yAxisID: 'y-axis-1',
+                  backgroundColor: '#7DCC4A',
+                  borderColor:'#7DCC4A',
+                  hoverBackgroundColor: '#8bd15f',
+                  borderWidth: 1,
+                  datalabels: {
+                    display: 'auto',
+                    align: 'bottom',
+                    formatter: function(value, context) {
+                      return Math.round(value) + '元';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            responsive: true,
+            animation: {
+              duration: 0
+            },
+            legend: {
+              labels: {
+                usePointStyle: true,
+              }
+            },
+            tooltips: {
+              mode:'index',
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  type: 'linear',
+                  position: 'left',
+                  id: 'y-axis-1',
+                  ticks: {
+                    beginAtZero: true,
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+                ticks: {
+                  beginAtZero: true,
+                  stepValue: 10,
+                  max: 100,
+                },
+                scaleLabel: {
+                  display:false,
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+          plugins: {
+
+           }
+         }
+          });
+      </script>
+    </div>
+    <div class="col-12 extraInfo text-center wrapper">
+      <ul class="list-unstyled">
+        <li>
+          資料來源：本研究電訪(2018)、創市際(2018/03)
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row justify-content-center wrapperM">
+    <div class="col-md-8 wrapperXL">
+      <p class="h4 text-center">
+        網購行為的性別差異
+      </p>
+    </div>
+    <div class="col-md-8">
+      <!-- Shopping Online by Gender table -->
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th class="align-middle"></th>
+            <th class="align-middle text-center" colspan="2">男性</th>
+            <th class="align-middle text-center" colspan="2">女性</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr>
+            <th class="small align-middle" rowspan="3" scope="row">網購使用裝置</th>
+            <td class="small align-middle">桌機／筆電</td>
+            <td class="small align-middle">84.6%</td>
+            <td class="small align-middle">桌機／筆電</td>
+            <td class="small align-middle">78.4%</td>
+
+          </tr>
+          <tr>
+            <td class="small align-middle">智慧型手機</td>
+            <td class="small align-middle">55.4%</td>
+            <td class="small align-middle">智慧型手機</td>
+            <td class="small align-middle">63.4%</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">平板電腦</td>
+            <td class="small align-middle">13.3%</td>
+            <td class="small align-middle">平板電腦</td>
+            <td class="small align-middle">15.9%</td>
+          </tr>
+          <tr>
+            <th class="small align-middle border-bottom" rowspan="5" scope="row">網購原因</th>
+            <td class="small align-middle">方便搜尋商品資訊</td>
+            <td class="small align-middle">79.4%</td>
+            <td class="small align-middle">方便搜尋商品資訊</td>
+            <td class="small align-middle">77.3%</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">省時／交通成本</td>
+            <td class="small align-middle">67.0%</td>
+            <td class="small align-middle">容易比價</td>
+            <td class="small align-middle">69.6%</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">種類很多</td>
+            <td class="small align-middle">65.1%</td>
+            <td class="small align-middle">隨時想買都可以</td>
+            <td class="small align-middle">61.5%</td>
+          </tr>
+          <tr>
+            <td class="small align-middle border-bottom">價格便宜</td>
+            <td class="small align-middle border-bottom">62.6%</td>
+            <td class="small align-middle border-bottom">價格便宜</td>
+            <td class="small align-middle border-bottom">57.2%</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- end of Shopping Online by Gender table -->
+
+    </div>
+    <div class="col-12 extraInfo text-center">
+      <ul class="list-unstyled">
+        <li>
+          資料來源：本研究電訪(2018)、創市際(2018/03)
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row justify-content-center wrapperM">
+    <div class="col-md-8 text-center wrapperXL">
+      <p class="h4 text-center">
+        樂齡族網路使用特色
+      </p>
+    </div>
+    <div class="col-md-8">
+      <canvas id="chart_silverUserBehavior" style="height:70vh; width:100vw"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_silverUserBehavior').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'radar',
+          data: {
+            labels: ['即時通訊','影音／直播或聽音樂','網路新聞或資訊','社群論壇／部落格','電子郵件、搜尋引擎','買賣／瀏覽購物','理財／付款','網路遊戲','電子書','線上交友',],
+            datasets: [
+                {
+                  label: '樂齡族',
+                  data: [ 92.6, 77.9, 72.5, 59.4, 53.2, 46.9, 24.7, 19.3, 12.2, 5.0],
+                  fill: false,
+                  borderColor:'#7DCC4A',
+                  backgroundColor: 'rgba(125, 204, 74, 0)',
+                  hoverBackgroundColor: '#8bd15f',
+                  pointBackgroundColor: '#7DCC4A',
+                  pointBorderColor: '#7DCC4A',
+                  pointBorderWidth: 2,
+                  datalabels: {
+                    display: false,
+                    }
+                },
+                {
+                  label: '非樂齡族',
+                  data: [ 97.8, 92.3, 80.6, 89.7, 82.0, 80.3, 48.4, 47.4, 17.7, 11.2, ],
+                  fill: false,
+                  borderColor: '#3366CC',
+                  backgroundColor: 'rgba(51, 102, 204, 0)',
+                  pointBackgroundColor: '#3366CC',
+                  pointBorderColor: '#3366CC',
+                  pointBorderWidth: 2,
+                  datalabels: {
+                    display: false,
+                    }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            responsive: true,
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+              scale: {
+                ticks: {
+                  beginAtZero: true,
+                  maxTicksLimit: 2,
+                  min: 0,
+                  max: 100,
+                  userCallback: function(label, index, labels) {
+                      // when the floored value is the same as the value we have a whole number
+                      if (Math.floor(label) === label) {
+                          return label;
+                      }
+                  },
+                }
+            },
+            legend: {
+              labels: {
+                usePointStyle: true,
+              }
+            },
+
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+          });
+      </script>
+    </div>
+    <div class="col-12 extraInfo text-center">
+      <ul class="list-unstyled">
+        <li>
+          資料來源：本研究電訪(2018)
+        </li>
+      </ul>
+    </div>
+  </div>
+  <hr>
+  <!-- end of spotlight 1 -->
+  <div id="spotlight2"></div>
+
+  <!-- spotlight 2 -->
+  <div class="row justify-content-center wrapperM">
+    <div class="col-md-8 wrapperXL">
+      <p class="h2 text-center">
+        2.
+      </p>
+      <p class="h3 text-center">
+        智慧家庭發展的硬體和服務整合應用
+      </p>
+      <p class="mt-3">
+        台灣智慧家庭的相關產品使用率普遍不及一成，其中以家電和遠端控制裝置使用率最高。跟美國20%的數位網路家庭已使用智慧音箱的高普及度相較之下，台灣的智慧音箱使用率和必備產品清單中，都非智慧家庭相關設備首選。台灣智慧家庭是以硬體設備發展開始，而需求度最高的產品則是安全監控類。
+      </p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center wrapperM">
+    <div class="col-md-8 text-center wrapperXL">
+      <p class="h4 text-center">
+        智慧家庭產品使用率
+      </p>
+    </div>
+    <div class="col-md-8">
+      <canvas id="chart_usageOfSmartHomeProducts" style="height:70vh; width:100vw"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_usageOfSmartHomeProducts').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'horizontalBar',
+          data: {
+            labels: ['智慧家居設備','智慧音箱','智慧家庭防盜防災','智慧家庭照顧','陪伴機器人',],
+            datasets: [
+                {
+                  label: '智慧家庭產品使用率',
+                  data: [9.0, 5.6, 5.5, 5.4, 1.4,],
+                  backgroundColor: '#7DCC4A',
+                  borderColor: '#7DCC4A',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    /*display: 'auto',*/
+                    offset: 35,
+                    align:'end',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.xLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                display: false,
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [{
+                ticks: {
+                  beginAtZero: true,
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              },],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+    <div class="col-12 extraInfo text-center wrapper">
+      <ul class="list-unstyled">
+        <li>
+          資料來源：創市際(2018/05)
+        </li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="row justify-content-center wrapperM">
+    <div class="col-md-8 text-center wrapperXL">
+      <p class="h4 text-center">
+        智慧家庭必備產品
+      </p>
+    </div>
+    <div class="col-md-8">
+      <canvas id="chart_mustHaveOfSmartHomeProducts" style="height:80vh; width:100vw"></canvas>
+      <script type="text/javascript">
+        var ctx = document.getElementById('chart_mustHaveOfSmartHomeProducts').getContext('2d');
+        var myDoghnutChart = new Chart(ctx, {
+          type: 'pie',
+          data: {
+            datasets: [{
+              data:[31.3, 26.5, 11.3, 11.0, 4.3,6.1, 4.0, 5.5],
+              backgroundColor: [
+                '#3366CC',
+                '#7DCC4A',
+                '#FC9127',
+                '#FFC000',
+                '#EF5425',
+                '#67C9F4',
+                '#24AEB4',
+                'grey',
+              ],
+            }],
+            labels: ['網路攝影監視系統','防災偵測與通知', '電子門鎖', '智慧型電視', '智慧音箱', '智慧掃地機器人', '智慧冰箱', '其他'],
+          },
+          options: {
+            responsive: true,
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: true,
+              labels: {
+                boxWidth: 10,
+              }
+            },
+            plugins: {
+              datalabels: {
+                color: 'white',
+                formatter: function(value, context) {
+                  return Math.abs(value) + '%';
+                }
+              }
+            },
+          }
+        });
+      </script>
+    </div>
+    <div class="col-12 extraInfo text-center wrapper">
+      <ul class="list-unstyled">
+        <li>
+          資料來源：創市際(2018/05)
+        </li>
+      </ul>
+    </div>
+
+  </div>
+  <!-- end of spotlight 2 -->
+  <hr>
+  <div id="spotlight3"></div>
+  <!-- spotlight 3 -->
+  <div class="row justify-content-center wrapperM">
+    <div class="col-md-8 wrapperXL">
+      <p class="h2 text-center">
+        3.
+      </p>
+      <p class="h3 text-center">
+        網路社群與經濟轉變下的電子商務趨勢
+      </p>
+      <p class="mt-3">
+        2017-2018年，行動支付整體使用率增加 2.3% 未見明顯成長，但從 Apple Pay 轉移到 LINE Pay；而社群直播與分享推薦的特性，使得社群不再單純是社交平台。
+      </p>
+    </div>
+  </div>
+  <div class="row justify-content-center wrapperM">
+    <div class="col-md-8 wrapperXL">
+      <p class="h4 text-center">
+        行動支付品牌市佔變化
+      </p>
+    </div>
+    <div class="col-md-8">
+      <canvas id="chart_mobilePaymentBrands" style="height:90vh; width:100vw"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_mobilePaymentBrands').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['LinePay', 'ApplePay', '街口支付', 'GooglePay', 'SamsungPay', '支付寶',],
+            datasets: [
+                {
+                  label: '2017',
+                  fill: false,
+                  data: [13.4, 34.5, 4.7, 6.8, , 12.5],
+                  backgroundColor: '#7DCC4A',
+                  borderColor: '#7DCC4A',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    color: 'white',
+                    display: 'auto',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+                {
+                  label: '2018',
+                  fill: false,
+                  data: [45.1, 38.9, 24.2, 7.9, 4.5, 3.5],
+                  backgroundColor: '#3366CC',
+                  borderColor: '#3366CC',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    color: 'white',
+                    display: 'auto',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  id: 'y-axis-1',
+                  display: false,
+                  ticks: {
+                    beginAtZero: true,
+                    stepValue: 10,
+                    max: 50,
+                  },
+                  gridLines: {
+                    display: false,
+                },
+              },{
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+                ticks: {
+                  beginAtZero: true,
+                  stepValue: 10,
+                  max: 50,
+                },
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+          plugins: {
+
+           }
+         }
+          });
+      </script>
+    </div>
+    <div class="col-12 extraInfo text-center wrapper">
+      <ul class="list-unstyled">
+        <li>
+          資料來源：TWNIC(2017/09)、本研究電訪(2018)
+        </li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="row justify-content-center wrapperM">
+    <div class="col-md-8 wrapperXL">
+      <p class="h4 text-center">
+        電商購物與直播平台
+      </p>
+    </div>
+    <div class="col-md-8">
+      <canvas id="chart_ecShoppingAndLiveStreaming" style="height:90vh; width:100vw"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_ecShoppingAndLiveStreaming').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Facebook', 'Instagram', 'Line',],
+            datasets: [
+                {
+                  label: '常用購物平台',
+                  fill: false,
+                  data: [6.1, 2.6, 20.1],
+                  backgroundColor: '#7DCC4A',
+                  borderColor: '#7DCC4A',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    color: 'white',
+                    display: 'auto',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+                {
+                  label: '收看商品直播平台',
+                  fill: false,
+                  data: [77.1, 8.1, ,],
+                  backgroundColor: '#3366CC',
+                  borderColor: '#3366CC',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    color: 'white',
+                    display: 'auto',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  id: 'y-axis-1',
+                  display: false,
+                  ticks: {
+                    beginAtZero: true,
+                    stepValue: 10,
+                    max: 80,
+                  },
+                  gridLines: {
+                    display: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+                ticks: {
+                  beginAtZero: true,
+                  stepValue: 10,
+                  max: 80,
+                },
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+          plugins: {
+
+           }
+         }
+          });
+      </script>
+    </div>
+    <div class="col-12 extraInfo text-center wrapper">
+      <ul class="list-unstyled">
+        <li>
+          資料來源：創市際(2018/03)、創市際(2018/05)、創市際(2018/10)
+        </li>
+      </ul>
+    </div>
+
+  </div>
+  <!-- end of spotlight 3 -->
+</div>
+<!-- end of chapter 1-->
+
+<!-- chapter 2 -->
 <div id="overall" class="mt-3"></div>
 
 <hr class="d-none d-md-block">
@@ -1445,9 +2214,10 @@ hr {
   </div>
   <!-- end of house hold connected -->
 </div>
-<!-- end of chapter 1-->
 
-<!-- chapter 2 -->
+<!-- end of chapter 2-->
+
+<!-- chapter 3 -->
 <div id="DNIP" class="wrapper"></div>
 <hr>
 <div class="container-fluid wrapperChapters">
@@ -2636,775 +3406,7 @@ hr {
   </div>
 </div>
 
-<!-- end of chapter 2 -->
-
-<!-- chapter 3 -->
-
-<div id="spotlights" class=""></div>
-<hr>
-<div class="container-fluid wrapperChapters">
-  <div class="row justify-content-center text-center d-lg-none ylwBG">
-    <p class="h2 text-dark my-3">
-      前瞻亮點趨勢分析
-    </p>
-  </div>
-  <div class="row justify-content-center text-center d-none d-lg-block">
-    <div class="col-12">
-      <img class="img-fluid" src="img/chapters/181218_3-78.png" alt="">
-    </div>
-  </div>
-  <!-- spotlight 1 -->
-  <div id="spotlight1"></div>
-  <div class="row justify-content-center wrapperM">
-    <div class="col-md-8 wrapperXL">
-      <p class="h2 text-center">
-        1.
-      </p>
-      <p class="h3 text-center">
-        從網路使用行為探討族群輪廓差異
-      </p>
-      <p class="mt-3">
-        女性網購多、男性消費高；各族群中，以樂齡男女網購表現差異小；男女性網購使用裝置排序相同，男性用桌機／筆電比率更高、女性則是行動裝置多。
-      </p>
-    </div>
-  </div>
-
-  <div class="row justify-content-center wrapperM">
-    <div class="col-md-8 text-center wrapperXL">
-      <p class="h4 text-center">
-        族群網購力
-      </p>
-    </div>
-    <div class="col-md-8">
-      <canvas id="chart_shopOnlineByGroups" style="height:80vh; width:100vw"></canvas>
-      <script>
-        var ctx = document.getElementById('chart_shopOnlineByGroups').getContext('2d');
-        var mixedChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ['整體', , 'Z 世代男', 'Z 世代女', , '千禧世代男', '千禧世代女', , 'X 世代男', 'X 世代女', , '樂齡族男', '樂齡族女'],
-            datasets: [ {
-                  label: '網購率',
-                  data: [64.2, , 55.4, 71.7, , 74.7, 89.7, , 62.5, 73.5, , 31.2, 34.6,],
-                  // Changes this dataset to become a line
-                  type: 'line',
-                  yAxisID: 'y-axis-2',
-                  fill: false,
-                  borderColor: '#3366CC',
-                  backgroundColor: 'rgba(51, 102, 204, 0)',
-                  pointBackgroundColor: '#3366CC',
-                  pointBorderColor: '#3366CC',
-                  pointBorderWidth: 2,
-                  datalabels: {
-                    align: 'top',
-                    formatter: function(value, context) {
-                      return Math.abs(value) + '%';
-                    }
-                  }
-                },
-                {
-                  label: '月平均網購金額',
-                  data: [2418, , 2015, 1518, , 3038, 2782, , 2324, 2177, , 2152, 2285,],
-                  yAxisID: 'y-axis-1',
-                  backgroundColor: '#7DCC4A',
-                  borderColor:'#7DCC4A',
-                  hoverBackgroundColor: '#8bd15f',
-                  borderWidth: 1,
-                  datalabels: {
-                    display: 'auto',
-                    align: 'bottom',
-                    formatter: function(value, context) {
-                      return Math.round(value) + '元';
-                    }
-                  }
-                },
-              ],
-          },
-          options: {
-            responsive: true,
-            animation: {
-              duration: 0
-            },
-            legend: {
-              labels: {
-                usePointStyle: true,
-              }
-            },
-            tooltips: {
-              mode:'index',
-            },
-            scales: {
-              xAxes: [{
-                gridLines: {
-                  display: false
-                }
-              }],
-              yAxes: [
-                {
-                  display: false,
-                  type: 'linear',
-                  position: 'left',
-                  id: 'y-axis-1',
-                  ticks: {
-                    beginAtZero: true,
-                  },
-                  gridLines: {
-                    display: false,
-                    drawOnChartArea: false,
-                },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                  stepValue: 10,
-                  max: 100,
-                },
-                scaleLabel: {
-                  display:false,
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
-            },
-           elements: {
-             line: {
-               tension: 0,
-             }
-           },
-          plugins: {
-
-           }
-         }
-          });
-      </script>
-    </div>
-    <div class="col-12 extraInfo text-center wrapper">
-      <ul class="list-unstyled">
-        <li>
-          資料來源：本研究電訪(2018)、創市際(2018/03)
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="row justify-content-center wrapperM">
-    <div class="col-md-8 wrapperXL">
-      <p class="h4 text-center">
-        網購行為的性別差異
-      </p>
-    </div>
-    <div class="col-md-8">
-      <!-- Shopping Online by Gender table -->
-      <table class="table">
-        <thead class="thead-light">
-          <tr>
-            <th class="align-middle"></th>
-            <th class="align-middle text-center" colspan="2">男性</th>
-            <th class="align-middle text-center" colspan="2">女性</th>
-          </tr>
-        </thead>
-        <tbody >
-          <tr>
-            <th class="small align-middle" rowspan="3" scope="row">網購使用裝置</th>
-            <td class="small align-middle">桌機／筆電</td>
-            <td class="small align-middle">84.6%</td>
-            <td class="small align-middle">桌機／筆電</td>
-            <td class="small align-middle">78.4%</td>
-
-          </tr>
-          <tr>
-            <td class="small align-middle">智慧型手機</td>
-            <td class="small align-middle">55.4%</td>
-            <td class="small align-middle">智慧型手機</td>
-            <td class="small align-middle">63.4%</td>
-          </tr>
-          <tr>
-            <td class="small align-middle">平板電腦</td>
-            <td class="small align-middle">13.3%</td>
-            <td class="small align-middle">平板電腦</td>
-            <td class="small align-middle">15.9%</td>
-          </tr>
-          <tr>
-            <th class="small align-middle border-bottom" rowspan="5" scope="row">網購原因</th>
-            <td class="small align-middle">方便搜尋商品資訊</td>
-            <td class="small align-middle">79.4%</td>
-            <td class="small align-middle">方便搜尋商品資訊</td>
-            <td class="small align-middle">77.3%</td>
-          </tr>
-          <tr>
-            <td class="small align-middle">省時／交通成本</td>
-            <td class="small align-middle">67.0%</td>
-            <td class="small align-middle">容易比價</td>
-            <td class="small align-middle">69.6%</td>
-          </tr>
-          <tr>
-            <td class="small align-middle">種類很多</td>
-            <td class="small align-middle">65.1%</td>
-            <td class="small align-middle">隨時想買都可以</td>
-            <td class="small align-middle">61.5%</td>
-          </tr>
-          <tr>
-            <td class="small align-middle border-bottom">價格便宜</td>
-            <td class="small align-middle border-bottom">62.6%</td>
-            <td class="small align-middle border-bottom">價格便宜</td>
-            <td class="small align-middle border-bottom">57.2%</td>
-          </tr>
-        </tbody>
-      </table>
-      <!-- end of Shopping Online by Gender table -->
-
-    </div>
-    <div class="col-12 extraInfo text-center">
-      <ul class="list-unstyled">
-        <li>
-          資料來源：本研究電訪(2018)、創市際(2018/03)
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="row justify-content-center wrapperM">
-    <div class="col-md-8 text-center wrapperXL">
-      <p class="h4 text-center">
-        樂齡族網路使用特色
-      </p>
-    </div>
-    <div class="col-md-8">
-      <canvas id="chart_silverUserBehavior" style="height:70vh; width:100vw"></canvas>
-      <script>
-        var ctx = document.getElementById('chart_silverUserBehavior').getContext('2d');
-        var mixedChart = new Chart(ctx, {
-          type: 'radar',
-          data: {
-            labels: ['即時通訊','影音／直播或聽音樂','網路新聞或資訊','社群論壇／部落格','電子郵件、搜尋引擎','買賣／瀏覽購物','理財／付款','網路遊戲','電子書','線上交友',],
-            datasets: [
-                {
-                  label: '樂齡族',
-                  data: [ 92.6, 77.9, 72.5, 59.4, 53.2, 46.9, 24.7, 19.3, 12.2, 5.0],
-                  fill: false,
-                  borderColor:'#7DCC4A',
-                  backgroundColor: 'rgba(125, 204, 74, 0)',
-                  hoverBackgroundColor: '#8bd15f',
-                  pointBackgroundColor: '#7DCC4A',
-                  pointBorderColor: '#7DCC4A',
-                  pointBorderWidth: 2,
-                  datalabels: {
-                    display: false,
-                    }
-                },
-                {
-                  label: '非樂齡族',
-                  data: [ 97.8, 92.3, 80.6, 89.7, 82.0, 80.3, 48.4, 47.4, 17.7, 11.2, ],
-                  fill: false,
-                  borderColor: '#3366CC',
-                  backgroundColor: 'rgba(51, 102, 204, 0)',
-                  pointBackgroundColor: '#3366CC',
-                  pointBorderColor: '#3366CC',
-                  pointBorderWidth: 2,
-                  datalabels: {
-                    display: false,
-                    }
-                },
-              ],
-          },
-          options: {
-            animation: {
-              duration: 0
-            },
-            responsive: true,
-            tooltips: {
-              callbacks: {
-                label: function(tooltipItem, data) {
-                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
-
-                  if (label) {
-                      label += ': ';
-                  }
-                  label += Math.round(tooltipItem.yLabel * 100) / 100;
-                  return label + '%';
-                }
-              }
-            },
-              scale: {
-                ticks: {
-                  beginAtZero: true,
-                  maxTicksLimit: 2,
-                  min: 0,
-                  max: 100,
-                  userCallback: function(label, index, labels) {
-                      // when the floored value is the same as the value we have a whole number
-                      if (Math.floor(label) === label) {
-                          return label;
-                      }
-                  },
-                }
-            },
-            legend: {
-              labels: {
-                usePointStyle: true,
-              }
-            },
-
-           elements: {
-             line: {
-               tension: 0,
-             }
-           },
-         }
-          });
-      </script>
-    </div>
-    <div class="col-12 extraInfo text-center">
-      <ul class="list-unstyled">
-        <li>
-          資料來源：本研究電訪(2018)
-        </li>
-      </ul>
-    </div>
-  </div>
-  <hr>
-  <!-- end of spotlight 1 -->
-  <div id="spotlight2"></div>
-
-  <!-- spotlight 2 -->
-  <div class="row justify-content-center wrapperM">
-    <div class="col-md-8 wrapperXL">
-      <p class="h2 text-center">
-        2.
-      </p>
-      <p class="h3 text-center">
-        智慧家庭發展的硬體和服務整合應用
-      </p>
-      <p class="mt-3">
-        台灣智慧家庭的相關產品使用率普遍不及一成，其中以家電和遠端控制裝置使用率最高。跟美國20%的數位網路家庭已使用智慧音箱的高普及度相較之下，台灣的智慧音箱使用率和必備產品清單中，都非智慧家庭相關設備首選。台灣智慧家庭是以硬體設備發展開始，而需求度最高的產品則是安全監控類。
-      </p>
-    </div>
-  </div>
-
-  <div class="row justify-content-center wrapperM">
-    <div class="col-md-8 text-center wrapperXL">
-      <p class="h4 text-center">
-        智慧家庭產品使用率
-      </p>
-    </div>
-    <div class="col-md-8">
-      <canvas id="chart_usageOfSmartHomeProducts" style="height:70vh; width:100vw"></canvas>
-      <script>
-        var ctx = document.getElementById('chart_usageOfSmartHomeProducts').getContext('2d');
-        var mixedChart = new Chart(ctx, {
-          type: 'horizontalBar',
-          data: {
-            labels: ['智慧家居設備','智慧音箱','智慧家庭防盜防災','智慧家庭照顧','陪伴機器人',],
-            datasets: [
-                {
-                  label: '智慧家庭產品使用率',
-                  data: [9.0, 5.6, 5.5, 5.4, 1.4,],
-                  backgroundColor: '#7DCC4A',
-                  borderColor: '#7DCC4A',
-                  fill: false,
-                  borderWidth: 1,
-                  datalabels: {
-                    /*display: 'auto',*/
-                    offset: 35,
-                    align:'end',
-                    formatter: function(value, context) {
-                      return Math.abs(value) + '%';
-                    }
-                  }
-                },
-              ],
-          },
-          options: {
-            animation: {
-              duration: 0
-            },
-            legend: {
-              display: false,
-            },
-            tooltips: {
-              callbacks: {
-                label: function(tooltipItem, data) {
-                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
-
-                  if (label) {
-                      label += ': ';
-                  }
-                  label += Math.abs(tooltipItem.xLabel * 100) / 100;
-                  return label + '%';
-                }
-              }
-            },
-            responsive: true,
-            scales: {
-              xAxes: [{
-                display: false,
-                gridLines: {
-                  display: false
-                }
-              }],
-              yAxes: [{
-                ticks: {
-                  beginAtZero: true,
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              },],
-            },
-           elements: {
-             line: {
-               tension: 0,
-             }
-           },
-         }
-        });
-      </script>
-    </div>
-    <div class="col-12 extraInfo text-center wrapper">
-      <ul class="list-unstyled">
-        <li>
-          資料來源：創市際(2018/05)
-        </li>
-      </ul>
-    </div>
-
-  </div>
-  <div class="row justify-content-center wrapperM">
-    <div class="col-md-8 text-center wrapperXL">
-      <p class="h4 text-center">
-        智慧家庭必備產品
-      </p>
-    </div>
-    <div class="col-md-8">
-      <canvas id="chart_mustHaveOfSmartHomeProducts" style="height:80vh; width:100vw"></canvas>
-      <script type="text/javascript">
-        var ctx = document.getElementById('chart_mustHaveOfSmartHomeProducts').getContext('2d');
-        var myDoghnutChart = new Chart(ctx, {
-          type: 'pie',
-          data: {
-            datasets: [{
-              data:[31.3, 26.5, 11.3, 11.0, 4.3,6.1, 4.0, 5.5],
-              backgroundColor: [
-                '#3366CC',
-                '#7DCC4A',
-                '#FC9127',
-                '#FFC000',
-                '#EF5425',
-                '#67C9F4',
-                '#24AEB4',
-                'grey',
-              ],
-            }],
-            labels: ['網路攝影監視系統','防災偵測與通知', '電子門鎖', '智慧型電視', '智慧音箱', '智慧掃地機器人', '智慧冰箱', '其他'],
-          },
-          options: {
-            responsive: true,
-            animation: {
-              duration: 0
-            },
-            legend: {
-              display: true,
-              labels: {
-                boxWidth: 10,
-              }
-            },
-            plugins: {
-              datalabels: {
-                color: 'white',
-                formatter: function(value, context) {
-                  return Math.abs(value) + '%';
-                }
-              }
-            },
-          }
-        });
-      </script>
-    </div>
-    <div class="col-12 extraInfo text-center wrapper">
-      <ul class="list-unstyled">
-        <li>
-          資料來源：創市際(2018/05)
-        </li>
-      </ul>
-    </div>
-
-  </div>
-  <!-- end of spotlight 2 -->
-  <hr>
-  <div id="spotlight3"></div>
-  <!-- spotlight 3 -->
-  <div class="row justify-content-center wrapperM">
-    <div class="col-md-8 wrapperXL">
-      <p class="h2 text-center">
-        3.
-      </p>
-      <p class="h3 text-center">
-        網路社群與經濟轉變下的電子商務趨勢
-      </p>
-      <p class="mt-3">
-        2017-2018年，行動支付整體使用率增加 2.3% 未見明顯成長，但從 Apple Pay 轉移到 LINE Pay；而社群直播與分享推薦的特性，使得社群不再單純是社交平台。
-      </p>
-    </div>
-  </div>
-  <div class="row justify-content-center wrapperM">
-    <div class="col-md-8 wrapperXL">
-      <p class="h4 text-center">
-        行動支付品牌市佔變化
-      </p>
-    </div>
-    <div class="col-md-8">
-      <canvas id="chart_mobilePaymentBrands" style="height:90vh; width:100vw"></canvas>
-      <script>
-        var ctx = document.getElementById('chart_mobilePaymentBrands').getContext('2d');
-        var mixedChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ['LinePay', 'ApplePay', '街口支付', 'GooglePay', 'SamsungPay', '支付寶',],
-            datasets: [
-                {
-                  label: '2017',
-                  fill: false,
-                  data: [13.4, 34.5, 4.7, 6.8, , 12.5],
-                  backgroundColor: '#7DCC4A',
-                  borderColor: '#7DCC4A',
-                  fill: false,
-                  borderWidth: 1,
-                  datalabels: {
-                    color: 'white',
-                    display: 'auto',
-                    formatter: function(value, context) {
-                      return Math.abs(value) + '%';
-                    }
-                  }
-                },
-                {
-                  label: '2018',
-                  fill: false,
-                  data: [45.1, 38.9, 24.2, 7.9, 4.5, 3.5],
-                  backgroundColor: '#3366CC',
-                  borderColor: '#3366CC',
-                  fill: false,
-                  borderWidth: 1,
-                  datalabels: {
-                    color: 'white',
-                    display: 'auto',
-                    formatter: function(value, context) {
-                      return Math.abs(value) + '%';
-                    }
-                  }
-                },
-              ],
-          },
-          options: {
-            animation: {
-              duration: 0
-            },
-            tooltips: {
-              callbacks: {
-                label: function(tooltipItem, data) {
-                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
-
-                  if (label) {
-                      label += ': ';
-                  }
-                  label += Math.abs(tooltipItem.yLabel * 100) / 100;
-                  return label + '%';
-                }
-              }
-            },
-            responsive: true,
-            scales: {
-              xAxes: [{
-                gridLines: {
-                  display: false
-                }
-              }],
-              yAxes: [
-                {
-                  id: 'y-axis-1',
-                  display: false,
-                  ticks: {
-                    beginAtZero: true,
-                    stepValue: 10,
-                    max: 50,
-                  },
-                  gridLines: {
-                    display: false,
-                },
-              },{
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                  stepValue: 10,
-                  max: 50,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
-            },
-           elements: {
-             line: {
-               tension: 0,
-             }
-           },
-          plugins: {
-
-           }
-         }
-          });
-      </script>
-    </div>
-    <div class="col-12 extraInfo text-center wrapper">
-      <ul class="list-unstyled">
-        <li>
-          資料來源：TWNIC(2017/09)、本研究電訪(2018)
-        </li>
-      </ul>
-    </div>
-
-  </div>
-  <div class="row justify-content-center wrapperM">
-    <div class="col-md-8 wrapperXL">
-      <p class="h4 text-center">
-        電商購物與直播平台
-      </p>
-    </div>
-    <div class="col-md-8">
-      <canvas id="chart_ecShoppingAndLiveStreaming" style="height:90vh; width:100vw"></canvas>
-      <script>
-        var ctx = document.getElementById('chart_ecShoppingAndLiveStreaming').getContext('2d');
-        var mixedChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ['Facebook', 'Instagram', 'Line',],
-            datasets: [
-                {
-                  label: '常用購物平台',
-                  fill: false,
-                  data: [6.1, 2.6, 20.1],
-                  backgroundColor: '#7DCC4A',
-                  borderColor: '#7DCC4A',
-                  fill: false,
-                  borderWidth: 1,
-                  datalabels: {
-                    color: 'white',
-                    display: 'auto',
-                    formatter: function(value, context) {
-                      return Math.abs(value) + '%';
-                    }
-                  }
-                },
-                {
-                  label: '收看商品直播平台',
-                  fill: false,
-                  data: [77.1, 8.1, ,],
-                  backgroundColor: '#3366CC',
-                  borderColor: '#3366CC',
-                  fill: false,
-                  borderWidth: 1,
-                  datalabels: {
-                    color: 'white',
-                    display: 'auto',
-                    formatter: function(value, context) {
-                      return Math.abs(value) + '%';
-                    }
-                  }
-                },
-              ],
-          },
-          options: {
-            animation: {
-              duration: 0
-            },
-            tooltips: {
-              callbacks: {
-                label: function(tooltipItem, data) {
-                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
-
-                  if (label) {
-                      label += ': ';
-                  }
-                  label += Math.abs(tooltipItem.yLabel * 100) / 100;
-                  return label + '%';
-                }
-              }
-            },
-            responsive: true,
-            scales: {
-              xAxes: [{
-                gridLines: {
-                  display: false
-                }
-              }],
-              yAxes: [
-                {
-                  id: 'y-axis-1',
-                  display: false,
-                  ticks: {
-                    beginAtZero: true,
-                    stepValue: 10,
-                    max: 80,
-                  },
-                  gridLines: {
-                    display: false,
-                },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                  stepValue: 10,
-                  max: 80,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
-            },
-           elements: {
-             line: {
-               tension: 0,
-             }
-           },
-          plugins: {
-
-           }
-         }
-          });
-      </script>
-    </div>
-    <div class="col-12 extraInfo text-center wrapper">
-      <ul class="list-unstyled">
-        <li>
-          資料來源：創市際(2018/03)、創市際(2018/05)、創市際(2018/10)
-        </li>
-      </ul>
-    </div>
-
-  </div>
-  <!-- end of spotlight 3 -->
-</div>
-<!-- end of chapter 3-->
+<!-- end of chapter 3 -->
 
 <!-- chapter 4 -->
 <!-- grid of chpt-4 modal triggers -->
@@ -5856,16 +5858,7 @@ hr {
             </div>
 
           </div>
-          <div class="row justify-content-center">
-            <div class="col-12 wrapper">
-              <p class="h4 text-center">
-                品牌知曉度與使用率
-              </p>
-            </div>
-            <div class="col-md-10">
 
-            </div>
-          </div>
           <div class="row justify-content-center">
             <div class="col-12 wrapper">
               <p class="h4 text-center">
@@ -6359,7 +6352,7 @@ hr {
   <div class="container-fluid wrapperChapters">
     <div class="row justify-content-center text-center d-lg-none ylwBG">
       <p class="h2 text-dark my-3">
-        國際情勢介紹比較
+        國際現況介紹比較
       </p>
     </div>
     <div class="row justify-content-center text-center d-none d-lg-block">
