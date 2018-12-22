@@ -6864,10 +6864,7 @@ hr {
         <div class="mb-3">
           <ul class="nav nav-pills nav-justified">
             <li class="nav-item linkColor">
-              <div class="nav-link active border border-secondary" href="#globalNumberOfDomain" data-toggle="tab">網域註冊量</div>
-            </li>
-            <li class="nav-item linkColor">
-              <div class="nav-link border border-secondary border-left-0" href="#globalNumberOfIPv4" data-toggle="tab">IPv4 數量</div>
+              <div class="nav-link border active border-secondary" href="#globalNumberOfIPv4" data-toggle="tab">IPv4 數量</div>
             </li>
             <li class="nav-item linkColor">
               <div class="nav-link border border-secondary border-left-0" href="#globalNumberOfIPv6" data-toggle="tab">IPv6 數量</div>
@@ -6875,83 +6872,8 @@ hr {
           </ul>
         </div>
         <div class="row justify-content-center tab-content">
-          <div class="col-12 tab-pane active" id="globalNumberOfDomain">
-            <canvas id="chart_globalNumberOfDomain" style="height:150vh; width:100vw"></canvas>
-            <script>
-              var ctx = document.getElementById('chart_globalNumberOfDomain').getContext('2d');
-              var mixedChart = new Chart(ctx, {
-                type: 'horizontalBar',
-                data: {
-                  labels: ['台灣「.tw」', '中國「,cn」', '印度「.in」', '日本「.jp」', '南韓「.kr」', '越南「.vn」', '印尼「.id」', '馬來西亞「.my」', '新加坡「.sg」',	'菲律賓「.ph」','泰國「.th」', '美國「.us」', '英國「.uk」', '澳洲「,au」'],
-                  datasets: [
-                      {
-                        label: '網域註冊量',
-                        data: [2075, 11329,	1953,	1419,	969, 410,	249, 188, 175, 89,	69, 2034, 10422, 2879],
-                        backgroundColor: ['#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#FFC000','#FFC000','#FFC000'],
-                        fill: false,
-                        borderWidth: 1,
-                        datalabels: {
-                          display: 'auto',
-                          align:'end',
-                          offset: 15,
-                          formatter: function(value, context) {
-                            return Math.abs(value) + '千個';
-                          }
-                        },
-                      },
-                    ],
-                },
-                options: {
-                  animation: {
-                    duration: 0
-                  },
-                  legend: {
-                    display: false,
-                  },
-                  tooltips: {
-                    callbacks: {
-                      label: function(tooltipItem, data) {
-                        var label = data.datasets[tooltipItem.datasetIndex].label || '';
-                        if (label) {
-                            label += ': ';
-                        }
-                        label += Math.abs(tooltipItem.xLabel * 100) / 100;
-                        return label + '千個';
-                      }
-                    }
-                  },
-                  responsive: true,
-                  scales: {
-                    xAxes: [{
-                      ticks: {
-                        beginAtZero: true,
-                      },
-                      display: false,
-                      gridLines: {
-                        display: false
-                      }
-                    }],
-                    yAxes: [{
-                      gridLines: {
-                        display: false,
-                      },
-                    },],
-                  },
-                 elements: {
-                   line: {
-                     tension: 0,
-                   }
-                 },
-               }
-              });
-            </script>
-            <ul class="list-unstyled wrapper extraInfo text-center">
-              <li>
-                資料來源：<a href="http://research.domaintools.com/statistics/tld-counts/" target="_blank">DomainTools(2018)</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-12 tab-pane fade in" id="globalNumberOfIPv4">
+
+          <div class="col-12 tab-pane active" id="globalNumberOfIPv4">
             <canvas id="chart_globalNumberOfIPv4" style="height:150vh; width:100vw"></canvas>
             <script>
               var ctx = document.getElementById('chart_globalNumberOfIPv4').getContext('2d');
