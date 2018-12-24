@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>-->
+  <script src="js/Chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
   <!--script src='https://www.gstatic.com/charts/loader.js'></script-->
@@ -356,7 +357,7 @@ hr {
                 <p class="">/</p>
               </li>
               <li class="list-inline-item mt-4 mb-0">
-                <a class="small linkColor" href="internet3en.html" target="_blank">
+                <a class="small linkColor" href="1219twnicReport3en.html" target="_blank">
                   EN
                 </a>
               </li>
@@ -373,7 +374,7 @@ hr {
                 <p class="my-0">/</p>
               </li>
               <li class="list-inline-item">
-                <a class="small linkColor" href="internet3en.html" target="_blank">
+                <a class="small linkColor" href="1219twnicReport3en.html" target="_blank">
                   EN
                 </a>
               </li>
@@ -439,7 +440,7 @@ hr {
 
 </header>
 <!-- end of nav MENU bar -->
-<img class="img-fluid d-none d-lg-block"src="img/banner.png" style="margin-top:124px" id="goTop">
+<img class="img-fluid d-none d-lg-block"src="img/181224_light_blue.png" style="margin-top:124px" id="goTop">
 <img class="img-fluid d-lg-none"src="img/bannerMobile.png" style="margin-top:66px" id="goTop">
 
 <!-- Download modal -->
@@ -1430,7 +1431,7 @@ hr {
       </p>
     </div>
     <div class="col-md-8">
-      <canvas id="chart_perProfile" style="height:90vh; width:100vw"></canvas>
+      <canvas id="chart_perProfile" style="height:100vh; width:100vw"></canvas>
       <script type="text/javascript">
         var ctx = document.getElementById('chart_perProfile').getContext('2d');
         var chart = new Chart(ctx, {
@@ -1442,17 +1443,25 @@ hr {
                   borderColor: 'rgba(51, 102, 204, 1)',
                   backgroundColor: 'rgba(51, 102, 204, 0)',
                   pointBackgroundColor:'rgba(51, 102, 204, 1)',
-                  pointBorderWidth: 3,
+                  pointBorderWidth: 4,
                   data: [,82.1, , 83.5, 80.7, , 96.0, 98.9, 98.3, 96.3, 84.9, 41.6, , 86.1, 82.2, 75.8, 76.1, 78.1,],
                   fill:false,
                   spanGaps: false,
-                  hidden:true,
+                  /*hidden:true,*/
+                  datalabels: {
+                    align: 'top',
+                    display: 'auto',
+                    /*color:'rgba(51, 102, 204, 1)',*/
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
               }, {
                   label: "無線上網",
                   borderColor: 'rgba(125, 204, 74, 1)',
                   backgroundColor: 'rgba(125, 204, 74, 0)',
                   pointBackgroundColor:'rgba(125, 204, 74, 1)',
-                  pointBorderWidth: 3,
+                  pointBorderWidth: 4,
                   data: [,81.2, , 82.0, 80.4, , 94.3, 98.9, 98.3, 95.0, 83.9, 40.0, , 85.0, 81.4, 74.9, 76.1, 77.5,],
                   fill: false,
                   spanGaps: false,
@@ -1464,25 +1473,31 @@ hr {
                   borderColor: 'rgba(255, 192, 0, 1)',
                   backgroundColor: 'rgba(255, 192, 0, 0)',
                   pointBackgroundColor:'rgba(255, 192, 0, 1)',
-                  pointBorderWidth: 3,
+                  pointBorderWidth: 4,
                   data: [,77.3, , 78.6, 76.1, , 83.4, 96.9, 96.5, 93.4, 78.7, 35.7, , 81.5, 77.1, 71.0, 73.7, 65.1,],
                   fill:false,
                   spanGaps: false,
                   datalabels: {
-                    display:false,
+                    align: 'bottom',
+                    display: 'auto',
+                    /*color:'rgba(255, 192, 0, 0)',*/
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
                   }
               },{
                   label: "無線區域",
                   borderColor: 'rgba(239, 84, 37, 1)',
                   backgroundColor: 'rgba(239, 84, 37, 0)',
                   pointBackgroundColor:'rgba(239, 84, 37, 1)',
-                  pointBorderWidth: 3,
+                  pointBorderWidth: 4,
                   data: [,37.0, , 37.6, 36.5, , 53.2, 54.1, 48.0, 41.4, 31.7, 12.6, , 41.5, 34.9, 31.9, 30.5, 43.3,],
                   fill:false,
                   spanGaps: false,
                   datalabels: {
                     align: 'top',
                     display: 'auto',
+                    /*color: 'rgba(239, 84, 37, 0)',*/
                     formatter: function(value, context) {
                       return Math.abs(value) + '%';
                     }
@@ -1524,6 +1539,9 @@ hr {
                   drawBorder: false
                 },
                 ticks: {
+                  beginAtZero: true,
+                  stepValue: 12,
+                  max: 120,
                   display: false,
                 }
               }]
@@ -2262,10 +2280,10 @@ hr {
                 backgroundColor: 'rgba(51, 102, 204, 0)',
                 pointBackgroundColor: '#3366CC',
                 pointBorderColor: '#3366CC',
-                pointBorderWidth: 3,
+                pointBorderWidth: 4,
                 pointStyle: 'circle',
                 lineTension:0,
-                hidden: true,
+                /*hidden: true,*/
                 datalabels: {
                   display: 'auto',
                   align:'top',
@@ -3582,7 +3600,7 @@ hr {
                           borderColor: 'rgba(51, 102, 204, 1)',
                           backgroundColor: 'rgba(51, 102, 204, 0)',
                           pointBackgroundColor:'rgba(51, 102, 204, 1)',
-                          pointBorderWidth: 3,
+                          pointBorderWidth: 4,
                           data: [,72.3, , 70.6, 73.9, , 92.8, 87.2, 77.0, 64.2, 58.7, 57.1,,],
                           fill:false,
                           spanGaps: false,
@@ -3592,7 +3610,7 @@ hr {
                           borderColor: 'rgba(125, 204, 74, 1)',
                           backgroundColor: 'rgba(125, 204, 74, 0)',
                           pointBackgroundColor:'rgba(125, 204, 74, 1)',
-                          pointBorderWidth: 3,
+                          pointBorderWidth: 4,
                           data: [,71.9, , 70.8, 73.0, , 91.6, 85.2, 78.7, 69.6, 59.7, 44.8,,],
                           fill: false,
                           spanGaps: false,
@@ -3602,7 +3620,7 @@ hr {
                           borderColor: 'rgba(255, 192, 0, 1)',
                           backgroundColor: 'rgba(255, 192, 0, 0)',
                           pointBackgroundColor:'rgba(255, 192, 0, 1)',
-                          pointBorderWidth: 3,
+                          pointBorderWidth: 4,
                           data: [,48.8, , 53.9, 43.7, , 55.5, 57.5, 52.0, 44.8, 45.6, 35.7,,],
                           fill:false,
                           spanGaps: false,
@@ -3612,7 +3630,7 @@ hr {
                           borderColor: 'rgba(239, 84, 37, 1)',
                           backgroundColor: 'rgba(239, 84, 37, 0)',
                           pointBackgroundColor:'rgba(239, 84, 37, 1)',
-                          pointBorderWidth: 3,
+                          pointBorderWidth: 4,
                           data: [,46.0, , 49.9, 42.1, , 58.7, 61.2, 51.8, 42.6, 36.3, 22.3,,],
                           fill:false,
                           spanGaps: false,
@@ -3961,7 +3979,7 @@ hr {
                           borderColor: 'rgba(51, 102, 204, 1)',
                           backgroundColor: 'rgba(51, 102, 204, 0)',
                           pointBackgroundColor:'rgba(51, 102, 204, 1)',
-                          pointBorderWidth: 3,
+                          pointBorderWidth: 4,
                           data: [,96.8, , 95.7, 97.9, , 94.0, 100, 100, 96.2, 95.5, 92.0,],
                           fill:false,
                           spanGaps: false,
@@ -3971,7 +3989,7 @@ hr {
                           borderColor: 'rgba(125, 204, 74, 1)',
                           backgroundColor: 'rgba(125, 204, 74, 0)',
                           pointBackgroundColor:'rgba(125, 204, 74, 1)',
-                          pointBorderWidth: 3,
+                          pointBorderWidth: 4,
                           data: [,80.6, , 80.1, 81.1, , 94.3, 93.7, 91.3, 79.9, 69.2, 48.4,],
                           fill: false,
                           spanGaps: false,
@@ -7648,7 +7666,16 @@ hr {
         </ul>
       </div>
     </div>
+
+
+
+
+
+
+
   </div>
+
+
   </div>
 </div>
 <!-- end of chapter 5 -->
