@@ -97,6 +97,10 @@ body {
 
 hr {
   width: 80vw;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
 }
 
 canvas {
@@ -209,7 +213,7 @@ canvas {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   /*color: #fff !important;*/
-  background-color: #efefef;
+  background-color: #c8c8c8;
 }
 .navbar-toggler {
   color: rgba(0, 0, 0, 1);
@@ -241,8 +245,6 @@ canvas {
 
 
 
-
-
 /* themed colors */
 .darkBlue {
   background-color: rgba(3, 78, 162, 1);
@@ -252,6 +254,12 @@ canvas {
 }
 .mainOrange {
   background-color: #FC9127;
+}
+.mainNavy {
+  background-color: #3366CC;
+}
+.mainGreen {
+  background-color: #7DCC4A;
 }
 
 
@@ -859,15 +867,14 @@ canvas {
         </div>
       </div>
     </div>
-
   </div>
-  <div class="row justify-content-center wrapperM">
-    <div class="col-md-8 text-center wrapperXL">
+  <div class="row justify-content-center wrapperM ">
+    <div class="col-md-8 text-center wrapperL lightGreyBG">
       <p class="h4 text-center">
         樂齡族網路使用特色
       </p>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8 lightGreyBG py-5">
       <canvas class="pb-5"id="chart_silverUserBehavior" style="height:70vh; width:100vw"></canvas>
       <script>
         var ctx = document.getElementById('chart_silverUserBehavior').getContext('2d');
@@ -951,19 +958,22 @@ canvas {
          }
           });
       </script>
+      <div class="row">
+        <div class="col-12 extraInfo text-center">
+          <ul class="list-unstyled">
+            <li>
+              資料來源：本研究電訪(2018)
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="col-12 extraInfo text-center">
-      <ul class="list-unstyled">
-        <li>
-          資料來源：本研究電訪(2018)
-        </li>
-      </ul>
-    </div>
+
   </div>
 
   <!-- end of spotlight 1 -->
-  <div id="spotlight2"></div>
 
+  <div id="spotlight2"></div>
   <!-- spotlight 2 -->
   <div class="row justify-content-center wrapperM">
     <div class="col-md-8 wrapperXL">
@@ -979,13 +989,13 @@ canvas {
     </div>
   </div>
 
-  <div class="row justify-content-center wrapperM lightGreyBG">
-    <div class="col-md-8 text-center wrapperXL">
+  <div class="row justify-content-center wrapperM">
+    <div class="col-md-8 text-center wrapperL lightGreyBG">
       <p class="h4 text-center">
         智慧家庭產品使用率
       </p>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8 lightGreyBG py-5">
       <canvas id="chart_usageOfSmartHomeProducts" style="height:70vh; width:100vw"></canvas>
       <script>
         var ctx = document.getElementById('chart_usageOfSmartHomeProducts').getContext('2d');
@@ -1058,23 +1068,24 @@ canvas {
          }
         });
       </script>
+      <div class="row">
+        <div class="col-12 extraInfo text-center wrapper">
+          <ul class="list-unstyled">
+            <li>
+              資料來源：創市際(2018/05)
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="col-12 extraInfo text-center wrapper">
-      <ul class="list-unstyled">
-        <li>
-          資料來源：創市際(2018/05)
-        </li>
-      </ul>
-    </div>
-
   </div>
-  <div class="row justify-content-center wrapperM lightGreyBG">
-    <div class="col-md-8 text-center wrapperXL">
+  <div class="row justify-content-center wrapperM">
+    <div class="col-md-8 text-center wrapperL lightGreyBG">
       <p class="h4 text-center">
         智慧家庭必備產品
       </p>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8 lightGreyBG py-5">
       <canvas id="chart_mustHaveOfSmartHomeProducts" style="height:80vh; width:100vw"></canvas>
       <script type="text/javascript">
         var ctx = document.getElementById('chart_mustHaveOfSmartHomeProducts').getContext('2d');
@@ -1118,15 +1129,16 @@ canvas {
           }
         });
       </script>
+      <div class="row">
+        <div class="col-12 extraInfo text-center wrapper">
+          <ul class="list-unstyled">
+            <li>
+              資料來源：創市際(2018/05)
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="col-12 extraInfo text-center wrapper">
-      <ul class="list-unstyled">
-        <li>
-          資料來源：創市際(2018/05)
-        </li>
-      </ul>
-    </div>
-
   </div>
   <!-- end of spotlight 2 -->
 
@@ -1145,13 +1157,13 @@ canvas {
       </p>
     </div>
   </div>
-  <div class="row justify-content-center wrapperM lightGreyBG">
-    <div class="col-md-8 wrapperXL">
+  <div class="row justify-content-center wrapperM">
+    <div class="col-md-8 text-center wrapperL lightGreyBG">
       <p class="h4 text-center">
         行動支付品牌市佔變化
       </p>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8 lightGreyBG py-5">
       <canvas id="chart_mobilePaymentBrands" style="height:90vh; width:100vw"></canvas>
       <script>
         var ctx = document.getElementById('chart_mobilePaymentBrands').getContext('2d');
@@ -1261,23 +1273,23 @@ canvas {
          }
           });
       </script>
-    </div>
-    <div class="col-12 extraInfo text-center wrapper">
-      <ul class="list-unstyled">
-        <li>
-          資料來源：TWNIC(2017/09)、本研究電訪(2018)
-        </li>
-      </ul>
+      <div class="col-12 extraInfo text-center wrapper">
+        <ul class="list-unstyled">
+          <li>
+            資料來源：TWNIC(2017/09)、本研究電訪(2018)
+          </li>
+        </ul>
+      </div>
     </div>
 
   </div>
-  <div class="row justify-content-center wrapperM lightGreyBG">
-    <div class="col-md-8 wrapperXL">
+  <div class="row justify-content-center wrapperM">
+    <div class="col-md-8 text-center wrapperL lightGreyBG">
       <p class="h4 text-center">
         電商購物與直播平台
       </p>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8 lightGreyBG py-5">
       <canvas id="chart_ecShoppingAndLiveStreaming" style="height:90vh; width:100vw"></canvas>
       <script>
         var ctx = document.getElementById('chart_ecShoppingAndLiveStreaming').getContext('2d');
@@ -1387,14 +1399,17 @@ canvas {
          }
           });
       </script>
+      <div class="row">
+        <div class="col-12 extraInfo text-center wrapper">
+          <ul class="list-unstyled">
+            <li>
+              資料來源：創市際(2018/03)、創市際(2018/05)、創市際(2018/10)
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="col-12 extraInfo text-center wrapper">
-      <ul class="list-unstyled">
-        <li>
-          資料來源：創市際(2018/03)、創市際(2018/05)、創市際(2018/10)
-        </li>
-      </ul>
-    </div>
+
 
   </div>
   <!-- end of spotlight 3 -->
@@ -1453,10 +1468,8 @@ canvas {
       </ul>
     </div>
   </div>
-  <div class="row justify-content-center wrapperM lightGreyBG">
-    <hr class="d-md-none">
-
-    <div class="col-md-8 text-center wrapperXL">
+  <div class="row justify-content-center wrapperM">
+    <div class="col-md-8 text-center wrapperL lightGreyBG">
       <p class="h3">
         網民輪廓
       </p>
@@ -1464,7 +1477,7 @@ canvas {
         不同性別之上網率差異小，12歲至49歲上網率皆超過九成
       </p>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8 lightGreyBG py-5">
       <canvas id="chart_perProfile" style="height:100vh; width:100vw"></canvas>
       <script type="text/javascript">
         var ctx = document.getElementById('chart_perProfile').getContext('2d');
@@ -1588,13 +1601,15 @@ canvas {
           }
         });
       </script>
-    </div>
-    <div class="col-12 extraInfo text-center">
-      <ul class="list-unstyled">
-        <li>
-          資料來源：本研究電訪(2018)
-        </li>
-      </ul>
+      <div class="row">
+        <div class="col-12 extraInfo text-center">
+          <ul class="list-unstyled">
+            <li>
+              資料來源：本研究電訪(2018)
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
   <div class="row justify-content-center text-center wrapperM">
@@ -1665,7 +1680,7 @@ canvas {
     </div>
   </div>
   <div class="row justify-content-center wrapperM">
-    <div class="col-md-8 text-center wrapperXL lightGreyBG">
+    <div class="col-md-8 text-center wrapperL lightGreyBG">
       <p class="h3">
         個人曾經上網比例與人數
       </p>
@@ -1673,7 +1688,7 @@ canvas {
         12歲以上曾經上網民眾雖較去年略降，仍在誤差範圍內。
       </p>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8 lightGreyBG py-5">
       <canvas id="chart_perConnected" style="height:80vh; width:100vw"></canvas>
       <script>
         var ctx = document.getElementById('chart_perConnected').getContext('2d');
@@ -1780,15 +1795,17 @@ canvas {
          }
           });
       </script>
+      <div class="row">
+        <div class="col-12 wrapper extraInfo text-center">
+          <ul class="list-unstyled">
+            <li>
+              資料來源：本研究電訪(2018)
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-
-    <div class="col-12 wrapper extraInfo text-center">
-      <ul class="list-unstyled">
-        <li>
-          資料來源：本研究電訪(2018)
-        </li>
-      </ul>
-    </div>
+>
 
   </div>
   <div class="row justify-content-center text-center wrapperM">
@@ -1827,7 +1844,7 @@ canvas {
     </div>
   </div>
   <div class="row justify-content-center wrapperM">
-    <div class="col-md-8 text-center wrapperXL">
+    <div class="col-md-8 text-center wrapperL lightGreyBG">
       <p class="h3">
         近半年使用行動/無線區域網路上網
       </p>
@@ -1835,7 +1852,7 @@ canvas {
         12歲以上近半年使用行動上網人數增加較多，而無線區域網路使用率則下降一成五。
       </p>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8 lightGreyBG py-5">
       <div class="">
         <ul class="nav nav-pills nav-justified">
           <li class="nav-item">
@@ -2071,17 +2088,18 @@ canvas {
               });
           </script>
         </div>
+        <div class="col-12 extraInfo text-center">
+          <ul class="list-unstyled">
+            <li>
+              資料來源：本研究電訪(2018)
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="col-12 extraInfo text-center">
-      <ul class="list-unstyled">
-        <li>
-          資料來源：本研究電訪(2018)
-        </li>
-      </ul>
     </div>
 
   </div>
+
   <!-- end of personal connected -->
   <!-- house hold connected -->
   <div id="houseHoldConnected" class="wrapper"></div>
@@ -2145,7 +2163,7 @@ canvas {
     </div>
   </div>
   <div class="row justify-content-center wrapperM">
-    <div class="col-md-8 text-center wrapperXL">
+    <div class="col-md-8 text-center wrapperL lightGreyBG">
       <p class="h3">
         歷年家戶上網比例與人數
       </p>
@@ -2153,7 +2171,7 @@ canvas {
         家戶上網率為80.9%
       </p>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8 lightGreyBG py-5">
       <canvas id="chart_householdInternet" style="height:80vh; width:100vw"></canvas>
       <script>
         var ctx = document.getElementById('chart_householdInternet').getContext('2d');
@@ -2255,13 +2273,16 @@ canvas {
          }
           });
       </script>
-    </div>
-    <div class="col-12 wrapper extraInfo text-center">
-      <ul class="list-unstyled">
-        <li>
-          資料來源：本研究電訪(2018)
-        </li>
-      </ul>
+      <div class="row">
+        <div class="col-12 wrapper extraInfo text-center">
+          <ul class="list-unstyled">
+            <li>
+              資料來源：本研究電訪(2018)
+            </li>
+          </ul>
+        </div>
+
+      </div>
     </div>
   </div>
   <!-- end of house hold connected -->
@@ -2286,14 +2307,14 @@ canvas {
   <!-- ip Submit Growth -->
   <div id="ipSubmitGrowth" class=""></div>
   <div class="row justify-content-center wrapperM">
-    <div class="col-md-8 text-center wrapperXL">
+    <div class="col-md-8 text-center wrapperL lightGreyBG">
       <p class="h3">
         網域名稱註冊數量
       </p>
       <p class="mt-3 text-center">
         今年「.tw/.台灣」註冊數量大幅成長，成長率為554.3%，類型佔比中以「泛用型英文.tw」最多。
       </p>
-      <div class="text-right text-danger">
+      <div class="text-right text-danger bg-white">
         2018-2017年<br>總成長率<br>+554.3%
       </div>
       <canvas id="chart_ipSubmitGrowth" style="height:80vh; width:100vw"></canvas>
@@ -2417,13 +2438,16 @@ canvas {
           },
         });
       </script>
-    </div>
-    <div class="col-12 extraInfo text-center wrapper">
-      <ul class="list-unstyled">
-        <li>
-          統計至2018年10月份
-        </li>
-      </ul>
+      <div class="row">
+        <div class="col-12 extraInfo text-center wrapper pb-5">
+          <ul class="list-unstyled">
+            <li>
+              統計至2018年10月份
+            </li>
+          </ul>
+        </div>
+
+      </div>
     </div>
   </div>
   <!-- submitType -->
@@ -3075,27 +3099,28 @@ canvas {
   </div-->
 
   <div id="ipv4ipv6AndASN" class=""></div>
-
   <!-- IPv4 ASN calculation -->
   <div class="row justify-content-center wrapperM">
-    <div class="col-md-8 wrapperXL">
-      <p class="h4 text-center">
-        台灣 IPv4／ASN數量統計
+    <div class="col-md-8 text-center wrapperL lightGreyBG">
+      <p class="h3">
+        近半年使用行動/無線區域網路上網
       </p>
       <p class="mt-3">
-        台灣IP位址核發數量，在IPv4位址發放數量統計上，台灣居全球第15名；自治系統號碼(ASN)是一個提供自治系統(AS)間交換動態路由資訊的唯一識別碼，截至2018年11月國內自治系統號碼核發數為354個。
+        12歲以上近半年使用行動上網人數增加較多，而無線區域網路使用率則下降一成五。
       </p>
-      <div class="my-5">
+    </div>
+    <div class="col-md-8 lightGreyBG py-5">
+      <div class="">
         <ul class="nav nav-pills nav-justified">
-          <li class="nav-item linkColor">
+          <li class="nav-item">
             <div class="nav-link active border border-secondary" href="#numberOfIPv4" data-toggle="tab">IPv4 數量</div>
           </li>
-          <li class="nav-item linkColor">
+          <li class="nav-item">
             <div class="nav-link border border-secondary border-left-0" href="#numberOfASN" data-toggle="tab">ASN 核發數量</div>
           </li>
         </ul>
       </div>
-      <div class="row justify-content-center tab-content">
+      <div class="row justify-content-center tab-content my-4">
         <div class="col-12 tab-pane active" id="numberOfIPv4">
           <canvas id="chart_numberOfIPv4" style="height:60vh; width:100vw"></canvas>
           <script>
@@ -3276,31 +3301,43 @@ canvas {
             });
           </script>
         </div>
+        <div class="col-12 extraInfo wrapper text-center">
+          <ul class="list-unstyled">
+            <li>
+              資料來源：本研究電訪(2018)
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
+
+
   <!-- IPv6 ISP calculation -->
+
   <div class="row justify-content-center wrapperM">
-    <div class="col-md-8 wrapperXL">
-      <p class="h4 text-center">
+    <div class="col-md-8 text-center wrapperL lightGreyBG">
+      <p class="h3">
         台灣 IPv6／ISP 數量統計
       </p>
-      <p class="mt-3 text-center">
+      <p class="mt-3">
         台灣IP位址核發數量，在IPv6位址發放數量統計上，台灣居全球第19名。
       </p>
-      <div class="my-5">
+    </div>
+    <div class="col-md-8 lightGreyBG py-5">
+      <div class="">
         <ul class="nav nav-pills nav-justified">
-          <li class="nav-item linkColor">
+          <li class="nav-item">
             <div class="nav-link active border border-secondary" href="#numberOfIPv6" data-toggle="tab">IPv6 數量</div>
           </li>
-          <li class="nav-item linkColor">
+          <li class="nav-item">
             <div class="nav-link border border-secondary border-left-0" href="#userScaleOfIPv6" data-toggle="tab">ISP IPv6使用者比例</div>
           </li>
         </ul>
       </div>
-      <div class="row justify-content-center tab-content my-5">
+      <div class="row justify-content-center tab-content my-4">
         <div class="col-12 tab-pane active" id="numberOfIPv6">
-          <div class="text-right text-danger">
+          <div class="text-right text-danger bg-white">
             2018-2017年<br> +4.1%
           </div>
           <canvas id="chart_numberOfIPv6" style="height:60vh; width:100vw"></canvas>
@@ -3453,6 +3490,13 @@ canvas {
             </table>
           <!-- end of Scale Of IPv6 table -->
         </div>
+        <div class="col-12 extraInfo wrapper text-center">
+          <ul class="list-unstyled">
+            <li>
+              資料來源：TWNIC統計至2018年11月份
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -3569,13 +3613,13 @@ canvas {
     <!--economyApplied desktop view-->
     <div class="col-md-10 d-none d-md-block">
       <div class="row justify-content-center">
-        <div class="col-5 col-sm-2" href="#" data-toggle="modal" data-target="#contentMedia_modal">
+        <div class="col-5 col-sm-2" href="#" data-toggle="modal" data-target="#eCommerce_modal">
           <img class="img-fluid hoverLarge dropShadow linkColor" src="img/btn/181224_desktop-17.png" alt="">
         </div>
-        <div class="col-5 col-sm-2" href="#" data-toggle="modal" data-target="#socialMedia_modal">
+        <div class="col-5 col-sm-2" href="#" data-toggle="modal" data-target="#finTech_modal">
           <img class="img-fluid hoverLarge dropShadow linkColor" src="img/btn/181224_desktop-18.png" alt="">
         </div>
-        <div class="col-5 col-sm-2" href="#" data-toggle="modal" data-target="#smartGadgets_modal">
+        <div class="col-5 col-sm-2" href="#" data-toggle="modal" data-target="#sharingEconomy_modal">
           <img class="img-fluid hoverLarge dropShadow linkColor" src="img/btn/181224_desktop-19.png" alt="">
         </div>
       </div>
@@ -3627,13 +3671,13 @@ canvas {
     <!--innovationApplied desktop view-->
     <div class="col-md-10 d-none d-md-block">
       <div class="row justify-content-center">
-        <div class="col-5 col-sm-2" href="#" data-toggle="modal" data-target="#contentMedia_modal">
+        <div class="col-5 col-sm-2" href="#" data-toggle="modal" data-target="#artificialIntelligence_modal">
           <img class="img-fluid hoverLarge dropShadow linkColor" src="img/btn/181224_desktop-20.png" alt="">
         </div>
-        <div class="col-5 col-sm-2" href="#" data-toggle="modal" data-target="#socialMedia_modal">
+        <div class="col-5 col-sm-2" href="#" data-toggle="modal" data-target="#selfDrivingVehicles_modal">
           <img class="img-fluid hoverLarge dropShadow linkColor" src="img/btn/181224_desktop-21.png" alt="">
         </div>
-        <div class="col-5 col-sm-2" href="#" data-toggle="modal" data-target="#smartGadgets_modal">
+        <div class="col-5 col-sm-2" href="#" data-toggle="modal" data-target="#blockChain_modal">
           <img class="img-fluid hoverLarge dropShadow linkColor" src="img/btn/181224_desktop-22.png" alt="">
         </div>
       </div>
@@ -3713,7 +3757,8 @@ canvas {
               </p>
             </div>
           </div>
-          <div class="row justify-content-center">
+          <div class="row justify-content-center wrapper">
+            <hr>
             <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 使用者輪廓
@@ -3723,7 +3768,7 @@ canvas {
               </p>
             </div>
             <div class="col-md-10">
-              <canvas id="chart_contentMediaUserProfile" style="height:60vh; width:100vw" style="height:60vh; width:100vw"></canvas>
+              <canvas id="chart_contentMediaUserProfile" style="height:100vh; width:100vw"></canvas>
               <script type="text/javascript">
                 var ctx = document.getElementById('chart_contentMediaUserProfile').getContext('2d');
                 var chart = new Chart(ctx, {
@@ -3739,7 +3784,14 @@ canvas {
                           data: [,72.3, , 70.6, 73.9, , 92.8, 87.2, 77.0, 64.2, 58.7, 57.1,,],
                           fill:false,
                           spanGaps: false,
-
+                          datalabels: {
+                            display: 'auto',
+                            align: 'top',
+                            /*color:'rgba(51, 102, 204, 1)',*/
+                            formatter: function(value, context) {
+                              return Math.abs(value) + '%';
+                            }
+                          }
                       }, {
                           label: "看節目戲劇",
                           borderColor: 'rgba(125, 204, 74, 1)',
@@ -3749,6 +3801,14 @@ canvas {
                           data: [,71.9, , 70.8, 73.0, , 91.6, 85.2, 78.7, 69.6, 59.7, 44.8,,],
                           fill: false,
                           spanGaps: false,
+                          datalabels: {
+                            display: 'auto',
+                            align: 'bottom',
+                            /*color:'rgba(125, 204, 74, 1)',*/
+                            formatter: function(value, context) {
+                              return Math.abs(value) + '%';
+                            }
+                          }
 
                       },{
                           label: "看直播",
@@ -3759,7 +3819,14 @@ canvas {
                           data: [,48.8, , 53.9, 43.7, , 55.5, 57.5, 52.0, 44.8, 45.6, 35.7,,],
                           fill:false,
                           spanGaps: false,
-
+                          datalabels: {
+                            display: 'auto',
+                            align: 'top',
+                            /*color: 'rgba(255, 192, 0, 1)',*/
+                            formatter: function(value, context) {
+                              return Math.abs(value) + '%';
+                            }
+                          }
                       },{
                           label: "看電影",
                           borderColor: 'rgba(239, 84, 37, 1)',
@@ -3769,6 +3836,14 @@ canvas {
                           data: [,46.0, , 49.9, 42.1, , 58.7, 61.2, 51.8, 42.6, 36.3, 22.3,,],
                           fill:false,
                           spanGaps: false,
+                          datalabels: {
+                            display: 'auto',
+                            align: 'bottom',
+                            /*color:'rgba(239, 84, 37, 1)',*/
+                            formatter: function(value, context) {
+                              return Math.abs(value) + '%';
+                            }
+                          }
                       },]
                   },
                   options: {
@@ -3807,6 +3882,8 @@ canvas {
                         },
                         ticks: {
                           display: false,
+                          stepValue: 10,
+                          max: 110,
                         }
                       }]
                     },
@@ -3815,19 +3892,25 @@ canvas {
                         tension: 0,
                       }
                     },
-                    plugins: {
-                      datalabels: {
-                        display:false,
-                      }
-                    }
                   }
                 });
               </script>
+              <div class="row pb-5">
+                <div class="col-12 extraInfo text-center">
+                  <ul class="list-unstyled">
+                    <li>
+                      資料來源：本研究電訪(2018)
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
+
           </div>
 
-          <div class="row justify-content-center">
-            <div class="col-md-10 wrapperM">
+          <div class="row justify-content-center wrapper">
+            <hr>
+            <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 內容媒體使用情形
               </p>
@@ -3939,16 +4022,18 @@ canvas {
               </script>
             </div>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-md-10 wrapperM">
+          <div class="row justify-content-center wrapper">
+            <hr>
+            <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 使用率最高的影音平台
               </p>
               <iframe src="https://plotdb.io/v/chart/19717" width="100%" height="600px" frameborder="0"></iframe>
             </div>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-md-10 wrapperM">
+          <div class="row justify-content-center wrapper">
+            <hr>
+            <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 平均每次收視時間
               </p>
@@ -3992,8 +4077,9 @@ canvas {
               </div>
             </div>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-md-10 wrapperM">
+          <div class="row justify-content-center wrapper">
+            <hr>
+            <div class="col-md-10 wrapper mb-5">
               <p class="h4 text-center">
                 偏好收視類型
               </p>
@@ -4102,7 +4188,7 @@ canvas {
               <p class="mt-3 text-center">
                 通訊與社群網站的使用率皆高，而通訊軟體的使用族群中性別、年齡差異小。
               </p>
-              <canvas id="chart_socialPlatformUserProfile" style="height:70vh; width:100vw"></canvas>
+              <canvas id="chart_socialPlatformUserProfile" style="height:80vh; width:100vw"></canvas>
               <script type="text/javascript">
                 var ctx = document.getElementById('chart_socialPlatformUserProfile').getContext('2d');
                 var chart = new Chart(ctx, {
@@ -4118,7 +4204,12 @@ canvas {
                           data: [,96.8, , 95.7, 97.9, , 94.0, 100, 100, 96.2, 95.5, 92.0,],
                           fill:false,
                           spanGaps: false,
-
+                          datalabels: {
+                            align: 'top',
+                            formatter: function(value, context) {
+                              return Math.abs(value) + '%';
+                            }
+                          }
                       }, {
                           label: "有使用網路社群",
                           borderColor: 'rgba(125, 204, 74, 1)',
@@ -4128,6 +4219,13 @@ canvas {
                           data: [,80.6, , 80.1, 81.1, , 94.3, 93.7, 91.3, 79.9, 69.2, 48.4,],
                           fill: false,
                           spanGaps: false,
+                          datalabels: {
+                            display: 'auto',
+                            align: 'bottom',
+                            formatter: function(value, context) {
+                              return Math.abs(value) + '%';
+                            }
+                          }
                       },]
                   },
                   options: {
@@ -4168,6 +4266,8 @@ canvas {
                         ticks: {
                           beginAtZero:true,
                           display: false,
+                          stepValue: 10,
+                          max:120,
                         }
                       }]
                     },
@@ -4176,17 +4276,13 @@ canvas {
                         tension: 0,
                       }
                     },
-                    plugins: {
-                      datalabels: {
-                        display:false,
-                      }
-                    }
                   }
                 });
               </script>
             </div>
           </div>
           <div class="row justify-content-center wrapper text-center">
+            <hr>
             <div class="col-5">
               <img class="img-fluid" src="img/iconPack/icon_pack-40.png" alt="">
               <p class="">
@@ -4197,7 +4293,8 @@ canvas {
               </p>
             </div>
           </div>
-          <div class="row justify-content-center">
+          <div class="row justify-content-center wrapper">
+            <hr>
             <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 社群媒體使用率
@@ -4278,7 +4375,8 @@ canvas {
             </div>
           </div>
           <div class="row justify-content-center wrapper">
-            <div class="col-md-10">
+            <hr>
+            <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 社群媒體使用行為
               </p>
@@ -4357,8 +4455,9 @@ canvas {
               </script>
             </div>
           </div>
-          <div class="row justify-content-center wrapper text-center">
-            <div class="col-5">
+          <div class="row justify-content-center wrapper">
+            <hr>
+            <div class="col-5 text-center">
               <img class="img-fluid" src="img/iconPack/icon_pack-41.png" alt="">
               <p class="">
                 通訊使用率
@@ -4368,7 +4467,8 @@ canvas {
               </p>
             </div>
           </div>
-          <div class="row justify-content-center">
+          <div class="row justify-content-center wrapper">
+            <hr>
             <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 通訊軟體使用率
@@ -4448,7 +4548,8 @@ canvas {
               </script>
             </div>
           </div>
-          <div class="row justify-content-center">
+          <div class="row justify-content-center wrapper mb-5">
+            <hr>
             <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 通訊軟體使用行為
@@ -4573,7 +4674,8 @@ canvas {
               </p>
             </div>
           </div>
-          <div class="row justify-content-center">
+          <div class="row justify-content-center wrapper">
+            <hr>
             <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 穿戴裝置品牌使用率
@@ -4650,8 +4752,9 @@ canvas {
               </script>
             </div>
           </div>
-          <div class="row justify-content-center wrapper text-center">
-            <div class="col-5">
+          <div class="row justify-content-center wrapper">
+            <hr>
+            <div class="col-5 text-center">
               <img class="img-fluid" src="img/iconPack/181218_3-86.png" alt="">
               <p class="">
                 智慧家庭使用率
@@ -4660,7 +4763,7 @@ canvas {
                 30.9%
               </p>
             </div>
-            <div class="col-5">
+            <div class="col-5 text-center">
               <img class="img-fluid" src="img/iconPack/icon_pack-38.png" alt="">
               <p class="">
                 未來有興趣使用
@@ -4670,8 +4773,9 @@ canvas {
               </p>
             </div>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-md-10 wrapperM">
+          <div class="row justify-content-center wrapper">
+            <hr>
+            <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 智慧家庭想使用項目
               </p>
@@ -4704,7 +4808,8 @@ canvas {
               </div>
             </div>
           </div>
-          <div class="row justify-content-center">
+          <div class="row justify-content-center wrapper">
+            <hr>
             <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 智慧家庭使用原因
@@ -4781,7 +4886,8 @@ canvas {
             </div>
           </div>
 
-          <div class="row justify-content-center">
+          <div class="row justify-content-center wrapper mb-5">
+            <hr>
             <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 智慧家庭品牌使用率
@@ -4895,8 +5001,8 @@ canvas {
               </p>
             </div>
           </div>
-
-          <div class="row justify-content-center">
+          <div class="row justify-content-center wrapper">
+            <hr>
             <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 使用者輪廓
@@ -4904,14 +5010,11 @@ canvas {
               <p class="mt-3 text-center">
                 線上學習服務使用率僅佔14%，目前多數是語言學習的需求，並以12歲至19歲較多。
               </p>
-              <canvas id="chart_educativeUserProfile" style="height:60vh; width:100vw"></canvas>
-              <script type="text/javascript">
+              <canvas id="chart_educativeUserProfile" style="height:70vh; width:100vw"></canvas>
+              <script>
                 var ctx = document.getElementById('chart_educativeUserProfile').getContext('2d');
                 var chart = new Chart(ctx, {
-                  // The type of chart we want to create
                   type: 'bar',
-
-                  // The data for our dataset
                   data: {
                       labels: ["", "男性", "女性", "", "12-19歲", "20-29歲", "30-39歲", "40-49歲", "50-59歲", "60歲以上",""],
                       datasets: [{
@@ -4980,8 +5083,9 @@ canvas {
               </script>
             </div>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-md-10 wrapperM">
+          <div class="row justify-content-center wrapper">
+            <hr>
+            <div class="col-md-10 wrapper mb-5">
               <p class="h4 text-center">
                 使用類別
               </p>
@@ -5016,9 +5120,7 @@ canvas {
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
@@ -5062,7 +5164,8 @@ canvas {
               </p>
             </div>
           </div>
-          <div class="row justify-content-center">
+          <div class="row justify-content-center wrapper">
+            <hr>
             <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 使用者輪廓
@@ -5070,7 +5173,7 @@ canvas {
               <p class="mt-3 text-center">
                 男性有近半數會玩線上遊戲。
               </p>
-              <canvas id="chart_onlineGameUserProfile" style="height:80vh; width:100vw"></canvas>
+              <canvas id="chart_onlineGameUserProfile" style="height:90vh; width:100vw"></canvas>
               <script type="text/javascript">
                 var ctx = document.getElementById('chart_onlineGameUserProfile').getContext('2d');
                 var chart = new Chart(ctx, {
@@ -5146,8 +5249,9 @@ canvas {
               </script>
             </div>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-md-10 wrapperM">
+          <div class="row justify-content-center wrapper">
+            <hr>
+            <div class="col-md-10 wrapper mb-5">
               <p class="h4 text-center">
                 使用的裝置
               </p>
@@ -5257,7 +5361,8 @@ canvas {
               </p>
             </div>
           </div>
-          <div class="row justify-content-center">
+          <div class="row justify-content-center wrapper">
+            <hr>
             <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 使用者輪廓
@@ -5387,8 +5492,9 @@ canvas {
               </script>
             </div>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-md-10 wrapperM">
+          <div class="row justify-content-center wrapper">
+            <hr>
+            <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 較常購買產品
               </p>
@@ -5423,93 +5529,97 @@ canvas {
               </div>
             </div>
           </div>
-          <div class="row justify-content-center tab-content my-5">
-            <div class="col-md-10">
+          <div class="row justify-content-center wrapper mb-4">
+            <hr>
+            <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 台灣電商品牌市場概況
               </p>
-              <ul class="nav nav-pills nav-justified  my-5">
+              <ul class="nav nav-pills nav-justified my-5">
                 <li class="nav-item linkColor">
                   <div class="nav-link active border border-right-0 border-secondary" href="#ecModels" data-toggle="tab">依經營模式</div>
                 </li>
                 <li class="nav-item linkColor">
-                  <div class="nav-link  border border-secondary" href="#ecTypes" data-toggle="tab">依業者類型</div>
+                  <div class="nav-link border border-secondary" href="#ecTypes" data-toggle="tab">依業者類型</div>
                 </li>
               </ul>
-            </div>
-            <div class="col-md-10 tab-pane active" id="ecModels">
-              <!-- EC Models of Taiwan table -->
-                <table class="table">
-                  <thead class="thead-light">
-                    <tr>
-                      <th class="align-middle" style=" min-width: 6vw;">經營模式</th>
-                      <th class="align-middle">定義</th>
-                      <th class="align-middle">代表商家</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th class="small align-middle" scope="row">B2B</th>
-                      <td class="small align-middle">企業與企業之間交易</td>
-                      <td class="small align-middle">台灣無</td>
-                    </tr>
-                    <tr>
-                      <th class="small align-middle" scope="row">C2C</th>
-                      <td class="small align-middle">消費者與消費者之間交易</td>
-                      <td class="small align-middle">Yahoo!拍賣、露天拍賣、蝦皮購物、Pchome商店街個人賣場</td>
-                    </tr>
-                    <tr>
-                      <th class="small align-middle" scope="row">B2C</th>
-                      <td class="small align-middle">企業提供給消費者商品或服務的模式</td>
-                      <td class="small align-middle">Yahoo!購物中心、momo購物、Pchome購物/24H</td>
-                    </tr>
-                    <tr>
-                      <th class="small align-middle" scope="row">B2B</th>
-                      <td class="small align-middle">網路平台招商，提供給供應商平台販售商品或服務</td>
-                      <td class="small align-middle">Yahoo!超級商城、momo摩天商城、Pchome商店街開店賣場、蝦皮商城</td>
-                    </tr>
-                    <tr>
-                      <th class="small align-middle" scope="row">O2O</th>
-                      <td class="small align-middle">利用線上行銷引導客戶至線下</td>
-                      <td class="small align-middle">17 Life、Gomaji</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <!-- end of EC Models of Taiwan table -->
-            </div>
-            <div class="col-md-10 tab-pane fade in" id="ecTypes">
-              <!-- EC Types of Taiwan table -->
-                <table class="table">
-                  <thead class="thead-light">
-                    <tr>
-                      <th class="align-middle" style=" min-width: 15vw;">業者類型</th>
-                      <th class="align-middle">代表商家</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th class="small align-middle" scope="row">台灣原生電商</th>
-                      <td class="small align-middle">網路家庭、商店街、東森、夠麻吉、富邦媒體、博客來、Lativ、Pinkoi</td>
-                    </tr>
-                    <tr>
-                      <td class="small align-middle">外商網購平台</td>
-                      <td class="small align-middle">Yahoo!拍賣、Yahoo!購物中心、Yahoo!超級商城、樂天（台日合資）、旋轉拍賣（新加坡）、蝦皮購物（新加坡）</td>
-                    </tr>
-                    <tr>
-                      <td class="small align-middle">金融、媒體業者投資平台</td>
-                      <td class="small align-middle">momo購物、udn買東西、Treemall、Orenda</td>
-                    </tr>
-                    <tr>
-                      <td class="small align-middle">實體零售業者經營平台</td>
-                      <td class="small align-middle">ibon mart、燦坤快3、EcLife良興購物網、家樂福線上購物網</td>
-                    </tr>
-                    <tr>
-                      <td class="small align-middle">電信業者投資平台</td>
-                      <td class="small align-middle">Myfone購物、friDay購物</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <!-- end of EC Types of Taiwan table -->
+              <div class="row justify-content-center tab-content my-4">
+                <div class="col-12 tab-pane active" id="ecModels">
+                  <!-- EC Models of Taiwan table -->
+                    <table class="table">
+                      <thead class="thead-light">
+                        <tr>
+                          <th class="align-middle" style=" min-width: 6vw;">經營模式</th>
+                          <th class="align-middle">定義</th>
+                          <th class="align-middle">代表商家</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th class="small align-middle" scope="row">B2B</th>
+                          <td class="small align-middle">企業與企業之間交易</td>
+                          <td class="small align-middle">台灣無</td>
+                        </tr>
+                        <tr>
+                          <th class="small align-middle" scope="row">C2C</th>
+                          <td class="small align-middle">消費者與消費者之間交易</td>
+                          <td class="small align-middle">Yahoo!拍賣、露天拍賣、蝦皮購物、Pchome商店街個人賣場</td>
+                        </tr>
+                        <tr>
+                          <th class="small align-middle" scope="row">B2C</th>
+                          <td class="small align-middle">企業提供給消費者商品或服務的模式</td>
+                          <td class="small align-middle">Yahoo!購物中心、momo購物、Pchome購物/24H</td>
+                        </tr>
+                        <tr>
+                          <th class="small align-middle" scope="row">B2B</th>
+                          <td class="small align-middle">網路平台招商，提供給供應商平台販售商品或服務</td>
+                          <td class="small align-middle">Yahoo!超級商城、momo摩天商城、Pchome商店街開店賣場、蝦皮商城</td>
+                        </tr>
+                        <tr>
+                          <th class="small align-middle" scope="row">O2O</th>
+                          <td class="small align-middle">利用線上行銷引導客戶至線下</td>
+                          <td class="small align-middle">17 Life、Gomaji</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- end of EC Models of Taiwan table -->
+                </div>
+                <div class="col-12 tab-pane fade in" id="ecTypes">
+                  <!-- EC Types of Taiwan table -->
+                    <table class="table">
+                      <thead class="thead-light">
+                        <tr>
+                          <th class="align-middle" style=" min-width: 15vw;">業者類型</th>
+                          <th class="align-middle">代表商家</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th class="small align-middle" scope="row">台灣原生電商</th>
+                          <td class="small align-middle">網路家庭、商店街、東森、夠麻吉、富邦媒體、博客來、Lativ、Pinkoi</td>
+                        </tr>
+                        <tr>
+                          <td class="small align-middle">外商網購平台</td>
+                          <td class="small align-middle">Yahoo!拍賣、Yahoo!購物中心、Yahoo!超級商城、樂天（台日合資）、旋轉拍賣（新加坡）、蝦皮購物（新加坡）</td>
+                        </tr>
+                        <tr>
+                          <td class="small align-middle">金融、媒體業者投資平台</td>
+                          <td class="small align-middle">momo購物、udn買東西、Treemall、Orenda</td>
+                        </tr>
+                        <tr>
+                          <td class="small align-middle">實體零售業者經營平台</td>
+                          <td class="small align-middle">ibon mart、燦坤快3、EcLife良興購物網、家樂福線上購物網</td>
+                        </tr>
+                        <tr>
+                          <td class="small align-middle">電信業者投資平台</td>
+                          <td class="small align-middle">Myfone購物、friDay購物</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- end of EC Types of Taiwan table -->
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
@@ -5548,8 +5658,8 @@ canvas {
               </p>
             </div>
           </div>
-
-          <div class="row justify-content-center">
+          <div class="row justify-content-center wrapper">
+            <hr>
             <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 使用者輪廓
@@ -5630,7 +5740,8 @@ canvas {
               </script>
             </div>
           </div>
-          <div class="row justify-content-center">
+          <div class="row justify-content-center wrapper">
+            <hr>
             <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 網路銀行常用服務
@@ -5667,7 +5778,8 @@ canvas {
             </div>
           </div>
 
-          <div class="row justify-content-center">
+          <div class="row justify-content-center wrapper">
+            <hr>
             <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 網路銀行使用原因
@@ -5743,8 +5855,9 @@ canvas {
               </script>
             </div>
           </div>
-          <div class="row justify-content-center wrapper text-center">
-            <div class="col-5">
+          <div class="row justify-content-center wrapper">
+            <hr>
+            <div class="col-5 text-center">
               <img class="img-fluid" src="img/iconPack/icon_pack-49.png" alt="">
               <p class="">
                 行動支付使用率
@@ -5754,12 +5867,13 @@ canvas {
               </p>
             </div>
           </div>
-          <div class="row justify-content-center">
+          <div class="row justify-content-center wrapper">
+            <hr>
             <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 使用者輪廓
               </p>
-              <canvas id="chart_mobilePaymentUserProfile" style="height:70vh; width:100vw"></canvas>
+              <canvas id="chart_mobilePaymentUserProfile" style="height:80vh; width:100vw"></canvas>
               <script type="text/javascript">
                 var ctx = document.getElementById('chart_mobilePaymentUserProfile').getContext('2d');
                 var chart = new Chart(ctx, {
@@ -5836,6 +5950,7 @@ canvas {
             </div>
           </div>
           <div class="row justify-content-center wrapper text-center">
+            <hr>
             <div class="col-5">
               <img class="img-fluid" src="img/iconPack/icon_pack-36.png" alt="">
               <p class="">
@@ -5855,7 +5970,8 @@ canvas {
               </p>
             </div>
           </div>
-          <div class="row justify-content-center">
+          <div class="row justify-content-center wrapper">
+            <hr>
             <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 使用行動支付困擾
@@ -5948,7 +6064,7 @@ canvas {
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">共享經濟</h5>
+        <h5 class="modal-title">共享經濟使用情形</h5>
         <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -5956,8 +6072,13 @@ canvas {
       <div class="modal-body">
 
         <div class="container-fluid">
-          <div class="row justify-content-center wrapper text-center">
-            <div class="col-5">
+          <div class="row justify-content-center text-center wrapper">
+            <div class="col-10">
+              <p class="">
+                共享經濟知曉度高，但使用大多不到兩成。
+              </p>
+            </div>
+            <div class="col-5 text-center">
               <img class="img-fluid" src="img/iconPack/181218_3-50.png" alt="">
               <p class="">
                 聽過共享經濟
@@ -5966,10 +6087,19 @@ canvas {
                 85.8%
               </p>
             </div>
+            <div class="col-12 extraInfo text-center wrapper">
+              <ul class="list-unstyled">
+                <li>N=1935</li>
+                <li>
+                  資料來源：創市際內部資料(2018/12)
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="row justify-content-center wrapper text-center">
-            <div class="col-12">
-              <p class="h4 ">
+            <hr>
+            <div class="col-12 wrapper">
+              <p class="h4">
                 有興趣使用的項目
               </p>
             </div>
@@ -6009,128 +6139,128 @@ canvas {
                 30.0%
               </p>
             </div>
-
           </div>
 
-          <div class="row justify-content-center">
-            <div class="col-12 wrapper">
+          <div class="row justify-content-center wrapper">
+            <hr>
+            <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 品牌知曉度與使用率
               </p>
             </div>
-              <div class="col-md-10">
-                <canvas id="chart_sharingEconomyAwareness" style="height:90vh; width:100vw"></canvas>
-                <script type="text/javascript">
-                  var ctx = $("#chart_sharingEconomyAwareness");
-                  var myChart = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                      labels: ["blank;交通服務", "Uber;交通服務", "blank;交通服務", "Obike;車輛共享", "Zipcar;車輛共享", "Wemo;車輛共享", "blank;線上訂房", "Airbnb;線上訂房", "blank;線上訂房", "foodpanda;外送服務", "Uber Eats;外送服務", "Honestbee;外送服務", "blank;外送服務", "嘖嘖;群眾募資", "Flying V;群眾募資", "群募貝果;群眾募資"],
-                      datasets: [{
-                        label: '知曉度',
-                        xAxisID:'xAxis1',
-                        data: [, 92.8, ,77.3, 46.9, 44.7, ,71.9, ,70.6, 61.3, 61.3, ,45.7, 44.6, 42.6, ],
-                        borderColor: '#7DCC4A',
-                        backgroundColor: '#7DCC4A',
-                        datalabels: {
-                          formatter: function(value, context) {
-                            return Math.abs(value) + '%';
-                          }
-                        }
-                      },
-                      {
-                        label: '使用率',
-                        xAxisID:'xAxis1',
-                        data: [, 23.7, ,12.6, 5.2, 5.6, ,19.7, ,12.3, 12.3, 10.2, ,6.5, 6.5, 5.7, ],
-                        borderColor: '#3366CC',
-                        backgroundColor: '#3366CC',
-                        datalabels: {
-                          display: false,
-                          /*align:'top',
-                          formatter: function(value, context) {
-                            return Math.abs(value) + '%';
-                          }*/
-                        }
-                      }]
-                    },
-                    options:{
-                      responsive:true,
-                      tooltips: {
-                        mode:'index',
-                        callbacks: {
-                          label: function(tooltipItem, data) {
-                            var label = data.datasets[tooltipItem.datasetIndex].label || '';
+            <div class="col-md-10">
+              <table class="table">
+                <thead class="thead-light">
+                  <tr>
+                    <th class="align-middle">類型</th>
+                    <th class="align-middle">品牌</th>
+                    <th class="align-middle" style=" min-width: 25vw;">知曉度/使用率</th>
+                    <th class="align-middle">轉換率</th>
 
-                            if (label) {
-                                label += ': ';
-                            }
-                            label += Math.round(tooltipItem.yLabel * 100) / 100;
-                            return label + '%';
-                          }
-                        }
-                      },
-                      scales:{
-                        xAxes:[
-                          {
-                            id:'xAxis1',
-                            type:"category",
-                            gridLines: {
-                              display: false,
-                              drawOnChartArea: false, // only want the grid lines for one axis to show up
-                            },
-                            ticks:{
-                              callback:function(label){
-                                var brand = label.split(";")[0];
-                                var cate = label.split(";")[1];
-                                if(brand === "blank"){
-                                  return " ";
-                                } else {
-                                  return brand;
-                                }
-                              }
-                            },
-                          },
-                          {
-                            id:'xAxis2',
-                            type:"category",
-                            gridLines: {
-                              display: false,
-                              drawOnChartArea: false, // only want the grid lines for one axis to show up
-                            },
-                            ticks:{
-                              callback:function(label){
-                                var brand = label.split(";")[0];
-                                var cate = label.split(";")[1];
-                                if(brand === "Uber"){
-                                  return "交通服務";
-                                  } else if(brand === "Zipcar"){
-                                  return "車輛共享";
-                                  } else if(brand === "Airbnb"){
-                                  return "線上訂房";
-                                  } else if(brand === "Uber Eats"){
-                                  return "外送服務";
-                                  } else if(brand === "Flying V"){
-                                  return "群眾募資";
-                                  } else{
-                                  return "";
-                                }
-                    	        }
-                          	}
-                          }],
-                        yAxes:[{
-                          display: false,
-                          gridLines: {
-                            display: false,
-                          },
-                          ticks:{
-                            beginAtZero:true
-                          }
-                        }]
-                      }
-                    }
-                  });
-                </script>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="small align-middle" rowspan="2" scope="row">交通服務</th>
+                    <td class="small align-middle" rowspan="2">Uber</td>
+                    <td class="small align-middle">92.8%
+                      <div class="progress">
+                        <div class="progress-bar mainGreen" role="progressbar" style="width: 92.8%" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="small align-middle text-danger" rowspan="2">25.5％
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle">23.7%
+                      <div class="progress">
+                        <div class="progress-bar mainNavy" role="progressbar" style="width: 23.7%"aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="small align-middle" rowspan="6" scope="row">車輛共享</th>
+                    <td class="small align-middle" rowspan="2">Obike</td>
+                    <td class="small align-middle">77.3%
+                      <div class="progress">
+                        <div class="progress-bar mainGreen" role="progressbar" style="width: 77.3%" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="small align-middle" rowspan="2">16.3％
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle">12.6%
+                      <div class="progress">
+                        <div class="progress-bar mainNavy" role="progressbar" style="width: 12.6%"aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle" rowspan="2">Zipcar</td>
+                    <td class="small align-middle">46.9%
+                      <div class="progress">
+                        <div class="progress-bar mainGreen" role="progressbar" style="width: 46.9%" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="small align-middle" rowspan="2">11.1％
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle">5.2%
+                      <div class="progress">
+                        <div class="progress-bar mainNavy" role="progressbar" style="width: 5.2%"aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle" rowspan="2">Zipcar</td>
+                    <td class="small align-middle">44.7%
+                      <div class="progress">
+                        <div class="progress-bar mainGreen" role="progressbar" style="width: 44.7%" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="small align-middle" rowspan="2">12.5％
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle">5.6%
+                      <div class="progress">
+                        <div class="progress-bar mainNavy" role="progressbar" style="width: 5.6%"aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="small align-middle" rowspan="2" scope="row">線上訂房</th>
+                    <td class="small align-middle" rowspan="2">Airbnb</td>
+                    <td class="small align-middle">71.9%
+                      <div class="progress">
+                        <div class="progress-bar mainGreen" role="progressbar" style="width: 92.8%" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="small align-middle text-danger" rowspan="2">25.5％
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle">23.7%
+                      <div class="progress">
+                        <div class="progress-bar mainNavy" role="progressbar" style="width: 23.7%"aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="row mb-5">
+              <div class="col-12 extraInfo text-center wrapper">
+                <ul class="list-unstyled">
+                  <li>N=1935</li>
+                  <li>
+                    資料來源：創市際內部資料(2018/07)
+                  </li>
+                </ul>
               </div>
+            </div>
           </div>
         </div>
 
@@ -6149,15 +6279,24 @@ canvas {
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">人工智慧</h5>
+        <h5 class="modal-title">人工智慧認知概況</h5>
         <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div class="container-fluid">
-          <div class="row justify-content-center wrapper text-center">
-            <div class="col-5">
+          <div class="row justify-content-center wrapper">
+            <div class="col-10">
+              <p class="">
+                人工智慧（Artificial Intelligence，簡稱為AI）指電腦系統或機器能具備像人類一樣的思考能力與行為，並做出判斷。相關應用如機器人、人臉/語音辨識、自駕汽車等等。
+              </p>
+              <p class="mt-3">
+                人工智慧在台灣應用雖不高，但聽過者卻將近百分之百。
+              </p>
+            </div>
+
+            <div class="col-5 text-center">
               <img class="img-fluid" src="img/iconPack/icon_pack-35.png" alt="">
               <p class="">
                 聽過人工智慧
@@ -6166,7 +6305,7 @@ canvas {
                 97.5%
               </p>
             </div>
-            <div class="col-5">
+            <div class="col-5 text-center">
               <img class="img-fluid" src="img/iconPack/icon_pack-38.png" alt="">
               <p class="">
                 未來有興趣使用
@@ -6175,11 +6314,22 @@ canvas {
                 68.5%
               </p>
             </div>
+            <div class="row">
+              <div class="col-12 extraInfo text-center wrapper">
+                <ul class="list-unstyled">
+                  <li>N=1605</li>
+                  <li>
+                    資料來源：創市際內部資料(2018/12)
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-12 wrapper">
+          <div class="row justify-content-center wrapper">
+            <hr>
+            <div class="col-md-10 wrapper mb-5">
               <p class="h4 text-center">
-                使用過的服務
+                使用過的人工智慧應用服務
               </p>
               <canvas id="chart_AIUsageRate" style="height:60vh; width:100vw"></canvas>
               <script>
@@ -6251,6 +6401,16 @@ canvas {
                  }
                 });
               </script>
+              <div class="row">
+                <div class="col-12 extraInfo text-center wrapper">
+                  <ul class="list-unstyled">
+                    <li>N=1547</li>
+                    <li>
+                      資料來源：創市際內部資料(2018/12)
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -6270,7 +6430,7 @@ canvas {
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">自動駕駛</h5>
+        <h5 class="modal-title">自動駕駛認知概況</h5>
         <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -6278,8 +6438,16 @@ canvas {
       <div class="modal-body">
 
         <div class="container-fluid">
-          <div class="row justify-content-center wrapper text-center">
-            <div class="col-4">
+          <div class="row justify-content-center wrapper">
+            <div class="col-10">
+              <p class="">
+                自動駕駛汽車又被稱為無人駕駛汽車、無人車，汽車在移動過程中可以感測環境、導航，不需要透過人類直接駕駛。功能諸如：自動巡航控制、自動停車、定速、防撞、警示等等。
+              </p>
+              <p class="mt-3">
+                雖然台灣相關應用也不多，但自動駕駛汽車的知曉度也高。
+              </p>
+            </div>
+            <div class="col-4 text-center">
               <img class="img-fluid" src="img/iconPack/icon_pack-35.png" alt="">
               <p class="">
                 聽過自動駕駛汽車
@@ -6288,7 +6456,7 @@ canvas {
                 98.0%
               </p>
             </div>
-            <div class="col-4">
+            <div class="col-4 text-center">
               <img class="img-fluid" src="img/iconPack/icon_pack-38.png" alt="">
               <p class="">
                 未來有興趣購買
@@ -6297,7 +6465,7 @@ canvas {
                 40.6%
               </p>
             </div>
-            <div class="col-4">
+            <div class="col-4 text-center">
               <img class="img-fluid" src="img/iconPack/181218_3-90.png" alt="">
               <p class="">
                 未來意願搭乘
@@ -6306,9 +6474,20 @@ canvas {
                 45.3%
               </p>
             </div>
+            <div class="row">
+              <div class="col-12 extraInfo text-center wrapper">
+                <ul class="list-unstyled">
+                  <li>N=1605</li>
+                  <li>
+                    資料來源：創市際內部資料(2018/12)
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-12 wrapper">
+          <div class="row justify-content-center wrapper">
+            <hr>
+            <div class="col-md-10 wrapper">
               <p class="h4 text-center">
                 購買自動駕駛汽車考量
               </p>
@@ -6327,8 +6506,17 @@ canvas {
               <img class="img-fluid" src="img/Q13.jpeg" alt="">
             </div>
           </div>
+          <div class="row mb-5">
+            <div class="col-12 extraInfo text-center wrapper">
+              <ul class="list-unstyled">
+                <li>N=1605</li>
+                <li>
+                  資料來源：創市際內部資料(2018/12)
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
@@ -6344,7 +6532,7 @@ canvas {
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">區塊鏈</h5>
+        <h5 class="modal-title">區塊鏈認知概況</h5>
         <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -6352,8 +6540,16 @@ canvas {
       <div class="modal-body">
 
         <div class="container-fluid">
-          <div class="row justify-content-center wrapper text-center">
-            <div class="col-5">
+          <div class="row justify-content-center wrapper">
+            <div class="col-10">
+              <p class="">
+                區塊鏈（block chain），藉由密碼學串接保護內容的串接交易紀錄，因為難以篡改，所以可以作為數位資產防偽的技術。例如：比特幣就是利用區塊鏈技術確保轉帳紀錄正確。
+              </p>
+              <p class="mt-3">
+                相較之下，區塊鏈認知度較低，而應用以金融為主。
+              </p>
+            </div>
+            <div class="col-5 text-center">
               <img class="img-fluid" src="img/iconPack/icon_pack-35.png" alt="">
               <p class="">
                 聽過區塊鏈
@@ -6361,8 +6557,13 @@ canvas {
               <p class="h5">
                 47.7%
               </p>
+              <ul class="list-unstyled extraInfo">
+                <li>
+                  N=1605
+                </li>
+              </ul>
             </div>
-            <div class="col-5">
+            <div class="col-5 text-center">
               <img class="img-fluid" src="img/iconPack/icon_pack-54.png" alt="">
               <p class="">
                 擁有加密貨幣
@@ -6370,12 +6571,25 @@ canvas {
               <p class="h5">
                 4.4%
               </p>
+              <ul class="list-unstyled extraInfo">
+                <li>
+                  N=3055
+                </li>
+              </ul>
+            </div>
+            <div class="col-12 extraInfo text-center wrapper">
+              <ul class="list-unstyled">
+                <li>
+                  資料來源：創市際內部資料(2018/12)
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="row justify-content-center">
+          <div class="row justify-content-center wrapper">
+            <hr>
             <div class="col-md-10 wrapper">
               <p class="h4 text-center">
-                使用過的區塊鏈服務
+                應用重要性評估
               </p>
               <canvas id="chart_importanceOfBlockChain" height="300"></canvas>
               <script>
@@ -6395,8 +6609,13 @@ canvas {
                           pointBorderColor: '#7DCC4A',
                           pointBorderWidth: 2,
                           datalabels: {
-                            display: false,
+                            display: 'auto',
+                            align: 'end',
+                            color:'#7DCC4A',
+                            formatter: function(value, context) {
+                              return Math.abs(value) + '％';
                             }
+                          }
                         },
                       ],
                   },
@@ -6436,8 +6655,20 @@ canvas {
                  }
                   });
               </script>
+              <div class="row">
+                <div class="col-12 extraInfo text-center wrapper">
+                  <ul class="list-unstyled">
+                    <li>
+                      N=1605
+                    </li>
+                    <li>
+                      資料來源：創市際內部資料(2018/12)
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div class="col-10">
+            <div class="col-10 my-4">
               <!-- types of blockChain table -->
                 <table class="table">
                   <thead class="thead-light">
@@ -7586,7 +7817,7 @@ canvas {
               <td class="small align-middle">台灣</td>
               <td class="small align-middle" style="min-width:30vw">6%
                 <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 12%" aria-valuenow="6" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 12%" aria-valuenow="6" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </td>
             </tr>
@@ -7594,7 +7825,7 @@ canvas {
               <td class="small align-middle">馬來西亞</td>
               <td class="small align-middle">12%
                 <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 24%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 24%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </td>
             </tr>
@@ -7602,7 +7833,7 @@ canvas {
               <td class="small align-middle">中國</td>
               <td class="small align-middle">8%
                 <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 16%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 16%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </td>
             </tr>
@@ -7610,7 +7841,7 @@ canvas {
               <td class="small align-middle">新加坡</td>
               <td class="small align-middle">7%
                 <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 14%" aria-valuenow="14" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 14%" aria-valuenow="14" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </td>
             </tr>
@@ -7618,7 +7849,7 @@ canvas {
               <td class="small align-middle">南韓</td>
               <td class="small align-middle">6%
                 <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 12%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 12%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </td>
             </tr>
@@ -7626,7 +7857,7 @@ canvas {
               <td class="small align-middle">菲律賓</td>
               <td class="small align-middle">3%
                 <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 6%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 6%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </td>
             </tr>
@@ -7634,7 +7865,7 @@ canvas {
               <td class="small align-middle">印度</td>
               <td class="small align-middle">4%
                 <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 8%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 8%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </td>
             </tr>
@@ -7642,7 +7873,7 @@ canvas {
               <td class="small align-middle">日本</td>
               <td class="small align-middle">3%
                 <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 6%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 6%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </td>
             </tr>
@@ -7650,7 +7881,7 @@ canvas {
               <td class="small align-middle">印尼</td>
               <td class="small align-middle">1%
                 <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 2%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 2%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </td>
             </tr>
@@ -7658,7 +7889,7 @@ canvas {
               <td class="small align-middle">越南</td>
               <td class="small align-middle">1%
                 <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 2%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 2%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </td>
             </tr>
@@ -7666,7 +7897,7 @@ canvas {
               <td class="small align-middle">泰國</td>
               <td class="small align-middle">0%
                 <div class="progress">
-                  <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 0%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </td>
             </tr>
