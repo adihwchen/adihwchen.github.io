@@ -94,9 +94,12 @@ body {
   position: relative;
   font-family:"source-han-sans-traditional",sans-serif;
 }
-
 hr {
   width: 80vw;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  /*margin: 1em 0;*/
 }
 
 
@@ -188,19 +191,24 @@ hr {
   line-height: 1.6;
 }
 
-/* themecolors */
+/* themed colors */
 .darkBlue {
   background-color: rgba(3, 78, 162, 1);
 }
 .textDarkBlue {
   color: rgba(3, 78, 162, 1);
 }
-.mainNavy {
-  background-color: #3366CC;
-}
 .mainOrange {
   background-color: #FC9127;
 }
+.mainNavy {
+  background-color: #3366CC;
+}
+.mainGreen {
+  background-color: #7DCC4A;
+}
+
+
 
 /* hard coded */
 .nav-link {
@@ -490,7 +498,7 @@ hr {
 <!-- end of Download modal -->
 
 <!-- forewords -->
-<div class="container-fluid wrapperXL">
+<div class="container-fluid wrapper mb-5">
   <div class="row justify-content-center">
     <div class="col-9 col-md-8">
       <p class="h6 lineHeight">
@@ -2141,6 +2149,7 @@ hr {
                 pointBorderWidth: 2,
                 datalabels: {
                   align: 'top',
+                  display:'auto',
                   formatter: function(value, context) {
                     return Math.abs(value) + '%';
                   }
@@ -2154,6 +2163,7 @@ hr {
                 borderColor: '#7DCC4A',
                 borderWidth: 1,
                 datalabels: {
+                  display:'auto',
                   formatter: function(value, context) {
                     return Math.round(value) + '萬戶';
                   }
@@ -3038,7 +3048,7 @@ hr {
         </div>
       </div>
     </div>
-  </div-->
+  </div>
 
   <div id="ipv4ipv6AndASN" class=""></div>
   <hr>
@@ -5794,6 +5804,7 @@ hr {
                  }
                 });
               </script>
+
             </div>
           </div>
         </div>
@@ -5883,119 +5894,212 @@ hr {
                 品牌知曉度與使用率
               </p>
             </div>
-              <div class="col-md-10">
-                <canvas id="chart_sharingEconomyAwareness" style="height:90vh; width:100vw"></canvas>
-                <script type="text/javascript">
-                  var ctx = $("#chart_sharingEconomyAwareness");
-                  var myChart = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                      labels: ["blank;交通服務", "Uber;交通服務", "blank;交通服務", "Obike;車輛共享", "Zipcar;車輛共享", "Wemo;車輛共享", "blank;線上訂房", "Airbnb;線上訂房", "blank;線上訂房", "foodpanda;外送服務", "Uber Eats;外送服務", "Honestbee;外送服務", "blank;外送服務", "嘖嘖;群眾募資", "Flying V;群眾募資", "群募貝果;群眾募資"],
-                      datasets: [{
-                        label: '知曉度',
-                        xAxisID:'xAxis1',
-                        data: [, 92.8, ,77.3, 46.9, 44.7, ,71.9, ,70.6, 61.3, 61.3, ,45.7, 44.6, 42.6, ],
-                        borderColor: '#7DCC4A',
-                        backgroundColor: '#7DCC4A',
-                        datalabels: {
-                          formatter: function(value, context) {
-                            return Math.abs(value) + '%';
-                          }
-                        }
-                      },
-                      {
-                        label: '使用率',
-                        xAxisID:'xAxis1',
-                        data: [, 23.7, ,12.6, 5.2, 5.6, ,19.7, ,12.3, 12.3, 10.2, ,6.5, 6.5, 5.7, ],
-                        borderColor: '#3366CC',
-                        backgroundColor: '#3366CC',
-                        datalabels: {
-                          display: false,
-                          /*align:'top',
-                          formatter: function(value, context) {
-                            return Math.abs(value) + '%';
-                          }*/
-                        }
-                      }]
-                    },
-                    options:{
-                      responsive:true,
-                      tooltips: {
-                        mode:'index',
-                        callbacks: {
-                          label: function(tooltipItem, data) {
-                            var label = data.datasets[tooltipItem.datasetIndex].label || '';
-
-                            if (label) {
-                                label += ': ';
-                            }
-                            label += Math.round(tooltipItem.yLabel * 100) / 100;
-                            return label + '%';
-                          }
-                        }
-                      },
-                      scales:{
-                        xAxes:[
-                          {
-                            id:'xAxis1',
-                            type:"category",
-                            gridLines: {
-                              display: false,
-                              drawOnChartArea: false, // only want the grid lines for one axis to show up
-                            },
-                            ticks:{
-                              callback:function(label){
-                                var brand = label.split(";")[0];
-                                var cate = label.split(";")[1];
-                                if(brand === "blank"){
-                                  return " ";
-                                } else {
-                                  return brand;
-                                }
-                              }
-                            },
-                          },
-                          {
-                            id:'xAxis2',
-                            type:"category",
-                            gridLines: {
-                              display: false,
-                              drawOnChartArea: false, // only want the grid lines for one axis to show up
-                            },
-                            ticks:{
-                              callback:function(label){
-                                var brand = label.split(";")[0];
-                                var cate = label.split(";")[1];
-                                if(brand === "Uber"){
-                                  return "交通服務";
-                                  } else if(brand === "Zipcar"){
-                                  return "車輛共享";
-                                  } else if(brand === "Airbnb"){
-                                  return "線上訂房";
-                                  } else if(brand === "Uber Eats"){
-                                  return "外送服務";
-                                  } else if(brand === "Flying V"){
-                                  return "群眾募資";
-                                  } else{
-                                  return "";
-                                }
-                    	        }
-                          	}
-                          }],
-                        yAxes:[{
-                          display: false,
-                          gridLines: {
-                            display: false,
-                          },
-                          ticks:{
-                            beginAtZero:true
-                          }
-                        }]
-                      }
-                    }
-                  });
-                </script>
-              </div>
+            <div class="col-md-10">
+              <table class="table">
+                <thead class="thead-light">
+                  <tr>
+                    <th class="align-middle">類型</th>
+                    <th class="align-middle">品牌</th>
+                    <th class="align-middle small" style=" min-width: 25vw;"><span style="color:#7DCC4A">知曉度</span><br><span style="color:#3366CC">使用率</span></th>
+                    <th class="align-middle">轉換率*</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="small align-middle" rowspan="2" scope="row">交通服務</th>
+                    <td class="small align-middle" rowspan="2">Uber</td>
+                    <td class="small align-middle">92.8%
+                      <div class="progress">
+                        <div class="progress-bar mainGreen" role="progressbar" style="width: 92.8%" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="small align-middle text-danger" rowspan="2">25.5％
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle">23.7%
+                      <div class="progress">
+                        <div class="progress-bar mainNavy" role="progressbar" style="width: 23.7%"aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="small align-middle" rowspan="6" scope="row">車輛共享</th>
+                    <td class="small align-middle" rowspan="2">Obike</td>
+                    <td class="small align-middle">77.3%
+                      <div class="progress">
+                        <div class="progress-bar mainGreen" role="progressbar" style="width: 77.3%" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="small align-middle" rowspan="2">16.3％
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle">12.6%
+                      <div class="progress">
+                        <div class="progress-bar mainNavy" role="progressbar" style="width: 12.6%"aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle" rowspan="2">Zipcar</td>
+                    <td class="small align-middle">46.9%
+                      <div class="progress">
+                        <div class="progress-bar mainGreen" role="progressbar" style="width: 46.9%" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="small align-middle" rowspan="2">11.1％
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle">5.2%
+                      <div class="progress">
+                        <div class="progress-bar mainNavy" role="progressbar" style="width: 5.2%"aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle" rowspan="2">Wemo</td>
+                    <td class="small align-middle">44.7%
+                      <div class="progress">
+                        <div class="progress-bar mainGreen" role="progressbar" style="width: 44.7%" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="small align-middle" rowspan="2">12.5％
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle">5.6%
+                      <div class="progress">
+                        <div class="progress-bar mainNavy" role="progressbar" style="width: 5.6%"aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="small align-middle" rowspan="2" scope="row">線上訂房</th>
+                    <td class="small align-middle" rowspan="2">Airbnb</td>
+                    <td class="small align-middle">71.9%
+                      <div class="progress">
+                        <div class="progress-bar mainGreen" role="progressbar" style="width: 71.9%" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="small align-middle text-danger" rowspan="2">27.4％
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle">19.7%
+                      <div class="progress">
+                        <div class="progress-bar mainNavy" role="progressbar" style="width: 19.7%"aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="small align-middle" rowspan="6" scope="row">外送服務</th>
+                    <td class="small align-middle" rowspan="2">foodpanda</td>
+                    <td class="small align-middle">70.6%
+                      <div class="progress">
+                        <div class="progress-bar mainGreen" role="progressbar" style="width: 70.6%" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="small align-middle" rowspan="2">17.4％
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle">12.3%
+                      <div class="progress">
+                        <div class="progress-bar mainNavy" role="progressbar" style="width: 12.3%" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle" rowspan="2">Uber Eats</td>
+                    <td class="small align-middle">61.3%
+                      <div class="progress">
+                        <div class="progress-bar mainGreen" role="progressbar" style="width: 61.3%" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="small align-middle text-danger" rowspan="2">20.1％
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle">12.3%
+                      <div class="progress">
+                        <div class="progress-bar mainNavy" role="progressbar" style="width: 12.3%" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle" rowspan="2">Honestbee</td>
+                    <td class="small align-middle">61.3%
+                      <div class="progress">
+                        <div class="progress-bar mainGreen" role="progressbar" style="width: 61.3%" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="small align-middle" rowspan="2">16.6％
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle">10.2%
+                      <div class="progress">
+                        <div class="progress-bar mainNavy" role="progressbar" style="width: 10.2%" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="small align-middle" rowspan="6" scope="row">群眾募資</th>
+                    <td class="small align-middle" rowspan="2">嘖嘖</td>
+                    <td class="small align-middle">45.7%
+                      <div class="progress">
+                        <div class="progress-bar mainGreen" role="progressbar" style="width: 45.7%" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="small align-middle" rowspan="2">14.2％
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle">6.5%
+                      <div class="progress">
+                        <div class="progress-bar mainNavy" role="progressbar" style="width: 6.5%" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle" rowspan="2">Flying V</td>
+                    <td class="small align-middle">44.6%
+                      <div class="progress">
+                        <div class="progress-bar mainGreen" role="progressbar" style="width: 44.6%" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="small align-middle text-danger" rowspan="2">14.3％
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle">16.4%
+                      <div class="progress">
+                        <div class="progress-bar mainNavy" role="progressbar" style="width: 6.4%" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle" rowspan="2">群募貝果</td>
+                    <td class="small align-middle">42.6%
+                      <div class="progress">
+                        <div class="progress-bar mainGreen" role="progressbar" style="width: 42.6%" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                    <td class="small align-middle" rowspan="2">13.4％
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle">5.7%
+                      <div class="progress">
+                        <div class="progress-bar mainNavy" role="progressbar" style="width: 5.7%" aria-valuemax="100"></div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
