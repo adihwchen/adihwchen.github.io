@@ -1,0 +1,657 @@
+<!doctype HTML>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>-->
+  <script src="js/Chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+  <!--script src='https://www.gstatic.com/charts/loader.js'></script-->
+
+
+  <title>2018 台灣網路調查</title>
+
+  <meta property="og:url" content="http://twnic.somewhere.there">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2018 台灣網路調查 v3">
+  <meta property="og:image" content="">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:description" content="TWNIC">
+
+  <link rel="shortcut icon" href="voteFavicon.ico" type="image/x-icon">
+  <link rel="bookmark" href="#"/>
+
+
+<!-- scrolling -->
+<script>
+  $(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+      // Store hash
+      var hash = this.hash;
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
+<!-- adobe typekit-->
+<script>
+ (function(d) {
+   var config = {
+     kitId: 'hct8abz',
+     scriptTimeout: 3000,
+     async: true
+   },
+   h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+ })(document);
+</script>
+
+</head>
+
+<style>
+/* all site settings*/
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  }
+
+* {
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+}
+body {
+  position: relative;
+  font-family:"source-han-sans-traditional",sans-serif;
+}
+
+/* individual styles */
+.linkColor {
+  color:black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.linkColor:hover {
+  color:#3a3a3a;
+  text-decoration: none;
+  cursor: pointer;
+}
+.linkColorWHT {
+  color:white;
+  text-decoration: none;
+  cursor: pointer;
+}
+.linkColorWHT:hover {
+  color:#d3d3d3;
+  text-decoration: none;
+  cursor: pointer;
+}
+.linkTextDeco {
+  color:white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.linkTextDeco:hover {
+  color:#d3d3d3;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.linkTextDecoDark {
+  color:black;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.linkTextDecoDark:hover {
+  color:#8e8e8e;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sticky-notTop {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1010;
+  }
+}
+
+
+.bgBlack {
+  background-color: black;
+}
+.lineHeight {
+  line-height: 1.6;
+}
+
+.bgCards {
+  background-color: #4E9AD1;
+}
+
+.titleColor {
+  color:#234375;
+}
+
+.btn-black {
+  color: #fff;
+  background-color: black;
+  border-color: black;
+}
+
+.btn-black:hover {
+  color: #fff;
+  background-color: #23272b;
+  border-color: #1d2124;
+}
+.btn-black:focus, .btn-black.focus {
+  box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
+}
+
+
+/* icon font */
+.btnWrapper {
+  padding-top: .05em;
+}
+.btnIcons {
+  font-size: 1.5rem;
+  top: .20em;
+  position: relative;
+}
+
+.extraInfo {
+  font-size: 70%;
+  font-weight: 200;
+  color:grey;
+  line-height: 1.6;
+}
+
+
+/* Lineup of Wrappers */
+.wrapper {
+  padding-top: 3em;
+}
+.wrapperM {
+  padding-top: 4em;
+}
+.wrapperL {
+  padding-top: 5em;
+}
+.wrapperXL{
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+.wrapperCarousel{
+  padding-top: 10em;
+  padding-bottom: 12em;
+}
+
+
+/* Full Screen Menu */
+.navBar-fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1042;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1041;
+  top: 0;
+  left: 0;
+  background-color: rgba(255,255,255, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 20vh;
+  width: 100%;
+  text-align: center;
+}
+
+/* hover effect */
+.hoverLarge {
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+.hoverLarge:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+/* mobile view */
+@media screen and (max-width: 768px), print {
+  .hoverLarge:hover {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+  }
+  .wrapper {
+    padding-top: 1em;
+  }
+  .wrapperL {
+    padding-top: 5em;
+  }
+  .wrapperCarousel{
+    padding-top: 3em;
+    padding-bottom: 4em;
+  }
+  .halftoneBanner {
+    background-image: url(img/halftoneBanner_M.svg);
+    background-repeat: repeat-x;
+    max-width: 100%;
+    height: auto;
+    background-position: center bottom;
+  }
+}
+
+/* SIDEBAR NAVIGATION */
+.sidebar {
+  position:absolute;
+  right:0;
+}
+.dot {
+  display:inline-block;
+  width:10px;
+  height:10px;
+  background-color:rgba(0,0,0,.3);
+  border-radius:10px;
+  z-index:1080;
+  content:'';
+  color:transparent;
+  font-size:14px;
+  line-height:10px;
+  vertical-align:middle;
+  margin:5px 0 5px 0;
+  font-weight:300;
+}
+.dot:hover {
+  background-color:rgba(0,0,0,.8);
+  color:rgba(0,0,0,.8);
+}
+.dot span {
+  margin:0px 0px 20px 15px;
+  position:relative;
+  top:0px;
+  left:-80px;
+}
+.navDots {
+  width:100px;
+  height:200px;
+  /*background-color:rgb(240,240,240);
+  border:solid 1px rgb(220,220,220);*/
+  padding:0 0px;
+  position:fixed;
+  top:50%;
+  right:20px;
+  transform: translate(0, -50%);
+  z-index: 10000;
+  text-align:right;
+}
+.navDots ul li a {
+  text-decoration:none;
+}
+.navDots ul {
+  list-style-type:none;
+  margin:0;
+  padding:0;
+}
+
+
+</style>
+
+<body data-spy="scroll" data-target="#navScrollSpy">
+
+<!-- nav MENU bar -->
+
+<!-- logoType -->
+<div class="container-fluid" id="goTop">
+  <div class="row justify-content-center wrapperCarousel">
+    <div class="col-md-6 col-10">
+      <a href="#spotlights">
+        <img class="img-fluid" src="img/undraw_product_tour_foyt.svg" alt="">
+      </a>
+    </div>
+    <div class="col-md-5 col-12">
+      <p class="h2 mt-5 ml-2 mb-0 titleColor" style="font-weight:700;">
+        2018
+      </p>
+      <p class="display-4 mt-0 titleColor">
+        台灣網路報告
+      </p>
+      <p class="h6 lineHeight">
+        台灣的網路環境已有先進國家的水準，網路「硬實力」表現如基礎設施、設備應用和使用普及率等，都相當有競爭力。
+      </p>
+      <p class="h6 lineHeight mt-3">
+        而網路「軟實力」例如應用、創新方面還有很多機會。哪些是台灣還沒發生、正在發生、已經發生的網路事件，台灣的機會在哪裡？
+      </p>
+      <!--a class="btn btn-info btn-sm text-white mt-3" data-toggle="modal" data-target="#researchMethodology">調查方法概述</a-->
+    </div>
+    <div class="w-100"></div>
+    <div class="col text-center wrapperM">
+      <a href="#spotlights"><i class="fas fa-chevron-circle-down fa-3x text-secondary hoverLarge"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- end of logoType -->
+
+<header class="sticky-top">
+  <nav id="navScrollSpy" class="navbar navbar-expand-lg navbar-light bg-light">
+    <a href="#goTop" class="navbar-brand"><img src="img/twnicLogo.png" alt="" style="height:40px;"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBurger" aria-controls="navBurger" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon text-white" ></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navBurger">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link btn btn-light ml-lg-5" href="#spotlights">前瞻亮點趨勢分析</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-light" href="#overall">整體網路使用現況</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-light" href="#comparison">國際現況介紹比較</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-light ml-lg-5" href="#download">報告下載</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-light" href="en.html" target="_blank">EN</a>
+          </li>
+        </ul>
+      </div>
+  </nav>
+</header>
+<!-- end of nav MENU bar -->
+
+<!-- Research Methodology modal -->
+<div class="modal fade" id="researchMethodology" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">調查方法概述</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row justify-content-center">
+          <div class="col-12 py-3 lineHeight">
+            <!-- Methodology table -->
+              <table class="table table-hover">
+                <thead class="thead-light">
+                  <tr>
+                    <th colspan="2" class="align-middle">電腦輔助電話訪問法</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="small align-middle" scope="row" style="min-width: 15vw;">調查地區與對象</th>
+                    <td class="small align-middle">全國地區（包括6都和16縣市），年滿12 足歲以上（2005年12月31日之前出生）的民眾</td>
+                  </tr>
+                  <tr>
+                    <th class="small align-middle" scope="row">調查母體</th>
+                    <td class="small align-middle">全國地區（包括6都和16縣市）之家戶，共計8,578,609戶。（內政部2018年10月人口統計月報）</td>
+                  </tr>
+                  <tr>
+                    <th class="small align-middle" scope="row">調查期間</th>
+                    <td class="small align-middle">107年10月30日起至107年11月29日止，每日13:30-22:00進行</td>
+                  </tr>
+                  <tr>
+                    <th class="small align-middle" scope="row">調查方法</th>
+                    <td class="small align-middle">採電話訪問方式進行完成份數為3,088份，在95%的信心水準之下，抽樣誤差為正負1.76%</td>
+                  </tr>
+                  <tr>
+                    <th class="small align-middle" scope="row">抽樣設計</th>
+                    <td class="small align-middle">使用分層比例隨機抽樣，以全國地區6 都及16縣市為分層依據配置各層樣本數抽取12足歲以上之民眾為受訪者。 </td>
+                  </tr>
+                </tbody>
+              </table>
+            <!-- end of table -->
+          </div>
+          <div class="col-12 py-3 lineHeight">
+            <!-- Document Analysis table -->
+              <table class="table table-hover">
+                <thead class="thead-light">
+                  <tr>
+                    <th colspan="2" class="align-middle">文獻分析法</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="small align-middle" scope="row" rowspan="6" style="min-width: 15vw;">蒐集來源</th>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle">委託單位提供數據</td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle">國家性研究報告、公開數據，如國發會</td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle">國際性研究報告：如Internet World Stats、Statista資料庫</td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle">創市際市場研究顧問自有資源
+                      <ul>
+                        <li>IX Survey 網路調查</li>
+                        <li>comScore 網站流量</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="small align-middle">網路公開調查報告</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            <!-- end of table -->
+          </div>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of Research Methodology modal -->
+
+<!-- section 1 -->
+<div class="container-fluid" id="spotlights">
+  <div class="row justify-content-center px-5" style="background-color:#fff7df">
+    <div class="w-100 wrapper"></div>
+    <div class="col-md-6 wrapperCarousel ml-2">
+      <p class="display-4 mt-5 titleColor">
+        前瞻亮點趨勢分析
+      </p>
+      <p class="h2 text-dark my-3">
+        台灣網路環境完備，競爭力躋身國際
+      </p>
+      <div class="row justify-content-around">
+        <div class="col mx-2">
+          <div class="my-3">
+            <p class="h6 lineHeight">
+              世界經濟論壇全球競爭力評比，台灣資訊科技完備度全球排名第二十五名。心朋能來人樓試地會們，語方學土超；觀電沒去時，服家片展結文講陽聯面非因林求設似……質內友健，開需卻因五，要主步正又力臺負是生大過；名記軍回收朋級！經車國選品活包花的主高代政兒！
+            </p>
+          </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="col ml-2 my-2">
+          <a class="btn btn-outline-dark" href="spotlights.html" target="_blank">進一步了解</a>
+        </div>
+      </div>
+    </div>
+    <div class="col wrapperXL my-5">
+      <img class="img-fluid"src="img/undraw_group_chat_v059.svg" alt="">
+    </div>
+    <div class="w-100 wrapper"></div>
+
+  </div>
+</div>
+<!-- end of section 1 -->
+
+
+<!-- section 2 -->
+<div class="container-fluid" id="overall">
+  <div class="row justify-content-center px-5">
+    <div class="w-100 wrapper"></div>
+
+    <div class="col wrapperXL my-5">
+      <img class="img-fluid"src="img/undraw_online_1qud.svg" alt="">
+    </div>
+    <div class="col-6 wrapperCarousel my-5 ml-2">
+      <p class="display-4 mt-5 titleColor">
+        整體網路使用現況
+      </p>
+      <p class="h2 text-dark my-3">
+        台灣個人與家戶上網率皆超過八成
+      </p>
+      <div class="row justify-content-around">
+        <div class="col mx-2">
+          <div class="my-3">
+            <p class="h6 lineHeight">
+              灣包的；面叫出不風吃眼物清大民個神：紀顧樹事上一，用家來不預功無鄉政什做明印具白你學為能……灣要形風分賽不火？該態產須亞，正樣演信表，來個銀戰你大教！外種們重改該古接有。到家跟覺當金有！收一邊生女常員的早值活，詩效話時古情常是切不、些小如節雨，果何省的。
+            </p>
+          </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="col ml-2 my-2">
+          <a class="btn btn-outline-dark" href="overall.html" target="_blank">進一步了解</a>
+        </div>
+
+      </div>
+    </div>
+    <div class="w-100 wrapper"></div>
+  </div>
+</div>
+<!-- end of section 2 -->
+
+
+<!-- section 3 -->
+<div class="container-fluid" id="comparison">
+  <div class="row justify-content-center px-5" style="background-color:#eaf9ff">
+    <div class="col-6 wrapperCarousel my-5">
+      <p class="display-4 mt-5 titleColor">
+        國際現況介紹比較
+      </p>
+      <p class="h2 text-dark my-3">
+        台灣以網民平均頻寬排名表現最佳
+      </p>
+      <div class="row justify-content-around">
+        <div class="col mx-2">
+          <div class="my-3">
+            <p class="h6 lineHeight">
+              把民了；綠說證沒西這水首華開來色收個了為！老產可又容，造服中關業生出教岸做向樣紀期實口是有業最每為爸洋住能水世他。
+            </p>
+          </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="col ml-2 my-2">
+          <a class="btn btn-outline-dark" href="comparison.html" target="_blank">進一步了解</a>
+        </div>
+
+      </div>
+    </div>
+    <div class="col wrapperXL my-5">
+      <img class="img-fluid"src="img/undraw_world_9iqb.svg" alt="">
+    </div>
+  </div>
+</div>
+<!-- end of section 3 -->
+
+
+
+<div class="container-fluid" id="download">
+  <div class="row justify-content-center px-5">
+    <div class="col mt-5" style="padding-top:12em">
+      <iframe class="" src="https://www.slideshare.net/slideshow/embed_code/key/snaH9XX7E2HHew" width="510" height="360" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="margin-left: 1.5em;max-width: 100%;" allowfullscreen=""> </iframe>
+    </div>
+    <div class="col-6 wrapperCarousel">
+      <p class="display-4 titleColor">
+        報告下載
+      </p>
+      <div class="row justify-content-around">
+        <div class="col mx-2">
+          <div class="my-3">
+            <p class="h6 lineHeight">
+              台灣網路資訊中心自2002年起每年固定進行台灣寬頻網路使用調查，觀察台灣地區網路發展及使用狀況，為提供及滿足具有特定調查數據需求之單位或個人使用；因此，本中心將十年
+              來所累積之調查資料，建置「台灣寬頻網路統計查詢系統」以有效累積並統合歷年來本中心所執行之「台灣寬頻網路調查」之統計數據，以系統化之查詢服務，提供有特定查詢需求
+              之社會大眾及研究單位使用。
+            </p>
+          </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-8 py-md-3 lineHeight text-center">
+          <form>
+            <div class="form-group">
+              <label for="EmailInput"></label>
+              <input type="email" class="form-control" id="EmailInput" aria-describedby="emailHelp" placeholder="請輸入Email">
+              <small id="emailHelp" class="form-text text-muted">登入帳號為 Email</small>
+            </div>
+            <div class="form-group">
+              <label for="EmailInput"></label>
+              <input type="password" class="form-control" id="PasswordInput" placeholder="請輸入密碼">
+              <small id="passwordHelp" class="form-text text-muted">忘記密碼</small>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="check">
+              <label class="form-check-label" for="check">Take me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary mx-2">註冊</button>
+            <button type="submit" class="btn btn-success mx-2">登入</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!--- Footer --->
+<div class="wrapperXL pb-3 pt-4">
+  <p class="text-center small text-dark">
+    Copyright © 2019 財團法人台灣網路資訊中心
+  </p>
+</div>
+<!--- end of Footer --->
+
+
+</body>
+</html>

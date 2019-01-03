@@ -1,0 +1,587 @@
+<!doctype HTML>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="js/Chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+
+
+  <title>2018 台灣網路調查 - 前瞻亮點</title>
+
+  <meta property="og:url" content="http://twnic.somewhere.there">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2018 台灣網路調查 v3">
+  <meta property="og:image" content="">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:description" content="TWNIC">
+
+  <link rel="shortcut icon" href="voteFavicon.ico" type="image/x-icon">
+  <link rel="bookmark" href="#"/>
+
+
+<!-- scrolling -->
+<script>
+  $(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+      // Store hash
+      var hash = this.hash;
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
+<!-- adobe typekit-->
+<script>
+ (function(d) {
+   var config = {
+     kitId: 'hct8abz',
+     scriptTimeout: 3000,
+     async: true
+   },
+   h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+ })(document);
+</script>
+
+</head>
+
+<style>
+  /* all site settings*/
+  html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+    }
+
+  * {
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+       -moz-border-radius: 0 !important;
+            border-radius: 0 !important;
+  }
+  body {
+    position: relative;
+    font-family:"source-han-sans-traditional",sans-serif;
+  }
+
+  hr {
+    width: 80vw;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    /*margin: 1em 0;*/
+  }
+
+  /* individual styles */
+  .linkColor {
+    color:black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .linkColor:hover {
+    color:#3a3a3a;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .linkColorWHT {
+    color:white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .linkColorWHT:hover {
+    color:#d3d3d3;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .linkTextDeco {
+    color:white;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .linkTextDeco:hover {
+    color:#d3d3d3;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .linkTextDecoDark {
+    color:black;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .linkTextDecoDark:hover {
+    color:#8e8e8e;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  @supports ((position: -webkit-sticky) or (position: sticky)) {
+    .sticky-notTop {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      z-index: 1010;
+    }
+  }
+
+
+  .bgBlack {
+    background-color: black;
+  }
+  .lineHeight {
+    line-height: 1.6;
+  }
+
+  .bgCards {
+    background-color: #4E9AD1;
+  }
+
+  .titleColor {
+    color:#234375;
+  }
+
+  .btn-black {
+    color: #fff;
+    background-color: black;
+    border-color: black;
+  }
+
+  .btn-black:hover {
+    color: #fff;
+    background-color: #23272b;
+    border-color: #1d2124;
+  }
+  .btn-black:focus, .btn-black.focus {
+    box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
+  }
+
+
+  /* icon font */
+  .btnWrapper {
+    padding-top: .05em;
+  }
+  .btnIcons {
+    font-size: 1.5rem;
+    top: .20em;
+    position: relative;
+  }
+
+  .extraInfo {
+    font-size: 70%;
+    font-weight: 200;
+    color:grey;
+    line-height: 1.6;
+  }
+
+
+  /* Lineup of Wrappers */
+  .wrapper {
+    padding-top: 3em;
+  }
+  .wrapperM {
+    padding-top: 4em;
+  }
+  .wrapperL {
+    padding-top: 5em;
+  }
+  .wrapperXL{
+    padding-top: 5em;
+    padding-bottom: 5em;
+  }
+  .wrapperCarousel{
+    padding-top: 10em;
+    padding-bottom: 12em;
+  }
+
+
+  /* Full Screen Menu */
+  .navBar-fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1042;
+  }
+
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1041;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+
+  .overlay-content {
+    position: relative;
+    top: 20vh;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* hover effect */
+  .hoverLarge {
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+  }
+
+  .hoverLarge:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  /* mobile view */
+  @media screen and (max-width: 768px), print {
+    .hoverLarge:hover {
+      -webkit-transform: scale(0.98);
+      transform: scale(0.98);
+    }
+    .wrapper {
+      padding-top: 1em;
+    }
+    .wrapperL {
+      padding-top: 5em;
+    }
+    .wrapperCarousel{
+      padding-top: 3em;
+      padding-bottom: 4em;
+    }
+    .halftoneBanner {
+      background-image: url(img/halftoneBanner_M.svg);
+      background-repeat: repeat-x;
+      max-width: 100%;
+      height: auto;
+      background-position: center bottom;
+    }
+  }
+
+  /* Full Screen Menu */
+  .navBar-fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1042;
+    background-color: rgba(3, 78, 162, 1);
+  }
+
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1041;
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+
+  .overlay a {
+    display: block;
+  }
+  .overlay-content {
+    position: absolute;
+    top: 20vh;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-button{position:relative; z-index:1060; border:solid 1px; border-color: rgba(0, 0, 0, 0); height:42px; display:block; width:50px; padding:12px; }
+  .nav-button #nav-icon3{width:24px;height:22px;display:inline-block;position:relative;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);-webkit-transition:.5s ease-in-out;-moz-transition:.5s ease-in-out;-o-transition:.5s ease-in-out;transition:.5s ease-in-out;cursor:pointer;}
+  .nav-button #nav-icon3 span{display:block;position:absolute;height:3px;width:100%;background:#fff;opacity:1;left:0;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);-webkit-transition:.25s ease-in-out;-moz-transition:.25s ease-in-out;-o-transition:.25s ease-in-out;transition:.25s ease-in-out}
+  .nav-button #nav-icon3 span:nth-child(1){top:0}
+  .nav-button #nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3){top:7px}
+  .nav-button #nav-icon3 span:nth-child(4){top:14px}
+  .nav-open #nav-icon3 span:nth-child(1){top:9px;width:0;left:50%}
+  .nav-open #nav-icon3 span:nth-child(2){-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg)}
+  .nav-open #nav-icon3 span:nth-child(3){-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg)}
+  .nav-open #nav-icon3 span:nth-child(4){top:9px;width:0;left:50%}
+
+
+
+</style>
+
+<body data-spy="scroll" data-target="#navScrollSpy">
+
+  <!-- nav MENU bar -->
+  <header class="">
+    <nav id="navScrollSpy" class="navbar navbar-light navBar-fixed-top">
+      <a href="#goTop" class="navbar-brand text-white"><img src="img/twnicLogo.svg" alt="" style="height:40px;"></a>
+      <a class="nav-button mr-0" data-toggle="modal" data-target="#myNav" onclick="openNav()"><span id="nav-icon3"><span></span><span></span><span></span><span></span></span></a>
+    </nav>
+    <script>
+      $(document).ready(function(){
+        $('.nav-button').bind("click",function(){
+          $('body').toggleClass('nav-open');
+        });
+        $('.overlay').bind("click", function(){
+          $('body').toggleClass('nav-open');
+        });
+      });
+    </script>
+    <script>
+      function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+      }
+      function closeNav() {
+        document.getElementById("myNav").style.width = "0";
+      }
+    </script>
+      <!-- fullscreen burger -->
+      <div id="myNav" class="overlay">
+        <div class="overlay-content">
+          <ul class="list-unstyled">
+            <li class="my-3">
+              <a class="nav-link h5" href="#sec-1" data-target="#spotlights" onclick="closeNav()" data-dismiss="modal" aria-label="close">前瞻亮點趨勢分析</a>
+            </li>
+            <li class="my-3">
+              <a class="nav-link h5" href="internet.html" target="_blank" onclick="closeNav()" aria-label="close">整體網路使用現況</a>
+            </li>
+            <li class="my-3">
+              <a class="nav-link h5" href="internet.html" target="_blank" onclick="closeNav()" aria-label="close">網路服務應用概況</a>
+            </li>
+            <li class="my-3">
+              <a class="nav-link h5" href="internet.html" target="_blank" onclick="closeNav()" aria-label="close">網國際情勢討論比較</a>
+            </li>
+            <li class="my-3">
+              <a class="nav-link h5" href="#download" data-target="#download" onclick="closeNav()" data-dismiss="modal" aria-label="close">報告下載</a>
+            </li>
+
+          </ul>
+
+        </div>
+      </div>
+
+      <!-- fullscreen burger -->
+
+  </header>
+  <!-- end of nav MENU bar -->
+
+<!-- logoType -->
+<div class="container-fluid" id="goTop">
+  <div class="row justify-content-center wrapperXL" style="background-color:#fff7df">
+    <div class="col-md-6 text-center">
+      <p class="display-4 mt-5 titleColor">
+        前瞻亮點趨勢分析
+      </p>
+    </div>
+    <div class="w-100"></div>
+    <div class="col-4 wrapper">
+      <img class="img-fluid"src="img/undraw_group_chat_v059.svg" alt="">
+    </div>
+    <div class="w-100"></div>
+
+    <div class="col text-center wrapperM">
+      <a href="#sec-1"><i class="fas fa-chevron-circle-down fa-3x text-secondary hoverLarge"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- end of logoType -->
+
+<div class="container">
+  <div class="row justify-content-center" >
+  </div>
+</div>
+
+
+<!-- section 1 -->
+<div class="container" id="sec-1">
+  <div class="row justify-content-center wrapperXL" >
+    <div class="col-md-10">
+      <p class="h1 mt-5 titleColor">
+        重點機會
+      </p>
+      <div class="my-3">
+        <p class="h6 lineHeight">
+          的特孩不人興要們市學只還的異好每個制信上們光生性她球兒原安害存，點中養生公成分力持社為電門像來我華，吃連刻點一作顯麼基，事不感發改聲是金業生狀求著。裡人知，其化雜的行真數客們狀提企種、團當的大參果小！來職人能之們性以第認基縣樂演事出了生別決經音。
+        </p>
+      </div>
+    </div>
+    <div class="w-100"></div>
+    <div class="col-md-10">
+      <img class="img-fluid" src="img/ScreenShot2019-01-04at124208AM.png" alt="">
+    </div>
+  </div>
+</div>
+<!-- end of section 1 -->
+
+
+<!-- section 2 -->
+<div class="container" id="sec-2">
+  <div class="row justify-content-center wrapperXL">
+    <div class="col-md-10">
+      <p class="h1 mt-5 titleColor">
+        台灣網路課題：提升軟實力
+      </p>
+      <div class="my-3">
+        <p class="h6 lineHeight">
+          步一年人從學了經有，望最們。都說過市前容的的，價市綠次可帶我。眼約黃道一留驗電裡論……海這反得了成時樣角的：包好情告生能而電下早港提：續元呢源中是。
+        </p>
+      </div>
+    </div>
+    <div class="w-100"></div>
+    <div class="col-md-10">
+      <img class="img-fluid" src="img/ScreenShot2019-01-04at125357AM.png" alt="">
+    </div>
+  </div>
+</div>
+<!-- end of section 2 -->
+
+
+<!-- section 3 -->
+<div class="container" id="sec-3">
+  <div class="row justify-content-center wrapperXL">
+    <div class="col-md-10">
+      <p class="h1 mt-5 titleColor">
+        方向一：網路影音強化優勢
+      </p>
+      <div class="my-3">
+        <p class="h6 lineHeight">
+          車臺會平紀念公團在時？司人以自打不這安國為級共為漸格此吃生整了很團者股筆越算。標開的日起度年會總對母即自至為何現實路在深底重媽和學候好民主理寫很民過且水親真整股子，差市來使望藝！著愛性師經大。實富受腦。
+        </p>
+      </div>
+    </div>
+    <div class="w-100"></div>
+    <div class="col-md-10">
+      <img class="img-fluid" src="img/ScreenShot2019-01-04at125428AM.png" alt="">
+    </div>
+  </div>
+</div>
+<!-- end of section 3 -->
+
+
+<!-- section 4 -->
+<div class="container" id="sec-4">
+  <div class="row justify-content-center wrapperXL">
+    <div class="col-md-10">
+      <p class="h1 mt-5 titleColor">
+        方向二：提高電子商務含金量
+      </p>
+      <div class="my-3">
+        <p class="h6 lineHeight">
+          時樂止分你麼依西會？全西不四沒我面依的園靈怕名親飯聯、不題後，孩去心印孩。海日而她許生是數當校考讀水有？面變省必！復下車……用什或，樣同身信？
+        </p>
+      </div>
+    </div>
+    <div class="w-100"></div>
+    <div class="col-md-10">
+      <img class="img-fluid" src="img/ScreenShot2019-01-04at125448AM.png" alt="">
+    </div>
+  </div>
+</div>
+<!-- end of section 4 -->
+
+<!-- section 5 -->
+<div class="container" id="sec-5">
+  <div class="row justify-content-center wrapperXL">
+    <div class="col-md-10">
+      <p class="h1 mt-5 titleColor">
+        方向三：智慧家庭－友善高齡與智慧音箱發展
+      </p>
+      <div class="my-3">
+        <p class="h6 lineHeight">
+          如作了意樂式，在的去意眼，起滿放畫們該型制，法上過在告，源了北放品我命和業，用字的那音了位度類的少引北……我這家散一選中位同家部是上，工天器？實素金種里林的老媽造英始成子？明管源在人黃一入來弟樣年物創導生？
+        </p>
+      </div>
+    </div>
+    <div class="w-100"></div>
+    <div class="col-md-10">
+      <img class="img-fluid" src="img/ScreenShot2019-01-04at125459AM.png" alt="">
+    </div>
+  </div>
+</div>
+<!-- end of section 5 -->
+
+
+<hr>
+
+<div class="container-fluid" id="download">
+  <div class="row justify-content-center px-5">
+    <div class="col mt-5" style="padding-top:12em">
+      <iframe class="" src="https://www.slideshare.net/slideshow/embed_code/key/snaH9XX7E2HHew" width="510" height="360" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="margin-left: 1.5em;max-width: 100%;" allowfullscreen=""> </iframe>
+    </div>
+    <div class="col-6 wrapperCarousel">
+      <p class="display-4 titleColor">
+        報告下載
+      </p>
+      <div class="row justify-content-around">
+        <div class="col mx-2">
+          <div class="my-3">
+            <p class="h6 lineHeight">
+              台灣網路資訊中心自2002年起每年固定進行台灣寬頻網路使用調查，觀察台灣地區網路發展及使用狀況，為提供及滿足具有特定調查數據需求之單位或個人使用；因此，本中心將十年
+              來所累積之調查資料，建置「台灣寬頻網路統計查詢系統」以有效累積並統合歷年來本中心所執行之「台灣寬頻網路調查」之統計數據，以系統化之查詢服務，提供有特定查詢需求
+              之社會大眾及研究單位使用。
+            </p>
+          </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-8 py-md-3 lineHeight text-center">
+          <form>
+            <div class="form-group">
+              <label for="EmailInput"></label>
+              <input type="email" class="form-control" id="EmailInput" aria-describedby="emailHelp" placeholder="請輸入Email">
+              <small id="emailHelp" class="form-text text-muted">登入帳號為 Email</small>
+            </div>
+            <div class="form-group">
+              <label for="EmailInput"></label>
+              <input type="password" class="form-control" id="PasswordInput" placeholder="請輸入密碼">
+              <small id="passwordHelp" class="form-text text-muted">忘記密碼</small>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="check">
+              <label class="form-check-label" for="check">Take me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary mx-2">註冊</button>
+            <button type="submit" class="btn btn-success mx-2">登入</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!--- Footer --->
+<div class="wrapperXL pb-3 pt-4 bg-light">
+  <p class="text-center small text-dark">
+    Copyright © 2018 財團法人台灣網路資訊中心
+  </p>
+</div>
+<!--- end of Footer --->
+
+
+</body>
+</html>
