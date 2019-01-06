@@ -207,13 +207,13 @@
   <div class="row justify-content-center wrapperXL text-white" id="opening">
     <div class="col-10 col-md-7">
       <p class="display-4 mt-5 text-center">
-        網路使用行為趨勢與比較
+        基礎網路架構比較
       </p>
     </div>
     <div class="w-100"></div>
     <div class="col-md-6">
       <p class="h5 lineHeight">
-        台灣個人與家戶上網率高，為亞洲地區前段班
+
       </p>
     </div>
     <div class="w-100"></div>
@@ -231,91 +231,180 @@
   <div class="row justify-content-center wrapperL">
     <div class="col-md-10">
       <p class="h1 mt-5 titleColor">
-        各國上網率比較
+        各國網域／IPv4／IPv6 統計
       </p>
       <div class="my-3">
         <p class="h6 lineHeight">
-          台灣上網率位居亞洲國家中第三名，僅次於日本與南韓，與全球國家比較上網率雖然較美國、英國而言稍低，但仍高於澳洲。
+          亞洲各國的網域註冊數量與 IP 位址皆以中國最多，台灣 IPv6 全球排名第 19 名，IPv6 使用比例為 28.8%，今年數量來到 2,463 個 /32 IPv6 位址，比去年成長 4%。
         </p>
       </div>
     </div>
   </div>
   <div class="row justify-content-center wrapper">
     <div class="col-md-10">
-      <canvas id="chart_globalConnectedRate" style="height:120vh; width:100vw"></canvas>
-      <script>
-        var ctx = document.getElementById('chart_globalConnectedRate').getContext('2d');
-        var mixedChart = new Chart(ctx, {
-          type: 'horizontalBar',
-          data: {
-            labels: ['台灣', '日本', '南韓', '新加坡', '泰國', '馬來西亞', '越南', '菲律賓', '中國', '印尼', '印度', '美國', '英國', '澳洲'],
-            datasets: [
-                {
-                  label: '上網率',
-                  data: [87.9, 93.3,	92.6,	83.6,	82.4,	78.3,	66.3,	62.9,	54.6,	53.7,	34.1,	95.6,	94.7,	87.8],
-                  backgroundColor: ['#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#FFC000','#FFC000','#FFC000',],
-                  /*borderColor: '#7DCC4A',*/
-                  fill: false,
-                  borderWidth: 1,
-                  datalabels: {
-                    formatter: function(value, context) {
-                      return Math.abs(value) + '%';
-                    }
-                  },
+      <div class="mb-3">
+        <ul class="nav nav-pills nav-justified">
+          <li class="nav-item linkColor">
+            <div class="nav-link border active border-secondary" href="#globalNumberOfIPv4" data-toggle="tab">IPv4 數量</div>
+          </li>
+          <li class="nav-item linkColor">
+            <div class="nav-link border border-secondary border-left-0" href="#globalNumberOfIPv6" data-toggle="tab">IPv6 數量</div>
+          </li>
+        </ul>
+      </div>
+      <div class="row justify-content-center tab-content">
+        <div class="col-12 tab-pane active" id="globalNumberOfIPv4">
+          <canvas id="chart_globalNumberOfIPv4" style="height:150vh; width:100vw"></canvas>
+          <script>
+            var ctx = document.getElementById('chart_globalNumberOfIPv4').getContext('2d');
+            var mixedChart = new Chart(ctx, {
+              type: 'horizontalBar',
+              data: {
+                labels: ['台灣', '中國', '日本', '南韓', '印度', '印尼', '越南', '新加坡', '泰國', '馬來西亞', '菲律賓', '美國', '英國', '澳洲'],
+                datasets: [
+                    {
+                      label: 'IPv4 數量',
+                      data: [3564,	34040,	20408,	11246,	4096,	1845,	1595,	1278,	911,	661,	557, 160420,	12175,	4857],
+                      backgroundColor: ['#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#FFC000','#FFC000','#FFC000'],
+                      fill: false,
+                      borderWidth: 1,
+                      datalabels: {
+                        display: 'auto',
+                        align:'end',
+                        offset: 15,
+                        formatter: function(value, context) {
+                          return Math.abs(value) + '萬個';
+                        }
+                      },
+                    },
+                  ],
+              },
+              options: {
+                animation: {
+                  duration: 0
                 },
-              ],
-          },
-          options: {
-            animation: {
-              duration: 0
-            },
-            legend: {
-              display: false,
-            },
-            tooltips: {
-              callbacks: {
-                label: function(tooltipItem, data) {
-                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
-                  if (label) {
-                      label += ': ';
-                  }
-                  label += Math.abs(tooltipItem.xLabel * 100) / 100;
-                  return label + '%';
-                }
-              }
-            },
-            responsive: true,
-            scales: {
-              xAxes: [{
-                ticks: {
-                  beginAtZero: true,
-                },
-                display: false,
-                gridLines: {
-                  display: false
-                }
-              }],
-              yAxes: [{
-                gridLines: {
+                legend: {
                   display: false,
                 },
-              },],
-            },
-           elements: {
-             line: {
-               tension: 0,
+                tooltips: {
+                  callbacks: {
+                    label: function(tooltipItem, data) {
+                      var label = data.datasets[tooltipItem.datasetIndex].label || '';
+                      if (label) {
+                          label += ': ';
+                      }
+                      label += Math.abs(tooltipItem.xLabel * 100) / 100;
+                      return label + '萬個';
+                    }
+                  }
+                },
+                responsive: true,
+                scales: {
+                  xAxes: [{
+                    ticks: {
+                      beginAtZero: true,
+                    },
+                    display: false,
+                    gridLines: {
+                      display: false
+                    }
+                  }],
+                  yAxes: [{
+                    gridLines: {
+                      display: false,
+                    },
+                  },],
+                },
+               elements: {
+                 line: {
+                   tension: 0,
+                 }
+               },
              }
-           },
-         }
-        });
-      </script>
-      <div class="row">
-        <div class="col-12 extraInfo text-center wrapper">
-          <ul class="list-unstyled">
+            });
+          </script>
+          <ul class="list-unstyled wrapper extraInfo text-center">
             <li>
-              資料來源：<a href="https://www.internetworldstats.com/stats3.htm#asia" target="_blank">Internet World Stats(2017)</a>
+              資料來源：<a href="http://v6directory.twnic.net.tw/ipstats/statsipv4.php" target="_blank">資料來源：TWNIC(2018/11)</a>
             </li>
           </ul>
+        </div>
+        <div class="col-12 tab-pane fade in" id="globalNumberOfIPv6">
+          <canvas id="chart_globalNumberOfIPv6" style="height:150vh; width:100vw"></canvas>
+          <script>
+            var ctx = document.getElementById('chart_globalNumberOfIPv6').getContext('2d');
+            var mixedChart = new Chart(ctx, {
+              type: 'horizontalBar',
+              data: {
+                labels: ['台灣', '中國', '印度', '日本', '南韓', '越南', '印尼', '馬來西亞', '新加坡',	'菲律賓', '泰國', '美國', '英國', '澳洲'],
+                datasets: [
+                    {
+                      label: 'IPv6 數量',
+                      data: [2463,	28766,	9997,	5256,	1626,	1267,	365,	135,	107,	99,	50,	45481,	18912,	9012],
+                      backgroundColor: ['#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#FFC000','#FFC000','#FFC000'],
+                      fill: false,
+                      borderWidth: 1,
+                      datalabels: {
+                        display: 'auto',
+                        align:'end',
+                        offset: 15,
+                        formatter: function(value, context) {
+                          return Math.abs(value) + ' /32(2^96)個';
+                        }
+                      },
+                    },
+                  ],
+              },
+              options: {
+                animation: {
+                  duration: 0
+                },
+                legend: {
+                  display: false,
+                },
+                tooltips: {
+                  callbacks: {
+                    label: function(tooltipItem, data) {
+                      var label = data.datasets[tooltipItem.datasetIndex].label || '';
+                      if (label) {
+                          label += ': ';
+                      }
+                      label += Math.abs(tooltipItem.xLabel * 100) / 100;
+                      return label + ' /32(2^96)個';
+                    }
+                  }
+                },
+                responsive: true,
+                scales: {
+                  xAxes: [{
+                    ticks: {
+                      beginAtZero: true,
+                    },
+                    display: false,
+                    gridLines: {
+                      display: false
+                    }
+                  }],
+                  yAxes: [{
+                    gridLines: {
+                      display: false,
+                    },
+                  },],
+                },
+               elements: {
+                 line: {
+                   tension: 0,
+                 }
+               },
+             }
+            });
+          </script>
+          <ul class="list-unstyled wrapper extraInfo text-center">
+            <li>
+              資料來源：<a href="http://v6directory.twnic.net.tw/ipstats/statsipv6.php" target="_blank">資料來源：TWNIC(2018/11)</a>
+            </li>
+          </ul>
+
         </div>
       </div>
     </div>

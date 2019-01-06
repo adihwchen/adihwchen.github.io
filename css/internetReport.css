@@ -286,7 +286,7 @@ html {
 }
 .overlay-content {
   position: absolute;
-  top: 20vh;
+  top: 15vh;
   width: 100%;
   text-align: center;
 }
@@ -307,6 +307,10 @@ html {
   border: none;
   cursor:pointer;
   color: #3f3f3f !important;
+}
+.nav-link:hover {
+  background-color: #3f3f3f;
+  color: #FFF !important;
 }
 .nav-link.active {
   background-color: #ffc000;
