@@ -1,0 +1,1099 @@
+<!doctype HTML>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+  <link rel="stylesheet" href="css/internetReport.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="js/Chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+
+
+  <title>2018 台灣網路調查 - 個人與家戶上網率</title>
+
+  <meta property="og:url" content="http://twnic.somewhere.there">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2018 台灣網路調查">
+  <meta property="og:image" content="">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:description" content="TWNIC">
+
+  <link rel="shortcut icon" href="voteFavicon.ico" type="image/x-icon">
+  <link rel="bookmark" href="#"/>
+
+
+<!-- scrolling -->
+<script>
+  $(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+      // Store hash
+      var hash = this.hash;
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
+<!-- adobe typekit-->
+<script>
+ (function(d) {
+   var config = {
+     kitId: 'hct8abz',
+     scriptTimeout: 3000,
+     async: true
+   },
+   h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+ })(document);
+</script>
+</head>
+
+<style>
+  /* specific usages */
+  #opening {
+    background-image:
+      linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+      url(img/footage/adults-analysis-banking-1451447.jpg);
+    background-repeat: none;
+    background-position: top;
+    background-size: cover;
+  }
+</style>
+
+<body data-spy="scroll" data-target="#navScrollSpy">
+
+  <!-- nav MENU bar -->
+  <header class="">
+    <nav id="navScrollSpy" class="navbar navbar-light navBar-fixed-top">
+      <a href="#goTop" class="navbar-brand text-white"><img src="img/twnicLogo.svg" alt="" style="height:40px;"></a>
+      <a class="nav-button mr-0" data-toggle="modal" data-target="#myNav" onclick="openNav()"><span id="nav-icon3"><span></span><span></span><span></span><span></span></span></a>
+    </nav>
+    <script>
+      $(document).ready(function(){
+        $('.nav-button').bind("click",function(){
+          $('body').toggleClass('nav-open');
+        });
+        $('.overlay').bind("click", function(){
+          $('body').toggleClass('nav-open');
+        });
+      });
+    </script>
+    <script>
+      function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+      }
+      function closeNav() {
+        document.getElementById("myNav").style.width = "0";
+      }
+    </script>
+      <!-- fullscreen burger -->
+      <div id="myNav" class="overlay">
+        <div class="overlay-content">
+          <ul class="list-unstyled">
+            <li class="my-3">
+              <a class="nav-link h5" href="#sec-1" data-target="#spotlights" onclick="closeNav()" data-dismiss="modal" aria-label="close">前瞻亮點趨勢分析</a>
+            </li>
+            <li class="my-3">
+              <a class="nav-link h5" href="overall.html" target="_blank" onclick="closeNav()" aria-label="close">整體網路使用現況</a>
+            </li>
+            <li class="my-3">
+              <a class="nav-link h5" href="#" target="_blank" onclick="closeNav()" aria-label="close">國際情勢討論比較</a>
+            </li>
+            <li class="my-3">
+              <a class="nav-link h5" href="#downloadSignIn" data-target="#downloadSignIn" onclick="closeNav()" data-dismiss="modal" aria-label="close">報告下載</a>
+            </li>
+            <li class="my-5">
+              <a class="nav-link h5" href="internetprototype2.html" target="_blank" onclick="closeNav()" aria-label="close">回到主頁</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+      <!-- fullscreen burger -->
+  </header>
+  <!-- end of nav MENU bar -->
+
+  <!-- Download modal -->
+  <div class="modal fade" id="downloadSignIn" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">報告下載</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row justify-content-center">
+            <div class="col-md-9 py-md-3 lineHeight">
+              <p>
+                台灣網路資訊中心自2002年起每年固定進行台灣寬頻網路使用調查，觀察台灣地區網路發展及使用狀況，為提供及滿足具有特定調查數據需求之單位或個人使用；因此，本中心將十年
+                來所累積之調查資料，建置「台灣寬頻網路統計查詢系統」以有效累積並統合歷年來本中心所執行之「台灣寬頻網路調查」之統計數據，以系統化之查詢服務，提供有特定查詢需求
+                之社會大眾及研究單位使用。
+              </p>
+            </div>
+            <div class="col-md-6 py-md-3 lineHeight text-center">
+              <form>
+                <div class="form-group">
+                  <label for="EmailInput"></label>
+                  <input type="email" class="form-control" id="EmailInput" aria-describedby="emailHelp" placeholder="請輸入Email">
+                  <small id="emailHelp" class="form-text text-muted">登入帳號為 Email</small>
+                </div>
+                <div class="form-group">
+                  <label for="EmailInput"></label>
+                  <input type="password" class="form-control" id="PasswordInput" placeholder="請輸入密碼">
+                  <small id="passwordHelp" class="form-text text-muted">忘記密碼</small>
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="check">
+                  <label class="form-check-label" for="check">Take me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">註冊</button>
+                <button type="submit" class="btn btn-success">登入</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of Download modal -->
+
+
+<!-- Opening Banner -->
+<div class="container-fluid" id="goTop">
+  <div class="row justify-content-center wrapperXL text-white" id="opening">
+    <div class="col-10 col-md-7">
+      <p class="display-4 mt-5 text-center">
+        網路使用行為趨勢與比較
+      </p>
+    </div>
+    <div class="w-100"></div>
+    <div class="col-md-6">
+      <p class="h5 lineHeight">
+        台灣個人與家戶上網率高，為亞洲地區前段班
+      </p>
+    </div>
+    <div class="w-100"></div>
+    <div class="col text-center wrapperM">
+      <a href="#sec-1"><i class="fas fa-chevron-circle-down fa-2x text-white hoverLarge"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- end of Opening Banner -->
+
+
+<!-- section 1 -->
+<div class="container" id="sec-1">
+  <div class="row justify-content-center wrapperL">
+    <div class="col-md-10">
+      <p class="h1 mt-5 titleColor">
+        各國上網率比較
+      </p>
+      <div class="my-3">
+        <p class="h6 lineHeight">
+          台灣上網率位居亞洲國家中第三名，僅次於日本與南韓，與全球國家比較上網率雖然較美國、英國而言稍低，但仍高於澳洲。
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center wrapper">
+    <div class="col-md-10">
+      <canvas id="chart_globalConnectedRate" style="height:120vh; width:100vw"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_globalConnectedRate').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'horizontalBar',
+          data: {
+            labels: ['台灣', '日本', '南韓', '新加坡', '泰國', '馬來西亞', '越南', '菲律賓', '中國', '印尼', '印度', '美國', '英國', '澳洲'],
+            datasets: [
+                {
+                  label: '上網率',
+                  data: [87.9, 93.3,	92.6,	83.6,	82.4,	78.3,	66.3,	62.9,	54.6,	53.7,	34.1,	95.6,	94.7,	87.8],
+                  backgroundColor: ['#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#FFC000','#FFC000','#FFC000',],
+                  /*borderColor: '#7DCC4A',*/
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  },
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.xLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                ticks: {
+                  beginAtZero: true,
+                },
+                display: false,
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [{
+                gridLines: {
+                  display: false,
+                },
+              },],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+      <div class="row">
+        <div class="col-12 extraInfo text-center wrapper">
+          <ul class="list-unstyled">
+            <li>
+              資料來源：<a href="https://www.internetworldstats.com/stats3.htm#asia" target="_blank">Internet World Stats(2017)</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of section 1 -->
+
+
+<!-- section 2 -->
+<div class="container" id="sec-2">
+  <div class="row justify-content-center wrapperL" >
+    <div class="col-md-10">
+      <p class="h1 mt-5 titleColor">
+        各國網路瀏覽分析
+      </p>
+      <div class="my-3">
+        <p class="h6 lineHeight">
+          根據 Comscore MMX 截至 2018 年 10 月份數據，台灣平均每人瀏覽頁數居亞洲之冠。
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center wrapper">
+    <div class="col-md-10">
+      <!-- Comscore MMX table -->
+      <table class="table bg-white">
+        <thead class="thead-light">
+          <tr>
+            <th class="" style=" min-width: 7vw;"></th>
+            <th class="small" style=" max-width: 7vw;">Total UV<br>(000)</th>
+            <th class="small">Total Views<br>(MM)</th>
+            <th class="small d-none d-md-block">Total Visits<br>(000)</th>
+            <th class="small ">Average Views<br>per Visit</th>
+            <th class="small d-none d-md-block">Average Views<br>per Visitor</th>
+            <th class="small">Total Minutes<br>(MM)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="small align-middle">台灣</td>
+            <td class="small align-middle">16,532</td>
+            <td class="small align-middle">35,102</td>
+            <td class="small align-middle d-none d-md-block">2,170,146</td>
+            <td class="small align-middle">16.2</td>
+            <td class="small align-middle d-none d-md-block">2,123</td>
+            <td class="small align-middle">36,369</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">中國</td>
+            <td class="small align-middle">871,522</td>
+            <td class="small align-middle">918,857</td>
+            <td class="small align-middle d-none d-md-block">27,840,677</td>
+            <td class="small align-middle">33.0</td>
+            <td class="small align-middle d-none d-md-block">1,054</td>
+            <td class="small align-middle">3,208,950</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">印度</td>
+            <td class="small align-middle">273,288</td>
+            <td class="small align-middle">224,147</td>
+            <td class="small align-middle d-none d-md-block">27,154,589</td>
+            <td class="small align-middle">8.3</td>
+            <td class="small align-middle d-none d-md-block">820</td>
+            <td class="small align-middle">889,666</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">印尼</td>
+            <td class="small align-middle">89,085</td>
+            <td class="small align-middle">47,455</td>
+            <td class="small align-middle d-none d-md-block">2,891,046</td>
+            <td class="small align-middle">16.4</td>
+            <td class="small align-middle d-none d-md-block">533</td>
+            <td class="small align-middle">344,471</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">日本</td>
+            <td class="small align-middle">81,714</td>
+            <td class="small align-middle">129,595</td>
+            <td class="small align-middle d-none d-md-block">3,655,945</td>
+            <td class="small align-middle">35.4</td>
+            <td class="small align-middle d-none d-md-block">1,586</td>
+            <td class="small align-middle">115,862</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">越南</td>
+            <td class="small align-middle">45,680</td>
+            <td class="small align-middle">39,179</td>
+            <td class="small align-middle d-none d-md-block">2,278,515</td>
+            <td class="small align-middle">17.2</td>
+            <td class="small align-middle d-none d-md-block">858</td>
+            <td class="small align-middle">47,551</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">馬來西亞</td>
+            <td class="small align-middle">19,940</td>
+            <td class="small align-middle">23,185</td>
+            <td class="small align-middle d-none d-md-block">1,268,714</td>
+            <td class="small align-middle">18.3</td>
+            <td class="small align-middle d-none d-md-block">1,163</td>
+            <td class="small align-middle">90,630</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">新加坡</td>
+            <td class="small align-middle">4,926</td>
+            <td class="small align-middle">5,888</td>
+            <td class="small align-middle d-none d-md-block">421,768</td>
+            <td class="small align-middle">14.0</td>
+            <td class="small align-middle d-none d-md-block">1,195</td>
+            <td class="small align-middle">8,213</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">美國</td>
+            <td class="small align-middle">256,264</td>
+            <td class="small align-middle">716,661</td>
+            <td class="small align-middle d-none d-md-block">49,156,381</td>
+            <td class="small align-middle">14.6</td>
+            <td class="small align-middle d-none d-md-block">2,797</td>
+            <td class="small align-middle">1,751,664</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">英國</td>
+            <td class="small align-middle">48,988</td>
+            <td class="small align-middle">130,835</td>
+            <td class="small align-middle d-none d-md-block">7,357,075</td>
+            <td class="small align-middle">17.8</td>
+            <td class="small align-middle d-none d-md-block">2,671</td>
+            <td class="small align-middle">266,450</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">澳洲</td>
+            <td class="small align-middle">20,614</td>
+            <td class="small align-middle">24,814</td>
+            <td class="small align-middle d-none d-md-block">1,585,315</td>
+            <td class="small align-middle">15.7</td>
+            <td class="small align-middle d-none d-md-block">1,204</td>
+            <td class="small align-middle">39,268</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- end of Comscore MMX table -->
+      <div class="row">
+        <div class="col-12 extraInfo text-center">
+          <ul class="list-unstyled">
+            <li>
+              資料來源：Comscore MMX Multi-Platform, Multi-Country Key Measures, Total Audience, October 2018
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of section 2 -->
+
+
+<!-- section 3 -->
+<div class="container" id="sec-3">
+  <div class="row justify-content-center wrapperL">
+    <div class="col-md-10">
+      <p class="h1 mt-5 titleColor">
+        各國上網裝置比較
+      </p>
+      <div class="my-3">
+        <p class="h6 lineHeight">
+          綜合來看，手機已然成為各國網民主要上網使用裝置。其中開發中國家多以手機為主，已開發國家則是桌機/筆電加上手機跨屏運用。台灣平均每人持有裝置數量在亞洲國家中僅次於南韓與新加坡。
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center wrapper">
+    <div class="col-md-10">
+      <canvas id="chart_globalConnectedGadgets" style="height:350vh; width:100vw"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_globalConnectedGadgets').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'horizontalBar',
+          data: {
+            labels: ['台灣', '南韓', '泰國', '中國', '越南', '馬來西亞', '新加坡', '印尼', '日本', '菲律賓', '印度', '澳洲', '英國', '美國'],
+            datasets: [
+                {
+                  label: '手機',
+                  data: [92, 98,	98,	97,	97,	96,	95,	91,	91,	89,	88,	90,	92,	96],
+                  backgroundColor: '#7DCC4A',
+                  borderColor: '#7DCC4A',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    color: 'white',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  },
+                  xAxisID: 'x-axis-2',
+                },
+                {
+                  label: '桌機／筆電',
+                  data: [67,	71,	25,	53,	43,	41,	71,	22,	80,	38,	15,	77,	74,	84],
+                  backgroundColor: '#3366CC',
+                  borderColor: '#3366CC',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    color: 'white',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  },
+                  xAxisID: 'x-axis-2',
+
+                },
+                {
+                  label: '平板',
+                  data: [29,	19,	12,	20,	13,	18,	42,	8,	30,	29,	5,	46,	53,	56],
+                  backgroundColor: '#FFC000',
+                  borderColor: '#FFC000',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    color: 'white',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  },
+                  xAxisID: 'x-axis-2',
+                },
+                {
+                  label: '平均持有裝置數',
+                  data: [2.5,	2.8, 1.3,	2.2, 1.6,	2.1, 3.0, 1.1, 2.5,	1.8, 0.8,	3.2, 3.1,	3.4],
+                  backgroundColor: '#f29111',
+                  borderColor: '#f29111',
+                  datalabels: {
+                    color: 'white',
+                    display:'auto',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '個';
+                    }
+                  },
+                  xAxisID: 'x-axis-1',
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            tooltips: {
+              /*callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.xLabel * 100) / 100;
+                  return label + '%';
+                }
+              }*/
+            },
+            responsive: true,
+            scales: {
+              xAxes: [
+                {
+                  display: false,
+                  type: 'linear',
+                  id: 'x-axis-1',
+                  ticks: {
+                    beginAtZero: true,
+                    stepValue: 10,
+                    max: 20,
+                  },
+                  scaleLabel: {
+                    display:false,
+                    labelString: '個',
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                  },
+                },
+                {
+                  type: 'linear',
+                  display: false,
+                  id: 'x-axis-2',
+                  ticks: {
+                    beginAtZero: true,
+                    stepValue: 10,
+                    max: 100,
+                  },
+                  scaleLabel: {
+                    display:false,
+                    labelString: '%',
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                  },
+              }],
+              yAxes: [{
+                gridLines: {
+                  display: false,
+                },
+              },],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+      <div class="row">
+        <div class="col-12 extraInfo text-center wrapper">
+          <ul class="list-unstyled">
+            <li>
+              台灣使用裝置占比與本調查差異不大，但有調查時間差異，裝置使用率請以本調查公布為主。
+            </li>
+            <li>
+              資料來源：<a href="http://www.consumerbarometer.com/" target="_blank">Consumer Barometer with Google(2017)</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of section 3 -->
+
+<!-- section 4 -->
+<div class="container" id="sec-4">
+  <div class="row justify-content-center wrapperL">
+    <div class="col-md-10">
+      <p class="h1 mt-5 titleColor">
+        各國上網行為與裝置分析
+      </p>
+      <div class="my-3">
+        <p class="h6 lineHeight">
+          多數國家的網路社群媒體使用率最高，桌機／筆電上的使用行為則較手機少。觀察各國手機上網行為，台灣在社群使用部分位居第三，搜尋使用率相對而言並不低，僅次於南韓、新加坡，影片瀏覽率位居第四，稍低於越南、泰國及新加坡，遊戲使用率與中國並列第二位，網路購物各國使用率約在兩成上下。
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center wrapper">
+    <div class="col-md-10">
+      <div class="">
+        <ul class="nav nav-pills nav-justified">
+          <li class="nav-item linkColor">
+            <div class="nav-link active border border-secondary" href="#globalUserBehaviorMobile" data-toggle="tab">手機上網</div>
+          </li>
+          <li class="nav-item linkColor">
+            <div class="nav-link border border-secondary border-left-0" href="#globalUserBehaviorPC" data-toggle="tab">桌機/筆電</div>
+          </li>
+        </ul>
+      </div>
+      <div class="row justify-content-center tab-content">
+        <div class="col-12 tab-pane active" id="globalUserBehaviorMobile">
+          <img class="img-fluid" src="img/181220_reportPage69.png" alt="">
+        </div>
+        <div class="col-12 tab-pane fade in" id="globalUserBehaviorPC">
+          <img class="img-fluid" src="img/181220_reportPage71.png" alt="">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 extraInfo text-center wrapper">
+          <ul class="list-unstyled">
+            <li>
+              資料來源的調查方式和分類與本調查相異，且有調查時間差異，使用率請以本調查公布為主，此處請參考各國排序。
+            </li>
+            <li>
+              資料來源：<a href="http://www.consumerbarometer.com/" target="_blank">Consumer Barometer with Google(2017)</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of section 4 -->
+
+<!-- section 4 -->
+<div class="container" id="sec-5">
+  <div class="row justify-content-center wrapperL">
+    <div class="col-md-10">
+      <p class="h1 mt-5 titleColor">
+        各國網路購物使用裝置
+      </p>
+      <div class="my-3">
+        <p class="h6 lineHeight">
+          除了南韓和英國，其他國家仍以實體管道購物為主，進一步探討網路購物時所使用的裝置，各國主要使用桌上型電腦或筆記型電腦，使用平板電腦的比例則普遍低於一成；台灣桌機／筆電網路購物使用率位居第二，略低於日本。
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center wrapper">
+    <div class="col-md-10">
+      <!-- basic info of TW table -->
+        <table class="table bg-white">
+          <thead class="thead-light">
+            <tr>
+              <th class="align-middle">國家</th>
+              <th class="align-middle" colspan="2">購物使用裝置比例</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="small align-middle" rowspan="3">﻿台灣</td>
+              <td class="small align-middle">﻿桌機／筆電</td>
+              <td class="small align-middle"  style=" min-width: 40vw;">85%
+                <div class="progress">
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 85%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿手機</td>
+              <td class="small align-middle">10%
+                <div class="progress">
+                  <div class="progress-bar mainNavy" role="progressbar" style="width: 10%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿平板</td>
+              <td class="small align-middle">3%
+                <div class="progress">
+                  <div class="progress-bar mainYellow" role="progressbar" style="width: 3%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle" rowspan="3">﻿日本</td>
+              <td class="small align-middle">﻿桌機／筆電</td>
+              <td class="small align-middle">92%
+                <div class="progress">
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 92%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿手機</td>
+              <td class="small align-middle">6%
+                <div class="progress">
+                  <div class="progress-bar mainNavy" role="progressbar" style="width: 6%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿平板</td>
+              <td class="small align-middle">1%
+                <div class="progress">
+                  <div class="progress-bar mainYellow" role="progressbar" style="width: 1%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle" rowspan="3">﻿新加坡</td>
+              <td class="small align-middle">﻿桌機／筆電</td>
+              <td class="small align-middle">74%
+                <div class="progress">
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 74%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿手機</td>
+              <td class="small align-middle">18%
+                <div class="progress">
+                  <div class="progress-bar mainNavy" role="progressbar" style="width: 18%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿平板</td>
+              <td class="small align-middle">5%
+                <div class="progress">
+                  <div class="progress-bar mainYellow" role="progressbar" style="width: 5%"></div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="small align-middle" rowspan="3">馬來西亞</td>
+              <td class="small align-middle">﻿桌機／筆電</td>
+              <td class="small align-middle">72%
+                <div class="progress">
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 72%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿手機</td>
+              <td class="small align-middle">20%
+                <div class="progress">
+                  <div class="progress-bar mainNavy" role="progressbar" style="width: 20%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿平板</td>
+              <td class="small align-middle">6%
+                <div class="progress">
+                  <div class="progress-bar mainYellow" role="progressbar" style="width: 6%"></div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="small align-middle" rowspan="3">越南</td>
+              <td class="small align-middle">﻿桌機／筆電</td>
+              <td class="small align-middle">71%
+                <div class="progress">
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 71%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿手機</td>
+              <td class="small align-middle">18%
+                <div class="progress">
+                  <div class="progress-bar mainNavy" role="progressbar" style="width: 18%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿平板</td>
+              <td class="small align-middle">4%
+                <div class="progress">
+                  <div class="progress-bar mainYellow" role="progressbar" style="width:4%"></div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="small align-middle" rowspan="3">南韓</td>
+              <td class="small align-middle">﻿桌機／筆電</td>
+              <td class="small align-middle">70%
+                <div class="progress">
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 70%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿手機</td>
+              <td class="small align-middle">25%
+                <div class="progress">
+                  <div class="progress-bar mainNavy" role="progressbar" style="width: 25%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿平板</td>
+              <td class="small align-middle">2%
+                <div class="progress">
+                  <div class="progress-bar mainYellow" role="progressbar" style="width:2%"></div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="small align-middle" rowspan="3">中國</td>
+              <td class="small align-middle">﻿桌機／筆電</td>
+              <td class="small align-middle">70%
+                <div class="progress">
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 70%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿手機</td>
+              <td class="small align-middle">21%
+                <div class="progress">
+                  <div class="progress-bar mainNavy" role="progressbar" style="width: 21%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿平板</td>
+              <td class="small align-middle">4%
+                <div class="progress">
+                  <div class="progress-bar mainYellow" role="progressbar" style="width:4%"></div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="small align-middle" rowspan="3">菲律賓</td>
+              <td class="small align-middle">﻿桌機／筆電</td>
+              <td class="small align-middle">66%
+                <div class="progress">
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 66%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿手機</td>
+              <td class="small align-middle">23%
+                <div class="progress">
+                  <div class="progress-bar mainNavy" role="progressbar" style="width: 23%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿平板</td>
+              <td class="small align-middle">4%
+                <div class="progress">
+                  <div class="progress-bar mainYellow" role="progressbar" style="width:4%"></div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="small align-middle" rowspan="3">印度</td>
+              <td class="small align-middle">﻿桌機／筆電</td>
+              <td class="small align-middle">60%
+                <div class="progress">
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 60%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿手機</td>
+              <td class="small align-middle">34%
+                <div class="progress">
+                  <div class="progress-bar mainNavy" role="progressbar" style="width: 34%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿平板</td>
+              <td class="small align-middle">1%
+                <div class="progress">
+                  <div class="progress-bar mainYellow" role="progressbar" style="width:1%"></div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="small align-middle" rowspan="3">泰國</td>
+              <td class="small align-middle">﻿桌機／筆電</td>
+              <td class="small align-middle">57%
+                <div class="progress">
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 57%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿手機</td>
+              <td class="small align-middle">31%
+                <div class="progress">
+                  <div class="progress-bar mainNavy" role="progressbar" style="width: 31%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿平板</td>
+              <td class="small align-middle">4%
+                <div class="progress">
+                  <div class="progress-bar mainYellow" role="progressbar" style="width:4%"></div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="small align-middle" rowspan="3">印尼</td>
+              <td class="small align-middle">﻿桌機／筆電</td>
+              <td class="small align-middle">29%
+                <div class="progress">
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 29%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿手機</td>
+              <td class="small align-middle">67%
+                <div class="progress">
+                  <div class="progress-bar mainNavy" role="progressbar" style="width: 67%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿平板</td>
+              <td class="small align-middle">1%
+                <div class="progress">
+                  <div class="progress-bar mainYellow" role="progressbar" style="width:1%"></div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="small align-middle" rowspan="3">美國</td>
+              <td class="small align-middle">﻿桌機／筆電</td>
+              <td class="small align-middle">81%
+                <div class="progress">
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 81%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿手機</td>
+              <td class="small align-middle">10%
+                <div class="progress">
+                  <div class="progress-bar mainNavy" role="progressbar" style="width: 10%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿平板</td>
+              <td class="small align-middle">6%
+                <div class="progress">
+                  <div class="progress-bar mainYellow" role="progressbar" style="width:6%"></div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="small align-middle" rowspan="3">英國</td>
+              <td class="small align-middle">﻿桌機／筆電</td>
+              <td class="small align-middle">81%
+                <div class="progress">
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 81%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿手機</td>
+              <td class="small align-middle">7%
+                <div class="progress">
+                  <div class="progress-bar mainNavy" role="progressbar" style="width: 7%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿平板</td>
+              <td class="small align-middle">9%
+                <div class="progress">
+                  <div class="progress-bar mainYellow" role="progressbar" style="width:9%"></div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="small align-middle" rowspan="3">澳洲</td>
+              <td class="small align-middle">﻿桌機／筆電</td>
+              <td class="small align-middle">80%
+                <div class="progress">
+                  <div class="progress-bar mainGreen" role="progressbar" style="width: 80%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿手機</td>
+              <td class="small align-middle">10%
+                <div class="progress">
+                  <div class="progress-bar mainNavy" role="progressbar" style="width: 10%"></div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="small align-middle">﻿平板</td>
+              <td class="small align-middle">7%
+                <div class="progress">
+                  <div class="progress-bar mainYellow" role="progressbar" style="width:7%"></div>
+                </div>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      <!-- end of basic info of TW table -->
+      <div class="row">
+        <div class="col-12 extraInfo text-center">
+          <ul class="list-unstyled">
+            <li>
+              此數據為單選題問法，但因為有其他裝置或拒答，因此不一定等於100%。
+            </li>
+            <li>
+              資料來源的調查方式和分類與本調查相異，且有調查時間差異，使用率請以本調查公布為主，此處請參考各國排序。
+            </li>
+            <li>
+              資料來源：<a href="http://www.consumerbarometer.com/" target="_blank">Consumer Barometer with Google(2017)</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of section 5 -->
+
+
+
+<div class="wrapperL"></div>
+
+
+
+
+<!--- Footer --->
+<div class="wrapperXL pb-3 pt-4 bg-light">
+  <p class="text-center small text-dark">
+    Copyright © 2018 財團法人台灣網路資訊中心
+  </p>
+</div>
+<!--- end of Footer --->
+
+
+</body>
+</html>
