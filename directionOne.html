@@ -62,9 +62,18 @@
    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
  })(document);
 </script>
-
 </head>
-
+<style>
+  /* specific usages */
+  #opening {
+    background-image:
+      linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+      url(img/footage/app-background-blur-545331.jpg);
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+  }
+</style>
 <body data-spy="scroll" data-target="#navScrollSpy">
 
   <!-- nav MENU bar -->
@@ -168,7 +177,7 @@
 
 <!-- Opening Banner -->
 <div class="container-fluid" id="goTop">
-  <div class="row justify-content-center wrapperXL text-white" style="background-color:#1c1c1c">
+  <div class="row justify-content-center wrapperXL text-white" id="opening">
     <div class="col-10 col-md-7">
       <p class="display-4 mt-5 text-center">
         方向一：網路影音強化優勢
@@ -182,7 +191,7 @@
     </div>
     <div class="w-100"></div>
     <div class="col text-center wrapperM">
-      <a href="#sec-1"><i class="fas fa-chevron-circle-down fa-2x text-secondary hoverLarge"></i></a>
+      <a href="#sec-1"><i class="fas fa-chevron-circle-down fa-2x text-white hoverLarge"></i></a>
     </div>
   </div>
 </div>
