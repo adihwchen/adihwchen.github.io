@@ -1,0 +1,419 @@
+<!doctype HTML>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+  <link rel="stylesheet" href="css/internetReport.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="js/Chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+
+
+  <title>2018 台灣網路調查 - 方向四</title>
+
+  <meta property="og:url" content="http://twnic.somewhere.there">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="2018 台灣網路調查">
+  <meta property="og:image" content="">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:description" content="TWNIC">
+
+  <link rel="shortcut icon" href="voteFavicon.ico" type="image/x-icon">
+  <link rel="bookmark" href="#"/>
+
+
+<!-- scrolling -->
+<script>
+  $(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+      // Store hash
+      var hash = this.hash;
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
+<!-- adobe typekit-->
+<script>
+ (function(d) {
+   var config = {
+     kitId: 'hct8abz',
+     scriptTimeout: 3000,
+     async: true
+   },
+   h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+ })(document);
+</script>
+</head>
+
+<style>
+  /* specific usages */
+  #opening {
+    background-image:
+      linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+      url(img/footage/phone-1149925.jpg);
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+  }
+</style>
+
+<body data-spy="scroll" data-target="#navScrollSpy">
+
+  <!-- nav MENU bar -->
+  <header class="">
+    <nav id="navScrollSpy" class="navbar navbar-light navBar-fixed-top">
+      <a href="#goTop" class="navbar-brand text-white"><img src="img/twnicLogo.svg" alt="" style="height:40px;"></a>
+      <a class="nav-button mr-0" data-toggle="modal" data-target="#myNav" onclick="openNav()"><span id="nav-icon3"><span></span><span></span><span></span><span></span></span></a>
+    </nav>
+    <script>
+      $(document).ready(function(){
+        $('.nav-button').bind("click",function(){
+          $('body').toggleClass('nav-open');
+        });
+        $('.overlay').bind("click", function(){
+          $('body').toggleClass('nav-open');
+        });
+      });
+    </script>
+    <script>
+      function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+      }
+      function closeNav() {
+        document.getElementById("myNav").style.width = "0";
+      }
+    </script>
+      <!-- fullscreen burger -->
+      <div id="myNav" class="overlay">
+        <div class="overlay-content">
+          <ul class="list-unstyled">
+            <li class="my-3">
+              <a class="nav-link h5" href="#sec-1" data-target="#spotlights" onclick="closeNav()" data-dismiss="modal" aria-label="close">前瞻亮點趨勢分析</a>
+            </li>
+            <li class="my-3">
+              <a class="nav-link h5" href="overall.html" target="_blank" onclick="closeNav()" aria-label="close">整體網路使用現況</a>
+            </li>
+            <li class="my-3">
+              <a class="nav-link h5" href="#" target="_blank" onclick="closeNav()" aria-label="close">國際情勢討論比較</a>
+            </li>
+            <li class="my-3">
+              <a class="nav-link h5" href="#downloadSignIn" data-target="#downloadSignIn" onclick="closeNav()" data-dismiss="modal" aria-label="close">報告下載</a>
+            </li>
+            <li class="my-5">
+              <a class="nav-link h5" href="internetprototype2.html" target="_blank" onclick="closeNav()" aria-label="close">回到主頁</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+      <!-- fullscreen burger -->
+  </header>
+  <!-- end of nav MENU bar -->
+
+  <!-- Download modal -->
+  <div class="modal fade" id="downloadSignIn" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">報告下載</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row justify-content-center">
+            <div class="col-md-9 py-md-3 lineHeight">
+              <p>
+                台灣網路資訊中心自2002年起每年固定進行台灣寬頻網路使用調查，觀察台灣地區網路發展及使用狀況，為提供及滿足具有特定調查數據需求之單位或個人使用；因此，本中心將十年
+                來所累積之調查資料，建置「台灣寬頻網路統計查詢系統」以有效累積並統合歷年來本中心所執行之「台灣寬頻網路調查」之統計數據，以系統化之查詢服務，提供有特定查詢需求
+                之社會大眾及研究單位使用。
+              </p>
+            </div>
+            <div class="col-md-6 py-md-3 lineHeight text-center">
+              <form>
+                <div class="form-group">
+                  <label for="EmailInput"></label>
+                  <input type="email" class="form-control" id="EmailInput" aria-describedby="emailHelp" placeholder="請輸入Email">
+                  <small id="emailHelp" class="form-text text-muted">登入帳號為 Email</small>
+                </div>
+                <div class="form-group">
+                  <label for="EmailInput"></label>
+                  <input type="password" class="form-control" id="PasswordInput" placeholder="請輸入密碼">
+                  <small id="passwordHelp" class="form-text text-muted">忘記密碼</small>
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="check">
+                  <label class="form-check-label" for="check">Take me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">註冊</button>
+                <button type="submit" class="btn btn-success">登入</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of Download modal -->
+
+
+<!-- Opening Banner -->
+<div class="container-fluid" id="goTop">
+  <div class="row justify-content-center wrapperXL text-white" id="opening">
+    <div class="col-10 col-md-7">
+      <p class="display-4 mt-5 text-center">
+        方向四：網路學習拓展活化
+      </p>
+    </div>
+    <div class="w-100"></div>
+    <div class="col-md-6">
+      <p class="h5 lineHeight">
+        學習需求高但使用率低，需破除正式學習和學歷目的的學習外，增加技能學習的內容也能增加使用率。
+      </p>
+    </div>
+    <div class="w-100"></div>
+    <div class="col text-center wrapperM">
+      <a href="#sec-1"><i class="fas fa-chevron-circle-down fa-2x text-white hoverLarge"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- end of Opening Banner -->
+
+
+<!-- section 1 -->
+<div class="container" id="sec-1">
+  <div class="row justify-content-center wrapperL">
+    <div class="col-md-10">
+      <p class="h1 mt-5 titleColor">
+        線上學習平台使用情形
+      </p>
+      <div class="my-3">
+        <p class="h6 lineHeight">
+          線上學習平台使用率為 14.0%，有使用者中以年齡12-19歲有較高比例，顯然還是以學生族群為主要使用者。
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center wrapper">
+    <div class="col-md-10">
+      <canvas id="chart_educativeUserProfile" style="height:80vh; width:100vw"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_educativeUserProfile').getContext('2d');
+        var chart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: ["", "男性", "女性", "", "12-14歲", "15-19歲", "20-24歲", "25-29歲", "30-34歲", "35-39歲", "40-44歲", "45-49歲", "50-54歲", "55-59歲", "60-64歲", "65歲以上",""],
+              datasets: [{
+                  label: "教育應用使用率",
+                  borderColor: '#7DCC4A',
+                  backgroundColor: '#7DCC4A',
+                  data: [, 12.9, 15.0, ,26.0,  19.7, 14.6 , 11.3, 14.2, 12.3 , 11.7, 13.4 , 14.4, 15.5, 11.4, 10.4,,],
+              }, ]
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            tooltips: {
+              mode:'index',
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            legend: {
+              labels: {
+                usePointStyle: true,
+              }
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [{
+                gridLines: {
+                  display: false,
+                  drawBorder: false
+                },
+                ticks: {
+                  beginAtZero:true,
+                  display: false,
+                }
+              }]
+            },
+            elements: {
+              line: {
+                tension: 0,
+              }
+            },
+            plugins: {
+              datalabels: {
+                display: true,
+                align: 'center',
+                formatter: function(value, context) {
+                  return Math.abs(value) + '%';
+                }
+              }
+            }
+          }
+        });
+      </script>
+      <div class="row">
+        <div class="col-12 extraInfo text-center wrapper">
+          <ul class="list-unstyled">
+            <li>N=354</li>
+            <li>
+              資料來源：本研究電訪(2018)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- end of section 1 -->
+
+
+<!-- section 2 -->
+<div class="container" id="sec-2">
+  <div class="row justify-content-center wrapperL" >
+    <div class="col-md-10">
+      <p class="h1 mt-5 titleColor">
+        學習內容以語言為主
+      </p>
+      <div class="my-3">
+        <p class="h6 lineHeight">
+          有使用線上學習平台的受訪者會透過平台學習的內容，有最高比例是學習「語言」占 44.8%，其次是「考試用教材」（公職考試、學科）約有兩成比例，「烹飪」有 14.9% 占比
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center wrapper">
+    <div class="col-md-10">
+      <p class="h4 text-center">
+        線上學習平台使用類別
+      </p>
+      <div class="row justify-content-center text-center">
+        <div class="col-md-10">
+          <div class="row justify-content-center text-center">
+            <div class="col-4">
+              <img class="img-fluid" src="img/iconPack/icon_pack-43.png" alt="">
+              <p class="">
+                語言
+              </p>
+              <p class="h5">
+                44.8%
+              </p>
+            </div>
+            <div class="col-4">
+              <img class="img-fluid" src="img/iconPack/icon_pack-44.png" alt="">
+              <p class="">
+                考試用教材
+              </p>
+              <p class="h5">
+                18.1%
+              </p>
+            </div>
+            <div class="col-4">
+              <img class="img-fluid" src="img/iconPack/icon_pack-45.png" alt="">
+              <p class="">
+                烹飪
+              </p>
+              <p class="h5">
+                14.9%
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 text-center">
+          <ul class="list-unstyled extraInfo">
+            <li>N=354</li>
+            <li>
+              資料來源：本研究電訪(2018)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- end of section 2 -->
+
+
+<!-- section 3 -->
+<div class="container" id="sec-3">
+  <div class="row justify-content-center wrapperL">
+    <div class="col-md-10">
+      <p class="h1 mt-5 titleColor">
+        活化學習方式，拓展學習內容
+      </p>
+      <div class="my-3">
+        <p class="h6 lineHeight">
+          根據國發會雙語國家政策，即將打造台灣為雙語國家，因此應用數位科技落實雙語國家為必然趨勢，但除了語言學習外，從內容和方式面也能提升網路學習的使用率。
+        </p>
+        <p class="h6 lineHeight mt-3">
+          內容面來說：一來可以鼓勵不同族群所需的技能或興趣的學習發展，例如保母課程，或是職訓和商業課程，如影音行銷、品牌再造等，將過去實體課程能推廣到網路管道。二來是發展在地化內容，如傳統產業或第一級產業的教學傳承，也能同時有宣傳與招攬觀光功能。
+        </p>
+        <p class="h6 lineHeight mt-3">
+          從方式面來說，一可以結盟社群與內容媒體內容，借其高使用率，提高教育應用曝光度與吸引度也使拓展方式之一，例如知識型的 YouTuber 或網紅模式。二則是運用新興科技如 AR 、 AI 、直播等，創造更多學習體驗。
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of section 3 -->
+
+
+
+
+<div class="wrapperL">
+
+</div>
+
+
+
+
+<!--- Footer --->
+<div class="wrapperXL pb-3 pt-4 bg-light">
+  <p class="text-center small text-dark">
+    Copyright © 2018 財團法人台灣網路資訊中心
+  </p>
+</div>
+<!--- end of Footer --->
+
+
+</body>
+</html>
