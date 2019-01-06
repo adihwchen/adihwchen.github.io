@@ -108,7 +108,7 @@
               <a class="nav-link h5" href="#downloadSignIn" data-target="#downloadSignIn" onclick="closeNav()" data-dismiss="modal" aria-label="close">報告下載</a>
             </li>
             <li class="my-5">
-              <a class="nav-link h5" href="internetprototype3.html" target="_blank" onclick="closeNav()" aria-label="close">回到主頁</a>
+              <a class="nav-link h5" href="internetprototype2.html" target="_blank" onclick="closeNav()" aria-label="close">回到主頁</a>
             </li>
           </ul>
 
@@ -168,9 +168,9 @@
 
 <!-- logoType -->
 <div class="container-fluid" id="goTop">
-  <div class="row justify-content-center wrapperXL" style="background-color:#fff7df">
-    <div class="col-md-10">
-      <p class="display-4 mt-5 titleColor text-center">
+  <div class="row justify-content-center wrapperXL text-white" style="background-color:#1c1c1c">
+    <div class="col-10 col-md-7">
+      <p class="display-4 mt-5 text-center">
         方向一：網路影音強化優勢
       </p>
     </div>
@@ -194,10 +194,9 @@
   </div>
 </div>
 
-
 <!-- section 1 -->
 <div class="container" id="sec-1">
-  <div class="row justify-content-center wrapperXL" >
+  <div class="row justify-content-center wrapperL" >
     <div class="col-md-10">
       <p class="h1 mt-5 titleColor">
         內容媒體使用者輪廓
@@ -208,9 +207,146 @@
         </p>
       </div>
     </div>
-    <div class="w-100"></div>
+  </div>
+  <div class="row justify-content-center wrapper">
     <div class="col-md-10">
-      <img class="img-fluid" src="img/ScreenShot2019-01-04at54800PM.png" alt="">
+      <canvas id="chart_contentMediaUserProfile" style="height:100vh; width:100vw"></canvas>
+      <script type="text/javascript">
+        var ctx = document.getElementById('chart_contentMediaUserProfile').getContext('2d');
+        var chart = new Chart(ctx, {
+          type: 'line',
+          data: {
+              labels: ["","總數", "", "男性", "女性", "", "12-19歲", "20-29歲", "30-39歲", "40-49歲", "50-59歲", "60歲以上",""],
+              datasets: [{
+                  label: "聽音樂",
+                  borderColor: 'rgba(51, 102, 204, 1)',
+                  backgroundColor: 'rgba(51, 102, 204, 0)',
+                  pointBackgroundColor:'rgba(51, 102, 204, 1)',
+                  pointBorderWidth: 4,
+                  data: [,72.3, , 70.6, 73.9, , 92.8, 87.2, 77.0, 64.2, 58.7, 57.1,,],
+                  fill:false,
+                  spanGaps: false,
+                  datalabels: {
+                    display: 'auto',
+                    align: 'top',
+                    /*color:'rgba(51, 102, 204, 1)',*/
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+              }, {
+                  label: "看節目戲劇",
+                  borderColor: 'rgba(125, 204, 74, 1)',
+                  backgroundColor: 'rgba(125, 204, 74, 0)',
+                  pointBackgroundColor:'rgba(125, 204, 74, 1)',
+                  pointBorderWidth: 4,
+                  data: [,71.9, , 70.8, 73.0, , 91.6, 85.2, 78.7, 69.6, 59.7, 44.8,,],
+                  fill: false,
+                  spanGaps: false,
+                  datalabels: {
+                    display: 'auto',
+                    align: 'bottom',
+                    /*color:'rgba(125, 204, 74, 1)',*/
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+
+              },{
+                  label: "看直播",
+                  borderColor: 'rgba(255, 192, 0, 1)',
+                  backgroundColor: 'rgba(255, 192, 0, 0)',
+                  pointBackgroundColor:'rgba(255, 192, 0, 1)',
+                  pointBorderWidth: 4,
+                  data: [,48.8, , 53.9, 43.7, , 55.5, 57.5, 52.0, 44.8, 45.6, 35.7,,],
+                  fill:false,
+                  spanGaps: false,
+                  datalabels: {
+                    display: 'auto',
+                    align: 'top',
+                    /*color: 'rgba(255, 192, 0, 1)',*/
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+              },{
+                  label: "看電影",
+                  borderColor: 'rgba(239, 84, 37, 1)',
+                  backgroundColor: 'rgba(239, 84, 37, 0)',
+                  pointBackgroundColor:'rgba(239, 84, 37, 1)',
+                  pointBorderWidth: 4,
+                  data: [,46.0, , 49.9, 42.1, , 58.7, 61.2, 51.8, 42.6, 36.3, 22.3,,],
+                  fill:false,
+                  spanGaps: false,
+                  datalabels: {
+                    display: 'auto',
+                    align: 'bottom',
+                    /*color:'rgba(239, 84, 37, 1)',*/
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+              },]
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            tooltips: {
+              mode:'index',
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            legend: {
+              labels: {
+                usePointStyle: true,
+              }
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [{
+                gridLines: {
+                  display: false,
+                  drawBorder: false
+                },
+                ticks: {
+                  display: false,
+                  stepValue: 10,
+                  max: 110,
+                }
+              }]
+            },
+            elements: {
+              line: {
+                tension: 0,
+              }
+            },
+          }
+        });
+      </script>
+      <div class="row">
+        <div class="col-12 extraInfo text-center wrapper">
+          <ul class="list-unstyled">
+            <li>N=2535</li>
+            <li>
+              資料來源：本研究電訪(2018)
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -219,7 +355,7 @@
 
 <!-- section 2 -->
 <div class="container" id="sec-2">
-  <div class="row justify-content-center wrapperXL">
+  <div class="row justify-content-center wrapperL">
     <div class="col-md-10">
       <p class="h1 mt-5 titleColor">
         內容媒體付費情形
@@ -232,7 +368,126 @@
     </div>
     <div class="w-100"></div>
     <div class="col-md-10">
-      <img class="img-fluid" src="img/ScreenShot2019-01-04at54820PM.png" alt="">
+      <div class="row justify-content-center wrapper">
+        <div class="col-md-10">
+          <canvas id="chart_contentMediaUsage" style="height:80vh; width:100vw"></canvas>
+          <script>
+            var ctx = document.getElementById('chart_contentMediaUsage').getContext('2d');
+            var mixedChart = new Chart(ctx, {
+              type: 'bar',
+              data: {
+                labels: ['聽音樂', '看戲劇節目', '看直播','看電影'],
+                datasets: [
+                    {
+                      label: '使用率',
+                      fill: false,
+                      data: [72.3, 71.9, 48.8, 46.0],
+                      backgroundColor: '#7DCC4A',
+                      borderColor: '#7DCC4A',
+                      fill: false,
+                      borderWidth: 1,
+                      datalabels: {
+                        color: 'white',
+                        display: 'auto',
+                        formatter: function(value, context) {
+                          return Math.abs(value) + '%';
+                        }
+                      }
+                    },
+                    {
+                      label: '付費率',
+                      fill: false,
+                      data: [12.4, 6.8,2.3, 12.2],
+                      backgroundColor: '#3366CC',
+                      borderColor: '#3366CC',
+                      fill: false,
+                      borderWidth: 1,
+                      datalabels: {
+                        color: 'white',
+                        display: 'auto',
+                        formatter: function(value, context) {
+                          return Math.abs(value) + '%';
+                        }
+                      }
+                    },
+                  ],
+              },
+              options: {
+                animation: {
+                  duration: 0
+                },
+                tooltips: {
+                  callbacks: {
+                    label: function(tooltipItem, data) {
+                      var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                      if (label) {
+                          label += ': ';
+                      }
+                      label += Math.abs(tooltipItem.yLabel * 100) / 100;
+                      return label + '%';
+                    }
+                  }
+                },
+                responsive: true,
+                scales: {
+                  xAxes: [{
+                    gridLines: {
+                      display: false
+                    }
+                  }],
+                  yAxes: [
+                    {
+                      display: false,
+                      ticks: {
+                        beginAtZero: true,
+                      },
+                      gridLines: {
+                        display: false,
+                    },
+                  }, {
+                    type: 'linear',
+                    display: false,
+                    position: 'right',
+                    id: 'y-axis-2',
+                    ticks: {
+                      beginAtZero: true,
+                      stepValue: 10,
+                      max: 100,
+                    },
+                    scaleLabel: {
+                      display:false,
+                      labelString: '%',
+                    },
+                    gridLines: {
+                      display: false,
+                      drawOnChartArea: false,
+                    },
+                  }],
+                },
+               elements: {
+                 line: {
+                   tension: 0,
+                 }
+               },
+              plugins: {
+
+               }
+             }
+              });
+          </script>
+          <div class="row">
+            <div class="col-12 extraInfo text-center wrapper">
+              <ul class="list-unstyled">
+                <li>N=2535</li>
+                <li>
+                  資料來源：本研究電訪(2018)
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
