@@ -103,13 +103,9 @@ html {
   }
 }
 
-
+/* background colors */
 .bgBlack {
   background-color: black;
-}
-
-.lineHeight {
-  line-height: 1.6;
 }
 
 .bgCards {
@@ -118,6 +114,23 @@ html {
 
 .bgNavBar {
   background-color:#1c1c1c;
+}
+.mainNavy {
+  background-color: #3366CC;
+}
+.mainGreen {
+  background-color: #7DCC4A;
+}
+.mainYellow {
+  background-color: #FFC000;
+}
+.mainOrange {
+  background-color: #FC9127;
+}
+
+/* typography settings */
+.lineHeight {
+  line-height: 1.6;
 }
 
 .titleColor {
