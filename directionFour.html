@@ -107,14 +107,17 @@
 <!-- Opening Banner -->
 <div class="container-fluid" id="goTop">
   <div class="row justify-content-center wrapperCards text-white" id="opening">
-    <div class="col-10 col-md-7 wrapperL">
-      <p class="display-4 text-center">
+    <div class="col-12 col-md-7">
+      <p class="text-center h1 d-md-none my-3 wrapper">
+        方向四<br>網路學習拓展活化
+      </p>
+      <p class="display-4 mt-5 text-center d-none d-md-block">
         方向四：網路學習拓展活化
       </p>
     </div>
     <div class="w-100"></div>
-    <div class="col-md-6">
-      <p class="h5 lineHeight">
+    <div class="col-10 col-md-6">
+      <p class="h5 lineHeight font-weight-light">
         學習需求高但使用率低，需破除正式學習和學歷目的的學習外，增加技能學習的內容也能增加使用率。
       </p>
     </div>
@@ -138,7 +141,90 @@
     </div>
   </div>
   <div class="row justify-content-center wrapper">
-    <div class="col-md-10">
+    <div class="col-md-10 d-md-none">
+      <canvas id="chart_educativeUserProfile_M" style="height:70vh; width:100vw"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_educativeUserProfile_M').getContext('2d');
+        var chart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: ["", "男性", "女性", "", "12-19歲", "20-29歲", "30-39歲", "40-49歲", "50-59歲", "60歲以上",""],
+              datasets: [{
+                  label: "教育應用使用率",
+                  borderColor: '#7DCC4A',
+                  backgroundColor: '#7DCC4A',
+                  data: [, 12.9, 15.0, , 21.8, 12.9, 13.1, 12.5, 15.0, 10.9,,],
+              }, ]
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            tooltips: {
+              mode:'index',
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            legend: {
+              labels: {
+                usePointStyle: true,
+              }
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [{
+                gridLines: {
+                  display: false,
+                  drawBorder: false
+                },
+                ticks: {
+                  beginAtZero:true,
+                  display: false,
+                }
+              }]
+            },
+            elements: {
+              line: {
+                tension: 0,
+              }
+            },
+            plugins: {
+              datalabels: {
+                display: true,
+                align: 'center',
+                formatter: function(value, context) {
+                  return Math.abs(value) + '%';
+                }
+              }
+            }
+          }
+        });
+      </script>
+      <div class="row">
+        <div class="col-12 extraInfo text-center wrapper">
+          <ul class="list-unstyled">
+            <li>N=354</li>
+            <li>
+              資料來源：本研究電訪(2018)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-10 d-none d-md-block">
       <canvas id="chart_educativeUserProfile" style="height:80vh; width:100vw"></canvas>
       <script>
         var ctx = document.getElementById('chart_educativeUserProfile').getContext('2d');
