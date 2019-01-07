@@ -69,12 +69,12 @@
   /* specific usages */
   #opening {
     background-image:
-      linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-      url(img/footage/architecture-1868667.jpg);
+      linear-gradient(0deg,rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+      url(img/footage/pickup/taipei-2651241.jpg);
     background-repeat: none;
-    background-position: center;
+    background-position: bottom;
     background-size: cover;
-    background-blend-mode: overlay;
+    /*background-blend-mode: overlay;*/
   }
 </style>
 
@@ -88,8 +88,8 @@
 <!-- type One -->
 <div class="container-fluid">
   <div class="row justify-content-center text-white" id="opening">
-    <div class="col-10 col-md-6 pt-5 mt-5 wrapperXL">
-      <p class="display-4 mt-0 text-center wrapper">
+    <div class="col-10 col-md-6 wrapperXL">
+      <p class="display-4 text-center wrapper mb-5">
         2018 台灣網路報告
       </p>
       <p class="h5 lineHeight font-weight-light">
@@ -146,17 +146,11 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navBurger">
         <ul class="navbar-nav">
-          <li class="nav-item">
+          <li class="nav-item border-white border-right">
             <div class="linkColorWHT btn ml-lg-5" href="#downloadSignIn" data-toggle="modal" data-target="#downloadSignIn">報告下載</div>
           </li>
-          <li class="nav-item text-white mt-1">
-            |
-          </li>
-          <li class="nav-item">
+          <li class="nav-item border-white border-right">
             <div class="linkColorWHT btn" href="#researchMethodology" data-toggle="modal" data-target="#researchMethodology">調查方法概述</div>
-          </li>
-          <li class="nav-item text-white mt-1">
-            |
           </li>
           <li class="nav-item">
             <a class="linkColorWHT btn" href="en.html" target="_blank">EN</a>
@@ -305,11 +299,32 @@
 </div>
 <!-- end of Research Methodology modal -->
 
-<!-- section 1 -->
+<!-- section intro -->
+<div class="container-fluid" id="intro">
+  <div class="row justify-content-center px-md-5 wrapperXL">
+    <div class="col-md-7">
+      <p class="display-4 titleColor text-center">
+       研究摘要
+      </p>
+    </div>
+    <div class="col-md-10">
+      <div class="my-3">
+        <p class="h5 lineHeight font-weight-light">
+          台灣網路報告旨在呈現台灣網際網路發展與應用管理與觀察，說明台灣整體網路使用圖像與使用者輪廓，並了解各項網路趨勢與未來發展。為提升調查視角、增加參考度並擴大調查應用層面，本報告採「電腦輔助電話訪問法（Computer Assisted Telephone Interviewing, CATI」和「文獻分析法（Document Analysis）」量質化合併之調查方式進行，從了解台灣網路基礎推展至應用層面，輔佐邏輯層面的網域名稱和 IP／ASN 註冊情形等客觀環境分析，並蒐集比較各國家和各次級文獻內容來描繪台灣網路整體圖像。
+        </p>
+        <p class="h5 lineHeight mt-3 font-weight-light">
+          推估 2018 年全國 12 歲以上上網人數達 1,738 萬人，而全國上網人數經推估已達 1,866 萬，整體上網率達 79.2%。其中，行動上網率逐年上升，2018年首度突破七成，而無線區域網路上網率則下降一成五。就網路服務應用部分，網民於內容媒體、社群媒體的使用率最高，皆超過八成，電子商務使用率則有六成，都是網路應用較活絡且發展蓬勃的市場；雖然台灣相關應用服務較少，但網民對於人工智慧、自駕汽車的概念知曉度高，顯示市場接受度佳，但仍待服務落實。
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of section intro -->
 
-<div class="container-fluid" id="generalCards">
-  <div class="row px-md-5 pt-5 text-center" style="background-color:#efefef">
-    <div class="col-12 text-dark">
+<!-- section 1 -->
+<div class="container-fluid" id="generalCards" style="background-color:#3a71b7">
+  <div class="row px-md-5 pt-5 text-center" >
+    <div class="col-12 text-white">
       <p class="display-4">
         國內外趨勢分析
       </p>
@@ -324,50 +339,68 @@
       </div>
     </div>
   </div>
-  <div class="row justify-content-center px-md-5 py-5" style="background-color:#efefef">
-    <div class="col-10 col-md-3 card mx-1 my-3 hoverLarge" style="background-color:#294377">
-      <div class="row justify-content-center text-center wrapper">
-        <div class="col-7 col-md-5">
-          <img class="img-fluid"src="img/190104_icon/190104_button-02.png" alt="">
+  <div class="row justify-content-center px-md-5 py-5">
+    <div class="col-10 col-md-3 card mx-1 my-3 hoverLarge">
+      <div class="row justify-content-center text-center wrapperCards">
+        <div class="col">
+          <p class="h5 titleColor">
+            整體網路使用現況
+          </p>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-7 col-md-6">
+          <img class="img-fluid"src="img/SVG/190104_button-25.svg" alt="" >
         </div>
         <div class="w-100"></div>
         <div class="col">
-          <p class="h6 text-white">
+          <p class="h6 text-dark">
             個人與家戶上網率高<br>為亞洲地區前段班
           </p>
-          <a class="btn btn-outline-light my-3" href="TrendAnalysis_internetUsage.html" target="_blank">進一步了解</a>
+          <a class="btn btn-Green mt-3" href="TrendAnalysis_internetUsage.html" target="_blank">進一步了解</a>
         </div>
-        <div class="w-100 pb-5"></div>
+        <div class="w-100"></div>
       </div>
     </div>
-    <div class="col-10  col-md-3 card mx-1 my-3 hoverLarge" style="background-color:#294377">
-      <div class="row justify-content-center text-center wrapper">
-        <div class="col-7 col-md-5">
-          <img class="img-fluid"src="img/190104_icon/190104_button-11.png" alt="">
+    <div class="col-10 col-md-3 card mx-1 my-3 hoverLarge">
+      <div class="row justify-content-center text-center wrapperCards">
+        <div class="col">
+          <p class="h5 titleColor">
+            網路基礎邏輯層面
+          </p>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-7 col-md-6">
+          <img class="img-fluid"src="img/SVG/190104_button-26.svg" alt="">
         </div>
         <div class="w-100"></div>
         <div class="col">
-          <p class="h6 text-white">
+          <p class="h6 text-dark">
             台灣IPv6創下<br>全球成長率第一名
           </p>
-          <a class="btn btn-outline-light my-3" href="TrendAnalysis_Infrastructure.html" target="_blank">進一步了解</a>
+          <a class="btn btn-Green mt-3" href="TrendAnalysis_Infrastructure.html" target="_blank">進一步了解</a>
         </div>
-        <div class="w-100 pb-5"></div>
+        <div class="w-100 mb-2"></div>
       </div>
     </div>
-    <div class="col-10 col-md-3 card mx-1 my-3 hoverLarge" style="background-color:#294377">
-      <div class="row justify-content-center text-center wrapper">
-        <div class="col-7 col-md-5">
-          <img class="img-fluid"src="img/190104_icon/190104_button-09.png" alt="">
+    <div class="col-10 col-md-3 card mx-1 my-3 hoverLarge">
+      <div class="row justify-content-center text-center wrapperCards">
+        <div class="col">
+          <p class="h5 titleColor">
+            網路服務應用概況
+          </p>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-7 col-md-6">
+          <img class="img-fluid"src="img/SVG/190104_button-27.svg" alt="">
         </div>
         <div class="w-100"></div>
         <div class="col">
-          <p class="h6 text-white">
+          <p class="h6 text-dark">
             台灣資訊科技完備度<br>全球排名第25名
           </p>
-          <a class="btn btn-outline-light my-3" href="TrendAnalysis_globalCompetitiveness.html" target="_blank">進一步了解</a>
+          <a class="btn btn-Green mt-3" href="TrendAnalysis_globalCompetitiveness.html" target="_blank">進一步了解</a>
         </div>
-        <div class="w-100 pb-5"></div>
+        <div class="w-100 mb-2"></div>
       </div>
     </div>
   </div>
@@ -376,42 +409,47 @@
 
 
 <!-- section 1 -->
-<div class="container-fluid" id="#">
-  <div class="row justify-content-center px-md-5 text-white wrapperXL" style="background-color:#3a71b7">
-    <div class="col-md-7 ml-2">
+<div class="container-fluid" id="">
+  <div class="row justify-content-center px-md-5 text-white wrapperXL" style="background-color:#294377">
+    <div class="col-md-6 mr-md-5">
       <p class="display-4">
         數位經濟重點機會
       </p>
       <div class="row justify-content-around">
-        <div class="col mx-2">
+        <div class="col">
           <div class="my-3">
             <p class="h5 lineHeight font-weight-light">
               從政府、產業和網民三構面切入，我國積極建構數位創新環境、增進數位經濟發展，產業端有厚實的工業基礎，加上豐富的智慧產品供應鏈經驗，而網民活躍參與網路，都是相當利於數位經濟、智慧化發展的優勢。
             </p>
           </div>
         </div>
+        <div class="w-100"></div>
+        <div class="col my-3">
+          <a class="btn btn-light" data-toggle="collapse" href="#digitalEconomy" role="button" aria-expanded="false" aria-controls="digitalEconomy">進一步了解</a>
+        </div>
       </div>
     </div>
-    <div class="col">
-      <img class="img-fluid"src="img/footage/architectural-design-architecture-building-443383.jpg" alt="">
+    <div class="col ml-md-5">
+      <img class="img-fluid"src="img/footage/pickup/taiwan-497003copy.jpg" alt="">
     </div>
+
   </div>
 </div>
 <!-- end of section 1 -->
 
 
 <!-- section 2 -->
-<div class="container-fluid" id="overall">
+<div class="container-fluid" id="">
   <div class="row justify-content-center px-md-5 wrapperXL">
     <div class="col">
       <img class="img-fluid" src="img/190104_circle-02.png" alt="">
     </div>
     <div class="col-md-7">
       <p class="display-4 titleColor">
-        台灣網路課題
+        台灣網路應用課題
       </p>
       <div class="row justify-content-around text-dark">
-        <div class="col mx-2">
+        <div class="col">
           <div class="my-3">
             <p class="h5 lineHeight font-weight-light">
               網路科技日新月異，民眾的生活與網路及相關科技應用已密不可分，也逐漸改變了民眾的生活與消費習慣；網路服務應用可區分為網路服務社群應用、經濟應用和創新網路概念，涵蓋共11種服務應用，分別解析網民的使用率等行為。
@@ -420,8 +458,9 @@
         </div>
         <div class="w-100"></div>
         <div class="col my-2">
-          <a class="btn btn-Navy" href="directionOne.html" target="_blank">進一步了解</a>
+          <a class="btn btn-Navy" href="internetAppliedSubjects.html" target="_blank">進一步了解</a>
         </div>
+
       </div>
     </div>
   </div>
@@ -431,11 +470,11 @@
 
 
 <!-- section 3 -->
-<div class="container-fluid" id="#"  style="background-color:#294377">
+<div class="container-fluid bgNavBar" id="#">
   <div class="row justify-content-center px-md-5 pt-5  text-white">
     <div class="col-12">
       <p class="display-4 text-center">
-        四大策略方向
+        四大未來策略方向
       </p>
     </div>
     <div class="col-md-6">
@@ -478,7 +517,7 @@
 <div class="container-fluid" id="directionOne">
   <div class="row justify-content-center px-md-5 wrapperXL" >
     <div class="col">
-      <img class="img-fluid"src="img/footage/app-background-blur-545331.jpg" alt="">
+      <img class="img-fluid"src="img/footage/pickup/app-background-blur-545331.jpg" alt="">
     </div>
     <div class="col-md-7">
       <p class="display-4 titleColor">
@@ -524,7 +563,7 @@
       </div>
     </div>
     <div class="col">
-      <img class="img-fluid"src="img/footage/student-849825.jpg" alt="">
+      <img class="img-fluid"src="img/footage/pickup/adults-analysis-banking-1451447.jpg" alt="">
     </div>
 
   </div>
@@ -535,7 +574,7 @@
 <div class="container-fluid" id="directionThree">
   <div class="row justify-content-center px-md-5 wrapperXL">
     <div class="col">
-      <img class="img-fluid"src="img/footage/app-blurred-background-cellphone-1092671.jpg" alt="">
+      <img class="img-fluid"src="img/footage/pickup/app-blurred-background-cellphone-1092671.jpg" alt="">
     </div>
     <div class="col-md-7">
       <p class="display-4 titleColor">
@@ -581,7 +620,7 @@
       </div>
     </div>
     <div class="col">
-      <img class="img-fluid"src="img/footage/phone-1149925.jpg" alt="">
+      <img class="img-fluid"src="img/footage/student-849825.jpg" alt="">
     </div>
 
   </div>
