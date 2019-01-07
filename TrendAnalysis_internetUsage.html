@@ -78,33 +78,39 @@
 
 <body data-spy="scroll" data-target="#navScrollSpy">
 
-  <!-- nav MENU bar -->
-  <header class="fixed-top">
-    <nav id="navScrollSpy" class="navbar navbar-expand-lg navbar-dark bgNavBar">
-      <a href="#goTop" class="navbar-brand"><img src="img/twnicLogo.svg" alt="" style="height:40px;"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBurger" aria-controls="navBurger" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon" ></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navBurger">
-          <ul class="navbar-nav">
-            <li class="nav-item border-white border-right">
-              <a class="linkColorWHT btn ml-lg-5" href="#" target="_blank">報告下載</a>
-            </li>
-            <li class="nav-item">
-              <div class="linkColorWHT btn" href="internetprototype3.html" target="_blank">回到主頁</div>
-            </li>
-          </ul>
-        </div>
-    </nav>
-  </header>
-  <!-- end of nav MENU bar -->
+<!-- nav MENU bar -->
+<header class="fixed-top">
+  <nav id="navScrollSpy" class="navbar navbar-expand-md navbar-dark bgNavBar">
+    <a href="#goTop" class="navbar-brand"><img src="img/twnicLogo.svg" alt="" style="height:40px;"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBurger" aria-controls="navBurger" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" ></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navBurger">
+        <ul class="navbar-nav text-center">
+          <li class="nav-item border-white d-md-none">
+            <a class="linkColorWHT btn" href="#" target="_blank">報告下載</a>
+          </li>
+          <li class="nav-item border-white border-right d-none d-md-block">
+            <a class="linkColorWHT btn" href="#" target="_blank">報告下載</a>
+          </li>
+          <li class="nav-item">
+            <div class="linkColorWHT btn" href="internetprototype3.html" target="_blank">回到主頁</div>
+          </li>
+        </ul>
+      </div>
+  </nav>
+</header>
+<!-- end of nav MENU bar -->
 
 
 <!-- Opening Banner -->
 <div class="container-fluid" id="goTop">
   <div class="row justify-content-center wrapperCards text-white" id="opening">
-    <div class="col-10 col-md-7 wrapperL">
-      <p class="display-4 text-center">
+    <div class="col-12 col-md-7 wrapperL">
+      <p class="text-center h1 d-md-none mb-3 wrapper">
+        整體網路使用現況
+      </p>
+      <p class="display-4 text-center wrapper mb-5 d-none d-md-block">
         整體網路使用現況
       </p>
     </div>
@@ -115,11 +121,14 @@
 <div class="container-fluid" style="background-color:#294377">
   <div class="row justify-content-center text-center wrapperL text-white" >
     <div class="col-md-8">
-      <p class="h1">
+      <p class="h2 d-md-none mb-3 wrapper">
+        國內發展現況介紹
+      </p>
+      <p class="h1 d-none d-md-block">
         國內發展現況介紹
       </p>
       <div class="my-4">
-        <p class="h5 lineHeight pb-5">
+        <p class="h5 lineHeight pb-5 font-weight-light">
           12歲以上個人曾經上網率達八成二，推估約有1738萬人。
         </p>
       </div>
@@ -146,7 +155,7 @@
         個人網路使用習慣概況
       </p>
     </div>
-    <div class="col-5 col-md-3 card my-2 py-5 border border-secondary border-right-0">
+    <div class="col-10 col-md-3 card my-2 py-5 border border-secondary d-md-none">
       <p class="h5">
         個人上網
       </p>
@@ -174,7 +183,35 @@
         </div>
       </div>
     </div>
-    <div class="col-5 col-md-3 card my-2 py-5 border border-secondary border-right-0">
+    <div class="col-10 col-md-3 card my-2 py-5 border border-secondary border-right-0 d-none d-md-block">
+      <p class="h5">
+        個人上網
+      </p>
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <img class="img-fluid py-3" src="img/190107_icon/190104_button-28.png">
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col ml-4">
+          <p class="my-1">
+            上網率
+          </p>
+          <p class="h5">
+            82.1%
+          </p>
+        </div>
+        <div class="col mr-4">
+          <p class="my-1">
+            平均每日上網
+          </p>
+          <p class="h5">
+            4.3 小時
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-10 col-md-3 card my-2 py-5 border border-secondary">
       <p class="h5">
         最常連網方式
       </p>
@@ -202,7 +239,36 @@
         </div>
       </div>
     </div>
-    <div class="col-5 col-md-3 card my-2 py-5 border border-secondary">
+    <div class="col-10 col-md-3 card my-2 py-5 border border-secondary d-md-none">
+      <p class="h5">
+        最常使用裝置
+      </p>
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <img class="img-fluid py-3" src="img/190107_icon/190104_button-30.png" alt="">
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col ml-4">
+          <p class="my-1">
+            手機
+          </p>
+          <p class="h5">
+            96.8%
+          </p>
+        </div>
+        <div class="col mr-4">
+          <p class="my-1">
+            桌機/筆電
+          </p>
+          <p class="h5">
+            66.4%
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-10 col-md-3 card my-2 py-5 border border-secondary border-left-0 d-none d-md-block">
       <p class="h5">
         最常使用裝置
       </p>
@@ -427,6 +493,7 @@
                       pointBorderColor: '#3366CC',
                       pointBorderWidth: 2,
                       datalabels: {
+                        display: 'auto',
                         align: 'top',
                         formatter: function(value, context) {
                           return Math.abs(value) + '%';
@@ -442,6 +509,7 @@
                       borderColor:'#7DCC4A',
                       borderWidth: 1,
                       datalabels: {
+                        display: 'auto',
                         formatter: function(value, context) {
                           return Math.round(value) + '萬人';
                         }
@@ -544,6 +612,7 @@
                       pointBorderColor: '#3366CC',
                       pointBorderWidth: 1,
                       datalabels: {
+                        display: 'auto',
                         align: 'top',
                         formatter: function(value, context) {
                           return Math.abs(value) + '%';
@@ -558,6 +627,7 @@
                       borderColor:'#7DCC4A',
                       borderWidth: 1,
                       datalabels: {
+                        display: 'auto',
                         formatter: function(value, context) {
                           return Math.round(value) + '萬人';
                         }
@@ -634,7 +704,7 @@
         <div class="col-12 extraInfo text-center wrapper">
           <ul class="list-unstyled">
             <li>
-              N=3088
+              n=3088
             </li>
             <li>
               資料來源：本研究電訪(2018)
