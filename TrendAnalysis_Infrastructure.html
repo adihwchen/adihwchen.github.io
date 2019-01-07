@@ -99,65 +99,18 @@
   </header>
   <!-- end of nav MENU bar -->
 
-  <!-- Download modal -->
-  <div class="modal fade" id="downloadSignIn" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">報告下載</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="row justify-content-center">
-            <div class="col-md-9 py-md-3 lineHeight">
-              <p>
-                台灣網路資訊中心自2002年起每年固定進行台灣寬頻網路使用調查，觀察台灣地區網路發展及使用狀況，為提供及滿足具有特定調查數據需求之單位或個人使用；因此，本中心將十年
-                來所累積之調查資料，建置「台灣寬頻網路統計查詢系統」以有效累積並統合歷年來本中心所執行之「台灣寬頻網路調查」之統計數據，以系統化之查詢服務，提供有特定查詢需求
-                之社會大眾及研究單位使用。
-              </p>
-            </div>
-            <div class="col-md-6 py-md-3 lineHeight text-center">
-              <form>
-                <div class="form-group">
-                  <label for="EmailInput"></label>
-                  <input type="email" class="form-control" id="EmailInput" aria-describedby="emailHelp" placeholder="請輸入Email">
-                  <small id="emailHelp" class="form-text text-muted">登入帳號為 Email</small>
-                </div>
-                <div class="form-group">
-                  <label for="EmailInput"></label>
-                  <input type="password" class="form-control" id="PasswordInput" placeholder="請輸入密碼">
-                  <small id="passwordHelp" class="form-text text-muted">忘記密碼</small>
-                </div>
-                <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="check">
-                  <label class="form-check-label" for="check">Take me out</label>
-                </div>
-                <button type="submit" class="btn btn-primary">註冊</button>
-                <button type="submit" class="btn btn-success">登入</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- end of Download modal -->
-
-
 <!-- Opening Banner -->
 <div class="container-fluid" id="goTop">
   <div class="row justify-content-center wrapperXL text-white" id="opening">
     <div class="col-10 col-md-7">
       <p class="display-4 mt-5 text-center">
-        基礎網路架構比較
+        網路基礎邏輯層面
       </p>
     </div>
     <div class="w-100"></div>
     <div class="col-md-6">
       <p class="h5 lineHeight">
-
+        在網路上的每一台電腦都有一組稱為 IP（Internet Protocol）的位址，透過網域名稱（Domain Name）以簡單的字串來代表這一組 IP 位址。而網際網路通訊協定位址（Internet Protocol Address）是用來辨識網際網路上主機位置所在，以固定且唯一的一串數字位址分配予主機。自治系統號碼（ASN）是一個提供自治系統（AS）間交換動態路由資訊的唯一識別碼。
       </p>
     </div>
     <div class="w-100"></div>
@@ -175,15 +128,556 @@
   <div class="row justify-content-center wrapperL">
     <div class="col-md-10">
       <p class="h1 mt-5 titleColor">
-        各國網域／IPv4／IPv6 統計
+        國內發展現況介紹
       </p>
       <div class="my-3">
         <p class="h6 lineHeight">
-          亞洲各國的網域註冊數量與 IP 位址皆以中國最多，台灣 IPv6 全球排名第 19 名，IPv6 使用比例為 28.8%，今年數量來到 2,463 個 /32 IPv6 位址，比去年成長 4%。
+          無論是網域名稱、IP和ASN註冊或發放數量，國內統計數量都是逐年成長。
         </p>
       </div>
     </div>
   </div>
+  <div class="row justify-content-center wrapper">
+    <div class="col-md-10 text-center">
+      <p class="h3">
+        網域名稱註冊數量
+      </p>
+      <p class="mt-3 text-center">
+        今年「.tw/.台灣」註冊數量大幅成長，成長率為554.3%，類型佔比中以「泛用型英文.tw」最多。
+      </p>
+      <div class="text-right text-danger bg-white">
+        2018-2017年<br>總成長率<br>+554.3%
+      </div>
+      <canvas id="chart_ipSubmitGrowth" style="height:80vh; width:100vw"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_ipSubmitGrowth').getContext('2d');
+        var myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018'],
+            datasets: [
+              {
+                type: 'line',
+                label: '總成長率',
+                stack:'Stack 1',
+                yAxisID: 'y-axis-2',
+                fill: false,
+                borderColor: '#3366CC',
+                backgroundColor: 'rgba(51, 102, 204, 0)',
+                pointBackgroundColor: '#3366CC',
+                pointBorderColor: '#3366CC',
+                pointBorderWidth: 4,
+                pointStyle: 'circle',
+                lineTension:0,
+                datalabels: {
+                  display: 'auto',
+                  align:'top',
+                  formatter: function(value, context) {
+                    return Math.abs(value) + '%';
+                  }
+                },
+                data: [9.3, 13.2, 1.8, 21.9, 24.6, 10.3, 2.8, 8.3, 0, 554.3],
+              },
+              {
+                label: '「.tw」',
+                backgroundColor: '#7DCC4A',
+                borderColor: '#7DCC4A',
+                borderWidth: 1,
+                stack:'Stack 0',
+                data: [283, 298, 305, 308, 315, 321, 395, 466, 474, 4555],
+                yAxisID: 'y-axis-1',
+                datalabels: {
+                  display: 'auto',
+                  formatter: function(value, context) {
+                    return Math.abs(value) + '萬個';
+                  }
+                },
+              },
+              {
+                label: '「.tw／.台灣」IDN',
+                backgroundColor: '#FFC000',
+                borderColor: '#FFC000',
+                borderWidth: 1,
+                stack:'Stack 0',
+                data: [161, 205, 207, 317, 463, 377, 284, 269, 261, 254],
+                yAxisID: 'y-axis-1',
+                datalabels: {
+                  display: 'auto',
+                  formatter: function(value, context) {
+                    return Math.abs(value) + '萬個';
+                  }
+                },
+              },
+            ]
+          },
+          options: {
+            responsive:true,
+            animation: {
+              duration: 0
+            },
+            legend: {
+              labels: {
+                usePointStyle: true,
+              }
+            },
+            tooltips: {
+              mode:'index',
+            },
+            scales: {
+              xAxes: [{
+                stacked: true,
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+               }],
+               yAxes: [
+                 {
+                   display: false,
+                   type: 'linear',
+                   position: 'left',
+                   id: 'y-axis-1',
+                   ticks: {
+                     beginAtZero: true,
+                   },
+                   gridLines: {
+                     display: false,
+                     drawOnChartArea: false,
+                   },
+                 },
+                 {
+                   type: 'linear',
+                   display: false,
+                   position: 'right',
+                   id: 'y-axis-2',
+                   ticks: {
+                     /*beginAtZero: true,*/
+                     stepValue: 50,
+                     max: 650,
+                   },
+                   scaleLabel: {
+                     display:false,
+                     labelString: '%',
+                   },
+                   gridLines: {
+                     display: false,
+                     drawOnChartArea: false,
+                   },
+               }],
+            }
+          },
+        });
+      </script>
+      <div class="row">
+        <div class="col-12 extraInfo wrapper text-center">
+          <ul class="list-unstyled">
+            <li>
+              資料來源：TWNIC統計至2018年11月份
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center wrapper">
+    <div class="col-md-10">
+      <p class="h3 text-center">
+        IPv4 位址及 AS 號碼數量統計
+      </p>
+      <p class="mt-3">
+        台灣IP位址核發數量，在IPv4位址發放數量統計上，台灣居全球第15名；自治系統號碼(ASN)是一個提供自治系統(AS)間交換動態路由資訊的唯一識別碼，截至2018年11月國內自治系統號碼核發數為354個。
+      </p>
+    </div>
+    <div class="col-md-10 lightGreyBG py-5">
+      <div class="">
+        <ul class="nav nav-pills nav-justified">
+          <li class="nav-item">
+            <div class="nav-link active border border-secondary" href="#numberOfIPv4" data-toggle="tab">IPv4 數量</div>
+          </li>
+          <li class="nav-item">
+            <div class="nav-link border border-secondary border-left-0" href="#numberOfASN" data-toggle="tab">ASN 核發數量</div>
+          </li>
+        </ul>
+      </div>
+      <div class="row justify-content-center tab-content my-4">
+        <div class="col-12 tab-pane active" id="numberOfIPv4">
+          <canvas id="chart_numberOfIPv4" style="height:60vh; width:100vw"></canvas>
+          <script>
+            var ctx = document.getElementById('chart_numberOfIPv4').getContext('2d');
+            var mixedChart = new Chart(ctx, {
+              type: 'line',
+              data: {
+                labels: ['','2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', ''],
+                datasets: [
+                    {
+                      label: '台灣IPv4數量',
+                      data: [,155, 220, 266, 535, 855, 988, 1261, 1416, 1462, 1627,],
+                      backgroundColor: '#3366CC',
+                      borderColor: '#3366CC',
+                      fill: false,
+                      borderWidth: 2,
+                      datalabels: {
+                        display: 'auto',
+                        align:'top',
+                        formatter: function(value, context) {
+                          return Math.round(value) + '萬個';
+                        }
+                      }
+                    },
+                  ],
+              },
+              options: {
+                responsive: true,
+                animation: {
+                  duration: 0
+                },
+                legend: {
+                  display: false,
+                },
+                tooltips: {
+                  callbacks: {
+                    label: function(tooltipItem, data) {
+                      var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                      if (label) {
+                          label += ': ';
+                      }
+                      label += Math.round(tooltipItem.yLabel * 100) / 100;
+                      return label + '萬個';
+                    }
+                  }
+                },
+                scales: {
+                  xAxes: [{
+                    gridLines: {
+                      display: false
+                    }
+                  }],
+                  yAxes: [
+                    {
+                      display: false,
+                      ticks: {
+                        beginAtZero: true,
+                      },
+                      gridLines: {
+                        display: false,
+                        drawOnChartArea: false,
+                    },
+                  }, {
+                    type: 'linear',
+                    display: false,
+                    position: 'right',
+                    id: 'y-axis-2',
+                    ticks: {
+                      beginAtZero: true,
+                    },
+                    scaleLabel: {
+                      display:false,
+                      labelString: '%',
+                    },
+                    gridLines: {
+                      display: false,
+                      drawOnChartArea: false,
+                    },
+                  }],
+                },
+               elements: {
+                 line: {
+                   tension: 0,
+                 }
+               },
+             }
+            });
+          </script>
+        </div>
+        <div class="col-12 tab-pane fade in" id="numberOfASN">
+          <canvas id="chart_numberOfASN" style="height:60vh; width:100vw"></canvas>
+          <script>
+            var ctx = document.getElementById('chart_numberOfASN').getContext('2d');
+            var mixedChart = new Chart(ctx, {
+              type: 'line',
+              data: {
+                labels: ['','2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', ''],
+                datasets: [
+                    {
+                      label: '台灣 ASN 核發數量',
+                      data: [,202, 205, 208, 309, 313, 338, 340, 345, 351, 354,],
+                      backgroundColor: '#3366CC',
+                      borderColor: '#3366CC',
+                      fill: false,
+                      borderWidth: 2,
+                      datalabels: {
+                        display: 'auto',
+                        align: 'top',
+                        formatter: function(value, context) {
+                          return Math.round(value) + '個';
+                        }
+                      }
+                    },
+                  ],
+              },
+              options: {
+                responsive: true,
+                animation: {
+                  duration: 0
+                },
+                legend: {
+                  display: false,
+                },
+                tooltips: {
+                  callbacks: {
+                    label: function(tooltipItem, data) {
+                      var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                      if (label) {
+                          label += ': ';
+                      }
+                      label += Math.round(tooltipItem.yLabel * 100) / 100;
+                      return label + '個';
+                    }
+                  }
+                },
+                scales: {
+                  xAxes: [{
+                    gridLines: {
+                      display: false
+                    }
+                  }],
+                  yAxes: [
+                    {
+                      display: false,
+                      ticks: {
+                        beginAtZero: true,
+                      },
+                      gridLines: {
+                        display: false,
+                        drawOnChartArea: false,
+                    },
+                  }, {
+                    type: 'linear',
+                    display: false,
+                    position: 'right',
+                    id: 'y-axis-2',
+                    ticks: {
+                      beginAtZero: true,
+                    },
+                    scaleLabel: {
+                      display:false,
+                      labelString: '%',
+                    },
+                    gridLines: {
+                      display: false,
+                      drawOnChartArea: false,
+                    },
+                  }],
+                },
+               elements: {
+                 line: {
+                   tension: 0,
+                 }
+               },
+             }
+            });
+          </script>
+        </div>
+        <div class="col-12 extraInfo wrapper text-center">
+          <ul class="list-unstyled">
+            <li>
+              資料來源：TWNIC統計至2018年11月份
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center wrapperM">
+    <div class="col-md-10 wrapperL lightGreyBG">
+      <p class="h3 text-center">
+        IPv6 位址數量及 ISP IPv6 使用者比率
+      </p>
+      <p class="mt-3">
+        台灣IPv6申請數量全球排名第19名，IPv6使用比例為 28.8% (2018-12-13)；IPv6位址數量計算單位是2的96次方，約為7.0乘以10的28次方個，今天數量來到 2,463個 /32 IPv6位址。
+      </p>
+    </div>
+    <div class="col-md-10 lightGreyBG py-5">
+      <div class="">
+        <ul class="nav nav-pills nav-justified">
+          <li class="nav-item">
+            <div class="nav-link active border border-secondary" href="#numberOfIPv6" data-toggle="tab">IPv6 數量</div>
+          </li>
+          <li class="nav-item">
+            <div class="nav-link border border-secondary border-left-0" href="#userScaleOfIPv6" data-toggle="tab">ISP IPv6使用者比例</div>
+          </li>
+        </ul>
+      </div>
+      <div class="row justify-content-center tab-content my-4">
+        <div class="col-12 tab-pane active" id="numberOfIPv6">
+          <div class="text-right text-danger bg-white">
+            2018-2017年<br> +4.1%
+          </div>
+          <canvas id="chart_numberOfIPv6" style="height:60vh; width:100vw"></canvas>
+          <script>
+            var ctx = document.getElementById('chart_numberOfIPv6').getContext('2d');
+            var mixedChart = new Chart(ctx, {
+              type: 'line',
+              data: {
+                labels: ['','2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', ''],
+                datasets: [
+                    {
+                      label: '台灣IPv6數量',
+                      fill: false,
+                      data: [,2311, 2322, 2328, 2336,2345, 2355, 2359, 2359, 2365, 2463,],
+                      backgroundColor: '#3366CC',
+                      borderColor: '#3366CC',
+                      fill: false,
+                      borderWidth: 2,
+                      datalabels: {
+                        display: 'auto',
+                        align: 'top',
+                        formatter: function(value, context) {
+                          return Math.round(value) + '個';
+                        }
+                      }
+                    },
+                  ],
+              },
+              options: {
+                animation: {
+                  duration: 0
+                },
+                legend: {
+                  display: false,
+                },
+                tooltips: {
+                  callbacks: {
+                    label: function(tooltipItem, data) {
+                      var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                      if (label) {
+                          label += ': ';
+                      }
+                      label += Math.round(tooltipItem.yLabel * 100) / 100;
+                      return label + '個';
+                    }
+                  }
+                },
+                responsive: true,
+                scales: {
+                  xAxes: [{
+                    gridLines: {
+                      display: false
+                    }
+                  }],
+                  yAxes: [
+                    {
+                      display: false,
+                      ticks: {
+                        /*beginAtZero: true,*/
+                      },
+                      gridLines: {
+                        display: false,
+                        drawOnChartArea: false,
+                    },
+                  }, {
+                    type: 'linear',
+                    display: false,
+                    position: 'right',
+                    id: 'y-axis-2',
+                    ticks: {
+                      beginAtZero: true,
+                      stepValue: 10,
+                      max: 100,
+                    },
+                    scaleLabel: {
+                      display:false,
+                      labelString: '%',
+                    },
+                    gridLines: {
+                      display: false,
+                      drawOnChartArea: false,
+                    },
+                  }],
+                },
+               elements: {
+                 line: {
+                   tension: 0,
+                 }
+               },
+              plugins: {
+
+               }
+             }
+              });
+          </script>
+        </div>
+        <div class="col-12 tab-pane fade in" id="userScaleOfIPv6">
+          <!-- User Scale Of IPv6 table -->
+            <table class="table bg-white">
+              <thead class="thead-light">
+                <tr>
+                  <th class="align-middle" style=" min-width: 10vw;">類型</th>
+                  <th class="align-middle">業者</th>
+                  <th class="align-middle">佔比</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th class="small align-middle" rowspan="5" scope="row">行動網路</th>
+                  <td class="small align-middle">中華電信 CHT Mobile </td>
+                  <td class="small align-middle">70.08%</td>
+                </tr>
+                <tr>
+                  <td class="small align-middle">遠傳電信 FETNet</td>
+                  <td class="small align-middle">35.15%</td>
+
+                </tr>
+                <tr>
+                  <td class="small align-middle">台灣大哥大 Taiwan Mobile</td>
+                  <td class="small align-middle">22.53%</td>
+                </tr>
+                <tr>
+                  <td class="small align-middle">亞太電信 AMBIT</td>
+                  <td class="small align-middle">2.43%</td>
+                </tr>
+                <tr>
+                  <td class="small align-middle">台灣之星 VIBO</td>
+                  <td class="small align-middle">0.08%</td>
+
+                </tr>
+                <tr>
+                  <th class="small align-middle border-bottom" rowspan="4" scope="row">固網電信</th>
+                  <td class="small align-middle">中華電信 CHT Fixed Network </td>
+                  <td class="small align-middle">17.51%</td>
+                </tr>
+                <tr>
+                  <td class="small align-middle">台灣固網 TFN</td>
+                  <td class="small align-middle">0.46%</td>
+                </tr>
+                <tr>
+                  <td class="small align-middle">新世紀資通 Seednet</td>
+                  <td class="small align-middle">0.3%</td>
+                </tr>
+                <tr>
+                  <td class="small align-middle border-bottom">亞太電信 APOL</td>
+                  <td class="small align-middle border-bottom">0.11%</td>
+                </tr>
+              </tbody>
+            </table>
+          <!-- end of Scale Of IPv6 table -->
+        </div>
+        <div class="col-12 extraInfo wrapper text-center">
+          <ul class="list-unstyled">
+            <li>
+              資料來源：TWNIC統計至2018年11月份
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="row justify-content-center wrapper">
     <div class="col-md-10">
       <div class="mb-3">
@@ -553,9 +1047,9 @@
 
 
 <!--- Footer --->
-<div class="wrapperXL pb-3 pt-4 bg-light">
-  <p class="text-center small text-dark">
-    Copyright © 2018 財團法人台灣網路資訊中心
+<div class="wrapperXL pb-3 pt-4 bgNavBar">
+  <p class="text-center small text-white">
+    Copyright © 2019 財團法人台灣網路資訊中心
   </p>
 </div>
 <!--- end of Footer --->
