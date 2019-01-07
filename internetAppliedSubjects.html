@@ -14,7 +14,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 
 
-  <title>2018 台灣網路調查 - 基礎網路架構比較</title>
+  <title>2018 台灣網路調查 - 整體網路使用現況</title>
 
   <meta property="og:url" content="http://twnic.somewhere.there">
   <meta property="og:type" content="website">
@@ -68,10 +68,10 @@
   /* specific usages */
   #opening {
     background-image:
-      linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-      url(img/footage/architectural-design-architecture-building-443383.jpg);
+      linear-gradient(0deg,rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+      url(img/footage/pickup/sound-space-3851251.jpg);
     background-repeat: none;
-    background-position: top;
+    background-position: center;
     background-size: cover;
   }
 </style>
@@ -99,334 +99,368 @@
   </header>
   <!-- end of nav MENU bar -->
 
-  <!-- Download modal -->
-  <div class="modal fade" id="downloadSignIn" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">報告下載</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="row justify-content-center">
-            <div class="col-md-9 py-md-3 lineHeight">
-              <p>
-                台灣網路資訊中心自2002年起每年固定進行台灣寬頻網路使用調查，觀察台灣地區網路發展及使用狀況，為提供及滿足具有特定調查數據需求之單位或個人使用；因此，本中心將十年
-                來所累積之調查資料，建置「台灣寬頻網路統計查詢系統」以有效累積並統合歷年來本中心所執行之「台灣寬頻網路調查」之統計數據，以系統化之查詢服務，提供有特定查詢需求
-                之社會大眾及研究單位使用。
-              </p>
-            </div>
-            <div class="col-md-6 py-md-3 lineHeight text-center">
-              <form>
-                <div class="form-group">
-                  <label for="EmailInput"></label>
-                  <input type="email" class="form-control" id="EmailInput" aria-describedby="emailHelp" placeholder="請輸入Email">
-                  <small id="emailHelp" class="form-text text-muted">登入帳號為 Email</small>
-                </div>
-                <div class="form-group">
-                  <label for="EmailInput"></label>
-                  <input type="password" class="form-control" id="PasswordInput" placeholder="請輸入密碼">
-                  <small id="passwordHelp" class="form-text text-muted">忘記密碼</small>
-                </div>
-                <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="check">
-                  <label class="form-check-label" for="check">Take me out</label>
-                </div>
-                <button type="submit" class="btn btn-primary">註冊</button>
-                <button type="submit" class="btn btn-success">登入</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- end of Download modal -->
-
 
 <!-- Opening Banner -->
 <div class="container-fluid" id="goTop">
-  <div class="row justify-content-center wrapperXL text-white" id="opening">
-    <div class="col-10 col-md-7">
-      <p class="display-4 mt-5 text-center">
-        基礎網路架構比較
+  <div class="row justify-content-center wrapperCards text-white" id="opening">
+    <div class="col-10 col-md-7 wrapperL">
+      <p class="display-4 text-center">
+        整體網路使用現況
       </p>
-    </div>
-    <div class="w-100"></div>
-    <div class="col-md-6">
-      <p class="h5 lineHeight">
-
-      </p>
-    </div>
-    <div class="w-100"></div>
-    <div class="col text-center wrapperM">
-      <a href="#sec-1"><i class="fas fa-chevron-circle-down fa-2x text-white hoverLarge"></i></a>
     </div>
   </div>
 </div>
-
 <!-- end of Opening Banner -->
 
-
-<!-- section 1 -->
-<div class="container" id="sec-1">
-  <div class="row justify-content-center wrapperL">
-    <div class="col-md-10">
-      <p class="h1 mt-5 titleColor">
-        各國網域／IPv4／IPv6 統計
+<div class="container-fluid" style="background-color:#294377">
+  <div class="row justify-content-center text-center wrapperL text-white" >
+    <div class="col-md-8">
+      <p class="h1">
+        國內發展現況介紹
       </p>
-      <div class="my-3">
-        <p class="h6 lineHeight">
-          亞洲各國的網域註冊數量與 IP 位址皆以中國最多，台灣 IPv6 全球排名第 19 名，IPv6 使用比例為 28.8%，今年數量來到 2,463 個 /32 IPv6 位址，比去年成長 4%。
+      <div class="my-4">
+        <p class="h5 lineHeight pb-5">
+          12歲以上個人曾經上網率達八成二，推估約有1738萬人。
         </p>
       </div>
     </div>
   </div>
-  <div class="row justify-content-center wrapper">
-    <div class="col-md-10">
-      <div class="mb-3">
-        <ul class="nav nav-pills nav-justified">
-          <li class="nav-item linkColor">
-            <div class="nav-link border active border-secondary" href="#globalNumberOfIPv4" data-toggle="tab">IPv4 數量</div>
-          </li>
-          <li class="nav-item linkColor">
-            <div class="nav-link border border-secondary border-left-0" href="#globalNumberOfIPv6" data-toggle="tab">IPv6 數量</div>
-          </li>
-        </ul>
+</div>
+<!-- section 1 -->
+<div class="container" id="sec-1">
+  <!--div class="row justify-content-center wrapperL">
+    <div class="col-md-10 text-center">
+      <p class="h1 mt-5 titleColor">
+        國內發展現況介紹
+      </p>
+      <div class="my-3">
+        <p class="h6 lineHeight">
+          12歲以上個人曾經上網率達八成二，推估約有1738萬人。
+        </p>
       </div>
-      <div class="row justify-content-center tab-content">
-        <div class="col-12 tab-pane active" id="globalNumberOfIPv4">
-          <canvas id="chart_globalNumberOfIPv4" style="height:150vh; width:100vw"></canvas>
-          <script>
-            var ctx = document.getElementById('chart_globalNumberOfIPv4').getContext('2d');
-            var mixedChart = new Chart(ctx, {
-              type: 'horizontalBar',
-              data: {
-                labels: ['台灣', '中國', '日本', '南韓', '印度', '印尼', '越南', '新加坡', '泰國', '馬來西亞', '菲律賓', '美國', '英國', '澳洲'],
-                datasets: [
-                    {
-                      label: 'IPv4 數量',
-                      data: [3564,	34040,	20408,	11246,	4096,	1845,	1595,	1278,	911,	661,	557, 160420,	12175,	4857],
-                      backgroundColor: ['#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#FFC000','#FFC000','#FFC000'],
-                      fill: false,
-                      borderWidth: 1,
-                      datalabels: {
-                        display: 'auto',
-                        align:'end',
-                        offset: 15,
-                        formatter: function(value, context) {
-                          return Math.abs(value) + '萬個';
-                        }
-                      },
-                    },
-                  ],
-              },
-              options: {
-                animation: {
-                  duration: 0
-                },
-                legend: {
-                  display: false,
-                },
-                tooltips: {
-                  callbacks: {
-                    label: function(tooltipItem, data) {
-                      var label = data.datasets[tooltipItem.datasetIndex].label || '';
-                      if (label) {
-                          label += ': ';
-                      }
-                      label += Math.abs(tooltipItem.xLabel * 100) / 100;
-                      return label + '萬個';
-                    }
-                  }
-                },
-                responsive: true,
-                scales: {
-                  xAxes: [{
-                    ticks: {
-                      beginAtZero: true,
-                    },
-                    display: false,
-                    gridLines: {
-                      display: false
-                    }
-                  }],
-                  yAxes: [{
-                    gridLines: {
-                      display: false,
-                    },
-                  },],
-                },
-               elements: {
-                 line: {
-                   tension: 0,
-                 }
-               },
-             }
-            });
-          </script>
-          <ul class="list-unstyled wrapper extraInfo text-center">
-            <li>
-              資料來源：<a href="http://v6directory.twnic.net.tw/ipstats/statsipv4.php" target="_blank">資料來源：TWNIC(2018/11)</a>
-            </li>
-          </ul>
+    </div>
+  </div-->
+  <div class="row justify-content-center wrapper text-center text-dark">
+    <div class="col-md-10 wrapper">
+      <p class="h3 text-center py-3">
+        個人網路使用習慣概況
+      </p>
+    </div>
+    <div class="col-5 col-md-3 card my-2 py-5 border border-secondary border-right-0">
+      <p class="h5">
+        個人上網
+      </p>
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <img class="img-fluid py-3" src="img/190107_icon/190104_button-28.png">
         </div>
-        <div class="col-12 tab-pane fade in" id="globalNumberOfIPv6">
-          <canvas id="chart_globalNumberOfIPv6" style="height:150vh; width:100vw"></canvas>
-          <script>
-            var ctx = document.getElementById('chart_globalNumberOfIPv6').getContext('2d');
-            var mixedChart = new Chart(ctx, {
-              type: 'horizontalBar',
-              data: {
-                labels: ['台灣', '中國', '印度', '日本', '南韓', '越南', '印尼', '馬來西亞', '新加坡',	'菲律賓', '泰國', '美國', '英國', '澳洲'],
-                datasets: [
-                    {
-                      label: 'IPv6 數量',
-                      data: [2463,	28766,	9997,	5256,	1626,	1267,	365,	135,	107,	99,	50,	45481,	18912,	9012],
-                      backgroundColor: ['#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#FFC000','#FFC000','#FFC000'],
-                      fill: false,
-                      borderWidth: 1,
-                      datalabels: {
-                        display: 'auto',
-                        align:'end',
-                        offset: 15,
-                        formatter: function(value, context) {
-                          return Math.abs(value) + ' /32(2^96)個';
-                        }
-                      },
-                    },
-                  ],
-              },
-              options: {
-                animation: {
-                  duration: 0
-                },
-                legend: {
-                  display: false,
-                },
-                tooltips: {
-                  callbacks: {
-                    label: function(tooltipItem, data) {
-                      var label = data.datasets[tooltipItem.datasetIndex].label || '';
-                      if (label) {
-                          label += ': ';
-                      }
-                      label += Math.abs(tooltipItem.xLabel * 100) / 100;
-                      return label + ' /32(2^96)個';
-                    }
-                  }
-                },
-                responsive: true,
-                scales: {
-                  xAxes: [{
-                    ticks: {
-                      beginAtZero: true,
-                    },
-                    display: false,
-                    gridLines: {
-                      display: false
-                    }
-                  }],
-                  yAxes: [{
-                    gridLines: {
-                      display: false,
-                    },
-                  },],
-                },
-               elements: {
-                 line: {
-                   tension: 0,
-                 }
-               },
-             }
-            });
-          </script>
-          <ul class="list-unstyled wrapper extraInfo text-center">
-            <li>
-              資料來源：<a href="http://v6directory.twnic.net.tw/ipstats/statsipv6.php" target="_blank">資料來源：TWNIC(2018/11)</a>
-            </li>
-          </ul>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col ml-4">
+          <p class="my-1">
+            上網率
+          </p>
+          <p class="h5">
+            82.1%
+          </p>
+        </div>
+        <div class="col mr-4">
+          <p class="my-1">
+            平均每日上網
+          </p>
+          <p class="h5">
+            4.3 小時
+          </p>
         </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- end of section 1 -->
-
-
-<!-- section 2 -->
-<div class="container" id="sec-2">
-  <div class="row justify-content-center wrapperL" >
-    <div class="col-md-10">
-      <p class="h1 mt-5 titleColor">
-        台灣 IPv6／ISP 數量統計
+    <div class="col-5 col-md-3 card my-2 py-5 border border-secondary border-right-0">
+      <p class="h5">
+        最常連網方式
       </p>
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <img class="img-fluid py-3" src="img/190107_icon/190104_button-29.png" alt="">
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col ml-4">
+          <p class="my-1">
+            行動電信網路
+          </p>
+          <p class="h5">
+            65.9%
+          </p>
+        </div>
+        <div class="col mr-4">
+          <p class="my-1">
+            ADSL
+          </p>
+          <p class="h5">
+            24％
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-5 col-md-3 card my-2 py-5 border border-secondary">
+      <p class="h5">
+        最常使用裝置
+      </p>
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <img class="img-fluid py-3" src="img/190107_icon/190104_button-30.png" alt="">
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col ml-4">
+          <p class="my-1">
+            手機
+          </p>
+          <p class="h5">
+            96.8%
+          </p>
+        </div>
+        <div class="col mr-4">
+          <p class="my-1">
+            桌機/筆電
+          </p>
+          <p class="h5">
+            66.4%
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="w-100"></div>
+    <div class="col-12 wrapper extraInfo text-center">
+      <ul class="list-unstyled">
+        <li>
+          此頁上網率皆為12歲以上民眾之統計數字
+        </li>
+        <li>
+          資料來源：本研究電訪(2018)
+        </li>
+      </ul>
     </div>
   </div>
   <div class="row justify-content-center wrapperM">
-    <div class="col-md-10">
+    <div class="col-md-10 text-center">
+      <p class="h3">
+        網民輪廓
+      </p>
+      <p class="h6 mt-3">
+        不同性別之上網率差異小，12歲至49歲上網率皆超過九成
+      </p>
+    </div>
+    <div class="col-md-10 py-5">
+      <canvas id="chart_perProfile" style="height:100vh; width:100vw"></canvas>
+      <script type="text/javascript">
+        var ctx = document.getElementById('chart_perProfile').getContext('2d');
+        var chart = new Chart(ctx, {
+          type: 'line',
+          data: {
+              labels: ["", "總數", "", "男性", "女性", "", "12-19歲", "20-29歲", "30-39歲", "40-49歲", "50-59歲", "60歲以上", "", "北部", "中部", "南部", "東部", "金馬", ""],
+              datasets: [{
+                  label: "上網",
+                  borderColor: 'rgba(51, 102, 204, 1)',
+                  backgroundColor: 'rgba(51, 102, 204, 0)',
+                  pointBackgroundColor:'rgba(51, 102, 204, 1)',
+                  pointBorderWidth: 4,
+                  data: [,82.1, , 83.5, 80.7, , 96.0, 98.9, 98.3, 96.3, 84.9, 41.6, , 86.1, 82.2, 75.8, 76.1, 78.1,],
+                  fill:false,
+                  spanGaps: false,
+                  /*hidden:true,*/
+                  datalabels: {
+                    align: 'top',
+                    display: 'auto',
+                    /*color:'rgba(51, 102, 204, 1)',*/
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+              }, {
+                  label: "無線上網",
+                  borderColor: 'rgba(125, 204, 74, 1)',
+                  backgroundColor: 'rgba(125, 204, 74, 0)',
+                  pointBackgroundColor:'rgba(125, 204, 74, 1)',
+                  pointBorderWidth: 4,
+                  data: [,81.2, , 82.0, 80.4, , 94.3, 98.9, 98.3, 95.0, 83.9, 40.0, , 85.0, 81.4, 74.9, 76.1, 77.5,],
+                  fill: false,
+                  spanGaps: false,
+                  datalabels: {
+                    display:false,
+                  }
+              },{
+                  label: "行動上網",
+                  borderColor: 'rgba(255, 192, 0, 1)',
+                  backgroundColor: 'rgba(255, 192, 0, 0)',
+                  pointBackgroundColor:'rgba(255, 192, 0, 1)',
+                  pointBorderWidth: 4,
+                  data: [,77.3, , 78.6, 76.1, , 83.4, 96.9, 96.5, 93.4, 78.7, 35.7, , 81.5, 77.1, 71.0, 73.7, 65.1,],
+                  fill:false,
+                  spanGaps: false,
+                  datalabels: {
+                    align: 'bottom',
+                    display: 'auto',
+                    /*color:'rgba(255, 192, 0, 0)',*/
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+              },{
+                  label: "無線區域",
+                  borderColor: 'rgba(239, 84, 37, 1)',
+                  backgroundColor: 'rgba(239, 84, 37, 0)',
+                  pointBackgroundColor:'rgba(239, 84, 37, 1)',
+                  pointBorderWidth: 4,
+                  data: [,37.0, , 37.6, 36.5, , 53.2, 54.1, 48.0, 41.4, 31.7, 12.6, , 41.5, 34.9, 31.9, 30.5, 43.3,],
+                  fill:false,
+                  spanGaps: false,
+                  datalabels: {
+                    align: 'top',
+                    display: 'auto',
+                    /*color: 'rgba(239, 84, 37, 0)',*/
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+              },]
+          },
+          options: {
+            responsive: true,
+            animation: {
+              duration: 0
+            },
+            tooltips: {
+              mode:'index',
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            legend: {
+              labels: {
+                usePointStyle: true,
+              }
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [{
+                gridLines: {
+                  display: false,
+                  drawBorder: false
+                },
+                ticks: {
+                  beginAtZero: true,
+                  stepValue: 12,
+                  max: 120,
+                  display: false,
+                }
+              }]
+            },
+            elements: {
+              line: {
+                tension: 0,
+              }
+            },
+          }
+        });
+      </script>
+      <div class="row">
+        <div class="col-12 extraInfo text-center wrapper">
+          <ul class="list-unstyled">
+            <li>
+              資料來源：本研究電訪(2018)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center wrapper">
+    <div class="col-md-10 text-center">
+      <p class="h3">
+        近半年使用行動/無線區域網路上網
+      </p>
+      <p class="h6 mt-3">
+        12歲以上近半年使用行動上網人數增加較多，而無線區域網路使用率則下降一成五。
+      </p>
+    </div>
+    <div class="col-md-10 py-5">
       <div class="">
         <ul class="nav nav-pills nav-justified">
           <li class="nav-item">
-            <div class="nav-link active border border-secondary" href="#numberOfIPv6" data-toggle="tab">IPv6 數量</div>
+            <div class="nav-link active border border-secondary" href="#mobileNet" data-toggle="tab">行動上網</div>
           </li>
           <li class="nav-item">
-            <div class="nav-link border border-secondary border-left-0" href="#userScaleOfIPv6" data-toggle="tab">ISP IPv6使用者比例</div>
+            <div class="nav-link border border-secondary border-left-0" href="#wirelessLAN" data-toggle="tab">無線區域上網</div>
           </li>
         </ul>
       </div>
       <div class="row justify-content-center tab-content my-4">
-        <div class="col-12 tab-pane active" id="numberOfIPv6">
-          <div class="text-right text-danger bg-white">
-            2018-2017年<br> +4.1%
-          </div>
-          <canvas id="chart_numberOfIPv6" style="height:60vh; width:100vw"></canvas>
+        <div class="col-12 tab-pane active" id="mobileNet">
+          <canvas id="chart_perConnectedMobileNet" style="height:80vh; width:100vw"></canvas>
           <script>
-            var ctx = document.getElementById('chart_numberOfIPv6').getContext('2d');
+            var ctx = document.getElementById('chart_perConnectedMobileNet').getContext('2d');
             var mixedChart = new Chart(ctx, {
-              type: 'line',
+              type: 'bar',
               data: {
-                labels: ['','2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', ''],
                 datasets: [
-                    {
-                      label: '台灣IPv6數量',
+                  {
+                      label: '行動曾上網率',
+                      data: [7.8, 10.9, 13.1, 25.9, 51.1, 47.3, 60.1, 67.3, 69.3, 76.9],
+                      type: 'line',
+                      yAxisID: 'y-axis-2',
                       fill: false,
-                      data: [,2311, 2322, 2328, 2336,2345, 2355, 2359, 2359, 2365, 2463,],
-                      backgroundColor: '#3366CC',
                       borderColor: '#3366CC',
-                      fill: false,
-                      borderWidth: 2,
+                      backgroundColor: 'rgba(51, 102, 204, 0)',
+                      pointBackgroundColor: '#3366CC',
+                      pointBorderColor: '#3366CC',
+                      pointBorderWidth: 2,
                       datalabels: {
-                        display: 'auto',
                         align: 'top',
                         formatter: function(value, context) {
-                          return Math.round(value) + '個';
+                          return Math.abs(value) + '%';
+                        }
+                      }
+                    },
+                    {
+                      label: '行動上網人數',
+                      data: [155, 220, 266, 535, 855, 988, 1261, 1416, 1462, 1627],
+                      yAxisID: 'y-axis-1',
+                      backgroundColor: '#7DCC4A',
+                      hoverBackgroundColor: '#8bd15f',
+                      borderColor:'#7DCC4A',
+                      borderWidth: 1,
+                      datalabels: {
+                        formatter: function(value, context) {
+                          return Math.round(value) + '萬人';
                         }
                       }
                     },
                   ],
+                labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018',]
               },
               options: {
                 animation: {
                   duration: 0
                 },
                 legend: {
-                  display: false,
+                  labels: {
+                    usePointStyle: true,
+                  }
                 },
                 tooltips: {
-                  callbacks: {
-                    label: function(tooltipItem, data) {
-                      var label = data.datasets[tooltipItem.datasetIndex].label || '';
-
-                      if (label) {
-                          label += ': ';
-                      }
-                      label += Math.round(tooltipItem.yLabel * 100) / 100;
-                      return label + '個';
-                    }
-                  }
+                  mode:'index',
                 },
                 responsive: true,
                 scales: {
@@ -438,9 +472,21 @@
                   yAxes: [
                     {
                       display: false,
+                      type: 'linear',
+                      position: 'left',
+                      id: 'y-axis-1',
                       ticks: {
-                        /*beginAtZero: true,*/
+                        beginAtZero: true,
                       },
+                      /*ticks: {
+                        callback: function (value, index, values){
+                          return value + '萬人';
+                        }
+                      },*/
+                      /*scaleLabel: {
+                        display:true,
+                        labelString: '萬人',
+                      },*/
                       gridLines: {
                         display: false,
                         drawOnChartArea: false,
@@ -477,78 +523,628 @@
               });
           </script>
         </div>
-        <div class="col-12 tab-pane fade in" id="userScaleOfIPv6">
-          <!-- User Scale Of IPv6 table -->
-            <table class="table bg-white">
-              <thead class="thead-light">
-                <tr>
-                  <th class="align-middle" style=" min-width: 10vw;">類型</th>
-                  <th class="align-middle">業者</th>
-                  <th class="align-middle">佔比</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th class="small align-middle" rowspan="5" scope="row">行動網路</th>
-                  <td class="small align-middle">中華電信 CHT Mobile </td>
-                  <td class="small align-middle">70.08%</td>
-                </tr>
-                <tr>
-                  <td class="small align-middle">遠傳電信 FETNet</td>
-                  <td class="small align-middle">35.15%</td>
+        <div class="col-12 tab-pane fade in" id="wirelessLAN">
+          <canvas id="chart_perConnectedWirelessLAN" style="height:80vh; width:100vw"></canvas>
+          <script>
+            var ctx = document.getElementById('chart_perConnectedWirelessLAN').getContext('2d');
+            var mixedChart = new Chart(ctx, {
+              type: 'bar',
+              data: {
+                datasets: [
+                  {
+                      label: '無線區域曾上網率',
+                      data: [20.9, 22.7, 24.0, 35.7, 38.4, 40.3, 46.3, 49.0, 51.6, 36.9],
+                      // Changes this dataset to become a line
+                      type: 'line',
+                      yAxisID: 'y-axis-2',
+                      fill: false,
+                      borderColor: '#3366CC',
+                      backgroundColor: 'rgba(51, 102, 204, 0)',
+                      pointBackgroundColor: '#3366CC',
+                      pointBorderColor: '#3366CC',
+                      pointBorderWidth: 1,
+                      datalabels: {
+                        align: 'top',
+                        formatter: function(value, context) {
+                          return Math.abs(value) + '%';
+                        }
+                      }
+                    },
+                    {
+                      label: '無線區域上網人數',
+                      data: [418, 460, 487, 736, 797, 841, 972, 1031, 1089, 781],
+                      yAxisID: 'y-axis-1',
+                      backgroundColor: '#7DCC4A',
+                      borderColor:'#7DCC4A',
+                      borderWidth: 1,
+                      datalabels: {
+                        formatter: function(value, context) {
+                          return Math.round(value) + '萬人';
+                        }
+                      }
+                    }
+                  ],
+                labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018',]
+              },
+              options: {
+                animation: {
+                  duration: 0
+                },
+                legend: {
+                  labels: {
+                    usePointStyle: true,
+                  }
+                },
+                tooltips: {
+                  mode:'index',
+                },
+                responsive: true,
+                scales: {
+                  xAxes: [{
+                    gridLines: {
+                      display: false
+                    }
+                  }],
+                  yAxes: [
+                    {
+                      display: false,
+                      type: 'linear',
+                      position: 'left',
+                      id: 'y-axis-1',
+                      ticks: {
+                        beginAtZero: true,
+                      },
 
-                </tr>
-                <tr>
-                  <td class="small align-middle">台灣大哥大 Taiwan Mobile</td>
-                  <td class="small align-middle">22.53%</td>
-                </tr>
-                <tr>
-                  <td class="small align-middle">亞太電信 AMBIT</td>
-                  <td class="small align-middle">2.43%</td>
-                </tr>
-                <tr>
-                  <td class="small align-middle">台灣之星 VIBO</td>
-                  <td class="small align-middle">0.08%</td>
+                      gridLines: {
+                        display: false,
+                        drawOnChartArea: false,
+                    },
+                  }, {
+                    type: 'linear',
+                    display: false,
+                    position: 'right',
+                    id: 'y-axis-2',
+                    ticks: {
+                      beginAtZero: true,
+                      stepValue: 10,
+                      max: 100,
+                    },
+                    scaleLabel: {
+                      display:false,
+                      labelString: '%',
+                    },
+                    gridLines: {
+                      display: false,
+                      drawOnChartArea: false,
+                    },
+                  }],
+                },
+               elements: {
+                 line: {
+                   tension: 0,
+                 }
+               },
+              plugins: {
 
-                </tr>
-                <tr>
-                  <th class="small align-middle border-bottom" rowspan="4" scope="row">固網電信</th>
-                  <td class="small align-middle">中華電信 CHT Fixed Network </td>
-                  <td class="small align-middle">17.51%</td>
-                </tr>
-                <tr>
-                  <td class="small align-middle">台灣固網 TFN</td>
-                  <td class="small align-middle">0.46%</td>
-                </tr>
-                <tr>
-                  <td class="small align-middle">新世紀資通 Seednet</td>
-                  <td class="small align-middle">0.3%</td>
-                </tr>
-                <tr>
-                  <td class="small align-middle border-bottom">亞太電信 APOL</td>
-                  <td class="small align-middle border-bottom">0.11%</td>
-                </tr>
-              </tbody>
-            </table>
-          <!-- end of Scale Of IPv6 table -->
+               }
+             }
+              });
+          </script>
         </div>
-        <div class="col-12 extraInfo wrapper text-center">
+        <div class="col-12 extraInfo text-center wrapper">
           <ul class="list-unstyled">
             <li>
-              資料來源：TWNIC統計至2018年11月份
+              N=3088
+            </li>
+            <li>
+              資料來源：本研究電訪(2018)
             </li>
           </ul>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="row justify-content-center wrapper text-center text-dark mb-5 py-5">
+    <div class="col-12">
+      <p class="h3 text-center py-md-3">
+        家戶上網
+      </p>
+    </div>
+    <div class="col-5 col-md-3 card py-5 border border-secondary">
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <img class="img-fluid py-md-3" src="img/190107_icon/190104_button-31.png">
+        </div>
+      </div>
+      <p class="">
+        上網率
+      </p>
+      <p class="h5">
+        80.9%
+      </p>
+    </div>
+    <div class="col-5 col-md-3 card py-5 border border-secondary border-left-0">
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <img class="img-fluid py-md-3" src="img/190107_icon/190104_button-32.png">
+        </div>
+      </div>
+      <p class="">
+        使用寬頻上網
+      </p>
+      <p class="h5">
+        99.9%
+      </p>
+    </div>
+    <div class="col-5 col-md-3 card py-5 border border-secondary border-right-0">
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <img class="img-fluid py-md-3" src="img/190107_icon/190104_button-33.png">
+        </div>
+      </div>
+      <p class="">
+        平均每月花費
+      </p>
+      <p class="h5">
+        855元
+      </p>
+    </div>
+    <div class="col-5 col-md-3 card py-5 border border-secondary">
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <img class="img-fluid py-md-3" src="img/190107_icon/190104_button-34.png">
+        </div>
+      </div>
+      <p class="">
+        平均滿意度
+      </p>
+      <p class="h5">
+        3.5分
+      </p>
+    </div>
+    <div class="w-100"></div>
+    <div class="col-12 extraInfo text-center wrapper">
+      <ul class="list-unstyled">
+        <li>
+          平均花費僅包含家中使用寬頻上網者
+        </li>
+        <li>
+          資料來源：本研究電訪(2018)
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- end of section 1 -->
+
+<!-- section 2 -->
+<div class="container-fluid" style="background-color:#294377">
+  <div class="row justify-content-center text-center wrapperXL text-white" >
+    <div class="col-md-8">
+      <p class="h1 mt-5">
+        國際發展現況比較
+      </p>
+      <div class="my-4">
+        <p class="h5 lineHeight mb-5">
+          台灣上網率位居亞洲國家中第三名，僅次於日本與南韓。
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="container" id="sec-2">
+  <!--div class="row justify-content-center wrapperL">
+    <hr class="mb-5">
+    <div class="col-md-10 text-center">
+      <p class="h1 mt-5 titleColor">
+        國際發展現況比較
+      </p>
+      <div class="my-3">
+        <p class="h6 lineHeight">
+          台灣上網率位居亞洲國家中第三名，僅次於日本與南韓。
+        </p>
+      </div>
+    </div>
+  </div-->
+  <div class="row justify-content-center wrapper">
+    <div class="col-md-10 text-center wrapper">
+      <p class="h3">
+        全球上網率比較
+      </p>
+    </div>
+    <div class="col-md-10 py-5">
+      <canvas id="chart_globalConnectedRate" style="height:120vh; width:100vw"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_globalConnectedRate').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'horizontalBar',
+          data: {
+            labels: ['台灣', '日本', '南韓', '新加坡', '泰國', '馬來西亞', '越南', '菲律賓', '中國', '印尼', '印度', '美國', '英國', '澳洲'],
+            datasets: [
+                {
+                  label: '上網率',
+                  data: [87.9, 93.3,	92.6,	83.6,	82.4,	78.3,	66.3,	62.9,	54.6,	53.7,	34.1,	95.6,	94.7,	87.8],
+                  backgroundColor: ['#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#FFC000','#FFC000','#FFC000',],
+                  /*borderColor: '#7DCC4A',*/
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  },
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.xLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            responsive: true,
+            scales: {
+              xAxes: [{
+                ticks: {
+                  beginAtZero: true,
+                },
+                display: false,
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [{
+                gridLines: {
+                  display: false,
+                },
+              },],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+      <div class="row">
+        <div class="col-12 extraInfo text-center wrapper">
+          <ul class="list-unstyled">
+            <li>
+              資料來源：<a href="https://www.internetworldstats.com/stats3.htm#asia" target="_blank">Internet World Stats(2017)</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center wrapper">
+    <div class="col-md-10 text-center">
+      <p class="h3">
+        各國網路瀏覽分析
+      </p>
+      <p class="h6 mt-3">
+        根據Comscore MMX截至2018年10月份數據，台灣人口數雖少，但平均每人瀏覽頁數卻居亞洲之冠。
+      </p>
+    </div>
+    <div class="col-md-10 py-5">
+      <!-- Comscore MMX table -->
+      <table class="table bg-white">
+        <thead class="thead-light">
+          <tr>
+            <th class="" style=" min-width: 7vw;"></th>
+            <th class="small" style=" max-width: 7vw;">Total UV<br>(000)</th>
+            <th class="small">Total Views<br>(MM)</th>
+            <th class="small d-none d-md-block">Total Visits<br>(000)</th>
+            <th class="small ">Average Views<br>per Visit</th>
+            <th class="small d-none d-md-block">Average Views<br>per Visitor</th>
+            <th class="small">Total Minutes<br>(MM)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="small align-middle">台灣</td>
+            <td class="small align-middle">16,532</td>
+            <td class="small align-middle">35,102</td>
+            <td class="small align-middle d-none d-md-block">2,170,146</td>
+            <td class="small align-middle">16.2</td>
+            <td class="small align-middle d-none d-md-block">2,123</td>
+            <td class="small align-middle">36,369</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">中國</td>
+            <td class="small align-middle">871,522</td>
+            <td class="small align-middle">918,857</td>
+            <td class="small align-middle d-none d-md-block">27,840,677</td>
+            <td class="small align-middle">33.0</td>
+            <td class="small align-middle d-none d-md-block">1,054</td>
+            <td class="small align-middle">3,208,950</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">印度</td>
+            <td class="small align-middle">273,288</td>
+            <td class="small align-middle">224,147</td>
+            <td class="small align-middle d-none d-md-block">27,154,589</td>
+            <td class="small align-middle">8.3</td>
+            <td class="small align-middle d-none d-md-block">820</td>
+            <td class="small align-middle">889,666</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">印尼</td>
+            <td class="small align-middle">89,085</td>
+            <td class="small align-middle">47,455</td>
+            <td class="small align-middle d-none d-md-block">2,891,046</td>
+            <td class="small align-middle">16.4</td>
+            <td class="small align-middle d-none d-md-block">533</td>
+            <td class="small align-middle">344,471</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">日本</td>
+            <td class="small align-middle">81,714</td>
+            <td class="small align-middle">129,595</td>
+            <td class="small align-middle d-none d-md-block">3,655,945</td>
+            <td class="small align-middle">35.4</td>
+            <td class="small align-middle d-none d-md-block">1,586</td>
+            <td class="small align-middle">115,862</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">越南</td>
+            <td class="small align-middle">45,680</td>
+            <td class="small align-middle">39,179</td>
+            <td class="small align-middle d-none d-md-block">2,278,515</td>
+            <td class="small align-middle">17.2</td>
+            <td class="small align-middle d-none d-md-block">858</td>
+            <td class="small align-middle">47,551</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">馬來西亞</td>
+            <td class="small align-middle">19,940</td>
+            <td class="small align-middle">23,185</td>
+            <td class="small align-middle d-none d-md-block">1,268,714</td>
+            <td class="small align-middle">18.3</td>
+            <td class="small align-middle d-none d-md-block">1,163</td>
+            <td class="small align-middle">90,630</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">新加坡</td>
+            <td class="small align-middle">4,926</td>
+            <td class="small align-middle">5,888</td>
+            <td class="small align-middle d-none d-md-block">421,768</td>
+            <td class="small align-middle">14.0</td>
+            <td class="small align-middle d-none d-md-block">1,195</td>
+            <td class="small align-middle">8,213</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">美國</td>
+            <td class="small align-middle">256,264</td>
+            <td class="small align-middle">716,661</td>
+            <td class="small align-middle d-none d-md-block">49,156,381</td>
+            <td class="small align-middle">14.6</td>
+            <td class="small align-middle d-none d-md-block">2,797</td>
+            <td class="small align-middle">1,751,664</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">英國</td>
+            <td class="small align-middle">48,988</td>
+            <td class="small align-middle">130,835</td>
+            <td class="small align-middle d-none d-md-block">7,357,075</td>
+            <td class="small align-middle">17.8</td>
+            <td class="small align-middle d-none d-md-block">2,671</td>
+            <td class="small align-middle">266,450</td>
+          </tr>
+          <tr>
+            <td class="small align-middle">澳洲</td>
+            <td class="small align-middle">20,614</td>
+            <td class="small align-middle">24,814</td>
+            <td class="small align-middle d-none d-md-block">1,585,315</td>
+            <td class="small align-middle">15.7</td>
+            <td class="small align-middle d-none d-md-block">1,204</td>
+            <td class="small align-middle">39,268</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- end of Comscore MMX table -->
+      <div class="row">
+        <div class="col-12 extraInfo text-center">
+          <ul class="list-unstyled">
+            <li>
+              資料來源：Comscore MMX Multi-Platform, Multi-Country Key Measures, Total Audience, October 2018
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center wrapper">
+    <div class="col-md-10">
+      <p class="h3 text-center">
+        各國上網裝置比較
+      </p>
+      <p class="h6 mt-3 lineHeight">
+        綜合來看，手機已然成為各國網民主要上網使用裝置。其中開發中國家多以手機為主，已開發國家則是桌機/筆電加上手機跨屏運用。台灣平均每人持有裝置數量在亞洲國家中僅次於南韓與新加坡。
+      </p>
+    </div>
+  </div>
+  <div class="row justify-content-center wrapper">
+    <div class="col-md-10">
+      <canvas id="chart_globalConnectedGadgets" style="height:400vh; width:100vw"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_globalConnectedGadgets').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'horizontalBar',
+          data: {
+            labels: ['台灣', '南韓', '泰國', '中國', '越南', '馬來西亞', '新加坡', '印尼', '日本', '菲律賓', '印度', '澳洲', '英國', '美國'],
+            datasets: [
+                {
+                  label: '手機',
+                  data: [92, 98,	98,	97,	97,	96,	95,	91,	91,	89,	88,	90,	92,	96],
+                  backgroundColor: '#7DCC4A',
+                  borderColor: '#7DCC4A',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    color: 'white',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  },
+                  xAxisID: 'x-axis-2',
+                },
+                {
+                  label: '桌機／筆電',
+                  data: [67,	71,	25,	53,	43,	41,	71,	22,	80,	38,	15,	77,	74,	84],
+                  backgroundColor: '#3366CC',
+                  borderColor: '#3366CC',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    color: 'white',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  },
+                  xAxisID: 'x-axis-2',
+
+                },
+                {
+                  label: '平板',
+                  data: [29,	19,	12,	20,	13,	18,	42,	8,	30,	29,	5,	46,	53,	56],
+                  backgroundColor: '#FFC000',
+                  borderColor: '#FFC000',
+                  fill: false,
+                  borderWidth: 1,
+                  datalabels: {
+                    color: 'white',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  },
+                  xAxisID: 'x-axis-2',
+                },
+                {
+                  label: '平均持有裝置數',
+                  data: [2.5,	2.8, 1.3,	2.2, 1.6,	2.1, 3.0, 1.1, 2.5,	1.8, 0.8,	3.2, 3.1,	3.4],
+                  backgroundColor: '#f29111',
+                  borderColor: '#f29111',
+                  datalabels: {
+                    color: 'white',
+                    display:'auto',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '個';
+                    }
+                  },
+                  xAxisID: 'x-axis-1',
+                },
+              ],
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            tooltips: {
+              /*callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.xLabel * 100) / 100;
+                  return label + '%';
+                }
+              }*/
+            },
+            responsive: true,
+            scales: {
+              xAxes: [
+                {
+                  display: false,
+                  type: 'linear',
+                  id: 'x-axis-1',
+                  ticks: {
+                    beginAtZero: true,
+                    stepValue: 10,
+                    max: 20,
+                  },
+                  scaleLabel: {
+                    display:false,
+                    labelString: '個',
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                  },
+                },
+                {
+                  type: 'linear',
+                  display: false,
+                  id: 'x-axis-2',
+                  ticks: {
+                    beginAtZero: true,
+                    stepValue: 10,
+                    max: 100,
+                  },
+                  scaleLabel: {
+                    display:false,
+                    labelString: '%',
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                  },
+              }],
+              yAxes: [{
+                gridLines: {
+                  display: false,
+                },
+              },],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+      <div class="row">
+        <div class="col-12 extraInfo text-center wrapper">
+          <ul class="list-unstyled">
+            <li>
+              台灣使用裝置占比與本調查差異不大，但有調查時間差異，裝置使用率請以本調查公布為主。
+            </li>
+            <li>
+              資料來源：<a href="http://www.consumerbarometer.com/" target="_blank">Consumer Barometer with Google(2017)</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
 <!-- end of section 2 -->
 
 
 
-<div class="wrapperL"></div>
 
+
+<div class="wrapperXL"></div>
 
 
 
