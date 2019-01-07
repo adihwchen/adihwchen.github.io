@@ -17,12 +17,13 @@ html {
           border-radius: 0 !important;
 }
 hr {
-  width: 80vw;
+  width: 60vw;
   height: 1px;
   border: 0;
   border-top: 1px solid #ccc;
   /*margin: 1em 0;*/
 }
+
 
 
 /* responsive font sizes */
@@ -31,7 +32,7 @@ body {
   font-family:"source-han-sans-traditional",sans-serif;
 }
 html {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 @include media-breakpoint-up(sm) {
@@ -162,6 +163,16 @@ html {
   background-color: #3a71b7;
 }
 
+.btn-Green {
+  color: #FFF;
+  background-color: #3a8759;
+}
+
+.btn-Green:hover {
+  color: #FFF;
+  background-color: #49ab71;
+}
+
 .btn-Submit {
   color: #FFF;
   background-color: #f29111;
@@ -195,38 +206,14 @@ html {
   padding-bottom: 5em;
 }
 .wrapperCarousel{
-  padding-top: 10em;
-  padding-bottom: 12em;
+  padding-top: 8em;
+  padding-bottom: 10em;
+}
+.wrapperCards {
+  padding-top: 7em;
+  padding-bottom: 7em;
 }
 
-
-/* Full Screen Menu */
-.navBar-fixed-top {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1042;
-}
-
-.overlay {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1041;
-  top: 0;
-  left: 0;
-  background-color: rgba(255,255,255, 0.9);
-  overflow-x: hidden;
-  transition: 0.5s;
-}
-
-.overlay-content {
-  position: relative;
-  top: 20vh;
-  width: 100%;
-  text-align: center;
-}
 
 /* hover effect */
 .hoverLarge {
@@ -250,13 +237,25 @@ html {
   .wrapper {
     padding-top: 1em;
   }
+  .wrapperM {
+    padding-top: 2em;
+  }
   .wrapperL {
-    padding-top: 5em;
+    padding-top: 3em;
+  }
+  .wrapperXL{
+    padding-top: 3em;
+    padding-bottom: 3em;
   }
   .wrapperCarousel{
-    padding-top: 3em;
-    padding-bottom: 4em;
+    padding-top: 6em;
+    padding-bottom: 8em;
   }
+  .wrapperCards {
+    padding-top: 5em;
+    padding-bottom: 5em;
+  }
+
 }
 
 /* Full Screen Menu */
@@ -266,7 +265,7 @@ html {
   right: 0;
   left: 0;
   z-index: 1042;
-  background-color: rgba(3, 78, 162, 1);
+  /*background-color: rgba(3, 78, 162, 1);*/
 }
 
 .overlay {
@@ -276,7 +275,7 @@ html {
   z-index: 1041;
   top: 0;
   right: 0;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(28, 28, 28, 0.85);
   overflow-x: hidden;
   transition: 0.5s;
 }
