@@ -77,79 +77,23 @@
 <body data-spy="scroll" data-target="#navScrollSpy">
 
   <!-- nav MENU bar -->
-  <header class="">
-    <nav id="navScrollSpy" class="navbar navbar-light navBar-fixed-top">
-      <a href="#goTop" class="navbar-brand text-white"><img src="img/twnicLogo.svg" alt="" style="height:40px;"></a>
-      <a class="nav-button mr-0" data-toggle="modal" data-target="#myNav" onclick="openNav()"><span id="nav-icon3"><span></span><span></span><span></span><span></span></span></a>
-    </nav>
-    <script>
-      $(document).ready(function(){
-        $('.nav-button').bind("click",function(){
-          $('body').toggleClass('nav-open');
-        });
-        $('.overlay').bind("click", function(){
-          $('body').toggleClass('nav-open');
-        });
-      });
-    </script>
-    <script>
-      function openNav() {
-        document.getElementById("myNav").style.width = "100%";
-      }
-      function closeNav() {
-        document.getElementById("myNav").style.width = "0";
-      }
-    </script>
-      <!-- fullscreen burger -->
-      <div id="myNav" class="overlay">
-        <div class="overlay-content">
-          <div class="container">
-            <div class="row justify-content-center">
-              <ul class="list-unstyled">
-                <li class="my-4 text-left ml-3">
-                  <a class="h5">國內外趨勢分析</a>
-                  <ul class="list-unstyled">
-                    <li>
-                      <a class="nav-link h6" href="TrendAnalysis_internetUsage.html" target="_blank" onclick="closeNav()" aria-label="close">網路使用行為比較</a>
-                    </li>
-                    <li>
-                      <a class="nav-link h6" href="TrendAnalysis_Infrastructure.html" target="_blank" onclick="closeNav()" aria-label="close">基礎網路架構比較</a>
-                    </li>
-                    <li>
-                      <a class="nav-link h6" href="TrendAnalysis_globalCompetitiveness.html" target="_blank" onclick="closeNav()" aria-label="close">全球競爭排名比較</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="my-4 text-left">
-                  <a class="nav-link h5" href="#" target="_blank" onclick="closeNav()" aria-label="close">台灣網路課題</a>
-                </li>
-                <li class="my-4 text-left ml-3">
-                  <a class="h5">四大策略方向</a>
-                  <ul class="list-unstyled">
-                    <li>
-                      <a class="nav-link h6" href="directionOne.html" target="_blank" onclick="closeNav()" aria-label="close">方向一：網路影音強化優勢</a>
-                    </li>
-                    <li>
-                      <a class="nav-link h6" href="directionTwo.html" target="_blank" onclick="closeNav()" aria-label="close">方向二：電子商務質量提升</a>
-                    </li>
-                    <li>
-                      <a class="nav-link h6" href="directionThree.html" target="_blank" onclick="closeNav()" aria-label="close">方向三：智慧家庭發展建構</a>
-                    </li>
-                    <li>
-                      <a class="nav-link h6" href="directionFour.html" target="_blank" onclick="closeNav()" aria-label="close">方向四：網路學習拓展活化</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="my-3 text-left">
-                  <a class="nav-link h5" href="internetprototype3.html" target="_blank" onclick="closeNav()" aria-label="close">回到主頁</a>
-                </li>
-              </ul>
-            </div>
-          </div>
+  <header class="fixed-top">
+    <nav id="navScrollSpy" class="navbar navbar-expand-lg navbar-dark bgNavBar">
+      <a href="#goTop" class="navbar-brand"><img src="img/twnicLogo.svg" alt="" style="height:40px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBurger" aria-controls="navBurger" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" ></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navBurger">
+          <ul class="navbar-nav">
+            <li class="nav-item border-white border-right">
+              <a class="linkColorWHT btn ml-lg-5" href="#" target="_blank">報告下載</a>
+            </li>
+            <li class="nav-item">
+              <div class="linkColorWHT btn" href="internetprototype3.html" target="_blank">回到主頁</div>
+            </li>
+          </ul>
         </div>
-      </div>
-
-      <!-- fullscreen burger -->
+    </nav>
   </header>
   <!-- end of nav MENU bar -->
 
