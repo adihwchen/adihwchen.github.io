@@ -109,13 +109,14 @@ html {
 .bgBlack {
   background-color: black;
 }
-
 .bgCards {
   background-color: #4E9AD1;
 }
-
 .bgNavBar {
   background-color:#294377;
+}
+.bgBars {
+  background-color:#3a71b7;
 }
 .bgAppliedGreen {
   background-color: #9ecc62;
@@ -220,8 +221,8 @@ html {
   padding-bottom: 10em;
 }
 .wrapperCards {
-  padding-top: 7em;
-  padding-bottom: 7em;
+  padding-top: 6em;
+  padding-bottom: 6em;
 }
 
 
