@@ -268,7 +268,6 @@
           <li class="nav-item">
             <div class="nav-link border border-secondary border-left-0" href="#numberOfIPv6" data-toggle="tab">IPv6 位址數量</div>
           </li>
-
           <li class="nav-item">
             <div class="nav-link border border-secondary border-left-0" href="#numberOfASN" data-toggle="tab">ASN 核發數量</div>
           </li>
@@ -276,7 +275,7 @@
       </div>
       <div class="row justify-content-center tab-content my-4">
         <div class="col-12 tab-pane active" id="numberOfIPv4">
-          <canvas id="chart_numberOfIPv4" style="height:80vh; width:100vw"></canvas>
+          <canvas id="chart_numberOfIPv4" style="height:60vh; width:100vw"></canvas>
           <script>
             var ctx = document.getElementById('chart_numberOfIPv4').getContext('2d');
             var mixedChart = new Chart(ctx, {
@@ -366,10 +365,10 @@
           </script>
         </div>
         <div class="col-12 tab-pane fade in" id="numberOfIPv6">
-          <div class="text-right text-danger bg-white">
+          <div class="text-right text-danger">
             2018-2017年<br>+4.1%
           </div>
-          <canvas id="chart_numberOfIPv6" style="height:80vh; width:100vw"></canvas>
+          <canvas id="chart_numberOfIPv6" style="height:60vh; width:100vw"></canvas>
           <script>
             var ctx = document.getElementById('chart_numberOfIPv6').getContext('2d');
             var mixedChart = new Chart(ctx, {
@@ -426,7 +425,7 @@
                     {
                       display: false,
                       ticks: {
-                        /*beginAtZero: true,*/
+                        beginAtZero: true,
                       },
                       gridLines: {
                         display: false,
@@ -440,7 +439,7 @@
                     ticks: {
                       beginAtZero: true,
                       stepValue: 10,
-                      max: 100,
+                      max: 130,
                     },
                     scaleLabel: {
                       display:false,
@@ -465,7 +464,7 @@
           </script>
         </div>
         <div class="col-12 tab-pane fade in" id="numberOfASN">
-          <canvas id="chart_numberOfASN" style="height:80vh; width:100vw"></canvas>
+          <canvas id="chart_numberOfASN" style="height:60vh; width:100vw"></canvas>
           <script>
             var ctx = document.getElementById('chart_numberOfASN').getContext('2d');
             var mixedChart = new Chart(ctx, {
