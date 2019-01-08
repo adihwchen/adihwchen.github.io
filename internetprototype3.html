@@ -115,11 +115,17 @@
         <span class="navbar-toggler-icon" ></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navBurger">
-        <ul class="navbar-nav">
-          <li class="nav-item border-white border-right">
-            <div class="linkColorWHT btn ml-lg-5" href="#downloadSignIn" data-toggle="modal" data-target="#downloadSignIn">報告下載</div>
+        <ul class="navbar-nav text-center">
+          <li class="nav-item border-white d-md-none">
+            <a class="linkColorWHT btn" href="#" target="_blank">報告下載</a>
           </li>
-          <li class="nav-item border-white border-right">
+          <li class="nav-item border-white border-right d-none d-md-block">
+            <a class="linkColorWHT btn" href="#" target="_blank">報告下載</a>
+          </li>
+          <li class="nav-item border-white d-md-none">
+            <div class="linkColorWHT btn" href="#researchMethodology" data-toggle="modal" data-target="#researchMethodology">調查方法概述</div>
+          </li>
+          <li class="nav-item border-white border-right d-none d-md-block">
             <div class="linkColorWHT btn" href="#researchMethodology" data-toggle="modal" data-target="#researchMethodology">調查方法概述</div>
           </li>
           <li class="nav-item">
@@ -341,14 +347,17 @@
 <!-- section 1 -->
 <div class="container-fluid" id="">
   <div class="row justify-content-center px-md-5 text-white wrapperXL" style="background-color:#294377">
-    <p class="text-center h1 d-md-none mb-3">
-      數位經濟重點機會
-    </p>
-    <div class="col mr-md-5 order-2 order-md-1">
+    <div class="col mr-md-5 order-3 order-md-1">
       <p class="display-4 d-none d-md-block">
         數位經濟重點機會
       </p>
       <div class="row justify-content-around">
+        <div class="col d-md-none mt-4">
+          <p class="text-center h1">
+            數位經濟重點機會
+          </p>
+        </div>
+        <div class="w-100"></div>
         <div class="col">
           <div class="my-3">
             <p class="h5 lineHeight font-weight-light">
@@ -357,41 +366,53 @@
           </div>
         </div>
         <div class="w-100"></div>
-        <div class="col-10 my-3 font-weight-light lineHeight">
+        <div class="col-10 my-2 font-weight-light lineHeight">
           <ul class="list-unstyled">
-            <li>
-              政府
+            <li class="my-3">
+              <p class="h5">
+                政府
+              </p>
               <ul>
                 <li>
-                  政府積極推動數位國家、智慧島嶼的國家願景
+                  政府積極推動數位國家、智慧島嶼的國家願景。
                 </li>
                 <li>
-                  以數位關懷、數位包容及數位機會公共政策降低數位落差
+                  以數位關懷、數位包容及數位機會公共政策降低數位落差。
                 </li>
                 <li>
-                  五加二產業創新與新南向政策皆以數位經濟驅動
+                  五加二產業創新與新南向政策皆以數位經濟驅動。
                 </li>
               </ul>
             </li>
-            <li>
-              產業
+            <li class="my-3">
+              <p class="h5">
+                產業
+              </p>
             </li>
             <li>
-              以數位關懷、數位包容及數位機會公共政策降低數位落差
+              <ul>
+                <li>
+                  ICT產業發達與硬體設計能力有助軟硬虛實整合優勢。
+                </li>
+                <li>
+                  產業結盟開創新商機。
+                </li>
+              </ul>
             </li>
-          </ul>
-        </div>
-        <div class="w-100"></div>
-        <div class="col-1 my-3">
-          <i class="fas fa-city fa-4x mr-2"></i>
-        </div>
-        <div class="col-10 my-3 font-weight-light lineHeight">
-          <ul class="list-unstyled">
-            <li>
-              ICT產業發達與硬體設計能力有助軟硬虛實整合優勢
+            <li class="my-3">
+              <p class="h5">
+                網民
+              </p>
             </li>
             <li>
-              產業結盟開創新商機
+              <ul>
+                <li>
+                  華語文市場廣大，發展語音控制商機。
+                </li>
+                <li>
+                  社群蓬勃的優勢，帶動智慧裝置、教育、內容等。
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -413,12 +434,12 @@
 <div class="container-fluid" id="">
   <div class="row justify-content-center px-md-5 wrapperXL">
     <div class="col-md-5 mr-md-5">
-      <p class="text-center h1 d-md-none mb-3 titleColor">
-        台灣網路應用課題
-      </p>
       <img class="img-fluid" src="img/190104_circle-02.png" alt="">
     </div>
     <div class="col ml-md-5">
+      <p class="text-center h1 d-md-none mb-3 titleColor mt-4">
+        台灣網路應用課題
+      </p>
       <p class="display-4 d-none d-md-block titleColor">
         台灣網路應用課題
       </p>
@@ -494,21 +515,23 @@
 </div>
 <!-- end of section 3 -->
 
-
 <!-- section 3-1 -->
 <div class="container-fluid" id="directionOne">
-  <div class="row justify-content-center px-md-5 wrapperXL" >
-    <div class="col-md-5 mr-md-5">
-      <p class="text-center h1 titleColor d-md-none mb-3">
-        方向一<br>網路影音優勢強化
-      </p>
+  <div class="row justify-content-center px-md-5 wrapperXL">
+    <div class="col-10 col-md-5 mr-md-5">
       <img class="img-fluid"src="img/footage/pickup/app-background-blur-545331.jpg" alt="">
     </div>
     <div class="col ml-md-5">
       <p class="display-4 titleColor d-none d-md-block">
         方向一：網路影音優勢強化
       </p>
-      <div class="row justify-content-around text-dark">
+      <div class="row justify-content-center text-dark">
+        <div class="col d-md-none mt-4">
+          <p class="text-center h1 titleColor">
+            方向一<br>網路影音優勢強化
+          </p>
+        </div>
+        <div class="w-100"></div>
         <div class="col">
           <div class="my-3">
             <p class="h5 lineHeight font-weight-light">
@@ -532,10 +555,7 @@
 <!-- section 3-2 -->
 <div class="container-fluid" id="directionTwo">
   <div class="row justify-content-center px-md-5 wrapperXL" style="background-color:#efefef">
-    <p class="text-center h1 titleColor d-md-none mb-3">
-      方向二<br>電子商務質量提升
-    </p>
-    <div class="col mr-md-5 order-2 order-md-1">
+    <div class="col-10 col-md-6 mr-md-5 order-3 order-md-1">
       <p class="display-4 titleColor d-none d-md-block">
         方向二：電子商務質量提升
       </p>
@@ -559,6 +579,9 @@
     <div class="col-md-5 ml-md-5 order-1 order-md-2">
       <img class="img-fluid"src="img/footage/pickup/man-792174.jpg" alt="">
     </div>
+    <p class="text-center h1 titleColor order-2 d-md-none mt-4">
+      方向二<br>電子商務質量提升
+    </p>
   </div>
 </div>
 <!-- end of section 3-2 -->
@@ -566,10 +589,7 @@
 <!-- section 3-3 -->
 <div class="container-fluid" id="directionThree">
   <div class="row justify-content-center px-md-5 wrapperXL">
-    <p class="text-center h1 titleColor d-md-none mb-3">
-      方向三<br>智慧家庭發展建構
-    </p>
-    <div class="col-md-5 mr-md-5">
+    <div class="col-10 col-md-5 mr-md-5">
       <img class="img-fluid"src="img/footage/pickup/tv-3774381.jpg" alt="">
     </div>
     <div class="col ml-md-5">
@@ -577,6 +597,12 @@
         方向三：智慧家庭發展建構
       </p>
       <div class="row justify-content-around text-dark">
+        <div class="col d-md-none mt-4">
+          <p class="text-center h1 titleColor">
+            方向三<br>智慧家庭發展建構
+          </p>
+        </div>
+        <div class="w-100"></div>
         <div class="col">
           <div class="my-3">
             <p class="h5 lineHeight font-weight-light">
@@ -600,14 +626,17 @@
 <!-- section 3-4 -->
 <div class="container-fluid" id="directionFour">
   <div class="row justify-content-center px-md-5 wrapperXL" style="background-color:#efefef">
-    <p class="text-center h1 titleColor d-md-none mb-3">
-      方向四<br>網路學習拓展活化
-    </p>
-    <div class="col mr-md-5 order-2 order-md-1">
+    <div class="col-md-6 mr-md-5 order-3 order-md-1">
       <p class="display-4 titleColor d-none d-md-block">
         方向四：網路學習拓展活化
       </p>
       <div class="row justify-content-around">
+        <div class="col d-md-none mt-4">
+          <p class="text-center h1 titleColor">
+            方向四<br>網路學習拓展活化
+          </p>
+        </div>
+        <div class="w-100"></div>
         <div class="col">
           <div class="my-3">
             <p class="h5 lineHeight font-weight-light">
@@ -627,7 +656,6 @@
     <div class="col-md-5 ml-md-5 order-1 order-md-2">
       <img class="img-fluid"src="img/footage/student-849825.jpg" alt="">
     </div>
-
   </div>
 </div>
 <!-- end of section 3-4 -->
