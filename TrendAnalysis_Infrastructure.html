@@ -81,7 +81,7 @@
 <!-- nav MENU bar -->
 <header class="fixed-top">
   <nav id="navScrollSpy" class="navbar navbar-expand-md navbar-dark bgNavBar">
-    <a href="https://www.twnic.net.tw" class="navbar-brand" target="_blank" ><img src="img/twnicLogo.svg" alt="" style="height:40px;"></a>
+    <a href="https://twnic.tw" class="navbar-brand" target="_blank" ><img src="img/twnicLogo.svg" alt="" style="height:40px;"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBurger" aria-controls="navBurger" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon" ></span>
       </button>
@@ -164,23 +164,20 @@
         今年「.tw/.台灣」註冊數量大幅成長，成長率為554.3%，類型佔比中以「泛用型英文.tw」最多。
       </p>
     </div>
-    <div class="col-md-10 py-5">
+    <div class="col-md-10 py-3">
       <div class="text-right text-danger bg-white">
-        2018-2017年<br>總成長率<br>+554.3%
+        2018-2017年<br>總成長率<br>+553.1%
       </div>
       <canvas id="chart_ipSubmitGrowth" style="height:80vh; width:100vw"></canvas>
       <script>
         var ctx = document.getElementById('chart_ipSubmitGrowth').getContext('2d');
         var myChart = new Chart(ctx, {
-          type: 'bar',
+          type: 'line',
           data: {
-            labels: ['2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018'],
+            labels: ['','2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018',''],
             datasets: [
               {
-                type: 'line',
-                label: '總成長率',
-                stack:'Stack 1',
-                yAxisID: 'y-axis-2',
+                label: '網域名稱註冊數量',
                 fill: false,
                 borderColor: '#3366CC',
                 backgroundColor: 'rgba(51, 102, 204, 0)',
@@ -193,40 +190,10 @@
                   display: 'auto',
                   align:'top',
                   formatter: function(value, context) {
-                    return Math.abs(value) + '%';
+                    return Math.abs(value) + '千個';
                   }
                 },
-                data: [9.3, 13.2, 1.8, 21.9, 24.6, 10.3, 2.8, 8.3, 0, 554.3],
-              },
-              {
-                label: '「.tw」',
-                backgroundColor: '#7DCC4A',
-                borderColor: '#7DCC4A',
-                borderWidth: 1,
-                stack:'Stack 0',
-                data: [283, 298, 305, 308, 315, 321, 395, 466, 474, 4555],
-                yAxisID: 'y-axis-1',
-                datalabels: {
-                  display: 'auto',
-                  formatter: function(value, context) {
-                    return Math.abs(value) + '萬個';
-                  }
-                },
-              },
-              {
-                label: '「.tw／.台灣」IDN',
-                backgroundColor: '#FFC000',
-                borderColor: '#FFC000',
-                borderWidth: 1,
-                stack:'Stack 0',
-                data: [161, 205, 207, 317, 463, 377, 284, 269, 261, 254],
-                yAxisID: 'y-axis-1',
-                datalabels: {
-                  display: 'auto',
-                  formatter: function(value, context) {
-                    return Math.abs(value) + '萬個';
-                  }
-                },
+                data: [ ,444,503,512,625,778,698,679,735,735,4799, ],
               },
             ]
           },
@@ -265,25 +232,7 @@
                      drawOnChartArea: false,
                    },
                  },
-                 {
-                   type: 'linear',
-                   display: false,
-                   position: 'right',
-                   id: 'y-axis-2',
-                   ticks: {
-                     /*beginAtZero: true,*/
-                     stepValue: 50,
-                     max: 650,
-                   },
-                   scaleLabel: {
-                     display:false,
-                     labelString: '%',
-                   },
-                   gridLines: {
-                     display: false,
-                     drawOnChartArea: false,
-                   },
-               }],
+               ],
             }
           },
         });
@@ -292,7 +241,7 @@
         <div class="col-12 extraInfo wrapper text-center">
           <ul class="list-unstyled">
             <li>
-              資料來源：TWNIC統計至2018年11月份
+              資料來源：TWNIC統計至2018年12月份
             </li>
           </ul>
         </div>
@@ -314,8 +263,12 @@
       <div class="">
         <ul class="nav nav-pills nav-justified">
           <li class="nav-item">
-            <div class="nav-link active border border-secondary" href="#numberOfIPv4" data-toggle="tab">IPv4 數量</div>
+            <div class="nav-link active border border-secondary" href="#numberOfIPv4" data-toggle="tab">IPv4 位址數量</div>
           </li>
+          <li class="nav-item">
+            <div class="nav-link border border-secondary border-left-0" href="#numberOfIPv6" data-toggle="tab">IPv6 位址數量</div>
+          </li>
+
           <li class="nav-item">
             <div class="nav-link border border-secondary border-left-0" href="#numberOfASN" data-toggle="tab">ASN 核發數量</div>
           </li>
@@ -323,7 +276,7 @@
       </div>
       <div class="row justify-content-center tab-content my-4">
         <div class="col-12 tab-pane active" id="numberOfIPv4">
-          <canvas id="chart_numberOfIPv4" style="height:60vh; width:100vw"></canvas>
+          <canvas id="chart_numberOfIPv4" style="height:80vh; width:100vw"></canvas>
           <script>
             var ctx = document.getElementById('chart_numberOfIPv4').getContext('2d');
             var mixedChart = new Chart(ctx, {
@@ -333,7 +286,7 @@
                 datasets: [
                     {
                       label: '台灣IPv4數量',
-                      data: [,155, 220, 266, 535, 855, 988, 1261, 1416, 1462, 1627,],
+                      data: [,2710,3193,3538,3539,3541,3547,3550,3550,3552,3565,],
                       backgroundColor: '#3366CC',
                       borderColor: '#3366CC',
                       fill: false,
@@ -412,8 +365,107 @@
             });
           </script>
         </div>
+        <div class="col-12 tab-pane fade in" id="numberOfIPv6">
+          <div class="text-right text-danger bg-white">
+            2018-2017年<br>+4.1%
+          </div>
+          <canvas id="chart_numberOfIPv6" style="height:80vh; width:100vw"></canvas>
+          <script>
+            var ctx = document.getElementById('chart_numberOfIPv6').getContext('2d');
+            var mixedChart = new Chart(ctx, {
+              type: 'line',
+              data: {
+                labels: ['','2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', ''],
+                datasets: [
+                    {
+                      label: '台灣IPv6數量',
+                      fill: false,
+                      data: [,2311,2322,2328,2336,2345,2355,2359,2359,2365,2476,],
+                      backgroundColor: '#3366CC',
+                      borderColor: '#3366CC',
+                      fill: false,
+                      borderWidth: 2,
+                      datalabels: {
+                        display: 'auto',
+                        align: 'top',
+                        formatter: function(value, context) {
+                          return Math.round(value) + '/32 個';
+                        }
+                      }
+                    },
+                  ],
+              },
+              options: {
+                animation: {
+                  duration: 0
+                },
+                legend: {
+                  display: false,
+                },
+                tooltips: {
+                  callbacks: {
+                    label: function(tooltipItem, data) {
+                      var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                      if (label) {
+                          label += ': ';
+                      }
+                      label += Math.round(tooltipItem.yLabel * 100) / 100;
+                      return label + '/32 個';
+                    }
+                  }
+                },
+                responsive: true,
+                scales: {
+                  xAxes: [{
+                    gridLines: {
+                      display: false
+                    }
+                  }],
+                  yAxes: [
+                    {
+                      display: false,
+                      ticks: {
+                        /*beginAtZero: true,*/
+                      },
+                      gridLines: {
+                        display: false,
+                        drawOnChartArea: false,
+                    },
+                  }, {
+                    type: 'linear',
+                    display: false,
+                    position: 'right',
+                    id: 'y-axis-2',
+                    ticks: {
+                      beginAtZero: true,
+                      stepValue: 10,
+                      max: 100,
+                    },
+                    scaleLabel: {
+                      display:false,
+                      labelString: '%',
+                    },
+                    gridLines: {
+                      display: false,
+                      drawOnChartArea: false,
+                    },
+                  }],
+                },
+               elements: {
+                 line: {
+                   tension: 0,
+                 }
+               },
+              plugins: {
+
+               }
+             }
+              });
+          </script>
+        </div>
         <div class="col-12 tab-pane fade in" id="numberOfASN">
-          <canvas id="chart_numberOfASN" style="height:60vh; width:100vw"></canvas>
+          <canvas id="chart_numberOfASN" style="height:80vh; width:100vw"></canvas>
           <script>
             var ctx = document.getElementById('chart_numberOfASN').getContext('2d');
             var mixedChart = new Chart(ctx, {
@@ -423,7 +475,7 @@
                 datasets: [
                     {
                       label: '台灣 ASN 核發數量',
-                      data: [,202, 205, 208, 309, 313, 338, 340, 345, 351, 354,],
+                      data: [,202,205,309,308,313,338,340,345,351,354,],
                       backgroundColor: '#3366CC',
                       borderColor: '#3366CC',
                       fill: false,
@@ -505,192 +557,7 @@
         <div class="col-12 extraInfo wrapper text-center">
           <ul class="list-unstyled">
             <li>
-              資料來源：TWNIC統計至2018年11月份
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row justify-content-center wrapper">
-    <div class="col-md-10 wrapper">
-      <p class="h3 text-center">
-        IPv6 位址數量及 ISP IPv6 使用者比率
-      </p>
-      <div class="my-3">
-        <p class="h6 lineHeight">
-          台灣IPv6申請數量全球排名第19名，IPv6使用比例為 28.8% (2018-12-13)；IPv6位址數量計算單位是2的96次方，約為7.0乘以10的28次方個，今天數量來到 2,463個 /32 IPv6位址。
-        </p>
-      </div>
-    </div>
-    <div class="col-md-10 wrapper">
-      <ul class="nav nav-pills nav-justified">
-        <li class="nav-item">
-          <div class="nav-link active border border-secondary" href="#numberOfIPv6" data-toggle="tab">IPv6 數量</div>
-        </li>
-        <li class="nav-item">
-          <div class="nav-link border border-secondary border-left-0" href="#userScaleOfIPv6" data-toggle="tab">ISP IPv6使用者比例</div>
-        </li>
-      </ul>
-      <div class="row justify-content-center tab-content">
-        <div class="col-12 tab-pane active" id="numberOfIPv6">
-          <div class="text-right text-danger bg-white">
-            2018-2017年<br> +4.1%
-          </div>
-          <canvas id="chart_numberOfIPv6" style="height:60vh; width:100vw"></canvas>
-          <script>
-            var ctx = document.getElementById('chart_numberOfIPv6').getContext('2d');
-            var mixedChart = new Chart(ctx, {
-              type: 'line',
-              data: {
-                labels: ['','2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', ''],
-                datasets: [
-                    {
-                      label: '台灣IPv6數量',
-                      fill: false,
-                      data: [,2311, 2322, 2328, 2336,2345, 2355, 2359, 2359, 2365, 2463,],
-                      backgroundColor: '#3366CC',
-                      borderColor: '#3366CC',
-                      fill: false,
-                      borderWidth: 2,
-                      datalabels: {
-                        display: 'auto',
-                        align: 'top',
-                        formatter: function(value, context) {
-                          return Math.round(value) + '個';
-                        }
-                      }
-                    },
-                  ],
-              },
-              options: {
-                animation: {
-                  duration: 0
-                },
-                legend: {
-                  display: false,
-                },
-                tooltips: {
-                  callbacks: {
-                    label: function(tooltipItem, data) {
-                      var label = data.datasets[tooltipItem.datasetIndex].label || '';
-
-                      if (label) {
-                          label += ': ';
-                      }
-                      label += Math.round(tooltipItem.yLabel * 100) / 100;
-                      return label + '個';
-                    }
-                  }
-                },
-                responsive: true,
-                scales: {
-                  xAxes: [{
-                    gridLines: {
-                      display: false
-                    }
-                  }],
-                  yAxes: [
-                    {
-                      display: false,
-                      ticks: {
-                        /*beginAtZero: true,*/
-                      },
-                      gridLines: {
-                        display: false,
-                        drawOnChartArea: false,
-                    },
-                  }, {
-                    type: 'linear',
-                    display: false,
-                    position: 'right',
-                    id: 'y-axis-2',
-                    ticks: {
-                      beginAtZero: true,
-                      stepValue: 10,
-                      max: 100,
-                    },
-                    scaleLabel: {
-                      display:false,
-                      labelString: '%',
-                    },
-                    gridLines: {
-                      display: false,
-                      drawOnChartArea: false,
-                    },
-                  }],
-                },
-               elements: {
-                 line: {
-                   tension: 0,
-                 }
-               },
-              plugins: {
-
-               }
-             }
-              });
-          </script>
-        </div>
-        <div class="col-12 tab-pane fade in" id="userScaleOfIPv6">
-          <!-- User Scale Of IPv6 table -->
-            <table class="table bg-white">
-              <thead class="thead-light">
-                <tr>
-                  <th class="align-middle" style=" min-width: 10vw;">類型</th>
-                  <th class="align-middle">業者</th>
-                  <th class="align-middle">佔比</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th class="small align-middle" rowspan="5" scope="row">行動網路</th>
-                  <td class="small align-middle">中華電信 CHT Mobile </td>
-                  <td class="small align-middle">70.08%</td>
-                </tr>
-                <tr>
-                  <td class="small align-middle">遠傳電信 FETNet</td>
-                  <td class="small align-middle">35.15%</td>
-
-                </tr>
-                <tr>
-                  <td class="small align-middle">台灣大哥大 Taiwan Mobile</td>
-                  <td class="small align-middle">22.53%</td>
-                </tr>
-                <tr>
-                  <td class="small align-middle">亞太電信 AMBIT</td>
-                  <td class="small align-middle">2.43%</td>
-                </tr>
-                <tr>
-                  <td class="small align-middle">台灣之星 VIBO</td>
-                  <td class="small align-middle">0.08%</td>
-
-                </tr>
-                <tr>
-                  <th class="small align-middle border-bottom" rowspan="4" scope="row">固網電信</th>
-                  <td class="small align-middle">中華電信 CHT Fixed Network </td>
-                  <td class="small align-middle">17.51%</td>
-                </tr>
-                <tr>
-                  <td class="small align-middle">台灣固網 TFN</td>
-                  <td class="small align-middle">0.46%</td>
-                </tr>
-                <tr>
-                  <td class="small align-middle">新世紀資通 Seednet</td>
-                  <td class="small align-middle">0.3%</td>
-                </tr>
-                <tr>
-                  <td class="small align-middle border-bottom">亞太電信 APOL</td>
-                  <td class="small align-middle border-bottom">0.11%</td>
-                </tr>
-              </tbody>
-            </table>
-          <!-- end of Scale Of IPv6 table -->
-        </div>
-        <div class="col-12 extraInfo wrapper text-center">
-          <ul class="list-unstyled">
-            <li>
-              資料來源：TWNIC統計至2018年11月份
+              資料來源：TWNIC統計至2018年12月份
             </li>
           </ul>
         </div>
@@ -751,7 +618,7 @@
                 datasets: [
                     {
                       label: 'IPv4 數量',
-                      data: [3564,	34040,	20408,	11246,	4096,	1845,	1595,	1278,	911,	661,	557, 160420,	12175,	4857],
+                      data: [3565,34039,20409,11246,4097,1846,1596,1279,911,662,557,160412,12181,4857],
                       backgroundColor: ['#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#FFC000','#FFC000','#FFC000'],
                       fill: false,
                       borderWidth: 1,
@@ -827,7 +694,7 @@
                 datasets: [
                     {
                       label: 'IPv6 數量',
-                      data: [2463,	28766,	9997,	5256,	1626,	1267,	365,	135,	107,	99,	50,	45481,	18912,	9012],
+                      data: [2476,41060,9996,5257,1631,1267,368,135,109,100,51,45493,18940,9029],
                       backgroundColor: ['#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#FFC000','#FFC000','#FFC000'],
                       fill: false,
                       borderWidth: 1,
@@ -836,7 +703,7 @@
                         align:'end',
                         offset: 15,
                         formatter: function(value, context) {
-                          return Math.abs(value) + ' /32(2^96)個';
+                          return Math.abs(value) + ' 2的96次方個';
                         }
                       },
                     },
@@ -857,7 +724,7 @@
                           label += ': ';
                       }
                       label += Math.abs(tooltipItem.xLabel * 100) / 100;
-                      return label + ' /32(2^96)個';
+                      return label + ' 2的96次方個';
                     }
                   }
                 },
