@@ -399,7 +399,7 @@
     <!--end of economyApplied desktop view-->
     <!--economyApplied mobile view-->
     <div class="col-8 d-md-none mt-4">
-      <div class="row py-1 bgAppliedYellow border border-white" href="#" data-toggle="modal" data-target="#contentMedia_modal">
+      <div class="row py-1 bgAppliedYellow border border-white" data-toggle="modal" data-target="#eCommerce_modal">
         <div class="ml-4 col-5">
           <img class="img-fluid" src="img/btn/181224_mobile-06.png" alt="">
         </div>
@@ -409,7 +409,7 @@
           </p>
         </div>
       </div>
-      <div class="row py-1 bgAppliedYellow border border-white" href="#" data-toggle="modal" data-target="#socialMedia_modal">
+      <div class="row py-1 bgAppliedYellow border border-white" data-toggle="modal" data-target="#finTech_modal">
         <div class="ml-4 col-5">
           <img class="img-fluid" src="img/btn/181224_mobile-07.png" alt="">
         </div>
@@ -419,7 +419,7 @@
           </p>
         </div>
       </div>
-      <div class="row py-1 bgAppliedYellow border border-white" href="#" data-toggle="modal" data-target="#smartGadgets_modal">
+      <div class="row py-1 bgAppliedYellow border border-white" data-toggle="modal" data-target="#sharingEconomy_modal">
         <div class="ml-4 col-5">
           <img class="img-fluid" src="img/btn/181224_mobile-08.png" alt="">
         </div>
@@ -623,10 +623,150 @@
                   影音、直播等內容媒體使用率將近九成，使用率與年齡呈現反比。
                 </p>
               </div>
-              <div class="col-md-10">
-                <canvas id="chart_contentMediaUserProfile" style="height:100vh; width:100vw"></canvas>
+              <div class="col-md-10 d-none d-md-block">
+                <canvas id="chart_contentMediaUserProfile" style="height:120vh; width:100vw"></canvas>
                 <script type="text/javascript">
                   var ctx = document.getElementById('chart_contentMediaUserProfile').getContext('2d');
+                  var chart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ["","總數","", "男性", "女性", "", "12-14歲", "15-19歲", "20-24歲", "25-29歲", "30-34歲", "35-39歲", "40-44歲", "45-49歲", "50-54歲", "55-59歲", "60-64歲", "65歲以上","",],
+                        datasets: [{
+                            label: "聽音樂",
+                            borderColor: 'rgba(51, 102, 204, 1)',
+                            backgroundColor: 'rgba(51, 102, 204, 0)',
+                            pointBackgroundColor:'rgba(51, 102, 204, 1)',
+                            pointBorderWidth: 4,
+                            data: [,72.3, ,70.6, 73.9, ,96.8, 90.8, 85.8, 88.4, 78.7, 75.5, 65.1, 63.3, 58.2, 59.3, 60.7, 53.6,],
+                            fill:false,
+                            spanGaps: false,
+                            datalabels: {
+                              display: 'auto',
+                              align: 'top',
+                              /*color:'rgba(51, 102, 204, 1)',*/
+                              formatter: function(value, context) {
+                                return Math.abs(value) + '%';
+                              }
+                            }
+                        }, {
+                            label: "看節目戲劇",
+                            borderColor: 'rgba(125, 204, 74, 1)',
+                            backgroundColor: 'rgba(125, 204, 74, 0)',
+                            pointBackgroundColor:'rgba(125, 204, 74, 1)',
+                            pointBorderWidth: 4,
+                            data: [,71.9, , 70.8, 73.0, , 91.6, 91.5, 88.4, 82.2, 79.9, 77.7, 72.3, 66.7, 63.4, 55.6, 46.4, 43.3,],
+                            fill: false,
+                            spanGaps: false,
+                            datalabels: {
+                              display: 'auto',
+                              align: 'bottom',
+                              /*color:'rgba(125, 204, 74, 1)',*/
+                              formatter: function(value, context) {
+                                return Math.abs(value) + '%';
+                              }
+                            }
+
+                        },{
+                            label: "看直播",
+                            borderColor: 'rgba(255, 192, 0, 1)',
+                            backgroundColor: 'rgba(255, 192, 0, 0)',
+                            pointBackgroundColor:'rgba(255, 192, 0, 1)',
+                            pointBorderWidth: 4,
+                            data: [,48.8, , 53.9, 43.7, , 57.0, 54.7, 55.4, 59.5, 50.5, 53.3, 42.2, 47.5, 46.6, 44.5, 38.1, 33.4,],
+                            fill:false,
+                            spanGaps: false,
+                            datalabels: {
+                              display: 'auto',
+                              align: 'top',
+                              /*color: 'rgba(255, 192, 0, 1)',*/
+                              formatter: function(value, context) {
+                                return Math.abs(value) + '%';
+                              }
+                            }
+                        },{
+                            label: "看電影",
+                            borderColor: 'rgba(239, 84, 37, 1)',
+                            backgroundColor: 'rgba(239, 84, 37, 0)',
+                            pointBackgroundColor:'rgba(239, 84, 37, 1)',
+                            pointBorderWidth: 4,
+                            data: [,46.0, , 49.9, 42.1, , 54.2, 61.0, 68.8, 53.8, 51.3, 52.2, 47.8, 37.0, 39.6, 32.7, 23.9, 20.7,],
+                            fill:false,
+                            spanGaps: false,
+                            datalabels: {
+                              display: 'auto',
+                              align: 'bottom',
+                              /*color:'rgba(239, 84, 37, 1)',*/
+                              formatter: function(value, context) {
+                                return Math.abs(value) + '%';
+                              }
+                            }
+                        },]
+                    },
+                    options: {
+                      animation: {
+                        duration: 0
+                      },
+                      tooltips: {
+                        mode:'index',
+                        callbacks: {
+                          label: function(tooltipItem, data) {
+                            var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                            if (label) {
+                                label += ': ';
+                            }
+                            label += Math.round(tooltipItem.yLabel * 100) / 100;
+                            return label + '%';
+                          }
+                        }
+                      },
+                      legend: {
+                        labels: {
+                          usePointStyle: true,
+                        }
+                      },
+                      scales: {
+                        xAxes: [{
+                          gridLines: {
+                            display: false
+                          }
+                        }],
+                        yAxes: [{
+                          gridLines: {
+                            display: false,
+                            drawBorder: false
+                          },
+                          ticks: {
+                            beginAtZero: true,
+                            display: false,
+                            stepValue: 10,
+                            max: 110,
+                          }
+                        }]
+                      },
+                      elements: {
+                        line: {
+                          tension: 0,
+                        }
+                      },
+                    }
+                  });
+                </script>
+                <div class="row">
+                  <div class="col-12 extraInfo text-center wrapper">
+                    <ul class="list-unstyled">
+                      <li>n=2535</li>
+                      <li>
+                        資料來源：本研究電訪(2018)
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-10 d-md-none">
+                <canvas id="chart_contentMediaUserProfile_M" style="height:100vh; width:100vw"></canvas>
+                <script type="text/javascript">
+                  var ctx = document.getElementById('chart_contentMediaUserProfile_M').getContext('2d');
                   var chart = new Chart(ctx, {
                     type: 'line',
                     data: {
@@ -896,8 +1036,9 @@
                 <p class="mt-3">
                   觀察YouTube之外的影音平台，Yahoo TV收看人數最多，Dailymotion使用時間最突出。
                 </p>
-                <iframe src="https://plotdb.io/v/chart/19717" width="100%" height="380px" frameborder="0"></iframe>
-                <div class="col-12 text-center">
+                <!--iframe src="https://plotdb.io/v/chart/19717" width="100%" height="380px" frameborder="0"></iframe-->
+                <img class="img-fluid" src="img/chart_usageVideoPlatform.png" alt="">
+                <div class="col-12 text-center wrapper">
                   <ul class="list-unstyled extraInfo">
                     <li>
                       本次數據觀察 18 歲以上使用者
@@ -1088,19 +1229,127 @@
           </button>
         </div>
         <div class="modal-body">
-
           <div class="container-fluid">
             <div class="row justify-content-center">
-              <div class="col-md-10 wrapper">
+              <div class="col-md-10 wrapper d-none d-md-block">
                 <p class="h4 text-center">
                   使用者輪廓
                 </p>
                 <p class="mt-3 text-center">
                   通訊與社群網站的使用率皆高，而通訊軟體的使用族群中性別、年齡差異小。
                 </p>
-                <canvas id="chart_socialPlatformUserProfile" style="height:80vh; width:100vw"></canvas>
+                <canvas id="chart_socialPlatformUserProfile" style="height:120vh; width:100vw"></canvas>
                 <script type="text/javascript">
                   var ctx = document.getElementById('chart_socialPlatformUserProfile').getContext('2d');
+                  var chart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ["","男性", "女性", "", "12-14歲", "15-19歲", "20-24歲", "25-29歲", "30-34歲", "35-39歲", "40-44歲", "45-49歲", "50-54歲", "55-59歲", "60-64歲", "65歲以上",""],
+                        datasets: [{
+                            label: "有使用即時通訊軟體",
+                            borderColor: 'rgba(51, 102, 204, 1)',
+                            backgroundColor: 'rgba(51, 102, 204, 0)',
+                            pointBackgroundColor:'rgba(51, 102, 204, 1)',
+                            pointBorderWidth: 4,
+                            data: [, 95.7, 97.9, , 83.8,99.2,100,100,100,100,96.4,96.1,97.4,93.4,92.4,91.6,],
+                            fill:false,
+                            spanGaps: false,
+                            datalabels: {
+                              align: 'top',
+                              formatter: function(value, context) {
+                                return Math.abs(value) + '%';
+                              }
+                            }
+                        }, {
+                            label: "有使用網路社群",
+                            borderColor: 'rgba(125, 204, 74, 1)',
+                            backgroundColor: 'rgba(125, 204, 74, 0)',
+                            pointBackgroundColor:'rgba(125, 204, 74, 1)',
+                            pointBorderWidth: 4,
+                            data: [, 80.1, 81.1, , 88.9,97.0,97.9,89.6,91.3,91.3,83.5,76.0,74.0,64.1,50.6,46.3,],
+                            fill: false,
+                            spanGaps: false,
+                            datalabels: {
+                              display: 'auto',
+                              align: 'bottom',
+                              formatter: function(value, context) {
+                                return Math.abs(value) + '%';
+                              }
+                            }
+                        },]
+                    },
+                    options: {
+                      animation: {
+                        duration: 0
+                      },
+                      responsive: true,
+                      tooltips: {
+                        mode:'index',
+                        callbacks: {
+                          label: function(tooltipItem, data) {
+                            var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                            if (label) {
+                                label += ': ';
+                            }
+                            label += Math.abs(tooltipItem.yLabel * 100) / 100;
+                            return label + '%';
+                          }
+                        }
+                      },
+                      legend: {
+                        labels: {
+                          usePointStyle: true,
+                        }
+                      },
+                      scales: {
+                        xAxes: [{
+                          gridLines: {
+                            display: false
+                          },
+                        }],
+                        yAxes: [{
+                          gridLines: {
+                            display: false,
+                            drawBorder: false
+                          },
+                          ticks: {
+                            beginAtZero:true,
+                            display: false,
+                            stepValue: 5,
+                            max:130,
+                          }
+                        }]
+                      },
+                      elements: {
+                        line: {
+                          tension: 0,
+                        }
+                      },
+                    }
+                  });
+                </script>
+                <div class="row">
+                  <div class="col-12 extraInfo text-center wrapper">
+                    <ul class="list-unstyled">
+                      <li>n=2535</li>
+                      <li>
+                        資料來源：本研究電訪(2018)
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-10 wrapper d-md-none">
+                <p class="h4 text-center">
+                  使用者輪廓
+                </p>
+                <p class="mt-3 text-center">
+                  通訊與社群網站的使用率皆高，而通訊軟體的使用族群中性別、年齡差異小。
+                </p>
+                <canvas id="chart_socialPlatformUserProfile_M" style="height:80vh; width:100vw"></canvas>
+                <script type="text/javascript">
+                  var ctx = document.getElementById('chart_socialPlatformUserProfile_M').getContext('2d');
                   var chart = new Chart(ctx, {
                     type: 'line',
                     data: {
@@ -1176,8 +1425,8 @@
                           ticks: {
                             beginAtZero:true,
                             display: false,
-                            stepValue: 10,
-                            max:120,
+                            stepValue: 5,
+                            max:130,
                           }
                         }]
                       },
@@ -1200,6 +1449,7 @@
                   </div>
                 </div>
               </div>
+
             </div>
             <div class="row justify-content-center wrapper text-center">
               <hr>
@@ -2055,26 +2305,33 @@
             </div>
             <div class="row justify-content-center wrapper">
               <hr>
-              <div class="col-md-10 wrapper">
+              <div class="col-md-10 wrapper d-md-none">
                 <p class="h4 text-center">
                   使用者輪廓
                 </p>
                 <p class="mt-3 text-center">
                   線上學習服務使用率僅佔14%，目前多數是語言學習的需求，並以12歲至19歲較多。
                 </p>
-                <canvas id="chart_educativeUserProfile" style="height:70vh; width:100vw"></canvas>
-                <script>
-                  var ctx = document.getElementById('chart_educativeUserProfile').getContext('2d');
+                <canvas id="chart_educativeUserProfile_M" style="height:70vh; width:100vw"></canvas>
+                <script type="text/javascript">
+                  var ctx = document.getElementById('chart_educativeUserProfile_M').getContext('2d');
                   var chart = new Chart(ctx, {
                     type: 'bar',
                     data: {
-                        labels: ["", "男性", "女性", "", "12-19歲", "20-29歲", "30-39歲", "40-49歲", "50-59歲", "60歲以上",""],
-                        datasets: [{
+                        labels: ["男性", "女性", "", "12-19歲", "20-29歲", "30-39歲", "40-49歲", "50-59歲", "60歲以上"],
+                        datasets: [
+                          {
                             label: "教育應用使用率",
                             borderColor: '#7DCC4A',
                             backgroundColor: '#7DCC4A',
-                            data: [, 12.9, 15.0, , 21.8, 12.9, 13.1, 12.5, 15.0, 10.9,,],
-                        }, ]
+                            data: [12.9, 15.0, , 21.8, 12.9, 13.1, 12.5, 15.0, 10.9],
+                            datalabels: {
+                              display:'auto',
+                              formatter: function(value, context) {
+                                return Math.abs(value) + '%';
+                              }
+                            }
+                        },]
                     },
                     options: {
                       animation: {
@@ -2105,31 +2362,27 @@
                             display: false
                           }
                         }],
-                        yAxes: [{
-                          gridLines: {
+                        yAxes: [
+                          {
                             display: false,
-                            drawBorder: false
+                            type: 'linear',
+                            position: 'left',
+                            ticks: {
+                              beginAtZero: true,
+                              stepValue: 10,
+                              max: 30,
+                            },
+                            gridLines: {
+                              display: false,
+                              drawOnChartArea: false,
                           },
-                          ticks: {
-                            beginAtZero:true,
-                            display: false,
-                          }
-                        }]
+                        },],
                       },
                       elements: {
                         line: {
                           tension: 0,
                         }
                       },
-                      plugins: {
-                        datalabels: {
-                          display: true,
-                          align: 'center',
-                          formatter: function(value, context) {
-                            return Math.abs(value) + '%';
-                          }
-                        }
-                      }
                     }
                   });
                 </script>
@@ -2144,6 +2397,99 @@
                   </div>
                 </div>
               </div>
+              <div class="col-md-10 wrapper d-none d-md-block">
+                <p class="h4 text-center">
+                  使用者輪廓
+                </p>
+                <p class="mt-3 text-center">
+                  線上學習服務使用率僅佔14%，目前多數是語言學習的需求，並以12歲至19歲較多。
+                </p>
+                <canvas id="chart_educativeUserProfile" style="height:100vh; width:100vw"></canvas>
+                <script type="text/javascript">
+                  var ctx = document.getElementById('chart_educativeUserProfile').getContext('2d');
+                  var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ["男性", "女性", "", "12-14歲", "15-19歲", "20-24歲", "25-29歲", "30-34歲", "35-39歲", "40-44歲", "45-49歲", "50-54歲", "55-59歲", "60-64歲", "65歲以上"],
+                        datasets: [
+                          {
+                            label: "教育應用使用率",
+                            borderColor: '#7DCC4A',
+                            backgroundColor: '#7DCC4A',
+                            data: [12.9, 15.0, , 26.0,19.7,14.6,11.3,14.2,12.3,11.7,13.4,14.4,15.5,11.4,10.4],
+                            datalabels: {
+                              display:'auto',
+                              formatter: function(value, context) {
+                                return Math.abs(value) + '%';
+                              }
+                            }
+                        },]
+                    },
+                    options: {
+                      animation: {
+                        duration: 0
+                      },
+                      tooltips: {
+                        mode:'index',
+                        callbacks: {
+                          label: function(tooltipItem, data) {
+                            var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                            if (label) {
+                                label += ': ';
+                            }
+                            label += Math.round(tooltipItem.yLabel * 100) / 100;
+                            return label + '%';
+                          }
+                        }
+                      },
+                      legend: {
+                        labels: {
+                          usePointStyle: true,
+                        }
+                      },
+                      scales: {
+                        xAxes: [{
+                          gridLines: {
+                            display: false
+                          }
+                        }],
+                        yAxes: [
+                          {
+                            display: false,
+                            type: 'linear',
+                            position: 'left',
+                            ticks: {
+                              beginAtZero: true,
+                              stepValue: 20,
+                              max: 40,
+                            },
+                            gridLines: {
+                              display: false,
+                              drawOnChartArea: false,
+                              },
+                            }],
+                          },
+                      elements: {
+                        line: {
+                          tension: 0,
+                        }
+                      },
+                    }
+                  });
+                </script>
+                <div class="row">
+                  <div class="col-12 extraInfo text-center wrapper">
+                    <ul class="list-unstyled">
+                      <li>n=354</li>
+                      <li>
+                        資料來源：本研究電訪(2018)
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
             </div>
             <div class="row justify-content-center wrapper">
               <hr>
@@ -2310,29 +2656,33 @@
             </div>
             <div class="row justify-content-center wrapper">
               <hr>
-              <div class="col-md-10 wrapper">
+              <div class="col-md-10 wrapper d-md-none">
                 <p class="h4 text-center">
                   使用者輪廓
                 </p>
                 <p class="mt-3 text-center">
                   男性有近半數會玩線上遊戲。
                 </p>
-                <canvas id="chart_onlineGameUserProfile" style="height:90vh; width:100vw"></canvas>
+                <canvas id="chart_onlineGameUserProfile_M" style="height:90vh; width:100vw"></canvas>
                 <script type="text/javascript">
-                  var ctx = document.getElementById('chart_onlineGameUserProfile').getContext('2d');
+                  var ctx = document.getElementById('chart_onlineGameUserProfile_M').getContext('2d');
                   var chart = new Chart(ctx, {
-                    // The type of chart we want to create
                     type: 'bar',
-
-                    // The data for our dataset
                     data: {
-                        labels: ["", "男性", "女性", "", "12-19歲", "20-29歲", "30-39歲", "40-49歲", "50-59歲", "60歲以上",""],
-                        datasets: [{
+                        labels: ["男性", "女性", "", "12-19歲", "20-29歲", "30-39歲", "40-49歲", "50-59歲", "60歲以上"],
+                        datasets: [
+                          {
                             label: "線上遊戲使用率",
                             borderColor: '#7DCC4A',
                             backgroundColor: '#7DCC4A',
-                            data: [, 47.4, 35.7, , 70.3, 55.5, 44.1, 38.6, 27.7, 16.3,,],
-                        }, ]
+                            data: [47.4, 35.7, , 70.3, 55.5, 44.1, 38.6, 27.7, 16.3],
+                            datalabels: {
+                              display:'auto',
+                              formatter: function(value, context) {
+                                return Math.abs(value) + '%';
+                              }
+                            }
+                        },]
                     },
                     options: {
                       animation: {
@@ -2363,31 +2713,27 @@
                             display: false
                           }
                         }],
-                        yAxes: [{
-                          gridLines: {
+                        yAxes: [
+                          {
                             display: false,
-                            drawBorder: false
+                            type: 'linear',
+                            position: 'left',
+                            ticks: {
+                              beginAtZero: true,
+                              stepValue: 10,
+                              max: 90,
+                            },
+                            gridLines: {
+                              display: false,
+                              drawOnChartArea: false,
                           },
-                          ticks: {
-                            beginAtZero:true,
-                            display: false,
-                          }
-                        }]
+                        },],
                       },
                       elements: {
                         line: {
                           tension: 0,
                         }
                       },
-                      plugins: {
-                        datalabels: {
-                          display: true,
-                          align: 'center',
-                          formatter: function(value, context) {
-                            return Math.abs(value) + '%';
-                          }
-                        }
-                      }
                     }
                   });
                 </script>
@@ -2398,6 +2744,95 @@
                   </li>
                 </ul>
               </div>
+              <div class="col-md-10 wrapper d-none d-md-block">
+                <p class="h4 text-center">
+                  使用者輪廓
+                </p>
+                <p class="mt-3 text-center">
+                  男性有近半數會玩線上遊戲。
+                </p>
+                <canvas id="chart_onlineGameUserProfile" style="height:90vh; width:100vw"></canvas>
+                <script type="text/javascript">
+                  var ctx = document.getElementById('chart_onlineGameUserProfile').getContext('2d');
+                  var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                      labels: ["男性", "女性", "", "12-14歲", "15-19歲", "20-24歲", "25-29歲", "30-34歲", "35-39歲", "40-44歲", "45-49歲", "50-54歲", "55-59歲", "60-64歲", "65歲以上"],
+                        datasets: [
+                          {
+                            label: "線上遊戲使用率",
+                            borderColor: '#7DCC4A',
+                            backgroundColor: '#7DCC4A',
+                            data: [47.4, 35.7, ,  78.7 ,66.0 ,62.1 ,49.1 ,42.8 ,45.2 ,40.7 ,36.3 ,31.6 ,23.5 ,21.7 ,11.0,],
+                            datalabels: {
+                              display:'auto',
+                              formatter: function(value, context) {
+                                return Math.abs(value) + '%';
+                              }
+                            }
+                        },]
+                    },
+                    options: {
+                      animation: {
+                        duration: 0
+                      },
+                      tooltips: {
+                        mode:'index',
+                        callbacks: {
+                          label: function(tooltipItem, data) {
+                            var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                            if (label) {
+                                label += ': ';
+                            }
+                            label += Math.round(tooltipItem.yLabel * 100) / 100;
+                            return label + '%';
+                          }
+                        }
+                      },
+                      legend: {
+                        labels: {
+                          usePointStyle: true,
+                        }
+                      },
+                      scales: {
+                        xAxes: [{
+                          gridLines: {
+                            display: false
+                          }
+                        }],
+                        yAxes: [
+                          {
+                            display: false,
+                            type: 'linear',
+                            position: 'left',
+                            ticks: {
+                              beginAtZero: true,
+                              stepValue: 10,
+                              max: 90,
+                            },
+                            gridLines: {
+                              display: false,
+                              drawOnChartArea: false,
+                              },
+                            }],
+                          },
+                      elements: {
+                        line: {
+                          tension: 0,
+                        }
+                      },
+                    }
+                  });
+                </script>
+                <ul class="list-unstyled extraInfo text-center wrapper">
+                  <li>n=1055</li>
+                  <li>
+                    資料來源：本研究電訪(2018)
+                  </li>
+                </ul>
+              </div>
+
             </div>
             <div class="row justify-content-center wrapper">
               <hr>
@@ -3123,13 +3558,13 @@
             </div>
             <div class="row justify-content-center wrapper">
               <hr>
-              <div class="col-md-10 wrapper">
+              <div class="col-md-10 wrapper d-md-none">
                 <p class="h4 text-center">
                   網路銀行使用者輪廓
                 </p>
-                <canvas id="chart_onlineBankingUserProfile" style="height:80vh; width:100vw"></canvas>
+                <canvas id="chart_onlineBankingUserProfile_M" style="height:80vh; width:100vw"></canvas>
                 <script type="text/javascript">
-                  var ctx = document.getElementById('chart_onlineBankingUserProfile').getContext('2d');
+                  var ctx = document.getElementById('chart_onlineBankingUserProfile_M').getContext('2d');
                   var chart = new Chart(ctx, {
                     type: 'bar',
                     data: {
@@ -3212,6 +3647,96 @@
                   </div>
                 </div>
               </div>
+              <div class="col-md-10 wrapper d-none d-md-block">
+                <p class="h4 text-center">
+                  網路銀行使用者輪廓
+                </p>
+                <canvas id="chart_onlineBankingUserProfile" style="height:80vh; width:100vw"></canvas>
+                <script type="text/javascript">
+                  var ctx = document.getElementById('chart_onlineBankingUserProfile').getContext('2d');
+                  var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ["男性", "女性", "", "12-14歲", "15-19歲", "20-24歲", "25-29歲", "30-34歲", "35-39歲", "40-44歲", "45-49歲", "50-54歲", "55-59歲", "60-64歲", "65歲以上"],
+                        datasets: [
+                          {
+                            label: "網銀使用率",
+                            borderColor: '#7DCC4A',
+                            backgroundColor: '#7DCC4A',
+                            data: [33.1, 38.1, , 0, 4.0,41.8,56.0,53.9,51.6,43.0,42.9,31.5,18.7,20.8,15.8,],
+                            datalabels: {
+                              display:'auto',
+                              formatter: function(value, context) {
+                                return Math.abs(value) + '%';
+                              }
+                            }
+                        },]
+                    },
+                    options: {
+                      animation: {
+                        duration: 0
+                      },
+                      tooltips: {
+                        mode:'index',
+                        callbacks: {
+                          label: function(tooltipItem, data) {
+                            var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                            if (label) {
+                                label += ': ';
+                            }
+                            label += Math.round(tooltipItem.yLabel * 100) / 100;
+                            return label + '%';
+                          }
+                        }
+                      },
+                      legend: {
+                        labels: {
+                          usePointStyle: true,
+                        }
+                      },
+                      scales: {
+                        xAxes: [{
+                          gridLines: {
+                            display: false
+                          }
+                        }],
+                        yAxes: [
+                          {
+                            display: false,
+                            type: 'linear',
+                            position: 'left',
+                            ticks: {
+                              beginAtZero: true,
+                              stepValue: 10,
+                              max: 60,
+                            },
+                            gridLines: {
+                              display: false,
+                              drawOnChartArea: false,
+                          },
+                        },],
+                      },
+                      elements: {
+                        line: {
+                          tension: 0,
+                        }
+                      },
+                    }
+                  });
+                </script>
+                <div class="row">
+                  <div class="col-12 extraInfo text-center wrapper">
+                    <ul class="list-unstyled">
+                      <li>n=2535</li>
+                      <li>
+                        資料來源：本研究電訪(2018)
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
             </div>
             <div class="row justify-content-center wrapper">
               <hr>
@@ -3435,13 +3960,13 @@
             </div>
             <div class="row justify-content-center wrapper">
               <hr>
-              <div class="col-md-10 wrapper">
+              <div class="col-md-10 wrapper d-md-none">
                 <p class="h4 text-center">
                   行動支付使用者輪廓
                 </p>
-                <canvas id="chart_mobilePaymentUserProfile" style="height:80vh; width:100vw"></canvas>
+                <canvas id="chart_mobilePaymentUserProfile_M" style="height:80vh; width:100vw"></canvas>
                 <script type="text/javascript">
-                  var ctx = document.getElementById('chart_mobilePaymentUserProfile').getContext('2d');
+                  var ctx = document.getElementById('chart_mobilePaymentUserProfile_M').getContext('2d');
                   var chart = new Chart(ctx, {
                     type: 'bar',
                     data: {
@@ -3522,6 +4047,94 @@
                   </ul>
                 </div>
               </div>
+              <div class="col-md-10 wrapper d-none d-md-block">
+                <p class="h4 text-center">
+                  行動支付使用者輪廓
+                </p>
+                <canvas id="chart_mobilePaymentUserProfile" style="height:80vh; width:100vw"></canvas>
+                <script type="text/javascript">
+                  var ctx = document.getElementById('chart_mobilePaymentUserProfile').getContext('2d');
+                  var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ["男性", "女性", "", "12-14歲", "15-19歲", "20-24歲", "25-29歲", "30-34歲", "35-39歲", "40-44歲", "45-49歲", "50-54歲", "55-59歲", "60-64歲", "65歲以上"],
+                        datasets: [
+                          {
+                            label: "行動支付使用率",
+                            borderColor: '#7DCC4A',
+                            backgroundColor: '#7DCC4A',
+                            data: [17.0, 15.6, , 3.0,7.9,16.2,30.3,26.9,29.1,17.3,19.9,10.3,5.2,3.6,2.4 ],
+                            datalabels: {
+                              display:'auto',
+                              formatter: function(value, context) {
+                                return Math.abs(value) + '%';
+                              }
+                            }
+                        },]
+                    },
+                    options: {
+                      animation: {
+                        duration: 0
+                      },
+                      tooltips: {
+                        mode:'index',
+                        callbacks: {
+                          label: function(tooltipItem, data) {
+                            var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                            if (label) {
+                                label += ': ';
+                            }
+                            label += Math.round(tooltipItem.yLabel * 100) / 100;
+                            return label + '%';
+                          }
+                        }
+                      },
+                      legend: {
+                        labels: {
+                          usePointStyle: true,
+                        }
+                      },
+                      scales: {
+                        xAxes: [{
+                          gridLines: {
+                            display: false
+                          }
+                        }],
+                        yAxes: [
+                          {
+                            display: false,
+                            type: 'linear',
+                            position: 'left',
+                            ticks: {
+                              beginAtZero: true,
+                              stepValue: 10,
+                              max: 60,
+                            },
+                            gridLines: {
+                              display: false,
+                              drawOnChartArea: false,
+                              },
+                            }],
+                          },
+                      elements: {
+                        line: {
+                          tension: 0,
+                        }
+                      },
+                    }
+                  });
+                </script>
+                <div class="col-12 extraInfo text-center wrapper">
+                  <ul class="list-unstyled">
+                    <li>n=2535</li>
+                    <li>
+                      資料來源：本研究電訪(2018)
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
             </div>
             <div class="row justify-content-center wrapper text-center">
               <hr>
