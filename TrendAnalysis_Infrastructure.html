@@ -275,7 +275,7 @@
       </div>
       <div class="row justify-content-center tab-content my-4">
         <div class="col-12 tab-pane active" id="numberOfIPv4">
-          <canvas id="chart_numberOfIPv4" style="height:60vh; width:100vw"></canvas>
+          <canvas id="chart_numberOfIPv4" style="height:70vh; width:100vw"></canvas>
           <script>
             var ctx = document.getElementById('chart_numberOfIPv4').getContext('2d');
             var mixedChart = new Chart(ctx, {
@@ -365,10 +365,7 @@
           </script>
         </div>
         <div class="col-12 tab-pane fade in" id="numberOfIPv6">
-          <div class="text-right text-danger">
-            2018-2017年<br>+4.1%
-          </div>
-          <canvas id="chart_numberOfIPv6" style="height:60vh; width:100vw"></canvas>
+          <canvas id="chart_numberOfIPv6" style="height:70vh; width:100vw"></canvas>
           <script>
             var ctx = document.getElementById('chart_numberOfIPv6').getContext('2d');
             var mixedChart = new Chart(ctx, {
@@ -386,9 +383,9 @@
                       borderWidth: 2,
                       datalabels: {
                         display: 'auto',
-                        align: 'top',
+                        align: 'bottom',
                         formatter: function(value, context) {
-                          return Math.round(value) + '/32 個';
+                          return Math.round(value) + ' /32 個';
                         }
                       }
                     },
@@ -410,7 +407,7 @@
                           label += ': ';
                       }
                       label += Math.round(tooltipItem.yLabel * 100) / 100;
-                      return label + '/32 個';
+                      return label + ' /32 個';
                     }
                   }
                 },
@@ -425,7 +422,7 @@
                     {
                       display: false,
                       ticks: {
-                        beginAtZero: true,
+                        /*beginAtZero: true,*/
                       },
                       gridLines: {
                         display: false,
@@ -439,11 +436,7 @@
                     ticks: {
                       beginAtZero: true,
                       stepValue: 10,
-                      max: 130,
-                    },
-                    scaleLabel: {
-                      display:false,
-                      labelString: '%',
+                      max: 2800,
                     },
                     gridLines: {
                       display: false,
@@ -464,7 +457,7 @@
           </script>
         </div>
         <div class="col-12 tab-pane fade in" id="numberOfASN">
-          <canvas id="chart_numberOfASN" style="height:60vh; width:100vw"></canvas>
+          <canvas id="chart_numberOfASN" style="height:70vh; width:100vw"></canvas>
           <script>
             var ctx = document.getElementById('chart_numberOfASN').getContext('2d');
             var mixedChart = new Chart(ctx, {
@@ -678,7 +671,7 @@
           </script>
           <ul class="list-unstyled wrapper extraInfo text-center">
             <li>
-              資料來源：<a href="http://v6directory.twnic.net.tw/ipstats/statsipv4.php" target="_blank">資料來源：TWNIC(2018/11)</a>
+              資料來源：<a href="http://v6directory.twnic.net.tw/ipstats/statsipv4.php" target="_blank">TWNIC(2018/12)</a>
             </li>
           </ul>
         </div>
@@ -754,7 +747,7 @@
           </script>
           <ul class="list-unstyled wrapper extraInfo text-center">
             <li>
-              資料來源：<a href="http://v6directory.twnic.net.tw/ipstats/statsipv6.php" target="_blank">資料來源：TWNIC(2018/11)</a>
+              資料來源：<a href="http://v6directory.twnic.net.tw/ipstats/statsipv6.php" target="_blank">TWNIC(2018/12)</a>
             </li>
           </ul>
         </div>
