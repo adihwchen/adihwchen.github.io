@@ -1,4 +1,9 @@
 /* all site settings*/
+body {
+  position: relative;
+  font-family:"source-han-sans-traditional",sans-serif;
+}
+
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -27,10 +32,6 @@ hr {
 
 
 /* responsive font sizes */
-body {
-  position: relative;
-  font-family:"source-han-sans-traditional",sans-serif;
-}
 html {
   font-size: 0.9rem;
 }
@@ -114,7 +115,16 @@ html {
 }
 
 .bgNavBar {
-  background-color:#1c1c1c;
+  background-color:#294377;
+}
+.bgAppliedGreen {
+  background-color: #9ecc62;
+}
+.bgAppliedYellow {
+  background-color: #efbf42;
+}
+.bgAppliedDarkGreen {
+  background-color: #71af47;
 }
 .mainNavy {
   background-color: #3366CC;
@@ -135,7 +145,7 @@ html {
 }
 
 .titleColor {
-  color:#234375;
+  color:#3a71b7;
 }
 
 .btn-black {
