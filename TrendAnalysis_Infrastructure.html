@@ -241,7 +241,7 @@
         <div class="col-12 extraInfo wrapper text-center">
           <ul class="list-unstyled">
             <li>
-              資料來源：TWNIC統計至2018年12月份
+              資料來源：TWNIC 統計至 2018 年 12 月份
             </li>
           </ul>
         </div>
@@ -549,11 +549,120 @@
         <div class="col-12 extraInfo wrapper text-center">
           <ul class="list-unstyled">
             <li>
-              資料來源：TWNIC統計至2018年12月份
+              資料來源：TWNIC 統計至 2018 年 12 月份
             </li>
           </ul>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-md-10 wrapper">
+      <p class="h3 text-center">
+        台灣IPv6使用比例
+      </p>
+      <div class="my-3">
+        <p class="h6 lineHeight text-center">
+          台灣IPv6使用比例為 29.63%，全球排名第6名。
+        </p>
+      </div>
+    </div>
+    <div class="col-md-10 wrapper">
+      <canvas id="chart_IPv6UsageRate" style="height:70vh; width:100vw"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_IPv6UsageRate').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['','2017/12','2018/1','2018/2','2018/3','2018/4','2018/5','2018/6','2018/7','2018/8','2018/9','2018/10','2018/11','2018/12',''],
+            datasets: [
+                {
+                  label: 'IPv6使用比例',
+                  data: [,0.46,0.58,0.91,1.96,5.31,11.58,12.79,13.4,16.09,18.92,27.29,32.61,29.63,],
+                  backgroundColor: '#3366CC',
+                  borderColor: '#3366CC',
+                  fill: false,
+                  borderWidth: 2,
+                  datalabels: {
+                    display: 'auto',
+                    align:'top',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            responsive: true,
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '萬個';
+                }
+              }
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  ticks: {
+                    beginAtZero: true,
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+                ticks: {
+                  beginAtZero: true,
+                },
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+    <div class="col-12 extraInfo wrapper text-center">
+      <ul class="list-unstyled">
+        <li>
+          資料來源：TWNIC 統計至 2018 年 12 月份
+        </li>
+      </ul>
     </div>
   </div>
   <div class="w-100 wrapperL"></div>
