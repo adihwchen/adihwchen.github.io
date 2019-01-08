@@ -2545,16 +2545,16 @@
             </div>
             <div class="row justify-content-center wrapper">
               <hr>
-              <div class="col-md-10 wrapper">
+              <div class="col-md-10 wrapper d-md-none">
                 <p class="h4 text-center">
                   使用者輪廓
                 </p>
                 <p class="mt-3 text-center">
                   女性更愛網購，而男性消費金額較高；較常網購的項目為服裝配件。
                 </p>
-                <canvas id="chart_EcUserProfile" style="height:100vh; width:100vw"></canvas>
+                <canvas id="chart_EcUserProfile_M" style="height:90vh; width:100vw"></canvas>
                 <script type="text/javascript">
-                  var ctx = document.getElementById('chart_EcUserProfile').getContext('2d');
+                  var ctx = document.getElementById('chart_EcUserProfile_M').getContext('2d');
                   var chart = new Chart(ctx, {
                     type: 'bar',
                     data: {
@@ -2594,6 +2594,142 @@
                             borderColor: '#FFC000',
                             backgroundColor: '#FFC000',
                             data: [14.7, 14.2, , 8.4, 25.0, 25.8, 12.2, 5.6, 1.2],
+                            datalabels: {
+                              display:'auto',
+                              formatter: function(value, context) {
+                                return Math.abs(value) + '%';
+                              }
+                            }
+                        },]
+                    },
+                    options: {
+                      animation: {
+                        duration: 0
+                      },
+                      tooltips: {
+                        mode:'index',
+                        /*callbacks: {
+                          label: function(tooltipItem, data) {
+                            var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                            if (label) {
+                                label += ': ';
+                            }
+                            label += Math.round(tooltipItem.yLabel * 100) / 100;
+                            return label + '%';
+                          }
+                        }*/
+                      },
+                      legend: {
+                        labels: {
+                          usePointStyle: true,
+                        }
+                      },
+                      scales: {
+                        xAxes: [{
+                          gridLines: {
+                            display: false
+                          }
+                        }],
+                        yAxes: [
+                          {
+                            display: false,
+                            type: 'linear',
+                            position: 'left',
+                            id: 'y-axis-1',
+                            ticks: {
+                              beginAtZero: true,
+                              stepValue: 10,
+                              max: 100,
+                            },
+                            gridLines: {
+                              display: false,
+                              drawOnChartArea: false,
+                          },
+                        }, {
+                          type: 'linear',
+                          display: false,
+                          position: 'right',
+                          id: 'y-axis-2',
+
+                          scaleLabel: {
+                            display:false,
+                            labelString: '%',
+                          },
+                          gridLines: {
+                            display: false,
+                            drawOnChartArea: false,
+                          },
+                        }],
+                      },
+                      elements: {
+                        line: {
+                          tension: 0,
+                        }
+                      },
+                    }
+                  });
+                </script>
+                <div class="row">
+                  <div class="col-12 extraInfo text-center wrapper">
+                    <ul class="list-unstyled">
+                      <li>n=2535</li>
+                      <li>
+                        資料來源：本研究電訪(2018)、創市際(2018/03)
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-10 wrapper d-none d-md-block">
+                <p class="h4 text-center">
+                  使用者輪廓
+                </p>
+                <p class="mt-3 text-center">
+                  女性更愛網購，而男性消費金額較高；較常網購的項目為服裝配件。
+                </p>
+                <canvas id="chart_EcUserProfile" style="height:100vh; width:100vw"></canvas>
+                <script type="text/javascript">
+                  var ctx = document.getElementById('chart_EcUserProfile').getContext('2d');
+                  var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                      labels: ["男性", "女性", "", "12-14歲", "15-19歲", "20-24歲", "25-29歲", "30-34歲", "35-39歲", "40-44歲", "45-49歲", "50-54歲", "55-59歲", "60-64歲", "65歲以上",],
+                        datasets: [
+                          {
+                            label: "平均花費",
+                            type: 'line',
+                            fill: false,
+                            yAxisID: 'y-axis-2',
+                            borderColor: '#3366CC',
+                            backgroundColor: 'rgba(252, 145, 39, 0)',
+                            pointBackgroundColor: '#3366CC',
+                            pointBorderColor: '#3366CC',
+                            pointBorderWidth: 2,
+                            data: [2545, 2311, , 2027, 1150, 2003, 3171, 2462, 3154, 2115, 2392, 2339, 2250, 1891, 2592,],
+                            datalabels: {
+                              align: 'top',
+                              formatter: function(value, context) {
+                                return Math.abs(value) + '元';
+                              }
+                            }
+                          },
+                          {
+                            label: "買東西",
+                            borderColor: '#7DCC4A',
+                            backgroundColor: '#7DCC4A',
+                            data: [58.4, 69.5, , 39.0, 63.1, 79.2, 83.7, 78.9, 82.1, 74.1, 68.5, 55.7, 39.9, 28.5, 26.2,],
+                            datalabels: {
+                              display:'auto',
+                              formatter: function(value, context) {
+                                return Math.abs(value) + '%';
+                              }
+                            }
+                        },{
+                            label: "賣東西",
+                            borderColor: '#FFC000',
+                            backgroundColor: '#FFC000',
+                            data: [14.7, 14.2, , 7.5, 8.9, 24.6, 25.5, 26.2, 25.5, 13.5, 11.0, 5.0, 6.3, 1.5, 0.9,],
                             datalabels: {
                               display:'auto',
                               formatter: function(value, context) {
@@ -2852,7 +2988,7 @@
                 <table class="table bg-white">
                   <thead class="thead-light">
                     <tr>
-                      <th class="small align-middle text-center" colspan="2" style=" min-width: 20vw;">PC 網友人數<br>Top 10 電商零售網站</th>
+                      <th class="small align-middle text-center" colspan="2" style=" min-width: 15vw;">PC 網友人數<br>Top 10 電商零售網站</th>
                       <th class="small align-middle text-center"style=" min-width: 10vw;">總瀏覽數<br>（百萬頁）</th>
                       <th class="small align-middle text-center">平均每人瀏覽頁數</th>
                       <th class="small align-middle text-center">平均每人造訪次數</th>
