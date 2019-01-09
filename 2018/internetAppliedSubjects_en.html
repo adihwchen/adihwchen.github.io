@@ -602,7 +602,7 @@
                   User Profile
                 </p>
                 <p class="mt-3 text-center">
-                  影音、直播等內容媒體使用率將近九成，使用率與年齡呈現反比。
+                  People aged 12-29 had a higher percentage of use.
                 </p>
               </div>
               <div class="col-md-10 d-none d-md-block">
@@ -697,7 +697,7 @@
                             if (label) {
                                 label += ': ';
                             }
-                            label += Math.round(tooltipItem.yLabel * 100) / 100;
+                            label += Math.abs(tooltipItem.yLabel * 100) / 100;
                             return label + '%';
                           }
                         }
@@ -752,7 +752,7 @@
                   var chart = new Chart(ctx, {
                     type: 'line',
                     data: {
-                        labels: ["","總數", "", "男性", "女性", "", "12-19歲", "20-29歲", "30-39歲", "40-49歲", "50-59歲", "60歲以上",""],
+                        labels: ["", "Total", "", "Male", "Female", "", "Age 12-19", "Age 20-29", "Age 30-39", "Age 40-49", "Age 50-59", "Age 60+", ""],
                         datasets: [{
                             label: "Music",
                             borderColor: 'rgba(51, 102, 204, 1)',
@@ -837,7 +837,7 @@
                             if (label) {
                                 label += ': ';
                             }
-                            label += Math.round(tooltipItem.yLabel * 100) / 100;
+                            label += Math.abs(tooltipItem.yLabel * 100) / 100;
                             return label + '%';
                           }
                         }
@@ -889,7 +889,7 @@
               <hr>
               <div class="col-md-10 wrapper">
                 <p class="h4 text-center">
-                  Content Media使用情形
+                  Content Media Usage Status
                 </p>
                 <canvas id="chart_contentMediaUsage" style="height:80vh; width:100vw"></canvas>
                 <script>
@@ -897,10 +897,10 @@
                   var mixedChart = new Chart(ctx, {
                     type: 'bar',
                     data: {
-                      labels: ['聽音樂', '看戲劇節目', '看直播','看電影'],
+                      labels: ['Music', 'TV Program', 'Live Broadcast','Movies'],
                       datasets: [
                           {
-                            label: '使用率',
+                            label: 'Usage Rate',
                             fill: false,
                             data: [72.3, 71.9, 48.8, 46.0],
                             backgroundColor: '#7DCC4A',
@@ -916,7 +916,7 @@
                             }
                           },
                           {
-                            label: '付費率',
+                            label: 'Payment Ratio',
                             fill: false,
                             data: [12.4, 6.8,2.3, 12.2],
                             backgroundColor: '#3366CC',
@@ -1013,23 +1013,22 @@
               <hr>
               <div class="col-md-10 wrapper">
                 <p class="h4 text-center">
-                  使用率最高的影音平台
+                  Most frequently used online video platforms in Taiwan
                 </p>
                 <p class="mt-3">
-                  觀察YouTube之外的影音平台，Yahoo TV收看人數最多，Dailymotion使用時間最突出。
+                  In terms of online video platforms, except YouTube, Yahoo TV has the most viewers while Dailymotion has the highest usage time.
                 </p>
-                <!--iframe src="https://plotdb.io/v/chart/19717" width="100%" height="380px" frameborder="0"></iframe-->
-                <img class="img-fluid" src="img/chart_usageVideoPlatform.png" alt="">
+                <img class="img-fluid" src="img/chart_usageVideoPlatform_en.png" alt="">
                 <div class="col-12 text-center wrapper">
                   <ul class="list-unstyled extraInfo">
                     <li>
-                      本次數據觀察 18 歲以上使用者
+                      Total Audience aged 18 and above
                     </li>
                     <li>
                       本排名將影音多媒體類網站依數位網友不重複造訪人數排序，並排除 YouTube.com
                     </li>
                     <li>
-                      資料來源：<a href="http://www.ixresearch.com/wp-content/uploads/report/InsightXplorer%20Biweekly%20Report_20180716.pdf" target="">創市際</a>(2018/07)
+                      Source: <a href="http://www.ixresearch.com/wp-content/uploads/report/InsightXplorer%20Biweekly%20Report_20180716.pdf" target="">InsightXplorer</a>(2018/07)
                     </li>
                   </ul>
                 </div>
@@ -1039,7 +1038,7 @@
               <hr>
               <div class="col-md-10 wrapper">
                 <p class="h4 text-center">
-                  平均每次收視時間
+                  Avg. Time per View (minutes)
                 </p>
                 <div class="row justify-content-center mt-3 text-center">
                   <div class="col-5 col-md-3">
@@ -1094,7 +1093,7 @@
                   <div class="col-12">
                     <ul class="list-unstyled extraInfo">
                       <li>
-                        Source: Telephone interviews conducted in this research (2018)、創市際內部調查(2018/07)
+                        Source: Telephone interviews conducted in this research (2018)、InsightXplorer(2018/07), and <a href="https://www.ncc.gov.tw/chinese/files/18121/3734_40780_181211_2.pdf" target="_blank">NCC</a> (2017)
                       </li>
                     </ul>
                   </div>
@@ -1182,7 +1181,7 @@
                     <ul class="list-unstyled">
                       <li>n=1824</li>
                       <li>
-                        Source: Telephone interviews conducted in this research (2018)、創市際內部調查(2018/07)
+                        Source: Telephone interviews conducted in this research (2018)、InsightXplorer內部調查(2018/07)
                       </li>
                     </ul>
                   </div>
@@ -1626,7 +1625,7 @@
                     <ul class="list-unstyled">
                       <li>n=1374</li>
                       <li>
-                        資料來源：創市際內部資料(2018/09)、<a href="https://zh.scribd.com/document/388767930/InsightXplorer-Biweekly-Report-20180917#fullscreen&from_embed" target="_blank">創市際</a>(2018/09)
+                        Source: InsightXplorer內部資料(2018/09)、<a href="https://zh.scribd.com/document/388767930/InsightXplorer-Biweekly-Report-20180917#fullscreen&from_embed" target="_blank">InsightXplorer</a>(2018/09)
                       </li>
                     </ul>
                   </div>
@@ -1827,7 +1826,7 @@
                     <ul class="list-unstyled">
                       <li>n=1179</li>
                       <li>
-                        資料來源：創市際內部資料(2018/09)、<a href="https://zh.scribd.com/document/388767930/InsightXplorer-Biweekly-Report-20180917#fullscreen&from_embed" target="_blank">創市際</a>(2018/09)
+                        Source: InsightXplorer內部資料(2018/09)、<a href="https://zh.scribd.com/document/388767930/InsightXplorer-Biweekly-Report-20180917#fullscreen&from_embed" target="_blank">InsightXplorer</a>(2018/09)
                       </li>
                     </ul>
                   </div>
@@ -1875,7 +1874,7 @@
                 <ul class="list-unstyled extraInfo text-center">
                   <li>n=1598</li>
                   <li>
-                    資料來源：創市際內部資料(2018/10)、<a href="https://www.ixresearch.com/reports/%E5%89%B5%E5%B8%82%E9%9A%9B%E9%9B%99%E9%80%B1%E5%88%8A%E7%AC%AC%E4%B8%80%E4%BA%8C%E4%BA%8C%E6%9C%9F-20181130/" target="_blank">創市際</a>(2018/11)
+                    Source: InsightXplorer內部資料(2018/10)、<a href="https://www.ixresearch.com/reports/%E5%89%B5%E5%B8%82%E9%9A%9B%E9%9B%99%E9%80%B1%E5%88%8A%E7%AC%AC%E4%B8%80%E4%BA%8C%E4%BA%8C%E6%9C%9F-20181130/" target="_blank">InsightXplorer</a>(2018/11)
                   </li>
                 </ul>
               </div>
@@ -1890,7 +1889,7 @@
                 <ul class="list-unstyled extraInfo text-center">
                   <li>n=1028</li>
                   <li>
-                    資料來源：創市際內部資料(2018/10)、<a href="https://www.ixresearch.com/reports/%E5%89%B5%E5%B8%82%E9%9A%9B%E9%9B%99%E9%80%B1%E5%88%8A%E7%AC%AC%E4%B8%80%E4%BA%8C%E4%BA%8C%E6%9C%9F-20181130/" target="_blank">創市際</a>(2018/11)
+                    Source: InsightXplorer內部資料(2018/10)、<a href="https://www.ixresearch.com/reports/%E5%89%B5%E5%B8%82%E9%9A%9B%E9%9B%99%E9%80%B1%E5%88%8A%E7%AC%AC%E4%B8%80%E4%BA%8C%E4%BA%8C%E6%9C%9F-20181130/" target="_blank">InsightXplorer</a>(2018/11)
                   </li>
                 </ul>
 
@@ -1977,7 +1976,7 @@
                     <ul class="list-unstyled">
                       <li>n=482</li>
                       <li>
-                        資料來源：<a href="https://www.ixresearch.com/news/news_08_27_18" target="_blank">創市際</a>(2018/05)、創市際內部資料(2018/10)
+                        Source: <a href="https://www.ixresearch.com/news/news_08_27_18" target="_blank">InsightXplorer</a>(2018/05)、InsightXplorer內部資料(2018/10)
                       </li>
                     </ul>
                   </div>
@@ -2002,7 +2001,7 @@
                 <ul class="list-unstyled extraInfo text-center">
                   <li>n=1061</li>
                   <li>
-                    資料來源：創市際內部資料(2018/10)、<a href="https://zh.scribd.com/document/394528027/InsightXplorer-Biweekly-Report-20181130#fullscreen&from_embed" target="_blank">創市際</a>(2018/11)
+                    Source: InsightXplorer內部資料(2018/10)、<a href="https://zh.scribd.com/document/394528027/InsightXplorer-Biweekly-Report-20181130#fullscreen&from_embed" target="_blank">InsightXplorer</a>(2018/11)
                   </li>
                 </ul>
               </div>
@@ -2017,7 +2016,7 @@
                 <ul class="list-unstyled extraInfo text-center">
                   <li>n=733</li>
                   <li>
-                    資料來源：創市際內部資料(2018/10)、<a href="https://zh.scribd.com/document/394528027/InsightXplorer-Biweekly-Report-20181130#fullscreen&from_embed" target="_blank">創市際</a>(2018/11)
+                    Source: InsightXplorer內部資料(2018/10)、<a href="https://zh.scribd.com/document/394528027/InsightXplorer-Biweekly-Report-20181130#fullscreen&from_embed" target="_blank">InsightXplorer</a>(2018/11)
                   </li>
                 </ul>
               </div>
@@ -2058,7 +2057,7 @@
                     <ul class="list-unstyled extraInfo text-center">
                       <li>n=1023</li>
                       <li>
-                        資料來源：創市際內部資料(2018/11)、<a href="https://zh.scribd.com/document/394528027/InsightXplorer-Biweekly-Report-20181130#fullscreen&from_embed" target="_blank">創市際</a>(2018/11)
+                        Source: InsightXplorer內部資料(2018/11)、<a href="https://zh.scribd.com/document/394528027/InsightXplorer-Biweekly-Report-20181130#fullscreen&from_embed" target="_blank">InsightXplorer</a>(2018/11)
                       </li>
                     </ul>
                   </div>
@@ -2145,7 +2144,7 @@
                     <ul class="list-unstyled extraInfo text-center wrapper">
                       <li>n=695</li>
                       <li>
-                        資料來源：創市際內部資料(2018/11)、<a href="https://zh.scribd.com/document/394528027/InsightXplorer-Biweekly-Report-20181130#fullscreen&from_embed" target="_blank">創市際</a>(2018/11)
+                        Source: InsightXplorer內部資料(2018/11)、<a href="https://zh.scribd.com/document/394528027/InsightXplorer-Biweekly-Report-20181130#fullscreen&from_embed" target="_blank">InsightXplorer</a>(2018/11)
                       </li>
                     </ul>
                   </div>
@@ -2233,7 +2232,7 @@
                     <ul class="list-unstyled">
                       <li>n=985</li>
                       <li>
-                        資料來源：<a href="https://www.ixresearch.com/news/news_08_27_18" target="_blank">創市際</a>(2018/05)、創市際內部資料(2018/10)
+                        Source: <a href="https://www.ixresearch.com/news/news_08_27_18" target="_blank">InsightXplorer</a>(2018/05)、InsightXplorer內部資料(2018/10)
                       </li>
                     </ul>
                   </div>
@@ -3278,7 +3277,7 @@
                   <ul class="list-unstyled">
                     <li>n=1621</li>
                     <li>
-                      資料來源：創市際內部資料(2018/03)
+                      Source: InsightXplorer內部資料(2018/03)
                     </li>
                   </ul>
                 </div>
@@ -3389,7 +3388,7 @@
                     <ul class="list-unstyled">
                       <li>因篇幅有限，僅列舉代表性業者</li>
                       <li>
-                        資料來源：資策會MIC(2017)、 <a href="https://meethu.bnext.com.tw/3%E5%88%86%E9%90%98%E5%B0%B1%E6%90%9E%E6%87%82%EF%BC%9A%E5%8F%B0%E7%81%A3%E9%9B%BB%E5%95%86%E5%B8%82%E5%A0%B4%E6%A6%82%E6%B3%81%EF%BD%9C%E5%A4%A7%E5%92%8C%E6%9C%89%E8%A9%B1%E8%AA%AA/">網路</a>、創市際整理
+                        Source: 資策會MIC(2017)、 <a href="https://meethu.bnext.com.tw/3%E5%88%86%E9%90%98%E5%B0%B1%E6%90%9E%E6%87%82%EF%BC%9A%E5%8F%B0%E7%81%A3%E9%9B%BB%E5%95%86%E5%B8%82%E5%A0%B4%E6%A6%82%E6%B3%81%EF%BD%9C%E5%A4%A7%E5%92%8C%E6%9C%89%E8%A9%B1%E8%AA%AA/">網路</a>、InsightXplorer整理
                       </li>
                     </ul>
                   </div>
@@ -3490,7 +3489,7 @@
                 </table>
                 <ul class="list-unstyled extraInfo text-center">
                   <li>
-                    資料來源：<a href="https://zh.scribd.com/document/375148865/InsightXplorer-Biweekly-Report-20180330#fullscreen&from_embed" target="_blank">創市際</a>(2018/01)
+                    Source: <a href="https://zh.scribd.com/document/375148865/InsightXplorer-Biweekly-Report-20180330#fullscreen&from_embed" target="_blank">InsightXplorer</a>(2018/01)
                   </li>
                 </ul>
               </div>
@@ -3763,7 +3762,7 @@
                       <ul class="list-unstyled">
                         <li>n=902</li>
                         <li>
-                          資料來源：創市際內部資料(2018/05)、本研究電訪(2018)
+                          Source: InsightXplorer內部資料(2018/05)、本研究電訪(2018)
                         </li>
                       </ul>
                     </div>
@@ -3855,7 +3854,7 @@
                     <ul class="list-unstyled">
                       <li>n=1505</li>
                       <li>
-                        資料來源：創市際內部資料(2018/05)、本研究電訪(2018)
+                        Source: InsightXplorer內部資料(2018/05)、本研究電訪(2018)
                       </li>
                     </ul>
                   </div>
@@ -3912,7 +3911,7 @@
                     <ul class="list-unstyled">
                       <li>n=1775</li>
                       <li>
-                        資料來源：創市際內部資料(2018/05)、本研究電訪(2018)
+                        Source: InsightXplorer內部資料(2018/05)、本研究電訪(2018)
                       </li>
                     </ul>
                   </div>
@@ -4150,7 +4149,7 @@
                 <ul class="list-unstyled extraInfo">
                   <li>n=726</li>
                   <li>
-                    資料來源：創市際內部資料(2018/05)
+                    Source: InsightXplorer內部資料(2018/05)
                   </li>
                 </ul>
               </div>
@@ -4165,7 +4164,7 @@
                 <ul class="list-unstyled extraInfo">
                   <li>n=414</li>
                   <li>
-                    資料來源：創市際內部資料(2018/05)
+                    Source: InsightXplorer內部資料(2018/05)
                   </li>
                 </ul>
               </div>
@@ -4250,7 +4249,7 @@
                     <ul class="list-unstyled">
                       <li>n=726</li>
                       <li>
-                        資料來源：創市際內部資料(2018/05)
+                        Source: InsightXplorer內部資料(2018/05)
                       </li>
                     </ul>
                   </div>
@@ -4342,7 +4341,7 @@
                     <ul class="list-unstyled">
                       <li>n=414</li>
                       <li>
-                        資料來源：創市際內部資料(2018/05)、本研究電訪(2018)
+                        Source: InsightXplorer內部資料(2018/05)、本研究電訪(2018)
                       </li>
                     </ul>
                   </div>
@@ -4401,7 +4400,7 @@
                 <ul class="list-unstyled">
                   <li>n=1935</li>
                   <li>
-                    資料來源：創市際內部資料(2018/07)
+                    Source: InsightXplorer內部資料(2018/07)
                   </li>
                 </ul>
               </div>
@@ -4453,7 +4452,7 @@
                 <ul class="list-unstyled">
                   <li>n=1935</li>
                   <li>
-                    資料來源：創市際內部資料(2018/07)
+                    Source: InsightXplorer內部資料(2018/07)
                   </li>
                 </ul>
               </div>
@@ -4681,7 +4680,7 @@
                       *轉換率 = 使用率 / 知曉度
                     </li>
                     <li>
-                      資料來源：創市際內部資料(2018/07)
+                      Source: InsightXplorer內部資料(2018/07)
                     </li>
                   </ul>
                 </div>
@@ -4744,7 +4743,7 @@
                   <ul class="list-unstyled">
                     <li>n=1605</li>
                     <li>
-                      資料來源：創市際內部資料(2018/12)
+                      Source: InsightXplorer內部資料(2018/12)
                     </li>
                   </ul>
                 </div>
@@ -4831,7 +4830,7 @@
                     <ul class="list-unstyled">
                       <li>n=1547</li>
                       <li>
-                        資料來源：創市際內部資料(2018/12)
+                        Source: InsightXplorer內部資料(2018/12)
                       </li>
                     </ul>
                   </div>
@@ -4904,7 +4903,7 @@
                   <ul class="list-unstyled">
                     <li>n=1605</li>
                     <li>
-                      資料來源：創市際內部資料(2018/12)
+                      Source: InsightXplorer內部資料(2018/12)
                     </li>
                   </ul>
                 </div>
@@ -4936,7 +4935,7 @@
                 <ul class="list-unstyled">
                   <li>n=1605</li>
                   <li>
-                    資料來源：創市際內部資料(2018/12)
+                    Source: InsightXplorer內部資料(2018/12)
                   </li>
                 </ul>
               </div>
@@ -5005,7 +5004,7 @@
               <div class="col-12 extraInfo text-center wrapper">
                 <ul class="list-unstyled">
                   <li>
-                    資料來源：創市際內部資料(2018/12)
+                    Source: InsightXplorer內部資料(2018/12)
                   </li>
                 </ul>
               </div>
@@ -5087,7 +5086,7 @@
                         n=1605
                       </li>
                       <li>
-                        資料來源：創市際內部資料(2018/12)
+                        Source: InsightXplorer內部資料(2018/12)
                       </li>
                     </ul>
                   </div>
