@@ -14,11 +14,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 
 
-  <title>2018 台灣網路調查 - 方向四</title>
+  <title>Taiwan Internet Report 2018 - Strategy 4: Expand and Invigorate Online Education</title>
 
-  <meta property="og:url" content="http://twnic.somewhere.there">
+  <meta property="og:url" content="https://report.twnic.tw/2018/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="2018 台灣網路調查">
+  <meta property="og:title" content="Taiwan Internet Report 2018 - Strategy 4: Expand and Invigorate Online Education">
   <meta property="og:image" content="">
   <meta property="og:image:type" content="image/png">
   <meta property="og:description" content="TWNIC">
@@ -88,13 +88,13 @@
       <div class="collapse navbar-collapse justify-content-end" id="navBurger">
         <ul class="navbar-nav text-center">
           <li class="nav-item border-white d-md-none">
-            <a class="linkColorWHT btn" href="TWNIC_TaiwanInternetReport_2018_CH.pdf" target="_blank">報告下載</a>
+            <a class="linkColorWHT btn" href="TWNIC_TaiwanInternetReport_2018_EN.pdf" target="_blank">Download the Report</a>
           </li>
           <li class="nav-item border-white border-right d-none d-md-block">
-            <a class="linkColorWHT btn" href="TWNIC_TaiwanInternetReport_2018_CH.pdf" target="_blank">報告下載</a>
+            <a class="linkColorWHT btn" href="TWNIC_TaiwanInternetReport_2018_EN.pdf" target="_blank">Download the Report</a>
           </li>
           <li class="nav-item">
-            <a class="linkColorWHT btn" href="index.html" target="_blank">回到主頁</a>
+            <a class="linkColorWHT btn" href="index_en.html" target="_blank">Back to Main Page</a>
           </li>
         </ul>
       </div>
@@ -109,16 +109,16 @@
   <div class="row justify-content-center wrapperCards text-white" id="opening">
     <div class="col-12 col-md-7">
       <p class="text-center h1 d-md-none my-3 wrapper">
-        方向四<br>網路學習拓展活化
+        Strategy 4<br>Expand and Invigorate Online Education
       </p>
       <p class="display-4 mt-5 text-center d-none d-md-block">
-        方向四：網路學習拓展活化
+        Strategy 4: Expand and Invigorate Online Education
       </p>
     </div>
     <div class="w-100"></div>
     <div class="col-10 col-md-6">
       <p class="h5 lineHeight font-weight-light">
-        學習需求高但使用率低，需破除正式學習和學歷目的的學習外，增加技能學習的內容也能增加使用率。
+        The demand for education is high but the usage rate is low. Operators must break free of education based on official curriculums and academic purposes while increasing content for the education of skills and increasing usage rates.
       </p>
     </div>
   </div>
@@ -131,7 +131,7 @@
   <div class="row justify-content-center wrapperL">
     <div class="col-md-10">
       <p class="h1 mt-5 titleColor text-center">
-        線上學習平台使用情形
+        Education And Application Usage Status
       </p>
       <div class="my-3">
         <p class="h6 lineHeight">
@@ -143,101 +143,25 @@
   <div class="row justify-content-center wrapper">
     <div class="col-md-10 d-md-none">
       <canvas id="chart_educativeUserProfile_M" style="height:70vh; width:100vw"></canvas>
-      <script>
+      <script type="text/javascript">
         var ctx = document.getElementById('chart_educativeUserProfile_M').getContext('2d');
         var chart = new Chart(ctx, {
           type: 'bar',
           data: {
-              labels: ["", "男性", "女性", "", "12-19歲", "20-29歲", "30-39歲", "40-49歲", "50-59歲", "60歲以上",""],
-              datasets: [{
-                  label: "教育應用使用率",
+              labels: ["Male", "Female", "", "Age 12-19", "Age 20-29", "Age 30-39", "Age 40-49", "Age 50-59", "Age 60+"],
+              datasets: [
+                {
+                  label: "E-Learning Usage Rate",
                   borderColor: '#7DCC4A',
                   backgroundColor: '#7DCC4A',
-                  data: [, 12.9, 15.0, , 21.8, 12.9, 13.1, 12.5, 15.0, 10.9,,],
-              }, ]
-          },
-          options: {
-            animation: {
-              duration: 0
-            },
-            tooltips: {
-              mode:'index',
-              callbacks: {
-                label: function(tooltipItem, data) {
-                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
-
-                  if (label) {
-                      label += ': ';
+                  data: [12.9, 15.0, , 21.8, 12.9, 13.1, 12.5, 15.0, 10.9],
+                  datalabels: {
+                    display:'auto',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
                   }
-                  label += Math.round(tooltipItem.yLabel * 100) / 100;
-                  return label + '%';
-                }
-              }
-            },
-            legend: {
-              labels: {
-                usePointStyle: true,
-              }
-            },
-            scales: {
-              xAxes: [{
-                gridLines: {
-                  display: false
-                }
-              }],
-              yAxes: [{
-                gridLines: {
-                  display: false,
-                  drawBorder: false
-                },
-                ticks: {
-                  beginAtZero:true,
-                  display: false,
-                }
-              }]
-            },
-            elements: {
-              line: {
-                tension: 0,
-              }
-            },
-            plugins: {
-              datalabels: {
-                display: true,
-                align: 'center',
-                formatter: function(value, context) {
-                  return Math.abs(value) + '%';
-                }
-              }
-            }
-          }
-        });
-      </script>
-      <div class="row">
-        <div class="col-12 extraInfo text-center wrapper">
-          <ul class="list-unstyled">
-            <li>N=354</li>
-            <li>
-              資料來源：本研究電訪(2018)
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-10 d-none d-md-block">
-      <canvas id="chart_educativeUserProfile" style="height:80vh; width:100vw"></canvas>
-      <script>
-        var ctx = document.getElementById('chart_educativeUserProfile').getContext('2d');
-        var chart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-              labels: ["", "男性", "女性", "", "12-14歲", "15-19歲", "20-24歲", "25-29歲", "30-34歲", "35-39歲", "40-44歲", "45-49歲", "50-54歲", "55-59歲", "60-64歲", "65歲以上",""],
-              datasets: [{
-                  label: "教育應用使用率",
-                  borderColor: '#7DCC4A',
-                  backgroundColor: '#7DCC4A',
-                  data: [, 12.9, 15.0, ,26.0,  19.7, 14.6 , 11.3, 14.2, 12.3 , 11.7, 13.4 , 14.4, 15.5, 11.4, 10.4,,],
-              }, ]
+              },]
           },
           options: {
             animation: {
@@ -268,31 +192,113 @@
                   display: false
                 }
               }],
-              yAxes: [{
-                gridLines: {
+              yAxes: [
+                {
                   display: false,
-                  drawBorder: false
+                  type: 'linear',
+                  position: 'left',
+                  ticks: {
+                    beginAtZero: true,
+                    stepValue: 10,
+                    max: 30,
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
                 },
-                ticks: {
-                  beginAtZero:true,
-                  display: false,
-                }
-              }]
+              },],
             },
             elements: {
               line: {
                 tension: 0,
               }
             },
-            plugins: {
-              datalabels: {
-                display: true,
-                align: 'center',
-                formatter: function(value, context) {
-                  return Math.abs(value) + '%';
+          }
+        });
+      </script>
+      <div class="row">
+        <div class="col-12 extraInfo text-center wrapper">
+          <ul class="list-unstyled">
+            <li>N=354</li>
+            <li>
+              Source: Telephone interviews conducted in this research (2018)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-10 d-none d-md-block">
+      <canvas id="chart_educativeUserProfile" style="height:80vh; width:100vw"></canvas>
+      <script type="text/javascript">
+        var ctx = document.getElementById('chart_educativeUserProfile').getContext('2d');
+        var chart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+              labels: ["Male", "Female", "", "Age 12-14", "Age 15-19", "Age 20-24", "Age 25-29", "Age 30-34", "Age 35-39", "Age 40-44", "Age 45-49", "Age 50-54", "Age 55-59", "Age 60-64", "Age 65+"],
+              datasets: [
+                {
+                  label: "E-Learning Usage Rate",
+                  borderColor: '#7DCC4A',
+                  backgroundColor: '#7DCC4A',
+                  data: [12.9, 15.0, , 26.0,19.7,14.6,11.3,14.2,12.3,11.7,13.4,14.4,15.5,11.4,10.4],
+                  datalabels: {
+                    display:'auto',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+              },]
+          },
+          options: {
+            animation: {
+              duration: 0
+            },
+            tooltips: {
+              mode:'index',
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.abs(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
                 }
               }
-            }
+            },
+            legend: {
+              labels: {
+                usePointStyle: true,
+              }
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  type: 'linear',
+                  position: 'left',
+                  ticks: {
+                    beginAtZero: true,
+                    stepValue: 20,
+                    max: 40,
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                    },
+                  }],
+                },
+            elements: {
+              line: {
+                tension: 0,
+              }
+            },
           }
         });
       </script>
@@ -301,7 +307,7 @@
           <ul class="list-unstyled">
             <li>n=354</li>
             <li>
-              資料來源：本研究電訪(2018)
+              Source: Telephone interviews conducted in this research (2018)
             </li>
           </ul>
         </div>
@@ -368,7 +374,7 @@
           <ul class="list-unstyled extraInfo">
             <li>n=354</li>
             <li>
-              資料來源：本研究電訪(2018)
+              Source: Telephone interviews conducted in this research (2018)
             </li>
           </ul>
         </div>
