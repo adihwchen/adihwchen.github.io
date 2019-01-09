@@ -276,7 +276,7 @@
       </div>
       <div class="row justify-content-center tab-content my-4">
         <div class="col-12 tab-pane active" id="numberOfIPv4">
-          <canvas id="chart_numberOfIPv4" style="height:70vh; width:100vw"></canvas>
+          <canvas id="chart_numberOfIPv4" style="height:80vh; width:100vw"></canvas>
           <script>
             var ctx = document.getElementById('chart_numberOfIPv4').getContext('2d');
             var mixedChart = new Chart(ctx, {
@@ -333,6 +333,8 @@
                       display: false,
                       ticks: {
                         beginAtZero: true,
+                        stepValue: 100,
+                        max: 4500,
                       },
                       gridLines: {
                         display: false,
@@ -366,7 +368,7 @@
           </script>
         </div>
         <div class="col-12 tab-pane fade in" id="numberOfIPv6">
-          <canvas id="chart_numberOfIPv6" style="height:70vh; width:100vw"></canvas>
+          <canvas id="chart_numberOfIPv6" style="height:80vh; width:100vw"></canvas>
           <script>
             var ctx = document.getElementById('chart_numberOfIPv6').getContext('2d');
             var mixedChart = new Chart(ctx, {
@@ -384,7 +386,7 @@
                       borderWidth: 2,
                       datalabels: {
                         display: 'auto',
-                        align: 'bottom',
+                        align: 'top',
                         formatter: function(value, context) {
                           return Math.round(value) + ' /32 個';
                         }
@@ -423,7 +425,9 @@
                     {
                       display: false,
                       ticks: {
-                        /*beginAtZero: true,*/
+                        beginAtZero: true,
+                        stepValue: 50,
+                        max: 2800,
                       },
                       gridLines: {
                         display: false,
@@ -436,8 +440,8 @@
                     id: 'y-axis-2',
                     ticks: {
                       beginAtZero: true,
-                      stepValue: 10,
-                      max: 2800,
+                      stepValue: 200,
+                      max: 3000,
                     },
                     gridLines: {
                       display: false,
@@ -458,7 +462,7 @@
           </script>
         </div>
         <div class="col-12 tab-pane fade in" id="numberOfASN">
-          <canvas id="chart_numberOfASN" style="height:70vh; width:100vw"></canvas>
+          <canvas id="chart_numberOfASN" style="height:80vh; width:100vw"></canvas>
           <script>
             var ctx = document.getElementById('chart_numberOfASN').getContext('2d');
             var mixedChart = new Chart(ctx, {
@@ -557,9 +561,8 @@
       </div>
     </div>
 
-
   </div>
-  <div class="row justify-content-center">
+  <div class="row justify-content-center wrapper">
     <div class="col-md-10 wrapper">
       <p class="h3 text-center">
         台灣 IPv6 使用比例
@@ -628,6 +631,8 @@
                   display: false,
                   ticks: {
                     beginAtZero: true,
+                    stepValue: 10,
+                    max: 75,
                   },
                   gridLines: {
                     display: false,
@@ -668,6 +673,923 @@
       </ul>
     </div>
   </div>
+  <div class="row justify-content-center wrapper">
+    <div class="col-md-10 wrapper">
+      <p class="h3 text-center">
+        商用網路公司 ISP IPv6 使用者比率
+      </p>
+    </div>
+    <div class="w-100 wrapper"></div>
+    <div class="col-10 col-md-4 card">
+      <div class="text-center mt-4">
+        <p class="h6">
+          中華電信（行網）CHT Mobile
+        </p>
+        <p class="extraInfo">
+          IPv6 比例 76.93%
+        </p>
+      </div>
+      <canvas id="chart_commercialIPv6UsageRate1" style="height:40vh;"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_commercialIPv6UsageRate1').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['','2017/12','2018/1','2018/2','2018/3','2018/4','2018/5','2018/6','2018/7','2018/8','2018/9','2018/10','2018/11','2018/12',''],
+            datasets: [
+                {
+                  label: 'CHT Mobile IPv6 比例',
+                  data: [,0.02,0.06,0.72,3.12,16.55,23.04,34.19,42.74,37.54,54.44,67.72,71.66,66.18,],
+                  backgroundColor: '#3366CC',
+                  borderColor: '#3366CC',
+                  fill: false,
+                  borderWidth: 2,
+                  datalabels: {
+                    display: 'auto',
+                    align:'top',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            responsive: true,
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  ticks: {
+                    beginAtZero: true,
+                    stepValue: 10,
+                    max: 75,
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+                ticks: {
+                  beginAtZero: true,
+                },
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+    <div class="col-10 col-md-4 card">
+      <div class="text-center mt-4">
+        <p class="h6">
+          台灣大哥大（行網）Taiwan Mobile
+        </p>
+        <p class="extraInfo">
+          IPv6 比例 54.7%
+        </p>
+      </div>
+      <canvas id="chart_commercialIPv6UsageRate2" style="height:40vh;"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_commercialIPv6UsageRate2').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['','2017/12','2018/1','2018/2','2018/3','2018/4','2018/5','2018/6','2018/7','2018/8','2018/9','2018/10','2018/11','2018/12',''],
+            datasets: [
+                {
+                  label: 'Taiwan Mobile IPv6 比例',
+                  data: [,0.01,0.01,0.01,0.01,0,0.01,0.01,0.02,0.67,2.59,8.79,19.78,22.72,],
+                  backgroundColor: '#3366CC',
+                  borderColor: '#3366CC',
+                  fill: false,
+                  borderWidth: 2,
+                  datalabels: {
+                    display: 'auto',
+                    align:'top',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            responsive: true,
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  ticks: {
+                    beginAtZero: true,
+                    stepValue: 10,
+                    max: 75,
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+                ticks: {
+                  beginAtZero: true,
+                },
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+    <div class="col-10 col-md-4 card">
+      <div class="text-center mt-4">
+        <p class="h6">
+          遠傳電信（行網）FETNet
+        </p>
+        <p class="extraInfo">
+          IPv6 比例 52.51%
+        </p>
+      </div>
+      <canvas id="chart_commercialIPv6UsageRate3" style="height:40vh;"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_commercialIPv6UsageRate3').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['','2017/12','2018/1','2018/2','2018/3','2018/4','2018/5','2018/6','2018/7','2018/8','2018/9','2018/10','2018/11','2018/12',''],
+            datasets: [
+                {
+                  label: 'FETNet IPv6 使用比例',
+                  data: [,0.01,0.01,0.01,0.01,0.02,0,0.02,0.04,0.03,0.03,1.05,31.24,31.55,],
+                  backgroundColor: '#3366CC',
+                  borderColor: '#3366CC',
+                  fill: false,
+                  borderWidth: 2,
+                  datalabels: {
+                    display: 'auto',
+                    align:'top',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            responsive: true,
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  ticks: {
+                    beginAtZero: true,
+                    stepValue: 10,
+                    max: 75,
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+                ticks: {
+                  beginAtZero: true,
+                },
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+    <div class="col-10 col-md-4 card">
+      <div class="text-center mt-4">
+        <p class="h6">
+          中華電信（固網）CHT Fixed Network
+        </p>
+        <p class="extraInfo">
+          IPv6 比例 22.34%
+        </p>
+      </div>
+      <canvas id="chart_commercialIPv6UsageRate4" style="height:40vh;"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_commercialIPv6UsageRate4').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['','2017/12','2018/1','2018/2','2018/3','2018/4','2018/5','2018/6','2018/7','2018/8','2018/9','2018/10','2018/11','2018/12',''],
+            datasets: [
+                {
+                  label: 'CHT Fixed Network IPv6 使用比例',
+                  data: [,0.4,0.51,0.69,1.01,2.2,6.2,16.16,18.18,13.73,21.33,21.47,19.27,17.36,],
+                  backgroundColor: '#3366CC',
+                  borderColor: '#3366CC',
+                  fill: false,
+                  borderWidth: 2,
+                  datalabels: {
+                    display: 'auto',
+                    align:'top',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            responsive: true,
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  ticks: {
+                    beginAtZero: true,
+                    stepValue: 10,
+                    max: 75,
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+                ticks: {
+                  beginAtZero: true,
+                },
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+    <div class="col-10 col-md-4 card">
+      <div class="text-center mt-4">
+        <p class="h6">
+          亞太電信（行網）AMBIT
+        </p>
+        <p class="extraInfo">
+          IPv6 比例 16.01%
+        </p>
+      </div>
+      <canvas id="chart_commercialIPv6UsageRate5" style="height:40vh;"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_commercialIPv6UsageRate5').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['','2017/12','2018/1','2018/2','2018/3','2018/4','2018/5','2018/6','2018/7','2018/8','2018/9','2018/10','2018/11','2018/12',''],
+            datasets: [
+                {
+                  label: 'AMBIT IPv6 使用比例',
+                  data: [,0.02,0.02,0.01,0,0,0,0.06,0.03,0,0,2.64,2.67,6.46,],
+                  backgroundColor: '#3366CC',
+                  borderColor: '#3366CC',
+                  fill: false,
+                  borderWidth: 2,
+                  datalabels: {
+                    display: 'auto',
+                    align:'top',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            responsive: true,
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  ticks: {
+                    beginAtZero: true,
+                    stepValue: 10,
+                    max: 75,
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+                ticks: {
+                  beginAtZero: true,
+                },
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+    <div class="col-10 col-md-4 card">
+      <div class="text-center mt-4">
+        <p class="h6">
+          新世紀資通（固網）Seednet
+        </p>
+        <p class="extraInfo">
+          IPv6 比例 1.05%
+        </p>
+      </div>
+      <canvas id="chart_commercialIPv6UsageRate6" style="height:40vh;"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_commercialIPv6UsageRate6').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['','2017/12','2018/1','2018/2','2018/3','2018/4','2018/5','2018/6','2018/7','2018/8','2018/9','2018/10','2018/11','2018/12',''],
+            datasets: [
+                {
+                  label: 'IPv6使用比例',
+                  data: [,0.01,0.01,0.01,0.01,0,0,0.06,0.18,0.07,0.03,0.4,0.21,0.43,],
+                  backgroundColor: '#3366CC',
+                  borderColor: '#3366CC',
+                  fill: false,
+                  borderWidth: 2,
+                  datalabels: {
+                    display: 'auto',
+                    align:'top',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            responsive: true,
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  ticks: {
+                    beginAtZero: true,
+                    stepValue: 10,
+                    max: 75,
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+                ticks: {
+                  beginAtZero: true,
+                },
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+    <div class="col-10 col-md-4 card">
+      <div class="text-center mt-4">
+        <p class="h6">
+          台灣固網（固網）TFN
+        </p>
+        <p class="extraInfo">
+          IPv6 比例 0.32%
+        </p>
+      </div>
+      <canvas id="chart_commercialIPv6UsageRate7" style="height:40vh;"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_commercialIPv6UsageRate7').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['','2017/12','2018/1','2018/2','2018/3','2018/4','2018/5','2018/6','2018/7','2018/8','2018/9','2018/10','2018/11','2018/12',''],
+            datasets: [
+                {
+                  label: 'IPv6使用比例',
+                  data: [,0.46,0.58,0.91,1.96,5.31,11.58,12.79,13.4,16.09,18.92,27.29,32.61,29.63,],
+                  backgroundColor: '#3366CC',
+                  borderColor: '#3366CC',
+                  fill: false,
+                  borderWidth: 2,
+                  datalabels: {
+                    display: 'auto',
+                    align:'top',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            responsive: true,
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  ticks: {
+                    beginAtZero: true,
+                    stepValue: 10,
+                    max: 75,
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+                ticks: {
+                  beginAtZero: true,
+                },
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+    <div class="col-10 col-md-4 card">
+      <div class="text-center mt-4">
+        <p class="h6">
+          亞太電信（固網）APOL
+        </p>
+        <p class="extraInfo">
+          IPv6 比例 0.37%
+        </p>
+      </div>
+      <canvas id="chart_commercialIPv6UsageRate8" style="height:40vh;"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_commercialIPv6UsageRate8').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['','2017/12','2018/1','2018/2','2018/3','2018/4','2018/5','2018/6','2018/7','2018/8','2018/9','2018/10','2018/11','2018/12',''],
+            datasets: [
+                {
+                  label: 'IPv6使用比例',
+                  data: [,0.46,0.58,0.91,1.96,5.31,11.58,12.79,13.4,16.09,18.92,27.29,32.61,29.63,],
+                  backgroundColor: '#3366CC',
+                  borderColor: '#3366CC',
+                  fill: false,
+                  borderWidth: 2,
+                  datalabels: {
+                    display: 'auto',
+                    align:'top',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            responsive: true,
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  ticks: {
+                    beginAtZero: true,
+                    stepValue: 10,
+                    max: 75,
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+                ticks: {
+                  beginAtZero: true,
+                },
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+    <div class="col-10 col-md-4 card">
+      <div class="text-center mt-4">
+        <p class="h6">
+          台灣之星（行網）VIBO
+        </p>
+        <p class="extraInfo">
+          IPv6 比例 0%
+        </p>
+      </div>
+      <canvas id="chart_commercialIPv6UsageRate9" style="height:40vh;"></canvas>
+      <script>
+        var ctx = document.getElementById('chart_commercialIPv6UsageRate9').getContext('2d');
+        var mixedChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: ['','2017/12','2018/1','2018/2','2018/3','2018/4','2018/5','2018/6','2018/7','2018/8','2018/9','2018/10','2018/11','2018/12',''],
+            datasets: [
+                {
+                  label: 'VIBO IPv6 使用比例',
+                  data: [,0.02,0.02,0.02,0.02,0,0,0,0.03,0.02,0.06,0.04,0.05,0.08,],
+                  backgroundColor: '#3366CC',
+                  borderColor: '#3366CC',
+                  fill: false,
+                  borderWidth: 2,
+                  datalabels: {
+                    display: 'auto',
+                    align:'top',
+                    formatter: function(value, context) {
+                      return Math.abs(value) + '%';
+                    }
+                  }
+                },
+              ],
+          },
+          options: {
+            responsive: true,
+            animation: {
+              duration: 0
+            },
+            legend: {
+              display: false,
+            },
+            tooltips: {
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + '%';
+                }
+              }
+            },
+            scales: {
+              xAxes: [{
+                gridLines: {
+                  display: false
+                }
+              }],
+              yAxes: [
+                {
+                  display: false,
+                  ticks: {
+                    beginAtZero: true,
+                    stepValue: 10,
+                    max: 75,
+                  },
+                  gridLines: {
+                    display: false,
+                    drawOnChartArea: false,
+                },
+              }, {
+                type: 'linear',
+                display: false,
+                position: 'right',
+                id: 'y-axis-2',
+                ticks: {
+                  beginAtZero: true,
+                },
+                scaleLabel: {
+                  display:false,
+                  labelString: '%',
+                },
+                gridLines: {
+                  display: false,
+                  drawOnChartArea: false,
+                },
+              }],
+            },
+           elements: {
+             line: {
+               tension: 0,
+             }
+           },
+         }
+        });
+      </script>
+    </div>
+    <div class="col-12 extraInfo wrapper text-center">
+      <ul class="list-unstyled">
+        <li>檢索方式為以月為單位，擷取每個月 7 日的數字</li>
+        <li>
+          資料來源：<a href="https://ipv6now.twnic.net.tw/ipv6/index.html" target="_blank">TWNIC </a>統計至 2018 年 12 月份
+        </li>
+      </ul>
+    </div>
+  </div>
+
   <div class="w-100 wrapperL"></div>
 </div>
 <!-- end of section 1 -->
