@@ -1,5 +1,5 @@
 <!doctype HTML>
-<html lang="zh-Hant-TW">
+<html lang="en-US">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -489,20 +489,6 @@
         </div>
       </div>
     </div>
-      <!--div class="col-md-12 d-none d-md-block wrapper">
-        <div class="row justify-content-center">
-          <div class="col-sm-2" href="#" data-toggle="modal" data-target="#eCommerce_modal">
-            <img class="img-fluid hoverLarge dropShadow linkColor" src="img/btn/181224_desktop-20.png" alt="">
-          </div>
-          <div class="col-sm-2" href="#" data-toggle="modal" data-target="#finTech_modal">
-            <img class="img-fluid hoverLarge dropShadow linkColor" src="img/btn/181224_desktop-21.png" alt="">
-          </div>
-          <div class="col-sm-2" href="#" data-toggle="modal" data-target="#sharingEconomy_modal">
-            <img class="img-fluid hoverLarge dropShadow linkColor" src="img/btn/181224_desktop-22.png" alt="">
-          </div>
-        </div>
-      </div-->
-    <!--end of innovationApplied desktop view-->
     <!--innovationApplied mobile view-->
     <div class="col-8 d-md-none mt-4">
       <div class="row py-1 bgAppliedDarkGreen border border-white" href="#" data-toggle="modal" data-target="#artificialIntelligence_modal">
@@ -765,7 +751,6 @@
                             datalabels: {
                               display: 'auto',
                               align: 'top',
-                              /*color:'rgba(51, 102, 204, 1)',*/
                               formatter: function(value, context) {
                                 return Math.abs(value) + '%';
                               }
@@ -782,12 +767,10 @@
                             datalabels: {
                               display: 'auto',
                               align: 'bottom',
-                              /*color:'rgba(125, 204, 74, 1)',*/
                               formatter: function(value, context) {
                                 return Math.abs(value) + '%';
                               }
                             }
-
                         },{
                             label: "Live Broadcast",
                             borderColor: 'rgba(255, 192, 0, 1)',
@@ -800,7 +783,6 @@
                             datalabels: {
                               display: 'auto',
                               align: 'top',
-                              /*color: 'rgba(255, 192, 0, 1)',*/
                               formatter: function(value, context) {
                                 return Math.abs(value) + '%';
                               }
@@ -817,7 +799,6 @@
                             datalabels: {
                               display: 'auto',
                               align: 'bottom',
-                              /*color:'rgba(239, 84, 37, 1)',*/
                               formatter: function(value, context) {
                                 return Math.abs(value) + '%';
                               }
@@ -1038,16 +1019,16 @@
               <hr>
               <div class="col-md-10 wrapper">
                 <p class="h4 text-center">
-                  Avg. Time per View (minutes)
+                  Avg. Time per View
                 </p>
                 <div class="row justify-content-center mt-3 text-center">
                   <div class="col-5 col-md-3">
                     <img class="img-fluid" src="img/iconPack/181218_3-31.png" alt="">
                     <p class="">
-                      桌機／筆電
+                      Desktop/Laptop
                     </p>
                     <p class="h5">
-                      111.2 分鐘
+                      111.2 min
                     </p>
                     <ul class="list-unstyled extraInfo">
                       <li>n=238</li>
@@ -1056,10 +1037,10 @@
                   <div class="col-5 col-md-3">
                     <img class="img-fluid" src="img/iconPack/181218_3-29.png" alt="">
                     <p class="">
-                      手機
+                      Smartphone
                     </p>
                     <p class="h5">
-                      86.1 分鐘
+                      86.1 min
                     </p>
                     <ul class="list-unstyled extraInfo">
                       <li>n=1152</li>
@@ -1068,10 +1049,10 @@
                   <div class="col-5 col-md-3">
                     <img class="img-fluid" src="img/iconPack/181218_3-30.png" alt="">
                     <p class="">
-                      平板電腦
+                      Tablet
                     </p>
                     <p class="h5">
-                      84.9 分鐘
+                      84.9 min
                     </p>
                     <ul class="list-unstyled extraInfo">
                       <li>n=346</li>
@@ -1080,15 +1061,14 @@
                   <div class="col-5 col-md-3">
                     <img class="img-fluid" src="img/iconPack/181218_3-28.png" alt="">
                     <p class="">
-                      電視
+                      TV
                     </p>
                     <p class="h5">
-                      114.4 分鐘
+                      114.4 min
                     </p>
                     <ul class="list-unstyled extraInfo">
                       <li>n=1056</li>
                     </ul>
-
                   </div>
                   <div class="col-12">
                     <ul class="list-unstyled extraInfo">
@@ -1104,7 +1084,7 @@
               <hr>
               <div class="col-md-10 wrapper mb-5">
                 <p class="h4 text-center">
-                  偏好收視類型
+                  Preferred Catedgories
                 </p>
                 <canvas id="chart_contentMediaPreferredGenre" style="height:80vh; width:100vw"></canvas>
                 <script>
@@ -1112,10 +1092,10 @@
                   var mixedChart = new Chart(ctx, {
                     type: 'horizontalBar',
                     data: {
-                      labels: ['戲劇／連續劇','綜藝節目','音樂MV','新聞／財經','卡通動漫','網友自拍影片','運動或賽事','遊戲相關'],
+                      labels: ['Dramas and TV Series','Variety Shows','Music Videos','News/Financial News','Cartoons & Animation','Amateur Videos','Sports or Matches','Gaming'],
                       datasets: [
                           {
-                            label: '偏好收視',
+                            label: 'Preferred',
                             data: [59.5, 21.7, 13.7, 11.2, 9.1, 7.9, 7.7, 6.3],
                             backgroundColor: '#7DCC4A',
                             borderColor: '#7DCC4A',
@@ -1181,7 +1161,7 @@
                     <ul class="list-unstyled">
                       <li>n=1824</li>
                       <li>
-                        Source: Telephone interviews conducted in this research (2018)、InsightXplorer內部調查(2018/07)
+                        Source: Telephone interviews conducted in this research (2018)、InsightXplorer(2018/07), and <a href="https://www.ncc.gov.tw/chinese/files/18121/3734_40780_181211_2.pdf" target="_blank">NCC</a> (2017)
                       </li>
                     </ul>
                   </div>
@@ -1191,7 +1171,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
 
       </div>
@@ -1837,7 +1817,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
 
       </div>
@@ -2242,7 +2222,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -2582,7 +2562,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
 
       </div>
@@ -2872,7 +2852,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
 
       </div>
@@ -3497,7 +3477,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -4352,7 +4332,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -4689,7 +4669,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
 
       </div>
@@ -4841,7 +4821,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
 
       </div>
@@ -4943,7 +4923,7 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
 
       </div>
@@ -5141,7 +5121,7 @@
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
 
       </div>

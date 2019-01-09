@@ -1243,7 +1243,7 @@
             labels: ['Taiwan', 'S. Korea', 'Thailand', 'China', 'Vietnam', 'Malaysia', 'Singapore', 'Indoenesia', 'Japan', 'Phoilippines', 'India', 'Australia', 'United Kingdom', 'United States'],
             datasets: [
                 {
-                  label: '手機',
+                  label: 'Smartphone',
                   data: [92, 98,	98,	97,	97,	96,	95,	91,	91,	89,	88,	90,	92,	96],
                   backgroundColor: '#7DCC4A',
                   borderColor: '#7DCC4A',
@@ -1258,7 +1258,7 @@
                   xAxisID: 'x-axis-2',
                 },
                 {
-                  label: '桌機／筆電',
+                  label: 'Desktop/Laptop',
                   data: [67,	71,	25,	53,	43,	41,	71,	22,	80,	38,	15,	77,	74,	84],
                   backgroundColor: '#3366CC',
                   borderColor: '#3366CC',
@@ -1274,7 +1274,7 @@
 
                 },
                 {
-                  label: '平板',
+                  label: 'Tablet',
                   data: [29,	19,	12,	20,	13,	18,	42,	8,	30,	29,	5,	46,	53,	56],
                   backgroundColor: '#FFC000',
                   borderColor: '#FFC000',
@@ -1289,7 +1289,7 @@
                   xAxisID: 'x-axis-2',
                 },
                 {
-                  label: '平均持有裝置數',
+                  label: 'Avg. Devices',
                   data: [2.5,	2.8, 1.3,	2.2, 1.6,	2.1, 3.0, 1.1, 2.5,	1.8, 0.8,	3.2, 3.1,	3.4],
                   backgroundColor: '#f29111',
                   borderColor: '#f29111',
@@ -1297,7 +1297,7 @@
                     color: 'white',
                     display:'auto',
                     formatter: function(value, context) {
-                      return Math.abs(value) + '個';
+                      return Math.abs(value) + ' pcs';
                     }
                   },
                   xAxisID: 'x-axis-1',
@@ -1309,16 +1309,6 @@
               duration: 0
             },
             tooltips: {
-              /*callbacks: {
-                label: function(tooltipItem, data) {
-                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
-                  if (label) {
-                      label += ': ';
-                  }
-                  label += Math.abs(tooltipItem.xLabel * 100) / 100;
-                  return label + '%';
-                }
-              }*/
             },
             responsive: true,
             scales: {
