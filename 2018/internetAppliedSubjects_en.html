@@ -1184,7 +1184,7 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">社群通訊使用情形</h5>
+          <h5 class="modal-title">Social Media</h5>
           <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -1194,10 +1194,10 @@
             <div class="row justify-content-center">
               <div class="col-md-10 wrapper d-none d-md-block">
                 <p class="h4 text-center">
-                  使用者輪廓
+                  User Profile
                 </p>
                 <p class="mt-3 text-center">
-                  通訊與社群網站的使用率皆高，而通訊軟體的使用族群中性別、年齡差異小。
+                  Usage rate of Instant Messaging and Social Network are both high. 而通訊軟體的使用族群中性別、年齡差異小。
                 </p>
                 <canvas id="chart_socialPlatformUserProfile" style="height:120vh; width:100vw"></canvas>
                 <script type="text/javascript">
@@ -1205,9 +1205,9 @@
                   var chart = new Chart(ctx, {
                     type: 'line',
                     data: {
-                        labels: ["","男性", "女性", "", "12-14歲", "15-19歲", "20-24歲", "25-29歲", "30-34歲", "35-39歲", "40-44歲", "45-49歲", "50-54歲", "55-59歲", "60-64歲", "65歲以上",""],
+                        labels: ["", "Male", "Female", "", "Age 12-14", "Age 15-19", "Age 20-24", "Age 25-29", "Age 30-34", "Age 35-39", "Age 40-44", "Age 45-49", "Age 50-54", "Age 55-59", "Age 60-64", "Age 65+", ""],
                         datasets: [{
-                            label: "有使用即時通訊軟體",
+                            label: "IM",
                             borderColor: 'rgba(51, 102, 204, 1)',
                             backgroundColor: 'rgba(51, 102, 204, 0)',
                             pointBackgroundColor:'rgba(51, 102, 204, 1)',
@@ -1222,7 +1222,7 @@
                               }
                             }
                         }, {
-                            label: "有使用網路社群",
+                            label: "SNS",
                             borderColor: 'rgba(125, 204, 74, 1)',
                             backgroundColor: 'rgba(125, 204, 74, 0)',
                             pointBackgroundColor:'rgba(125, 204, 74, 1)',
@@ -1303,7 +1303,7 @@
               </div>
               <div class="col-md-10 wrapper d-md-none">
                 <p class="h4 text-center">
-                  使用者輪廓
+                  User Profile
                 </p>
                 <p class="mt-3 text-center">
                   通訊與社群網站的使用率皆高，而通訊軟體的使用族群中性別、年齡差異小。
@@ -1314,9 +1314,9 @@
                   var chart = new Chart(ctx, {
                     type: 'line',
                     data: {
-                        labels: ["","總數", "", "男性", "女性", "", "12-19歲", "20-29歲", "30-39歲", "40-49歲", "50-59歲", "60歲以上",""],
+                        labels: ["", "Male", "Female", "", "Age 12-19", "Age 20-29", "Age 30-39", "Age 40-49", "Age 50-59", "Age 60+", ""],
                         datasets: [{
-                            label: "有使用即時通訊軟體",
+                            label: "IM",
                             borderColor: 'rgba(51, 102, 204, 1)',
                             backgroundColor: 'rgba(51, 102, 204, 0)',
                             pointBackgroundColor:'rgba(51, 102, 204, 1)',
@@ -1331,7 +1331,7 @@
                               }
                             }
                         }, {
-                            label: "有使用網路社群",
+                            label: "SNS",
                             borderColor: 'rgba(125, 204, 74, 1)',
                             backgroundColor: 'rgba(125, 204, 74, 0)',
                             pointBackgroundColor:'rgba(125, 204, 74, 1)',
@@ -1417,7 +1417,7 @@
               <div class="col-5">
                 <img class="img-fluid" src="img/iconPack/icon_pack-40.png" alt="">
                 <p class="">
-                  社群使用率
+                  Usage of Social Networking
                 </p>
                 <p class="h5">
                   80.6%
@@ -1434,7 +1434,7 @@
               <hr>
               <div class="col-md-10 wrapper">
                 <p class="h4 text-center">
-                  Social Media使用率
+                  Usage Rate of SNS Brands
                 </p>
                 <p class="mt-3 text-center">
                   Facebook市佔率最高，Instagram居次，主要使用族群為20世代。
@@ -1445,10 +1445,10 @@
                   var mixedChart = new Chart(ctx, {
                     type: 'bar',
                     data: {
-                      labels: ['Facebook','Instagram','Twitter','微博','Google+','LinkedIn'],
+                      labels: ['Facebook','Instagram','Twitter','Weibo','Google+','LinkedIn'],
                       datasets: [
                           {
-                            label: '使用率',
+                            label: 'Usage Rate',
                             data: [98.5, 38.8, 5.1, 4.0, 2.8, 0.9],
                             backgroundColor: '#7DCC4A',
                             borderColor: '#7DCC4A',
@@ -1525,7 +1525,7 @@
               <hr>
               <div class="col-md-10 wrapper">
                 <p class="h4 text-center">
-                  Social Media使用行為
+                  Social Media Platform Usage Behavior
                 </p>
                 <p class="mt-3 text-center">
                   網民使用Social Media主要是瀏覽、按讚，以接受資訊為主。
@@ -1536,10 +1536,10 @@
                   var mixedChart = new Chart(ctx, {
                     type: 'horizontalBar',
                     data: {
-                      labels: ['觀看他人貼文／照片／影片','按讚','文字分享自己近況／心情','社交交流／與他人互動','打卡','分享自己拍攝的照片／影片','轉貼分享他人貼文／照片／影片','追蹤粉絲團','追蹤喜愛的藝人／名人動態','看直播','玩遊戲','購物','開直播'],
+                      labels: ["View others' posts/photos/videos","Click 'Like'",'Share their recent status/mood with text','Social interactions/interactions with others','Check-in','Share photos/videos they took',"Forward others’ posts/photos/videos",'Follow fan groups','Follow news of artists/celebrities','View live broadcasts','Play games','Shopping','Use live broadcasts'],
                       datasets: [
                           {
-                            label: '使用行為',
+                            label: 'Usage Behavior',
                             data: [72.2, 48.0, 39.2, 30.1, 29.2, 25.3, 25.1, 24.2, 24.0, 14.8, 12.9, 9.6, 4.2],
                             backgroundColor: '#7DCC4A',
                             borderColor: '#7DCC4A',
@@ -1605,7 +1605,7 @@
                     <ul class="list-unstyled">
                       <li>n=1374</li>
                       <li>
-                        Source: InsightXplorer內部資料(2018/09)、<a href="https://zh.scribd.com/document/388767930/InsightXplorer-Biweekly-Report-20180917#fullscreen&from_embed" target="_blank">InsightXplorer</a>(2018/09)
+                        Source: <a href="https://www.ixresearch.com/reports/%E5%89%B5%E5%B8%82%E9%9A%9B%E9%9B%99%E9%80%B1%E5%88%8A%E7%AC%AC%E4%B8%80%E4%B8%80%E4%B8%83%E6%9C%9F-20180917" target="_blank">InsightXplorer</a>(2018/09)
                       </li>
                     </ul>
                   </div>
@@ -1617,7 +1617,7 @@
               <div class="col-5 text-center">
                 <img class="img-fluid" src="img/iconPack/icon_pack-41.png" alt="">
                 <p class="">
-                  通訊使用率
+                  Usage of Instant Messaging
                 </p>
                 <p class="h5">
                   96.8%
@@ -1634,7 +1634,7 @@
               <hr>
               <div class="col-md-10 wrapper">
                 <p class="h4 text-center">
-                  通訊軟體使用率
+                  Usage Rate of IM Brands
                 </p>
                 <p class="mt-3 text-center">
                   Line使用者幾乎為全體網民，其次是臉書、即時通。
@@ -1648,7 +1648,7 @@
                       labels: ['Line','Facebook Messenger','WeChat','Skype','WhatsApp'],
                       datasets: [
                           {
-                            label: '使用率',
+                            label: 'Usage Rate',
                             data: [99.2, 26.8, 21.4, 7.2, 4.7],
                             backgroundColor: '#7DCC4A',
                             borderColor: '#7DCC4A',
@@ -1725,7 +1725,7 @@
               <hr>
               <div class="col-md-10 wrapper">
                 <p class="h4 text-center">
-                  通訊軟體使用行為
+                  Communication software usage behavior
                 </p>
                 <p class="mt-3 text-center">
                   通訊軟體主要使用情境是收發訊息，也有超過半數使用語音通話。
@@ -1736,10 +1736,10 @@
                   var mixedChart = new Chart(ctx, {
                     type: 'horizontalBar',
                     data: {
-                      labels: ['收發文字訊息','收發貼圖','語音通話','收發照片／影片','視訊通話','語音訊息','傳送好友資料','傳送位置'],
+                      labels: ['Send and receive text messages','Send and receive stickers','Voice calls','Send and receive photos/videos','Video calls','Voice messages','Send information to friends','Send location'],
                       datasets: [
                           {
-                            label: '使用行為',
+                            label: 'Usage Behavior',
                             data: [95.8, 78.8, 51.6, 49.7, 28.4, 19.0, 17.9, 10.3],
                             backgroundColor: '#7DCC4A',
                             borderColor: '#7DCC4A',
@@ -1806,7 +1806,7 @@
                     <ul class="list-unstyled">
                       <li>n=1179</li>
                       <li>
-                        Source: InsightXplorer內部資料(2018/09)、<a href="https://zh.scribd.com/document/388767930/InsightXplorer-Biweekly-Report-20180917#fullscreen&from_embed" target="_blank">InsightXplorer</a>(2018/09)
+                        Source: <a href="https://www.ixresearch.com/reports/%E5%89%B5%E5%B8%82%E9%9A%9B%E9%9B%99%E9%80%B1%E5%88%8A%E7%AC%AC%E4%B8%80%E4%B8%80%E4%B8%83%E6%9C%9F-20180917" target="_blank">InsightXplorer</a>(2018/09)
                       </li>
                     </ul>
                   </div>
@@ -1890,7 +1890,7 @@
                       labels: ['小米','Apple','Samsung','Sony','ASUS','華為', 'Garmin', 'LG', 'Acer', '樂心'],
                       datasets: [
                           {
-                            label: '使用率',
+                            label: 'Usage Rate',
                             data: [49.3, 29.4, 20.9, 12.3, 7.3, 5.9, 5.6, 4.2, 4.0, 3.2],
                             backgroundColor: '#7DCC4A',
                             borderColor: '#7DCC4A',
@@ -2146,7 +2146,7 @@
                       labels: ['小米智慧家庭','凱擘大寬頻數位家庭','中華電信智慧家庭','中保無限＋','Google Home','遠傳全能行動管家', '飛利浦Hue', 'Apple HomeKit', '全國電子智能小管家', 'ASUS SmartHome'],
                       datasets: [
                           {
-                            label: '使用率',
+                            label: 'Usage Rate',
                             data: [35.1, 27.6, 25.1, 16.0, 15.8, 13.6, 10.8, 8.4, 8.2, 8.1],
                             backgroundColor: '#7DCC4A',
                             borderColor: '#7DCC4A',
@@ -2268,7 +2268,7 @@
               <hr>
               <div class="col-md-10 wrapper d-md-none">
                 <p class="h4 text-center">
-                  使用者輪廓
+                  User Profile
                 </p>
                 <p class="mt-3 text-center">
                   線上學習服務使用率僅佔14%，目前多數是語言學習的需求，並以12歲至19歲較多。
@@ -2360,7 +2360,7 @@
               </div>
               <div class="col-md-10 wrapper d-none d-md-block">
                 <p class="h4 text-center">
-                  使用者輪廓
+                  User Profile
                 </p>
                 <p class="mt-3 text-center">
                   線上學習服務使用率僅佔14%，目前多數是語言學習的需求，並以12歲至19歲較多。
@@ -2619,7 +2619,7 @@
               <hr>
               <div class="col-md-10 wrapper d-md-none">
                 <p class="h4 text-center">
-                  使用者輪廓
+                  User Profile
                 </p>
                 <p class="mt-3 text-center">
                   男性有近半數會玩線上遊戲。
@@ -2707,7 +2707,7 @@
               </div>
               <div class="col-md-10 wrapper d-none d-md-block">
                 <p class="h4 text-center">
-                  使用者輪廓
+                  User Profile
                 </p>
                 <p class="mt-3 text-center">
                   男性有近半數會玩線上遊戲。
@@ -2941,7 +2941,7 @@
               <hr>
               <div class="col-md-10 wrapper d-md-none">
                 <p class="h4 text-center">
-                  使用者輪廓
+                  User Profile
                 </p>
                 <p class="mt-3 text-center">
                   女性更愛網購，而男性消費金額較高；較常網購的項目為服裝配件。
@@ -3080,7 +3080,7 @@
               </div>
               <div class="col-md-10 wrapper d-none d-md-block">
                 <p class="h4 text-center">
-                  使用者輪廓
+                  User Profile
                 </p>
                 <p class="mt-3 text-center">
                   女性更愛網購，而男性消費金額較高；較常網購的項目為服裝配件。
@@ -3525,7 +3525,7 @@
               <hr>
               <div class="col-md-10 wrapper d-md-none">
                 <p class="h4 text-center">
-                  網路銀行使用者輪廓
+                  網路銀行User Profile
                 </p>
                 <canvas id="chart_onlineBankingUserProfile_M" style="height:80vh; width:100vw"></canvas>
                 <script type="text/javascript">
@@ -3614,7 +3614,7 @@
               </div>
               <div class="col-md-10 wrapper d-none d-md-block">
                 <p class="h4 text-center">
-                  網路銀行使用者輪廓
+                  網路銀行User Profile
                 </p>
                 <canvas id="chart_onlineBankingUserProfile" style="height:80vh; width:100vw"></canvas>
                 <script type="text/javascript">
@@ -3927,7 +3927,7 @@
               <hr>
               <div class="col-md-10 wrapper d-md-none">
                 <p class="h4 text-center">
-                  行動支付使用者輪廓
+                  行動支付User Profile
                 </p>
                 <canvas id="chart_mobilePaymentUserProfile_M" style="height:80vh; width:100vw"></canvas>
                 <script type="text/javascript">
@@ -4014,7 +4014,7 @@
               </div>
               <div class="col-md-10 wrapper d-none d-md-block">
                 <p class="h4 text-center">
-                  行動支付使用者輪廓
+                  行動支付User Profile
                 </p>
                 <canvas id="chart_mobilePaymentUserProfile" style="height:80vh; width:100vw"></canvas>
                 <script type="text/javascript">
@@ -4744,7 +4744,7 @@
                       labels: ['語音辨識','人臉辨識','機器人（含聊天機器人、陪伴機器人）','智慧音箱','自駕汽車'],
                       datasets: [
                           {
-                            label: '使用率',
+                            label: 'Usage Rate',
                             data: [58.8, 52.0, 41.1, 24.0, 23.0],
                             backgroundColor: '#7DCC4A',
                             borderColor: '#7DCC4A',
