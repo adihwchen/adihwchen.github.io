@@ -682,6 +682,9 @@
         <p class="h6">
           CHT Mobile
         </p>
+        <p class="extraInfo">
+          IPv6 比例 66.18%
+        </p>
       </div>
       <canvas id="chart_commercialIPv6UsageRate1" style="height:35vh;"></canvas>
       <script>
@@ -699,7 +702,7 @@
                   fill: false,
                   borderWidth: 2,
                   datalabels: {
-                    display: 'auto',
+                    display: false,
                     align:'top',
                     formatter: function(value, context) {
                       return Math.abs(value) + '%';
@@ -737,7 +740,8 @@
               }],
               yAxes: [
                 {
-                  display: false,
+                  position: 'right',
+                  display: true,
                   ticks: {
                     beginAtZero: true,
                     stepValue: 10,
@@ -747,23 +751,7 @@
                     display: false,
                     drawOnChartArea: false,
                 },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
+              },],
             },
            elements: {
              line: {
@@ -796,7 +784,7 @@
                   fill: false,
                   borderWidth: 2,
                   datalabels: {
-                    display: 'auto',
+                    display: false,
                     align:'top',
                     formatter: function(value, context) {
                       return Math.abs(value) + '%';
@@ -834,7 +822,8 @@
               }],
               yAxes: [
                 {
-                  display: false,
+                  position: 'right',
+                  display: true,
                   ticks: {
                     beginAtZero: true,
                     stepValue: 10,
@@ -844,23 +833,7 @@
                     display: false,
                     drawOnChartArea: false,
                 },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
+              },],
             },
            elements: {
              line: {
@@ -893,7 +866,7 @@
                   fill: false,
                   borderWidth: 2,
                   datalabels: {
-                    display: 'auto',
+                    display: false,
                     align:'top',
                     formatter: function(value, context) {
                       return Math.abs(value) + '%';
@@ -931,33 +904,18 @@
               }],
               yAxes: [
                 {
-                  display: false,
+                  position: 'right',
+                  display: true,
                   ticks: {
                     beginAtZero: true,
                     stepValue: 10,
-                    max: 40,
+                    max: 35,
                   },
                   gridLines: {
                     display: false,
                     drawOnChartArea: false,
                 },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
+              },],
             },
            elements: {
              line: {
@@ -990,7 +948,7 @@
                   fill: false,
                   borderWidth: 2,
                   datalabels: {
-                    display: 'auto',
+                    display: false,
                     align:'top',
                     formatter: function(value, context) {
                       return Math.abs(value) + '%';
@@ -1028,7 +986,8 @@
               }],
               yAxes: [
                 {
-                  display: false,
+                  position: 'right',
+                  display: true,
                   ticks: {
                     beginAtZero: true,
                     stepValue: 10,
@@ -1038,23 +997,7 @@
                     display: false,
                     drawOnChartArea: false,
                 },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
+              },],
             },
            elements: {
              line: {
@@ -1087,7 +1030,7 @@
                   fill: false,
                   borderWidth: 2,
                   datalabels: {
-                    display: 'auto',
+                    display: false,
                     align:'top',
                     formatter: function(value, context) {
                       return Math.abs(value) + '%';
@@ -1108,7 +1051,6 @@
               callbacks: {
                 label: function(tooltipItem, data) {
                   var label = data.datasets[tooltipItem.datasetIndex].label || '';
-
                   if (label) {
                       label += ': ';
                   }
@@ -1125,33 +1067,18 @@
               }],
               yAxes: [
                 {
-                  display: false,
+                  position: 'right',
+                  display: true,
                   ticks: {
                     beginAtZero: true,
                     stepValue: 10,
-                    max: 8,
+                    max: 7,
                   },
                   gridLines: {
                     display: false,
                     drawOnChartArea: false,
                 },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
+              },],
             },
            elements: {
              line: {
@@ -1184,7 +1111,7 @@
                   fill: false,
                   borderWidth: 2,
                   datalabels: {
-                    display: 'auto',
+                    display: false,
                     align:'top',
                     formatter: function(value, context) {
                       return Math.abs(value) + '%';
@@ -1222,7 +1149,8 @@
               }],
               yAxes: [
                 {
-                  display: false,
+                  position: 'right',
+                  display: true,
                   ticks: {
                     beginAtZero: true,
                     stepValue: 10,
@@ -1232,23 +1160,7 @@
                     display: false,
                     drawOnChartArea: false,
                 },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
+              },],
             },
            elements: {
              line: {
@@ -1281,7 +1193,7 @@
                   fill: false,
                   borderWidth: 2,
                   datalabels: {
-                    display: 'auto',
+                    display: false,
                     align:'top',
                     formatter: function(value, context) {
                       return Math.abs(value) + '%';
@@ -1302,7 +1214,6 @@
               callbacks: {
                 label: function(tooltipItem, data) {
                   var label = data.datasets[tooltipItem.datasetIndex].label || '';
-
                   if (label) {
                       label += ': ';
                   }
@@ -1319,33 +1230,18 @@
               }],
               yAxes: [
                 {
-                  display: false,
+                  position: 'right',
+                  display: true,
                   ticks: {
                     beginAtZero: true,
                     stepValue: 10,
-                    max: 0.6,
+                    max: 0.5,
                   },
                   gridLines: {
                     display: false,
                     drawOnChartArea: false,
                 },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
+              },],
             },
            elements: {
              line: {
@@ -1378,7 +1274,7 @@
                   fill: false,
                   borderWidth: 2,
                   datalabels: {
-                    display: 'auto',
+                    display: false,
                     align:'top',
                     formatter: function(value, context) {
                       return Math.abs(value) + '%';
@@ -1416,7 +1312,8 @@
               }],
               yAxes: [
                 {
-                  display: false,
+                  position: 'right',
+                  display: true,
                   ticks: {
                     beginAtZero: true,
                     stepValue: 10,
@@ -1426,23 +1323,7 @@
                     display: false,
                     drawOnChartArea: false,
                 },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
+              },],
             },
            elements: {
              line: {
@@ -1475,7 +1356,7 @@
                   fill: false,
                   borderWidth: 2,
                   datalabels: {
-                    display: 'auto',
+                    display: false,
                     align:'top',
                     formatter: function(value, context) {
                       return Math.abs(value) + '%';
@@ -1513,7 +1394,8 @@
               }],
               yAxes: [
                 {
-                  display: false,
+                  position: 'right',
+                  display: true,
                   ticks: {
                     beginAtZero: true,
                     stepValue: 10,
@@ -1523,23 +1405,7 @@
                     display: false,
                     drawOnChartArea: false,
                 },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
+              },],
             },
            elements: {
              line: {

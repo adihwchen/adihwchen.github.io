@@ -682,6 +682,9 @@
         <p class="h6">
           中華電信（行網）CHT Mobile
         </p>
+        <p class="extraInfo">
+          IPv6 比例 66.18%
+        </p>
       </div>
       <canvas id="chart_commercialIPv6UsageRate1" style="height:35vh;"></canvas>
       <script>
@@ -699,7 +702,7 @@
                   fill: false,
                   borderWidth: 2,
                   datalabels: {
-                    display: 'auto',
+                    display: false,
                     align:'top',
                     formatter: function(value, context) {
                       return Math.abs(value) + '%';
@@ -737,7 +740,8 @@
               }],
               yAxes: [
                 {
-                  display: false,
+                  position: 'right',
+                  display: true,
                   ticks: {
                     beginAtZero: true,
                     stepValue: 10,
@@ -747,23 +751,7 @@
                     display: false,
                     drawOnChartArea: false,
                 },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
+              },],
             },
            elements: {
              line: {
@@ -778,6 +766,9 @@
       <div class="text-center mt-4">
         <p class="h6">
           台灣大哥大（行網）Taiwan Mobile
+        </p>
+        <p class="extraInfo">
+          IPv6 比例 22.72%
         </p>
       </div>
       <canvas id="chart_commercialIPv6UsageRate2" style="height:35vh;"></canvas>
@@ -796,7 +787,7 @@
                   fill: false,
                   borderWidth: 2,
                   datalabels: {
-                    display: 'auto',
+                    display: false,
                     align:'top',
                     formatter: function(value, context) {
                       return Math.abs(value) + '%';
@@ -834,7 +825,8 @@
               }],
               yAxes: [
                 {
-                  display: false,
+                  position: 'right',
+                  display: true,
                   ticks: {
                     beginAtZero: true,
                     stepValue: 10,
@@ -844,23 +836,7 @@
                     display: false,
                     drawOnChartArea: false,
                 },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
+              },],
             },
            elements: {
              line: {
@@ -875,6 +851,9 @@
       <div class="text-center mt-4">
         <p class="h6">
           遠傳電信（行網）FETNet
+        </p>
+        <p class="extraInfo">
+          IPv6 比例 31.55%
         </p>
       </div>
       <canvas id="chart_commercialIPv6UsageRate3" style="height:35vh;"></canvas>
@@ -893,7 +872,7 @@
                   fill: false,
                   borderWidth: 2,
                   datalabels: {
-                    display: 'auto',
+                    display: false,
                     align:'top',
                     formatter: function(value, context) {
                       return Math.abs(value) + '%';
@@ -914,7 +893,6 @@
               callbacks: {
                 label: function(tooltipItem, data) {
                   var label = data.datasets[tooltipItem.datasetIndex].label || '';
-
                   if (label) {
                       label += ': ';
                   }
@@ -931,33 +909,18 @@
               }],
               yAxes: [
                 {
-                  display: false,
+                  position: 'right',
+                  display: true,
                   ticks: {
                     beginAtZero: true,
                     stepValue: 10,
-                    max: 40,
+                    max: 35,
                   },
                   gridLines: {
                     display: false,
                     drawOnChartArea: false,
                 },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
+              },],
             },
            elements: {
              line: {
@@ -972,6 +935,9 @@
       <div class="text-center mt-4">
         <p class="h6">
           中華電信（固網）CHT Fixed Network
+        </p>
+        <p class="extraInfo">
+          IPv6 比例 17.36
         </p>
       </div>
       <canvas id="chart_commercialIPv6UsageRate4" style="height:35vh;"></canvas>
@@ -990,7 +956,7 @@
                   fill: false,
                   borderWidth: 2,
                   datalabels: {
-                    display: 'auto',
+                    display: false,
                     align:'top',
                     formatter: function(value, context) {
                       return Math.abs(value) + '%';
@@ -1038,22 +1004,6 @@
                     display: false,
                     drawOnChartArea: false,
                 },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
               }],
             },
            elements: {
@@ -1069,6 +1019,9 @@
       <div class="text-center mt-4">
         <p class="h6">
           亞太電信（行網）AMBIT
+        </p>
+        <p class="extraInfo">
+          IPv6 比例 6.46%
         </p>
       </div>
       <canvas id="chart_commercialIPv6UsageRate5" style="height:35vh;"></canvas>
@@ -1087,7 +1040,7 @@
                   fill: false,
                   borderWidth: 2,
                   datalabels: {
-                    display: 'auto',
+                    display: false,
                     align:'top',
                     formatter: function(value, context) {
                       return Math.abs(value) + '%';
@@ -1125,33 +1078,18 @@
               }],
               yAxes: [
                 {
-                  display: false,
+                  position: 'right',
+                  display: true,
                   ticks: {
                     beginAtZero: true,
                     stepValue: 10,
-                    max: 8,
+                    max: 7,
                   },
                   gridLines: {
                     display: false,
                     drawOnChartArea: false,
                 },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
+              },],
             },
            elements: {
              line: {
@@ -1166,6 +1104,9 @@
       <div class="text-center mt-4">
         <p class="h6">
           新世紀資通（固網）Seednet
+        </p>
+        <p class="extraInfo">
+          IPv6 比例 0.43%
         </p>
       </div>
       <canvas id="chart_commercialIPv6UsageRate6" style="height:35vh;"></canvas>
@@ -1184,7 +1125,7 @@
                   fill: false,
                   borderWidth: 2,
                   datalabels: {
-                    display: 'auto',
+                    display: false,
                     align:'top',
                     formatter: function(value, context) {
                       return Math.abs(value) + '%';
@@ -1222,7 +1163,8 @@
               }],
               yAxes: [
                 {
-                  display: false,
+                  position: 'right',
+                  display: true,
                   ticks: {
                     beginAtZero: true,
                     stepValue: 10,
@@ -1232,23 +1174,7 @@
                     display: false,
                     drawOnChartArea: false,
                 },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
+              },],
             },
            elements: {
              line: {
@@ -1263,6 +1189,9 @@
       <div class="text-center mt-4">
         <p class="h6">
           台灣固網（固網）TFN
+        </p>
+        <p class="extraInfo">
+          IPv6 比例 0.24%
         </p>
       </div>
       <canvas id="chart_commercialIPv6UsageRate7" style="height:35vh;"></canvas>
@@ -1281,7 +1210,7 @@
                   fill: false,
                   borderWidth: 2,
                   datalabels: {
-                    display: 'auto',
+                    display: false,
                     align:'top',
                     formatter: function(value, context) {
                       return Math.abs(value) + '%';
@@ -1319,33 +1248,18 @@
               }],
               yAxes: [
                 {
-                  display: false,
+                  position: 'right',
+                  display: true,
                   ticks: {
                     beginAtZero: true,
                     stepValue: 10,
-                    max: 0.6,
+                    max: 0.5,
                   },
                   gridLines: {
                     display: false,
                     drawOnChartArea: false,
                 },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
+              },],
             },
            elements: {
              line: {
@@ -1360,6 +1274,9 @@
       <div class="text-center mt-4">
         <p class="h6">
           亞太電信（固網）APOL
+        </p>
+        <p class="extraInfo">
+          IPv6 比例 0.67%
         </p>
       </div>
       <canvas id="chart_commercialIPv6UsageRate8" style="height:35vh;"></canvas>
@@ -1378,7 +1295,7 @@
                   fill: false,
                   borderWidth: 2,
                   datalabels: {
-                    display: 'auto',
+                    display: false,
                     align:'top',
                     formatter: function(value, context) {
                       return Math.abs(value) + '%';
@@ -1416,7 +1333,8 @@
               }],
               yAxes: [
                 {
-                  display: false,
+                  position: 'right',
+                  display: true,
                   ticks: {
                     beginAtZero: true,
                     stepValue: 10,
@@ -1426,23 +1344,7 @@
                     display: false,
                     drawOnChartArea: false,
                 },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
+              },],
             },
            elements: {
              line: {
@@ -1457,6 +1359,9 @@
       <div class="text-center mt-4">
         <p class="h6">
           台灣之星（行網）VIBO
+        </p>
+        <p class="extraInfo">
+          IPv6 比例 0.08%
         </p>
       </div>
       <canvas id="chart_commercialIPv6UsageRate9" style="height:35vh;"></canvas>
@@ -1475,7 +1380,7 @@
                   fill: false,
                   borderWidth: 2,
                   datalabels: {
-                    display: 'auto',
+                    display: false,
                     align:'top',
                     formatter: function(value, context) {
                       return Math.abs(value) + '%';
@@ -1513,7 +1418,8 @@
               }],
               yAxes: [
                 {
-                  display: false,
+                  position: 'right',
+                  display: true,
                   ticks: {
                     beginAtZero: true,
                     stepValue: 10,
@@ -1523,23 +1429,7 @@
                     display: false,
                     drawOnChartArea: false,
                 },
-              }, {
-                type: 'linear',
-                display: false,
-                position: 'right',
-                id: 'y-axis-2',
-                ticks: {
-                  beginAtZero: true,
-                },
-                scaleLabel: {
-                  display:false,
-                  labelString: '%',
-                },
-                gridLines: {
-                  display: false,
-                  drawOnChartArea: false,
-                },
-              }],
+              },],
             },
            elements: {
              line: {
