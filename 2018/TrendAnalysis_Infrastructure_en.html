@@ -149,12 +149,12 @@
         Number of Domain Name Registrations
       </p>
       <p class="mt-3 text-center">
-        The amount of 「.tw/.台灣」registrations increase a lot this year, the growth rate is 554.3%. The largest percentage of domain name type is 「泛用型英文.tw」.
+        The amount of 「.tw/.Taiwan」registrations increase a lot this year, the growth rate is 554.3%. The largest percentage of domain name type is 「泛用型英文.tw」.
       </p>
     </div>
     <div class="col-md-10 py-3">
       <div class="text-right text-danger bg-white">
-        2018-2017年<br>Growth<br>+553.1%
+        2018-2017<br>Growth<br>+553.1%
       </div>
       <canvas id="chart_ipSubmitGrowth" style="height:80vh; width:100vw"></canvas>
       <script>
@@ -239,7 +239,7 @@
         <div class="col-12 extraInfo wrapper text-center">
           <ul class="list-unstyled">
             <li>
-              DN 資料來源：TWNIC(2018/12)
+              Source: internal data from TWNIC (2018/11)
             </li>
           </ul>
         </div>
@@ -249,11 +249,11 @@
   <div class="row justify-content-center wrapper">
     <div class="col-md-10 wrapper">
       <p class="h3 text-center">
-        IP 位址及 AS 號碼數量統計
+        Statistics on IPv4, IPv6 Addresses And ASNs
       </p>
       <div class="my-3">
         <p class="h6 lineHeight">
-          台灣 IP 位址核發數量，在 IPv4 位址發放數量統計上，台灣至2018年底共取得 3,565 萬個  IPv4 位址，數量居全球第 15 名(2018)；台灣 IPv6 使用比例於2018年底為 29.63%，全球排名第 6 名。IPv6 位址數量計算單位是 /32，代表 2 的 96 次方，約為 7.0 乘以 10 的 28 次方個，台灣至 2018 年底取得的 IPv6 數量為 2,476 個 /32 IPv6 位址；自治系統號碼 (ASN) 截至 2018 年 12 月國內自治系統號碼核發數為 354 個。
+          In terms of IPv4 address issuance statistics, Taiwan's IP address issuance number ranks 15th in the world. In the global ranking of IPv6 allocations, Taiwan ranks the 6th respectively. IPv6 位址數量計算單位是 /32，代表 2 的 96 次方，約為 7.0 乘以 10 的 28 次方個，Taiwan至 2018 年底取得的 IPv6 數量為 2,476 個 /32 IPv6 位址；自治系統號碼 (ASN) 截至 2018 年 12 月國內自治系統號碼核發數為 354 個。
         </p>
       </div>
     </div>
@@ -261,13 +261,13 @@
       <div class="">
         <ul class="nav nav-pills nav-justified">
           <li class="nav-item">
-            <div class="nav-link active border border-secondary" href="#numberOfIPv4" data-toggle="tab">IPv4 位址數量</div>
+            <div class="nav-link active border border-secondary" href="#numberOfIPv4" data-toggle="tab">Number of IPv4 Addresses</div>
           </li>
           <li class="nav-item">
-            <div class="nav-link border border-secondary border-left-0" href="#numberOfIPv6" data-toggle="tab">IPv6 位址數量</div>
+            <div class="nav-link border border-secondary border-left-0" href="#numberOfIPv6" data-toggle="tab">Number of IPv6 Addresses</div>
           </li>
           <li class="nav-item">
-            <div class="nav-link border border-secondary border-left-0" href="#numberOfASN" data-toggle="tab">ASN 核發數量</div>
+            <div class="nav-link border border-secondary border-left-0" href="#numberOfASN" data-toggle="tab">Number of ASNs Issued</div>
           </li>
         </ul>
       </div>
@@ -282,7 +282,7 @@
                 labels: ['','2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', ''],
                 datasets: [
                     {
-                      label: '台灣IPv4數量',
+                      label: '# of IPv4 Addresses',
                       data: [,2710,3193,3538,3539,3541,3547,3550,3550,3552,3565,],
                       backgroundColor: '#3366CC',
                       borderColor: '#3366CC',
@@ -292,7 +292,7 @@
                         display: 'auto',
                         align:'top',
                         formatter: function(value, context) {
-                          return Math.round(value) + '萬個';
+                          return Math.round(value) + '0k';
                         }
                       }
                     },
@@ -315,7 +315,7 @@
                           label += ': ';
                       }
                       label += Math.round(tooltipItem.yLabel * 100) / 100;
-                      return label + '萬個';
+                      return label + '0k';
                     }
                   }
                 },
@@ -374,7 +374,7 @@
                 labels: ['','2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', ''],
                 datasets: [
                     {
-                      label: '台灣IPv6數量',
+                      label: '# of IPv6 Addresses',
                       fill: false,
                       data: [,2311,2322,2328,2336,2345,2355,2359,2359,2365,2476,],
                       backgroundColor: '#3366CC',
@@ -385,7 +385,7 @@
                         display: 'auto',
                         align: 'top',
                         formatter: function(value, context) {
-                          return Math.round(value) + ' /32 個';
+                          return Math.round(value) + ' /32';
                         }
                       }
                     },
@@ -407,7 +407,7 @@
                           label += ': ';
                       }
                       label += Math.round(tooltipItem.yLabel * 100) / 100;
-                      return label + ' /32 個';
+                      return label + ' /32';
                     }
                   }
                 },
@@ -468,7 +468,7 @@
                 labels: ['','2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', ''],
                 datasets: [
                     {
-                      label: '台灣 ASN 核發數量',
+                      label: '# of ASNs Issued',
                       data: [,202,205,309,308,313,338,340,345,351,354,],
                       backgroundColor: '#3366CC',
                       borderColor: '#3366CC',
@@ -478,7 +478,7 @@
                         display: 'auto',
                         align: 'top',
                         formatter: function(value, context) {
-                          return Math.round(value) + '個';
+                          return Math.round(value) + '';
                         }
                       }
                     },
@@ -551,7 +551,7 @@
         <div class="col-12 extraInfo wrapper text-center">
           <ul class="list-unstyled">
             <li>
-              資料來源：<a href="http://v6directory.twnic.net.tw/ipstats/statsipv4.php" target="_blank">TWNIC(2018/12)</a>
+              Source: <a href="http://v6directory.twnic.net.tw/ipstats/statsipv4.php" target="_blank">TWNIC(2018/12)</a>
             </li>
           </ul>
         </div>
@@ -562,11 +562,11 @@
   <div class="row justify-content-center wrapper">
     <div class="col-md-10 wrapper">
       <p class="h3 text-center">
-        台灣 IPv6 使用比例
+        Percentage of ISP IPv6 Users in Taiwan
       </p>
       <div class="my-3">
         <p class="h6 lineHeight text-center">
-          台灣 IPv6 使用比例為 29.63%，全球排名第 6 名。
+          In the global ranking of IPv6 allocations, Taiwan ranks the 6th respectively. It accounts for 29.63%. (Dec. 31, 2018)
         </p>
       </div>
     </div>
@@ -665,7 +665,7 @@
     <div class="col-12 extraInfo wrapper text-center">
       <ul class="list-unstyled">
         <li>
-          資料來源：<a href="https://ipv6now.twnic.net.tw/ipv6/index.html" target="_blank">TWNIC(2018/12)</a>
+          Source: <a href="https://ipv6now.twnic.net.tw/ipv6/index.html" target="_blank">TWNIC(2018/12)</a>
         </li>
       </ul>
     </div>
@@ -673,14 +673,14 @@
   <div class="row justify-content-center wrapper">
     <div class="col-md-10 wrapper">
       <p class="h3 text-center">
-        商用網路公司 ISP IPv6 使用者比率
+        Percentage of ISP IPv6 users in Taiwan
       </p>
     </div>
     <div class="w-100 wrapper"></div>
     <div class="col-10 col-md-4 card">
       <div class="text-center mt-4">
         <p class="h6">
-          中華電信（行網）CHT Mobile
+          CHT Mobile
         </p>
       </div>
       <canvas id="chart_commercialIPv6UsageRate1" style="height:35vh;"></canvas>
@@ -692,7 +692,7 @@
             labels: ['','2017/12','2018/1','2018/2','2018/3','2018/4','2018/5','2018/6','2018/7','2018/8','2018/9','2018/10','2018/11','2018/12',''],
             datasets: [
                 {
-                  label: 'CHT Mobile IPv6 比例',
+                  label: 'CHT Mobile IPv6 Usage Rate',
                   data: [,0.02,0.06,0.72,3.12,16.55,23.04,34.19,42.74,37.54,54.44,67.72,71.66,66.18,],
                   backgroundColor: '#3366CC',
                   borderColor: '#3366CC',
@@ -777,7 +777,7 @@
     <div class="col-10 col-md-4 card">
       <div class="text-center mt-4">
         <p class="h6">
-          台灣大哥大（行網）Taiwan Mobile
+          Taiwan Mobile
         </p>
       </div>
       <canvas id="chart_commercialIPv6UsageRate2" style="height:35vh;"></canvas>
@@ -789,7 +789,7 @@
             labels: ['','2017/12','2018/1','2018/2','2018/3','2018/4','2018/5','2018/6','2018/7','2018/8','2018/9','2018/10','2018/11','2018/12',''],
             datasets: [
                 {
-                  label: 'Taiwan Mobile IPv6 比例',
+                  label: 'Taiwan Mobile IPv6 Usage Rate',
                   data: [,0.01,0.01,0.01,0.01,0,0.01,0.01,0.02,0.67,2.59,8.79,19.78,22.72,],
                   backgroundColor: '#3366CC',
                   borderColor: '#3366CC',
@@ -874,7 +874,7 @@
     <div class="col-10 col-md-4 card">
       <div class="text-center mt-4">
         <p class="h6">
-          遠傳電信（行網）FETNet
+          FETNet
         </p>
       </div>
       <canvas id="chart_commercialIPv6UsageRate3" style="height:35vh;"></canvas>
@@ -886,7 +886,7 @@
             labels: ['','2017/12','2018/1','2018/2','2018/3','2018/4','2018/5','2018/6','2018/7','2018/8','2018/9','2018/10','2018/11','2018/12',''],
             datasets: [
                 {
-                  label: 'FETNet IPv6 使用比例',
+                  label: 'FETNet IPv6 IPv6 Usage Rate',
                   data: [,0.01,0.01,0.01,0.01,0.02,0,0.02,0.04,0.03,0.03,1.05,31.24,31.55,],
                   backgroundColor: '#3366CC',
                   borderColor: '#3366CC',
@@ -971,7 +971,7 @@
     <div class="col-10 col-md-4 card">
       <div class="text-center mt-4">
         <p class="h6">
-          中華電信（固網）CHT Fixed Network
+          CHT Fixed Network
         </p>
       </div>
       <canvas id="chart_commercialIPv6UsageRate4" style="height:35vh;"></canvas>
@@ -983,7 +983,7 @@
             labels: ['','2017/12','2018/1','2018/2','2018/3','2018/4','2018/5','2018/6','2018/7','2018/8','2018/9','2018/10','2018/11','2018/12',''],
             datasets: [
                 {
-                  label: 'CHT Fixed Network IPv6 使用比例',
+                  label: 'CHT Fixed Network IPv6 Usage Rate',
                   data: [,0.4,0.51,0.69,1.01,2.2,6.2,16.16,18.18,13.73,21.33,21.47,19.27,17.36,],
                   backgroundColor: '#3366CC',
                   borderColor: '#3366CC',
@@ -1068,7 +1068,7 @@
     <div class="col-10 col-md-4 card">
       <div class="text-center mt-4">
         <p class="h6">
-          亞太電信（行網）AMBIT
+          AMBIT
         </p>
       </div>
       <canvas id="chart_commercialIPv6UsageRate5" style="height:35vh;"></canvas>
@@ -1080,7 +1080,7 @@
             labels: ['','2017/12','2018/1','2018/2','2018/3','2018/4','2018/5','2018/6','2018/7','2018/8','2018/9','2018/10','2018/11','2018/12',''],
             datasets: [
                 {
-                  label: 'AMBIT IPv6 使用比例',
+                  label: 'AMBIT IPv6 Usage Rate',
                   data: [,0.02,0.02,0.01,0,0,0,0.06,0.03,0,0,2.64,2.67,6.46,],
                   backgroundColor: '#3366CC',
                   borderColor: '#3366CC',
@@ -1165,7 +1165,7 @@
     <div class="col-10 col-md-4 card">
       <div class="text-center mt-4">
         <p class="h6">
-          新世紀資通（固網）Seednet
+          Seednet
         </p>
       </div>
       <canvas id="chart_commercialIPv6UsageRate6" style="height:35vh;"></canvas>
@@ -1177,7 +1177,7 @@
             labels: ['','2017/12','2018/1','2018/2','2018/3','2018/4','2018/5','2018/6','2018/7','2018/8','2018/9','2018/10','2018/11','2018/12',''],
             datasets: [
                 {
-                  label: 'Seednet IPv6 使用比例',
+                  label: 'Seednet IPv6 Usage Rate',
                   data: [,0.01,0.01,0.01,0.01,0,0,0.06,0.18,0.07,0.03,0.4,0.21,0.43,],
                   backgroundColor: '#3366CC',
                   borderColor: '#3366CC',
@@ -1262,7 +1262,7 @@
     <div class="col-10 col-md-4 card">
       <div class="text-center mt-4">
         <p class="h6">
-          台灣固網（固網）TFN
+          TFN
         </p>
       </div>
       <canvas id="chart_commercialIPv6UsageRate7" style="height:35vh;"></canvas>
@@ -1274,7 +1274,7 @@
             labels: ['','2017/12','2018/1','2018/2','2018/3','2018/4','2018/5','2018/6','2018/7','2018/8','2018/9','2018/10','2018/11','2018/12',''],
             datasets: [
                 {
-                  label: 'TFN IPv6 使用比例',
+                  label: 'TFN IPv6 Usage Rate',
                   data: [,0.01,0.01,0.01,0.01,0,0.01,0.15,0.09,0.08,0.09,0.45,0.29,0.24,],
                   backgroundColor: '#3366CC',
                   borderColor: '#3366CC',
@@ -1359,7 +1359,7 @@
     <div class="col-10 col-md-4 card">
       <div class="text-center mt-4">
         <p class="h6">
-          亞太電信（固網）APOL
+          APOL
         </p>
       </div>
       <canvas id="chart_commercialIPv6UsageRate8" style="height:35vh;"></canvas>
@@ -1371,7 +1371,7 @@
             labels: ['','2017/12','2018/1','2018/2','2018/3','2018/4','2018/5','2018/6','2018/7','2018/8','2018/9','2018/10','2018/11','2018/12',''],
             datasets: [
                 {
-                  label: 'APOL IPv6 使用比例',
+                  label: 'APOL IPv6 Usage Rate',
                   data: [,0.01,0.01,0.01,0,0,0,0,0.17,0.11,0.06,0.57,0.07,0.67,],
                   backgroundColor: '#3366CC',
                   borderColor: '#3366CC',
@@ -1456,7 +1456,7 @@
     <div class="col-10 col-md-4 card">
       <div class="text-center mt-4">
         <p class="h6">
-          台灣之星（行網）VIBO
+          VIBO
         </p>
       </div>
       <canvas id="chart_commercialIPv6UsageRate9" style="height:35vh;"></canvas>
@@ -1468,7 +1468,7 @@
             labels: ['','2017/12','2018/1','2018/2','2018/3','2018/4','2018/5','2018/6','2018/7','2018/8','2018/9','2018/10','2018/11','2018/12',''],
             datasets: [
                 {
-                  label: 'VIBO IPv6 使用比例',
+                  label: 'VIBO IPv6 Usage Rate',
                   data: [,0.02,0.02,0.02,0.02,0,0,0,0.03,0.02,0.06,0.04,0.05,0.08,],
                   backgroundColor: '#3366CC',
                   borderColor: '#3366CC',
@@ -1554,7 +1554,7 @@
       <ul class="list-unstyled">
         <li>檢索方式為以月為單位，擷取每個月 7 日的數字</li>
         <li>
-          資料來源：<a href="https://ipv6now.twnic.net.tw/ipv6/index.html" target="_blank">TWNIC </a>統計至 2018 年 12 月份
+          Source: <a href="https://ipv6now.twnic.net.tw/ipv6/index.html" target="_blank">TWNIC </a>(2018/12)
         </li>
       </ul>
     </div>
@@ -1570,10 +1570,10 @@
   <div class="row justify-content-center wrapperL text-white">
     <div class="col-md-8 text-center">
       <p class="h2 d-md-none mb-3 wrapper">
-        國際發展現況介紹
+        Comparison of Current Developments in Other Countries
       </p>
       <p class="h1 d-none d-md-block">
-        國際發展現況介紹
+        Comparison of Current Developments in Other Countries
       </p>
       <div class="my-4">
         <p class="h5 lineHeight pb-5">
@@ -1587,17 +1587,17 @@
   <div class="row justify-content-center wrapper">
     <div class="col-md-10 wrapper">
       <p class="h3 text-center">
-        全球 IPv4 ／ IPv6 數量統計
+        Statistics on IPv4/IPv6 Globally
       </p>
     </div>
     <div class="col-md-10 py-5">
       <div class="mb-3">
         <ul class="nav nav-pills nav-justified">
           <li class="nav-item linkColor">
-            <div class="nav-link border active border-secondary" href="#globalNumberOfIPv4" data-toggle="tab">IPv4 數量</div>
+            <div class="nav-link border active border-secondary" href="#globalNumberOfIPv4" data-toggle="tab">Number of IPv4</div>
           </li>
           <li class="nav-item linkColor">
-            <div class="nav-link border border-secondary border-left-0" href="#globalNumberOfIPv6" data-toggle="tab">IPv6 數量</div>
+            <div class="nav-link border border-secondary border-left-0" href="#globalNumberOfIPv6" data-toggle="tab">Number of IPv6</div>
           </li>
         </ul>
       </div>
@@ -1609,10 +1609,10 @@
             var mixedChart = new Chart(ctx, {
               type: 'horizontalBar',
               data: {
-                labels: ['台灣', '中國', '日本', '南韓', '印度', '印尼', '越南', '新加坡', '泰國', '馬來西亞', '菲律賓', '美國', '英國', '澳洲'],
+                labels: ['Taiwan', 'China', 'Japan', 'S. Korea', 'India', 'Indonesia', 'Vietnam', 'Singapore', 'Thailand', 'Malaysia', 'Philippines', 'United States', 'United Kingdom', 'Australia'],
                 datasets: [
                     {
-                      label: 'IPv4 數量',
+                      label: '# of IPv4',
                       data: [3565,34039,20409,11246,4097,1846,1596,1279,911,662,557,160412,12181,4857],
                       backgroundColor: ['#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#FFC000','#FFC000','#FFC000'],
                       fill: false,
@@ -1622,7 +1622,7 @@
                         align:'end',
                         offset: 15,
                         formatter: function(value, context) {
-                          return Math.abs(value) + '萬個';
+                          return Math.abs(value) + '0k';
                         }
                       },
                     },
@@ -1643,7 +1643,7 @@
                           label += ': ';
                       }
                       label += Math.abs(tooltipItem.xLabel * 100) / 100;
-                      return label + '萬個';
+                      return label + '0k';
                     }
                   }
                 },
@@ -1674,7 +1674,7 @@
           </script>
           <ul class="list-unstyled wrapper extraInfo text-center">
             <li>
-              資料來源：<a href="http://v6directory.twnic.net.tw/ipstats/statsipv4.php" target="_blank">TWNIC(2018/12)</a>
+              Source: <a href="http://v6directory.twnic.net.tw/ipstats/statsipv4.php" target="_blank">TWNIC(2018/12)</a>
             </li>
           </ul>
         </div>
@@ -1685,10 +1685,10 @@
             var mixedChart = new Chart(ctx, {
               type: 'horizontalBar',
               data: {
-                labels: ['台灣', '中國', '印度', '日本', '南韓', '越南', '印尼', '馬來西亞', '新加坡',	'菲律賓', '泰國', '美國', '英國', '澳洲'],
+                labels: ['Taiwan', 'China', 'India', 'Japan', 'S. Korea', 'Vietnam', 'Indonesia', 'Malaysia', 'Singapore',	'Philippines', 'Thailand', 'United States', 'United Kingdom', 'Australia'],
                 datasets: [
                     {
-                      label: 'IPv6 數量',
+                      label: '# of IPv6',
                       data: [2476,41060,9996,5257,1631,1267,368,135,109,100,51,45493,18940,9029],
                       backgroundColor: ['#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#7DCC4A','#FFC000','#FFC000','#FFC000'],
                       fill: false,
@@ -1698,7 +1698,7 @@
                         align:'end',
                         offset: 15,
                         formatter: function(value, context) {
-                          return Math.abs(value) + ' /32 個';
+                          return Math.abs(value) + ' /32';
                         }
                       },
                     },
@@ -1719,7 +1719,7 @@
                           label += ': ';
                       }
                       label += Math.abs(tooltipItem.xLabel * 100) / 100;
-                      return label + '  /32 個';
+                      return label + '  /32';
                     }
                   }
                 },
@@ -1750,7 +1750,7 @@
           </script>
           <ul class="list-unstyled wrapper extraInfo text-center">
             <li>
-              資料來源：<a href="http://v6directory.twnic.net.tw/ipstats/statsipv6.php" target="_blank">TWNIC(2018/12)</a>
+              Source: <a href="http://v6directory.twnic.net.tw/ipstats/statsipv6.php" target="_blank">TWNIC(2018/12)</a>
             </li>
           </ul>
         </div>
@@ -1769,7 +1769,7 @@
 <!--- Footer --->
 <div class="wrapperXL pb-3 pt-4 bgNavBar">
   <p class="text-center small text-white">
-    Copyright © 2019 財團法人台灣網路資訊中心
+    Copyright © 2019 Taiwan Network Information Center
   </p>
 </div>
 <!--- end of Footer --->
