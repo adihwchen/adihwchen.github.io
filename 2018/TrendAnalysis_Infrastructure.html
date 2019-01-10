@@ -16,7 +16,7 @@
 
   <title>2018 台灣網路調查 - 網路基礎邏輯層面</title>
 
-  <meta property="og:url" content="http://twnic.somewhere.there">
+  <meta property="og:url" content="https://report.twnic.tw/2018/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="2018 台灣網路調查">
   <meta property="og:image" content="">
@@ -143,18 +143,6 @@
   </div>
 </div>
 <div class="container" id="sec-1">
-  <!--div class="row justify-content-center wrapperL">
-    <div class="col-md-10 text-center">
-      <p class="h1 mt-5 titleColor">
-        國內發展現況介紹
-      </p>
-      <div class="my-3">
-        <p class="h6 lineHeight">
-          無論是網域名稱、IP和ASN註冊或發放數量，國內統計數量都是逐年成長。
-        </p>
-      </div>
-    </div>
-  </div-->
   <div class="row justify-content-center wrapper">
     <div class="col-md-10 text-center wrapper">
       <p class="h3">
@@ -208,7 +196,17 @@
               }
             },
             tooltips: {
-              mode:'index',
+              callbacks: {
+                label: function(tooltipItem, data) {
+                  var label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+                  if (label) {
+                      label += ': ';
+                  }
+                  label += Math.round(tooltipItem.yLabel * 100) / 100;
+                  return label + 'k';
+                }
+              }
             },
             scales: {
               xAxes: [{
