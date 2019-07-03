@@ -1,141 +1,211 @@
-<!doctype HTML>
+<!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+  <link rel="stylesheet" href="self/css/self.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC:300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200i,400,600i&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-  <title>Mess-Go-Round</title>
+  <title>I'm Me.</title>
 
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:url" content="https://adihwchen.github.io/index.html">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="w/ Things">
-  <meta property="og:description" content="">
+  <meta property="og:title" content="Adi Ayi">
+  <meta property="og:image" content="http://www.beamedia.co/project/the-found-object-office/img/fb_banner.png">
+  <meta property="og:image" content="https://live.staticflickr.com/65535/47991789892_453393ebdf_o.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:description" content="熱衷邊緣，不適合被歸類">
 
-<!-- adobe typekit-->
-  <script>
-    (function(d) {
-      var config = {
-        kitId: 'tfk2lym',
-        scriptTimeout: 3000,
-        async: true
-      },
-      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-    })(document);
-  </script>
 
+  <link rel="shortcut icon" href="img/Favicon.ico" type="image/x-icon">
+  <link rel="bookmark" href="img/Favicon.ico"/>
 
 </head>
+
 <style>
 
-body, p, ol {
-  font-family:"source-han-sans-traditional", "Microsoft JhengHei", sans-serif;
+body {
+  font-family: 'Raleway','Noto Sans TC', sans-serif;
+  /*line-height: 2;*/
+  letter-spacing: 0.8px;
 }
-
+.BGimg {
+  background-image:url("self/img/Negative0-11-25A.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
 
 </style>
 
+<!-- scrolling -->
+<script>
+    $(document).ready(function () {
+        // Add smooth scrolling to all links
+        $("a").on('click', function (event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+                // Store hash
+                var hash = this.hash;
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function () {
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+    });
+</script>
+<script type="text/javascript">
+  document.addEventListener("touchstart", function() {}, true);
+</script>
+<!-- end of scrolling -->
+
 <body>
 
-<div class="container">
-  <div class="row justify-content-center my-5">
-    <div class="col-12 bg-dark">
-      <p class="display-1 text-center my-5 text-white">Oh, Well.</p>
-    </div>
-  </div>
+<!-- nav -->
+<nav class="row nav navbar py-3 fixed-top">
+  <a class="nav-link ml-5 linkTextDecoDark" href="#hello">hello</a>
+  <a class="nav-link linkTextDecoDark" href="#aboutUS">biography</a>
+  <a class="nav-link linkTextDecoDark" href="#regulations"></a>
+  <a class="nav-link ml-auto mr-5 linkTextDecoDark" data-toggle="modal" data-target="#share" href="#share">關於</a>
+</nav>
+<!-- end of nav -->
 
-  <div class="row justify-content-center my-5">
-    <p class="display-4">out</p>
-  </div>
-  <div class="row justify-content-center my-2">
-    <p class="h4 font-weight-light">curated content</p>
-  </div>
 
+<div class="container-fluid bg-light BGimg" style="height:100vh;">
   <div class="row justify-content-center">
-    <div class="col-8 col-md-4 my-3">
-      <a href="http://daily-life-units.beamedia.co" class="btn btn-block btn-outline-dark" target="_blank">Daily Life Units</a>
-    </div>
-    <div class="col-8 col-md-4 my-3">
-      <a href="http://misanthropy-gauge.beamedia.co" class="btn btn-block btn-outline-dark" target="_blank">Misanthropy Gauge</a>
-    </div>
-    <div class="col-8 col-md-4 my-3">
-      <a href="http://www.beamedia.co/vote/2018/" class="btn btn-block btn-outline-dark" target="_blank">Election Info Site</a>
+    <div class="col-md-8 col-10 wrapperXL">
+       <p class="display-1 font-italic text-white">make things</p>
     </div>
   </div>
-  <div class="row justify-content-center my-2 pt-5">
-    <p class="h4 font-weight-light">panel recruiment</p>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-8 col-md-4 my-3">
-      <a href="https://www.ixpanel.com/activity/2017/oct/your-adventure-attribute.jsp" class="btn btn-block btn-outline-dark" target="_blank">Your Adventure Attributes</a>
-    </div>
-    <div class="col-8 col-md-4 my-3">
-      <a href="https://www.ixpanel.com/activity/2017/dec/iXmas.jsp" class="btn btn-block btn-outline-dark" target="_blank">i:Xmas Advent Calendar</a>
-    </div>
-    <div class="col-8 col-md-4 my-3">
-      <a href="https://www.ixpanel.com/activity/2018/march/intelligentLife.jsp" class="btn btn-block btn-outline-dark" target="_blank">Intelligent Life</a>
-    </div>
-
-  </div>
-  <div class="row justify-content-center my-5 pt-5">
-    <p class="display-4">in</p>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-8 col-md-4 my-3">
-      <a href="bingo.html" class="btn btn-block btn-outline-dark" target="_blank">Bingo Game</a>
-    </div>
-  </div>
-  <div class="row justify-content-center my-2 pt-5">
-    <p class="h4 font-weight-light">internet report</p>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-8 col-md-4 my-3">
-      <a href="internet0.html" class="btn btn-block btn-outline-dark" target="_blank">Internet Report</a>
-    </div>
-  </div>
-
-  <div class="row justify-content-center">
-    <div class="col-8 col-md-4 my-3">
-      <a href="internet.html" class="btn btn-block btn-outline-dark" target="_blank">Internet Report v1</a>
-    </div>
-    <div class="col-8 col-md-4 my-3">
-      <a href="internet2.html" class="btn btn-block btn-outline-dark" target="_blank">Internet Report v2</a>
-    </div>
-    <div class="col-8 col-md-4 my-3">
-      <a href="internet3.html" class="btn btn-block btn-outline-dark" target="_blank">Internet Report v3</a>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-8 col-md-4 my-3">
-      <a href="internetF.html" class="btn btn-block btn-outline-dark" target="_blank">Internet Report v4<br>(layout updates)</a>
-    </div>
-    <div class="col-8 col-md-4 my-3">
-      <a href="internetprototype1.html" class="btn btn-block btn-outline-dark" target="_blank">Internet Report v5<br>prototype 1</a>
-    </div>
-    <div class="col-8 col-md-4 my-3">
-      <a href="internetprototype2.html" class="btn btn-block btn-outline-dark" target="_blank">Internet Report v6<br>prototype 2</a>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-8 col-md-4 my-3">
-      <a href="internetprototype3.html" class="btn btn-block btn-outline-dark" target="_blank">Internet Report v7<br>prototype 3</a>
-    </div>
-  </div>
-
 </div>
 
+<!-- share modal -->
+<div class="modal fade" id="share" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg my-5" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="my-5 mx-auto">
+              <a role="button" class="btn btn-lg  bg-primary px-2 mx-2 fb-xfbml-parse-ignore" onclick="ga('send', 'social', 'share btn', 'click', 'FBshare');" href="http://www.facebook.com/sharer.php?u=http://www.beamedia.co/project/the-found-object-office/index.html" target="_blank" style="width: 100px; height:100px">
+                <i class="fab fa-facebook-f fa-4x text-white"></i>
+              </a>
+              <a role="button" class="btn btn-lg bg-success px-2 mx-2" onclick="ga('send', 'social', 'share btn', 'click', 'LINEshare');" href="https://social-plugins.line.me/lineit/share?url=http://www.beamedia.co/project/the-found-object-office/index.html?utm_source=LINEshareBtn&utm_medium=line" target="_blank" style="width: 100px; height:100px">
+                <i class="fab fa-line fa-4x text-white"></i>
+              </a>
+              <a role="button" class="btn btn-lg bg-info px-2 mx-2" href="https://twitter.com/intent/tweet?text=每個時代都有屬於自己的物件與記憶，歡迎光臨時物招領&nbsp;http%3A%2F%2Fwww.beamedia.co%2Fproject%2Fthe-found-object-office%2Findex.html" target="_blank" style="width: 100px; height:100px">
+                <i class="fab fa-twitter fa-4x text-white"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end of share modal -->
 
-  <!--- Footer --->
-  <div class="footer my-5 pt-5">
-      <div class="text-center">
-        <p class="small font-weight-light">
-          Copyright © Adi 2018
+<!-- belt -->
+<div class="container-fluid bg-white" id="hello">
+  <div class="row justify-content-center text-secondary">
+    <div class="col-10 my-5">
+      <p class="h1 font-italic">Hello</p>
+      <div class="my-4">
+        <p class="h6 lineHeight my-2">
+          1984 年生，新竹芎林客家人。很難被分在哪一類，也正好不喜歡被歸類。
+        </p>
+        <p class="h6 lineHeight my-2">
+          花了十年在大學與研究所裡修行電視、電影等影音內容產製。實驗短片、劇情短片作品曾在世界各地參賽、映演。2012 年拍攝、2015 年完成的劇情短片《辦桌》，改編奶奶的故事並融合了在地文化與宗教命題，獲金穗獎一般類首獎、城市遊牧影展首獎、台灣國際女性影展評審團特別獎，以及愛丁堡 UnDependence 影展新星獎。
+        </p>
+        <p class="h6 lineHeight my-2">
+          與求學相互交疊了另一個十年，用來專注在內容產製的工作，以溝通為最高目標，跨領域地以平面、影像、動畫作為媒介，將複雜的資訊轉化為適合一般網路使用者理解吸收的內容。
         </p>
       </div>
+      <div class="my-4">
+        <p class="h6 lineHeight my-2">
+          Born in 1984, Hsin-Wei is a native Hakka from HsinChu. It’s hard to classify Hsin-Wei into any specific genre. Luckily, Hsin-Wei hates being classified.
+        </p>
+        <p class="h6 lineHeight my-2">
+          Hsin-Wei spent 10 years in college and grade school majoring video/film production. Her experimental and narrative short films were screening around the world. She’s the Grand Prize Winner of both Golden Harvest Film Festival and Urban Nomad Film Festival with the narrative short film “Pan Zhog” adapted from her grand mother’s story.
+        </p>
+        <p class="h6 lineHeight my-2">
+          Overlapped another 10 years in her career focused on content making. Setting communication as the highest priority, she worked cross-borderly with graphics, video and motion graphics as medium, transforming complicated information into understandable contents for everyone.
+        </p>
+      </div>
+
+    </div>
   </div>
+</div>
+<!-- end of belt -->
+
+
+  <!-- about us -->
+  <div class="container-fluid bg-light" id="aboutUS">
+    <div class="row justify-content-center py-5">
+      <div class="col-10 my-3">
+        <p class="h1 font-italic">關於我們</p>
+      </div>
+      <div class="col-10">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-5">
+            <div class="row">
+              <div class="col-7">
+                <img src="img/ixLogo.png" alt="" class="img-fluid mb-4">
+              </div>
+            </div>
+            <p class="h6 lineHeight">
+              成立於 2003 年，獨家建置 ARO 網路收視率服務及品牌，創市際市場研究顧問股份有限公司 InsightXplorer Ltd. 為台灣唯一數位量測之第三公正單位，擁有 IX Survey 網路調查系統及 iX:Panel（原 CyberPanel）消費者社群，成為台灣專業網路調查先驅。2006 年執行台灣網路基礎追蹤調查至今，長期關注台灣上網行為趨勢變化。2011 年因應全球化的風潮，獨家代理全球性品牌 comScore 網路量測服務及產品，導入國際觀點的數位測量服務。客戶群涵蓋全球知名品牌，網站媒體及代理商，如 Oath (Yahoo) 、Google、Facebook、蘋果日報、城邦出版、電通安吉斯集團、群邑等。2012 更成立創媒體 BeamMedia 以視覺詮釋數據，讓數據更貼近消費大眾，多元發展隨時為行銷市場提供最新的研究視角！
+            </p>
+          </div>
+          <div class="d-none d-md-block col-md-2">
+
+          </div>
+          <div class="col-12 col-md-5">
+            <div class="row">
+              <div class="col-7">
+                <img src="img/iXPanel_Logo.svg" alt="" class="img-fluid mb-4">
+              </div>
+            </div>
+            <p class="h6 lineHeight">
+              iX:Panel 問卷社群網站（原 CyberPanel）係由創市際市場研究顧問股份有限公司 InsightXplorer Ltd. 所建置的大型台灣消費者情報平台，自 2003 年建立至今已逾 30 萬人規模。讓人們經由各式問卷調查，訪談活動及快速任務，將台灣消費者意見回饋給全球知名企業廠商，其第三單位公正性已成為全球最具指標性台灣消費者意見社群！無論你是上班族、學生、主婦或各行各業人士，我們都歡迎你的加入來提供更多元的聲音！
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- end of about us -->
+
+
+
+<!--- Footer --->
+<div class="py-5">
+  <p class="text-center small">
+    Copyright © 2019 Adi Ayiw
+  </p>
+</div>
+<!--- end of Footer --->
 
 </body>
 </html>
