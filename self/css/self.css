@@ -28,24 +28,13 @@ html {
   padding-bottom: 3rem;
 }
 .wrapperM {
-  padding-top: 4rem;
+  padding-top: 6rem;
 }
 .wrapperL {
-  padding-top: 5rem;
-}
-.wrapperXL{
-  padding-top: 8rem;
-  /*padding-bottom: 5em;*/
-}
-.wrapperXXL{
-  padding-top: 40vh;
-  /*padding-bottom: 8em;*/
+  padding-top: 9rem;
 }
 
-/* position */
-.moveUp {
-  margin-top: -20vh;
-}
+
 
 /* typography */
 .text-shadow {
@@ -71,7 +60,7 @@ html {
   cursor: pointer;
 }
 .linkTextDecoDark:hover {
-  color:#8D2143;
+  color:#6e6e6e;
   cursor: pointer;
 }
 .linkTextDecoRed {
