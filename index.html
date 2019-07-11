@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NBX927W');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143711731-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-143711731-1');
+  </script>
+  <!-- end of  Google Analytics -->
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
@@ -20,7 +39,7 @@
   <meta property="og:title" content="HSINWEI CHEN">
   <meta property="og:image" content="self/img/Negative0-11-25A.jpg">
   <meta property="og:image:type" content="image/png">
-  <meta property="og:description" content="熱衷邊緣，不適合被歸類">
+  <meta property="og:description" content="熱衷邊緣不適合被歸類">
 
 
   <link rel="shortcut icon" href="img/Favicon.ico" type="image/x-icon">
@@ -30,16 +49,15 @@
 
 <style>
 
-body {
-  font-family: 'Raleway','Noto Sans TC', sans-serif;
-  letter-spacing: 0.8px;
-}
+
 .BGimg {
   background-image:url("self/img/Negative0-11-25A.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  background-size: cover;
 }
+
 
 </style>
 
@@ -72,68 +90,46 @@ body {
 <!-- end of scrolling -->
 
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBX927W"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <!-- nav -->
 <nav class="row nav navbar py-3 fixed-top">
-  <a class="nav-link ml-5 linkTextDecoDark" href="#bio">hello</a>
-  <a class="nav-link linkTextDecoDark" href="#filmology">filmology</a>
-  <a class="nav-link linkTextDecoDark" href="#regulations"></a>
-  <a class="nav-link ml-auto mr-5 linkTextDecoDark" data-toggle="modal" data-target="#share" href="#share">關於</a>
+  <a class="nav-link ml-md-5 linkTextDecoDark" href="#bio"><small>關於</small><br>bio</a>
+  <a class="nav-link linkTextDecoDark" href="#works"><small>作品</small><br>works</a>
+  <a class="nav-link ml-auto mr-md-5 linkTextDecoDark" href="#top"><small>陳欣緯<br>Hsin-Wei Chen</small></a>
+  <!--a class="nav-link ml-auto mr-md-5 linkTextDecoDark" data-toggle="modal" data-target="#share" href="#share"><small>陳欣緯<br>Hsin-Wei Chen</small></a-->
+
 </nav>
 <!-- end of nav -->
 
 
-<div class="container-fluid bg-light BGimg" style="height:100vh;">
+<div class="container-fluid bg-light BGimg" style="height:100vh;" id="top">
   <div class="row justify-content-center">
-    <div class="col-md-8 col-10 wrapperXL">
-       <p class="display-1 font-italic text-white">make things</p>
+    <div class="col-md-8 col-10 wrapperM">
+       <p class="display-2 font-italic text-white border border-white py-5 px-5 my-auto d-none d-md-block">Fake it 'til you<br>make it.</p>
+       <p class="display-4 font-italic text-white border border-white py-3 px-3 my-auto d-block d-md-none">Fake it 'til you<br>make it.</p>
+
     </div>
   </div>
 </div>
 
-<!-- share modal -->
-<div class="modal fade" id="share" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-lg my-5" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-lable="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="container-fluid">
-          <div class="row justify-content-center">
-            <div class="my-5 mx-auto">
-              <a role="button" class="btn btn-lg  bg-primary px-2 mx-2 fb-xfbml-parse-ignore" onclick="ga('send', 'social', 'share btn', 'click', 'FBshare');" href="http://www.facebook.com/sharer.php?u=http://www.beamedia.co/project/the-found-object-office/index.html" target="_blank" style="width: 100px; height:100px">
-                <i class="fab fa-facebook-f fa-4x text-white"></i>
-              </a>
-              <a role="button" class="btn btn-lg bg-success px-2 mx-2" onclick="ga('send', 'social', 'share btn', 'click', 'LINEshare');" href="https://social-plugins.line.me/lineit/share?url=http://www.beamedia.co/project/the-found-object-office/index.html?utm_source=LINEshareBtn&utm_medium=line" target="_blank" style="width: 100px; height:100px">
-                <i class="fab fa-line fa-4x text-white"></i>
-              </a>
-              <a role="button" class="btn btn-lg bg-info px-2 mx-2" href="https://twitter.com/intent/tweet?text=每個時代都有屬於自己的物件與記憶，歡迎光臨時物招領&nbsp;http%3A%2F%2Fwww.beamedia.co%2Fproject%2Fthe-found-object-office%2Findex.html" target="_blank" style="width: 100px; height:100px">
-                <i class="fab fa-twitter fa-4x text-white"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- end of share modal -->
 
 <!-- bio -->
 <div class="container-fluid bg-white" id="bio">
-  <div class="row justify-content-center text-secondary">
-    <div class="col-5 my-3">
-      <p class="h1 font-italic">Hello</p>
+  <div class="row justify-content-center text-secondary my-5">
+    <div class="col-10 col-md-4 my-3">
+      <p class="display-3 font-italic">bio</p>
+      <p class="h6 small font-italic mb-3">i'm a</p>
+      <p class="h6 small font-italic">filmmaker/<br>photographer/<br>animator/<br>content maker/<br>css and html coder</p>
 
     </div>
-  </div>
-  <div class="row justify-content-center text-secondary">
-    <div class="col-5 my-3">
+
+    <div class="col-10 col-md-4 my-3">
         <p class="h6 lineHeight my-2">
-          1984 年生，新竹芎林客家人。很難被分在哪一類，也正好不喜歡被歸類。
+          1984 年生，台灣新竹芎林客家人。很難被分在哪一類，也正好不喜歡被歸類。
         </p>
         <p class="h6 lineHeight my-2">
           花了十年在大學與研究所裡修行電視、電影等影音內容產製。實驗短片、劇情短片作品曾在世界各地參賽、映演。2012 年拍攝、2015 年完成的劇情短片《辦桌》，改編奶奶的故事並融合了在地文化與宗教命題，獲金穗獎一般類首獎、城市遊牧影展首獎、台灣國際女性影展評審團特別獎，以及愛丁堡 UnDependence 影展新星獎。
@@ -142,68 +138,57 @@ body {
           與求學相互交疊了另一個十年，用來專注在內容產製的工作，以溝通為最高目標，跨領域地以平面、影像、動畫作為媒介，將複雜的資訊轉化為適合一般網路使用者理解吸收的內容。
         </p>
     </div>
-    <div class="row justify-content-center text-secondary">
-      <div class="col-5 my-3">
-          <p class="h6 lineHeight my-2">
-            Born in 1984, Hsin-Wei is a native Hakka from HsinChu. It’s hard to classify Hsin-Wei into any specific genre. Luckily, Hsin-Wei hates being classified.
-          </p>
-          <p class="h6 lineHeight my-2">
-            Hsin-Wei spent 10 years in college and grade school majoring video/film production. Her experimental and narrative short films were screening around the world. She’s the Grand Prize Winner of both Golden Harvest Film Festival and Urban Nomad Film Festival with the narrative short film “Pan Zhog” adapted from her grand mother’s story.
-          </p>
-          <p class="h6 lineHeight my-2">
-            Overlapped another 10 years in her career focused on content making. Setting communication as the highest priority, she worked cross-borderly with graphics, video and motion graphics as medium, transforming complicated information into understandable contents for everyone.
-          </p>
-      </div>
+    <div class="col-10 col-md-4 my-3">
+        <p class="h6 lineHeight my-2">
+          Born in 1984, Hsin-Wei is a native Hakka from HsinChu, Taiwan. It’s hard to classify Hsin-Wei into any specific genre. Luckily, Hsin-Wei hates being classified.
+        </p>
+        <p class="h6 lineHeight my-2">
+          Hsin-Wei spent 10 years in college and grade school majoring video/film production. Her experimental and narrative short films were screening around the world. She’s the Grand Prize Winner of both Golden Harvest Film Festival and Urban Nomad Film Festival with the narrative short film “Pan Zhog” adapted from her grand mother’s story.
+        </p>
+        <p class="h6 lineHeight my-2">
+          Overlapped another 10 years in her career focused on content making. Setting communication as the highest priority, she worked cross-borderly with graphics, video and motion graphics as medium, transforming complicated information into understandable contents for everyone.
+        </p>
     </div>
+
   </div>
 </div>
 <!-- end of bio -->
 
-
-  <!-- about us -->
-  <div class="container-fluid bg-light" id="aboutUS">
-    <div class="row justify-content-center py-5">
-      <div class="col-10 my-3">
-        <p class="h1 font-italic">關於我們</p>
-      </div>
-      <div class="col-10">
-        <div class="row justify-content-center">
-          <div class="col-12 col-md-5">
-            <div class="row">
-              <div class="col-7">
-                <img src="img/ixLogo.png" alt="" class="img-fluid mb-4">
-              </div>
-            </div>
-            <p class="h6 lineHeight">
-              成立於 2003 年，獨家建置 ARO 網路收視率服務及品牌，創市際市場研究顧問股份有限公司 InsightXplorer Ltd. 為台灣唯一數位量測之第三公正單位，擁有 IX Survey 網路調查系統及 iX:Panel（原 CyberPanel）消費者社群，成為台灣專業網路調查先驅。2006 年執行台灣網路基礎追蹤調查至今，長期關注台灣上網行為趨勢變化。2011 年因應全球化的風潮，獨家代理全球性品牌 comScore 網路量測服務及產品，導入國際觀點的數位測量服務。客戶群涵蓋全球知名品牌，網站媒體及代理商，如 Oath (Yahoo) 、Google、Facebook、蘋果日報、城邦出版、電通安吉斯集團、群邑等。2012 更成立創媒體 BeamMedia 以視覺詮釋數據，讓數據更貼近消費大眾，多元發展隨時為行銷市場提供最新的研究視角！
-            </p>
-          </div>
-          <div class="d-none d-md-block col-md-2">
-
-          </div>
-          <div class="col-12 col-md-5">
-            <div class="row">
-              <div class="col-7">
-                <img src="img/iXPanel_Logo.svg" alt="" class="img-fluid mb-4">
-              </div>
-            </div>
-            <p class="h6 lineHeight">
-              iX:Panel 問卷社群網站（原 CyberPanel）係由創市際市場研究顧問股份有限公司 InsightXplorer Ltd. 所建置的大型台灣消費者情報平台，自 2003 年建立至今已逾 30 萬人規模。讓人們經由各式問卷調查，訪談活動及快速任務，將台灣消費者意見回饋給全球知名企業廠商，其第三單位公正性已成為全球最具指標性台灣消費者意見社群！無論你是上班族、學生、主婦或各行各業人士，我們都歡迎你的加入來提供更多元的聲音！
-            </p>
-          </div>
-        </div>
-      </div>
+<div class="container-fluid bg-light" id="works">
+  <div class="row justify-content-center text-secondary wrapper">
+    <div class="col-10 col-md-12">
+      <p class="display-3 font-italic">works</p>
+    </div>
+  </div>
+  <div class="row justify-content-center text-secondary">
+    <div class="col-10 col-md-4">
+      <p class="h5 font-italic bg-secondary text-white">under construction</p>
+      <p class="h6 lineHeight">
+      </p>
+    </div>
+    <div class="col-10 col-md-4">
+      <p class="h5 font-italic bg-secondary text-white">same here</p>
+      <p class="h6 lineHeight">
+      </p>
+    </div>
+    <div class="col-10 col-md-4">
+      <p class="h5 font-italic bg-secondary text-white">and this, also</p>
+      <p class="h6 lineHeight">
+      </p>
+    </div>
+    <div class="w-100 my-4">
 
     </div>
   </div>
-  <!-- end of about us -->
+
+</div>
 
 
 
 <!--- Footer --->
 <div class="py-5">
   <p class="text-center small">
-    Copyright © 2019 Adi Ayiw
+    Copyright © 2019 Adi Ayi
   </p>
 </div>
 <!--- end of Footer --->
