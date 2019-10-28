@@ -82,12 +82,6 @@ html {
 }
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 576px) {
-  .BGimg {
-    background-image:url("self/img/Negative0-11-25A.jpg");
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    background-size: cover;
-  }
 
 }
 
