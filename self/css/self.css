@@ -16,7 +16,13 @@ html {
 }
 
 
-
+.BGimg {
+  background-image:url("self/img/Negative0-11-25A.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
 
 /* Lineup of Wrappers */
 .wrapper {
@@ -58,7 +64,6 @@ html {
 
 /* layout */
 
-
 .overlay {
   position: absolute;
   top: 10vh;
@@ -77,7 +82,12 @@ html {
 }
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 576px) {
-
+  .BGimg {
+    background-image:url("self/img/Negative0-11-25A.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
 
 }
 
